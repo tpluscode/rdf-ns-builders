@@ -1,7 +1,17 @@
 language: node_js
 node_js:
-  - '10'
-  - '12'
-  - '13'
+- '10'
+- '12'
+- '13'
 after_script:
-  - npm run build
+- npm run build
+deploy:
+  provider: npm
+  email: npm@t-code.pl
+  edge: true
+  api_key:
+    secure: jc8yc/GaGmiEJz8C+0AxWaO4vv1I4rSw6fPRD7ZRRvs79l05vcF8DPQTlRwmVA8vghdtREf7RB6iDIm8AJaDfo+7QF45raGwqfJytotKOszhi72SzLzOBaVi5MMZsRc7oeq8xTiN46huqCO1Y1hSxwAFRljQHIikyniKAd1a7eZLMyUP+MHWqc1FCDYDFzfiJvMxiQlyyIbO8ao19FyNX4v3V+TmghV3+cYYzpe4ngqaUsQs5474b/Xyv9Qhc9RIlE7Kk1qYSAUqrkFfLh42tKDVSu18O2vTiH2wkjloikKXrNIeEKtLtKY9TPF8rVK3j5dT8aT7OoRSrEzU5NLAIa21NRqI0t/zUK3x/ECEOUzyR1p/g3HhTnjdhJkW3o4k9FDQEv1wsbkihGkVdgQpU8Jd4tUwl5d7KRrXchL+MwPRtYkHcnNzATcsJ1qpRuF8FhXs3rEx6X6CKXBsrY63UdA6hI6FCAN9b/vZI88BakORQrco0UO+59zPM0Z0Medrxx5HIsRsvZyl28Iw2RwWhX65IclN6zaZZl0oLQ275dvpOC1h4sG6hC0rFqdNJNflXDoufrkzWNFHQ59Bn+rCuOKEDPlFMSLOHQgeF8XUp5RebmcGYyRSnKAIrBP619DdvFlQ38PMPgT9hoFnnyhWMjRNS/uHmoJq9ewrJK1nSDM=
+  on:
+    tags: true
+    repo: tpluscode/rdf-namespace-builders
+    node: '13'
