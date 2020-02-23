@@ -1,0 +1,30 @@
+import { prefixes } from "@zazuko/rdf-vocabularies";
+import namespace from "@rdfjs/namespace";
+import { NamedNode } from "rdf-js";
+interface Geor {
+    "ehContains": NamedNode;
+    "ehCoveredBy": NamedNode;
+    "ehCovers": NamedNode;
+    "ehDisjoint": NamedNode;
+    "ehEquals": NamedNode;
+    "ehInside": NamedNode;
+    "ehMeet": NamedNode;
+    "ehOverlap": NamedNode;
+    "rcc8dc": NamedNode;
+    "rcc8ec": NamedNode;
+    "rcc8eq": NamedNode;
+    "rcc8ntpp": NamedNode;
+    "rcc8ntppi": NamedNode;
+    "rcc8po": NamedNode;
+    "rcc8tpp": NamedNode;
+    "rcc8tppi": NamedNode;
+    "sfContains": NamedNode;
+    "sfCrosses": NamedNode;
+    "sfDisjoint": NamedNode;
+    "sfEquals": NamedNode;
+    "sfIntersects": NamedNode;
+    "sfOverlaps": NamedNode;
+    "sfTouches": NamedNode;
+    "sfWithin": NamedNode;
+}
+export const geor: Geor = (namespace(prefixes.geor) as any);

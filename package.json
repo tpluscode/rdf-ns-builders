@@ -1,34 +1,56 @@
 {
-  "name": "ts-template",
+  "name": "@tpluscode/rdf-ns-builders",
   "version": "0.0.0",
-  "description": "",
-  "main": "lib/node/index.js",
-  "module": "lib/es/index.js",
+  "description": "Generated RDF/JS namespace builders for common vocabularies",
+  "main": "dist/node/index.js",
+  "module": "dist/es/index.js",
   "types": "index.d.ts",
   "scripts": {
-    "test": "jest --coverage",
+    "generate": "ts-node -P tsconfig.node.json build/index.ts src",
+    "test": "jest",
     "prepack": "npm run build",
-    "build": "npm run build:node & npm run build:web & npm run build:types",
+    "build": "npm run build:node & npm run build:web",
     "build:node": "tsc -p tsconfig.node.json",
-    "build:web": "tsc -p tsconfig.es.json",
-    "build:types": "tsc -p tsconfig.json --declaration --outDir . --emitDeclarationOnly --declarationMap"
+    "build:web": "tsc -p tsconfig.es.json"
+  },
+  "files": [
+    "dist",
+    "vocabularies",
+    "*.d.ts",
+    "*.d.ts.map"
+  ],
+  "dependencies": {
+    "@rdfjs/namespace": "^1.1.0",
+    "@types/rdfjs__namespace": "^1.1.1",
+    "@types/rdf-js": "^2.0.11",
+    "@zazuko/rdf-vocabularies": "^2020.2.11"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.8.3",
     "@babel/preset-typescript": "^7.8.3",
     "@commitlint/cli": "^8.2.0",
     "@commitlint/config-conventional": "^8.2.0",
+    "@rdfjs/data-model": "^1.1.2",
     "@tpluscode/eslint-config": "0.0.4",
+    "@types/clownface": "^0.12.7",
     "@types/jest": "^25.1.2",
+    "@types/rdf-ext": "^1.3.5",
+    "@types/yargs": "^15.0.3",
     "@typescript-eslint/eslint-plugin": "^2.19.0",
     "@typescript-eslint/parser": "^2.19.0",
+    "clownface": "^0.12.1",
     "cz-conventional-changelog": "^3.0.2",
     "eslint-plugin-jest": "^23.1.1",
     "husky": "^3.1.0",
     "jest": "^25.1.0",
     "lint-staged": "^10.0.7",
     "standard": "^14.3.1",
-    "typescript": "^3.7.5"
+    "ts-node": "^8.6.2",
+    "typescript": "^3.7.5",
+    "yargs": "^15.1.0"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "repository": {
     "type": "git",
