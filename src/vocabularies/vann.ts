@@ -1,7 +1,7 @@
 import { prefixes } from "@zazuko/rdf-vocabularies";
-import namespace from "@rdfjs/namespace";
+import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "rdf-js";
-interface Vann {
+type Vann = NamespaceBuilder & {
     /*A reference to a resource that describes changes between this version of a vocabulary and the previous.*/
     "changes": NamedNode;
     /*A reference to a resource that provides an example of how this resource can be used.*/
@@ -16,5 +16,5 @@ interface Vann {
     "usageNote": NamedNode;
     "vann-vocab-20050401": NamedNode;
     "vann-vocab-20040305": NamedNode;
-}
+};
 export const vann: Vann = (namespace(prefixes.vann) as any);

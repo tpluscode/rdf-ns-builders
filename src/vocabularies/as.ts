@@ -1,7 +1,7 @@
 import { prefixes } from "@zazuko/rdf-vocabularies";
-import namespace from "@rdfjs/namespace";
+import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "rdf-js";
-interface As {
+type As = NamespaceBuilder & {
     /*Actor accepts the Object*/
     "Accept": NamedNode;
     /*An Object representing some form of Action that has been taken*/
@@ -215,5 +215,5 @@ interface As {
     "verb": NamedNode;
     /*Specifies the preferred display width of the content, expressed in terms of device independent pixels.*/
     "width": NamedNode;
-}
+};
 export const as: As = (namespace(prefixes.as) as any);

@@ -1,7 +1,7 @@
 import { prefixes } from "@zazuko/rdf-vocabularies";
-import namespace from "@rdfjs/namespace";
+import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "rdf-js";
-interface Skos {
+type Skos = NamespaceBuilder & {
     "Collection": NamedNode;
     "Concept": NamedNode;
     "ConceptScheme": NamedNode;
@@ -44,5 +44,5 @@ interface Skos {
     "scopeNote": NamedNode;
     "semanticRelation": NamedNode;
     "topConceptOf": NamedNode;
-}
+};
 export const skos: Skos = (namespace(prefixes.skos) as any);

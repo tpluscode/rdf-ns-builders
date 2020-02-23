@@ -1,6 +1,5 @@
 import { prefixes } from "@zazuko/rdf-vocabularies";
-import namespace from "@rdfjs/namespace";
+import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "rdf-js";
-interface Ctag {
-}
+type Ctag = NamespaceBuilder & {};
 export const ctag: Ctag = (namespace(prefixes.ctag) as any);

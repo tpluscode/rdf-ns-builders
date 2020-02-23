@@ -1,7 +1,7 @@
 import { prefixes } from "@zazuko/rdf-vocabularies";
-import namespace from "@rdfjs/namespace";
+import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "rdf-js";
-interface Rdfa {
+type Rdfa = NamespaceBuilder & {
     "DocumentError": NamedNode;
     "Error": NamedNode;
     "Info": NamedNode;
@@ -22,5 +22,5 @@ interface Rdfa {
     "uri": NamedNode;
     "usesVocabulary": NamedNode;
     "vocabulary": NamedNode;
-}
+};
 export const rdfa: Rdfa = (namespace(prefixes.rdfa) as any);

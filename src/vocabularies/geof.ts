@@ -1,7 +1,7 @@
 import { prefixes } from "@zazuko/rdf-vocabularies";
-import namespace from "@rdfjs/namespace";
+import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "rdf-js";
-interface Geof {
+type Geof = NamespaceBuilder & {
     "boundary": NamedNode;
     "buffer": NamedNode;
     "convexHull": NamedNode;
@@ -37,5 +37,5 @@ interface Geof {
     "sfWithin": NamedNode;
     "symDifference": NamedNode;
     "union": NamedNode;
-}
+};
 export const geof: Geof = (namespace(prefixes.geof) as any);

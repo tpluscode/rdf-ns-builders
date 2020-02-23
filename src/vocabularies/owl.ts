@@ -1,7 +1,7 @@
 import { prefixes } from "@zazuko/rdf-vocabularies";
-import namespace from "@rdfjs/namespace";
+import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "rdf-js";
-interface Owl {
+type Owl = NamespaceBuilder & {
     /*The class of collections of pairwise different individuals.*/
     "AllDifferent": NamedNode;
     /*The class of collections of pairwise disjoint classes.*/
@@ -156,5 +156,5 @@ interface Owl {
     "versionInfo": NamedNode;
     /*The property that determines the collection of facet-value pairs that define a datatype restriction.*/
     "withRestrictions": NamedNode;
-}
+};
 export const owl: Owl = (namespace(prefixes.owl) as any);

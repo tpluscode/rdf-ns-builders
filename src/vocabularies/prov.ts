@@ -1,7 +1,7 @@
 import { prefixes } from "@zazuko/rdf-vocabularies";
-import namespace from "@rdfjs/namespace";
+import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "rdf-js";
-interface Prov {
+type Prov = NamespaceBuilder & {
     "Accept": NamedNode;
     "Activity": NamedNode;
     /*ActivityInfluence provides additional descriptions of an Activity's binary influence upon any other kind of resource. Instances of ActivityInfluence use the prov:activity property to cite the influencing Activity.*/
@@ -274,5 +274,5 @@ interface Prov {
     "wasStartedBy": NamedNode;
     "wasUsedBy": NamedNode;
     "wasUsedInDerivation": NamedNode;
-}
+};
 export const prov: Prov = (namespace(prefixes.prov) as any);

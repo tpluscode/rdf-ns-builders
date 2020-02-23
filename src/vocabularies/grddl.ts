@@ -1,7 +1,7 @@
 import { prefixes } from "@zazuko/rdf-vocabularies";
-import namespace from "@rdfjs/namespace";
+import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "rdf-js";
-interface Grddl {
+type Grddl = NamespaceBuilder & {
     /*A resource which has the property that all of its essential characteristics can be conveyed in a message*/
     "InformationResource": NamedNode;
     /*a
@@ -40,5 +40,5 @@ interface Grddl {
         specified by the property that computes an RDF graph from an XML
         document node*/
     "transformationProperty": NamedNode;
-}
+};
 export const grddl: Grddl = (namespace(prefixes.grddl) as any);

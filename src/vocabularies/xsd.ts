@@ -1,7 +1,7 @@
 import { prefixes } from "@zazuko/rdf-vocabularies";
-import namespace from "@rdfjs/namespace";
+import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "rdf-js";
-interface Xsd {
+type Xsd = NamespaceBuilder & {
     /*
         ENTITIES represents the ENTITIES attribute type from [XML]. The ·value
         space· of ENTITIES is the set of finite, non-zero-length sequences of
@@ -367,5 +367,5 @@ interface Xsd {
          duration datatype which is totally ordered.
       */
     "yearMonthDuration": NamedNode;
-}
+};
 export const xsd: Xsd = (namespace(prefixes.xsd) as any);

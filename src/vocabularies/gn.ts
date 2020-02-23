@@ -1,7 +1,7 @@
 import { prefixes } from "@zazuko/rdf-vocabularies";
-import namespace from "@rdfjs/namespace";
+import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "rdf-js";
-interface Gn {
+type Gn = NamespaceBuilder & {
     "A.ADM1": NamedNode;
     "A.ADM1H": NamedNode;
     "A.ADM2": NamedNode;
@@ -765,5 +765,5 @@ interface Gn {
     "shortName": NamedNode;
     /*A Wikipedia article of which subject is the resource.*/
     "wikipediaArticle": NamedNode;
-}
+};
 export const gn: Gn = (namespace(prefixes.gn) as any);

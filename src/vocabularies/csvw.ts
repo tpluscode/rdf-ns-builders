@@ -1,7 +1,7 @@
 import { prefixes } from "@zazuko/rdf-vocabularies";
-import namespace from "@rdfjs/namespace";
+import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "rdf-js";
-interface Csvw {
+type Csvw = NamespaceBuilder & {
     /*A Cell represents a cell at the intersection of a Row and a Column within a Table.*/
     "Cell": NamedNode;
     /*A Column represents a vertical arrangement of Cells within a Table.*/
@@ -175,5 +175,5 @@ interface Csvw {
     "valueUrl": NamedNode;
     /*A boolean atomic property taking a single value which indicates whether the column is a virtual column not present in the original source*/
     "virtual": NamedNode;
-}
+};
 export const csvw: Csvw = (namespace(prefixes.csvw) as any);

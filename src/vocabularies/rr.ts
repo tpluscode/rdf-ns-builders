@@ -1,7 +1,7 @@
 import { prefixes } from "@zazuko/rdf-vocabularies";
-import namespace from "@rdfjs/namespace";
+import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "rdf-js";
-interface Rr {
+type Rr = NamespaceBuilder & {
     "BaseTableOrView": NamedNode;
     /*Denotes a blank node, used with termType*/
     "BlankNode": NamedNode;
@@ -83,5 +83,5 @@ interface Rr {
     "template": NamedNode;
     /*A string indicating whether subject or object generated using the value from column name specified for rr:column should be an IRI reference, blank node, or a literal.*/
     "termType": NamedNode;
-}
+};
 export const rr: Rr = (namespace(prefixes.rr) as any);

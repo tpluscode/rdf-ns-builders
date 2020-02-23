@@ -1,7 +1,7 @@
 import { prefixes } from "@zazuko/rdf-vocabularies";
-import namespace from "@rdfjs/namespace";
+import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "rdf-js";
-interface Sosa {
+type Sosa = NamespaceBuilder & {
     /*An actuatable quality (property, characteristic) of a FeatureOfInterest.*/
     "ActuatableProperty": NamedNode;
     /*An Actuation carries out an (Actuation) Procedure to change the state of the world using an Actuator.*/
@@ -74,5 +74,5 @@ interface Sosa {
     "resultTime": NamedNode;
     /*A relation to link to a re-usable Procedure used in making an Observation, an Actuation, or a Sample, typically through a Sensor, Actuator or Sampler.*/
     "usedProcedure": NamedNode;
-}
+};
 export const sosa: Sosa = (namespace(prefixes.sosa) as any);

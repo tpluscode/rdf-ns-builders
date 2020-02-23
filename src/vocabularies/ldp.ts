@@ -1,7 +1,7 @@
 import { prefixes } from "@zazuko/rdf-vocabularies";
-import namespace from "@rdfjs/namespace";
+import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "rdf-js";
-interface Ldp {
+type Ldp = NamespaceBuilder & {
     /*Ascending order.*/
     "Ascending": NamedNode;
     /*An LDPC that uses a predefined predicate to simply link to its contained resources.*/
@@ -60,5 +60,5 @@ interface Ldp {
     "pageSortOrder": NamedNode;
     /*Predicate used to specify the order of the members across a page sequence's in-sequence page resources; it asserts nothing about the order of members in the representation of a single page.*/
     "pageSortPredicate": NamedNode;
-}
+};
 export const ldp: Ldp = (namespace(prefixes.ldp) as any);

@@ -1,7 +1,7 @@
 import { prefixes } from "@zazuko/rdf-vocabularies";
-import namespace from "@rdfjs/namespace";
+import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "rdf-js";
-interface Cnt {
+type Cnt = NamespaceBuilder & {
     /*The content.*/
     "Content": NamedNode;
     /*The base64 encoded content (can be used for binary content).*/
@@ -38,5 +38,5 @@ interface Cnt {
     "systemId": NamedNode;
     /*The XML version declared in the XML declaration.*/
     "version": NamedNode;
-}
+};
 export const cnt: Cnt = (namespace(prefixes.cnt) as any);

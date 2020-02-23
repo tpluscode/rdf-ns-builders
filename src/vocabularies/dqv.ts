@@ -1,7 +1,7 @@
 import { prefixes } from "@zazuko/rdf-vocabularies";
-import namespace from "@rdfjs/namespace";
+import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "rdf-js";
-interface Dqv {
+type Dqv = NamespaceBuilder & {
     /*Represents a group of quality dimensions in which a common type of information is used as quality indicator.*/
     "Category": NamedNode;
     /*Represents criteria relevant for assessing quality. Each quality dimension must have one or more metric to measure it. A dimension is linked with a category using the dqv:inCategory property.*/
@@ -42,5 +42,5 @@ interface Dqv {
     "qualityAssessment": NamedNode;
     /*Refers to values computed by metric.*/
     "value": NamedNode;
-}
+};
 export const dqv: Dqv = (namespace(prefixes.dqv) as any);

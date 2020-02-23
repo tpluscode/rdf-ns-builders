@@ -53,12 +53,17 @@ async function createMembers(prefix: string) {
 }
 
 export async function generateInterface(prefix: string) {
-  return ts.createInterfaceDeclaration(
+  return ts.createTypeAliasDeclaration(
     undefined,
     undefined,
     ts.createIdentifier(toProperCase(prefix)),
     undefined,
-    undefined,
-    await createMembers(prefix),
+    ts.createIntersectionTypeNode([
+      ts.createTypeReferenceNode(
+        ts.createIdentifier('NamespaceBuilder'),
+        undefined
+      ),
+      ts.createTypeLiteralNode(await createMembers(prefix)),
+    ])
   )
 }

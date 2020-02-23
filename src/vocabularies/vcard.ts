@@ -1,7 +1,7 @@
 import { prefixes } from "@zazuko/rdf-vocabularies";
-import namespace from "@rdfjs/namespace";
+import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "rdf-js";
-interface Vcard {
+type Vcard = NamespaceBuilder & {
     "Acquaintance": NamedNode;
     /*To specify the components of the delivery address for the  object*/
     "Address": NamedNode;
@@ -265,5 +265,5 @@ interface Vcard {
     "url": NamedNode;
     /*Used to indicate the literal value of a data property that requires property parameters*/
     "value": NamedNode;
-}
+};
 export const vcard: Vcard = (namespace(prefixes.vcard) as any);

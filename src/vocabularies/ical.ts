@@ -1,7 +1,7 @@
 import { prefixes } from "@zazuko/rdf-vocabularies";
-import namespace from "@rdfjs/namespace";
+import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "rdf-js";
-interface Ical {
+type Ical = NamespaceBuilder & {
     "DomainOf_rrule": NamedNode;
     "List_of_Float": NamedNode;
     /*Provide a grouping of component properties that define an alarm.*/
@@ -173,5 +173,5 @@ interface Ical {
     /*This property specifies the identifier corresponding to the highest version number or the minimum and maximum range of the iCalendar specification that is required in order to interpret the iCalendar object.*/
     "version": NamedNode;
     "wkst": NamedNode;
-}
+};
 export const ical: Ical = (namespace(prefixes.ical) as any);

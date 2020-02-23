@@ -1,7 +1,7 @@
 import { prefixes } from "@zazuko/rdf-vocabularies";
-import namespace from "@rdfjs/namespace";
+import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "rdf-js";
-interface Rdf {
+type Rdf = NamespaceBuilder & {
     /*The class of containers of alternatives.*/
     "Alt": NamedNode;
     /*The class of unordered containers.*/
@@ -46,5 +46,5 @@ interface Rdf {
     "type": NamedNode;
     /*Idiomatic property used for structured values.*/
     "value": NamedNode;
-}
+};
 export const rdf: Rdf = (namespace(prefixes.rdf) as any);

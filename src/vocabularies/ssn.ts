@@ -1,7 +1,7 @@
 import { prefixes } from "@zazuko/rdf-vocabularies";
-import namespace from "@rdfjs/namespace";
+import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "rdf-js";
-interface Ssn {
+type Ssn = NamespaceBuilder & {
     /*Describes the Deployment of one or more Systems for a particular purpose. Deployment may be done on a Platform.*/
     "Deployment": NamedNode;
     /*Any information that is provided to a Procedure for its use.*/
@@ -44,5 +44,5 @@ interface Ssn {
     "isProxyFor": NamedNode;
     /*Relation between an Observation and the Stimulus that originated it.*/
     "wasOriginatedBy": NamedNode;
-}
+};
 export const ssn: Ssn = (namespace(prefixes.ssn) as any);

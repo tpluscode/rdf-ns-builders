@@ -1,7 +1,7 @@
 import { prefixes } from "@zazuko/rdf-vocabularies";
-import namespace from "@rdfjs/namespace";
+import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "rdf-js";
-interface Rss {
+type Rss = NamespaceBuilder & {
     /*An RSS information channel.*/
     "channel": NamedNode;
     /*A short text description of the subject.*/
@@ -22,5 +22,5 @@ interface Rss {
     "title": NamedNode;
     /*The URL of the image to used in the 'src' attribute of the channel's image tag when rendered as HTML.*/
     "url": NamedNode;
-}
+};
 export const rss: Rss = (namespace(prefixes.rss) as any);

@@ -1,7 +1,7 @@
 import { prefixes } from "@zazuko/rdf-vocabularies";
-import namespace from "@rdfjs/namespace";
+import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "rdf-js";
-interface Dbo {
+type Dbo = NamespaceBuilder & {
     /*An abbey is a Catholic monastery or convent, under the authority of an Abbot or an Abbess, who serves as the spiritual father or mother of the community.*/
     "Abbey": NamedNode;
     "AcademicConference": NamedNode;
@@ -4543,5 +4543,5 @@ interface Dbo {
     "Monastry": NamedNode;
     "Tribus": NamedNode;
     "MilitaryConflict,_AdministrativeRegion": NamedNode;
-}
+};
 export const dbo: Dbo = (namespace(prefixes.dbo) as any);

@@ -1,7 +1,7 @@
 import { prefixes } from "@zazuko/rdf-vocabularies";
-import namespace from "@rdfjs/namespace";
+import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "rdf-js";
-interface Rdau {
+type Rdau = NamespaceBuilder & {
     "P60001": NamedNode;
     "P60002": NamedNode;
     "P60003": NamedNode;
@@ -3122,5 +3122,5 @@ interface Rdau {
     "fingerprintOf.en": NamedNode;
     "referenceSource.en": NamedNode;
     "statusOfIdentification.en": NamedNode;
-}
+};
 export const rdau: Rdau = (namespace(prefixes.rdau) as any);

@@ -1,7 +1,7 @@
 import { prefixes } from "@zazuko/rdf-vocabularies";
-import namespace from "@rdfjs/namespace";
+import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "rdf-js";
-interface Sh {
+type Sh = NamespaceBuilder & {
     /*The base class of validation results, typically not instantiated directly.*/
     "AbstractResult": NamedNode;
     "AndConstraintComponent-and": NamedNode;
@@ -405,5 +405,5 @@ interface Sh {
     "zeroOrMorePath": NamedNode;
     /*The (single) value of this property represents a path that is matched zero or one times.*/
     "zeroOrOnePath": NamedNode;
-}
+};
 export const sh: Sh = (namespace(prefixes.sh) as any);

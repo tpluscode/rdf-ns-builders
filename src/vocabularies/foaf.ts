@@ -1,7 +1,7 @@
 import { prefixes } from "@zazuko/rdf-vocabularies";
-import namespace from "@rdfjs/namespace";
+import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "rdf-js";
-interface Foaf {
+type Foaf = NamespaceBuilder & {
     /*An agent (eg. person, group, software or physical artifact).*/
     "Agent": NamedNode;
     /*A document.*/
@@ -152,5 +152,5 @@ interface Foaf {
     "workplaceHomepage": NamedNode;
     /*A Yahoo chat ID*/
     "yahooChatID": NamedNode;
-}
+};
 export const foaf: Foaf = (namespace(prefixes.foaf) as any);

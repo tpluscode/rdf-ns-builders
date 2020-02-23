@@ -1,7 +1,7 @@
 import { prefixes } from "@zazuko/rdf-vocabularies";
-import namespace from "@rdfjs/namespace";
+import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "rdf-js";
-interface Dcat {
+type Dcat = NamespaceBuilder & {
     /*A curated collection of metadata about resources (e.g., datasets and data services in the context of a data catalog).*/
     "Catalog": NamedNode;
     /*1つのデータセットを記述したデータ・カタログ内のレコード。*/
@@ -70,5 +70,5 @@ interface Dcat {
     "theme": NamedNode;
     /*El sistema de organización del conocimiento utilizado para clasificar conjuntos de datos de catálogos.*/
     "themeTaxonomy": NamedNode;
-}
+};
 export const dcat: Dcat = (namespace(prefixes.dcat) as any);

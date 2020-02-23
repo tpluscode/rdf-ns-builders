@@ -1,7 +1,7 @@
 import { prefixes } from "@zazuko/rdf-vocabularies";
-import namespace from "@rdfjs/namespace";
+import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "rdf-js";
-interface Void {
+type Void = NamespaceBuilder & {
     /*A set of RDF triples that are published, maintained or aggregated by a single provider.*/
     "Dataset": NamedNode;
     /*A web resource whose foaf:primaryTopic or foaf:topics include void:Datasets.*/
@@ -59,5 +59,5 @@ interface Void {
     "uriSpace": NamedNode;
     /*A vocabulary that is used in the dataset.*/
     "vocabulary": NamedNode;
-}
+};
 export const _void: Void = (namespace(prefixes.void) as any);

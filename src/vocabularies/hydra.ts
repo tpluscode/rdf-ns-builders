@@ -1,7 +1,7 @@
 import { prefixes } from "@zazuko/rdf-vocabularies";
-import namespace from "@rdfjs/namespace";
+import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "rdf-js";
-interface Hydra {
+type Hydra = NamespaceBuilder & {
     /*The Hydra API documentation class*/
     "ApiDocumentation": NamedNode;
     /*A representation that serializes just the lexical form of a variable value, but omits language and type information.*/
@@ -116,5 +116,5 @@ interface Hydra {
     "view": NamedNode;
     /*True if the client can change the property's value, false otherwise.*/
     "writeable": NamedNode;
-}
+};
 export const hydra: Hydra = (namespace(prefixes.hydra) as any);

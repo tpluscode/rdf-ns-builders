@@ -1,7 +1,7 @@
 import { prefixes } from "@zazuko/rdf-vocabularies";
-import namespace from "@rdfjs/namespace";
+import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "rdf-js";
-interface Sdmx {
+type Sdmx = NamespaceBuilder & {
     "CodeList": NamedNode;
     /*Denotes an SDMX concept, used in the particular SDMX terminological sense, which is in principle narrower than skos:Concept*/
     "Concept": NamedNode;
@@ -29,5 +29,5 @@ interface Sdmx {
     "measureTypeConcept": NamedNode;
     /*Indicates an additional component used as the primary measure within the SDMX data. In the case of multi-measure data sets the RDF representation uses the specific measure rather than a subsuming overall measure. This property records the subsuming primary measure (typically sdmx-measure:obsValue) to enable round tripping of this information.*/
     "primaryMeasure": NamedNode;
-}
+};
 export const sdmx: Sdmx = (namespace(prefixes.sdmx) as any);

@@ -1,7 +1,7 @@
 import { prefixes } from "@zazuko/rdf-vocabularies";
-import namespace from "@rdfjs/namespace";
+import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "rdf-js";
-interface Gr {
+type Gr = NamespaceBuilder & {
     /*DEPRECATED - This class is superseded by gr:Individual. Replace all occurrences of gr:ActualProductOrServiceInstance by gr:Individual, if possible.*/
     "ActualProductOrServiceInstance": NamedNode;
     /*Payment by credit or debit cards issued by the American Express network.*/
@@ -729,5 +729,5 @@ interface Gr {
     /*The width of the gr:ProductOrService.
     Typical unit code(s): CMT for centimeters, INH for inches*/
     "width": NamedNode;
-}
+};
 export const gr: Gr = (namespace(prefixes.gr) as any);

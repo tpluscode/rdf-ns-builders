@@ -1,7 +1,7 @@
 import { prefixes } from "@zazuko/rdf-vocabularies";
-import namespace from "@rdfjs/namespace";
+import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "rdf-js";
-interface Qudt {
+type Qudt = NamespaceBuilder & {
     "AbsorbedDoseRateUnit": NamedNode;
     "AbsorbedDoseUnit": NamedNode;
     "AbstractDatatype": NamedNode;
@@ -802,5 +802,5 @@ interface Qudt {
     "UTF8-CHAR": NamedNode;
     "UNSIGNED": NamedNode;
     "SIGNED": NamedNode;
-}
+};
 export const qudt: Qudt = (namespace(prefixes.qudt) as any);

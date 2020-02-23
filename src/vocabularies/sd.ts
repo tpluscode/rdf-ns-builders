@@ -1,7 +1,7 @@
 import { prefixes } from "@zazuko/rdf-vocabularies";
-import namespace from "@rdfjs/namespace";
+import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "rdf-js";
-interface Sd {
+type Sd = NamespaceBuilder & {
     /*An instance of sd:Aggregate represents an aggregate that may be used in a SPARQL aggregate query (for instance in a HAVING clause or SELECT expression) besides the standard list of supported aggregates COUNT, SUM, MIN, MAX, AVG, GROUP_CONCAT, and SAMPLE.*/
     "Aggregate": NamedNode;
     /*sd:BasicFederatedQuery, when used as the object of the sd:feature property, indicates that the SPARQL service supports basic federated query using the SERVICE keyword as defined by SPARQL 1.1 Federation Extensions.*/
@@ -78,5 +78,5 @@ interface Sd {
     "supportedEntailmentProfile": NamedNode;
     /*Relates an instance of sd:Service to a SPARQL language (e.g. Query and Update) that it implements.*/
     "supportedLanguage": NamedNode;
-}
+};
 export const sd: Sd = (namespace(prefixes.sd) as any);

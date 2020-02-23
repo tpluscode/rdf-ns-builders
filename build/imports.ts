@@ -14,7 +14,14 @@ export default [ts.createImportDeclaration(
 ts.createImportDeclaration(
   undefined,
   undefined,
-  ts.createImportClause(ts.createIdentifier('namespace'), undefined),
+  ts.createImportClause(
+    ts.createIdentifier('namespace'),
+    ts.createNamedImports([
+      ts.createImportSpecifier(
+        undefined,
+        ts.createIdentifier('NamespaceBuilder')
+      ),
+    ])),
   ts.createStringLiteral('@rdfjs/namespace')
 ),
 ts.createImportDeclaration(

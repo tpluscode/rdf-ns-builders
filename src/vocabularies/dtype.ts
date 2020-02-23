@@ -1,7 +1,7 @@
 import { prefixes } from "@zazuko/rdf-vocabularies";
-import namespace from "@rdfjs/namespace";
+import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "rdf-js";
-interface Dtype {
+type Dtype = NamespaceBuilder & {
     "CodeList": NamedNode;
     "CompositeCodeList": NamedNode;
     "DerivedCodeList": NamedNode;
@@ -23,5 +23,5 @@ interface Dtype {
     "refersTo": NamedNode;
     "type": NamedNode;
     "value": NamedNode;
-}
+};
 export const dtype: Dtype = (namespace(prefixes.dtype) as any);

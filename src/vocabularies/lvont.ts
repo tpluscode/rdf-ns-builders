@@ -1,7 +1,7 @@
 import { prefixes } from "@zazuko/rdf-vocabularies";
-import namespace from "@rdfjs/namespace";
+import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "rdf-js";
-interface Lvont {
+type Lvont = NamespaceBuilder & {
     /*A CJK character radical.*/
     "CJKRadical": NamedNode;
     /*An abstract character as defined by the Unicode Standard,
@@ -91,5 +91,5 @@ interface Lvont {
     "usesScript": NamedNode;
     /*The property of being a variant of another resource.*/
     "variant": NamedNode;
-}
+};
 export const lvont: Lvont = (namespace(prefixes.lvont) as any);

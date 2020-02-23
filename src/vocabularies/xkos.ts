@@ -1,7 +1,7 @@
 import { prefixes } from "@zazuko/rdf-vocabularies";
-import namespace from "@rdfjs/namespace";
+import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "rdf-js";
-interface Xkos {
+type Xkos = NamespaceBuilder & {
     "ClassificationLevel": NamedNode;
     "ConceptAssociation": NamedNode;
     "Correspondence": NamedNode;
@@ -51,5 +51,5 @@ interface Xkos {
     "targetConcept": NamedNode;
     "temporal": NamedNode;
     "variant": NamedNode;
-}
+};
 export const xkos: Xkos = (namespace(prefixes.xkos) as any);

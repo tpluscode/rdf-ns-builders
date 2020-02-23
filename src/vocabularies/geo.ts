@@ -1,7 +1,7 @@
 import { prefixes } from "@zazuko/rdf-vocabularies";
-import namespace from "@rdfjs/namespace";
+import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "rdf-js";
-interface Geo {
+type Geo = NamespaceBuilder & {
     /*
           This class represents the top-level feature type. This class is
           equivalent to GFI_Feature defined in ISO 19156:2011, and it is
@@ -199,5 +199,5 @@ interface Geo {
           A Well-known Text serialization of a geometry object.
         */
     "wktLiteral": NamedNode;
-}
+};
 export const geo: Geo = (namespace(prefixes.geo) as any);

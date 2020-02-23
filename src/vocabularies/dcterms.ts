@@ -1,7 +1,7 @@
 import { prefixes } from "@zazuko/rdf-vocabularies";
-import namespace from "@rdfjs/namespace";
+import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "rdf-js";
-interface Dcterms {
+type Dcterms = NamespaceBuilder & {
     /*A resource that acts or has the power to act.*/
     "Agent": NamedNode;
     /*A group of agents.*/
@@ -199,5 +199,5 @@ interface Dcterms {
     /*Date (often a range) of validity of a resource.*/
     "valid": NamedNode;
     "Extent": NamedNode;
-}
+};
 export const dcterms: Dcterms = (namespace(prefixes.dcterms) as any);

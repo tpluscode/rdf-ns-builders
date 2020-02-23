@@ -1,7 +1,7 @@
 import { prefixes } from "@zazuko/rdf-vocabularies";
-import namespace from "@rdfjs/namespace";
+import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "rdf-js";
-interface Qb {
+type Qb = NamespaceBuilder & {
     /*Abstract superclass for everything that can have attributes and dimensions*/
     "Attachable": NamedNode;
     /*The class of components which represent attributes of observations in the cube, e.g. unit of measurement*/
@@ -75,5 +75,5 @@ interface Qb {
     "sliceStructure": NamedNode;
     /*indicates the structure to which this data set conforms*/
     "structure": NamedNode;
-}
+};
 export const qb: Qb = (namespace(prefixes.qb) as any);

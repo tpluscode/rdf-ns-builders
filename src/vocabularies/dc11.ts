@@ -1,7 +1,7 @@
 import { prefixes } from "@zazuko/rdf-vocabularies";
-import namespace from "@rdfjs/namespace";
+import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "rdf-js";
-interface Dc11 {
+type Dc11 = NamespaceBuilder & {
     /*An entity responsible for making contributions to the resource.*/
     "contributor": NamedNode;
     /*The spatial or temporal topic of the resource, spatial applicability of the resource, or jurisdiction under which the resource is relevant.*/
@@ -32,5 +32,5 @@ interface Dc11 {
     "title": NamedNode;
     /*The nature or genre of the resource.*/
     "type": NamedNode;
-}
+};
 export const dc11: Dc11 = (namespace(prefixes.dc11) as any);

@@ -1,7 +1,7 @@
 import { prefixes } from "@zazuko/rdf-vocabularies";
-import namespace from "@rdfjs/namespace";
+import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "rdf-js";
-interface Ma {
+type Ma = NamespaceBuilder & {
     /*A person or organisation contributing to the media resource.*/
     "Agent": NamedNode;
     /*A specialisation of Track for Audio to provide a link to specific data properties such as sampleRate, etc. Specialisation is defined through object properties.*/
@@ -179,5 +179,5 @@ interface Ma {
     "title": NamedNode;
     /*Corresponds to 'fragment.name' in the Ontology for Media Resources, for Track fragments.*/
     "trackName": NamedNode;
-}
+};
 export const ma: Ma = (namespace(prefixes.ma) as any);

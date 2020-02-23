@@ -1,7 +1,7 @@
 import { prefixes } from "@zazuko/rdf-vocabularies";
-import namespace from "@rdfjs/namespace";
+import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "rdf-js";
-interface Sioc {
+type Sioc = NamespaceBuilder & {
     /*Community is a high-level concept that defines an online community and what it consists of.*/
     "Community": NamedNode;
     /*An area in which content Items are contained.*/
@@ -198,5 +198,5 @@ interface Sioc {
     "topic": NamedNode;
     /*A Space that the Usergroup has access to.*/
     "usergroup_of": NamedNode;
-}
+};
 export const sioc: Sioc = (namespace(prefixes.sioc) as any);

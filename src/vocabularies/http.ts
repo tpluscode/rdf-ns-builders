@@ -1,7 +1,7 @@
 import { prefixes } from "@zazuko/rdf-vocabularies";
-import namespace from "@rdfjs/namespace";
+import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "rdf-js";
-interface Http {
+type Http = NamespaceBuilder & {
     /*A connection used for HTTP transfer.*/
     "Connection": NamedNode;
     /*An entity header in an HTTP message.*/
@@ -80,5 +80,5 @@ interface Http {
     "statusCodeNumber": NamedNode;
     /*The status code value of an HTTP response.*/
     "statusCodeValue": NamedNode;
-}
+};
 export const http: Http = (namespace(prefixes.http) as any);

@@ -1,7 +1,7 @@
 import { prefixes } from "@zazuko/rdf-vocabularies";
-import namespace from "@rdfjs/namespace";
+import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "rdf-js";
-interface Oa {
+type Oa = NamespaceBuilder & {
     /*The class for Web Annotations.*/
     "Annotation": NamedNode;
     /*A subClass of  as:OrderedCollection  that conveys to a consuming application that it should select one of the resources in the  as:items  list to use, rather than all of them.  This is typically used to provide a choice of resources to render to the user, based on further supplied properties.  If the consuming application cannot determine the user's preference, then it should use the first in the list.*/
@@ -139,5 +139,5 @@ interface Oa {
     "textDirection": NamedNode;
     /*A object of the relationship is a resource from which the source resource was retrieved by the providing system.*/
     "via": NamedNode;
-}
+};
 export const oa: Oa = (namespace(prefixes.oa) as any);

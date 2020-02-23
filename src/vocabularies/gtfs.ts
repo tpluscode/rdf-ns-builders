@@ -1,7 +1,7 @@
 import { prefixes } from "@zazuko/rdf-vocabularies";
-import namespace from "@rdfjs/namespace";
+import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "rdf-js";
-interface Gtfs {
+type Gtfs = NamespaceBuilder & {
     /*An agency operates a certain schedule based transport mode*/
     "Agency": NamedNode;
     /*La tarifa se debe pagar antes de subir a bordo*/
@@ -200,5 +200,5 @@ interface Gtfs {
     /*A gtfs:Stop defines the fare zone. Zones are required if you want to provide fare information using gtfs:FareClass.*/
     "zone": NamedNode;
     "Transfer": NamedNode;
-}
+};
 export const gtfs: Gtfs = (namespace(prefixes.gtfs) as any);

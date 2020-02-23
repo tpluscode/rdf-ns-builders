@@ -1,7 +1,7 @@
 import { prefixes } from "@zazuko/rdf-vocabularies";
-import namespace from "@rdfjs/namespace";
+import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "rdf-js";
-interface Cc {
+type Cc = NamespaceBuilder & {
     /*credit be given to
                 copyright holder and/or author*/
     "Attribution": NamedNode;
@@ -78,5 +78,5 @@ interface Cc {
     "prohibits": NamedNode;
     "requires": NamedNode;
     "useGuidelines": NamedNode;
-}
+};
 export const cc: Cc = (namespace(prefixes.cc) as any);

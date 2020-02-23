@@ -1,7 +1,7 @@
 import { prefixes } from "@zazuko/rdf-vocabularies";
-import namespace from "@rdfjs/namespace";
+import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "rdf-js";
-interface Duv {
+type Duv = NamespaceBuilder & {
     /*Predefined criteria used to express a user opinion about a dataset or distribution using a discrete range of values.*/
     "RatingFeedback": NamedNode;
     /*A helpful description of actions that can be performed on a given dataset or distribution.*/
@@ -22,5 +22,5 @@ interface Duv {
     "hasUsageTool": NamedNode;
     /*Dataset associated with Usage. */
     "refersTo": NamedNode;
-}
+};
 export const duv: Duv = (namespace(prefixes.duv) as any);

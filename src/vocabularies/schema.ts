@@ -1,7 +1,7 @@
 import { prefixes } from "@zazuko/rdf-vocabularies";
-import namespace from "@rdfjs/namespace";
+import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "rdf-js";
-interface Schema {
+type Schema = NamespaceBuilder & {
     /*A radio channel that uses AM.*/
     "AMRadioChannel": NamedNode;
     /*Reference documentation for application programming interfaces (APIs).*/
@@ -3888,5 +3888,5 @@ interface Schema {
     "TouristDestination": NamedNode;
     "TouristTrip": NamedNode;
     "XPathType": NamedNode;
-}
+};
 export const schema: Schema = (namespace(prefixes.schema) as any);

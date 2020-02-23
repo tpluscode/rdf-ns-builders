@@ -1,7 +1,7 @@
 import { prefixes } from "@zazuko/rdf-vocabularies";
-import namespace from "@rdfjs/namespace";
+import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "rdf-js";
-interface Og {
+type Og = NamespaceBuilder & {
     /*[DEPRECATED] An album to which some audio belongs.*/
     "audio:album": NamedNode;
     /*[DEPRECATED] An artist of some audio.*/
@@ -72,5 +72,5 @@ interface Og {
     "video:width": NamedNode;
     /*A relevant video URL for your object.*/
     "video": NamedNode;
-}
+};
 export const og: Og = (namespace(prefixes.og) as any);

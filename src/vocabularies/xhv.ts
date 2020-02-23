@@ -1,7 +1,7 @@
 import { prefixes } from "@zazuko/rdf-vocabularies";
-import namespace from "@rdfjs/namespace";
+import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "rdf-js";
-interface Xhv {
+type Xhv = NamespaceBuilder & {
     /*A message
           with important, and usually time-sensitive, information. Also see
           alertdialog and status.*/
@@ -288,5 +288,5 @@ interface Xhv {
     /*up refers to a resource "above" in a
           hierarchically structured set. */
     "up": NamedNode;
-}
+};
 export const xhv: Xhv = (namespace(prefixes.xhv) as any);

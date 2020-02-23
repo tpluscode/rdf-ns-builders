@@ -1,7 +1,7 @@
 import { prefixes } from "@zazuko/rdf-vocabularies";
-import namespace from "@rdfjs/namespace";
+import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "rdf-js";
-interface Frbr {
+type Frbr = NamespaceBuilder & {
     /*An abstract notion or idea.
     
     The entity defined as concept encompasses a comprehensive range of abstractions that may be the subject of a work: fields of knowledge, disciplines, schools of thought (philosophies, religions, political ideologies, etc.), theories, processes, techniques, practices, etc.  A concept may be broad in nature or narrowly defined and precise. */
@@ -171,5 +171,5 @@ interface Frbr {
     "translation": NamedNode;
     /*It identifies the original expression of a translated one.*/
     "translationOf": NamedNode;
-}
+};
 export const frbr: Frbr = (namespace(prefixes.frbr) as any);
