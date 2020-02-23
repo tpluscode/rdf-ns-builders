@@ -84,5 +84,6 @@
       "<rootDir>"
     ],
     "testRegex": "tests/.+\\.ts$"
-  }
+  },
+  "sideEffects": false
 }
