@@ -266,4 +266,4 @@ type Vcard = NamespaceBuilder & {
     /*Used to indicate the literal value of a data property that requires property parameters*/
     "value": NamedNode;
 };
-export const vcard: Vcard = (namespace(prefixes.vcard) as any);
+export const vcard: Vcard = (namespace("http://www.w3.org/2006/vcard/ns#") as any);

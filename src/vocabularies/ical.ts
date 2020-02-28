@@ -174,4 +174,4 @@ type Ical = NamespaceBuilder & {
     "version": NamedNode;
     "wkst": NamedNode;
 };
-export const ical: Ical = (namespace(prefixes.ical) as any);
+export const ical: Ical = (namespace("http://www.w3.org/2002/12/cal/icaltzd#") as any);

@@ -39,4 +39,4 @@ type Cnt = NamespaceBuilder & {
     /*The XML version declared in the XML declaration.*/
     "version": NamedNode;
 };
-export const cnt: Cnt = (namespace(prefixes.cnt) as any);
+export const cnt: Cnt = (namespace("http://www.w3.org/2011/content#") as any);

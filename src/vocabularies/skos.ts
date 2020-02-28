@@ -45,4 +45,4 @@ type Skos = NamespaceBuilder & {
     "semanticRelation": NamedNode;
     "topConceptOf": NamedNode;
 };
-export const skos: Skos = (namespace(prefixes.skos) as any);
+export const skos: Skos = (namespace("http://www.w3.org/2004/02/skos/core#") as any);

@@ -23,4 +23,4 @@ type Duv = NamespaceBuilder & {
     /*Dataset associated with Usage. */
     "refersTo": NamedNode;
 };
-export const duv: Duv = (namespace(prefixes.duv) as any);
+export const duv: Duv = (namespace("http://www.w3.org/ns/duv#") as any);

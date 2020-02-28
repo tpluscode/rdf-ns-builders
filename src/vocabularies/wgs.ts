@@ -34,4 +34,4 @@ type Wgs = NamespaceBuilder & {
     /*The WGS84 longitude of a SpatialThing (decimal degrees).*/
     "long": NamedNode;
 };
-export const wgs: Wgs = (namespace(prefixes.wgs) as any);
+export const wgs: Wgs = (namespace("http://www.w3.org/2003/01/geo/wgs84_pos#") as any);

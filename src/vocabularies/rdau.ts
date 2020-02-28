@@ -3123,4 +3123,4 @@ type Rdau = NamespaceBuilder & {
     "referenceSource.en": NamedNode;
     "statusOfIdentification.en": NamedNode;
 };
-export const rdau: Rdau = (namespace(prefixes.rdau) as any);
+export const rdau: Rdau = (namespace("http://rdaregistry.info/Elements/u/") as any);

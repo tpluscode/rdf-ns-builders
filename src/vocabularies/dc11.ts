@@ -33,4 +33,4 @@ type Dc11 = NamespaceBuilder & {
     /*The nature or genre of the resource.*/
     "type": NamedNode;
 };
-export const dc11: Dc11 = (namespace(prefixes.dc11) as any);
+export const dc11: Dc11 = (namespace("http://purl.org/dc/elements/1.1/") as any);

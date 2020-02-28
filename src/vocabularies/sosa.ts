@@ -75,4 +75,4 @@ type Sosa = NamespaceBuilder & {
     /*A relation to link to a re-usable Procedure used in making an Observation, an Actuation, or a Sample, typically through a Sensor, Actuator or Sampler.*/
     "usedProcedure": NamedNode;
 };
-export const sosa: Sosa = (namespace(prefixes.sosa) as any);
+export const sosa: Sosa = (namespace("http://www.w3.org/ns/sosa/") as any);

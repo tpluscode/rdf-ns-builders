@@ -140,4 +140,4 @@ type Oa = NamespaceBuilder & {
     /*A object of the relationship is a resource from which the source resource was retrieved by the providing system.*/
     "via": NamedNode;
 };
-export const oa: Oa = (namespace(prefixes.oa) as any);
+export const oa: Oa = (namespace("http://www.w3.org/ns/oa#") as any);

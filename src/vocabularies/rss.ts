@@ -23,4 +23,4 @@ type Rss = NamespaceBuilder & {
     /*The URL of the image to used in the 'src' attribute of the channel's image tag when rendered as HTML.*/
     "url": NamedNode;
 };
-export const rss: Rss = (namespace(prefixes.rss) as any);
+export const rss: Rss = (namespace("http://purl.org/rss/1.0/") as any);

@@ -193,4 +193,4 @@ type Time = NamespaceBuilder & {
     "2006": NamedNode;
     "2016": NamedNode;
 };
-export const time: Time = (namespace(prefixes.time) as any);
+export const time: Time = (namespace("http://www.w3.org/2006/time#") as any);

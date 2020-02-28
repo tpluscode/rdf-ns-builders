@@ -730,4 +730,4 @@ type Gr = NamespaceBuilder & {
     Typical unit code(s): CMT for centimeters, INH for inches*/
     "width": NamedNode;
 };
-export const gr: Gr = (namespace(prefixes.gr) as any);
+export const gr: Gr = (namespace("http://purl.org/goodrelations/v1#") as any);

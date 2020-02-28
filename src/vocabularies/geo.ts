@@ -200,4 +200,4 @@ type Geo = NamespaceBuilder & {
         */
     "wktLiteral": NamedNode;
 };
-export const geo: Geo = (namespace(prefixes.geo) as any);
+export const geo: Geo = (namespace("http://www.opengis.net/ont/geosparql#") as any);

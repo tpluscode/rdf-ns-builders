@@ -172,4 +172,4 @@ type Frbr = NamespaceBuilder & {
     /*It identifies the original expression of a translated one.*/
     "translationOf": NamedNode;
 };
-export const frbr: Frbr = (namespace(prefixes.frbr) as any);
+export const frbr: Frbr = (namespace("http://purl.org/vocab/frbr/core#") as any);

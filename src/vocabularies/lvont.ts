@@ -92,4 +92,4 @@ type Lvont = NamespaceBuilder & {
     /*The property of being a variant of another resource.*/
     "variant": NamedNode;
 };
-export const lvont: Lvont = (namespace(prefixes.lvont) as any);
+export const lvont: Lvont = (namespace("http://lexvo.org/ontology#") as any);

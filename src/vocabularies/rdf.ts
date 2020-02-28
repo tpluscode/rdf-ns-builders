@@ -47,4 +47,4 @@ type Rdf = NamespaceBuilder & {
     /*Idiomatic property used for structured values.*/
     "value": NamedNode;
 };
-export const rdf: Rdf = (namespace(prefixes.rdf) as any);
+export const rdf: Rdf = (namespace("http://www.w3.org/1999/02/22-rdf-syntax-ns#") as any);

@@ -30,4 +30,4 @@ type Sdmx = NamespaceBuilder & {
     /*Indicates an additional component used as the primary measure within the SDMX data. In the case of multi-measure data sets the RDF representation uses the specific measure rather than a subsuming overall measure. This property records the subsuming primary measure (typically sdmx-measure:obsValue) to enable round tripping of this information.*/
     "primaryMeasure": NamedNode;
 };
-export const sdmx: Sdmx = (namespace(prefixes.sdmx) as any);
+export const sdmx: Sdmx = (namespace("http://purl.org/linked-data/sdmx#") as any);

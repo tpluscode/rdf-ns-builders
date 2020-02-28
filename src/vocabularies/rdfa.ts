@@ -23,4 +23,4 @@ type Rdfa = NamespaceBuilder & {
     "usesVocabulary": NamedNode;
     "vocabulary": NamedNode;
 };
-export const rdfa: Rdfa = (namespace(prefixes.rdfa) as any);
+export const rdfa: Rdfa = (namespace("http://www.w3.org/ns/rdfa#") as any);

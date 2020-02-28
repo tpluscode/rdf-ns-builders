@@ -24,4 +24,4 @@ type Dtype = NamespaceBuilder & {
     "type": NamedNode;
     "value": NamedNode;
 };
-export const dtype: Dtype = (namespace(prefixes.dtype) as any);
+export const dtype: Dtype = (namespace("http://www.linkedmodel.org/schema/dtype#") as any);

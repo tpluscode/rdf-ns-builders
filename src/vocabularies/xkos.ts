@@ -52,4 +52,4 @@ type Xkos = NamespaceBuilder & {
     "temporal": NamedNode;
     "variant": NamedNode;
 };
-export const xkos: Xkos = (namespace(prefixes.xkos) as any);
+export const xkos: Xkos = (namespace("http://rdf-vocabulary.ddialliance.org/xkos#") as any);

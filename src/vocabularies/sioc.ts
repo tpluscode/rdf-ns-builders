@@ -199,4 +199,4 @@ type Sioc = NamespaceBuilder & {
     /*A Space that the Usergroup has access to.*/
     "usergroup_of": NamedNode;
 };
-export const sioc: Sioc = (namespace(prefixes.sioc) as any);
+export const sioc: Sioc = (namespace("http://rdfs.org/sioc/ns#") as any);

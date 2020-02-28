@@ -79,4 +79,4 @@ type Cc = NamespaceBuilder & {
     "requires": NamedNode;
     "useGuidelines": NamedNode;
 };
-export const cc: Cc = (namespace(prefixes.cc) as any);
+export const cc: Cc = (namespace("http://creativecommons.org/ns#") as any);

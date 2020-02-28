@@ -61,4 +61,4 @@ type Ldp = NamespaceBuilder & {
     /*Predicate used to specify the order of the members across a page sequence's in-sequence page resources; it asserts nothing about the order of members in the representation of a single page.*/
     "pageSortPredicate": NamedNode;
 };
-export const ldp: Ldp = (namespace(prefixes.ldp) as any);
+export const ldp: Ldp = (namespace("http://www.w3.org/ns/ldp#") as any);

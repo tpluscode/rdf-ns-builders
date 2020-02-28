@@ -180,4 +180,4 @@ type Ma = NamespaceBuilder & {
     /*Corresponds to 'fragment.name' in the Ontology for Media Resources, for Track fragments.*/
     "trackName": NamedNode;
 };
-export const ma: Ma = (namespace(prefixes.ma) as any);
+export const ma: Ma = (namespace("http://www.w3.org/ns/ma-ont#") as any);

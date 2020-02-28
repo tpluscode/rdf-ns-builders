@@ -275,4 +275,4 @@ type Prov = NamespaceBuilder & {
     "wasUsedBy": NamedNode;
     "wasUsedInDerivation": NamedNode;
 };
-export const prov: Prov = (namespace(prefixes.prov) as any);
+export const prov: Prov = (namespace("http://www.w3.org/ns/prov#") as any);

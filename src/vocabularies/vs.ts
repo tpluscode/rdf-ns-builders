@@ -9,4 +9,4 @@ type Vs = NamespaceBuilder & {
     /*human-oriented documentation, examples etc for use of this term*/
     "userdocs": NamedNode;
 };
-export const vs: Vs = (namespace(prefixes.vs) as any);
+export const vs: Vs = (namespace("http://www.w3.org/2003/06/sw-vocab-status/ns#") as any);

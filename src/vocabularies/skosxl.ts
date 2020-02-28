@@ -13,4 +13,4 @@ type Skosxl = NamespaceBuilder & {
     /*If C skosxl:prefLabel L and L skosxl:literalForm V, then X skos:prefLabel V.*/
     "prefLabel": NamedNode;
 };
-export const skosxl: Skosxl = (namespace(prefixes.skosxl) as any);
+export const skosxl: Skosxl = (namespace("http://www.w3.org/2008/05/skos-xl#") as any);

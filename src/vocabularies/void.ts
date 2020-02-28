@@ -60,4 +60,4 @@ type Void = NamespaceBuilder & {
     /*A vocabulary that is used in the dataset.*/
     "vocabulary": NamedNode;
 };
-export const _void: Void = (namespace(prefixes.void) as any);
+export const _void: Void = (namespace("http://rdfs.org/ns/void#") as any);

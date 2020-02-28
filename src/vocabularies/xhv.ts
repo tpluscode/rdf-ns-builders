@@ -289,4 +289,4 @@ type Xhv = NamespaceBuilder & {
           hierarchically structured set. */
     "up": NamedNode;
 };
-export const xhv: Xhv = (namespace(prefixes.xhv) as any);
+export const xhv: Xhv = (namespace("http://www.w3.org/1999/xhtml/vocab#") as any);

@@ -201,4 +201,4 @@ type Gtfs = NamespaceBuilder & {
     "zone": NamedNode;
     "Transfer": NamedNode;
 };
-export const gtfs: Gtfs = (namespace(prefixes.gtfs) as any);
+export const gtfs: Gtfs = (namespace("http://vocab.gtfs.org/terms#") as any);

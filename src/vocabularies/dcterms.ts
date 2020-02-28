@@ -200,4 +200,4 @@ type Dcterms = NamespaceBuilder & {
     "valid": NamedNode;
     "Extent": NamedNode;
 };
-export const dcterms: Dcterms = (namespace(prefixes.dcterms) as any);
+export const dcterms: Dcterms = (namespace("http://purl.org/dc/terms/") as any);

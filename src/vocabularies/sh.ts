@@ -406,4 +406,4 @@ type Sh = NamespaceBuilder & {
     /*The (single) value of this property represents a path that is matched zero or one times.*/
     "zeroOrOnePath": NamedNode;
 };
-export const sh: Sh = (namespace(prefixes.sh) as any);
+export const sh: Sh = (namespace("http://www.w3.org/ns/shacl#") as any);

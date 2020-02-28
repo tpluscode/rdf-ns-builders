@@ -157,4 +157,4 @@ type Owl = NamespaceBuilder & {
     /*The property that determines the collection of facet-value pairs that define a datatype restriction.*/
     "withRestrictions": NamedNode;
 };
-export const owl: Owl = (namespace(prefixes.owl) as any);
+export const owl: Owl = (namespace("http://www.w3.org/2002/07/owl#") as any);

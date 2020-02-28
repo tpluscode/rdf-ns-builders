@@ -216,4 +216,4 @@ type As = NamespaceBuilder & {
     /*Specifies the preferred display width of the content, expressed in terms of device independent pixels.*/
     "width": NamedNode;
 };
-export const as: As = (namespace(prefixes.as) as any);
+export const as: As = (namespace("http://www.w3.org/ns/activitystreams#") as any);

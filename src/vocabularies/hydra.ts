@@ -117,4 +117,4 @@ type Hydra = NamespaceBuilder & {
     /*True if the client can change the property's value, false otherwise.*/
     "writeable": NamedNode;
 };
-export const hydra: Hydra = (namespace(prefixes.hydra) as any);
+export const hydra: Hydra = (namespace("http://www.w3.org/ns/hydra/core#") as any);

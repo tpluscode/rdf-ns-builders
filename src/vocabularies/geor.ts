@@ -27,4 +27,4 @@ type Geor = NamespaceBuilder & {
     "sfTouches": NamedNode;
     "sfWithin": NamedNode;
 };
-export const geor: Geor = (namespace(prefixes.geor) as any);
+export const geor: Geor = (namespace("http://www.opengis.net/def/rule/geosparql/") as any);

@@ -81,4 +81,4 @@ type Http = NamespaceBuilder & {
     /*The status code value of an HTTP response.*/
     "statusCodeValue": NamedNode;
 };
-export const http: Http = (namespace(prefixes.http) as any);
+export const http: Http = (namespace("http://www.w3.org/2011/http#") as any);

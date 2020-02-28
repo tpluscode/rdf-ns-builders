@@ -17,4 +17,4 @@ type Vann = NamespaceBuilder & {
     "vann-vocab-20050401": NamedNode;
     "vann-vocab-20040305": NamedNode;
 };
-export const vann: Vann = (namespace(prefixes.vann) as any);
+export const vann: Vann = (namespace("http://purl.org/vocab/vann/") as any);

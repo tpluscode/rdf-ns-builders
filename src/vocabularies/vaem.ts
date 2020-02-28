@@ -75,4 +75,4 @@ type Vaem = NamespaceBuilder & {
     "usesNonImportedResource": NamedNode;
     "withAttributionTo": NamedNode;
 };
-export const vaem: Vaem = (namespace(prefixes.vaem) as any);
+export const vaem: Vaem = (namespace("http://www.linkedmodel.org/schema/vaem#") as any);

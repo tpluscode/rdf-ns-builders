@@ -45,4 +45,4 @@ type Ssn = NamespaceBuilder & {
     /*Relation between an Observation and the Stimulus that originated it.*/
     "wasOriginatedBy": NamedNode;
 };
-export const ssn: Ssn = (namespace(prefixes.ssn) as any);
+export const ssn: Ssn = (namespace("http://www.w3.org/ns/ssn/") as any);

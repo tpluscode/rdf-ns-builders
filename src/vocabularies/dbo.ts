@@ -4544,4 +4544,4 @@ type Dbo = NamespaceBuilder & {
     "Tribus": NamedNode;
     "MilitaryConflict,_AdministrativeRegion": NamedNode;
 };
-export const dbo: Dbo = (namespace(prefixes.dbo) as any);
+export const dbo: Dbo = (namespace("http://dbpedia.org/ontology/") as any);

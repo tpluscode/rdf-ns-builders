@@ -71,4 +71,4 @@ type Dcat = NamespaceBuilder & {
     /*El sistema de organización del conocimiento utilizado para clasificar conjuntos de datos de catálogos.*/
     "themeTaxonomy": NamedNode;
 };
-export const dcat: Dcat = (namespace(prefixes.dcat) as any);
+export const dcat: Dcat = (namespace("http://www.w3.org/ns/dcat#") as any);

@@ -153,4 +153,4 @@ type Foaf = NamespaceBuilder & {
     /*A Yahoo chat ID*/
     "yahooChatID": NamedNode;
 };
-export const foaf: Foaf = (namespace(prefixes.foaf) as any);
+export const foaf: Foaf = (namespace("http://xmlns.com/foaf/0.1/") as any);

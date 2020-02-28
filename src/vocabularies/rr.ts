@@ -84,4 +84,4 @@ type Rr = NamespaceBuilder & {
     /*A string indicating whether subject or object generated using the value from column name specified for rr:column should be an IRI reference, blank node, or a literal.*/
     "termType": NamedNode;
 };
-export const rr: Rr = (namespace(prefixes.rr) as any);
+export const rr: Rr = (namespace("http://www.w3.org/ns/r2rml#") as any);

@@ -82,4 +82,4 @@ type Sem = NamespaceBuilder & {
     /*Type is the super property of the properties that are used to indicate the type of a Core instance, eventType, actorType, placeType, timeType; and of roleType. Types can be both classes and individuals, cf. OWL 2 punning.*/
     "type": NamedNode;
 };
-export const sem: Sem = (namespace(prefixes.sem) as any);
+export const sem: Sem = (namespace("http://semanticweb.cs.vu.nl/2009/11/sem/") as any);

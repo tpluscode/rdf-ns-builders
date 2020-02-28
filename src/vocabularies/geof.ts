@@ -38,4 +38,4 @@ type Geof = NamespaceBuilder & {
     "symDifference": NamedNode;
     "union": NamedNode;
 };
-export const geof: Geof = (namespace(prefixes.geof) as any);
+export const geof: Geof = (namespace("http://www.opengis.net/def/function/geosparql/") as any);

@@ -8,8 +8,8 @@ import { createDefaultModule } from './defaultModule'
 const printer = ts.createPrinter()
 const outDir = resolve(process.argv[2])
 
-const promises = Object.keys(prefixes).map(prefix => {
-  return createPrefixFile(prefix).then(file => {
+const promises = Object.entries(prefixes).map(([prefix, namespace]) => {
+  return createPrefixFile(prefix, namespace).then(file => {
     writeFileSync(resolve(outDir, 'vocabularies', file.fileName), printer.printFile(file))
   })
 })

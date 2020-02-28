@@ -3889,4 +3889,4 @@ type Schema = NamespaceBuilder & {
     "TouristTrip": NamedNode;
     "XPathType": NamedNode;
 };
-export const schema: Schema = (namespace(prefixes.schema) as any);
+export const schema: Schema = (namespace("http://schema.org/") as any);

@@ -34,4 +34,4 @@ type Rdfs = NamespaceBuilder & {
     /*The subject is a subproperty of a property.*/
     "subPropertyOf": NamedNode;
 };
-export const rdfs: Rdfs = (namespace(prefixes.rdfs) as any);
+export const rdfs: Rdfs = (namespace("http://www.w3.org/2000/01/rdf-schema#") as any);

@@ -73,4 +73,4 @@ type Og = NamespaceBuilder & {
     /*A relevant video URL for your object.*/
     "video": NamedNode;
 };
-export const og: Og = (namespace(prefixes.og) as any);
+export const og: Og = (namespace("http://ogp.me/ns#") as any);

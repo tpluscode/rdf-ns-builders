@@ -43,4 +43,4 @@ type Dqv = NamespaceBuilder & {
     /*Refers to values computed by metric.*/
     "value": NamedNode;
 };
-export const dqv: Dqv = (namespace(prefixes.dqv) as any);
+export const dqv: Dqv = (namespace("http://www.w3.org/ns/dqv#") as any);

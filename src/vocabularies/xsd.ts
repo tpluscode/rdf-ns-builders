@@ -368,4 +368,4 @@ type Xsd = NamespaceBuilder & {
       */
     "yearMonthDuration": NamedNode;
 };
-export const xsd: Xsd = (namespace(prefixes.xsd) as any);
+export const xsd: Xsd = (namespace("http://www.w3.org/2001/XMLSchema#") as any);

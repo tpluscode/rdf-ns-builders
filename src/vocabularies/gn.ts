@@ -766,4 +766,4 @@ type Gn = NamespaceBuilder & {
     /*A Wikipedia article of which subject is the resource.*/
     "wikipediaArticle": NamedNode;
 };
-export const gn: Gn = (namespace(prefixes.gn) as any);
+export const gn: Gn = (namespace("http://www.geonames.org/ontology#") as any);

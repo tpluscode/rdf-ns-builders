@@ -41,4 +41,4 @@ type Grddl = NamespaceBuilder & {
         document node*/
     "transformationProperty": NamedNode;
 };
-export const grddl: Grddl = (namespace(prefixes.grddl) as any);
+export const grddl: Grddl = (namespace("http://www.w3.org/2003/g/data-view#") as any);

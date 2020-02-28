@@ -93,4 +93,4 @@ type Org = NamespaceBuilder & {
     /*Indica un Organization di cui questa Unit fa parte, come ad esempio un dipartimento all'interno di una più vasta FormalOrganization. È l'inverso di `org:hasUnit`.*/
     "unitOf": NamedNode;
 };
-export const org: Org = (namespace(prefixes.org) as any);
+export const org: Org = (namespace("http://www.w3.org/ns/org#") as any);

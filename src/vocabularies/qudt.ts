@@ -803,4 +803,4 @@ type Qudt = NamespaceBuilder & {
     "UNSIGNED": NamedNode;
     "SIGNED": NamedNode;
 };
-export const qudt: Qudt = (namespace(prefixes.qudt) as any);
+export const qudt: Qudt = (namespace("http://qudt.org/schema/qudt/") as any);

@@ -76,4 +76,4 @@ type Qb = NamespaceBuilder & {
     /*indicates the structure to which this data set conforms*/
     "structure": NamedNode;
 };
-export const qb: Qb = (namespace(prefixes.qb) as any);
+export const qb: Qb = (namespace("http://purl.org/linked-data/cube#") as any);

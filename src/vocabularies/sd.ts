@@ -79,4 +79,4 @@ type Sd = NamespaceBuilder & {
     /*Relates an instance of sd:Service to a SPARQL language (e.g. Query and Update) that it implements.*/
     "supportedLanguage": NamedNode;
 };
-export const sd: Sd = (namespace(prefixes.sd) as any);
+export const sd: Sd = (namespace("http://www.w3.org/ns/sparql-service-description#") as any);

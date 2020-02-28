@@ -176,4 +176,4 @@ type Csvw = NamespaceBuilder & {
     /*A boolean atomic property taking a single value which indicates whether the column is a virtual column not present in the original source*/
     "virtual": NamedNode;
 };
-export const csvw: Csvw = (namespace(prefixes.csvw) as any);
+export const csvw: Csvw = (namespace("http://www.w3.org/ns/csvw#") as any);
