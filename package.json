@@ -9,7 +9,7 @@
     "generate": "ts-node -P tsconfig.node.json build/index.ts src",
     "test": "jest",
     "prepack": "npm run build",
-    "build": "npm run build:node & npm run build:web",
+    "build": "npm run build:node && npm run build:web",
     "build:node": "tsc -p tsconfig.node.json",
     "build:web": "tsc -p tsconfig.es.json"
   },
