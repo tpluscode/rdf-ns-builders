@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "module": "esnext",
-    "target": "es2019",
+    "target": "es2018",
     "declaration": false,
     "lib": [
       "es6",
@@ -13,7 +13,9 @@
     "noImplicitReturns": true,
     "noImplicitThis": true,
     "moduleResolution": "node",
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "outDir": "."
   },
   "files": [
     "src/index.ts"
