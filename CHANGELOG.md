@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.1](https://github.com/tpluscode/rdf-ns-builders/compare/v0.2.0...v0.2.1) (2020-05-18)
+
+
+### Bug Fixes
+
+* missing type declarations ([86b5568](https://github.com/tpluscode/rdf-ns-builders/commit/86b5568309bf98f6e999bd15d20b49b9bff7f06d))
+
 ## [0.2.0](https://github.com/tpluscode/rdf-ns-builders/compare/v0.1.0...v0.2.0) (2020-05-18)
 
 
