@@ -1,0 +1,8 @@
+tests/
+build/
+*.ts
+!*.d.ts
+*.json
+.babelrc
+coverage/
+src/

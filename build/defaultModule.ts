@@ -1,5 +1,5 @@
-import * as ts from 'typescript'
-import { prefixes } from '@zazuko/rdf-vocabularies'
+import ts from 'typescript'
+import vocabs from '@zazuko/rdf-vocabularies'
 
 function createExport(prefix: string) {
   return ts.createExportDeclaration(
@@ -13,6 +13,6 @@ function createExport(prefix: string) {
 export function createDefaultModule() {
   return ts.updateSourceFileNode(
     ts.createSourceFile('index.ts', '', ts.ScriptTarget.Latest),
-    Object.keys(prefixes).map(createExport)
+    Object.keys(vocabs.prefixes).map(createExport)
   )
 }

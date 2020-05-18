@@ -2,23 +2,15 @@
   "name": "@tpluscode/rdf-ns-builders",
   "version": "0.1.0",
   "description": "Generated RDF/JS namespace builders for common vocabularies",
-  "main": "dist/node/index.js",
-  "module": "dist/es/index.js",
+  "main": "index.js",
+  "type": "module",
   "types": "index.d.ts",
   "scripts": {
-    "generate": "ts-node -P tsconfig.node.json build/index.ts src",
+    "generate": "npm run build; node build/index.js src",
     "test": "jest",
     "prepack": "npm run build",
-    "build": "npm run build:node && npm run build:web",
-    "build:node": "tsc -p tsconfig.node.json",
-    "build:web": "tsc -p tsconfig.es.json"
+    "build": "tsc -p tsconfig.json"
   },
-  "files": [
-    "dist",
-    "vocabularies",
-    "*.d.ts",
-    "*.d.ts.map"
-  ],
   "dependencies": {
     "@rdfjs/namespace": "^1.1.0",
     "@types/rdfjs__namespace": "^1.1.1",
@@ -29,7 +21,7 @@
     "@babel/preset-typescript": "^7.8.3",
     "@commitlint/cli": "^8.2.0",
     "@commitlint/config-conventional": "^8.2.0",
-    "@rdfjs/data-model": "^1.1.2",
+    "@rdf-esm/data-model": "^0.5.0",
     "@tpluscode/eslint-config": "0.0.4",
     "@types/clownface": "^0.12.7",
     "@types/jest": "^25.1.2",
@@ -70,8 +62,7 @@
   },
   "lint-staged": {
     "*.{js,ts}": [
-      "eslint --fix --quiet",
-      "git add"
+      "eslint --fix --quiet"
     ]
   },
   "commitlint": {
