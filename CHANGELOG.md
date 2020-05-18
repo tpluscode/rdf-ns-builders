@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.2.0](https://github.com/tpluscode/rdf-ns-builders/compare/v0.1.0...v0.2.0) (2020-05-18)
+
+
+### ⚠ BREAKING CHANGES
+
+* removed commonjs exports
+
+### build
+
+* es-modules only package ([#1](https://github.com/tpluscode/rdf-ns-builders/issues/1)) ([952853c](https://github.com/tpluscode/rdf-ns-builders/commit/952853c3ecfb41d02a1486db010c2f9e860a9c81))
+
 ## [0.1.0](https://github.com/tpluscode/rdf-ns-builders/compare/v0.0.4...v0.1.0) (2020-02-29)
 
 ### [0.0.4](https://github.com/tpluscode/ts-template/compare/v0.0.3...v0.0.4) (2020-02-23)
