@@ -1,7 +1,7 @@
 import ts from 'typescript'
-import imports from './imports.js'
-import { generateInterface } from './interface.js'
-import { aliases, toProperCase } from './strings.js'
+import imports from './imports'
+import { generateInterface } from './interface'
+import { aliases, toProperCase } from './strings'
 
 export async function createPrefixFile(prefix: string, namespace: string) {
   return ts.updateSourceFileNode(

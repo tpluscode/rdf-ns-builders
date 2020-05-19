@@ -1,8 +1,8 @@
 import ts from 'typescript'
-import vocabs from '@zazuko/rdf-vocabularies'
+import { shrink, vocabularies } from '@zazuko/rdf-vocabularies'
 import cf from 'clownface'
-import { namedNode } from '@rdf-esm/data-model'
-import { toProperCase } from './strings.js'
+import { namedNode } from '@rdfjs/data-model'
+import { toProperCase } from './strings'
 
 const rdfsComment = namedNode('http://www.w3.org/2000/01/rdf-schema#comment')
 
@@ -28,7 +28,7 @@ function createMember(term: string, comment?: string) {
 async function createMembers(prefix: string) {
   const prefixedRegex = new RegExp(`^${prefix}:(.+)$`)
   const terms = new Map<string, ts.PropertySignature>()
-  const dataset = (await vocabs.vocabularies({ only: [prefix] }))[prefix]
+  const dataset = (await vocabularies({ only: [prefix] }))[prefix]
   if (!dataset) {
     return []
   }
@@ -37,7 +37,7 @@ async function createMembers(prefix: string) {
 
   ;[...graph.in().toArray(), ...graph.out().toArray()]
     .forEach((node) => {
-      const prefixedName = vocabs.shrink(node.value)
+      const prefixedName = shrink(node.value)
 
       const matchesPrefix = prefixedName.match(prefixedRegex)
       if (prefixedName && matchesPrefix) {
