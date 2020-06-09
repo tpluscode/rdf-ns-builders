@@ -1,7 +1,8 @@
 {
   "compilerOptions": {
-    "module": "ESNext",
-    "target": "es2018",
+    "module": "esnext",
+    "target": "es2019",
+    "declaration": false,
     "lib": [
       "es6",
       "esnext"
@@ -12,10 +13,7 @@
     "noImplicitReturns": true,
     "noImplicitThis": true,
     "moduleResolution": "node",
-    "esModuleInterop": true,
-    "outDir": ".",
-    "declaration": true,
-    "declarationMap": true
+    "esModuleInterop": true
   },
   "files": [
     "src/index.ts"

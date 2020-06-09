@@ -2,24 +2,25 @@
   "name": "@tpluscode/rdf-ns-builders",
   "version": "0.3.1",
   "description": "Generated RDF/JS namespace builders for common vocabularies",
-  "main": "main.js",
-  "module": "index.js",
+  "main": "dist/node/index.js",
+  "module": "dist/es/index.js",
   "types": "index.d.ts",
   "scripts": {
     "generate": "ts-node -P tsconfig.node.json build/index.ts src",
     "test": "jest",
     "prepack": "npm run build",
-    "build": "tsc"
+    "build": "npm run build:node && npm run build:web",
+    "build:node": "tsc -p tsconfig.node.json",
+    "build:web": "tsc -p tsconfig.es.json"
   },
   "files": [
-    "*.js",
+    "dist",
     "vocabularies",
     "*.d.ts",
     "*.d.ts.map"
   ],
   "dependencies": {
-    "@rdfjs/namespace": "^1.1.0",
-    "esm": "^3.2.25"
+    "@rdfjs/namespace": "^1.1.0"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.8.3",
