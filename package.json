@@ -6,7 +6,7 @@
   "module": "index.js",
   "types": "index.d.ts",
   "scripts": {
-    "generate": "ts-node -P tsconfig.node.json build/index.ts src",
+    "generate": "ts-node -P tsconfig.build.json build/index.ts src",
     "test": "jest",
     "prepack": "npm run build",
     "build": "tsc"
