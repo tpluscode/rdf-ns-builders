@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.5](https://github.com/tpluscode/rdf-ns-builders/compare/v0.3.4...v0.3.5) (2020-06-17)
+
+
+### Features
+
+* added dash prefix ([d5c6a13](https://github.com/tpluscode/rdf-ns-builders/commit/d5c6a13d9ee51a8e3599d507bc5e90071d004ec1))
+
 ### [0.3.4](https://github.com/tpluscode/rdf-ns-builders/compare/v0.3.3...v0.3.4) (2020-06-12)
 
 ### [0.3.1](https://github.com/tpluscode/rdf-ns-builders/compare/v0.3.0...v0.3.1) (2020-06-08)
