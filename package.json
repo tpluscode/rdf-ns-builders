@@ -36,7 +36,7 @@
     "@types/yargs": "^15.0.3",
     "@typescript-eslint/eslint-plugin": "^2.19.0",
     "@typescript-eslint/parser": "^2.19.0",
-    "@zazuko/rdf-vocabularies": "^2020.2.11",
+    "@zazuko/rdf-vocabularies": "^2020.6.17",
     "clownface": "^0.12.1",
     "cz-conventional-changelog": "^3.0.2",
     "eslint-plugin-jest": "^23.1.1",

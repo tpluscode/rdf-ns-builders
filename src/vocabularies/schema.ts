@@ -60,7 +60,9 @@ type Schema = NamespaceBuilder & {
     "Airport": NamedNode;
     /*AlbumRelease.*/
     "AlbumRelease": NamedNode;
-    /*An intangible item that describes an alignment between a learning resource and a node in an educational framework.*/
+    /*An intangible item that describes an alignment between a learning resource and a node in an educational framework.<br/><br/>
+    
+    Should not be used where the nature of the alignment can be described using a simple property, for example to express that a resource <a class="localLink" href="http://schema.org/teaches">teaches</a> or <a class="localLink" href="http://schema.org/assesses">assesses</a> a competency.*/
     "AlignmentObject": NamedNode;
     /*All-wheel Drive is a transmission layout where the engine drives all four wheels.*/
     "AllWheelDriveConfiguration": NamedNode;
@@ -618,6 +620,8 @@ type Schema = NamespaceBuilder & {
     "Event": NamedNode;
     /*The event has been cancelled. If the event has multiple startDate values, all are assumed to be cancelled. Either startDate or previousStartDate may be used to specify the event's cancelled date(s).*/
     "EventCancelled": NamedNode;
+    /*Indicates that the event was changed to allow online participation. See <a class="localLink" href="http://schema.org/eventAttendanceMode">eventAttendanceMode</a> for specifics of whether it is now fully or partially online.*/
+    "EventMovedOnline": NamedNode;
     /*The event has been postponed and no new date has been set. The event's previousStartDate should be set.*/
     "EventPostponed": NamedNode;
     /*The event has been rescheduled. The event's previousStartDate should be set to the old date and the startDate should be set to the event's new date. (If the event has been rescheduled multiple times, the previousStartDate property may be repeated).*/
@@ -1991,7 +1995,7 @@ type Schema = NamespaceBuilder & {
     "albumReleaseType": NamedNode;
     /*A collection of music albums.*/
     "albums": NamedNode;
-    /*A category of alignment between the learning resource and the framework node. Recommended values include: 'assesses', 'teaches', 'requires', 'textComplexity', 'readingLevel', 'educationalSubject', and 'educationalLevel'.*/
+    /*A category of alignment between the learning resource and the framework node. Recommended values include: 'requires', 'textComplexity', 'readingLevel', and 'educationalSubject'.*/
     "alignmentType": NamedNode;
     /*An alias for the item.*/
     "alternateName": NamedNode;
@@ -2462,7 +2466,9 @@ type Schema = NamespaceBuilder & {
     "duringMedia": NamedNode;
     /*Specifies the Person who edited the CreativeWork.*/
     "editor": NamedNode;
-    /*An alignment to an established educational framework.*/
+    /*An alignment to an established educational framework.<br/><br/>
+    
+    This property should not be used where the nature of the alignment can be described using a simple property, for example to express that a resource <a class="localLink" href="http://schema.org/teaches">teaches</a> or <a class="localLink" href="http://schema.org/assesses">assesses</a> a competency.*/
     "educationalAlignment": NamedNode;
     /*A description of the qualification, award, certificate, diploma or other educational credential awarded as a consequence of successful completion of this course or program.*/
     "educationalCredentialAwarded": NamedNode;
@@ -3063,10 +3069,6 @@ type Schema = NamespaceBuilder & {
     "occupancy": NamedNode;
     /*The region/country for which this occupational description is appropriate. Note that educational requirements and qualifications can vary between jurisdictions.*/
     "occupationLocation": NamedNode;
-    /*A category describing the job, preferably using a term from a taxonomy such as <a href="http://www.onetcenter.org/taxonomy.html">BLS O*NET-SOC</a>, <a href="https://www.ilo.org/public/english/bureau/stat/isco/isco08/">ISCO-08</a> or similar, with the property repeated for each applicable value. Ideally the taxonomy should be identified, and both the textual label and formal code for the category should be provided.<br/><br/>
-    
-    Note: for historical reasons, any textual label and formal code provided as a literal may be assumed to be from O*NET-SOC.*/
-    "occupationalCategory": NamedNode;
     /*The number of offers for the product.*/
     "offerCount": NamedNode;
     /*A pointer to the organization or person making the offer.*/
@@ -3858,14 +3860,18 @@ type Schema = NamespaceBuilder & {
     /*The quantity that results by performing instructions. For example, a paper airplane, 10 personalized candles.*/
     "yield": NamedNode;
     "MedicalBusiness": NamedNode;
+    "DefinedRegion": NamedNode;
+    "FloorPlan": NamedNode;
     "MonetaryGrant": NamedNode;
     "MoneyTransfer": NamedNode;
     "PhysicalActivity": NamedNode;
     "Recommendation": NamedNode;
+    "SpecialAnnouncement": NamedNode;
     "PhysicalActivityCategory": NamedNode;
     "HealthInsurancePlan": NamedNode;
     "CssSelectorType": NamedNode;
     "ExchangeRateSpecification": NamedNode;
+    "CDCPMDRecord": NamedNode;
     "RealEstateListing": NamedNode;
     "EducationalOccupationalProgram": NamedNode;
     "Audiobook": NamedNode;
@@ -3876,13 +3882,12 @@ type Schema = NamespaceBuilder & {
     "LinkRole": NamedNode;
     "PronounceableText": NamedNode;
     "DefinedTerm": NamedNode;
+    "VirtualLocation": NamedNode;
     "DietarySupplement": NamedNode;
     "Drug": NamedNode;
-    "FloorPlan": NamedNode;
-    "WorkBasedProgram": NamedNode;
-    "CategoryCode": NamedNode;
     "Chapter": NamedNode;
     "Guide": NamedNode;
+    "GovernmentBenefitsType": NamedNode;
     "Grant": NamedNode;
     "MedicalStudy": NamedNode;
     "TouristDestination": NamedNode;
