@@ -15,8 +15,8 @@
     "build:esm": "BABEL_ENV=modules babel src --out-dir . --extensions .ts --out-file-extension .mjs"
   },
   "exports": {
-    "require": "index.js",
-    "import": "index.mjs"
+    "require": "./index.js",
+    "import": "./index.mjs"
   },
   "files": [
     "*.js",
