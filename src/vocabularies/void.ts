@@ -1,5 +1,4 @@
-import { prefixes } from "@zazuko/rdf-vocabularies";
-import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
+import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
 import { NamedNode } from "rdf-js";
 type Void = NamespaceBuilder & {
     /*A set of RDF triples that are published, maintained or aggregated by a single provider.*/

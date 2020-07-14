@@ -1,5 +1,4 @@
-import { prefixes } from "@zazuko/rdf-vocabularies";
-import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
+import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
 import { NamedNode } from "rdf-js";
 type Sem = NamespaceBuilder & {
     /*Actors are entities that take part in an Event, either actively or passively. Actors do not necessarily have to be sentient. They can also be objects. Actors are a thing, animate or inanimate, physical or non-physical.

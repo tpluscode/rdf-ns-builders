@@ -1,5 +1,4 @@
-import { prefixes } from "@zazuko/rdf-vocabularies";
-import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
+import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
 import { NamedNode } from "rdf-js";
 type Ssn = NamespaceBuilder & {
     /*Describes the Deployment of one or more Systems for a particular purpose. Deployment may be done on a Platform.*/

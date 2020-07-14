@@ -1,5 +1,4 @@
-import { prefixes } from "@zazuko/rdf-vocabularies";
-import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
+import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
 import { NamedNode } from "rdf-js";
 type Csvw = NamespaceBuilder & {
     /*A Cell represents a cell at the intersection of a Row and a Column within a Table.*/

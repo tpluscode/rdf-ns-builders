@@ -1,7 +1,17 @@
-import { prefixes } from "@zazuko/rdf-vocabularies";
-import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
+import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
 import { NamedNode } from "rdf-js";
 type Dash = NamespaceBuilder & {
+    "Action-actionGroup": NamedNode;
+    "Action-actionIconClass": NamedNode;
+    "Action-parameter": NamedNode;
+    /*An executable command triggered by an agent, backed by a Script implementation. Actions may get deactivated using sh:deactivated.*/
+    "Action": NamedNode;
+    /*A group of ResourceActions, used to arrange items in menus etc. Similar to sh:PropertyGroups, they may have a sh:order and should have labels (in multiple languages if applicable).*/
+    "ActionGroup": NamedNode;
+    /*A test case that evaluates a dash:Action using provided input parameters. Requires exactly one value for dash:action and will operate on the test case's graph (with imports) as both data and shapes graph.
+    
+    Currently only supports read-only actions, allowing the comparison of actual results with the expected results.*/
+    "ActionTestCase": NamedNode;
     /*A reusable instance of dash:AllObjectsTarget.*/
     "AllObjects": NamedNode;
     /*A target containing all objects in the data graph as focus nodes.*/
@@ -24,6 +34,10 @@ type Dash = NamespaceBuilder & {
     "CoExistsWithConstraintComponent-coExistsWith": NamedNode;
     /*A constraint component that can be used to express a constraint on property shapes so that if the property path has any value then the given property must also have a value, and vice versa.*/
     "CoExistsWithConstraintComponent": NamedNode;
+    "ConstraintReificationShape-message": NamedNode;
+    "ConstraintReificationShape-severity": NamedNode;
+    /*Can be used to attach sh:severity and sh:messages to individual constraints using reification.*/
+    "ConstraintReificationShape": NamedNode;
     "DASHJSLibrary": NamedNode;
     /*An rdf:List that can be used in property constraints as value for sh:or to indicate that all values of a property must be either xsd:date or xsd:dateTime.*/
     "DateOrDateTime": NamedNode;
@@ -35,6 +49,9 @@ type Dash = NamespaceBuilder & {
             This can be used as a pre-processor for shape graphs before they are validated.
             */
     "DefaultValueTypeRule": NamedNode;
+    "DefinitionPropertyGroup": NamedNode;
+    /*An editor for non-literal values, typically displaying a nested form where the values of the linked resource can be edited directly on the "parent" form. Implementations that do not support this (yet) could fall back to an auto-complete widget.*/
+    "DetailsEditor": NamedNode;
     /*A Viewer for resources that shows the details of the value using its default view shape as a nested form-like display.*/
     "DetailsViewer": NamedNode;
     /*The class of widgets for editing value nodes.*/
@@ -43,6 +60,8 @@ type Dash = NamespaceBuilder & {
     "EnumSelectEditor": NamedNode;
     /*An platform (such as TopBraid) that may have features needed to execute, for example, SPARQL queries.*/
     "ExecutionPlatform": NamedNode;
+    /*An action typically showing up in an Explore section of a selected resource. Cannot make changes to the data.*/
+    "ExploreAction": NamedNode;
     /*A result representing a validation failure such as an unsupported recursion.*/
     "FailureResult": NamedNode;
     /*Represents a failure of a test case.*/
@@ -70,11 +89,15 @@ type Dash = NamespaceBuilder & {
     "HyperlinkViewer": NamedNode;
     /*A Viewer for URI values that are recognized as images by a browser, rendering as an image.*/
     "ImageViewer": NamedNode;
+    "ImplementationPropertyGroup": NamedNode;
+    "IndexedConstraintComponent-indexed": NamedNode;
+    /*A constraint component that can be used to mark property shapes to be indexed, meaning that each of its value nodes must carry a dash:index from 0 to N.*/
+    "IndexedConstraintComponent": NamedNode;
     /*A test case to verify whether an inferencing engine is producing identical results to those stored as expected results.*/
     "InferencingTestCase": NamedNode;
     /*A drop-down editor for all instances of the target class (based on sh:class of the property).*/
     "InstancesSelectEditor": NamedNode;
-    /*A test case that calls a given JavaScript function like a sh:JSFunction and compares its result with the dash:expectedResult.*/
+    /*A test case that calls a given SHACL-JS JavaScript function like a sh:JSFunction and compares its result with the dash:expectedResult.*/
     "JSTestCase": NamedNode;
     /*A Viewer for URI resources, rendering as a hyperlink to that URI based on the display label of the resource. Also includes other ways of interacting with the URI such as opening a nested summary display.*/
     "LabelViewer": NamedNode;
@@ -88,6 +111,13 @@ type Dash = NamespaceBuilder & {
     "ListShape": NamedNode;
     /*A simple viewer for literals, rendering the lexical form of the value.*/
     "LiteralViewer": NamedNode;
+    "ModifyAction-skipPreview": NamedNode;
+    /*An action typically showing up in a Modify section of a selected resource. May make changes to the data.*/
+    "ModifyAction": NamedNode;
+    /*An editor for multiple/all value nodes at once.*/
+    "MultiEditor": NamedNode;
+    /*A viewer for multiple/all values at once.*/
+    "MultiViewer": NamedNode;
     "NonRecursiveConstraintComponent-nonRecursive": NamedNode;
     /*Used to state that a property or path must not point back to itself.
     
@@ -108,6 +138,9 @@ type Dash = NamespaceBuilder & {
     "RDFQueryJSLibrary": NamedNode;
     "ReifiableByConstraintComponent-reifiableBy": NamedNode;
     "ReifiableByConstraintComponent": NamedNode;
+    "ResourceAction-jsCondition": NamedNode;
+    /*An Action that can be executed for a selected resource. Such Actions show up in context menus once they have been assigned a sh:group.*/
+    "ResourceAction": NamedNode;
     /*A rich text editor to enter the lexical value of a literal and a drop down to select language. The selected language is stored in the HTML lang attribute of the root node in the HTML DOM tree.*/
     "RichTextEditor": NamedNode;
     "RootClassConstraintComponent-rootClass": NamedNode;
@@ -121,10 +154,25 @@ type Dash = NamespaceBuilder & {
     
     In many cases, there may be multiple possible suggestions to fix a problem. For example, with sh:maxLength there are many ways to slice a string. In those cases, the system will first iterate through the result variables from a SELECT query (sh:select) and apply these results as pre-bound variables into the UPDATE query.*/
     "SPARQLUpdateSuggestionGenerator": NamedNode;
+    "Script-comment": NamedNode;
+    "Script-js": NamedNode;
+    "Script-label": NamedNode;
+    /*An executable unit implemented in one or more languages such as JavaScript.*/
+    "Script": NamedNode;
+    /*A test case that evaluates a script. Requires exactly one value for dash:js and will operate on the test case's graph (with imports) as both data and shapes graph.
+    
+    Supports read-only scripts only at this stage.*/
+    "ScriptTestCase": NamedNode;
+    /*A shape script contains extra code that gets injected into the API for the associated node shape. In particular you can use this to define additional functions that operate on the current focus node (the this variable in JavaScript).*/
+    "ShapeScript": NamedNode;
+    /*An editor for individual value nodes.*/
+    "SingleEditor": NamedNode;
     /*A constraint component that can be used to declare that all values that are literals must have a lexical form that contains no line breaks ('\n' or '\r').
     
     User interfaces may use the dash:singleLine flag to prefer a text field over a (multi-line) text area.*/
     "SingleLineConstraintComponent": NamedNode;
+    /*A viewer for a single value.*/
+    "SingleViewer": NamedNode;
     "StemConstraintComponent-stem": NamedNode;
     /*A constraint component that can be used to verify that every value node is an IRI and the IRI starts with a given string value.*/
     "StemConstraintComponent": NamedNode;
@@ -169,6 +217,8 @@ type Dash = NamespaceBuilder & {
     "UniqueValueForClassConstraintComponent-uniqueValueForClass": NamedNode;
     /*A constraint component that can be used to state that the values of a property must be unique for all instances of a given class (and its subclasses).*/
     "UniqueValueForClassConstraintComponent": NamedNode;
+    /*A Viewer for HTML content from untrusted sources. This viewer will sanitize the HTML before rendering. Any a, button, checkbox, form, hidden, input, img, script, select, style and textarea tags and class and style attributes will be removed.*/
+    "UntrustedHTMLViewer": NamedNode;
     /*Abstract superclass for test cases concerning SHACL constraint validation. Future versions may add new kinds of validatin test cases, e.g. to validate a single resource only.*/
     "ValidationTestCase": NamedNode;
     /*A viewer that renders all values of a given property as a table, with one value per row, and the columns defined by the shape that is the sh:node or sh:class of the property.*/
@@ -179,6 +229,10 @@ type Dash = NamespaceBuilder & {
     "Widget": NamedNode;
     /*Indicates that a class is "abstract" and cannot be used in asserted rdf:type triples. Only non-abstract subclasses of abstract classes should be instantiated directly.*/
     "abstract": NamedNode;
+    /*Links an Action with the ActionGroup that it should be arranged in.*/
+    "actionGroup": NamedNode;
+    /*The (CSS) class of an Action for display purposes alongside the label.*/
+    "actionIconClass": NamedNode;
     /*May link a dash:GraphUpdate with one or more triples (represented as instances of rdf:Statement) that should be added to fix the source of the result.*/
     "addedTriple": NamedNode;
     /*Represents all users/roles, for example as a possible value of the default view for role property.*/
@@ -205,6 +259,8 @@ type Dash = NamespaceBuilder & {
     "defaultViewForRole": NamedNode;
     /*May link a dash:GraphUpdate result with one or more triples (represented as instances of rdf:Statement) that should be deleted to fix the source of the result.*/
     "deletedTriple": NamedNode;
+    /*Can be used in dash:js node expressions to enumerate the predicates that the computation of the values may depend on. This can be used by clients to determine whether an edit requires re-computation of values on a form or elsewhere. For example, if the dash:js is something like "focusNode.firstName + focusNode.lastName" then the dependency predicates should be ex:firstName and ex:lastName.*/
+    "dependencyPredicate": NamedNode;
     /*Can be used to link a SHACL property shape with the URL of a SPARQL endpoint that may contain further RDF triples for the value nodes delivered by the property. This can be used to inform a processor that it should switch to values from an external graph when the user wants to retrieve more information about a value.
     
     This property should be regarded as an "annotation", i.e. it does not have any impact on validation or other built-in SHACL features. However, selected tools may want to use this information. One implementation strategy would be to periodically fetch the values specified by the sh:node or sh:class shape associated with the property, using the property shapes in that shape, and add the resulting triples into the main query graph.
@@ -219,6 +275,8 @@ type Dash = NamespaceBuilder & {
     "detailsGraph": NamedNode;
     /*Can be used to link a property shape with an editor, to state a preferred editing widget in user interfaces.*/
     "editor": NamedNode;
+    /*Specifies a prefix that shall be excluded from the Script code generation.*/
+    "excludedPrefix": NamedNode;
     /*The expected result(s) of a test case. The value range of this property is different for each kind of test cases.*/
     "expectedResult": NamedNode;
     /*A flag to indicate that the expected result represents a JSON string. If set to true, then tests would compare JSON structures (regardless of whitespaces) instead of actual syntax.*/
@@ -251,10 +309,12 @@ type Dash = NamespaceBuilder & {
     "hasValueWithClass": NamedNode;
     /*The height.*/
     "height": NamedNode;
-    /*Properties marked as readOnly do not appear in user interfaces, yet remain part of the shape for other purposes such as validation and GraphQL schemas.*/
+    /*Properties marked as hidden do not appear in user interfaces, yet remain part of the shape for other purposes such as validation and scripting or GraphQL schema generation.*/
     "hidden": NamedNode;
     /*Can be used to state that one (subject) execution platform includes all features of another platform (object).*/
     "includedExecutionPlatform": NamedNode;
+    "index": NamedNode;
+    "indexed": NamedNode;
     /*Checks whether a given shape or constraint has been marked as "deactivated" using sh:deactivated.*/
     "isDeactivated": NamedNode;
     "isIn": NamedNode;
@@ -265,12 +325,18 @@ type Dash = NamespaceBuilder & {
     "isNodeKindIRI": NamedNode;
     /*Checks if a given sh:NodeKind is one that includes Literals.*/
     "isNodeKindLiteral": NamedNode;
+    /*The JavaScript source code of a Script.*/
+    "js": NamedNode;
     /*Can be set to true for those constraint components where the validation does not require to visit any other triples than the shape definitions and the direct property values of the focus node mentioned in the property constraints. Examples of this include sh:minCount and sh:hasValue.
     
     Constraint components that are marked as such can be optimized by engines, e.g. they can be evaluated client-side at form submission time, without having to make a round-trip to a server, assuming the client has downloaded a complete snapshot of the resource.
     
     Any component marked with dash:staticConstraint is also a dash:localConstraint.*/
     "localConstraint": NamedNode;
+    /*For file-typed properties, this can be used to specify the expected/allowed mime types of its values. This can be used, for example, to limit file input boxes or file selectors. If multiple values are allowed then they need to be separated by commas.
+    
+    Example values are listed at https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types*/
+    "mimeTypes": NamedNode;
     /*Links the constraint component with instances of dash:SuggestionGenerator that may be used to produce suggestions for a given validation result that was produced by a property constraint.*/
     "propertySuggestionGenerator": NamedNode;
     /*Used as a hint for user interfaces that values of the associated property should not be editable. The values of this may be the boolean literals true or false or, more generally, a SHACL node expression that must evaluate to true or false.*/
@@ -279,9 +345,12 @@ type Dash = NamespaceBuilder & {
     "reifiableBy": NamedNode;
     /*Links a SPARQL executable with the platforms that it can be executed on. This can be used by a SHACL implementation to determine whether a constraint validator or rule shall be ignored based on the current platform. For example, if a SPARQL query uses a function or magic property that is only available in TopBraid then a non-TopBraid platform can ignore the constraint (or simply always return no validation results). If this property has no value then the assumption is that the execution will succeed. As soon as one value exists, the assumption is that the engine supports at least one of the given platforms.*/
     "requiredExecutionPlatform": NamedNode;
+    /*Links a class with the Resource Actions that can be applied to instances of that class.*/
+    "resourceAction": NamedNode;
     "rootClass": NamedNode;
     /*States that a subject resource has a given shape. This property can, for example, be used to capture results of SHACL validation on static data.*/
     "shape": NamedNode;
+    "shapeScript": NamedNode;
     "singleLine": NamedNode;
     /*Can be set to true for those constraint components where the validation does not require to visit any other triples than the parameters. Examples of this include sh:datatype or sh:nodeKind, where no further triples need to be queried to determine the result.
     
@@ -300,8 +369,6 @@ type Dash = NamespaceBuilder & {
     "suggestionGroup": NamedNode;
     /*True to declare that the associated property path is symmetric.*/
     "symmetric": NamedNode;
-    /*Can be used by TestCases to point at a resource with information on how to set up the execution environment prior to execution.*/
-    "testEnvironment": NamedNode;
     /*Indicates whether this test modifies the specified dash:testEnvironment. If set to true then a test runner can make sure to wipe out the previous environment, while leaving it false (or undefined) means that the test runner can reuse the environment from the previous test case. As setting up and tearing down tests is sometimes slow, this flag can significantly accelerate test execution.*/
     "testModifiesEnvironment": NamedNode;
     /*Returns a literal with datatype xsd:string that has the input value as its string. If the input value is an (URI) resource then its URI will be used.*/
@@ -319,16 +386,21 @@ type Dash = NamespaceBuilder & {
     "x": NamedNode;
     /*The y position.*/
     "y": NamedNode;
+    "skipPreview": NamedNode;
     "nonRecursive": NamedNode;
     "uriStart": NamedNode;
+    "jsCondition": NamedNode;
     "testCase": NamedNode;
     "uri": NamedNode;
     "predicate": NamedNode;
     "nodeKind": NamedNode;
     "subject": NamedNode;
+    "focusNode": NamedNode;
     "testGraph": NamedNode;
+    "action": NamedNode;
     "arg": NamedNode;
     "constraintOrShape": NamedNode;
+    "variables": NamedNode;
     "expression": NamedNode;
 };
 export const dash: Dash = (namespace("http://datashapes.org/dash#") as any);

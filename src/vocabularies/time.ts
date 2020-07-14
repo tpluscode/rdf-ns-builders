@@ -1,21 +1,20 @@
-import { prefixes } from "@zazuko/rdf-vocabularies";
-import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
+import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
 import { NamedNode } from "rdf-js";
 type Time = NamespaceBuilder & {
-    /*Description of date and time structured with separate values for the various elements of a calendar-clock system. The temporal reference system is fixed to Gregorian Calendar, and the range of year, month, day properties restricted to corresponding XML Schema types xsd:gYear, xsd:gMonth and xsd:gDay, respectively.*/
+    /*Descripción de fecha y tiempo estructurada con valores separados para los diferentes elementos de un sistema calendario-reloj. El sistema de referencia temporal está fijado al calendario gregoriano, y el rango de las propiedades año, mes, día restringidas a los correspondientes tipos del XML Schema xsd:gYear, xsd:gMonth y xsd:gDay respectivamente.*/
     "DateTimeDescription": NamedNode;
-    /*DateTimeInterval is a subclass of ProperInterval, defined using the multi-element DateTimeDescription.*/
+    /*'intervalo de fecha-hora' es una subclase de 'intervalo propio', definida utilizando el multi-elemento 'descripción de fecha-hora'.*/
     "DateTimeInterval": NamedNode;
-    /*The day of week*/
+    /*El día de la semana*/
     "DayOfWeek": NamedNode;
-    /*Duration of a temporal extent expressed as a number scaled by a temporal unit*/
+    /*Duración de una extensión temporal expresada como un número escalado por una unidad temporal.*/
     "Duration": NamedNode;
-    /*Description of temporal extent structured with separate values for the various elements of a calendar-clock system. The temporal reference system is fixed to Gregorian Calendar, and the range of each of the numeric properties is restricted to xsd:decimal*/
+    /*Descripción de extensión temporal estructurada con valores separados para los distintos elementos de un sistema de horario-calendario. El sistema de referencia temporal se fija al calendario gregoriano, y el intervalo de cada una de las propiedades numéricas se restringe a xsd:decimal.*/
     "DurationDescription": NamedNode;
     "Friday": NamedNode;
-    /*Description of date and time structured with separate values for the various elements of a calendar-clock system*/
+    /*Descripción de fecha y hora estructurada con valores separados para los distintos elementos de un sistema calendario-reloj.*/
     "GeneralDateTimeDescription": NamedNode;
-    /*Description of temporal extent structured with separate values for the various elements of a calendar-clock system.*/
+    /*Descripción de extensión temporal estructurada con valores separados para los distintos elementos de un sistema de horario-calendario.*/
     "GeneralDurationDescription": NamedNode;
     /*A temporal entity with zero extent or duration*/
     "Instant": NamedNode;
@@ -23,7 +22,7 @@ type Time = NamespaceBuilder & {
     "Interval": NamedNode;
     "January": NamedNode;
     "Monday": NamedNode;
-    /*The month of the year*/
+    /*El mes del año.*/
     "MonthOfYear": NamedNode;
     /*A temporal entity with non-zero extent or duration, i.e. for which the value of the beginning and end are different*/
     "ProperInterval": NamedNode;
@@ -33,7 +32,7 @@ type Time = NamespaceBuilder & {
     
     This is a stub class, representing the set of all temporal reference systems.*/
     "TRS": NamedNode;
-    /*Time extent; duration of a time interval separate from its particular start position*/
+    /*Extensión de tiempo; duración de un intervalo de tiempo independiente de su posición de inicio particular.*/
     "TemporalDuration": NamedNode;
     /*A temporal interval or instant.*/
     "TemporalEntity": NamedNode;
@@ -52,66 +51,66 @@ type Time = NamespaceBuilder & {
     "Wednesday": NamedNode;
     /*Year duration*/
     "Year": NamedNode;
-    /*Gives directionality to time. If a temporal entity T1 is after another temporal entity T2, then the beginning of T1 is after the end of T2.*/
+    /*Asume una dirección en el tiempo. Si una entidad temporal T1 está después de otra entidad temporal T2, entonces el principio de T1 está después del final de T2.*/
     "after": NamedNode;
-    /*Gives directionality to time. If a temporal entity T1 is before another temporal entity T2, then the end of T1 is before the beginning of T2. Thus, "before" can be considered to be basic to instants and derived for intervals.*/
+    /*Asume una dirección en el tiempo. Si una entidad temporal T1 está antes que otra entidad temporal T2, entonces el final de T1 está antes que el principio de T2. Así, "antes" se puede considerar básica para instantes y derivada para intervalos.*/
     "before": NamedNode;
     /*Day position in a calendar-clock system.
     
     The range of this property is not specified, so can be replaced by any specific representation of a calendar day from any calendar. */
     "day": NamedNode;
-    /*The day of week, whose value is a member of the class time:DayOfWeek*/
+    /*El día de la semana, cuyo valor es un miembro de la clase 'día de la semana'.*/
     "dayOfWeek": NamedNode;
-    /*The number of the day within the year*/
+    /*El número de día en el año.*/
     "dayOfYear": NamedNode;
-    /*length of, or element of the length of, a temporal extent expressed in days*/
+    /*Longitud de, o elemento de la longitud de, una extensión temporal expresada en días.*/
     "days": NamedNode;
     /*Day of month - formulated as a text string with a pattern constraint to reproduce the same lexical form as gDay, except that values up to 99 are permitted, in order to support calendars with more than 31 days in a month.
     Note that the value-space is not defined, so a generic OWL2 processor cannot compute ordering relationships of values of this type.*/
     "generalDay": NamedNode;
-    /*Month of year - formulated as a text string with a pattern constraint to reproduce the same lexical form as gMonth, except that values up to 20 are permitted, in order to support calendars with more than 12 months in the year.
-    Note that the value-space is not defined, so a generic OWL2 processor cannot compute ordering relationships of values of this type.*/
+    /*Mes del año - formulado como una cadena de texto con una restricción patrón para reproducir la misma forma léxica que gMonth, excepto que se permiten valores hasta el 20, con el propósito de proporcionar soporte a calendarios con años con más de 12 meses.
+                Nótese que el espacio de valores no está definido, por tanto, un procesador genérico de OWL2 no puede computar relaciones de orden de valores de este tipo.*/
     "generalMonth": NamedNode;
-    /*Year number - formulated as a text string with a pattern constraint to reproduce the same lexical form as gYear, but not restricted to values from the Gregorian calendar.
-    Note that the value-space is not defined, so a generic OWL2 processor cannot compute ordering relationships of values of this type.*/
+    /*Número de año - formulado como una cadena de texto con una restricción patrón para reproducir la misma forma léxica que gYear, aunque no está restringido a valores del calendario gregoriano.
+                Nótese que el espacio de valores no está definido, por tanto, un procesador genérico de OWL2 no puede computar relaciones de orden de valores de este tipo.*/
     "generalYear": NamedNode;
     /*Beginning of a temporal entity*/
     "hasBeginning": NamedNode;
-    /*Value of DateTimeInterval expressed as a structured value. The beginning and end of the interval coincide with the limits of the shortest element in the description.*/
+    /*Valor de intervalo de fecha-hora expresado como un valor estructurado. El principio y el final del intervalo coincide con los límites del elemento más corto en la descripción.*/
     "hasDateTimeDescription": NamedNode;
-    /*Duration of a temporal entity, expressed as a scaled value or nominal value*/
+    /*Duración de una entidad temporal, expresada como un valor escalado o un valor nominal.*/
     "hasDuration": NamedNode;
-    /*Duration of a temporal entity, expressed using a structured description*/
+    /*Duración de una entidad temporal, expresada utilizando una descripción estructurada.*/
     "hasDurationDescription": NamedNode;
     /*End of a temporal entity.*/
     "hasEnd": NamedNode;
-    /*The temporal reference system used by a temporal position or extent description. */
+    /*El sistema de referencia temporal utilizado por una posición temporal o descripción de extensión.*/
     "hasTRS": NamedNode;
-    /*Duration of a temporal entity.*/
+    /*Duración de una entidad temporal.*/
     "hasTemporalDuration": NamedNode;
-    /*Supports the association of a temporal entity (instant or interval) to any thing*/
+    /*Proporciona soporte a la asociación de una entidad temporal (instante o intervalo) a cualquier cosa.*/
     "hasTime": NamedNode;
-    /*Extent of a temporal entity, expressed using xsd:duration*/
+    /*Extensión de una entidad temporal, expresada utilizando xsd:duration.*/
     "hasXSDDuration": NamedNode;
     /*Hour position in a calendar-clock system.*/
     "hour": NamedNode;
-    /*length of, or element of the length of, a temporal extent expressed in hours*/
+    /*Longitud de, o elemento de la longitud de, una extensión temporal expresada en horas.*/
     "hours": NamedNode;
-    /*Position of an instant, expressed using a structured description*/
+    /*Posición de un instante, expresada utilizando una descripción estructurada.*/
     "inDateTime": NamedNode;
-    /*Position of a time instant*/
+    /*Posición de un instante de tiempo.*/
     "inTemporalPosition": NamedNode;
-    /*Position of an instant, expressed as a temporal coordinate or nominal value*/
+    /*Posición de un instante, expresada como una coordenada temporal o un valor nominal.*/
     "inTimePosition": NamedNode;
-    /*Position of an instant, expressed using xsd:date*/
+    /*Posición de un instante, expresado utilizando xsd:date.*/
     "inXSDDate": NamedNode;
-    /*Position of an instant, expressed using xsd:dateTime*/
+    /*Posición de un instante, expresado utilizando xsd:dateTime.*/
     "inXSDDateTime": NamedNode;
-    /*Position of an instant, expressed using xsd:dateTimeStamp*/
+    /*Posición de un instante, expresado utilizando xsd:dateTimeStamp.*/
     "inXSDDateTimeStamp": NamedNode;
-    /*Position of an instant, expressed using xsd:gYear*/
+    /*Posición de un instante, expresado utilizando xsd:gYear.*/
     "inXSDgYear": NamedNode;
-    /*Position of an instant, expressed using xsd:gYearMonth*/
+    /*Posición de un instante, expresado utilizando xsd:gYearMonth.*/
     "inXSDgYearMonth": NamedNode;
     /*An instant that falls inside the interval. It is not intended to include beginnings and ends of intervals.*/
     "inside": NamedNode;
@@ -139,7 +138,7 @@ type Time = NamespaceBuilder & {
     "intervalMetBy": NamedNode;
     /*If a proper interval T1 is intervalOverlappedBy another proper interval T2, then the beginning of T1 is after the beginning of T2, the beginning of T1 is before the end of T2, and the end of T1 is after the end of T2.*/
     "intervalOverlappedBy": NamedNode;
-    /*If a proper interval T1 is intervalOverlaps another proper interval T2, then the beginning of T1 is before the beginning of T2, the end of T1 is after the beginning of T2, and the end of T1 is before the end of T2.*/
+    /*Asume una dirección en el tiempo. Si una entidad temporal T1 está después de otra entidad temporal T2, entonces el principio de T1 está después del final de T2.*/
     "intervalOverlaps": NamedNode;
     /*If a proper interval T1 is intervalStarted another proper interval T2, then the beginning of T1 is coincident with the beginning of T2, and the end of T1 is after the end of T2.*/
     "intervalStartedBy": NamedNode;
@@ -147,25 +146,25 @@ type Time = NamespaceBuilder & {
     "intervalStarts": NamedNode;
     /*Minute position in a calendar-clock system.*/
     "minute": NamedNode;
-    /*length, or element of, a temporal extent expressed in minutes*/
+    /*Longitud de, o elemento de la longitud de, una extensión temporal expresada en minutos.*/
     "minutes": NamedNode;
     /*Month position in a calendar-clock system.
     
     The range of this property is not specified, so can be replaced by any specific representation of a calendar month from any calendar. */
     "month": NamedNode;
-    /*The month of the year, whose value is a member of the class time:MonthOfYear*/
+    /*El mes del año, cuyo valor es un miembro de la clase 'mes del año'.*/
     "monthOfYear": NamedNode;
-    /*length of, or element of the length of, a temporal extent expressed in months*/
+    /*Longitud de, o elemento de la longitud de, una extensión temporal expresada en meses.*/
     "months": NamedNode;
-    /*The (nominal) value indicating temporal position in an ordinal reference system */
+    /*El valor (nominal) que indica posición temporal en un sistema de referencia ordinal.*/
     "nominalPosition": NamedNode;
-    /*Value of a temporal extent expressed as a decimal number scaled by a temporal unit*/
+    /*Valor de una extensión temporal expresada como un número decimal escalado por una unidad de tiempo.*/
     "numericDuration": NamedNode;
-    /*The (numeric) value indicating position within a temporal coordinate system */
+    /*El valor (numérico) que indica posición temporal en un sistema de referencia ordinal.*/
     "numericPosition": NamedNode;
-    /*Second position in a calendar-clock system.*/
+    /*Posición de segundo en un sistema calendario-reloj.*/
     "second": NamedNode;
-    /*length of, or element of the length of, a temporal extent expressed in seconds*/
+    /*Longitud de, o elemento de la longitud de, una extensión temporal expresada en segundos.*/
     "seconds": NamedNode;
     /*The time zone for clock elements in the temporal position*/
     "timeZone": NamedNode;
@@ -174,21 +173,21 @@ type Time = NamespaceBuilder & {
     "unitMinute": NamedNode;
     "unitMonth": NamedNode;
     "unitSecond": NamedNode;
-    /*The temporal unit which provides the precision of a date-time value or scale of a temporal extent*/
+    /*La unidad de tiempo que proporciona la precisión de un valor fecha-hora o la escala de una extensión temporal.*/
     "unitType": NamedNode;
     "unitWeek": NamedNode;
     "unitYear": NamedNode;
-    /*Week number within the year.*/
+    /*Número de semana en el año.*/
     "week": NamedNode;
-    /*length of, or element of the length of, a temporal extent expressed in weeks*/
+    /*Longitud de, o elemento de la longitud de, una extensión temporal expresada en semanas.*/
     "weeks": NamedNode;
-    /*Value of DateTimeInterval expressed as a compact value.*/
+    /*Valor de 'intervalo de fecha-hora' expresado como un valor compacto.*/
     "xsdDateTime": NamedNode;
-    /*Year position in a calendar-clock system.
+    /*Posición de año en un sistema calendario-reloj.
     
-    The range of this property is not specified, so can be replaced by any specific representation of a calendar year from any calendar. */
+    l rango de esta propiedad no está especificado, por tanto, se puede reemplazar por cualquier representación específica de un año de calendario de un calendario cualquiera.*/
     "year": NamedNode;
-    /*length of, or element of the length of, a temporal extent expressed in years*/
+    /*Longitud de, o elemento de la longitud de, una extensión temporal expresada en años.*/
     "years": NamedNode;
     "2006": NamedNode;
     "2016": NamedNode;
