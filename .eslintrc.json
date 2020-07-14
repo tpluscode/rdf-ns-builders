@@ -1,11 +1,5 @@
 {
   "extends": [ "@tpluscode" ],
-  "env": {
-    "jest/globals": true
-  },
-  "plugins": [
-    "jest"
-  ],
   "parserOptions": {
     "project": "./tsconfig.eslint.json"
   }
