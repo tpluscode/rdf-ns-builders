@@ -2,48 +2,48 @@ import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
 import { NamedNode } from "rdf-js";
 type Rdf = NamespaceBuilder & {
     /*The class of containers of alternatives.*/
-    "Alt": NamedNode;
+    "Alt": NamedNode<'http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt'>;
     /*The class of unordered containers.*/
-    "Bag": NamedNode;
+    "Bag": NamedNode<'http://www.w3.org/1999/02/22-rdf-syntax-ns#Bag'>;
     /*A class representing a compound literal.*/
-    "CompoundLiteral": NamedNode;
+    "CompoundLiteral": NamedNode<'http://www.w3.org/1999/02/22-rdf-syntax-ns#CompoundLiteral'>;
     /*The datatype of RDF literals storing fragments of HTML content*/
-    "HTML": NamedNode;
+    "HTML": NamedNode<'http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML'>;
     /*The datatype of RDF literals storing JSON content.*/
-    "JSON": NamedNode;
+    "JSON": NamedNode<'http://www.w3.org/1999/02/22-rdf-syntax-ns#JSON'>;
     /*The class of RDF Lists.*/
-    "List": NamedNode;
+    "List": NamedNode<'http://www.w3.org/1999/02/22-rdf-syntax-ns#List'>;
     /*The class of plain (i.e. untyped) literal values, as used in RIF and OWL 2*/
-    "PlainLiteral": NamedNode;
+    "PlainLiteral": NamedNode<'http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral'>;
     /*The class of RDF properties.*/
-    "Property": NamedNode;
+    "Property": NamedNode<'http://www.w3.org/1999/02/22-rdf-syntax-ns#Property'>;
     /*The class of ordered containers.*/
-    "Seq": NamedNode;
+    "Seq": NamedNode<'http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq'>;
     /*The class of RDF statements.*/
-    "Statement": NamedNode;
+    "Statement": NamedNode<'http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement'>;
     /*The datatype of XML literal values.*/
-    "XMLLiteral": NamedNode;
+    "XMLLiteral": NamedNode<'http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral'>;
     /*The base direction component of a CompoundLiteral.*/
-    "direction": NamedNode;
+    "direction": NamedNode<'http://www.w3.org/1999/02/22-rdf-syntax-ns#direction'>;
     /*The first item in the subject RDF list.*/
-    "first": NamedNode;
+    "first": NamedNode<'http://www.w3.org/1999/02/22-rdf-syntax-ns#first'>;
     /*The datatype of language-tagged string values*/
-    "langString": NamedNode;
+    "langString": NamedNode<'http://www.w3.org/1999/02/22-rdf-syntax-ns#langString'>;
     /*The language component of a CompoundLiteral.*/
-    "language": NamedNode;
+    "language": NamedNode<'http://www.w3.org/1999/02/22-rdf-syntax-ns#language'>;
     /*The empty list, with no items in it. If the rest of a list is nil then the list has no more items in it.*/
-    "nil": NamedNode;
+    "nil": NamedNode<'http://www.w3.org/1999/02/22-rdf-syntax-ns#nil'>;
     /*The object of the subject RDF statement.*/
-    "object": NamedNode;
+    "object": NamedNode<'http://www.w3.org/1999/02/22-rdf-syntax-ns#object'>;
     /*The predicate of the subject RDF statement.*/
-    "predicate": NamedNode;
+    "predicate": NamedNode<'http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate'>;
     /*The rest of the subject RDF list after the first item.*/
-    "rest": NamedNode;
+    "rest": NamedNode<'http://www.w3.org/1999/02/22-rdf-syntax-ns#rest'>;
     /*The subject of the subject RDF statement.*/
-    "subject": NamedNode;
+    "subject": NamedNode<'http://www.w3.org/1999/02/22-rdf-syntax-ns#subject'>;
     /*The subject is an instance of a class.*/
-    "type": NamedNode;
+    "type": NamedNode<'http://www.w3.org/1999/02/22-rdf-syntax-ns#type'>;
     /*Idiomatic property used for structured values.*/
-    "value": NamedNode;
+    "value": NamedNode<'http://www.w3.org/1999/02/22-rdf-syntax-ns#value'>;
 };
 export const rdf: Rdf = (namespace("http://www.w3.org/1999/02/22-rdf-syntax-ns#") as any);

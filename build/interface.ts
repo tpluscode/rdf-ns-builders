@@ -1,18 +1,18 @@
 import ts from 'typescript'
-import { shrink, vocabularies } from '@zazuko/rdf-vocabularies'
+import { prefixes, shrink, vocabularies } from '@zazuko/rdf-vocabularies'
 import cf from 'clownface'
 import { namedNode } from '@rdfjs/data-model'
 import { toProperCase } from './strings'
 
 const rdfsComment = namedNode('http://www.w3.org/2000/01/rdf-schema#comment')
 
-function createMember(term: string, comment?: string) {
+function createMember(prefix: string, term: string, comment?: string) {
   const member = ts.createPropertySignature(
     undefined,
     ts.createStringLiteral(term),
     undefined,
     ts.createTypeReferenceNode(
-      ts.createIdentifier('NamedNode'),
+      ts.createIdentifier(`NamedNode<'${prefixes[prefix]}${term}'>`),
       undefined
     ),
     undefined
@@ -44,7 +44,7 @@ async function createMembers(prefix: string) {
         const term = matchesPrefix[1]
 
         if (!terms.has(matchesPrefix[1])) {
-          terms.set(term, createMember(term, node.out(rdfsComment).values[0]))
+          terms.set(term, createMember(prefix, term, node.out(rdfsComment).values[0]))
         }
       }
     })

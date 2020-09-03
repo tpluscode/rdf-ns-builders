@@ -2,158 +2,158 @@ import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
 import { NamedNode } from "rdf-js";
 type Owl = NamespaceBuilder & {
     /*The class of collections of pairwise different individuals.*/
-    "AllDifferent": NamedNode;
+    "AllDifferent": NamedNode<'http://www.w3.org/2002/07/owl#AllDifferent'>;
     /*The class of collections of pairwise disjoint classes.*/
-    "AllDisjointClasses": NamedNode;
+    "AllDisjointClasses": NamedNode<'http://www.w3.org/2002/07/owl#AllDisjointClasses'>;
     /*The class of collections of pairwise disjoint properties.*/
-    "AllDisjointProperties": NamedNode;
+    "AllDisjointProperties": NamedNode<'http://www.w3.org/2002/07/owl#AllDisjointProperties'>;
     /*The class of annotated annotations for which the RDF serialization consists of an annotated subject, predicate and object.*/
-    "Annotation": NamedNode;
+    "Annotation": NamedNode<'http://www.w3.org/2002/07/owl#Annotation'>;
     /*The class of annotation properties.*/
-    "AnnotationProperty": NamedNode;
+    "AnnotationProperty": NamedNode<'http://www.w3.org/2002/07/owl#AnnotationProperty'>;
     /*The class of asymmetric properties.*/
-    "AsymmetricProperty": NamedNode;
+    "AsymmetricProperty": NamedNode<'http://www.w3.org/2002/07/owl#AsymmetricProperty'>;
     /*The class of annotated axioms for which the RDF serialization consists of an annotated subject, predicate and object.*/
-    "Axiom": NamedNode;
+    "Axiom": NamedNode<'http://www.w3.org/2002/07/owl#Axiom'>;
     /*The class of OWL classes.*/
-    "Class": NamedNode;
+    "Class": NamedNode<'http://www.w3.org/2002/07/owl#Class'>;
     /*The class of OWL data ranges, which are special kinds of datatypes. Note: The use of the IRI owl:DataRange has been deprecated as of OWL 2. The IRI rdfs:Datatype SHOULD be used instead.*/
-    "DataRange": NamedNode;
+    "DataRange": NamedNode<'http://www.w3.org/2002/07/owl#DataRange'>;
     /*The class of data properties.*/
-    "DatatypeProperty": NamedNode;
+    "DatatypeProperty": NamedNode<'http://www.w3.org/2002/07/owl#DatatypeProperty'>;
     /*The class of deprecated classes.*/
-    "DeprecatedClass": NamedNode;
+    "DeprecatedClass": NamedNode<'http://www.w3.org/2002/07/owl#DeprecatedClass'>;
     /*The class of deprecated properties.*/
-    "DeprecatedProperty": NamedNode;
+    "DeprecatedProperty": NamedNode<'http://www.w3.org/2002/07/owl#DeprecatedProperty'>;
     /*The class of functional properties.*/
-    "FunctionalProperty": NamedNode;
+    "FunctionalProperty": NamedNode<'http://www.w3.org/2002/07/owl#FunctionalProperty'>;
     /*The class of inverse-functional properties.*/
-    "InverseFunctionalProperty": NamedNode;
+    "InverseFunctionalProperty": NamedNode<'http://www.w3.org/2002/07/owl#InverseFunctionalProperty'>;
     /*The class of irreflexive properties.*/
-    "IrreflexiveProperty": NamedNode;
+    "IrreflexiveProperty": NamedNode<'http://www.w3.org/2002/07/owl#IrreflexiveProperty'>;
     /*The class of named individuals.*/
-    "NamedIndividual": NamedNode;
+    "NamedIndividual": NamedNode<'http://www.w3.org/2002/07/owl#NamedIndividual'>;
     /*The class of negative property assertions.*/
-    "NegativePropertyAssertion": NamedNode;
+    "NegativePropertyAssertion": NamedNode<'http://www.w3.org/2002/07/owl#NegativePropertyAssertion'>;
     /*This is the empty class.*/
-    "Nothing": NamedNode;
+    "Nothing": NamedNode<'http://www.w3.org/2002/07/owl#Nothing'>;
     /*The class of object properties.*/
-    "ObjectProperty": NamedNode;
+    "ObjectProperty": NamedNode<'http://www.w3.org/2002/07/owl#ObjectProperty'>;
     /*The class of ontologies.*/
-    "Ontology": NamedNode;
+    "Ontology": NamedNode<'http://www.w3.org/2002/07/owl#Ontology'>;
     /*The class of ontology properties.*/
-    "OntologyProperty": NamedNode;
+    "OntologyProperty": NamedNode<'http://www.w3.org/2002/07/owl#OntologyProperty'>;
     /*The class of reflexive properties.*/
-    "ReflexiveProperty": NamedNode;
+    "ReflexiveProperty": NamedNode<'http://www.w3.org/2002/07/owl#ReflexiveProperty'>;
     /*The class of property restrictions.*/
-    "Restriction": NamedNode;
+    "Restriction": NamedNode<'http://www.w3.org/2002/07/owl#Restriction'>;
     /*The class of symmetric properties.*/
-    "SymmetricProperty": NamedNode;
+    "SymmetricProperty": NamedNode<'http://www.w3.org/2002/07/owl#SymmetricProperty'>;
     /*The class of OWL individuals.*/
-    "Thing": NamedNode;
+    "Thing": NamedNode<'http://www.w3.org/2002/07/owl#Thing'>;
     /*The class of transitive properties.*/
-    "TransitiveProperty": NamedNode;
+    "TransitiveProperty": NamedNode<'http://www.w3.org/2002/07/owl#TransitiveProperty'>;
     /*The property that determines the class that a universal property restriction refers to.*/
-    "allValuesFrom": NamedNode;
+    "allValuesFrom": NamedNode<'http://www.w3.org/2002/07/owl#allValuesFrom'>;
     /*The property that determines the predicate of an annotated axiom or annotated annotation.*/
-    "annotatedProperty": NamedNode;
+    "annotatedProperty": NamedNode<'http://www.w3.org/2002/07/owl#annotatedProperty'>;
     /*The property that determines the subject of an annotated axiom or annotated annotation.*/
-    "annotatedSource": NamedNode;
+    "annotatedSource": NamedNode<'http://www.w3.org/2002/07/owl#annotatedSource'>;
     /*The property that determines the object of an annotated axiom or annotated annotation.*/
-    "annotatedTarget": NamedNode;
+    "annotatedTarget": NamedNode<'http://www.w3.org/2002/07/owl#annotatedTarget'>;
     /*The property that determines the predicate of a negative property assertion.*/
-    "assertionProperty": NamedNode;
+    "assertionProperty": NamedNode<'http://www.w3.org/2002/07/owl#assertionProperty'>;
     /*The annotation property that indicates that a given ontology is backward compatible with another ontology.*/
-    "backwardCompatibleWith": NamedNode;
+    "backwardCompatibleWith": NamedNode<'http://www.w3.org/2002/07/owl#backwardCompatibleWith'>;
     /*The data property that does not relate any individual to any data value.*/
-    "bottomDataProperty": NamedNode;
+    "bottomDataProperty": NamedNode<'http://www.w3.org/2002/07/owl#bottomDataProperty'>;
     /*The object property that does not relate any two individuals.*/
-    "bottomObjectProperty": NamedNode;
+    "bottomObjectProperty": NamedNode<'http://www.w3.org/2002/07/owl#bottomObjectProperty'>;
     /*The property that determines the cardinality of an exact cardinality restriction.*/
-    "cardinality": NamedNode;
+    "cardinality": NamedNode<'http://www.w3.org/2002/07/owl#cardinality'>;
     /*The property that determines that a given class is the complement of another class.*/
-    "complementOf": NamedNode;
+    "complementOf": NamedNode<'http://www.w3.org/2002/07/owl#complementOf'>;
     /*The property that determines that a given data range is the complement of another data range with respect to the data domain.*/
-    "datatypeComplementOf": NamedNode;
+    "datatypeComplementOf": NamedNode<'http://www.w3.org/2002/07/owl#datatypeComplementOf'>;
     /*The annotation property that indicates that a given entity has been deprecated.*/
-    "deprecated": NamedNode;
+    "deprecated": NamedNode<'http://www.w3.org/2002/07/owl#deprecated'>;
     /*The property that determines that two given individuals are different.*/
-    "differentFrom": NamedNode;
+    "differentFrom": NamedNode<'http://www.w3.org/2002/07/owl#differentFrom'>;
     /*The property that determines that a given class is equivalent to the disjoint union of a collection of other classes.*/
-    "disjointUnionOf": NamedNode;
+    "disjointUnionOf": NamedNode<'http://www.w3.org/2002/07/owl#disjointUnionOf'>;
     /*The property that determines that two given classes are disjoint.*/
-    "disjointWith": NamedNode;
+    "disjointWith": NamedNode<'http://www.w3.org/2002/07/owl#disjointWith'>;
     /*The property that determines the collection of pairwise different individuals in a owl:AllDifferent axiom.*/
-    "distinctMembers": NamedNode;
+    "distinctMembers": NamedNode<'http://www.w3.org/2002/07/owl#distinctMembers'>;
     /*The property that determines that two given classes are equivalent, and that is used to specify datatype definitions.*/
-    "equivalentClass": NamedNode;
+    "equivalentClass": NamedNode<'http://www.w3.org/2002/07/owl#equivalentClass'>;
     /*The property that determines that two given properties are equivalent.*/
-    "equivalentProperty": NamedNode;
+    "equivalentProperty": NamedNode<'http://www.w3.org/2002/07/owl#equivalentProperty'>;
     /*The property that determines the collection of properties that jointly build a key.*/
-    "hasKey": NamedNode;
+    "hasKey": NamedNode<'http://www.w3.org/2002/07/owl#hasKey'>;
     /*The property that determines the property that a self restriction refers to.*/
-    "hasSelf": NamedNode;
+    "hasSelf": NamedNode<'http://www.w3.org/2002/07/owl#hasSelf'>;
     /*The property that determines the individual that a has-value restriction refers to.*/
-    "hasValue": NamedNode;
+    "hasValue": NamedNode<'http://www.w3.org/2002/07/owl#hasValue'>;
     /*The property that is used for importing other ontologies into a given ontology.*/
-    "imports": NamedNode;
+    "imports": NamedNode<'http://www.w3.org/2002/07/owl#imports'>;
     /*The annotation property that indicates that a given ontology is incompatible with another ontology.*/
-    "incompatibleWith": NamedNode;
+    "incompatibleWith": NamedNode<'http://www.w3.org/2002/07/owl#incompatibleWith'>;
     /*The property that determines the collection of classes or data ranges that build an intersection.*/
-    "intersectionOf": NamedNode;
+    "intersectionOf": NamedNode<'http://www.w3.org/2002/07/owl#intersectionOf'>;
     /*The property that determines that two given properties are inverse.*/
-    "inverseOf": NamedNode;
+    "inverseOf": NamedNode<'http://www.w3.org/2002/07/owl#inverseOf'>;
     /*The property that determines the cardinality of a maximum cardinality restriction.*/
-    "maxCardinality": NamedNode;
+    "maxCardinality": NamedNode<'http://www.w3.org/2002/07/owl#maxCardinality'>;
     /*The property that determines the cardinality of a maximum qualified cardinality restriction.*/
-    "maxQualifiedCardinality": NamedNode;
+    "maxQualifiedCardinality": NamedNode<'http://www.w3.org/2002/07/owl#maxQualifiedCardinality'>;
     /*The property that determines the collection of members in either a owl:AllDifferent, owl:AllDisjointClasses or owl:AllDisjointProperties axiom.*/
-    "members": NamedNode;
+    "members": NamedNode<'http://www.w3.org/2002/07/owl#members'>;
     /*The property that determines the cardinality of a minimum cardinality restriction.*/
-    "minCardinality": NamedNode;
+    "minCardinality": NamedNode<'http://www.w3.org/2002/07/owl#minCardinality'>;
     /*The property that determines the cardinality of a minimum qualified cardinality restriction.*/
-    "minQualifiedCardinality": NamedNode;
+    "minQualifiedCardinality": NamedNode<'http://www.w3.org/2002/07/owl#minQualifiedCardinality'>;
     /*The property that determines the class that a qualified object cardinality restriction refers to.*/
-    "onClass": NamedNode;
+    "onClass": NamedNode<'http://www.w3.org/2002/07/owl#onClass'>;
     /*The property that determines the data range that a qualified data cardinality restriction refers to.*/
-    "onDataRange": NamedNode;
+    "onDataRange": NamedNode<'http://www.w3.org/2002/07/owl#onDataRange'>;
     /*The property that determines the datatype that a datatype restriction refers to.*/
-    "onDatatype": NamedNode;
+    "onDatatype": NamedNode<'http://www.w3.org/2002/07/owl#onDatatype'>;
     /*The property that determines the n-tuple of properties that a property restriction on an n-ary data range refers to.*/
-    "onProperties": NamedNode;
+    "onProperties": NamedNode<'http://www.w3.org/2002/07/owl#onProperties'>;
     /*The property that determines the property that a property restriction refers to.*/
-    "onProperty": NamedNode;
+    "onProperty": NamedNode<'http://www.w3.org/2002/07/owl#onProperty'>;
     /*The property that determines the collection of individuals or data values that build an enumeration.*/
-    "oneOf": NamedNode;
+    "oneOf": NamedNode<'http://www.w3.org/2002/07/owl#oneOf'>;
     /*The annotation property that indicates the predecessor ontology of a given ontology.*/
-    "priorVersion": NamedNode;
+    "priorVersion": NamedNode<'http://www.w3.org/2002/07/owl#priorVersion'>;
     /*The property that determines the n-tuple of properties that build a sub property chain of a given property.*/
-    "propertyChainAxiom": NamedNode;
+    "propertyChainAxiom": NamedNode<'http://www.w3.org/2002/07/owl#propertyChainAxiom'>;
     /*The property that determines that two given properties are disjoint.*/
-    "propertyDisjointWith": NamedNode;
+    "propertyDisjointWith": NamedNode<'http://www.w3.org/2002/07/owl#propertyDisjointWith'>;
     /*The property that determines the cardinality of an exact qualified cardinality restriction.*/
-    "qualifiedCardinality": NamedNode;
+    "qualifiedCardinality": NamedNode<'http://www.w3.org/2002/07/owl#qualifiedCardinality'>;
     /*The property that determines that two given individuals are equal.*/
-    "sameAs": NamedNode;
+    "sameAs": NamedNode<'http://www.w3.org/2002/07/owl#sameAs'>;
     /*The property that determines the class that an existential property restriction refers to.*/
-    "someValuesFrom": NamedNode;
+    "someValuesFrom": NamedNode<'http://www.w3.org/2002/07/owl#someValuesFrom'>;
     /*The property that determines the subject of a negative property assertion.*/
-    "sourceIndividual": NamedNode;
+    "sourceIndividual": NamedNode<'http://www.w3.org/2002/07/owl#sourceIndividual'>;
     /*The property that determines the object of a negative object property assertion.*/
-    "targetIndividual": NamedNode;
+    "targetIndividual": NamedNode<'http://www.w3.org/2002/07/owl#targetIndividual'>;
     /*The property that determines the value of a negative data property assertion.*/
-    "targetValue": NamedNode;
+    "targetValue": NamedNode<'http://www.w3.org/2002/07/owl#targetValue'>;
     /*The data property that relates every individual to every data value.*/
-    "topDataProperty": NamedNode;
+    "topDataProperty": NamedNode<'http://www.w3.org/2002/07/owl#topDataProperty'>;
     /*The object property that relates every two individuals.*/
-    "topObjectProperty": NamedNode;
+    "topObjectProperty": NamedNode<'http://www.w3.org/2002/07/owl#topObjectProperty'>;
     /*The property that determines the collection of classes or data ranges that build a union.*/
-    "unionOf": NamedNode;
+    "unionOf": NamedNode<'http://www.w3.org/2002/07/owl#unionOf'>;
     /*The property that identifies the version IRI of an ontology.*/
-    "versionIRI": NamedNode;
+    "versionIRI": NamedNode<'http://www.w3.org/2002/07/owl#versionIRI'>;
     /*The annotation property that provides version information for an ontology or another OWL construct.*/
-    "versionInfo": NamedNode;
+    "versionInfo": NamedNode<'http://www.w3.org/2002/07/owl#versionInfo'>;
     /*The property that determines the collection of facet-value pairs that define a datatype restriction.*/
-    "withRestrictions": NamedNode;
+    "withRestrictions": NamedNode<'http://www.w3.org/2002/07/owl#withRestrictions'>;
 };
 export const owl: Owl = (namespace("http://www.w3.org/2002/07/owl#") as any);

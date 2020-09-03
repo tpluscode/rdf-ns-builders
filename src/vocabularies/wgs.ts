@@ -9,18 +9,18 @@ type Wgs = NamespaceBuilder & {
     
     sameThing(P1, P2) :- type(P1, Point), type(P2, Point), spaciallyIntersects(P1, P2).
       */
-    "Point": NamedNode;
+    "Point": NamedNode<'http://www.w3.org/2003/01/geo/wgs84_pos#Point'>;
     /*Anything with spatial extent, i.e. size, shape, or position.
      e.g. people, places, bowling balls, as well as abstract areas like cubes.
     */
-    "SpatialThing": NamedNode;
+    "SpatialThing": NamedNode<'http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing'>;
     /*The WGS84 altitude of a SpatialThing (decimal meters
     above the local reference ellipsoid).*/
-    "alt": NamedNode;
+    "alt": NamedNode<'http://www.w3.org/2003/01/geo/wgs84_pos#alt'>;
     /*The WGS84 latitude of a SpatialThing (decimal degrees).*/
-    "lat": NamedNode;
+    "lat": NamedNode<'http://www.w3.org/2003/01/geo/wgs84_pos#lat'>;
     /*A comma-separated representation of a latitude, longitude coordinate.*/
-    "lat_long": NamedNode;
+    "lat_long": NamedNode<'http://www.w3.org/2003/01/geo/wgs84_pos#lat_long'>;
     /*The relation between something and the point,
      or other geometrical thing in space, where it is.  For example, the realtionship between
      a radio tower and a Point with a given lat and long.
@@ -29,8 +29,8 @@ type Wgs = NamespaceBuilder & {
      Clearly in practice there will be limit to the accuracy of any such statement, but one would expect
      an accuracy appropriate for the size of the object and uses such as mapping .
      */
-    "location": NamedNode;
+    "location": NamedNode<'http://www.w3.org/2003/01/geo/wgs84_pos#location'>;
     /*The WGS84 longitude of a SpatialThing (decimal degrees).*/
-    "long": NamedNode;
+    "long": NamedNode<'http://www.w3.org/2003/01/geo/wgs84_pos#long'>;
 };
 export const wgs: Wgs = (namespace("http://www.w3.org/2003/01/geo/wgs84_pos#") as any);

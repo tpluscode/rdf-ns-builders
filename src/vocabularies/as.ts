@@ -2,217 +2,217 @@ import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
 import { NamedNode } from "rdf-js";
 type As = NamespaceBuilder & {
     /*Actor accepts the Object*/
-    "Accept": NamedNode;
+    "Accept": NamedNode<'http://www.w3.org/ns/activitystreams#Accept'>;
     /*An Object representing some form of Action that has been taken*/
-    "Activity": NamedNode;
+    "Activity": NamedNode<'http://www.w3.org/ns/activitystreams#Activity'>;
     /*To Add an Object or Link to Something*/
-    "Add": NamedNode;
+    "Add": NamedNode<'http://www.w3.org/ns/activitystreams#Add'>;
     /*Actor announces the object to the target*/
-    "Announce": NamedNode;
+    "Announce": NamedNode<'http://www.w3.org/ns/activitystreams#Announce'>;
     /*Represents a software application of any sort*/
-    "Application": NamedNode;
+    "Application": NamedNode<'http://www.w3.org/ns/activitystreams#Application'>;
     /*To Arrive Somewhere (can be used, for instance, to indicate that a particular entity is currently located somewhere, e.g. a "check-in")*/
-    "Arrive": NamedNode;
+    "Arrive": NamedNode<'http://www.w3.org/ns/activitystreams#Arrive'>;
     /*A written work. Typically several paragraphs long. For example, a blog post or a news article.*/
-    "Article": NamedNode;
+    "Article": NamedNode<'http://www.w3.org/ns/activitystreams#Article'>;
     /*An audio file*/
-    "Audio": NamedNode;
-    "Block": NamedNode;
+    "Audio": NamedNode<'http://www.w3.org/ns/activitystreams#Audio'>;
+    "Block": NamedNode<'http://www.w3.org/ns/activitystreams#Block'>;
     /*An ordered or unordered collection of Objects or Links*/
-    "Collection": NamedNode;
+    "Collection": NamedNode<'http://www.w3.org/ns/activitystreams#Collection'>;
     /*A subset of items from a Collection*/
-    "CollectionPage": NamedNode;
+    "CollectionPage": NamedNode<'http://www.w3.org/ns/activitystreams#CollectionPage'>;
     /*To Create Something*/
-    "Create": NamedNode;
+    "Create": NamedNode<'http://www.w3.org/ns/activitystreams#Create'>;
     /*To Delete Something*/
-    "Delete": NamedNode;
+    "Delete": NamedNode<'http://www.w3.org/ns/activitystreams#Delete'>;
     /*The actor dislikes the object*/
-    "Dislike": NamedNode;
+    "Dislike": NamedNode<'http://www.w3.org/ns/activitystreams#Dislike'>;
     /*Represents a digital document/file of any sort*/
-    "Document": NamedNode;
+    "Document": NamedNode<'http://www.w3.org/ns/activitystreams#Document'>;
     /*An Event of any kind*/
-    "Event": NamedNode;
+    "Event": NamedNode<'http://www.w3.org/ns/activitystreams#Event'>;
     /*To flag something (e.g. flag as inappropriate, flag as spam, etc)*/
-    "Flag": NamedNode;
+    "Flag": NamedNode<'http://www.w3.org/ns/activitystreams#Flag'>;
     /*To Express Interest in Something*/
-    "Follow": NamedNode;
+    "Follow": NamedNode<'http://www.w3.org/ns/activitystreams#Follow'>;
     /*A Group of any kind.*/
-    "Group": NamedNode;
+    "Group": NamedNode<'http://www.w3.org/ns/activitystreams#Group'>;
     /*Actor is ignoring the Object*/
-    "Ignore": NamedNode;
+    "Ignore": NamedNode<'http://www.w3.org/ns/activitystreams#Ignore'>;
     /*An Image file*/
-    "Image": NamedNode;
+    "Image": NamedNode<'http://www.w3.org/ns/activitystreams#Image'>;
     /*An Activity that has no direct object*/
-    "IntransitiveActivity": NamedNode;
+    "IntransitiveActivity": NamedNode<'http://www.w3.org/ns/activitystreams#IntransitiveActivity'>;
     /*To invite someone or something to something*/
-    "Invite": NamedNode;
+    "Invite": NamedNode<'http://www.w3.org/ns/activitystreams#Invite'>;
     /*To Join Something*/
-    "Join": NamedNode;
+    "Join": NamedNode<'http://www.w3.org/ns/activitystreams#Join'>;
     /*To Leave Something*/
-    "Leave": NamedNode;
+    "Leave": NamedNode<'http://www.w3.org/ns/activitystreams#Leave'>;
     /*To Like Something*/
-    "Like": NamedNode;
+    "Like": NamedNode<'http://www.w3.org/ns/activitystreams#Like'>;
     /*Represents a qualified reference to another resource. Patterned after the RFC5988 Web Linking Model*/
-    "Link": NamedNode;
+    "Link": NamedNode<'http://www.w3.org/ns/activitystreams#Link'>;
     /*The actor listened to the object*/
-    "Listen": NamedNode;
+    "Listen": NamedNode<'http://www.w3.org/ns/activitystreams#Listen'>;
     /*A specialized Link that represents an @mention*/
-    "Mention": NamedNode;
+    "Mention": NamedNode<'http://www.w3.org/ns/activitystreams#Mention'>;
     /*The actor is moving the object. The target specifies where the object is moving to. The origin specifies where the object is moving from.*/
-    "Move": NamedNode;
+    "Move": NamedNode<'http://www.w3.org/ns/activitystreams#Move'>;
     /*A Short note, typically less than a single paragraph. A "tweet" is an example, or a "status update"*/
-    "Note": NamedNode;
-    "Object": NamedNode;
+    "Note": NamedNode<'http://www.w3.org/ns/activitystreams#Note'>;
+    "Object": NamedNode<'http://www.w3.org/ns/activitystreams#Object'>;
     /*To Offer something to someone or something*/
-    "Offer": NamedNode;
+    "Offer": NamedNode<'http://www.w3.org/ns/activitystreams#Offer'>;
     /*A variation of Collection in which items are strictly ordered*/
-    "OrderedCollection": NamedNode;
+    "OrderedCollection": NamedNode<'http://www.w3.org/ns/activitystreams#OrderedCollection'>;
     /*An ordered subset of items from an OrderedCollection*/
-    "OrderedCollectionPage": NamedNode;
+    "OrderedCollectionPage": NamedNode<'http://www.w3.org/ns/activitystreams#OrderedCollectionPage'>;
     /*A rdf:List variant for Objects and Links*/
-    "OrderedItems": NamedNode;
+    "OrderedItems": NamedNode<'http://www.w3.org/ns/activitystreams#OrderedItems'>;
     /*An Organization*/
-    "Organization": NamedNode;
+    "Organization": NamedNode<'http://www.w3.org/ns/activitystreams#Organization'>;
     /*A Web Page*/
-    "Page": NamedNode;
+    "Page": NamedNode<'http://www.w3.org/ns/activitystreams#Page'>;
     /*A Person*/
-    "Person": NamedNode;
+    "Person": NamedNode<'http://www.w3.org/ns/activitystreams#Person'>;
     /*A physical or logical location*/
-    "Place": NamedNode;
+    "Place": NamedNode<'http://www.w3.org/ns/activitystreams#Place'>;
     /*A Profile Document*/
-    "Profile": NamedNode;
+    "Profile": NamedNode<'http://www.w3.org/ns/activitystreams#Profile'>;
     /*A question of any sort.*/
-    "Question": NamedNode;
+    "Question": NamedNode<'http://www.w3.org/ns/activitystreams#Question'>;
     /*The actor read the object*/
-    "Read": NamedNode;
+    "Read": NamedNode<'http://www.w3.org/ns/activitystreams#Read'>;
     /*Actor rejects the Object*/
-    "Reject": NamedNode;
+    "Reject": NamedNode<'http://www.w3.org/ns/activitystreams#Reject'>;
     /*Represents a Social Graph relationship between two Individuals (indicated by the 'a' and 'b' properties)*/
-    "Relationship": NamedNode;
+    "Relationship": NamedNode<'http://www.w3.org/ns/activitystreams#Relationship'>;
     /*To Remove Something*/
-    "Remove": NamedNode;
+    "Remove": NamedNode<'http://www.w3.org/ns/activitystreams#Remove'>;
     /*A service provided by some entity*/
-    "Service": NamedNode;
+    "Service": NamedNode<'http://www.w3.org/ns/activitystreams#Service'>;
     /*Actor tentatively accepts the Object*/
-    "TentativeAccept": NamedNode;
+    "TentativeAccept": NamedNode<'http://www.w3.org/ns/activitystreams#TentativeAccept'>;
     /*Actor tentatively rejects the object*/
-    "TentativeReject": NamedNode;
+    "TentativeReject": NamedNode<'http://www.w3.org/ns/activitystreams#TentativeReject'>;
     /*A placeholder for a deleted object*/
-    "Tombstone": NamedNode;
+    "Tombstone": NamedNode<'http://www.w3.org/ns/activitystreams#Tombstone'>;
     /*The actor is traveling to the target. The origin specifies where the actor is traveling from.*/
-    "Travel": NamedNode;
+    "Travel": NamedNode<'http://www.w3.org/ns/activitystreams#Travel'>;
     /*To Undo Something. This would typically be used to indicate that a previous Activity has been undone.*/
-    "Undo": NamedNode;
+    "Undo": NamedNode<'http://www.w3.org/ns/activitystreams#Undo'>;
     /*To Update/Modify Something*/
-    "Update": NamedNode;
+    "Update": NamedNode<'http://www.w3.org/ns/activitystreams#Update'>;
     /*A Video document of any kind.*/
-    "Video": NamedNode;
+    "Video": NamedNode<'http://www.w3.org/ns/activitystreams#Video'>;
     /*The actor viewed the object*/
-    "View": NamedNode;
+    "View": NamedNode<'http://www.w3.org/ns/activitystreams#View'>;
     /*Specifies the accuracy around the point established by the longitude and latitude*/
-    "accuracy": NamedNode;
+    "accuracy": NamedNode<'http://www.w3.org/ns/activitystreams#accuracy'>;
     /*Subproperty of as:attributedTo that identifies the primary actor*/
-    "actor": NamedNode;
+    "actor": NamedNode<'http://www.w3.org/ns/activitystreams#actor'>;
     /*The altitude of a place*/
-    "altitude": NamedNode;
+    "altitude": NamedNode<'http://www.w3.org/ns/activitystreams#altitude'>;
     /*Describes a possible inclusive answer or option for a question.*/
-    "anyOf": NamedNode;
-    "attachment": NamedNode;
-    "attachments": NamedNode;
+    "anyOf": NamedNode<'http://www.w3.org/ns/activitystreams#anyOf'>;
+    "attachment": NamedNode<'http://www.w3.org/ns/activitystreams#attachment'>;
+    "attachments": NamedNode<'http://www.w3.org/ns/activitystreams#attachments'>;
     /*Identifies an entity to which an object is attributed*/
-    "attributedTo": NamedNode;
-    "audience": NamedNode;
+    "attributedTo": NamedNode<'http://www.w3.org/ns/activitystreams#attributedTo'>;
+    "audience": NamedNode<'http://www.w3.org/ns/activitystreams#audience'>;
     /*Identifies the author of an object. Deprecated. Use as:attributedTo instead*/
-    "author": NamedNode;
-    "bcc": NamedNode;
-    "bto": NamedNode;
-    "cc": NamedNode;
+    "author": NamedNode<'http://www.w3.org/ns/activitystreams#author'>;
+    "bcc": NamedNode<'http://www.w3.org/ns/activitystreams#bcc'>;
+    "bto": NamedNode<'http://www.w3.org/ns/activitystreams#bto'>;
+    "cc": NamedNode<'http://www.w3.org/ns/activitystreams#cc'>;
     /*The content of the object.*/
-    "content": NamedNode;
+    "content": NamedNode<'http://www.w3.org/ns/activitystreams#content'>;
     /*Specifies the context within which an object exists or an activity was performed*/
-    "context": NamedNode;
-    "current": NamedNode;
+    "context": NamedNode<'http://www.w3.org/ns/activitystreams#context'>;
+    "current": NamedNode<'http://www.w3.org/ns/activitystreams#current'>;
     /*Specifies the date and time the object was deleted*/
-    "deleted": NamedNode;
+    "deleted": NamedNode<'http://www.w3.org/ns/activitystreams#deleted'>;
     /*On a Profile object, describes the object described by the profile*/
-    "describes": NamedNode;
-    "downstreamDuplicates": NamedNode;
+    "describes": NamedNode<'http://www.w3.org/ns/activitystreams#describes'>;
+    "downstreamDuplicates": NamedNode<'http://www.w3.org/ns/activitystreams#downstreamDuplicates'>;
     /*The duration of the object*/
-    "duration": NamedNode;
+    "duration": NamedNode<'http://www.w3.org/ns/activitystreams#duration'>;
     /*The ending time of the object*/
-    "endTime": NamedNode;
-    "first": NamedNode;
+    "endTime": NamedNode<'http://www.w3.org/ns/activitystreams#endTime'>;
+    "first": NamedNode<'http://www.w3.org/ns/activitystreams#first'>;
     /*On a Tombstone object, describes the former type of the deleted object*/
-    "formerType": NamedNode;
-    "generator": NamedNode;
+    "formerType": NamedNode<'http://www.w3.org/ns/activitystreams#formerType'>;
+    "generator": NamedNode<'http://www.w3.org/ns/activitystreams#generator'>;
     /*The display height expressed as device independent pixels*/
-    "height": NamedNode;
+    "height": NamedNode<'http://www.w3.org/ns/activitystreams#height'>;
     /*The target URI of the Link*/
-    "href": NamedNode;
+    "href": NamedNode<'http://www.w3.org/ns/activitystreams#href'>;
     /*A hint about the language of the referenced resource*/
-    "hreflang": NamedNode;
-    "icon": NamedNode;
-    "id": NamedNode;
-    "image": NamedNode;
-    "inReplyTo": NamedNode;
+    "hreflang": NamedNode<'http://www.w3.org/ns/activitystreams#hreflang'>;
+    "icon": NamedNode<'http://www.w3.org/ns/activitystreams#icon'>;
+    "id": NamedNode<'http://www.w3.org/ns/activitystreams#id'>;
+    "image": NamedNode<'http://www.w3.org/ns/activitystreams#image'>;
+    "inReplyTo": NamedNode<'http://www.w3.org/ns/activitystreams#inReplyTo'>;
     /*Indentifies an object used (or to be used) to complete an activity*/
-    "instrument": NamedNode;
-    "items": NamedNode;
-    "last": NamedNode;
+    "instrument": NamedNode<'http://www.w3.org/ns/activitystreams#instrument'>;
+    "items": NamedNode<'http://www.w3.org/ns/activitystreams#items'>;
+    "last": NamedNode<'http://www.w3.org/ns/activitystreams#last'>;
     /*The latitude*/
-    "latitude": NamedNode;
-    "location": NamedNode;
+    "latitude": NamedNode<'http://www.w3.org/ns/activitystreams#latitude'>;
+    "location": NamedNode<'http://www.w3.org/ns/activitystreams#location'>;
     /*The longitude*/
-    "longitude": NamedNode;
+    "longitude": NamedNode<'http://www.w3.org/ns/activitystreams#longitude'>;
     /*The MIME Media Type*/
-    "mediaType": NamedNode;
-    "name": NamedNode;
-    "next": NamedNode;
-    "object": NamedNode;
-    "objectType": NamedNode;
+    "mediaType": NamedNode<'http://www.w3.org/ns/activitystreams#mediaType'>;
+    "name": NamedNode<'http://www.w3.org/ns/activitystreams#name'>;
+    "next": NamedNode<'http://www.w3.org/ns/activitystreams#next'>;
+    "object": NamedNode<'http://www.w3.org/ns/activitystreams#object'>;
+    "objectType": NamedNode<'http://www.w3.org/ns/activitystreams#objectType'>;
     /*Describes a possible exclusive answer or option for a question.*/
-    "oneOf": NamedNode;
+    "oneOf": NamedNode<'http://www.w3.org/ns/activitystreams#oneOf'>;
     /*For certain activities, specifies the entity from which the action is directed.*/
-    "origin": NamedNode;
-    "partOf": NamedNode;
-    "prev": NamedNode;
-    "preview": NamedNode;
-    "provider": NamedNode;
+    "origin": NamedNode<'http://www.w3.org/ns/activitystreams#origin'>;
+    "partOf": NamedNode<'http://www.w3.org/ns/activitystreams#partOf'>;
+    "prev": NamedNode<'http://www.w3.org/ns/activitystreams#prev'>;
+    "preview": NamedNode<'http://www.w3.org/ns/activitystreams#preview'>;
+    "provider": NamedNode<'http://www.w3.org/ns/activitystreams#provider'>;
     /*Specifies the date and time the object was published*/
-    "published": NamedNode;
+    "published": NamedNode<'http://www.w3.org/ns/activitystreams#published'>;
     /*Specifies a radius around the point established by the longitude and latitude*/
-    "radius": NamedNode;
+    "radius": NamedNode<'http://www.w3.org/ns/activitystreams#radius'>;
     /*A numeric rating (>= 0.0, <= 5.0) for the object*/
-    "rating": NamedNode;
+    "rating": NamedNode<'http://www.w3.org/ns/activitystreams#rating'>;
     /*The RFC 5988 or HTML5 Link Relation associated with the Link*/
-    "rel": NamedNode;
+    "rel": NamedNode<'http://www.w3.org/ns/activitystreams#rel'>;
     /*On a Relationship object, describes the type of relationship*/
-    "relationship": NamedNode;
-    "replies": NamedNode;
-    "result": NamedNode;
+    "relationship": NamedNode<'http://www.w3.org/ns/activitystreams#relationship'>;
+    "replies": NamedNode<'http://www.w3.org/ns/activitystreams#replies'>;
+    "result": NamedNode<'http://www.w3.org/ns/activitystreams#result'>;
     /*In a strictly ordered logical collection, specifies the index position of the first item in the items list*/
-    "startIndex": NamedNode;
+    "startIndex": NamedNode<'http://www.w3.org/ns/activitystreams#startIndex'>;
     /*The starting time of the object*/
-    "startTime": NamedNode;
+    "startTime": NamedNode<'http://www.w3.org/ns/activitystreams#startTime'>;
     /*On a Relationship object, identifies the subject. e.g. when saying "John is connected to Sally", 'subject' refers to 'John'*/
-    "subject": NamedNode;
+    "subject": NamedNode<'http://www.w3.org/ns/activitystreams#subject'>;
     /*A short summary of the object*/
-    "summary": NamedNode;
-    "tag": NamedNode;
-    "tags": NamedNode;
-    "target": NamedNode;
-    "to": NamedNode;
+    "summary": NamedNode<'http://www.w3.org/ns/activitystreams#summary'>;
+    "tag": NamedNode<'http://www.w3.org/ns/activitystreams#tag'>;
+    "tags": NamedNode<'http://www.w3.org/ns/activitystreams#tags'>;
+    "target": NamedNode<'http://www.w3.org/ns/activitystreams#target'>;
+    "to": NamedNode<'http://www.w3.org/ns/activitystreams#to'>;
     /*The total number of items in a logical collection*/
-    "totalItems": NamedNode;
+    "totalItems": NamedNode<'http://www.w3.org/ns/activitystreams#totalItems'>;
     /*Identifies the unit of measurement used by the radius, altitude and accuracy properties. The value can be expressed either as one of a set of predefined units or as a well-known common URI that identifies units.*/
-    "units": NamedNode;
+    "units": NamedNode<'http://www.w3.org/ns/activitystreams#units'>;
     /*Specifies when the object was last updated*/
-    "updated": NamedNode;
-    "upstreamDuplicates": NamedNode;
+    "updated": NamedNode<'http://www.w3.org/ns/activitystreams#updated'>;
+    "upstreamDuplicates": NamedNode<'http://www.w3.org/ns/activitystreams#upstreamDuplicates'>;
     /*Specifies a link to a specific representation of the Object*/
-    "url": NamedNode;
-    "verb": NamedNode;
+    "url": NamedNode<'http://www.w3.org/ns/activitystreams#url'>;
+    "verb": NamedNode<'http://www.w3.org/ns/activitystreams#verb'>;
     /*Specifies the preferred display width of the content, expressed in terms of device independent pixels.*/
-    "width": NamedNode;
+    "width": NamedNode<'http://www.w3.org/ns/activitystreams#width'>;
 };
 export const as: As = (namespace("http://www.w3.org/ns/activitystreams#") as any);

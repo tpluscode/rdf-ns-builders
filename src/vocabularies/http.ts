@@ -2,82 +2,82 @@ import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
 import { NamedNode } from "rdf-js";
 type Http = NamespaceBuilder & {
     /*A connection used for HTTP transfer.*/
-    "Connection": NamedNode;
+    "Connection": NamedNode<'http://www.w3.org/2011/http#Connection'>;
     /*An entity header in an HTTP message.*/
-    "EntityHeader": NamedNode;
+    "EntityHeader": NamedNode<'http://www.w3.org/2011/http#EntityHeader'>;
     /*A general header in an HTTP message.*/
-    "GeneralHeader": NamedNode;
+    "GeneralHeader": NamedNode<'http://www.w3.org/2011/http#GeneralHeader'>;
     /*A part of a deconstructed header value.*/
-    "HeaderElement": NamedNode;
+    "HeaderElement": NamedNode<'http://www.w3.org/2011/http#HeaderElement'>;
     /*A header name.*/
-    "HeaderName": NamedNode;
+    "HeaderName": NamedNode<'http://www.w3.org/2011/http#HeaderName'>;
     /*An HTTP message.*/
-    "Message": NamedNode;
+    "Message": NamedNode<'http://www.w3.org/2011/http#Message'>;
     /*A header in an HTTP message.*/
-    "MessageHeader": NamedNode;
+    "MessageHeader": NamedNode<'http://www.w3.org/2011/http#MessageHeader'>;
     /*The HTTP method used for the request.*/
-    "Method": NamedNode;
+    "Method": NamedNode<'http://www.w3.org/2011/http#Method'>;
     /*A parameter for a part of a header value.*/
-    "Parameter": NamedNode;
+    "Parameter": NamedNode<'http://www.w3.org/2011/http#Parameter'>;
     /*An HTTP request.*/
-    "Request": NamedNode;
+    "Request": NamedNode<'http://www.w3.org/2011/http#Request'>;
     /*A header in an HTTP request message.*/
-    "RequestHeader": NamedNode;
+    "RequestHeader": NamedNode<'http://www.w3.org/2011/http#RequestHeader'>;
     /*An HTTP response.*/
-    "Response": NamedNode;
+    "Response": NamedNode<'http://www.w3.org/2011/http#Response'>;
     /*A header in an HTTP response message.*/
-    "ResponseHeader": NamedNode;
+    "ResponseHeader": NamedNode<'http://www.w3.org/2011/http#ResponseHeader'>;
     /*The status code of an HTTP response.*/
-    "StatusCode": NamedNode;
+    "StatusCode": NamedNode<'http://www.w3.org/2011/http#StatusCode'>;
     /*The absolute path sort of request URI.*/
-    "absolutePath": NamedNode;
+    "absolutePath": NamedNode<'http://www.w3.org/2011/http#absolutePath'>;
     /*The absolute request URI.*/
-    "absoluteURI": NamedNode;
+    "absoluteURI": NamedNode<'http://www.w3.org/2011/http#absoluteURI'>;
     /*The authority sort of request URI.*/
-    "authority": NamedNode;
+    "authority": NamedNode<'http://www.w3.org/2011/http#authority'>;
     /*The entity body of an HTTP message.*/
-    "body": NamedNode;
+    "body": NamedNode<'http://www.w3.org/2011/http#body'>;
     /*The authority of a connection used for the HTTP transfer.*/
-    "connectionAuthority": NamedNode;
+    "connectionAuthority": NamedNode<'http://www.w3.org/2011/http#connectionAuthority'>;
     /*The name of a header element.*/
-    "elementName": NamedNode;
+    "elementName": NamedNode<'http://www.w3.org/2011/http#elementName'>;
     /*The value of a header element.*/
-    "elementValue": NamedNode;
+    "elementValue": NamedNode<'http://www.w3.org/2011/http#elementValue'>;
     /*The name of an HTTP header field.*/
-    "fieldName": NamedNode;
+    "fieldName": NamedNode<'http://www.w3.org/2011/http#fieldName'>;
     /*The value of an HTTP header field.*/
-    "fieldValue": NamedNode;
+    "fieldValue": NamedNode<'http://www.w3.org/2011/http#fieldValue'>;
     /*The name of an HTTP header.*/
-    "hdrName": NamedNode;
+    "hdrName": NamedNode<'http://www.w3.org/2011/http#hdrName'>;
     /*The deconstructed parts of an HTTP header value.*/
-    "headerElements": NamedNode;
+    "headerElements": NamedNode<'http://www.w3.org/2011/http#headerElements'>;
     /*The headers in an HTTP message.*/
-    "headers": NamedNode;
+    "headers": NamedNode<'http://www.w3.org/2011/http#headers'>;
     /*The HTTP version of an HTTP message.*/
-    "httpVersion": NamedNode;
+    "httpVersion": NamedNode<'http://www.w3.org/2011/http#httpVersion'>;
     /*The HTTP method name used for the HTTP request.*/
-    "methodName": NamedNode;
+    "methodName": NamedNode<'http://www.w3.org/2011/http#methodName'>;
     /*The HTTP method used for the HTTP request.*/
-    "mthd": NamedNode;
+    "mthd": NamedNode<'http://www.w3.org/2011/http#mthd'>;
     /*The name of a parameter in a part of a deconstructed HTTP header value.*/
-    "paramName": NamedNode;
+    "paramName": NamedNode<'http://www.w3.org/2011/http#paramName'>;
     /*The value of a parameter in a part of a deconstructed HTTP header value.*/
-    "paramValue": NamedNode;
+    "paramValue": NamedNode<'http://www.w3.org/2011/http#paramValue'>;
     /*The parameters in a part of a deconstructed HTTP header value.*/
-    "params": NamedNode;
+    "params": NamedNode<'http://www.w3.org/2011/http#params'>;
     /*The reason phrase (status text) of an HTTP response.*/
-    "reasonPhrase": NamedNode;
+    "reasonPhrase": NamedNode<'http://www.w3.org/2011/http#reasonPhrase'>;
     /*The request URI of an HTTP request.*/
-    "requestURI": NamedNode;
+    "requestURI": NamedNode<'http://www.w3.org/2011/http#requestURI'>;
     /*The HTTP requests made via a connection.*/
-    "requests": NamedNode;
+    "requests": NamedNode<'http://www.w3.org/2011/http#requests'>;
     /*The HTTP response sent in answer to an HTTP request.*/
-    "resp": NamedNode;
+    "resp": NamedNode<'http://www.w3.org/2011/http#resp'>;
     /*The status code of an HTTP response.*/
-    "sc": NamedNode;
+    "sc": NamedNode<'http://www.w3.org/2011/http#sc'>;
     /*The status code number.*/
-    "statusCodeNumber": NamedNode;
+    "statusCodeNumber": NamedNode<'http://www.w3.org/2011/http#statusCodeNumber'>;
     /*The status code value of an HTTP response.*/
-    "statusCodeValue": NamedNode;
+    "statusCodeValue": NamedNode<'http://www.w3.org/2011/http#statusCodeValue'>;
 };
 export const http: Http = (namespace("http://www.w3.org/2011/http#") as any);

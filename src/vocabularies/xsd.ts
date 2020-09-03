@@ -12,7 +12,7 @@ type Xsd = NamespaceBuilder & {
         defined, whose ·item type· is ENTITY; this is the ·base type· of ENTITIES,
         which restricts its value space to lists with at least one item.
       */
-    "ENTITIES": NamedNode;
+    "ENTITIES": NamedNode<'http://www.w3.org/2001/XMLSchema#ENTITIES'>;
     /*
          ENTITY represents the ENTITY attribute type from [XML]. The ·value space·
          of ENTITY is the set of all strings that ·match· the NCName production in
@@ -21,7 +21,7 @@ type Xsd = NamespaceBuilder & {
          strings that ·match· the NCName production in [Namespaces in XML]. The
          ·base type· of ENTITY is NCName.
       */
-    "ENTITY": NamedNode;
+    "ENTITY": NamedNode<'http://www.w3.org/2001/XMLSchema#ENTITY'>;
     /*
          ID represents the ID attribute type from [XML]. The ·value space· of ID is
          the set of all strings that ·match· the NCName production in [Namespaces
@@ -29,7 +29,7 @@ type Xsd = NamespaceBuilder & {
          the NCName production in [Namespaces in XML]. The ·base type· of ID is
          NCName.
       */
-    "ID": NamedNode;
+    "ID": NamedNode<'http://www.w3.org/2001/XMLSchema#ID'>;
     /*
         IDREF represents the IDREF attribute type from [XML]. The ·value space· of
         IDREF is the set of all strings that ·match· the NCName production in
@@ -37,7 +37,7 @@ type Xsd = NamespaceBuilder & {
         that ·match· the NCName production in [Namespaces in XML]. The ·base type·
         of IDREF is NCName.
       */
-    "IDREF": NamedNode;
+    "IDREF": NamedNode<'http://www.w3.org/2001/XMLSchema#IDREF'>;
     /*
         IDREFS represents the IDREFS attribute type from [XML]. The ·value space·
         of IDREFS is the set of finite, non-zero-length sequences of IDREFs. The
@@ -48,7 +48,7 @@ type Xsd = NamespaceBuilder & {
         ·base type· of IDREFS, which restricts its value space to lists with at
         least one item.
       */
-    "IDREFS": NamedNode;
+    "IDREFS": NamedNode<'http://www.w3.org/2001/XMLSchema#IDREFS'>;
     /*
          NCName represents XML "non-colonized" Names. The ·value space· of NCName
          is the set of all strings which ·match· the NCName production of
@@ -56,7 +56,7 @@ type Xsd = NamespaceBuilder & {
          strings which ·match· the NCName production of [Namespaces in XML]. The
          ·base type· of NCName is Name.
       */
-    "NCName": NamedNode;
+    "NCName": NamedNode<'http://www.w3.org/2001/XMLSchema#NCName'>;
     /*
          NMTOKEN represents the NMTOKEN attribute type from [XML]. The ·value
          space· of NMTOKEN is the set of tokens that ·match· the Nmtoken production
@@ -64,7 +64,7 @@ type Xsd = NamespaceBuilder & {
          ·match· the Nmtoken production in [XML]. The ·base type· of NMTOKEN is
          token.
       */
-    "NMTOKEN": NamedNode;
+    "NMTOKEN": NamedNode<'http://www.w3.org/2001/XMLSchema#NMTOKEN'>;
     /*
         NMTOKENS represents the NMTOKENS attribute type from [XML]. The ·value
         space· of NMTOKENS is the set of finite, non-zero-length sequences of
@@ -75,46 +75,46 @@ type Xsd = NamespaceBuilder & {
         ·item type· is NMTOKEN; this is the ·base type· of NMTOKENS, which
         restricts its value space to lists with at least one item.
       */
-    "NMTOKENS": NamedNode;
+    "NMTOKENS": NamedNode<'http://www.w3.org/2001/XMLSchema#NMTOKENS'>;
     /*
         NOTATION represents the NOTATION attribute type from [XML]. The ·value
         space· of NOTATION is the set of QNames of notations declared in the
         current schema. The ·lexical space· of NOTATION is the set of all names of
         notations declared in the current schema (in the form of QNames).
       */
-    "NOTATION": NamedNode;
+    "NOTATION": NamedNode<'http://www.w3.org/2001/XMLSchema#NOTATION'>;
     /*
         Name represents XML Names. The ·value space· of Name is the set of all
         strings which ·match· the Name production of [XML]. The ·lexical space· of
         Name is the set of all strings which ·match· the Name production of [XML].
         The ·base type· of Name is token.
       */
-    "Name": NamedNode;
+    "Name": NamedNode<'http://www.w3.org/2001/XMLSchema#Name'>;
     /*
         QName represents XML qualified names. The ·value space· of QName is the set
         of tuples {namespace name, local part}, where namespace name is an anyURI
         and local part is an NCName. The ·lexical space· of QName is the set of
         strings that ·match· the QName production of [Namespaces in XML].
       */
-    "QName": NamedNode;
+    "QName": NamedNode<'http://www.w3.org/2001/XMLSchema#QName'>;
     /*
         anyAtomicType is a special ·restriction· of anySimpleType. The ·value· and
         ·lexical spaces· of anyAtomicType are the unions of the ·value· and
         ·lexical spaces· of all the ·primitive· datatypes, and anyAtomicType is
         their ·base type·.
       */
-    "anyAtomicType": NamedNode;
+    "anyAtomicType": NamedNode<'http://www.w3.org/2001/XMLSchema#anyAtomicType'>;
     /*
         The definition of anySimpleType is a special ·restriction· of anyType. The
         ·lexical space· of anySimpleType is the set of all sequences of Unicode
         characters, and its ·value space· includes all ·atomic values· and all
         finite-length lists of zero or more ·atomic values·.
       */
-    "anySimpleType": NamedNode;
+    "anySimpleType": NamedNode<'http://www.w3.org/2001/XMLSchema#anySimpleType'>;
     /*
         The root of the [XML Schema 1.1] datatype heirarchy.
       */
-    "anyType": NamedNode;
+    "anyType": NamedNode<'http://www.w3.org/2001/XMLSchema#anyType'>;
     /*
         anyURI represents an Internationalized Resource Identifier Reference
         (IRI). An anyURI value can be absolute or relative, and may have an
@@ -122,23 +122,23 @@ type Xsd = NamespaceBuilder & {
         type should be used when the value fulfills the role of an IRI, as
         defined in [RFC 3987] or its successor(s) in the IETF Standards Track.
       */
-    "anyURI": NamedNode;
+    "anyURI": NamedNode<'http://www.w3.org/2001/XMLSchema#anyURI'>;
     /*
         base64Binary represents arbitrary Base64-encoded binary data. For
         base64Binary data the entire binary stream is encoded using the Base64
         Encoding defined in [RFC 3548], which is derived from the encoding
         described in [RFC 2045].
       */
-    "base64Binary": NamedNode;
+    "base64Binary": NamedNode<'http://www.w3.org/2001/XMLSchema#base64Binary'>;
     /*
         boolean represents the values of two-valued logic.
       */
-    "boolean": NamedNode;
+    "boolean": NamedNode<'http://www.w3.org/2001/XMLSchema#boolean'>;
     /*
         byte is ·derived· from short by setting the value of ·maxInclusive· to be
         127 and ·minInclusive· to be -128. The ·base type· of byte is short.
       */
-    "byte": NamedNode;
+    "byte": NamedNode<'http://www.w3.org/2001/XMLSchema#byte'>;
     /*
         date represents top-open intervals of exactly one day in length on the
         timelines of dateTime, beginning on the beginning moment of each day, up to
@@ -147,20 +147,20 @@ type Xsd = NamespaceBuilder & {
         one per day. For timezoned values, the intervals begin at every minute and
         therefore overlap.
       */
-    "date": NamedNode;
+    "date": NamedNode<'http://www.w3.org/2001/XMLSchema#date'>;
     /*
         dateTime represents instants of time, optionally marked with a particular
         time zone offset. Values representing the same instant but having different
         time zone offsets are equal but not identical.
       */
-    "dateTime": NamedNode;
+    "dateTime": NamedNode<'http://www.w3.org/2001/XMLSchema#dateTime'>;
     /*
         The dateTimeStamp datatype is ·derived· from dateTime by giving the value
         required to its explicitTimezone facet. The result is that all values of
         dateTimeStamp are required to have explicit time zone offsets and the
         datatype is totally ordered.
       */
-    "dateTimeStamp": NamedNode;
+    "dateTimeStamp": NamedNode<'http://www.w3.org/2001/XMLSchema#dateTimeStamp'>;
     /*
          dayTimeDuration is a datatype ·derived· from duration by restricting its
          ·lexical representations· to instances of dayTimeDurationLexicalRep. The
@@ -168,7 +168,7 @@ type Xsd = NamespaceBuilder & {
          to those whose ·months· property is 0. This results in a duration datatype
          which is totally ordered.
       */
-    "dayTimeDuration": NamedNode;
+    "dayTimeDuration": NamedNode<'http://www.w3.org/2001/XMLSchema#dayTimeDuration'>;
     /*
         decimal represents a subset of the real numbers, which can be represented
         by decimal numerals. The ·value space· of decimal is the set of numbers
@@ -178,14 +178,14 @@ type Xsd = NamespaceBuilder & {
         distinct from the number 2.00. The order relation on decimal is the order
         relation on real numbers, restricted to this subset.
       */
-    "decimal": NamedNode;
+    "decimal": NamedNode<'http://www.w3.org/2001/XMLSchema#decimal'>;
     /*
         The double datatype is patterned after the IEEE double-precision 64-bit
         floating point datatype [IEEE 754-2008]. Each floating point datatype has a
         value space that is a subset of the rational numbers. Floating point
         numbers are often used to approximate arbitrary real numbers.
       */
-    "double": NamedNode;
+    "double": NamedNode<'http://www.w3.org/2001/XMLSchema#double'>;
     /*
         duration is a datatype that represents durations of time. The concept of
         duration being captured is drawn from those of [ISO 8601], specifically
@@ -198,14 +198,14 @@ type Xsd = NamespaceBuilder & {
         dateTime is required for XML Schema processing and is defined in the
         function ·dateTimePlusDuration·.
       */
-    "duration": NamedNode;
+    "duration": NamedNode<'http://www.w3.org/2001/XMLSchema#duration'>;
     /*
         The float datatype is patterned after the IEEE single-precision 32-bit
         floating point datatype [IEEE 754-2008]. Its value space is a subset of the
         rational numbers. Floating point numbers are often used to approximate
         arbitrary real numbers.
       */
-    "float": NamedNode;
+    "float": NamedNode<'http://www.w3.org/2001/XMLSchema#float'>;
     /*
         gDay represents whole days within an arbitrary month—days that recur at the
         same point in each (Gregorian) month. This datatype is used to represent a
@@ -213,7 +213,7 @@ type Xsd = NamespaceBuilder & {
         a paycheck on the 15th of each month. (Obviously, days beyond 28 cannot
         occur in all months; they are nonetheless permitted, up to 31.)
       */
-    "gDay": NamedNode;
+    "gDay": NamedNode<'http://www.w3.org/2001/XMLSchema#gDay'>;
     /*
         gMonth represents whole (Gregorian) months within an arbitrary year—months
         that recur at the same point in each year. It might be used, for example,
@@ -221,32 +221,32 @@ type Xsd = NamespaceBuilder & {
         countries (--11 in the United States, --10 in Canada, and possibly other
         months in other countries).
       */
-    "gMonth": NamedNode;
+    "gMonth": NamedNode<'http://www.w3.org/2001/XMLSchema#gMonth'>;
     /*
         gMonthDay represents whole calendar days that recur at the same point in
         each calendar year, or that occur in some arbitrary calendar year.
         (Obviously, days beyond 28 cannot occur in all Februaries; 29 is
         nonetheless permitted.)
       */
-    "gMonthDay": NamedNode;
+    "gMonthDay": NamedNode<'http://www.w3.org/2001/XMLSchema#gMonthDay'>;
     /*
         gYear represents Gregorian calendar years.
       */
-    "gYear": NamedNode;
+    "gYear": NamedNode<'http://www.w3.org/2001/XMLSchema#gYear'>;
     /*
         gYearMonth represents specific whole Gregorian months in specific Gregorian years.
       */
-    "gYearMonth": NamedNode;
+    "gYearMonth": NamedNode<'http://www.w3.org/2001/XMLSchema#gYearMonth'>;
     /*
         hexBinary represents arbitrary hex-encoded binary data.
       */
-    "hexBinary": NamedNode;
+    "hexBinary": NamedNode<'http://www.w3.org/2001/XMLSchema#hexBinary'>;
     /*
           int is ·derived· from long by setting the value of ·maxInclusive· to be
           2147483647 and ·minInclusive· to be -2147483648. The ·base type· of int
           is long.
       */
-    "int": NamedNode;
+    "int": NamedNode<'http://www.w3.org/2001/XMLSchema#int'>;
     /*
          integer is ·derived· from decimal by fixing the value of ·fractionDigits·
          to be 0 and disallowing the trailing decimal point. This results in the
@@ -254,20 +254,20 @@ type Xsd = NamespaceBuilder & {
          integer is the infinite set {...,-2,-1,0,1,2,...}. The ·base type· of
          integer is decimal.
       */
-    "integer": NamedNode;
+    "integer": NamedNode<'http://www.w3.org/2001/XMLSchema#integer'>;
     /*
         language represents formal natural language identifiers, as defined by [BCP
         47] (currently represented by [RFC 4646] and [RFC 4647]) or its
         successor(s). The ·value space· and ·lexical space· of language are the set
         of all strings that conform to the pattern [a-zA-Z]{1,8}(-[a-zA-Z0-9]{1,8})*
       */
-    "language": NamedNode;
+    "language": NamedNode<'http://www.w3.org/2001/XMLSchema#language'>;
     /*
          long is ·derived· from integer by setting the value of ·maxInclusive· to
          be 9223372036854775807 and ·minInclusive· to be -9223372036854775808. The
          ·base type· of long is integer.
       */
-    "long": NamedNode;
+    "long": NamedNode<'http://www.w3.org/2001/XMLSchema#long'>;
     /*
          negativeInteger is ·derived· from nonPositiveInteger by setting the value
          of ·maxInclusive· to be -1. This results in the standard mathematical
@@ -275,7 +275,7 @@ type Xsd = NamespaceBuilder & {
          the infinite set {...,-2,-1}. The ·base type· of negativeInteger is
          nonPositiveInteger.
       */
-    "negativeInteger": NamedNode;
+    "negativeInteger": NamedNode<'http://www.w3.org/2001/XMLSchema#negativeInteger'>;
     /*
          nonNegativeInteger is ·derived· from integer by setting the value of
          ·minInclusive· to be 0. This results in the standard mathematical concept
@@ -283,7 +283,7 @@ type Xsd = NamespaceBuilder & {
          the infinite set {0,1,2,...}. The ·base type· of nonNegativeInteger is
          integer.
       */
-    "nonNegativeInteger": NamedNode;
+    "nonNegativeInteger": NamedNode<'http://www.w3.org/2001/XMLSchema#nonNegativeInteger'>;
     /*
         nonPositiveInteger is ·derived· from integer by setting the value of
         ·maxInclusive· to be 0. This results in the standard mathematical concept
@@ -291,7 +291,7 @@ type Xsd = NamespaceBuilder & {
         the infinite set {...,-2,-1,0}. The ·base type· of nonPositiveInteger is
         integer.
       */
-    "nonPositiveInteger": NamedNode;
+    "nonPositiveInteger": NamedNode<'http://www.w3.org/2001/XMLSchema#nonPositiveInteger'>;
     /*
         normalizedString represents white space normalized strings. The ·value
         space· of normalizedString is the set of strings that do not contain the
@@ -300,7 +300,7 @@ type Xsd = NamespaceBuilder & {
         contain the carriage return (#xD), line feed (#xA) nor tab (#x9)
         characters. The ·base type· of normalizedString is string.
       */
-    "normalizedString": NamedNode;
+    "normalizedString": NamedNode<'http://www.w3.org/2001/XMLSchema#normalizedString'>;
     /*
          positiveInteger is ·derived· from nonNegativeInteger by setting the value
          of ·minInclusive· to be 1. This results in the standard mathematical
@@ -308,21 +308,21 @@ type Xsd = NamespaceBuilder & {
          positiveInteger is the infinite set {1,2,...}. The ·base type· of
          positiveInteger is nonNegativeInteger.
       */
-    "positiveInteger": NamedNode;
+    "positiveInteger": NamedNode<'http://www.w3.org/2001/XMLSchema#positiveInteger'>;
     /*
         short is ·derived· from int by setting the value of ·maxInclusive· to be
         32767 and ·minInclusive· to be -32768. The ·base type· of short is int.
       */
-    "short": NamedNode;
+    "short": NamedNode<'http://www.w3.org/2001/XMLSchema#short'>;
     /*
         The string datatype represents character strings in XML.
       */
-    "string": NamedNode;
+    "string": NamedNode<'http://www.w3.org/2001/XMLSchema#string'>;
     /*
         time represents instants of time that recur at the same point in each
         calendar day, or that occur in some arbitrary calendar day.
       */
-    "time": NamedNode;
+    "time": NamedNode<'http://www.w3.org/2001/XMLSchema#time'>;
     /*
          token represents tokenized strings. The ·value space· of token is the set
          of strings that do not contain the carriage return (#xD), line feed (#xA)
@@ -333,31 +333,31 @@ type Xsd = NamespaceBuilder & {
          leading or trailing spaces (#x20) and that have no internal sequences of
          two or more spaces. The ·base type· of token is normalizedString.
       */
-    "token": NamedNode;
+    "token": NamedNode<'http://www.w3.org/2001/XMLSchema#token'>;
     /*
           nsignedByte is ·derived· from unsignedShort by setting the value of
           ·maxInclusive· to be 255. The ·base type· of unsignedByte is
           unsignedShort.
         */
-    "unsignedByte": NamedNode;
+    "unsignedByte": NamedNode<'http://www.w3.org/2001/XMLSchema#unsignedByte'>;
     /*
         unsignedInt is ·derived· from unsignedLong by setting the value of
         ·maxInclusive· to be 4294967295. The ·base type· of unsignedInt is
         unsignedLong.
       */
-    "unsignedInt": NamedNode;
+    "unsignedInt": NamedNode<'http://www.w3.org/2001/XMLSchema#unsignedInt'>;
     /*
          unsignedLong is ·derived· from nonNegativeInteger by setting the value of
          ·maxInclusive· to be 18446744073709551615. The ·base type· of unsignedLong
          is nonNegativeInteger.
       */
-    "unsignedLong": NamedNode;
+    "unsignedLong": NamedNode<'http://www.w3.org/2001/XMLSchema#unsignedLong'>;
     /*
            unsignedShort is ·derived· from unsignedInt by setting the value of
            ·maxInclusive· to be 65535. The ·base type· of unsignedShort is
            unsignedInt.
         */
-    "unsignedShort": NamedNode;
+    "unsignedShort": NamedNode<'http://www.w3.org/2001/XMLSchema#unsignedShort'>;
     /*
          yearMonthDuration is a datatype ·derived· from duration by restricting its
          ·lexical representations· to instances of yearMonthDurationLexicalRep. The
@@ -365,6 +365,6 @@ type Xsd = NamespaceBuilder & {
          restricted to those whose ·seconds· property is 0. This results in a
          duration datatype which is totally ordered.
       */
-    "yearMonthDuration": NamedNode;
+    "yearMonthDuration": NamedNode<'http://www.w3.org/2001/XMLSchema#yearMonthDuration'>;
 };
 export const xsd: Xsd = (namespace("http://www.w3.org/2001/XMLSchema#") as any);

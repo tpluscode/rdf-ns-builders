@@ -2,35 +2,35 @@ import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
 import { NamedNode } from "rdf-js";
 type Rdfs = NamespaceBuilder & {
     /*The class of classes.*/
-    "Class": NamedNode;
+    "Class": NamedNode<'http://www.w3.org/2000/01/rdf-schema#Class'>;
     /*The class of RDF containers.*/
-    "Container": NamedNode;
+    "Container": NamedNode<'http://www.w3.org/2000/01/rdf-schema#Container'>;
     /*The class of container membership properties, rdf:_1, rdf:_2, ...,
                         all of which are sub-properties of 'member'.*/
-    "ContainerMembershipProperty": NamedNode;
+    "ContainerMembershipProperty": NamedNode<'http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty'>;
     /*The class of RDF datatypes.*/
-    "Datatype": NamedNode;
+    "Datatype": NamedNode<'http://www.w3.org/2000/01/rdf-schema#Datatype'>;
     /*The class of literal values, eg. textual strings and integers.*/
-    "Literal": NamedNode;
+    "Literal": NamedNode<'http://www.w3.org/2000/01/rdf-schema#Literal'>;
     /*The class resource, everything.*/
-    "Resource": NamedNode;
+    "Resource": NamedNode<'http://www.w3.org/2000/01/rdf-schema#Resource'>;
     /*A description of the subject resource.*/
-    "comment": NamedNode;
+    "comment": NamedNode<'http://www.w3.org/2000/01/rdf-schema#comment'>;
     /*A domain of the subject property.*/
-    "domain": NamedNode;
+    "domain": NamedNode<'http://www.w3.org/2000/01/rdf-schema#domain'>;
     /*The defininition of the subject resource.*/
-    "isDefinedBy": NamedNode;
+    "isDefinedBy": NamedNode<'http://www.w3.org/2000/01/rdf-schema#isDefinedBy'>;
     /*A human-readable name for the subject.*/
-    "label": NamedNode;
+    "label": NamedNode<'http://www.w3.org/2000/01/rdf-schema#label'>;
     /*A member of the subject resource.*/
-    "member": NamedNode;
+    "member": NamedNode<'http://www.w3.org/2000/01/rdf-schema#member'>;
     /*A range of the subject property.*/
-    "range": NamedNode;
+    "range": NamedNode<'http://www.w3.org/2000/01/rdf-schema#range'>;
     /*Further information about the subject resource.*/
-    "seeAlso": NamedNode;
+    "seeAlso": NamedNode<'http://www.w3.org/2000/01/rdf-schema#seeAlso'>;
     /*The subject is a subclass of a class.*/
-    "subClassOf": NamedNode;
+    "subClassOf": NamedNode<'http://www.w3.org/2000/01/rdf-schema#subClassOf'>;
     /*The subject is a subproperty of a property.*/
-    "subPropertyOf": NamedNode;
+    "subPropertyOf": NamedNode<'http://www.w3.org/2000/01/rdf-schema#subPropertyOf'>;
 };
 export const rdfs: Rdfs = (namespace("http://www.w3.org/2000/01/rdf-schema#") as any);
