@@ -42,7 +42,7 @@ type Dcat = NamespaceBuilder & {
     "endpointDescription": NamedNode<'http://www.w3.org/ns/dcat#endpointDescription'>;
     /*Kořenové umístění nebo hlavní přístupový bod služby (IRI přístupné přes Web).*/
     "endpointURL": NamedNode<'http://www.w3.org/ns/dcat#endpointURL'>;
-    /*Funkce entity či agenta ve vztahu k jiné entitě či zdroji.*/
+    /*Den funktion en entitet eller aktør har i forhold til en anden ressource.*/
     "hadRole": NamedNode<'http://www.w3.org/ns/dcat#hadRole'>;
     /*A keyword or tag describing a resource.*/
     "keyword": NamedNode<'http://www.w3.org/ns/dcat#keyword'>;
@@ -60,10 +60,10 @@ type Dcat = NamespaceBuilder & {
     "servesDataset": NamedNode<'http://www.w3.org/ns/dcat#servesDataset'>;
     /*A site or endpoint that is listed in the catalog.*/
     "service": NamedNode<'http://www.w3.org/ns/dcat#service'>;
-    /*minimum spatial separation resolvable in a dataset, measured in meters.*/
+    /*mindste geografiske afstand som kan erkendes i et datasæt, målt i meter.*/
     "spatialResolutionInMeters": NamedNode<'http://www.w3.org/ns/dcat#spatialResolutionInMeters'>;
     "startDate": NamedNode<'http://www.w3.org/ns/dcat#startDate'>;
-    /*minimum time period resolvable in a dataset.*/
+    /*mindste tidsperiode der kan resolveres i datasættet.*/
     "temporalResolution": NamedNode<'http://www.w3.org/ns/dcat#temporalResolution'>;
     /*A main category of the resource. A resource can have multiple themes.*/
     "theme": NamedNode<'http://www.w3.org/ns/dcat#theme'>;

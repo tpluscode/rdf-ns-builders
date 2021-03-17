@@ -80,8 +80,7 @@ type Lvont = NamespaceBuilder & {
     /*translational equivalence between words and other signs
         and resources that they represent to or represented to a considerable number of humans*/
     "translation": NamedNode<'http://lexvo.org/ontology#translation'>;
-    /*The property of an object
-        (e.g., a language, writing system, or a specific element or aspect of a language or writing system)
+    /*The property of a language or writing system
         being used somewhat extensively in a particular geographical region
         at some point in time.*/
     "usedIn": NamedNode<'http://lexvo.org/ontology#usedIn'>;
