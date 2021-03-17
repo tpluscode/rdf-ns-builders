@@ -1,9 +1,6 @@
 import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
 import { NamedNode } from "rdf-js";
 type Dash = NamespaceBuilder & {
-    "Action-actionGroup": NamedNode<'http://datashapes.org/dash#Action-actionGroup'>;
-    "Action-actionIconClass": NamedNode<'http://datashapes.org/dash#Action-actionIconClass'>;
-    "Action-parameter": NamedNode<'http://datashapes.org/dash#Action-parameter'>;
     /*An executable command triggered by an agent, backed by a Script implementation. Actions may get deactivated using sh:deactivated.*/
     "Action": NamedNode<'http://datashapes.org/dash#Action'>;
     /*A group of ResourceActions, used to arrange items in menus etc. Similar to sh:PropertyGroups, they may have a sh:order and should have labels (in multiple languages if applicable).*/
@@ -45,13 +42,10 @@ type Dash = NamespaceBuilder & {
     "DatePickerEditor": NamedNode<'http://datashapes.org/dash#DatePickerEditor'>;
     /*An editor for xsd:dateTime literals, offering a calendar-like date picker and a time selector.*/
     "DateTimePickerEditor": NamedNode<'http://datashapes.org/dash#DateTimePickerEditor'>;
-    /*
-            A resource encapsulating a query that can be used to construct rdf:type triples for certain untyped nodes
-            that are an object in a triple where the predicate has a sh:defaultValueType.
-            This can be used as a pre-processor for shape graphs before they are validated.
-            */
-    "DefaultValueTypeRule": NamedNode<'http://datashapes.org/dash#DefaultValueTypeRule'>;
-    "DefinitionPropertyGroup": NamedNode<'http://datashapes.org/dash#DefinitionPropertyGroup'>;
+    /*Depiction properties provide images representing the focus nodes. Typical examples may be a photo of an animal or the map of a country.*/
+    "DepictionRole": NamedNode<'http://datashapes.org/dash#DepictionRole'>;
+    /*Description properties should produce text literals that may be used as an introduction/summary of what a focus node does.*/
+    "DescriptionRole": NamedNode<'http://datashapes.org/dash#DescriptionRole'>;
     /*An editor for non-literal values, typically displaying a nested form where the values of the linked resource can be edited directly on the "parent" form. Implementations that do not support this (yet) could fall back to an auto-complete widget.*/
     "DetailsEditor": NamedNode<'http://datashapes.org/dash#DetailsEditor'>;
     /*A Viewer for resources that shows the details of the value using its default view shape as a nested form-like display.*/
@@ -76,7 +70,7 @@ type Dash = NamespaceBuilder & {
     "GraphUpdate": NamedNode<'http://datashapes.org/dash#GraphUpdate'>;
     /*A test case that performs SHACL constraint validation on the whole graph and compares the results with the expected validation results stored with the test case. By default this excludes meta-validation (i.e. the validation of the shape definitions themselves). If that's desired, set dash:validateShapes to true.*/
     "GraphValidationTestCase": NamedNode<'http://datashapes.org/dash#GraphValidationTestCase'>;
-    /*An rdf:List that can be used in property constraints as value for sh:or to indicate that all values of a property must be either rdf:HTML, xsd:string or rdf:langString.*/
+    /*An rdf:List that can be used in property constraints as value for sh:or to indicate that all values of a property must be either rdf:HTML, xsd:string or rdf:langString (in that order of preference).*/
     "HTMLOrStringOrLangString": NamedNode<'http://datashapes.org/dash#HTMLOrStringOrLangString'>;
     /*A Viewer for HTML encoded text from rdf:HTML literals, rendering as parsed HTML DOM elements. Also displays the language if the HTML has a lang attribute on its root DOM element.*/
     "HTMLViewer": NamedNode<'http://datashapes.org/dash#HTMLViewer'>;
@@ -94,9 +88,16 @@ type Dash = NamespaceBuilder & {
     
     This is often used as default viewer for xsd:anyURI literals. Unsupported for blank nodes.*/
     "HyperlinkViewer": NamedNode<'http://datashapes.org/dash#HyperlinkViewer'>;
+    /*ID properties are short strings or other literals that identify the focus node among siblings. Examples may include social security numbers.*/
+    "IDRole": NamedNode<'http://datashapes.org/dash#IDRole'>;
+    /*Icon properties produce images that are typically small and almost square-shaped, and that may be displayed in the upper left corner of a focus node's display. Values should be xsd:string or xsd:anyURI literals or IRI nodes pointing at URLs. Those URLs should ideally be vector graphics such as .svg files.
+    
+    Instances of the same class often have the same icon, and this icon may be computed using a sh:values rule or as sh:defaultValue.
+    
+    If the value is a relative URL then those should be resolved against the server that delivered the surrounding page.*/
+    "IconRole": NamedNode<'http://datashapes.org/dash#IconRole'>;
     /*A Viewer for URI values that are recognized as images by a browser, rendering as an image.*/
     "ImageViewer": NamedNode<'http://datashapes.org/dash#ImageViewer'>;
-    "ImplementationPropertyGroup": NamedNode<'http://datashapes.org/dash#ImplementationPropertyGroup'>;
     "IndexedConstraintComponent-indexed": NamedNode<'http://datashapes.org/dash#IndexedConstraintComponent-indexed'>;
     /*A constraint component that can be used to mark property shapes to be indexed, meaning that each of its value nodes must carry a dash:index from 0 to N.*/
     "IndexedConstraintComponent": NamedNode<'http://datashapes.org/dash#IndexedConstraintComponent'>;
@@ -106,6 +107,10 @@ type Dash = NamespaceBuilder & {
     "InstancesSelectEditor": NamedNode<'http://datashapes.org/dash#InstancesSelectEditor'>;
     /*A test case that calls a given SHACL-JS JavaScript function like a sh:JSFunction and compares its result with the dash:expectedResult.*/
     "JSTestCase": NamedNode<'http://datashapes.org/dash#JSTestCase'>;
+    /*The Key info role may be assigned to properties that are likely of special interest to a reader, so that they should appear whenever a summary of a focus node is shown.*/
+    "KeyInfoRole": NamedNode<'http://datashapes.org/dash#KeyInfoRole'>;
+    /*Properties with this role produce strings that may serve as display label for the focus nodes. Labels should be either plain string literals or strings with a language tag. The values should also be single-line.*/
+    "LabelRole": NamedNode<'http://datashapes.org/dash#LabelRole'>;
     /*A Viewer for URI resources, rendering as a hyperlink to that URI based on the display label of the resource. Also includes other ways of interacting with the URI such as opening a nested summary display.*/
     "LabelViewer": NamedNode<'http://datashapes.org/dash#LabelViewer'>;
     /*A Viewer for literals with a language tag, rendering as the text plus a language indicator.*/
@@ -118,19 +123,16 @@ type Dash = NamespaceBuilder & {
     "ListShape": NamedNode<'http://datashapes.org/dash#ListShape'>;
     /*A simple viewer for literals, rendering the lexical form of the value.*/
     "LiteralViewer": NamedNode<'http://datashapes.org/dash#LiteralViewer'>;
-    "ModifyAction-skipPreview": NamedNode<'http://datashapes.org/dash#ModifyAction-skipPreview'>;
     /*An action typically showing up in a Modify section of a selected resource. May make changes to the data.*/
     "ModifyAction": NamedNode<'http://datashapes.org/dash#ModifyAction'>;
     /*An editor for multiple/all value nodes at once.*/
     "MultiEditor": NamedNode<'http://datashapes.org/dash#MultiEditor'>;
     /*A viewer for multiple/all values at once.*/
     "MultiViewer": NamedNode<'http://datashapes.org/dash#MultiViewer'>;
+    /*A viewer for SHACL Node Expressions.*/
+    "NodeExpressionViewer": NamedNode<'http://datashapes.org/dash#NodeExpressionViewer'>;
     "NonRecursiveConstraintComponent-nonRecursive": NamedNode<'http://datashapes.org/dash#NonRecursiveConstraintComponent-nonRecursive'>;
-    /*Used to state that a property or path must not point back to itself.
-    
-    For example, "a person cannot have itself as parent" can be expressed by setting dash:nonRecursive=true for a given sh:path.
-    
-    To express that a person cannot have itself among any of its (recursive) parents, use a sh:path with the + operator such as ex:parent+.*/
+    /*Used to state that a property or path must not point back to itself.*/
     "NonRecursiveConstraintComponent": NamedNode<'http://datashapes.org/dash#NonRecursiveConstraintComponent'>;
     /*A Shape that is no node can conform to.*/
     "None": NamedNode<'http://datashapes.org/dash#None'>;
@@ -140,12 +142,17 @@ type Dash = NamespaceBuilder & {
     "PrimaryKeyConstraintComponent-uriStart": NamedNode<'http://datashapes.org/dash#PrimaryKeyConstraintComponent-uriStart'>;
     /*Enforces a constraint that the given property (sh:path) serves as primary key for all resources in the target of the shape. If a property has been declared to be the primary key then each resource must have exactly one value for that property. Furthermore, the URIs of those resources must start with a given string (dash:uriStart), followed by the URL-encoded primary key value. For example if dash:uriStart is "http://example.org/country-" and the primary key for an instance is "de" then the URI must be "http://example.org/country-de". Finally, as a result of the URI policy, there can not be any other resource with the same value under the same primary key policy.*/
     "PrimaryKeyConstraintComponent": NamedNode<'http://datashapes.org/dash#PrimaryKeyConstraintComponent'>;
+    /*An editor for properties that are either defined as instances of rdf:Property or used as IRI values of sh:path. The component uses auto-complete to find these properties by their rdfs:labels or sh:names.*/
+    "PropertyAutoCompleteEditor": NamedNode<'http://datashapes.org/dash#PropertyAutoCompleteEditor'>;
+    /*A viewer for properties that renders a hyperlink using the display label or sh:name, allowing users to either navigate to the rdf:Property resource or the property shape definition. Should be used in conjunction with PropertyAutoCompleteEditor.*/
+    "PropertyLabelViewer": NamedNode<'http://datashapes.org/dash#PropertyLabelViewer'>;
+    /*The class of roles that a property (shape) may take for its focus nodes.*/
+    "PropertyRole": NamedNode<'http://datashapes.org/dash#PropertyRole'>;
     /*A test case running a given SPARQL SELECT query and comparing its results with those stored as JSON Result Set in the expected result property.*/
     "QueryTestCase": NamedNode<'http://datashapes.org/dash#QueryTestCase'>;
     "RDFQueryJSLibrary": NamedNode<'http://datashapes.org/dash#RDFQueryJSLibrary'>;
     "ReifiableByConstraintComponent-reifiableBy": NamedNode<'http://datashapes.org/dash#ReifiableByConstraintComponent-reifiableBy'>;
     "ReifiableByConstraintComponent": NamedNode<'http://datashapes.org/dash#ReifiableByConstraintComponent'>;
-    "ResourceAction-jsCondition": NamedNode<'http://datashapes.org/dash#ResourceAction-jsCondition'>;
     /*An Action that can be executed for a selected resource. Such Actions show up in context menus once they have been assigned a sh:group.*/
     "ResourceAction": NamedNode<'http://datashapes.org/dash#ResourceAction'>;
     /*A rich text editor to enter the lexical value of a literal and a drop down to select language. The selected language is stored in the HTML lang attribute of the root node in the HTML DOM tree.*/
@@ -157,23 +164,82 @@ type Dash = NamespaceBuilder & {
     "SPARQLConstructTemplate": NamedNode<'http://datashapes.org/dash#SPARQLConstructTemplate'>;
     /*Encapsulates a SPARQL SELECT query that can be parameterized. Parameters will become pre-bound variables in the query.*/
     "SPARQLSelectTemplate": NamedNode<'http://datashapes.org/dash#SPARQLSelectTemplate'>;
-    /*A SuggestionGenerator based on a SPARQL UPDATE query (sh:update), producing an instance of dash:GraphUpdate. The INSERTs become dash:addedTriple and the DELETEs become dash:deletedTriple. The WHERE clause operates on the data graph with the pre-bound variables $subject, $predicate and $object, as well as the other pre-bound variables for the parameters of the constraint.
+    /*A SuggestionGenerator based on a SPARQL UPDATE query (sh:update), producing an instance of dash:GraphUpdate. The INSERTs become dash:addedTriple and the DELETEs become dash:deletedTriple. The WHERE clause operates on the data graph with the pre-bound variables $focusNode, $predicate and $value, as well as the other pre-bound variables for the parameters of the constraint.
     
     In many cases, there may be multiple possible suggestions to fix a problem. For example, with sh:maxLength there are many ways to slice a string. In those cases, the system will first iterate through the result variables from a SELECT query (sh:select) and apply these results as pre-bound variables into the UPDATE query.*/
     "SPARQLUpdateSuggestionGenerator": NamedNode<'http://datashapes.org/dash#SPARQLUpdateSuggestionGenerator'>;
-    "Script-comment": NamedNode<'http://datashapes.org/dash#Script-comment'>;
-    "Script-js": NamedNode<'http://datashapes.org/dash#Script-js'>;
-    "Script-label": NamedNode<'http://datashapes.org/dash#Script-label'>;
     /*An executable unit implemented in one or more languages such as JavaScript.*/
     "Script": NamedNode<'http://datashapes.org/dash#Script'>;
+    /*The class of constraints that are based on Scripts. Depending on whether dash:onAllValues is set to true, these scripts can access the following pre-assigned variables:
+    
+    - focusNode: the focus node of the constraint (a NamedNode)
+    - if dash:onAllValues is not true: value: the current value node (e.g. a JavaScript string for xsd:string literals, a number for numeric literals or true or false for xsd:boolean literals. All other literals become LiteralNodes, and non-literals become instances of NamedNode)
+    - if dash:onAllValues is true: values: an array of current value nodes, as above.
+    
+    If the expression returns an array then each array member will be mapped to one validation result, following the mapping rules below.
+    
+    For string results, a validation result will use the string as sh:message.
+    For boolean results, a validation result will be produced if the result is false (true means no violation).
+    
+    For object results, a validation result will be produced using the value of the field "message" of the object as result message. If the field "value" has a value then this will become the sh:value in the violation.
+    
+    Unless another sh:message has been directly returned, the sh:message of the dash:ScriptConstraint will be used, similar to sh:message at SPARQL Constraints. These sh:messages can access the values {$focusNode}, ${value} etc as template variables.*/
+    "ScriptConstraint": NamedNode<'http://datashapes.org/dash#ScriptConstraint'>;
+    "ScriptConstraintComponent-scriptConstraint": NamedNode<'http://datashapes.org/dash#ScriptConstraintComponent-scriptConstraint'>;
+    "ScriptConstraintComponent": NamedNode<'http://datashapes.org/dash#ScriptConstraintComponent'>;
+    /*Script functions can be used from SPARQL queries and will be injected into the generated prefix object (in JavaScript, for ADS scripts). The dash:js will be inserted into a generated JavaScript function and therefore needs to use the return keyword to produce results. These JS snippets can access the parameter values based on the local name of the sh:Parameter's path. For example ex:value can be accessed using value.
+    
+    SPARQL use note: Since these functions may be used from any data graph and any shapes graph, they must not rely on any API apart from what's available in the shapes graph that holds the rdf:type triple of the function itself. In other words, at execution time from SPARQL, the ADS shapes graph will be the home graph of the function's declaration.*/
+    "ScriptFunction": NamedNode<'http://datashapes.org/dash#ScriptFunction'>;
+    /*A Suggestion Generator that is backed by an Active Data Shapes script. The script needs to return a JSON object or an array of JSON objects if it shall generate multiple suggestions. It may also return null to indicate that nothing was suggested. Note that the whole script is evaluated as a (JavaScript) expression, and those will use the last value as result. So simply putting an object at the end of your script should do. Alternatively, define the bulk of the operation as a function and simply call that function in the script.
+    
+    Each response object can have the following fields:
+    
+    {
+        message: "The human readable message",  // Defaults to the rdfs:label(s) of the suggestion generator
+        add: [ // An array of triples to add, each triple as an array with three nodes
+            [ subject, predicate, object ],
+            [ ... ]
+        ],
+        delete: [
+            ... like add, for the triples to delete
+        ]
+    }
+    
+    Suggestions with neither added nor deleted triples will be discarded.
+    
+    At execution time, the script operates on the data graph as the active graph, with the following pre-bound variables:
+    - focusNode: the NamedNode that is the sh:focusNode of the validation result
+    - predicate: the NamedNode representing the predicate of the validation result, assuming sh:resultPath is a URI
+    - value: the value node from the validation result's sh:value, cast into the most suitable JS object
+    - the other pre-bound variables for the parameters of the constraint, e.g. in a sh:maxCount constraint it would be maxCount
+    
+    The script will be executed in read-only mode, i.e. it cannot modify the graph.
+    
+    Example with dash:js:
+    
+    ({
+        message: `Copy labels into ${graph.localName(predicate)}`,
+        add: focusNode.values(rdfs.label).map(label =>
+            [ focusNode, predicate, label ]
+        )
+    })*/
+    "ScriptSuggestionGenerator": NamedNode<'http://datashapes.org/dash#ScriptSuggestionGenerator'>;
     /*A test case that evaluates a script. Requires exactly one value for dash:js and will operate on the test case's graph (with imports) as both data and shapes graph.
     
     Supports read-only scripts only at this stage.*/
     "ScriptTestCase": NamedNode<'http://datashapes.org/dash#ScriptTestCase'>;
+    /*A SHACL validator based on an Active Data Shapes script.
+    
+    See the comment at dash:ScriptConstraint for the basic evaluation approach. Note that in addition to focusNode and value/values, the script can access pre-bound variables for each declared argument of the constraint component.*/
+    "ScriptValidator": NamedNode<'http://datashapes.org/dash#ScriptValidator'>;
+    /*A class that is also a node shape. This class can be used as rdf:type instead of the combination of rdfs:Class and sh:NodeShape.*/
+    "ShapeClass": NamedNode<'http://datashapes.org/dash#ShapeClass'>;
     /*A shape script contains extra code that gets injected into the API for the associated node shape. In particular you can use this to define additional functions that operate on the current focus node (the this variable in JavaScript).*/
     "ShapeScript": NamedNode<'http://datashapes.org/dash#ShapeScript'>;
     /*An editor for individual value nodes.*/
     "SingleEditor": NamedNode<'http://datashapes.org/dash#SingleEditor'>;
+    "SingleLineConstraintComponent-singleLine": NamedNode<'http://datashapes.org/dash#SingleLineConstraintComponent-singleLine'>;
     /*A constraint component that can be used to declare that all values that are literals must have a lexical form that contains no line breaks ('\n' or '\r').
     
     User interfaces may use the dash:singleLine flag to prefer a text field over a (multi-line) text area.*/
@@ -185,6 +251,10 @@ type Dash = NamespaceBuilder & {
     "StemConstraintComponent": NamedNode<'http://datashapes.org/dash#StemConstraintComponent'>;
     /*An rdf:List that can be used in property constraints as value for sh:or to indicate that all values of a property must be either xsd:string or rdf:langString.*/
     "StringOrLangString": NamedNode<'http://datashapes.org/dash#StringOrLangString'>;
+    /*An rdf:List that can be used in property constraints as value for sh:or to indicate that all values of a property must be either xsd:string, rdf:langString or rdf:HTML (in that order of preference).*/
+    "StringOrLangStringOrHTML": NamedNode<'http://datashapes.org/dash#StringOrLangStringOrHTML'>;
+    /*An editor for properties that declare a dash:rootClass. The editor allows selecting either the class itself or one of its subclasses.*/
+    "SubClassEditor": NamedNode<'http://datashapes.org/dash#SubClassEditor'>;
     "SubSetOfConstraintComponent-subSetOf": NamedNode<'http://datashapes.org/dash#SubSetOfConstraintComponent-subSetOf'>;
     /*A constraint component that can be used to state that the set of value nodes must be a subset of the value of a given property.*/
     "SubSetOfConstraintComponent": NamedNode<'http://datashapes.org/dash#SubSetOfConstraintComponent'>;
@@ -253,15 +323,8 @@ type Dash = NamespaceBuilder & {
     "coExistsWith": NamedNode<'http://datashapes.org/dash#coExistsWith'>;
     /*Can be used to indicate that a property/path represented by a property constraint represents a composite relationship. In a composite relationship, the life cycle of a "child" object (value of the property/path) depends on the "parent" object (focus node). If the parent gets deleted, then the child objects should be deleted, too. Tools may use dash:composite (if set to true) to implement cascading delete operations.*/
     "composite": NamedNode<'http://datashapes.org/dash#composite'>;
-    /*
-            Links a property with a default value type.
-            The default value type is assumed to be the <code>rdf:type</code> of values of the property
-            that declare no type on their own.
-            An example use of <code>sh:defaultValueType</code> is <code>sh:property</code>,
-            the values of which are assumed to be instances of <code>sh:PropertyShape</code>
-            even if they are untyped (blank) nodes.
-            */
-    "defaultValueType": NamedNode<'http://datashapes.org/dash#defaultValueType'>;
+    /*Can be used to annotate a graph (usually the owl:Ontology) with the default language that tools should suggest for new literal values. For example, predominantly English graphs should have "en" as default language.*/
+    "defaultLang": NamedNode<'http://datashapes.org/dash#defaultLang'>;
     /*Links a node shape with the roles for which it shall be used as default view. User interfaces can use these values to select how to present a given RDF resource. The values of this property are URIs representing a group of users or agents. There is a dedicated URI dash:all representing all users.*/
     "defaultViewForRole": NamedNode<'http://datashapes.org/dash#defaultViewForRole'>;
     /*May link a dash:GraphUpdate result with one or more triples (represented as instances of rdf:Statement) that should be deleted to fix the source of the result.*/
@@ -334,6 +397,10 @@ type Dash = NamespaceBuilder & {
     "isNodeKindIRI": NamedNode<'http://datashapes.org/dash#isNodeKindIRI'>;
     /*Checks if a given sh:NodeKind is one that includes Literals.*/
     "isNodeKindLiteral": NamedNode<'http://datashapes.org/dash#isNodeKindLiteral'>;
+    "isSubClassOf-subclass": NamedNode<'http://datashapes.org/dash#isSubClassOf-subclass'>;
+    "isSubClassOf-superclass": NamedNode<'http://datashapes.org/dash#isSubClassOf-superclass'>;
+    /*Returns true if a given class (first argument) is a subclass of a given other class (second argument), or identical to that class. This is equivalent to an rdfs:subClassOf* check.*/
+    "isSubClassOf": NamedNode<'http://datashapes.org/dash#isSubClassOf'>;
     /*The JavaScript source code of a Script.*/
     "js": NamedNode<'http://datashapes.org/dash#js'>;
     /*Can be set to true for those constraint components where the validation does not require to visit any other triples than the shape definitions and the direct property values of the focus node mentioned in the property constraints. Examples of this include sh:minCount and sh:hasValue.
@@ -342,10 +409,14 @@ type Dash = NamespaceBuilder & {
     
     Any component marked with dash:staticConstraint is also a dash:localConstraint.*/
     "localConstraint": NamedNode<'http://datashapes.org/dash#localConstraint'>;
+    /*If set to true at a property shape then any sh:values rules of this property will be ignored when 'all inferences' are computed. This is useful for property values that shall only be computed for individual focus nodes (e.g. when a user visits a resource) but not for large inference runs.*/
+    "localValues": NamedNode<'http://datashapes.org/dash#localValues'>;
     /*For file-typed properties, this can be used to specify the expected/allowed mime types of its values. This can be used, for example, to limit file input boxes or file selectors. If multiple values are allowed then they need to be separated by commas.
     
     Example values are listed at https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types*/
     "mimeTypes": NamedNode<'http://datashapes.org/dash#mimeTypes'>;
+    /*If set to true for a ScriptConstraint or ScriptValidator, then the associated script will receive all value nodes at once, as a value of the variable values. By default (or false), the script is called for each value node individually.*/
+    "onAllValues": NamedNode<'http://datashapes.org/dash#onAllValues'>;
     /*Links the constraint component with instances of dash:SuggestionGenerator that may be used to produce suggestions for a given validation result that was produced by a property constraint.*/
     "propertySuggestionGenerator": NamedNode<'http://datashapes.org/dash#propertySuggestionGenerator'>;
     /*Used as a hint for user interfaces that values of the associated property should not be editable. The values of this may be the boolean literals true or false or, more generally, a SHACL node expression that must evaluate to true or false.*/
@@ -378,11 +449,13 @@ type Dash = NamespaceBuilder & {
     "suggestionGroup": NamedNode<'http://datashapes.org/dash#suggestionGroup'>;
     /*True to declare that the associated property path is symmetric.*/
     "symmetric": NamedNode<'http://datashapes.org/dash#symmetric'>;
-    /*Indicates whether this test modifies the specified dash:testEnvironment. If set to true then a test runner can make sure to wipe out the previous environment, while leaving it false (or undefined) means that the test runner can reuse the environment from the previous test case. As setting up and tearing down tests is sometimes slow, this flag can significantly accelerate test execution.*/
-    "testModifiesEnvironment": NamedNode<'http://datashapes.org/dash#testModifiesEnvironment'>;
     /*Returns a literal with datatype xsd:string that has the input value as its string. If the input value is an (URI) resource then its URI will be used.*/
     "toString": NamedNode<'http://datashapes.org/dash#toString'>;
     "uniqueValueForClass": NamedNode<'http://datashapes.org/dash#uniqueValueForClass'>;
+    /*Inserts a given value into a given URI template, producing a new xsd:anyURI literal.
+    
+    In the future this should support RFC 6570 but for now it is limited to simple {...} patterns.*/
+    "uriTemplate": NamedNode<'http://datashapes.org/dash#uriTemplate'>;
     /*True to also validate the shapes itself (i.e. parameter declarations).*/
     "validateShapes": NamedNode<'http://datashapes.org/dash#validateShapes'>;
     /*Computes the number of objects for a given subject/predicate combination.*/
@@ -395,22 +468,18 @@ type Dash = NamespaceBuilder & {
     "x": NamedNode<'http://datashapes.org/dash#x'>;
     /*The y position.*/
     "y": NamedNode<'http://datashapes.org/dash#y'>;
-    "skipPreview": NamedNode<'http://datashapes.org/dash#skipPreview'>;
     "nonRecursive": NamedNode<'http://datashapes.org/dash#nonRecursive'>;
     "uriStart": NamedNode<'http://datashapes.org/dash#uriStart'>;
-    "jsCondition": NamedNode<'http://datashapes.org/dash#jsCondition'>;
-    "testCase": NamedNode<'http://datashapes.org/dash#testCase'>;
-    "uri": NamedNode<'http://datashapes.org/dash#uri'>;
-    "predicate": NamedNode<'http://datashapes.org/dash#predicate'>;
+    "scriptConstraint": NamedNode<'http://datashapes.org/dash#scriptConstraint'>;
+    "subclass": NamedNode<'http://datashapes.org/dash#subclass'>;
+    "superclass": NamedNode<'http://datashapes.org/dash#superclass'>;
     "nodeKind": NamedNode<'http://datashapes.org/dash#nodeKind'>;
-    "subject": NamedNode<'http://datashapes.org/dash#subject'>;
-    "focusNode": NamedNode<'http://datashapes.org/dash#focusNode'>;
-    "testGraph": NamedNode<'http://datashapes.org/dash#testGraph'>;
-    "action": NamedNode<'http://datashapes.org/dash#action'>;
+    "predicate": NamedNode<'http://datashapes.org/dash#predicate'>;
     "object": NamedNode<'http://datashapes.org/dash#object'>;
+    "value": NamedNode<'http://datashapes.org/dash#value'>;
     "arg": NamedNode<'http://datashapes.org/dash#arg'>;
+    "template": NamedNode<'http://datashapes.org/dash#template'>;
+    "subject": NamedNode<'http://datashapes.org/dash#subject'>;
     "constraintOrShape": NamedNode<'http://datashapes.org/dash#constraintOrShape'>;
-    "variables": NamedNode<'http://datashapes.org/dash#variables'>;
-    "expression": NamedNode<'http://datashapes.org/dash#expression'>;
 };
 export const dash: Dash = (namespace("http://datashapes.org/dash#") as any);

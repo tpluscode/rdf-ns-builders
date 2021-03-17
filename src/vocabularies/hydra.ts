@@ -3,9 +3,11 @@ import { NamedNode } from "rdf-js";
 type Hydra = NamespaceBuilder & {
     /*The Hydra API documentation class*/
     "ApiDocumentation": NamedNode<'http://www.w3.org/ns/hydra/core#ApiDocumentation'>;
+    /*Provides a base abstract for base Uri source for Iri template resolution.*/
+    "BaseUriSource": NamedNode<'http://www.w3.org/ns/hydra/core#BaseUriSource'>;
     /*A representation that serializes just the lexical form of a variable value, but omits language and type information.*/
     "BasicRepresentation": NamedNode<'http://www.w3.org/ns/hydra/core#BasicRepresentation'>;
-    /*The class of Hydra classes. Hydra classes and their instances are dereferenceable resources.*/
+    /*The class of Hydra classes.*/
     "Class": NamedNode<'http://www.w3.org/ns/hydra/core#Class'>;
     /*A collection holding references to a number of related resources.*/
     "Collection": NamedNode<'http://www.w3.org/ns/hydra/core#Collection'>;
@@ -19,12 +21,16 @@ type Hydra = NamespaceBuilder & {
     "IriTemplateMapping": NamedNode<'http://www.w3.org/ns/hydra/core#IriTemplateMapping'>;
     /*The class of properties representing links.*/
     "Link": NamedNode<'http://www.w3.org/ns/hydra/core#Link'>;
+    /*States that the link's context IRI, as defined in RFC 5988, should be used as the base Uri*/
+    "LinkContext": NamedNode<'http://www.w3.org/ns/hydra/core#LinkContext'>;
     /*An operation.*/
     "Operation": NamedNode<'http://www.w3.org/ns/hydra/core#Operation'>;
     /*A PartialCollectionView describes a partial view of a Collection. Multiple PartialCollectionViews can be connected with the the next/previous properties to allow a client to retrieve all members of the collection.*/
     "PartialCollectionView": NamedNode<'http://www.w3.org/ns/hydra/core#PartialCollectionView'>;
-    /*The class of dereferenceable resources.*/
+    /*The class of dereferenceable resources by means a client can attempt to dereference; however, the received responses should still be verified.*/
     "Resource": NamedNode<'http://www.w3.org/ns/hydra/core#Resource'>;
+    /*States that the base Uri should be established using RFC 3986 reference resolution algorithm specified in section 5.*/
+    "Rfc3986": NamedNode<'http://www.w3.org/ns/hydra/core#Rfc3986'>;
     /*An IRI template as defined by RFC6570.*/
     "Rfc6570Template": NamedNode<'http://www.w3.org/ns/hydra/core#Rfc6570Template'>;
     /*Additional information about a status code that might be returned.*/
@@ -55,12 +61,14 @@ type Hydra = NamespaceBuilder & {
     "last": NamedNode<'http://www.w3.org/ns/hydra/core#last'>;
     /*Instructs to limit set only to N elements.*/
     "limit": NamedNode<'http://www.w3.org/ns/hydra/core#limit'>;
-    /*Semantics of each member provided by the collection.*/
+    /*This predicate is left for compatibility purposes and hydra:memberAssertion should be used instead.*/
     "manages": NamedNode<'http://www.w3.org/ns/hydra/core#manages'>;
     /*A variable-to-property mapping of the IRI template.*/
     "mapping": NamedNode<'http://www.w3.org/ns/hydra/core#mapping'>;
     /*A member of the collection*/
     "member": NamedNode<'http://www.w3.org/ns/hydra/core#member'>;
+    /*Semantics of each member provided by the collection.*/
+    "memberAssertion": NamedNode<'http://www.w3.org/ns/hydra/core#memberAssertion'>;
     /*The HTTP method.*/
     "method": NamedNode<'http://www.w3.org/ns/hydra/core#method'>;
     /*The resource following the current instance in an interlinked set of resources.*/
@@ -85,13 +93,14 @@ type Hydra = NamespaceBuilder & {
     "readable": NamedNode<'http://www.w3.org/ns/hydra/core#readable'>;
     /*True if the property is required, false otherwise.*/
     "required": NamedNode<'http://www.w3.org/ns/hydra/core#required'>;
+    "resolveRelativeUsing": NamedNode<'http://www.w3.org/ns/hydra/core#resolveRelativeUsing'>;
     /*The information returned by the Web API on success*/
     "returns": NamedNode<'http://www.w3.org/ns/hydra/core#returns'>;
     /*Name of the header returned by the operation.*/
     "returnsHeader": NamedNode<'http://www.w3.org/ns/hydra/core#returnsHeader'>;
     /*A IRI template that can be used to query a collection.*/
     "search": NamedNode<'http://www.w3.org/ns/hydra/core#search'>;
-    /*The HTTP status code*/
+    /*The HTTP status code. Please note it may happen this value will be different to actual status code received.*/
     "statusCode": NamedNode<'http://www.w3.org/ns/hydra/core#statusCode'>;
     /*The subject.*/
     "subject": NamedNode<'http://www.w3.org/ns/hydra/core#subject'>;
@@ -114,6 +123,8 @@ type Hydra = NamespaceBuilder & {
     /*A specific view of a resource.*/
     "view": NamedNode<'http://www.w3.org/ns/hydra/core#view'>;
     /*True if the client can change the property's value, false otherwise.*/
+    "writable": NamedNode<'http://www.w3.org/ns/hydra/core#writable'>;
+    /*This property is left for compatibility purposes and hydra:writable should be used instead.*/
     "writeable": NamedNode<'http://www.w3.org/ns/hydra/core#writeable'>;
 };
 export const hydra: Hydra = (namespace("http://www.w3.org/ns/hydra/core#") as any);
