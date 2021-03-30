@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.4.2
+
+### Patch Changes
+
+- bdfa24e: Activity Streams - use correct namespace
+
 ## 0.4.1
 
 ### Patch Changes
