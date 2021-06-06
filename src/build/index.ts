@@ -1,11 +1,10 @@
-import { writeFileSync, ensureDirSync } from 'fs-extra'
 import { resolve } from 'path'
-import ts from 'typescript'
+import { Project } from 'ts-morph'
 import type * as RdfVocabularies from '@zazuko/rdf-vocabularies'
 import { createPrefixFile } from './prefix'
-import { createDefaultModule } from './defaultModule'
+import { createDefaultModule, createStrictModule } from './modules'
 
-const printer = ts.createPrinter()
+const project = new Project()
 
 interface Build {
   outDir: string
@@ -15,14 +14,19 @@ interface Build {
 export async function build({ outDir, vocabsPackage }: Build): Promise<void> {
   const rdfVocabularies: typeof RdfVocabularies = await import(vocabsPackage)
 
-  ensureDirSync(outDir)
-
   const promises = Object.entries(rdfVocabularies.prefixes).map(([prefix, namespace]) => {
-    return createPrefixFile(prefix, namespace, rdfVocabularies).then(file => {
-      writeFileSync(resolve(outDir, file.fileName), printer.printFile(file))
-    })
+    const sourceFile = project.createSourceFile(resolve(outDir, 'vocabularies', `${prefix}.ts`), undefined, { overwrite: true })
+
+    return createPrefixFile(sourceFile, prefix, namespace, rdfVocabularies)
   })
 
   await Promise.all(promises)
-  writeFileSync(resolve(outDir, 'index.ts'), printer.printFile(createDefaultModule(rdfVocabularies.prefixes)))
+
+  const defaultModule = project.createSourceFile(resolve(outDir, 'index.ts'), undefined, { overwrite: true })
+  createDefaultModule(defaultModule, rdfVocabularies.prefixes)
+
+  const strictModule = project.createSourceFile(resolve(outDir, 'strict.ts'), undefined, { overwrite: true })
+  createStrictModule(strictModule, rdfVocabularies.prefixes)
+
+  await project.save()
 }

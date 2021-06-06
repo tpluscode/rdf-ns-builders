@@ -1,6 +1,7 @@
 import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
 import { NamedNode } from "rdf-js";
-type Dpv = NamespaceBuilder & {
+
+interface Dpv {
     "AcademicResearch": NamedNode<'http://www.w3.org/ns/dpv#AcademicResearch'>;
     "Accent": NamedNode<'http://www.w3.org/ns/dpv#Accent'>;
     "AccessControl": NamedNode<'http://www.w3.org/ns/dpv#AccessControl'>;
@@ -9,7 +10,7 @@ type Dpv = NamespaceBuilder & {
     "Acquantaince": NamedNode<'http://www.w3.org/ns/dpv#Acquantaince'>;
     "Acquire": NamedNode<'http://www.w3.org/ns/dpv#Acquire'>;
     "Adapt": NamedNode<'http://www.w3.org/ns/dpv#Adapt'>;
-    /*Advertising is a subset of Marketing. Advertising by itself does not indicate 'personalisation' i.e. personalised ads.*/
+    /** Advertising is a subset of Marketing. Advertising by itself does not indicate 'personalisation' i.e. personalised ads. */
     "Advertising": NamedNode<'http://www.w3.org/ns/dpv#Advertising'>;
     "Age": NamedNode<'http://www.w3.org/ns/dpv#Age'>;
     "Align": NamedNode<'http://www.w3.org/ns/dpv#Align'>;
@@ -23,7 +24,7 @@ type Dpv = NamespaceBuilder & {
     "Authenticating": NamedNode<'http://www.w3.org/ns/dpv#Authenticating'>;
     "AuthenticationHistory": NamedNode<'http://www.w3.org/ns/dpv#AuthenticationHistory'>;
     "AuthenticationProtocols": NamedNode<'http://www.w3.org/ns/dpv#AuthenticationProtocols'>;
-    /*non-technical authorisation procedures: How is it described on an organisational level, who gets access to the data*/
+    /** non-technical authorisation procedures: How is it described on an organisational level, who gets access to the data */
     "AuthorisationProcedure": NamedNode<'http://www.w3.org/ns/dpv#AuthorisationProcedure'>;
     "Authority": NamedNode<'http://www.w3.org/ns/dpv#Authority'>;
     "AutomatedDecisionMaking": NamedNode<'http://www.w3.org/ns/dpv#AutomatedDecisionMaking'>;
@@ -39,7 +40,7 @@ type Dpv = NamespaceBuilder & {
     "Certification": NamedNode<'http://www.w3.org/ns/dpv#Certification'>;
     "CertificationSeal": NamedNode<'http://www.w3.org/ns/dpv#CertificationSeal'>;
     "Character": NamedNode<'http://www.w3.org/ns/dpv#Character'>;
-    /*The legality of age defining a child varies by jurisdiction. In addition, 'child' is distinct from a 'minor'. For example, the legal age drinking alcohol can be 21, which makes a person of age 20 a 'minor' in this context. In other cases, 'minor' and 'child' are used interchangeably to refer to a person below some legally defined age.*/
+    /** The legality of age defining a child varies by jurisdiction. In addition, 'child' is distinct from a 'minor'. For example, the legal age drinking alcohol can be 21, which makes a person of age 20 a 'minor' in this context. In other cases, 'minor' and 'child' are used interchangeably to refer to a person below some legally defined age. */
     "Child": NamedNode<'http://www.w3.org/ns/dpv#Child'>;
     "CodeOfConduct": NamedNode<'http://www.w3.org/ns/dpv#CodeOfConduct'>;
     "Collect": NamedNode<'http://www.w3.org/ns/dpv#Collect'>;
@@ -75,20 +76,20 @@ type Dpv = NamespaceBuilder & {
     "CriminalPardon": NamedNode<'http://www.w3.org/ns/dpv#CriminalPardon'>;
     "CustomerCare": NamedNode<'http://www.w3.org/ns/dpv#CustomerCare'>;
     "DNACode": NamedNode<'http://www.w3.org/ns/dpv#DNACode'>;
-    /*Top class: Impact Assessment, and DPIA is sub-class*/
+    /** Top class: Impact Assessment, and DPIA is sub-class */
     "DPIA": NamedNode<'http://www.w3.org/ns/dpv#DPIA'>;
-    /*The terms 'Controller' is usually the more common form of indicating a Data Controller. In ISO/IEC the term 'PII Controller' is used.*/
+    /** The terms 'Controller' is usually the more common form of indicating a Data Controller. In ISO/IEC the term 'PII Controller' is used. */
     "DataController": NamedNode<'http://www.w3.org/ns/dpv#DataController'>;
     "DataProcessor": NamedNode<'http://www.w3.org/ns/dpv#DataProcessor'>;
     "DataProtectionAuthority": NamedNode<'http://www.w3.org/ns/dpv#DataProtectionAuthority'>;
     "DataProtectionOfficer": NamedNode<'http://www.w3.org/ns/dpv#DataProtectionOfficer'>;
-    /*Source is direct point of data collection; 'origin' would indicate the original/others points of where the data originates from*/
+    /** Source is direct point of data collection; 'origin' would indicate the original/others points of where the data originates from */
     "DataSource": NamedNode<'http://www.w3.org/ns/dpv#DataSource'>;
-    /*sub-processor' is a commonly used term similar to 'sub-contractor' and does not have a specific legal definition*/
+    /** sub-processor' is a commonly used term similar to 'sub-contractor' and does not have a specific legal definition */
     "DataSubProcessor": NamedNode<'http://www.w3.org/ns/dpv#DataSubProcessor'>;
-    /*The term 'data subject' is specific to the GDPR, but is functionally equivalent to the term 'individual' and the ISO/IEC term 'PII Principle'.*/
+    /** The term 'data subject' is specific to the GDPR, but is functionally equivalent to the term 'individual' and the ISO/IEC term 'PII Principle'. */
     "DataSubject": NamedNode<'http://www.w3.org/ns/dpv#DataSubject'>;
-    /*Based on use of definitions, the notion of 'Data Subject Right' can be equivalent to 'Individual Right' or 'Right of a Person'*/
+    /** Based on use of definitions, the notion of 'Data Subject Right' can be equivalent to 'Individual Right' or 'Right of a Person' */
     "DataSubjectRight": NamedNode<'http://www.w3.org/ns/dpv#DataSubjectRight'>;
     "DeIdentification": NamedNode<'http://www.w3.org/ns/dpv#DeIdentification'>;
     "DeliveryOfGoods": NamedNode<'http://www.w3.org/ns/dpv#DeliveryOfGoods'>;
@@ -170,7 +171,7 @@ type Dpv = NamespaceBuilder & {
     "Language": NamedNode<'http://www.w3.org/ns/dpv#Language'>;
     "LargeScaleProcessing": NamedNode<'http://www.w3.org/ns/dpv#LargeScaleProcessing'>;
     "LegalAgreement": NamedNode<'http://www.w3.org/ns/dpv#LegalAgreement'>;
-    /*Legal basis (plural: legal bases) are defined by legislations and regulations, whose applicability is usually restricted to specific jurisdictions.*/
+    /** Legal basis (plural: legal bases) are defined by legislations and regulations, whose applicability is usually restricted to specific jurisdictions. */
     "LegalBasis": NamedNode<'http://www.w3.org/ns/dpv#LegalBasis'>;
     "LegalCompliance": NamedNode<'http://www.w3.org/ns/dpv#LegalCompliance'>;
     "LegalEntity": NamedNode<'http://www.w3.org/ns/dpv#LegalEntity'>;
@@ -209,7 +210,7 @@ type Dpv = NamespaceBuilder & {
     "PaymentCard": NamedNode<'http://www.w3.org/ns/dpv#PaymentCard'>;
     "PaymentCardExpiry": NamedNode<'http://www.w3.org/ns/dpv#PaymentCardExpiry'>;
     "PaymentCardNumber": NamedNode<'http://www.w3.org/ns/dpv#PaymentCardNumber'>;
-    /*For a formal legal definition of personal data, see GDPR Art.4-1. An informal definition consists of any data directly or indirectly associated or related to an individual. This definition is equivalent to ISO/IEC definition of Personally Identifiable Information (PII).*/
+    /** For a formal legal definition of personal data, see GDPR Art.4-1. An informal definition consists of any data directly or indirectly associated or related to an individual. This definition is equivalent to ISO/IEC definition of Personally Identifiable Information (PII). */
     "PersonalDataCategory": NamedNode<'http://www.w3.org/ns/dpv#PersonalDataCategory'>;
     "PersonalDataHandling": NamedNode<'http://www.w3.org/ns/dpv#PersonalDataHandling'>;
     "PersonalPossession": NamedNode<'http://www.w3.org/ns/dpv#PersonalPossession'>;
@@ -244,7 +245,7 @@ type Dpv = NamespaceBuilder & {
     "PurchasesAndSpendingHabit": NamedNode<'http://www.w3.org/ns/dpv#PurchasesAndSpendingHabit'>;
     "Purpose": NamedNode<'http://www.w3.org/ns/dpv#Purpose'>;
     "Race": NamedNode<'http://www.w3.org/ns/dpv#Race'>;
-    /*A recipient of personal data can be used to indicate any entity that receives personal data. This can be a Third Party, Processor (GDPR), or even a Controller.*/
+    /** A recipient of personal data can be used to indicate any entity that receives personal data. This can be a Third Party, Processor (GDPR), or even a Controller. */
     "Recipient": NamedNode<'http://www.w3.org/ns/dpv#Recipient'>;
     "Record": NamedNode<'http://www.w3.org/ns/dpv#Record'>;
     "Reference": NamedNode<'http://www.w3.org/ns/dpv#Reference'>;
@@ -259,11 +260,11 @@ type Dpv = NamespaceBuilder & {
     "Restrict": NamedNode<'http://www.w3.org/ns/dpv#Restrict'>;
     "Retina": NamedNode<'http://www.w3.org/ns/dpv#Retina'>;
     "Retrieve": NamedNode<'http://www.w3.org/ns/dpv#Retrieve'>;
-    /*A 'right' is a legal, social, or ethical principle of freedom or entitlement which dictate the norms regarding what is allowed or owed.. Rights as a concept encompass a broad area of norms and entities, and are not specific to Individuals or Data Protection / Privacy. For individual specific rights, see dpv:DataSubjectRight*/
+    /** A 'right' is a legal, social, or ethical principle of freedom or entitlement which dictate the norms regarding what is allowed or owed.. Rights as a concept encompass a broad area of norms and entities, and are not specific to Individuals or Data Protection / Privacy. For individual specific rights, see dpv:DataSubjectRight */
     "Right": NamedNode<'http://www.w3.org/ns/dpv#Right'>;
-    /*Risks can be associated with one or more different concepts such as purpose, processing, personal data, technical or organisational measure.*/
+    /** Risks can be associated with one or more different concepts such as purpose, processing, personal data, technical or organisational measure. */
     "Risk": NamedNode<'http://www.w3.org/ns/dpv#Risk'>;
-    /*Data Protection Impact Assessments as per GDPR art 35, other Privacy Impact Assessments, threat severity assessment https://www.cnil.fr/en/privacy-impact-assessment-pia*/
+    /** Data Protection Impact Assessments as per GDPR art 35, other Privacy Impact Assessments, threat severity assessment https://www.cnil.fr/en/privacy-impact-assessment-pia */
     "RiskManagementProcedure": NamedNode<'http://www.w3.org/ns/dpv#RiskManagementProcedure'>;
     "RiskMitigationMeasure": NamedNode<'http://www.w3.org/ns/dpv#RiskMitigationMeasure'>;
     "RoomNumber": NamedNode<'http://www.w3.org/ns/dpv#RoomNumber'>;
@@ -272,7 +273,7 @@ type Dpv = NamespaceBuilder & {
     "School": NamedNode<'http://www.w3.org/ns/dpv#School'>;
     "Seal": NamedNode<'http://www.w3.org/ns/dpv#Seal'>;
     "SecretText": NamedNode<'http://www.w3.org/ns/dpv#SecretText'>;
-    /*There are various sector codes used commonly to indicate the domain of an organisation or business. Examples include NACE (EU), ISIC (UN), SIC and NAICS (USA).*/
+    /** There are various sector codes used commonly to indicate the domain of an organisation or business. Examples include NACE (EU), ISIC (UN), SIC and NAICS (USA). */
     "Sector": NamedNode<'http://www.w3.org/ns/dpv#Sector'>;
     "Security": NamedNode<'http://www.w3.org/ns/dpv#Security'>;
     "SellDataToThirdParties": NamedNode<'http://www.w3.org/ns/dpv#SellDataToThirdParties'>;
@@ -295,7 +296,7 @@ type Dpv = NamespaceBuilder & {
     "SocialMediaMarketing": NamedNode<'http://www.w3.org/ns/dpv#SocialMediaMarketing'>;
     "SocialNetwork": NamedNode<'http://www.w3.org/ns/dpv#SocialNetwork'>;
     "SocialStatus": NamedNode<'http://www.w3.org/ns/dpv#SocialStatus'>;
-    /*trade union membership, which is explicitly included in the taxative listing in GDPR Art. 9 (1), is not covered yet.*/
+    /** trade union membership, which is explicitly included in the taxative listing in GDPR Art. 9 (1), is not covered yet. */
     "SpecialCategoryPersonalData": NamedNode<'http://www.w3.org/ns/dpv#SpecialCategoryPersonalData'>;
     "StaffTraining": NamedNode<'http://www.w3.org/ns/dpv#StaffTraining'>;
     "StorageDeletion": NamedNode<'http://www.w3.org/ns/dpv#StorageDeletion'>;
@@ -332,7 +333,7 @@ type Dpv = NamespaceBuilder & {
     "WorkHistory": NamedNode<'http://www.w3.org/ns/dpv#WorkHistory'>;
     "hasAddress": NamedNode<'http://www.w3.org/ns/dpv#hasAddress'>;
     "hasAlgorithmicLogic": NamedNode<'http://www.w3.org/ns/dpv#hasAlgorithmicLogic'>;
-    /*The actual notice that the Data Subject received to consent to, either a text or link to a document, which should be usable to decide whether the form or consent was compliant to legislation, e.g. documenting how the user has been informed about rights and implications (such as, right to data portability,right to recitffy, right to erasure, right to restrict processing, right to object, rights regarding automated decision making or profiling, processors, third parties, sub-processors, outside-EEA transfers, automated decision-making, or other necessary details of the privacy-policy). Can be TextOrDocumentOrURI.*/
+    /** The actual notice that the Data Subject received to consent to, either a text or link to a document, which should be usable to decide whether the form or consent was compliant to legislation, e.g. documenting how the user has been informed about rights and implications (such as, right to data portability,right to recitffy, right to erasure, right to restrict processing, right to object, rights regarding automated decision making or profiling, processors, third parties, sub-processors, outside-EEA transfers, automated decision-making, or other necessary details of the privacy-policy). Can be TextOrDocumentOrURI. */
     "hasConsentNotice": NamedNode<'http://www.w3.org/ns/dpv#hasConsentNotice'>;
     "hasConsequences": NamedNode<'http://www.w3.org/ns/dpv#hasConsequences'>;
     "hasContact": NamedNode<'http://www.w3.org/ns/dpv#hasContact'>;
@@ -342,10 +343,10 @@ type Dpv = NamespaceBuilder & {
     "hasDataSubject": NamedNode<'http://www.w3.org/ns/dpv#hasDataSubject'>;
     "hasDuration": NamedNode<'http://www.w3.org/ns/dpv#hasDuration'>;
     "hasExpiry": NamedNode<'http://www.w3.org/ns/dpv#hasExpiry'>;
-    /*Can be TextOrDocumentOrURI*/
+    /** Can be TextOrDocumentOrURI */
     "hasExpiryCondition": NamedNode<'http://www.w3.org/ns/dpv#hasExpiryCondition'>;
     "hasExpiryTime": NamedNode<'http://www.w3.org/ns/dpv#hasExpiryTime'>;
-    /*Human involvement is also relevant to 'human in the loop'*/
+    /** Human involvement is also relevant to 'human in the loop' */
     "hasHumanInvolvement": NamedNode<'http://www.w3.org/ns/dpv#hasHumanInvolvement'>;
     "hasIdentifier": NamedNode<'http://www.w3.org/ns/dpv#hasIdentifier'>;
     "hasLegalBasis": NamedNode<'http://www.w3.org/ns/dpv#hasLegalBasis'>;
@@ -353,11 +354,11 @@ type Dpv = NamespaceBuilder & {
     "hasName": NamedNode<'http://www.w3.org/ns/dpv#hasName'>;
     "hasPersonalDataCategory": NamedNode<'http://www.w3.org/ns/dpv#hasPersonalDataCategory'>;
     "hasProcessing": NamedNode<'http://www.w3.org/ns/dpv#hasProcessing'>;
-    /*Normally this would be the dataSubject, but in some exceptional cases, the consent might be given on behalf by someone else, e.g. parents of minors.*/
+    /** Normally this would be the dataSubject, but in some exceptional cases, the consent might be given on behalf by someone else, e.g. parents of minors. */
     "hasProvisionBy": NamedNode<'http://www.w3.org/ns/dpv#hasProvisionBy'>;
-    /*This field can be used to proivde a justification why the provision was provided by another DataSubject or legal entity,  e.g. declariing the relationship (parent, guardian), in combination with the field provisionBy*/
+    /** This field can be used to proivde a justification why the provision was provided by another DataSubject or legal entity,  e.g. declariing the relationship (parent, guardian), in combination with the field provisionBy */
     "hasProvisionByJustification": NamedNode<'http://www.w3.org/ns/dpv#hasProvisionByJustification'>;
-    /*Can be used to record information of how consent was provided e.g. by a click to a form, in writing, etc., by logging into a system and confirm per email, or with some additional authentication, etc.*/
+    /** Can be used to record information of how consent was provided e.g. by a click to a form, in writing, etc., by logging into a system and confirm per email, or with some additional authentication, etc. */
     "hasProvisionMethod": NamedNode<'http://www.w3.org/ns/dpv#hasProvisionMethod'>;
     "hasProvisionTime": NamedNode<'http://www.w3.org/ns/dpv#hasProvisionTime'>;
     "hasPurpose": NamedNode<'http://www.w3.org/ns/dpv#hasPurpose'>;
@@ -368,19 +369,22 @@ type Dpv = NamespaceBuilder & {
     "hasSector": NamedNode<'http://www.w3.org/ns/dpv#hasSector'>;
     "hasStorage": NamedNode<'http://www.w3.org/ns/dpv#hasStorage'>;
     "hasTechnicalOrganisationalMeasure": NamedNode<'http://www.w3.org/ns/dpv#hasTechnicalOrganisationalMeasure'>;
-    /*Normally this would be the dataSubject, but in some exceptional cases, the consent might be withdraawn on behalf by someone else, e.g. parents of minors.*/
+    /** Normally this would be the dataSubject, but in some exceptional cases, the consent might be withdraawn on behalf by someone else, e.g. parents of minors. */
     "hasWithdrawalBy": NamedNode<'http://www.w3.org/ns/dpv#hasWithdrawalBy'>;
-    /*This field can be used to proivde a justification why the weithdrawal was done by another DataSubject or legal entity, e.g. declariing the relationship (parent, guardian), in combination with the field withdrawalBy*/
+    /** This field can be used to proivde a justification why the weithdrawal was done by another DataSubject or legal entity, e.g. declariing the relationship (parent, guardian), in combination with the field withdrawalBy */
     "hasWithdrawalByJustification": NamedNode<'http://www.w3.org/ns/dpv#hasWithdrawalByJustification'>;
-    /*Can be used to record information of how to withdraw consent, e.g. by a click to a form, in writing, etc., by logging into a system and confirm per email, or with some additional authentication, etc.*/
+    /** Can be used to record information of how to withdraw consent, e.g. by a click to a form, in writing, etc., by logging into a system and confirm per email, or with some additional authentication, etc. */
     "hasWithdrawalMethod": NamedNode<'http://www.w3.org/ns/dpv#hasWithdrawalMethod'>;
     "hasWithdrawalTime": NamedNode<'http://www.w3.org/ns/dpv#hasWithdrawalTime'>;
-    /*The conditions for what is considered 'explicit consent' differ by norms and laws.*/
+    /** The conditions for what is considered 'explicit consent' differ by norms and laws. */
     "isExplicit": NamedNode<'http://www.w3.org/ns/dpv#isExplicit'>;
     "measureImplementedBy": NamedNode<'http://www.w3.org/ns/dpv#measureImplementedBy'>;
     "mitigatesRisk": NamedNode<'http://www.w3.org/ns/dpv#mitigatesRisk'>;
     "BrowsingBehaviour": NamedNode<'http://www.w3.org/ns/dpv#BrowsingBehaviour'>;
     "RequestedServiceProvision": NamedNode<'http://www.w3.org/ns/dpv#RequestedServiceProvision'>;
     "expiry": NamedNode<'http://www.w3.org/ns/dpv#expiry'>;
-};
-export const dpv: Dpv = (namespace("http://www.w3.org/ns/dpv#") as any);
+}
+
+const builder = namespace("http://www.w3.org/ns/dpv#") as any;
+export const strict = builder as NamespaceBuilder<keyof Dpv> & Dpv;
+export const loose = builder as NamespaceBuilder & Dpv;

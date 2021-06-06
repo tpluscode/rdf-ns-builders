@@ -1,6 +1,7 @@
 import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
 import { NamedNode } from "rdf-js";
-type Qkdv = NamespaceBuilder & {
+
+interface Qkdv {
     "A-1E0L-3I0M0H0T0D0": NamedNode<'http://qudt.org/vocab/dimensionvector/A-1E0L-3I0M0H0T0D0'>;
     "A-1E0L0I0M0H0T0D0": NamedNode<'http://qudt.org/vocab/dimensionvector/A-1E0L0I0M0H0T0D0'>;
     "A-1E0L0I0M1H0T0D0": NamedNode<'http://qudt.org/vocab/dimensionvector/A-1E0L0I0M1H0T0D0'>;
@@ -195,5 +196,8 @@ type Qkdv = NamespaceBuilder & {
     "A1E0L0I0M0H0T-1D0": NamedNode<'http://qudt.org/vocab/dimensionvector/A1E0L0I0M0H0T-1D0'>;
     "A1E0L0I0M0H0T0D0": NamedNode<'http://qudt.org/vocab/dimensionvector/A1E0L0I0M0H0T0D0'>;
     "A1E0L0I0M0H1T0D0": NamedNode<'http://qudt.org/vocab/dimensionvector/A1E0L0I0M0H1T0D0'>;
-};
-export const qkdv: Qkdv = (namespace("http://qudt.org/vocab/dimensionvector/") as any);
+}
+
+const builder = namespace("http://qudt.org/vocab/dimensionvector/") as any;
+export const strict = builder as NamespaceBuilder<keyof Qkdv> & Qkdv;
+export const loose = builder as NamespaceBuilder & Qkdv;

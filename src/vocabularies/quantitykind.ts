@@ -1,9 +1,10 @@
 import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
 import { NamedNode } from "rdf-js";
-type Quantitykind = NamespaceBuilder & {
+
+interface Quantitykind {
     "AbsoluteActivity": NamedNode<'http://qudt.org/vocab/quantitykind/AbsoluteActivity'>;
     "AbsoluteHumidity": NamedNode<'http://qudt.org/vocab/quantitykind/AbsoluteHumidity'>;
-    /*Note that the absorbed dose is not a good indicator of the likely biological effect. 1 Gy of alpha radiation would be much more biologically damaging than 1 Gy of photon radiation for example. Appropriate weighting factors can be applied reflecting the different relative biological effects to find the equivalent dose. The risk of stoctic effects due to radiation exposure can be quantified using the effective dose, which is a weighted average of the equivalent dose to each organ depending upon its radiosensitivity. When ionising radiation is used to treat cancer, the doctor will usually prescribe the radiotherapy treatment in Gy. When risk from ionising radiation is being discussed, a related unit, the Sievert is used.*/
+    /** Note that the absorbed dose is not a good indicator of the likely biological effect. 1 Gy of alpha radiation would be much more biologically damaging than 1 Gy of photon radiation for example. Appropriate weighting factors can be applied reflecting the different relative biological effects to find the equivalent dose. The risk of stoctic effects due to radiation exposure can be quantified using the effective dose, which is a weighted average of the equivalent dose to each organ depending upon its radiosensitivity. When ionising radiation is used to treat cancer, the doctor will usually prescribe the radiotherapy treatment in Gy. When risk from ionising radiation is being discussed, a related unit, the Sievert is used. */
     "AbsorbedDose": NamedNode<'http://qudt.org/vocab/quantitykind/AbsorbedDose'>;
     "AbsorbedDoseRate": NamedNode<'http://qudt.org/vocab/quantitykind/AbsorbedDoseRate'>;
     "Absorptance": NamedNode<'http://qudt.org/vocab/quantitykind/Absorptance'>;
@@ -13,7 +14,7 @@ type Quantitykind = NamespaceBuilder & {
     "AcceptorIonizationEnergy": NamedNode<'http://qudt.org/vocab/quantitykind/AcceptorIonizationEnergy'>;
     "AcousticImpedance": NamedNode<'http://qudt.org/vocab/quantitykind/AcousticImpedance'>;
     "Action": NamedNode<'http://qudt.org/vocab/quantitykind/Action'>;
-    /*Action Time (sec) */
+    /** Action Time (sec) */
     "ActionTime": NamedNode<'http://qudt.org/vocab/quantitykind/ActionTime'>;
     "ActiveEnergy": NamedNode<'http://qudt.org/vocab/quantitykind/ActiveEnergy'>;
     "ActivePower": NamedNode<'http://qudt.org/vocab/quantitykind/ActivePower'>;
@@ -67,14 +68,14 @@ type Quantitykind = NamespaceBuilder & {
     "AverageEnergyLossPerElementaryChargeProduced": NamedNode<'http://qudt.org/vocab/quantitykind/AverageEnergyLossPerElementaryChargeProduced'>;
     "AverageHeadEndPressure": NamedNode<'http://qudt.org/vocab/quantitykind/AverageHeadEndPressure'>;
     "AverageLogarithmicEnergyDecrement": NamedNode<'http://qudt.org/vocab/quantitykind/AverageLogarithmicEnergyDecrement'>;
-    /*Avg Specific Impulse (lbf-sec/lbm) */
+    /** Avg Specific Impulse (lbf-sec/lbm) */
     "AverageSpecificImpulse": NamedNode<'http://qudt.org/vocab/quantitykind/AverageSpecificImpulse'>;
     "AverageVacuumThrust": NamedNode<'http://qudt.org/vocab/quantitykind/AverageVacuumThrust'>;
     "BendingMomentOfForce": NamedNode<'http://qudt.org/vocab/quantitykind/BendingMomentOfForce'>;
     "BetaDisintegrationEnergy": NamedNode<'http://qudt.org/vocab/quantitykind/BetaDisintegrationEnergy'>;
     "BevelGearPitchAngle": NamedNode<'http://qudt.org/vocab/quantitykind/BevelGearPitchAngle'>;
     "BindingFraction": NamedNode<'http://qudt.org/vocab/quantitykind/BindingFraction'>;
-    /*citation: https://en.wikipedia.org/wiki/Blood_sugar_level*/
+    /** citation: https://en.wikipedia.org/wiki/Blood_sugar_level */
     "BloodGlucoseLevel": NamedNode<'http://qudt.org/vocab/quantitykind/BloodGlucoseLevel'>;
     "BodyMassIndex": NamedNode<'http://qudt.org/vocab/quantitykind/BodyMassIndex'>;
     "BraggAngle": NamedNode<'http://qudt.org/vocab/quantitykind/BraggAngle'>;
@@ -246,7 +247,7 @@ type Quantitykind = NamespaceBuilder & {
     "Enthalpy": NamedNode<'http://qudt.org/vocab/quantitykind/Enthalpy'>;
     "Entropy": NamedNode<'http://qudt.org/vocab/quantitykind/Entropy'>;
     "EquilibriumConstant": NamedNode<'http://qudt.org/vocab/quantitykind/EquilibriumConstant'>;
-    /*The unit is unit:MOL-PER-M3 raised to the N where N is the summation of stoichiometric numbers. I don't know what to do with this.*/
+    /** The unit is unit:MOL-PER-M3 raised to the N where N is the summation of stoichiometric numbers. I don't know what to do with this. */
     "EquilibriumConstantOnConcentrationBasis": NamedNode<'http://qudt.org/vocab/quantitykind/EquilibriumConstantOnConcentrationBasis'>;
     "EquilibriumConstantOnPressureBasis": NamedNode<'http://qudt.org/vocab/quantitykind/EquilibriumConstantOnPressureBasis'>;
     "EquilibriumPositionVectorOfIon": NamedNode<'http://qudt.org/vocab/quantitykind/EquilibriumPositionVectorOfIon'>;
@@ -482,7 +483,7 @@ type Quantitykind = NamespaceBuilder & {
     "MassieuFunction": NamedNode<'http://qudt.org/vocab/quantitykind/MassieuFunction'>;
     "MaxExpectedOperatingThrust": NamedNode<'http://qudt.org/vocab/quantitykind/MaxExpectedOperatingThrust'>;
     "MaxOperatingThrust": NamedNode<'http://qudt.org/vocab/quantitykind/MaxOperatingThrust'>;
-    /*Max Sea Level thrust (Mlbf) */
+    /** Max Sea Level thrust (Mlbf) */
     "MaxSeaLevelThrust": NamedNode<'http://qudt.org/vocab/quantitykind/MaxSeaLevelThrust'>;
     "MaximumBeta-ParticleEnergy": NamedNode<'http://qudt.org/vocab/quantitykind/MaximumBeta-ParticleEnergy'>;
     "MaximumExpectedOperatingPressure": NamedNode<'http://qudt.org/vocab/quantitykind/MaximumExpectedOperatingPressure'>;
@@ -848,15 +849,18 @@ type Quantitykind = NamespaceBuilder & {
     "WaterHorsepower": NamedNode<'http://qudt.org/vocab/quantitykind/WaterHorsepower'>;
     "Wavelength": NamedNode<'http://qudt.org/vocab/quantitykind/Wavelength'>;
     "Wavenumber": NamedNode<'http://qudt.org/vocab/quantitykind/Wavenumber'>;
-    /*Web Time*/
+    /** Web Time */
     "WebTime": NamedNode<'http://qudt.org/vocab/quantitykind/WebTime'>;
     "WebTimeAveragePressure": NamedNode<'http://qudt.org/vocab/quantitykind/WebTimeAveragePressure'>;
-    /*Web Time Avg Thrust (Mlbf)*/
+    /** Web Time Avg Thrust (Mlbf) */
     "WebTimeAverageThrust": NamedNode<'http://qudt.org/vocab/quantitykind/WebTimeAverageThrust'>;
     "Weight": NamedNode<'http://qudt.org/vocab/quantitykind/Weight'>;
     "Width": NamedNode<'http://qudt.org/vocab/quantitykind/Width'>;
     "Work": NamedNode<'http://qudt.org/vocab/quantitykind/Work'>;
     "WorkFunction": NamedNode<'http://qudt.org/vocab/quantitykind/WorkFunction'>;
     "AtomicUnitOfCharge": NamedNode<'http://qudt.org/vocab/quantitykind/AtomicUnitOfCharge'>;
-};
-export const quantitykind: Quantitykind = (namespace("http://qudt.org/vocab/quantitykind/") as any);
+}
+
+const builder = namespace("http://qudt.org/vocab/quantitykind/") as any;
+export const strict = builder as NamespaceBuilder<keyof Quantitykind> & Quantitykind;
+export const loose = builder as NamespaceBuilder & Quantitykind;

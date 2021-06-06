@@ -1,6 +1,7 @@
 import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
 import { NamedNode } from "rdf-js";
-type Xkos = NamespaceBuilder & {
+
+interface Xkos {
     "ClassificationLevel": NamedNode<'http://rdf-vocabulary.ddialliance.org/xkos#ClassificationLevel'>;
     "ConceptAssociation": NamedNode<'http://rdf-vocabulary.ddialliance.org/xkos#ConceptAssociation'>;
     "Correspondence": NamedNode<'http://rdf-vocabulary.ddialliance.org/xkos#Correspondence'>;
@@ -30,25 +31,28 @@ type Xkos = NamespaceBuilder & {
     "levels": NamedNode<'http://rdf-vocabulary.ddialliance.org/xkos#levels'>;
     "madeOf": NamedNode<'http://rdf-vocabulary.ddialliance.org/xkos#madeOf'>;
     "maxLength": NamedNode<'http://rdf-vocabulary.ddialliance.org/xkos#maxLength'>;
-    /*immediate successor in the sequence*/
+    /** immediate successor in the sequence */
     "next": NamedNode<'http://rdf-vocabulary.ddialliance.org/xkos#next'>;
     "notationPattern": NamedNode<'http://rdf-vocabulary.ddialliance.org/xkos#notationPattern'>;
     "numberOfLevels": NamedNode<'http://rdf-vocabulary.ddialliance.org/xkos#numberOfLevels'>;
     "organizedBy": NamedNode<'http://rdf-vocabulary.ddialliance.org/xkos#organizedBy'>;
-    /*This property is expected to store plain text literals, without HTML or XML markup.*/
+    /** This property is expected to store plain text literals, without HTML or XML markup. */
     "plainText": NamedNode<'http://rdf-vocabulary.ddialliance.org/xkos#plainText'>;
-    /*predecessor in the sequence*/
+    /** predecessor in the sequence */
     "precedes": NamedNode<'http://rdf-vocabulary.ddialliance.org/xkos#precedes'>;
-    /*immediate predecessor in the sequence*/
+    /** immediate predecessor in the sequence */
     "previous": NamedNode<'http://rdf-vocabulary.ddialliance.org/xkos#previous'>;
     "sequential": NamedNode<'http://rdf-vocabulary.ddialliance.org/xkos#sequential'>;
     "sourceConcept": NamedNode<'http://rdf-vocabulary.ddialliance.org/xkos#sourceConcept'>;
     "specializes": NamedNode<'http://rdf-vocabulary.ddialliance.org/xkos#specializes'>;
-    /*successeur dans la séquence*/
+    /** successeur dans la séquence */
     "succeeds": NamedNode<'http://rdf-vocabulary.ddialliance.org/xkos#succeeds'>;
     "supersedes": NamedNode<'http://rdf-vocabulary.ddialliance.org/xkos#supersedes'>;
     "targetConcept": NamedNode<'http://rdf-vocabulary.ddialliance.org/xkos#targetConcept'>;
     "temporal": NamedNode<'http://rdf-vocabulary.ddialliance.org/xkos#temporal'>;
     "variant": NamedNode<'http://rdf-vocabulary.ddialliance.org/xkos#variant'>;
-};
-export const xkos: Xkos = (namespace("http://rdf-vocabulary.ddialliance.org/xkos#") as any);
+}
+
+const builder = namespace("http://rdf-vocabulary.ddialliance.org/xkos#") as any;
+export const strict = builder as NamespaceBuilder<keyof Xkos> & Xkos;
+export const loose = builder as NamespaceBuilder & Xkos;

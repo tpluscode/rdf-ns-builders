@@ -1,6 +1,7 @@
 import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
 import { NamedNode } from "rdf-js";
-type Gn = NamespaceBuilder & {
+
+interface Gn {
     "A.ADM1": NamedNode<'http://www.geonames.org/ontology#A.ADM1'>;
     "A.ADM1H": NamedNode<'http://www.geonames.org/ontology#A.ADM1H'>;
     "A.ADM2": NamedNode<'http://www.geonames.org/ontology#A.ADM2'>;
@@ -26,15 +27,15 @@ type Gn = NamespaceBuilder & {
     "A.TERR": NamedNode<'http://www.geonames.org/ontology#A.TERR'>;
     "A.ZN": NamedNode<'http://www.geonames.org/ontology#A.ZN'>;
     "A.ZNB": NamedNode<'http://www.geonames.org/ontology#A.ZNB'>;
-    /*country, state, region ...*/
+    /** country, state, region ... */
     "A": NamedNode<'http://www.geonames.org/ontology#A'>;
-    /*A class of features.*/
+    /** A class of features. */
     "Class": NamedNode<'http://www.geonames.org/ontology#Class'>;
-    /*A feature code.*/
+    /** A feature code. */
     "Code": NamedNode<'http://www.geonames.org/ontology#Code'>;
-    /*A geographical feature*/
+    /** A geographical feature */
     "Feature": NamedNode<'http://www.geonames.org/ontology#Feature'>;
-    /*A feature described in geonames database, uniquely defined by its geonames identifier*/
+    /** A feature described in geonames database, uniquely defined by its geonames identifier */
     "GeonamesFeature": NamedNode<'http://www.geonames.org/ontology#GeonamesFeature'>;
     "H.AIRS": NamedNode<'http://www.geonames.org/ontology#H.AIRS'>;
     "H.ANCH": NamedNode<'http://www.geonames.org/ontology#H.ANCH'>;
@@ -173,7 +174,7 @@ type Gn = NamespaceBuilder & {
     "H.WTLDI": NamedNode<'http://www.geonames.org/ontology#H.WTLDI'>;
     "H.WTRC": NamedNode<'http://www.geonames.org/ontology#H.WTRC'>;
     "H.WTRH": NamedNode<'http://www.geonames.org/ontology#H.WTRH'>;
-    /*stream, lake, ...*/
+    /** stream, lake, ... */
     "H": NamedNode<'http://www.geonames.org/ontology#H'>;
     "L.AGRC": NamedNode<'http://www.geonames.org/ontology#L.AGRC'>;
     "L.AMUS": NamedNode<'http://www.geonames.org/ontology#L.AMUS'>;
@@ -225,9 +226,9 @@ type Gn = NamespaceBuilder & {
     "L.SNOW": NamedNode<'http://www.geonames.org/ontology#L.SNOW'>;
     "L.TRB": NamedNode<'http://www.geonames.org/ontology#L.TRB'>;
     "L.ZZZZZ": NamedNode<'http://www.geonames.org/ontology#L.ZZZZZ'>;
-    /*parks,area, ...*/
+    /** parks,area, ... */
     "L": NamedNode<'http://www.geonames.org/ontology#L'>;
-    /*A Web page displaying a map*/
+    /** A Web page displaying a map */
     "Map": NamedNode<'http://www.geonames.org/ontology#Map'>;
     "Marc-Wick": NamedNode<'http://www.geonames.org/ontology#Marc-Wick'>;
     "P.PPL": NamedNode<'http://www.geonames.org/ontology#P.PPL'>;
@@ -245,7 +246,7 @@ type Gn = NamespaceBuilder & {
     "P.PPLW": NamedNode<'http://www.geonames.org/ontology#P.PPLW'>;
     "P.PPLX": NamedNode<'http://www.geonames.org/ontology#P.PPLX'>;
     "P.STLMT": NamedNode<'http://www.geonames.org/ontology#P.STLMT'>;
-    /*city, village,...*/
+    /** city, village,... */
     "P": NamedNode<'http://www.geonames.org/ontology#P'>;
     "R.CSWY": NamedNode<'http://www.geonames.org/ontology#R.CSWY'>;
     "R.CSWYQ": NamedNode<'http://www.geonames.org/ontology#R.CSWYQ'>;
@@ -270,9 +271,9 @@ type Gn = NamespaceBuilder & {
     "R.TNLRR": NamedNode<'http://www.geonames.org/ontology#R.TNLRR'>;
     "R.TNLS": NamedNode<'http://www.geonames.org/ontology#R.TNLS'>;
     "R.TRL": NamedNode<'http://www.geonames.org/ontology#R.TRL'>;
-    /*road, railroad, ...*/
+    /** road, railroad, ... */
     "R": NamedNode<'http://www.geonames.org/ontology#R'>;
-    /*A Document containing RDF description of one or several features.*/
+    /** A Document containing RDF description of one or several features. */
     "RDFData": NamedNode<'http://www.geonames.org/ontology#RDFData'>;
     "S.ADMF": NamedNode<'http://www.geonames.org/ontology#S.ADMF'>;
     "S.AGRF": NamedNode<'http://www.geonames.org/ontology#S.AGRF'>;
@@ -528,7 +529,7 @@ type Gn = NamespaceBuilder & {
     "S.WTRW": NamedNode<'http://www.geonames.org/ontology#S.WTRW'>;
     "S.ZNF": NamedNode<'http://www.geonames.org/ontology#S.ZNF'>;
     "S.ZOO": NamedNode<'http://www.geonames.org/ontology#S.ZOO'>;
-    /*spot, building, farm, ...*/
+    /** spot, building, farm, ... */
     "S": NamedNode<'http://www.geonames.org/ontology#S'>;
     "T.ASPH": NamedNode<'http://www.geonames.org/ontology#T.ASPH'>;
     "T.ATOL": NamedNode<'http://www.geonames.org/ontology#T.ATOL'>;
@@ -628,7 +629,7 @@ type Gn = NamespaceBuilder & {
     "T.VALS": NamedNode<'http://www.geonames.org/ontology#T.VALS'>;
     "T.VALX": NamedNode<'http://www.geonames.org/ontology#T.VALX'>;
     "T.VLC": NamedNode<'http://www.geonames.org/ontology#T.VLC'>;
-    /*mountain, hill, rock, ...*/
+    /** mountain, hill, rock, ... */
     "T": NamedNode<'http://www.geonames.org/ontology#T'>;
     "U.APNU": NamedNode<'http://www.geonames.org/ontology#U.APNU'>;
     "U.ARCU": NamedNode<'http://www.geonames.org/ontology#U.ARCU'>;
@@ -701,7 +702,7 @@ type Gn = NamespaceBuilder & {
     "U.TRNU": NamedNode<'http://www.geonames.org/ontology#U.TRNU'>;
     "U.VALU": NamedNode<'http://www.geonames.org/ontology#U.VALU'>;
     "U.VLSU": NamedNode<'http://www.geonames.org/ontology#U.VLSU'>;
-    /*undersea*/
+    /** undersea */
     "U": NamedNode<'http://www.geonames.org/ontology#U'>;
     "V.BUSH": NamedNode<'http://www.geonames.org/ontology#V.BUSH'>;
     "V.CULT": NamedNode<'http://www.geonames.org/ontology#V.CULT'>;
@@ -720,49 +721,52 @@ type Gn = NamespaceBuilder & {
     "V.TUND": NamedNode<'http://www.geonames.org/ontology#V.TUND'>;
     "V.VIN": NamedNode<'http://www.geonames.org/ontology#V.VIN'>;
     "V.VINS": NamedNode<'http://www.geonames.org/ontology#V.VINS'>;
-    /*forest, heath, ...*/
+    /** forest, heath, ... */
     "V": NamedNode<'http://www.geonames.org/ontology#V'>;
-    /*A Wikipedia article*/
+    /** A Wikipedia article */
     "WikipediaArticle": NamedNode<'http://www.geonames.org/ontology#WikipediaArticle'>;
     "alternateName": NamedNode<'http://www.geonames.org/ontology#alternateName'>;
-    /*Links to an RDF document containing the descriptions of children features*/
+    /** Links to an RDF document containing the descriptions of children features */
     "childrenFeatures": NamedNode<'http://www.geonames.org/ontology#childrenFeatures'>;
     "colloquialName": NamedNode<'http://www.geonames.org/ontology#colloquialName'>;
-    /*A two letters country code in the ISO 3166 list*/
+    /** A two letters country code in the ISO 3166 list */
     "countryCode": NamedNode<'http://www.geonames.org/ontology#countryCode'>;
-    /*The main category of the feature, as defined in geonames taxonomy.*/
+    /** The main category of the feature, as defined in geonames taxonomy. */
     "featureClass": NamedNode<'http://www.geonames.org/ontology#featureClass'>;
-    /*Type of the feature, as defined in geonames taxonomy.*/
+    /** Type of the feature, as defined in geonames taxonomy. */
     "featureCode": NamedNode<'http://www.geonames.org/ontology#featureCode'>;
     "geonamesID": NamedNode<'http://www.geonames.org/ontology#geonamesID'>;
     "historicalName": NamedNode<'http://www.geonames.org/ontology#historicalName'>;
-    /*Indicates that the subject resource is located in the object feature*/
+    /** Indicates that the subject resource is located in the object feature */
     "locatedIn": NamedNode<'http://www.geonames.org/ontology#locatedIn'>;
-    /*A geonames map centered on the feature.*/
+    /** A geonames map centered on the feature. */
     "locationMap": NamedNode<'http://www.geonames.org/ontology#locationMap'>;
-    /*The main international name of a feature. The value has no xml:lang tag.*/
+    /** The main international name of a feature. The value has no xml:lang tag. */
     "name": NamedNode<'http://www.geonames.org/ontology#name'>;
-    /*A feature close to the reference feature*/
+    /** A feature close to the reference feature */
     "nearby": NamedNode<'http://www.geonames.org/ontology#nearby'>;
-    /*Links to an RDF document containing the descriptions of nearby features*/
+    /** Links to an RDF document containing the descriptions of nearby features */
     "nearbyFeatures": NamedNode<'http://www.geonames.org/ontology#nearbyFeatures'>;
-    /*A feature sharing a common boarder with the reference feature*/
+    /** A feature sharing a common boarder with the reference feature */
     "neighbour": NamedNode<'http://www.geonames.org/ontology#neighbour'>;
-    /*Links to an RDF document containing the descriptions of neighbouring features. Applies when the feature has definite boarders.*/
+    /** Links to an RDF document containing the descriptions of neighbouring features. Applies when the feature has definite boarders. */
     "neighbouringFeatures": NamedNode<'http://www.geonames.org/ontology#neighbouringFeatures'>;
-    /*A name in an official local language*/
+    /** A name in an official local language */
     "officialName": NamedNode<'http://www.geonames.org/ontology#officialName'>;
     "parentADM1": NamedNode<'http://www.geonames.org/ontology#parentADM1'>;
     "parentADM2": NamedNode<'http://www.geonames.org/ontology#parentADM2'>;
     "parentADM3": NamedNode<'http://www.geonames.org/ontology#parentADM3'>;
     "parentADM4": NamedNode<'http://www.geonames.org/ontology#parentADM4'>;
     "parentCountry": NamedNode<'http://www.geonames.org/ontology#parentCountry'>;
-    /*A feature parent of the current one, in either administrative or physical subdivision.*/
+    /** A feature parent of the current one, in either administrative or physical subdivision. */
     "parentFeature": NamedNode<'http://www.geonames.org/ontology#parentFeature'>;
     "population": NamedNode<'http://www.geonames.org/ontology#population'>;
     "postalCode": NamedNode<'http://www.geonames.org/ontology#postalCode'>;
     "shortName": NamedNode<'http://www.geonames.org/ontology#shortName'>;
-    /*A Wikipedia article of which subject is the resource.*/
+    /** A Wikipedia article of which subject is the resource. */
     "wikipediaArticle": NamedNode<'http://www.geonames.org/ontology#wikipediaArticle'>;
-};
-export const gn: Gn = (namespace("http://www.geonames.org/ontology#") as any);
+}
+
+const builder = namespace("http://www.geonames.org/ontology#") as any;
+export const strict = builder as NamespaceBuilder<keyof Gn> & Gn;
+export const loose = builder as NamespaceBuilder & Gn;

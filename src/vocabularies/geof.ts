@@ -1,6 +1,7 @@
 import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
 import { NamedNode } from "rdf-js";
-type Geof = NamespaceBuilder & {
+
+interface Geof {
     "boundary": NamedNode<'http://www.opengis.net/def/function/geosparql/boundary'>;
     "buffer": NamedNode<'http://www.opengis.net/def/function/geosparql/buffer'>;
     "convexHull": NamedNode<'http://www.opengis.net/def/function/geosparql/convexHull'>;
@@ -36,5 +37,8 @@ type Geof = NamespaceBuilder & {
     "sfWithin": NamedNode<'http://www.opengis.net/def/function/geosparql/sfWithin'>;
     "symDifference": NamedNode<'http://www.opengis.net/def/function/geosparql/symDifference'>;
     "union": NamedNode<'http://www.opengis.net/def/function/geosparql/union'>;
-};
-export const geof: Geof = (namespace("http://www.opengis.net/def/function/geosparql/") as any);
+}
+
+const builder = namespace("http://www.opengis.net/def/function/geosparql/") as any;
+export const strict = builder as NamespaceBuilder<keyof Geof> & Geof;
+export const loose = builder as NamespaceBuilder & Geof;

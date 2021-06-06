@@ -1,6 +1,7 @@
 import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
 import { NamedNode } from "rdf-js";
-type Geor = NamespaceBuilder & {
+
+interface Geor {
     "ehContains": NamedNode<'http://www.opengis.net/def/rule/geosparql/ehContains'>;
     "ehCoveredBy": NamedNode<'http://www.opengis.net/def/rule/geosparql/ehCoveredBy'>;
     "ehCovers": NamedNode<'http://www.opengis.net/def/rule/geosparql/ehCovers'>;
@@ -25,5 +26,8 @@ type Geor = NamespaceBuilder & {
     "sfOverlaps": NamedNode<'http://www.opengis.net/def/rule/geosparql/sfOverlaps'>;
     "sfTouches": NamedNode<'http://www.opengis.net/def/rule/geosparql/sfTouches'>;
     "sfWithin": NamedNode<'http://www.opengis.net/def/rule/geosparql/sfWithin'>;
-};
-export const geor: Geor = (namespace("http://www.opengis.net/def/rule/geosparql/") as any);
+}
+
+const builder = namespace("http://www.opengis.net/def/rule/geosparql/") as any;
+export const strict = builder as NamespaceBuilder<keyof Geor> & Geor;
+export const loose = builder as NamespaceBuilder & Geor;

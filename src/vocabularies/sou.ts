@@ -1,6 +1,7 @@
 import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
 import { NamedNode } from "rdf-js";
-type Sou = NamespaceBuilder & {
+
+interface Sou {
     "ASU": NamedNode<'http://qudt.org/vocab/sou/ASU'>;
     "CGS-EMU": NamedNode<'http://qudt.org/vocab/sou/CGS-EMU'>;
     "CGS-ESU": NamedNode<'http://qudt.org/vocab/sou/CGS-ESU'>;
@@ -19,5 +20,8 @@ type Sou = NamespaceBuilder & {
     "SOU_SI": NamedNode<'http://qudt.org/vocab/sou/SOU_SI'>;
     "SOU_USCS": NamedNode<'http://qudt.org/vocab/sou/SOU_USCS'>;
     "USCS": NamedNode<'http://qudt.org/vocab/sou/USCS'>;
-};
-export const sou: Sou = (namespace("http://qudt.org/vocab/sou/") as any);
+}
+
+const builder = namespace("http://qudt.org/vocab/sou/") as any;
+export const strict = builder as NamespaceBuilder<keyof Sou> & Sou;
+export const loose = builder as NamespaceBuilder & Sou;
