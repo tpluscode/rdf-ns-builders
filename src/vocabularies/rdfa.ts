@@ -1,6 +1,7 @@
 import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
 import { NamedNode } from "rdf-js";
-type Rdfa = NamespaceBuilder & {
+
+interface Rdfa {
     "DocumentError": NamedNode<'http://www.w3.org/ns/rdfa#DocumentError'>;
     "Error": NamedNode<'http://www.w3.org/ns/rdfa#Error'>;
     "Info": NamedNode<'http://www.w3.org/ns/rdfa#Info'>;
@@ -21,5 +22,8 @@ type Rdfa = NamespaceBuilder & {
     "uri": NamedNode<'http://www.w3.org/ns/rdfa#uri'>;
     "usesVocabulary": NamedNode<'http://www.w3.org/ns/rdfa#usesVocabulary'>;
     "vocabulary": NamedNode<'http://www.w3.org/ns/rdfa#vocabulary'>;
-};
-export const rdfa: Rdfa = (namespace("http://www.w3.org/ns/rdfa#") as any);
+}
+
+const builder = namespace("http://www.w3.org/ns/rdfa#") as any;
+export const strict = builder as NamespaceBuilder<keyof Rdfa> & Rdfa;
+export const loose = builder as NamespaceBuilder & Rdfa;

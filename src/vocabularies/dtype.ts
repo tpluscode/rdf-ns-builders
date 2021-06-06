@@ -1,6 +1,7 @@
 import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
 import { NamedNode } from "rdf-js";
-type Dtype = NamespaceBuilder & {
+
+interface Dtype {
     "CodeList": NamedNode<'http://www.linkedmodel.org/schema/dtype#CodeList'>;
     "CompositeCodeList": NamedNode<'http://www.linkedmodel.org/schema/dtype#CompositeCodeList'>;
     "DerivedCodeList": NamedNode<'http://www.linkedmodel.org/schema/dtype#DerivedCodeList'>;
@@ -22,5 +23,8 @@ type Dtype = NamespaceBuilder & {
     "refersTo": NamedNode<'http://www.linkedmodel.org/schema/dtype#refersTo'>;
     "type": NamedNode<'http://www.linkedmodel.org/schema/dtype#type'>;
     "value": NamedNode<'http://www.linkedmodel.org/schema/dtype#value'>;
-};
-export const dtype: Dtype = (namespace("http://www.linkedmodel.org/schema/dtype#") as any);
+}
+
+const builder = namespace("http://www.linkedmodel.org/schema/dtype#") as any;
+export const strict = builder as NamespaceBuilder<keyof Dtype> & Dtype;
+export const loose = builder as NamespaceBuilder & Dtype;

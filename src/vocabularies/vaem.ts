@@ -1,6 +1,7 @@
 import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
 import { NamedNode } from "rdf-js";
-type Vaem = NamespaceBuilder & {
+
+interface Vaem {
     "Aspect": NamedNode<'http://www.linkedmodel.org/schema/vaem#Aspect'>;
     "CatalogEntry": NamedNode<'http://www.linkedmodel.org/schema/vaem#CatalogEntry'>;
     "CollectionGraph": NamedNode<'http://www.linkedmodel.org/schema/vaem#CollectionGraph'>;
@@ -73,5 +74,8 @@ type Vaem = NamespaceBuilder & {
     "url": NamedNode<'http://www.linkedmodel.org/schema/vaem#url'>;
     "usesNonImportedResource": NamedNode<'http://www.linkedmodel.org/schema/vaem#usesNonImportedResource'>;
     "withAttributionTo": NamedNode<'http://www.linkedmodel.org/schema/vaem#withAttributionTo'>;
-};
-export const vaem: Vaem = (namespace("http://www.linkedmodel.org/schema/vaem#") as any);
+}
+
+const builder = namespace("http://www.linkedmodel.org/schema/vaem#") as any;
+export const strict = builder as NamespaceBuilder<keyof Vaem> & Vaem;
+export const loose = builder as NamespaceBuilder & Vaem;

@@ -1,6 +1,7 @@
 import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
 import { NamedNode } from "rdf-js";
-type Unit = NamespaceBuilder & {
+
+interface Unit {
     "A-HR": NamedNode<'http://qudt.org/vocab/unit/A-HR'>;
     "A-M2-PER-J-SEC": NamedNode<'http://qudt.org/vocab/unit/A-M2-PER-J-SEC'>;
     "A-M2": NamedNode<'http://qudt.org/vocab/unit/A-M2'>;
@@ -421,7 +422,7 @@ type Unit = NamespaceBuilder & {
     "FT_H2O": NamedNode<'http://qudt.org/vocab/unit/FT_H2O'>;
     "FT_HG": NamedNode<'http://qudt.org/vocab/unit/FT_HG'>;
     "FT_US": NamedNode<'http://qudt.org/vocab/unit/FT_US'>;
-    /*Check if this is US-Survey or International Customary definition (multiplier)*/
+    /** Check if this is US-Survey or International Customary definition (multiplier) */
     "FUR": NamedNode<'http://qudt.org/vocab/unit/FUR'>;
     "FUR_Long": NamedNode<'http://qudt.org/vocab/unit/FUR_Long'>;
     "FalklandIslandsPound": NamedNode<'http://qudt.org/vocab/unit/FalklandIslandsPound'>;
@@ -554,7 +555,7 @@ type Unit = NamespaceBuilder & {
     "HectoPA-PER-BAR": NamedNode<'http://qudt.org/vocab/unit/HectoPA-PER-BAR'>;
     "HectoPA-PER-HR": NamedNode<'http://qudt.org/vocab/unit/HectoPA-PER-HR'>;
     "HectoPA-PER-K": NamedNode<'http://qudt.org/vocab/unit/HectoPA-PER-K'>;
-    /*Hectopascal is commonly used in meteorology to report values for atmospheric pressure. It is equivalent to millibar.*/
+    /** Hectopascal is commonly used in meteorology to report values for atmospheric pressure. It is equivalent to millibar. */
     "HectoPA": NamedNode<'http://qudt.org/vocab/unit/HectoPA'>;
     "HongKongDollar": NamedNode<'http://qudt.org/vocab/unit/HongKongDollar'>;
     "Hryvnia": NamedNode<'http://qudt.org/vocab/unit/Hryvnia'>;
@@ -1213,7 +1214,7 @@ type Unit = NamespaceBuilder & {
     "NanoGM-PER-DAY": NamedNode<'http://qudt.org/vocab/unit/NanoGM-PER-DAY'>;
     "NanoGM-PER-KiloGM": NamedNode<'http://qudt.org/vocab/unit/NanoGM-PER-KiloGM'>;
     "NanoGM-PER-L": NamedNode<'http://qudt.org/vocab/unit/NanoGM-PER-L'>;
-    /*"Derived from GM-PER-M3 which exists in QUDT"*/
+    /** "Derived from GM-PER-M3 which exists in QUDT" */
     "NanoGM-PER-M3": NamedNode<'http://qudt.org/vocab/unit/NanoGM-PER-M3'>;
     "NanoGM-PER-MicroL": NamedNode<'http://qudt.org/vocab/unit/NanoGM-PER-MicroL'>;
     "NanoGM": NamedNode<'http://qudt.org/vocab/unit/NanoGM'>;
@@ -1339,7 +1340,7 @@ type Unit = NamespaceBuilder & {
     "PER-PA": NamedNode<'http://qudt.org/vocab/unit/PER-PA'>;
     "PER-PSI": NamedNode<'http://qudt.org/vocab/unit/PER-PSI'>;
     "PER-PlanckMass2": NamedNode<'http://qudt.org/vocab/unit/PER-PlanckMass2'>;
-    /*It is not clear this unit is ever used. [Editor]*/
+    /** It is not clear this unit is ever used. [Editor] */
     "PER-SEC-M2-SR": NamedNode<'http://qudt.org/vocab/unit/PER-SEC-M2-SR'>;
     "PER-SEC-M2": NamedNode<'http://qudt.org/vocab/unit/PER-SEC-M2'>;
     "PER-SEC-SR": NamedNode<'http://qudt.org/vocab/unit/PER-SEC-SR'>;
@@ -1361,7 +1362,7 @@ type Unit = NamespaceBuilder & {
     "PERMEABILITY_EM_REL": NamedNode<'http://qudt.org/vocab/unit/PERMEABILITY_EM_REL'>;
     "PERMEABILITY_REL": NamedNode<'http://qudt.org/vocab/unit/PERMEABILITY_REL'>;
     "PERMITTIVITY_REL": NamedNode<'http://qudt.org/vocab/unit/PERMITTIVITY_REL'>;
-    /*Unsure about dimensionality of pH; conversion requires a log function not just a multiplier*/
+    /** Unsure about dimensionality of pH; conversion requires a log function not just a multiplier */
     "PH": NamedNode<'http://qudt.org/vocab/unit/PH'>;
     "PINT": NamedNode<'http://qudt.org/vocab/unit/PINT'>;
     "PINT_UK-PER-DAY": NamedNode<'http://qudt.org/vocab/unit/PINT_UK-PER-DAY'>;
@@ -1482,7 +1483,7 @@ type Unit = NamespaceBuilder & {
     "RAD-PER-MIN": NamedNode<'http://qudt.org/vocab/unit/RAD-PER-MIN'>;
     "RAD-PER-SEC2": NamedNode<'http://qudt.org/vocab/unit/RAD-PER-SEC2'>;
     "RAD-PER-SEC": NamedNode<'http://qudt.org/vocab/unit/RAD-PER-SEC'>;
-    /*The radian and steradian are special names for the number one that may be used to convey information about the quantity concerned. In practice the symbols rad and sr are used where appropriate, but the symbol for the derived unit one is generally omitted in specifying the values of dimensionless quantities.*/
+    /** The radian and steradian are special names for the number one that may be used to convey information about the quantity concerned. In practice the symbols rad and sr are used where appropriate, but the symbol for the derived unit one is generally omitted in specifying the values of dimensionless quantities. */
     "RAD": NamedNode<'http://qudt.org/vocab/unit/RAD'>;
     "RAD_R": NamedNode<'http://qudt.org/vocab/unit/RAD_R'>;
     "RAYL": NamedNode<'http://qudt.org/vocab/unit/RAYL'>;
@@ -1708,5 +1709,8 @@ type Unit = NamespaceBuilder & {
     "Zloty": NamedNode<'http://qudt.org/vocab/unit/Zloty'>;
     "failures-in-time": NamedNode<'http://qudt.org/vocab/unit/failures-in-time'>;
     "acoustics": NamedNode<'http://qudt.org/vocab/unit/acoustics'>;
-};
-export const unit: Unit = (namespace("http://qudt.org/vocab/unit/") as any);
+}
+
+const builder = namespace("http://qudt.org/vocab/unit/") as any;
+export const strict = builder as NamespaceBuilder<keyof Unit> & Unit;
+export const loose = builder as NamespaceBuilder & Unit;

@@ -1,408 +1,412 @@
 import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
 import { NamedNode } from "rdf-js";
-type Sh = NamespaceBuilder & {
-    /*The base class of validation results, typically not instantiated directly.*/
+
+interface Sh {
+    /** The base class of validation results, typically not instantiated directly. */
     "AbstractResult": NamedNode<'http://www.w3.org/ns/shacl#AbstractResult'>;
     "AndConstraintComponent-and": NamedNode<'http://www.w3.org/ns/shacl#AndConstraintComponent-and'>;
-    /*A constraint component that can be used to test whether a value node conforms to all members of a provided list of shapes.*/
+    /** A constraint component that can be used to test whether a value node conforms to all members of a provided list of shapes. */
     "AndConstraintComponent": NamedNode<'http://www.w3.org/ns/shacl#AndConstraintComponent'>;
-    /*The node kind of all blank nodes.*/
+    /** The node kind of all blank nodes. */
     "BlankNode": NamedNode<'http://www.w3.org/ns/shacl#BlankNode'>;
-    /*The node kind of all blank nodes or IRIs.*/
+    /** The node kind of all blank nodes or IRIs. */
     "BlankNodeOrIRI": NamedNode<'http://www.w3.org/ns/shacl#BlankNodeOrIRI'>;
-    /*The node kind of all blank nodes or literals.*/
+    /** The node kind of all blank nodes or literals. */
     "BlankNodeOrLiteral": NamedNode<'http://www.w3.org/ns/shacl#BlankNodeOrLiteral'>;
     "ClassConstraintComponent-class": NamedNode<'http://www.w3.org/ns/shacl#ClassConstraintComponent-class'>;
-    /*A constraint component that can be used to verify that each value node is an instance of a given type.*/
+    /** A constraint component that can be used to verify that each value node is an instance of a given type. */
     "ClassConstraintComponent": NamedNode<'http://www.w3.org/ns/shacl#ClassConstraintComponent'>;
     "ClosedConstraintComponent-closed": NamedNode<'http://www.w3.org/ns/shacl#ClosedConstraintComponent-closed'>;
     "ClosedConstraintComponent-ignoredProperties": NamedNode<'http://www.w3.org/ns/shacl#ClosedConstraintComponent-ignoredProperties'>;
-    /*A constraint component that can be used to indicate that focus nodes must only have values for those properties that have been explicitly enumerated via sh:property/sh:path.*/
+    /** A constraint component that can be used to indicate that focus nodes must only have values for those properties that have been explicitly enumerated via sh:property/sh:path. */
     "ClosedConstraintComponent": NamedNode<'http://www.w3.org/ns/shacl#ClosedConstraintComponent'>;
-    /*The class of constraint components.*/
+    /** The class of constraint components. */
     "ConstraintComponent": NamedNode<'http://www.w3.org/ns/shacl#ConstraintComponent'>;
     "DatatypeConstraintComponent-datatype": NamedNode<'http://www.w3.org/ns/shacl#DatatypeConstraintComponent-datatype'>;
-    /*A constraint component that can be used to restrict the datatype of all value nodes.*/
+    /** A constraint component that can be used to restrict the datatype of all value nodes. */
     "DatatypeConstraintComponent": NamedNode<'http://www.w3.org/ns/shacl#DatatypeConstraintComponent'>;
     "DisjointConstraintComponent-disjoint": NamedNode<'http://www.w3.org/ns/shacl#DisjointConstraintComponent-disjoint'>;
-    /*A constraint component that can be used to verify that the set of value nodes is disjoint with the the set of nodes that have the focus node as subject and the value of a given property as predicate.*/
+    /** A constraint component that can be used to verify that the set of value nodes is disjoint with the the set of nodes that have the focus node as subject and the value of a given property as predicate. */
     "DisjointConstraintComponent": NamedNode<'http://www.w3.org/ns/shacl#DisjointConstraintComponent'>;
     "EqualsConstraintComponent-equals": NamedNode<'http://www.w3.org/ns/shacl#EqualsConstraintComponent-equals'>;
-    /*A constraint component that can be used to verify that the set of value nodes is equal to the set of nodes that have the focus node as subject and the value of a given property as predicate.*/
+    /** A constraint component that can be used to verify that the set of value nodes is equal to the set of nodes that have the focus node as subject and the value of a given property as predicate. */
     "EqualsConstraintComponent": NamedNode<'http://www.w3.org/ns/shacl#EqualsConstraintComponent'>;
     "ExpressionConstraintComponent-expression": NamedNode<'http://www.w3.org/ns/shacl#ExpressionConstraintComponent-expression'>;
-    /*A constraint component that can be used to verify that a given node expression produces true for all value nodes.*/
+    /** A constraint component that can be used to verify that a given node expression produces true for all value nodes. */
     "ExpressionConstraintComponent": NamedNode<'http://www.w3.org/ns/shacl#ExpressionConstraintComponent'>;
-    /*The class of SHACL functions.*/
+    /** The class of SHACL functions. */
     "Function": NamedNode<'http://www.w3.org/ns/shacl#Function'>;
     "HasValueConstraintComponent-hasValue": NamedNode<'http://www.w3.org/ns/shacl#HasValueConstraintComponent-hasValue'>;
-    /*A constraint component that can be used to verify that one of the value nodes is a given RDF node.*/
+    /** A constraint component that can be used to verify that one of the value nodes is a given RDF node. */
     "HasValueConstraintComponent": NamedNode<'http://www.w3.org/ns/shacl#HasValueConstraintComponent'>;
-    /*The node kind of all IRIs.*/
+    /** The node kind of all IRIs. */
     "IRI": NamedNode<'http://www.w3.org/ns/shacl#IRI'>;
-    /*The node kind of all IRIs or literals.*/
+    /** The node kind of all IRIs or literals. */
     "IRIOrLiteral": NamedNode<'http://www.w3.org/ns/shacl#IRIOrLiteral'>;
     "InConstraintComponent-in": NamedNode<'http://www.w3.org/ns/shacl#InConstraintComponent-in'>;
-    /*A constraint component that can be used to exclusively enumerate the permitted value nodes.*/
+    /** A constraint component that can be used to exclusively enumerate the permitted value nodes. */
     "InConstraintComponent": NamedNode<'http://www.w3.org/ns/shacl#InConstraintComponent'>;
-    /*The severity for an informational validation result.*/
+    /** The severity for an informational validation result. */
     "Info": NamedNode<'http://www.w3.org/ns/shacl#Info'>;
     "JSConstraint-js": NamedNode<'http://www.w3.org/ns/shacl#JSConstraint-js'>;
-    /*The class of constraints backed by a JavaScript function.*/
+    /** The class of constraints backed by a JavaScript function. */
     "JSConstraint": NamedNode<'http://www.w3.org/ns/shacl#JSConstraint'>;
-    /*A constraint component with the parameter sh:js linking to a sh:JSConstraint containing a sh:script.*/
+    /** A constraint component with the parameter sh:js linking to a sh:JSConstraint containing a sh:script. */
     "JSConstraintComponent": NamedNode<'http://www.w3.org/ns/shacl#JSConstraintComponent'>;
-    /*Abstract base class of resources that declare an executable JavaScript.*/
+    /** Abstract base class of resources that declare an executable JavaScript. */
     "JSExecutable": NamedNode<'http://www.w3.org/ns/shacl#JSExecutable'>;
-    /*The class of SHACL functions that execute a JavaScript function when called.*/
+    /** The class of SHACL functions that execute a JavaScript function when called. */
     "JSFunction": NamedNode<'http://www.w3.org/ns/shacl#JSFunction'>;
-    /*Represents a JavaScript library, typically identified by one or more URLs of files to include.*/
+    /** Represents a JavaScript library, typically identified by one or more URLs of files to include. */
     "JSLibrary": NamedNode<'http://www.w3.org/ns/shacl#JSLibrary'>;
-    /*The class of SHACL rules expressed using JavaScript.*/
+    /** The class of SHACL rules expressed using JavaScript. */
     "JSRule": NamedNode<'http://www.w3.org/ns/shacl#JSRule'>;
-    /*The class of targets that are based on JavaScript functions.*/
+    /** The class of targets that are based on JavaScript functions. */
     "JSTarget": NamedNode<'http://www.w3.org/ns/shacl#JSTarget'>;
-    /*The (meta) class for parameterizable targets that are based on JavaScript functions.*/
+    /** The (meta) class for parameterizable targets that are based on JavaScript functions. */
     "JSTargetType": NamedNode<'http://www.w3.org/ns/shacl#JSTargetType'>;
-    /*A SHACL validator based on JavaScript. This can be used to declare SHACL constraint components that perform JavaScript-based validation when used.*/
+    /** A SHACL validator based on JavaScript. This can be used to declare SHACL constraint components that perform JavaScript-based validation when used. */
     "JSValidator": NamedNode<'http://www.w3.org/ns/shacl#JSValidator'>;
     "LanguageInConstraintComponent-languageIn": NamedNode<'http://www.w3.org/ns/shacl#LanguageInConstraintComponent-languageIn'>;
-    /*A constraint component that can be used to enumerate language tags that all value nodes must have.*/
+    /** A constraint component that can be used to enumerate language tags that all value nodes must have. */
     "LanguageInConstraintComponent": NamedNode<'http://www.w3.org/ns/shacl#LanguageInConstraintComponent'>;
     "LessThanConstraintComponent-lessThan": NamedNode<'http://www.w3.org/ns/shacl#LessThanConstraintComponent-lessThan'>;
-    /*A constraint component that can be used to verify that each value node is smaller than all the nodes that have the focus node as subject and the value of a given property as predicate.*/
+    /** A constraint component that can be used to verify that each value node is smaller than all the nodes that have the focus node as subject and the value of a given property as predicate. */
     "LessThanConstraintComponent": NamedNode<'http://www.w3.org/ns/shacl#LessThanConstraintComponent'>;
     "LessThanOrEqualsConstraintComponent-lessThanOrEquals": NamedNode<'http://www.w3.org/ns/shacl#LessThanOrEqualsConstraintComponent-lessThanOrEquals'>;
-    /*A constraint component that can be used to verify that every value node is smaller than all the nodes that have the focus node as subject and the value of a given property as predicate.*/
+    /** A constraint component that can be used to verify that every value node is smaller than all the nodes that have the focus node as subject and the value of a given property as predicate. */
     "LessThanOrEqualsConstraintComponent": NamedNode<'http://www.w3.org/ns/shacl#LessThanOrEqualsConstraintComponent'>;
-    /*The node kind of all literals.*/
+    /** The node kind of all literals. */
     "Literal": NamedNode<'http://www.w3.org/ns/shacl#Literal'>;
     "MaxCountConstraintComponent-maxCount": NamedNode<'http://www.w3.org/ns/shacl#MaxCountConstraintComponent-maxCount'>;
-    /*A constraint component that can be used to restrict the maximum number of value nodes.*/
+    /** A constraint component that can be used to restrict the maximum number of value nodes. */
     "MaxCountConstraintComponent": NamedNode<'http://www.w3.org/ns/shacl#MaxCountConstraintComponent'>;
     "MaxExclusiveConstraintComponent-maxExclusive": NamedNode<'http://www.w3.org/ns/shacl#MaxExclusiveConstraintComponent-maxExclusive'>;
-    /*A constraint component that can be used to restrict the range of value nodes with a maximum exclusive value.*/
+    /** A constraint component that can be used to restrict the range of value nodes with a maximum exclusive value. */
     "MaxExclusiveConstraintComponent": NamedNode<'http://www.w3.org/ns/shacl#MaxExclusiveConstraintComponent'>;
     "MaxInclusiveConstraintComponent-maxInclusive": NamedNode<'http://www.w3.org/ns/shacl#MaxInclusiveConstraintComponent-maxInclusive'>;
-    /*A constraint component that can be used to restrict the range of value nodes with a maximum inclusive value.*/
+    /** A constraint component that can be used to restrict the range of value nodes with a maximum inclusive value. */
     "MaxInclusiveConstraintComponent": NamedNode<'http://www.w3.org/ns/shacl#MaxInclusiveConstraintComponent'>;
     "MaxLengthConstraintComponent-maxLength": NamedNode<'http://www.w3.org/ns/shacl#MaxLengthConstraintComponent-maxLength'>;
-    /*A constraint component that can be used to restrict the maximum string length of value nodes.*/
+    /** A constraint component that can be used to restrict the maximum string length of value nodes. */
     "MaxLengthConstraintComponent": NamedNode<'http://www.w3.org/ns/shacl#MaxLengthConstraintComponent'>;
     "MinCountConstraintComponent-minCount": NamedNode<'http://www.w3.org/ns/shacl#MinCountConstraintComponent-minCount'>;
-    /*A constraint component that can be used to restrict the minimum number of value nodes.*/
+    /** A constraint component that can be used to restrict the minimum number of value nodes. */
     "MinCountConstraintComponent": NamedNode<'http://www.w3.org/ns/shacl#MinCountConstraintComponent'>;
     "MinExclusiveConstraintComponent-minExclusive": NamedNode<'http://www.w3.org/ns/shacl#MinExclusiveConstraintComponent-minExclusive'>;
-    /*A constraint component that can be used to restrict the range of value nodes with a minimum exclusive value.*/
+    /** A constraint component that can be used to restrict the range of value nodes with a minimum exclusive value. */
     "MinExclusiveConstraintComponent": NamedNode<'http://www.w3.org/ns/shacl#MinExclusiveConstraintComponent'>;
     "MinInclusiveConstraintComponent-minInclusive": NamedNode<'http://www.w3.org/ns/shacl#MinInclusiveConstraintComponent-minInclusive'>;
-    /*A constraint component that can be used to restrict the range of value nodes with a minimum inclusive value.*/
+    /** A constraint component that can be used to restrict the range of value nodes with a minimum inclusive value. */
     "MinInclusiveConstraintComponent": NamedNode<'http://www.w3.org/ns/shacl#MinInclusiveConstraintComponent'>;
     "MinLengthConstraintComponent-minLength": NamedNode<'http://www.w3.org/ns/shacl#MinLengthConstraintComponent-minLength'>;
-    /*A constraint component that can be used to restrict the minimum string length of value nodes.*/
+    /** A constraint component that can be used to restrict the minimum string length of value nodes. */
     "MinLengthConstraintComponent": NamedNode<'http://www.w3.org/ns/shacl#MinLengthConstraintComponent'>;
     "NodeConstraintComponent-node": NamedNode<'http://www.w3.org/ns/shacl#NodeConstraintComponent-node'>;
-    /*A constraint component that can be used to verify that all value nodes conform to the given node shape.*/
+    /** A constraint component that can be used to verify that all value nodes conform to the given node shape. */
     "NodeConstraintComponent": NamedNode<'http://www.w3.org/ns/shacl#NodeConstraintComponent'>;
-    /*The class of all node kinds, including sh:BlankNode, sh:IRI, sh:Literal or the combinations of these: sh:BlankNodeOrIRI, sh:BlankNodeOrLiteral, sh:IRIOrLiteral.*/
+    /** The class of all node kinds, including sh:BlankNode, sh:IRI, sh:Literal or the combinations of these: sh:BlankNodeOrIRI, sh:BlankNodeOrLiteral, sh:IRIOrLiteral. */
     "NodeKind": NamedNode<'http://www.w3.org/ns/shacl#NodeKind'>;
     "NodeKindConstraintComponent-nodeKind": NamedNode<'http://www.w3.org/ns/shacl#NodeKindConstraintComponent-nodeKind'>;
-    /*A constraint component that can be used to restrict the RDF node kind of each value node.*/
+    /** A constraint component that can be used to restrict the RDF node kind of each value node. */
     "NodeKindConstraintComponent": NamedNode<'http://www.w3.org/ns/shacl#NodeKindConstraintComponent'>;
-    /*A node shape is a shape that specifies constraint that need to be met with respect to focus nodes.*/
+    /** A node shape is a shape that specifies constraint that need to be met with respect to focus nodes. */
     "NodeShape": NamedNode<'http://www.w3.org/ns/shacl#NodeShape'>;
     "NotConstraintComponent-not": NamedNode<'http://www.w3.org/ns/shacl#NotConstraintComponent-not'>;
-    /*A constraint component that can be used to verify that value nodes do not conform to a given shape.*/
+    /** A constraint component that can be used to verify that value nodes do not conform to a given shape. */
     "NotConstraintComponent": NamedNode<'http://www.w3.org/ns/shacl#NotConstraintComponent'>;
     "OrConstraintComponent-or": NamedNode<'http://www.w3.org/ns/shacl#OrConstraintComponent-or'>;
-    /*A constraint component that can be used to restrict the value nodes so that they conform to at least one out of several provided shapes.*/
+    /** A constraint component that can be used to restrict the value nodes so that they conform to at least one out of several provided shapes. */
     "OrConstraintComponent": NamedNode<'http://www.w3.org/ns/shacl#OrConstraintComponent'>;
-    /*The class of parameter declarations, consisting of a path predicate and (possibly) information about allowed value type, cardinality and other characteristics.*/
+    /** The class of parameter declarations, consisting of a path predicate and (possibly) information about allowed value type, cardinality and other characteristics. */
     "Parameter": NamedNode<'http://www.w3.org/ns/shacl#Parameter'>;
-    /*Superclass of components that can take parameters, especially functions and constraint components.*/
+    /** Superclass of components that can take parameters, especially functions and constraint components. */
     "Parameterizable": NamedNode<'http://www.w3.org/ns/shacl#Parameterizable'>;
     "PatternConstraintComponent-flags": NamedNode<'http://www.w3.org/ns/shacl#PatternConstraintComponent-flags'>;
     "PatternConstraintComponent-pattern": NamedNode<'http://www.w3.org/ns/shacl#PatternConstraintComponent-pattern'>;
-    /*A constraint component that can be used to verify that every value node matches a given regular expression.*/
+    /** A constraint component that can be used to verify that every value node matches a given regular expression. */
     "PatternConstraintComponent": NamedNode<'http://www.w3.org/ns/shacl#PatternConstraintComponent'>;
-    /*The class of prefix declarations, consisting of pairs of a prefix with a namespace.*/
+    /** The class of prefix declarations, consisting of pairs of a prefix with a namespace. */
     "PrefixDeclaration": NamedNode<'http://www.w3.org/ns/shacl#PrefixDeclaration'>;
     "PropertyConstraintComponent-property": NamedNode<'http://www.w3.org/ns/shacl#PropertyConstraintComponent-property'>;
-    /*A constraint component that can be used to verify that all value nodes conform to the given property shape.*/
+    /** A constraint component that can be used to verify that all value nodes conform to the given property shape. */
     "PropertyConstraintComponent": NamedNode<'http://www.w3.org/ns/shacl#PropertyConstraintComponent'>;
-    /*Instances of this class represent groups of property shapes that belong together.*/
+    /** Instances of this class represent groups of property shapes that belong together. */
     "PropertyGroup": NamedNode<'http://www.w3.org/ns/shacl#PropertyGroup'>;
-    /*A property shape is a shape that specifies constraints on the values of a focus node for a given property or path.*/
+    /** A property shape is a shape that specifies constraints on the values of a focus node for a given property or path. */
     "PropertyShape": NamedNode<'http://www.w3.org/ns/shacl#PropertyShape'>;
     "QualifiedMaxCountConstraintComponent-qualifiedMaxCount": NamedNode<'http://www.w3.org/ns/shacl#QualifiedMaxCountConstraintComponent-qualifiedMaxCount'>;
     "QualifiedMaxCountConstraintComponent-qualifiedValueShape": NamedNode<'http://www.w3.org/ns/shacl#QualifiedMaxCountConstraintComponent-qualifiedValueShape'>;
     "QualifiedMaxCountConstraintComponent-qualifiedValueShapesDisjoint": NamedNode<'http://www.w3.org/ns/shacl#QualifiedMaxCountConstraintComponent-qualifiedValueShapesDisjoint'>;
-    /*A constraint component that can be used to verify that a specified maximum number of value nodes conforms to a given shape.*/
+    /** A constraint component that can be used to verify that a specified maximum number of value nodes conforms to a given shape. */
     "QualifiedMaxCountConstraintComponent": NamedNode<'http://www.w3.org/ns/shacl#QualifiedMaxCountConstraintComponent'>;
     "QualifiedMinCountConstraintComponent-qualifiedMinCount": NamedNode<'http://www.w3.org/ns/shacl#QualifiedMinCountConstraintComponent-qualifiedMinCount'>;
     "QualifiedMinCountConstraintComponent-qualifiedValueShape": NamedNode<'http://www.w3.org/ns/shacl#QualifiedMinCountConstraintComponent-qualifiedValueShape'>;
     "QualifiedMinCountConstraintComponent-qualifiedValueShapesDisjoint": NamedNode<'http://www.w3.org/ns/shacl#QualifiedMinCountConstraintComponent-qualifiedValueShapesDisjoint'>;
-    /*A constraint component that can be used to verify that a specified minimum number of value nodes conforms to a given shape.*/
+    /** A constraint component that can be used to verify that a specified minimum number of value nodes conforms to a given shape. */
     "QualifiedMinCountConstraintComponent": NamedNode<'http://www.w3.org/ns/shacl#QualifiedMinCountConstraintComponent'>;
-    /*A class of result annotations, which define the rules to derive the values of a given annotation property as extra values for a validation result.*/
+    /** A class of result annotations, which define the rules to derive the values of a given annotation property as extra values for a validation result. */
     "ResultAnnotation": NamedNode<'http://www.w3.org/ns/shacl#ResultAnnotation'>;
-    /*The class of SHACL rules. Never instantiated directly.*/
+    /** The class of SHACL rules. Never instantiated directly. */
     "Rule": NamedNode<'http://www.w3.org/ns/shacl#Rule'>;
-    /*The class of SPARQL executables that are based on an ASK query.*/
+    /** The class of SPARQL executables that are based on an ASK query. */
     "SPARQLAskExecutable": NamedNode<'http://www.w3.org/ns/shacl#SPARQLAskExecutable'>;
-    /*The class of validators based on SPARQL ASK queries. The queries are evaluated for each value node and are supposed to return true if the given node conforms.*/
+    /** The class of validators based on SPARQL ASK queries. The queries are evaluated for each value node and are supposed to return true if the given node conforms. */
     "SPARQLAskValidator": NamedNode<'http://www.w3.org/ns/shacl#SPARQLAskValidator'>;
-    /*The class of constraints based on SPARQL SELECT queries.*/
+    /** The class of constraints based on SPARQL SELECT queries. */
     "SPARQLConstraint": NamedNode<'http://www.w3.org/ns/shacl#SPARQLConstraint'>;
     "SPARQLConstraintComponent-sparql": NamedNode<'http://www.w3.org/ns/shacl#SPARQLConstraintComponent-sparql'>;
-    /*A constraint component that can be used to define constraints based on SPARQL queries.*/
+    /** A constraint component that can be used to define constraints based on SPARQL queries. */
     "SPARQLConstraintComponent": NamedNode<'http://www.w3.org/ns/shacl#SPARQLConstraintComponent'>;
-    /*The class of SPARQL executables that are based on a CONSTRUCT query.*/
+    /** The class of SPARQL executables that are based on a CONSTRUCT query. */
     "SPARQLConstructExecutable": NamedNode<'http://www.w3.org/ns/shacl#SPARQLConstructExecutable'>;
-    /*The class of resources that encapsulate a SPARQL query.*/
+    /** The class of resources that encapsulate a SPARQL query. */
     "SPARQLExecutable": NamedNode<'http://www.w3.org/ns/shacl#SPARQLExecutable'>;
-    /*A function backed by a SPARQL query - either ASK or SELECT.*/
+    /** A function backed by a SPARQL query - either ASK or SELECT. */
     "SPARQLFunction": NamedNode<'http://www.w3.org/ns/shacl#SPARQLFunction'>;
-    /*The class of SHACL rules based on SPARQL CONSTRUCT queries.*/
+    /** The class of SHACL rules based on SPARQL CONSTRUCT queries. */
     "SPARQLRule": NamedNode<'http://www.w3.org/ns/shacl#SPARQLRule'>;
-    /*The class of SPARQL executables based on a SELECT query.*/
+    /** The class of SPARQL executables based on a SELECT query. */
     "SPARQLSelectExecutable": NamedNode<'http://www.w3.org/ns/shacl#SPARQLSelectExecutable'>;
-    /*The class of validators based on SPARQL SELECT queries. The queries are evaluated for each focus node and are supposed to produce bindings for all focus nodes that do not conform.*/
+    /** The class of validators based on SPARQL SELECT queries. The queries are evaluated for each focus node and are supposed to produce bindings for all focus nodes that do not conform. */
     "SPARQLSelectValidator": NamedNode<'http://www.w3.org/ns/shacl#SPARQLSelectValidator'>;
-    /*The class of targets that are based on SPARQL queries.*/
+    /** The class of targets that are based on SPARQL queries. */
     "SPARQLTarget": NamedNode<'http://www.w3.org/ns/shacl#SPARQLTarget'>;
-    /*The (meta) class for parameterizable targets that are based on SPARQL queries.*/
+    /** The (meta) class for parameterizable targets that are based on SPARQL queries. */
     "SPARQLTargetType": NamedNode<'http://www.w3.org/ns/shacl#SPARQLTargetType'>;
-    /*The class of SPARQL executables based on a SPARQL UPDATE.*/
+    /** The class of SPARQL executables based on a SPARQL UPDATE. */
     "SPARQLUpdateExecutable": NamedNode<'http://www.w3.org/ns/shacl#SPARQLUpdateExecutable'>;
-    /*The class of validation result severity levels, including violation and warning levels.*/
+    /** The class of validation result severity levels, including violation and warning levels. */
     "Severity": NamedNode<'http://www.w3.org/ns/shacl#Severity'>;
-    /*A shape is a collection of constraints that may be targeted for certain nodes.*/
+    /** A shape is a collection of constraints that may be targeted for certain nodes. */
     "Shape": NamedNode<'http://www.w3.org/ns/shacl#Shape'>;
-    /*The base class of targets such as those based on SPARQL queries.*/
+    /** The base class of targets such as those based on SPARQL queries. */
     "Target": NamedNode<'http://www.w3.org/ns/shacl#Target'>;
-    /*The (meta) class for parameterizable targets.	Instances of this are instantiated as values of the sh:target property.*/
+    /** The (meta) class for parameterizable targets.	Instances of this are instantiated as values of the sh:target property. */
     "TargetType": NamedNode<'http://www.w3.org/ns/shacl#TargetType'>;
     "TripleRule": NamedNode<'http://www.w3.org/ns/shacl#TripleRule'>;
     "UniqueLangConstraintComponent-uniqueLang": NamedNode<'http://www.w3.org/ns/shacl#UniqueLangConstraintComponent-uniqueLang'>;
-    /*A constraint component that can be used to specify that no pair of value nodes may use the same language tag.*/
+    /** A constraint component that can be used to specify that no pair of value nodes may use the same language tag. */
     "UniqueLangConstraintComponent": NamedNode<'http://www.w3.org/ns/shacl#UniqueLangConstraintComponent'>;
-    /*The class of SHACL validation reports.*/
+    /** The class of SHACL validation reports. */
     "ValidationReport": NamedNode<'http://www.w3.org/ns/shacl#ValidationReport'>;
-    /*The class of validation results.*/
+    /** The class of validation results. */
     "ValidationResult": NamedNode<'http://www.w3.org/ns/shacl#ValidationResult'>;
-    /*The class of validators, which provide instructions on how to process a constraint definition. This class serves as base class for the SPARQL-based validators and other possible implementations.*/
+    /** The class of validators, which provide instructions on how to process a constraint definition. This class serves as base class for the SPARQL-based validators and other possible implementations. */
     "Validator": NamedNode<'http://www.w3.org/ns/shacl#Validator'>;
-    /*The severity for a violation validation result.*/
+    /** The severity for a violation validation result. */
     "Violation": NamedNode<'http://www.w3.org/ns/shacl#Violation'>;
-    /*The severity for a warning validation result.*/
+    /** The severity for a warning validation result. */
     "Warning": NamedNode<'http://www.w3.org/ns/shacl#Warning'>;
     "XoneConstraintComponent-xone": NamedNode<'http://www.w3.org/ns/shacl#XoneConstraintComponent-xone'>;
-    /*A constraint component that can be used to restrict the value nodes so that they conform to exactly one out of several provided shapes.*/
+    /** A constraint component that can be used to restrict the value nodes so that they conform to exactly one out of several provided shapes. */
     "XoneConstraintComponent": NamedNode<'http://www.w3.org/ns/shacl#XoneConstraintComponent'>;
-    /*The (single) value of this property must be a list of path elements, representing the elements of alternative paths.*/
+    /** The (single) value of this property must be a list of path elements, representing the elements of alternative paths. */
     "alternativePath": NamedNode<'http://www.w3.org/ns/shacl#alternativePath'>;
-    /*RDF list of shapes to validate the value nodes against.*/
+    /** RDF list of shapes to validate the value nodes against. */
     "and": NamedNode<'http://www.w3.org/ns/shacl#and'>;
-    /*The annotation property that shall be set.*/
+    /** The annotation property that shall be set. */
     "annotationProperty": NamedNode<'http://www.w3.org/ns/shacl#annotationProperty'>;
-    /*The (default) values of the annotation property.*/
+    /** The (default) values of the annotation property. */
     "annotationValue": NamedNode<'http://www.w3.org/ns/shacl#annotationValue'>;
-    /*The name of the SPARQL variable from the SELECT clause that shall be used for the values.*/
+    /** The name of the SPARQL variable from the SELECT clause that shall be used for the values. */
     "annotationVarName": NamedNode<'http://www.w3.org/ns/shacl#annotationVarName'>;
-    /*The SPARQL ASK query to execute.*/
+    /** The SPARQL ASK query to execute. */
     "ask": NamedNode<'http://www.w3.org/ns/shacl#ask'>;
-    /*The type that all value nodes must have.*/
+    /** The type that all value nodes must have. */
     "class": NamedNode<'http://www.w3.org/ns/shacl#class'>;
-    /*If set to true then the shape is closed.*/
+    /** If set to true then the shape is closed. */
     "closed": NamedNode<'http://www.w3.org/ns/shacl#closed'>;
-    /*The shapes that the focus nodes need to conform to before a rule is executed on them.*/
+    /** The shapes that the focus nodes need to conform to before a rule is executed on them. */
     "condition": NamedNode<'http://www.w3.org/ns/shacl#condition'>;
-    /*True if the validation did not produce any validation results, and false otherwise.*/
+    /** True if the validation did not produce any validation results, and false otherwise. */
     "conforms": NamedNode<'http://www.w3.org/ns/shacl#conforms'>;
-    /*The SPARQL CONSTRUCT query to execute.*/
+    /** The SPARQL CONSTRUCT query to execute. */
     "construct": NamedNode<'http://www.w3.org/ns/shacl#construct'>;
-    /*Specifies an RDF datatype that all value nodes must have.*/
+    /** Specifies an RDF datatype that all value nodes must have. */
     "datatype": NamedNode<'http://www.w3.org/ns/shacl#datatype'>;
-    /*If set to true then all nodes conform to this.*/
+    /** If set to true then all nodes conform to this. */
     "deactivated": NamedNode<'http://www.w3.org/ns/shacl#deactivated'>;
-    /*Links a resource with its namespace prefix declarations.*/
+    /** Links a resource with its namespace prefix declarations. */
     "declare": NamedNode<'http://www.w3.org/ns/shacl#declare'>;
-    /*A default value for a property, for example for user interface tools to pre-populate input fields.*/
+    /** A default value for a property, for example for user interface tools to pre-populate input fields. */
     "defaultValue": NamedNode<'http://www.w3.org/ns/shacl#defaultValue'>;
-    /*Human-readable descriptions for the property in the context of the surrounding shape.*/
+    /** Human-readable descriptions for the property in the context of the surrounding shape. */
     "description": NamedNode<'http://www.w3.org/ns/shacl#description'>;
-    /*Links a result with other results that provide more details, for example to describe violations against nested shapes.*/
+    /** Links a result with other results that provide more details, for example to describe violations against nested shapes. */
     "detail": NamedNode<'http://www.w3.org/ns/shacl#detail'>;
-    /*Specifies a property where the set of values must be disjoint with the value nodes.*/
+    /** Specifies a property where the set of values must be disjoint with the value nodes. */
     "disjoint": NamedNode<'http://www.w3.org/ns/shacl#disjoint'>;
-    /*An entailment regime that indicates what kind of inferencing is required by a shapes graph.*/
+    /** An entailment regime that indicates what kind of inferencing is required by a shapes graph. */
     "entailment": NamedNode<'http://www.w3.org/ns/shacl#entailment'>;
-    /*Specifies a property that must have the same values as the value nodes.*/
+    /** Specifies a property that must have the same values as the value nodes. */
     "equals": NamedNode<'http://www.w3.org/ns/shacl#equals'>;
-    /*The node expression that must return true for the value nodes.*/
+    /** The node expression that must return true for the value nodes. */
     "expression": NamedNode<'http://www.w3.org/ns/shacl#expression'>;
-    /*The shape that all input nodes of the expression need to conform to.*/
+    /** The shape that all input nodes of the expression need to conform to. */
     "filterShape": NamedNode<'http://www.w3.org/ns/shacl#filterShape'>;
-    /*An optional flag to be used with regular expression pattern matching.*/
+    /** An optional flag to be used with regular expression pattern matching. */
     "flags": NamedNode<'http://www.w3.org/ns/shacl#flags'>;
-    /*The focus node that was validated when the result was produced.*/
+    /** The focus node that was validated when the result was produced. */
     "focusNode": NamedNode<'http://www.w3.org/ns/shacl#focusNode'>;
-    /*Can be used to link to a property group to indicate that a property shape belongs to a group of related property shapes.*/
+    /** Can be used to link to a property group to indicate that a property shape belongs to a group of related property shapes. */
     "group": NamedNode<'http://www.w3.org/ns/shacl#group'>;
-    /*Specifies a value that must be among the value nodes.*/
+    /** Specifies a value that must be among the value nodes. */
     "hasValue": NamedNode<'http://www.w3.org/ns/shacl#hasValue'>;
-    /*An optional RDF list of properties that are also permitted in addition to those explicitly enumerated via sh:property/sh:path.*/
+    /** An optional RDF list of properties that are also permitted in addition to those explicitly enumerated via sh:property/sh:path. */
     "ignoredProperties": NamedNode<'http://www.w3.org/ns/shacl#ignoredProperties'>;
-    /*Specifies a list of allowed values so that each value node must be among the members of the given list.*/
+    /** Specifies a list of allowed values so that each value node must be among the members of the given list. */
     "in": NamedNode<'http://www.w3.org/ns/shacl#in'>;
-    /*A list of node expressions that shall be intersected.*/
+    /** A list of node expressions that shall be intersected. */
     "intersection": NamedNode<'http://www.w3.org/ns/shacl#intersection'>;
-    /*The (single) value of this property represents an inverse path (object to subject).*/
+    /** The (single) value of this property represents an inverse path (object to subject). */
     "inversePath": NamedNode<'http://www.w3.org/ns/shacl#inversePath'>;
-    /*Constraints expressed in JavaScript.*/
+    /** Constraints expressed in JavaScript. */
     "js": NamedNode<'http://www.w3.org/ns/shacl#js'>;
-    /*The name of the JavaScript function to execute.*/
+    /** The name of the JavaScript function to execute. */
     "jsFunctionName": NamedNode<'http://www.w3.org/ns/shacl#jsFunctionName'>;
-    /*Declares which JavaScript libraries are needed to execute this.*/
+    /** Declares which JavaScript libraries are needed to execute this. */
     "jsLibrary": NamedNode<'http://www.w3.org/ns/shacl#jsLibrary'>;
-    /*Declares the URLs of a JavaScript library. This should be the absolute URL of a JavaScript file. Implementations may redirect those to local files.*/
+    /** Declares the URLs of a JavaScript library. This should be the absolute URL of a JavaScript file. Implementations may redirect those to local files. */
     "jsLibraryURL": NamedNode<'http://www.w3.org/ns/shacl#jsLibraryURL'>;
-    /*Outlines how human-readable labels of instances of the associated Parameterizable shall be produced. The values can contain {?paramName} as placeholders for the actual values of the given parameter.*/
+    /** Outlines how human-readable labels of instances of the associated Parameterizable shall be produced. The values can contain {?paramName} as placeholders for the actual values of the given parameter. */
     "labelTemplate": NamedNode<'http://www.w3.org/ns/shacl#labelTemplate'>;
-    /*Specifies a list of language tags that all value nodes must have.*/
+    /** Specifies a list of language tags that all value nodes must have. */
     "languageIn": NamedNode<'http://www.w3.org/ns/shacl#languageIn'>;
-    /*Specifies a property that must have smaller values than the value nodes.*/
+    /** Specifies a property that must have smaller values than the value nodes. */
     "lessThan": NamedNode<'http://www.w3.org/ns/shacl#lessThan'>;
-    /*Specifies a property that must have smaller or equal values than the value nodes.*/
+    /** Specifies a property that must have smaller or equal values than the value nodes. */
     "lessThanOrEquals": NamedNode<'http://www.w3.org/ns/shacl#lessThanOrEquals'>;
-    /*Specifies the maximum number of values in the set of value nodes.*/
+    /** Specifies the maximum number of values in the set of value nodes. */
     "maxCount": NamedNode<'http://www.w3.org/ns/shacl#maxCount'>;
-    /*Specifies the maximum exclusive value of each value node.*/
+    /** Specifies the maximum exclusive value of each value node. */
     "maxExclusive": NamedNode<'http://www.w3.org/ns/shacl#maxExclusive'>;
-    /*Specifies the maximum inclusive value of each value node.*/
+    /** Specifies the maximum inclusive value of each value node. */
     "maxInclusive": NamedNode<'http://www.w3.org/ns/shacl#maxInclusive'>;
-    /*Specifies the maximum string length of each value node.*/
+    /** Specifies the maximum string length of each value node. */
     "maxLength": NamedNode<'http://www.w3.org/ns/shacl#maxLength'>;
-    /*A human-readable message (possibly with placeholders for variables) explaining the cause of the result.*/
+    /** A human-readable message (possibly with placeholders for variables) explaining the cause of the result. */
     "message": NamedNode<'http://www.w3.org/ns/shacl#message'>;
-    /*Specifies the minimum number of values in the set of value nodes.*/
+    /** Specifies the minimum number of values in the set of value nodes. */
     "minCount": NamedNode<'http://www.w3.org/ns/shacl#minCount'>;
-    /*Specifies the minimum exclusive value of each value node.*/
+    /** Specifies the minimum exclusive value of each value node. */
     "minExclusive": NamedNode<'http://www.w3.org/ns/shacl#minExclusive'>;
-    /*Specifies the minimum inclusive value of each value node.*/
+    /** Specifies the minimum inclusive value of each value node. */
     "minInclusive": NamedNode<'http://www.w3.org/ns/shacl#minInclusive'>;
-    /*Specifies the minimum string length of each value node.*/
+    /** Specifies the minimum string length of each value node. */
     "minLength": NamedNode<'http://www.w3.org/ns/shacl#minLength'>;
-    /*Human-readable labels for the property in the context of the surrounding shape.*/
+    /** Human-readable labels for the property in the context of the surrounding shape. */
     "name": NamedNode<'http://www.w3.org/ns/shacl#name'>;
-    /*The namespace associated with a prefix in a prefix declaration.*/
+    /** The namespace associated with a prefix in a prefix declaration. */
     "namespace": NamedNode<'http://www.w3.org/ns/shacl#namespace'>;
-    /*Specifies the node shape that all value nodes must conform to.*/
+    /** Specifies the node shape that all value nodes must conform to. */
     "node": NamedNode<'http://www.w3.org/ns/shacl#node'>;
-    /*Specifies the node kind (e.g. IRI or literal) each value node.*/
+    /** Specifies the node kind (e.g. IRI or literal) each value node. */
     "nodeKind": NamedNode<'http://www.w3.org/ns/shacl#nodeKind'>;
-    /*The validator(s) used to evaluate a constraint in the context of a node shape.*/
+    /** The validator(s) used to evaluate a constraint in the context of a node shape. */
     "nodeValidator": NamedNode<'http://www.w3.org/ns/shacl#nodeValidator'>;
-    /*The node expression producing the input nodes of a filter shape expression.*/
+    /** The node expression producing the input nodes of a filter shape expression. */
     "nodes": NamedNode<'http://www.w3.org/ns/shacl#nodes'>;
-    /*Specifies a shape that the value nodes must not conform to.*/
+    /** Specifies a shape that the value nodes must not conform to. */
     "not": NamedNode<'http://www.w3.org/ns/shacl#not'>;
-    /*An expression producing the nodes that shall be inferred as objects.*/
+    /** An expression producing the nodes that shall be inferred as objects. */
     "object": NamedNode<'http://www.w3.org/ns/shacl#object'>;
-    /*The (single) value of this property represents a path that is matched one or more times.*/
+    /** The (single) value of this property represents a path that is matched one or more times. */
     "oneOrMorePath": NamedNode<'http://www.w3.org/ns/shacl#oneOrMorePath'>;
-    /*Indicates whether a parameter is optional.*/
+    /** Indicates whether a parameter is optional. */
     "optional": NamedNode<'http://www.w3.org/ns/shacl#optional'>;
-    /*Specifies a list of shapes so that the value nodes must conform to at least one of the shapes.*/
+    /** Specifies a list of shapes so that the value nodes must conform to at least one of the shapes. */
     "or": NamedNode<'http://www.w3.org/ns/shacl#or'>;
-    /*Specifies the relative order of this compared to its siblings. For example use 0 for the first, 1 for the second.*/
+    /** Specifies the relative order of this compared to its siblings. For example use 0 for the first, 1 for the second. */
     "order": NamedNode<'http://www.w3.org/ns/shacl#order'>;
-    /*The parameters of a function or constraint component.*/
+    /** The parameters of a function or constraint component. */
     "parameter": NamedNode<'http://www.w3.org/ns/shacl#parameter'>;
-    /*Specifies the property path of a property shape.*/
+    /** Specifies the property path of a property shape. */
     "path": NamedNode<'http://www.w3.org/ns/shacl#path'>;
-    /*Specifies a regular expression pattern that the string representations of the value nodes must match.*/
+    /** Specifies a regular expression pattern that the string representations of the value nodes must match. */
     "pattern": NamedNode<'http://www.w3.org/ns/shacl#pattern'>;
-    /*An expression producing the properties that shall be inferred as predicates.*/
+    /** An expression producing the properties that shall be inferred as predicates. */
     "predicate": NamedNode<'http://www.w3.org/ns/shacl#predicate'>;
-    /*The prefix of a prefix declaration.*/
+    /** The prefix of a prefix declaration. */
     "prefix": NamedNode<'http://www.w3.org/ns/shacl#prefix'>;
-    /*The prefixes that shall be applied before parsing the associated SPARQL query.*/
+    /** The prefixes that shall be applied before parsing the associated SPARQL query. */
     "prefixes": NamedNode<'http://www.w3.org/ns/shacl#prefixes'>;
-    /*Links a shape to its property shapes.*/
+    /** Links a shape to its property shapes. */
     "property": NamedNode<'http://www.w3.org/ns/shacl#property'>;
-    /*The validator(s) used to evaluate a constraint in the context of a property shape.*/
+    /** The validator(s) used to evaluate a constraint in the context of a property shape. */
     "propertyValidator": NamedNode<'http://www.w3.org/ns/shacl#propertyValidator'>;
-    /*The maximum number of value nodes that can conform to the shape.*/
+    /** The maximum number of value nodes that can conform to the shape. */
     "qualifiedMaxCount": NamedNode<'http://www.w3.org/ns/shacl#qualifiedMaxCount'>;
-    /*The minimum number of value nodes that must conform to the shape.*/
+    /** The minimum number of value nodes that must conform to the shape. */
     "qualifiedMinCount": NamedNode<'http://www.w3.org/ns/shacl#qualifiedMinCount'>;
-    /*The shape that a specified number of values must conform to.*/
+    /** The shape that a specified number of values must conform to. */
     "qualifiedValueShape": NamedNode<'http://www.w3.org/ns/shacl#qualifiedValueShape'>;
-    /*Can be used to mark the qualified value shape to be disjoint with its sibling shapes.*/
+    /** Can be used to mark the qualified value shape to be disjoint with its sibling shapes. */
     "qualifiedValueShapesDisjoint": NamedNode<'http://www.w3.org/ns/shacl#qualifiedValueShapesDisjoint'>;
-    /*The validation results contained in a validation report.*/
+    /** The validation results contained in a validation report. */
     "result": NamedNode<'http://www.w3.org/ns/shacl#result'>;
-    /*Links a SPARQL validator with zero or more sh:ResultAnnotation instances, defining how to derive additional result properties based on the variables of the SELECT query.*/
+    /** Links a SPARQL validator with zero or more sh:ResultAnnotation instances, defining how to derive additional result properties based on the variables of the SELECT query. */
     "resultAnnotation": NamedNode<'http://www.w3.org/ns/shacl#resultAnnotation'>;
-    /*Human-readable messages explaining the cause of the result.*/
+    /** Human-readable messages explaining the cause of the result. */
     "resultMessage": NamedNode<'http://www.w3.org/ns/shacl#resultMessage'>;
-    /*The path of a validation result, based on the path of the validated property shape.*/
+    /** The path of a validation result, based on the path of the validated property shape. */
     "resultPath": NamedNode<'http://www.w3.org/ns/shacl#resultPath'>;
-    /*The severity of the result, e.g. warning.*/
+    /** The severity of the result, e.g. warning. */
     "resultSeverity": NamedNode<'http://www.w3.org/ns/shacl#resultSeverity'>;
-    /*The expected type of values returned by the associated function.*/
+    /** The expected type of values returned by the associated function. */
     "returnType": NamedNode<'http://www.w3.org/ns/shacl#returnType'>;
-    /*The rules linked to a shape.*/
+    /** The rules linked to a shape. */
     "rule": NamedNode<'http://www.w3.org/ns/shacl#rule'>;
-    /*The SPARQL SELECT query to execute.*/
+    /** The SPARQL SELECT query to execute. */
     "select": NamedNode<'http://www.w3.org/ns/shacl#select'>;
-    /*Defines the severity that validation results produced by a shape must have. Defaults to sh:Violation.*/
+    /** Defines the severity that validation results produced by a shape must have. Defaults to sh:Violation. */
     "severity": NamedNode<'http://www.w3.org/ns/shacl#severity'>;
-    /*Shapes graphs that should be used when validating this data graph.*/
+    /** Shapes graphs that should be used when validating this data graph. */
     "shapesGraph": NamedNode<'http://www.w3.org/ns/shacl#shapesGraph'>;
-    /*If true then the validation engine was certain that the shapes graph has passed all SHACL syntax requirements during the validation process.*/
+    /** If true then the validation engine was certain that the shapes graph has passed all SHACL syntax requirements during the validation process. */
     "shapesGraphWellFormed": NamedNode<'http://www.w3.org/ns/shacl#shapesGraphWellFormed'>;
-    /*The constraint that was validated when the result was produced.*/
+    /** The constraint that was validated when the result was produced. */
     "sourceConstraint": NamedNode<'http://www.w3.org/ns/shacl#sourceConstraint'>;
-    /*The constraint component that is the source of the result.*/
+    /** The constraint component that is the source of the result. */
     "sourceConstraintComponent": NamedNode<'http://www.w3.org/ns/shacl#sourceConstraintComponent'>;
-    /*The shape that is was validated when the result was produced.*/
+    /** The shape that is was validated when the result was produced. */
     "sourceShape": NamedNode<'http://www.w3.org/ns/shacl#sourceShape'>;
-    /*Links a shape with SPARQL constraints.*/
+    /** Links a shape with SPARQL constraints. */
     "sparql": NamedNode<'http://www.w3.org/ns/shacl#sparql'>;
-    /*An expression producing the resources that shall be inferred as subjects.*/
+    /** An expression producing the resources that shall be inferred as subjects. */
     "subject": NamedNode<'http://www.w3.org/ns/shacl#subject'>;
-    /*Suggested shapes graphs for this ontology. The values of this property may be used in the absence of specific sh:shapesGraph statements.*/
+    /** Suggested shapes graphs for this ontology. The values of this property may be used in the absence of specific sh:shapesGraph statements. */
     "suggestedShapesGraph": NamedNode<'http://www.w3.org/ns/shacl#suggestedShapesGraph'>;
-    /*Links a shape to a target specified by an extension language, for example instances of sh:SPARQLTarget.*/
+    /** Links a shape to a target specified by an extension language, for example instances of sh:SPARQLTarget. */
     "target": NamedNode<'http://www.w3.org/ns/shacl#target'>;
-    /*Links a shape to a class, indicating that all instances of the class must conform to the shape.*/
+    /** Links a shape to a class, indicating that all instances of the class must conform to the shape. */
     "targetClass": NamedNode<'http://www.w3.org/ns/shacl#targetClass'>;
-    /*Links a shape to individual nodes, indicating that these nodes must conform to the shape.*/
+    /** Links a shape to individual nodes, indicating that these nodes must conform to the shape. */
     "targetNode": NamedNode<'http://www.w3.org/ns/shacl#targetNode'>;
-    /*Links a shape to a property, indicating that all all objects of triples that have the given property as their predicate must conform to the shape.*/
+    /** Links a shape to a property, indicating that all all objects of triples that have the given property as their predicate must conform to the shape. */
     "targetObjectsOf": NamedNode<'http://www.w3.org/ns/shacl#targetObjectsOf'>;
-    /*Links a shape to a property, indicating that all subjects of triples that have the given property as their predicate must conform to the shape.*/
+    /** Links a shape to a property, indicating that all subjects of triples that have the given property as their predicate must conform to the shape. */
     "targetSubjectsOf": NamedNode<'http://www.w3.org/ns/shacl#targetSubjectsOf'>;
-    /*A node expression that represents the current focus node.*/
+    /** A node expression that represents the current focus node. */
     "this": NamedNode<'http://www.w3.org/ns/shacl#this'>;
-    /*A list of node expressions that shall be used together.*/
+    /** A list of node expressions that shall be used together. */
     "union": NamedNode<'http://www.w3.org/ns/shacl#union'>;
-    /*Specifies whether all node values must have a unique (or no) language tag.*/
+    /** Specifies whether all node values must have a unique (or no) language tag. */
     "uniqueLang": NamedNode<'http://www.w3.org/ns/shacl#uniqueLang'>;
-    /*The SPARQL UPDATE to execute.*/
+    /** The SPARQL UPDATE to execute. */
     "update": NamedNode<'http://www.w3.org/ns/shacl#update'>;
-    /*The validator(s) used to evaluate constraints of either node or property shapes.*/
+    /** The validator(s) used to evaluate constraints of either node or property shapes. */
     "validator": NamedNode<'http://www.w3.org/ns/shacl#validator'>;
-    /*An RDF node that has caused the result.*/
+    /** An RDF node that has caused the result. */
     "value": NamedNode<'http://www.w3.org/ns/shacl#value'>;
-    /*Specifies a list of shapes so that the value nodes must conform to exactly one of the shapes.*/
+    /** Specifies a list of shapes so that the value nodes must conform to exactly one of the shapes. */
     "xone": NamedNode<'http://www.w3.org/ns/shacl#xone'>;
-    /*The (single) value of this property represents a path that is matched zero or more times.*/
+    /** The (single) value of this property represents a path that is matched zero or more times. */
     "zeroOrMorePath": NamedNode<'http://www.w3.org/ns/shacl#zeroOrMorePath'>;
-    /*The (single) value of this property represents a path that is matched zero or one times.*/
+    /** The (single) value of this property represents a path that is matched zero or one times. */
     "zeroOrOnePath": NamedNode<'http://www.w3.org/ns/shacl#zeroOrOnePath'>;
-};
-export const sh: Sh = (namespace("http://www.w3.org/ns/shacl#") as any);
+}
+
+const builder = namespace("http://www.w3.org/ns/shacl#") as any;
+export const strict = builder as NamespaceBuilder<keyof Sh> & Sh;
+export const loose = builder as NamespaceBuilder & Sh;

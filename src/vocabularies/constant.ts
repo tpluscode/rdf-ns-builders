@@ -1,6 +1,7 @@
 import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
 import { NamedNode } from "rdf-js";
-type Constant = NamespaceBuilder & {
+
+interface Constant {
     "AlphaParticleElectronMassRatio": NamedNode<'http://qudt.org/vocab/constant/AlphaParticleElectronMassRatio'>;
     "AlphaParticleMass": NamedNode<'http://qudt.org/vocab/constant/AlphaParticleMass'>;
     "AlphaParticleMassEnergyEquivalent": NamedNode<'http://qudt.org/vocab/constant/AlphaParticleMassEnergyEquivalent'>;
@@ -657,5 +658,8 @@ type Constant = NamespaceBuilder & {
     "WeakMixingAngle": NamedNode<'http://qudt.org/vocab/constant/WeakMixingAngle'>;
     "WienFrequencyDisplacementLawConstant": NamedNode<'http://qudt.org/vocab/constant/WienFrequencyDisplacementLawConstant'>;
     "WienWavelengthDisplacementLawConstant": NamedNode<'http://qudt.org/vocab/constant/WienWavelengthDisplacementLawConstant'>;
-};
-export const constant: Constant = (namespace("http://qudt.org/vocab/constant/") as any);
+}
+
+const builder = namespace("http://qudt.org/vocab/constant/") as any;
+export const strict = builder as NamespaceBuilder<keyof Constant> & Constant;
+export const loose = builder as NamespaceBuilder & Constant;

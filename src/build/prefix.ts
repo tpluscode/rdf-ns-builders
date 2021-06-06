@@ -1,36 +1,58 @@
-import ts from 'typescript'
+import { SourceFile, VariableDeclarationKind } from 'ts-morph'
 import type * as RdfVocabularies from '@zazuko/rdf-vocabularies'
-import imports from './imports'
-import { generateInterface } from './interface'
-import { aliases, toProperCase } from './strings'
+import { createMembers } from './interface'
+import { toProperCase } from './strings'
 
-export async function createPrefixFile(prefix: string, namespace: string, vocabs: typeof RdfVocabularies) {
-  return ts.updateSourceFileNode(
-    ts.createSourceFile(`${prefix}.ts`, '', ts.ScriptTarget.Latest),
-    [
-      ...imports,
-      await generateInterface(prefix, vocabs),
-      ts.createVariableStatement(
-        [ts.createModifier(ts.SyntaxKind.ExportKeyword)],
-        ts.createVariableDeclarationList(
-          [
-            ts.createVariableDeclaration(
-              ts.createIdentifier(aliases[prefix] || prefix),
-              ts.createTypeReferenceNode(
-                ts.createIdentifier(toProperCase(prefix)),
-                undefined,
-              ),
-              ts.createAsExpression(
-                ts.createCall(ts.createIdentifier('namespace'), undefined, [
-                  ts.createStringLiteral(namespace),
-                ]),
-                ts.createKeywordTypeNode(ts.SyntaxKind.AnyKeyword),
-              ),
-            ),
-          ],
-          ts.NodeFlags.Const,
-        ),
-      ),
-    ],
-  )
+export async function createPrefixFile(sourceFile: SourceFile, prefix: string, namespace: string, vocabs: typeof RdfVocabularies) {
+  const interfaceName = toProperCase(prefix)
+
+  sourceFile.addImportDeclaration({
+    defaultImport: 'namespace',
+    namedImports: [{
+      name: 'NamespaceBuilder',
+    }],
+    moduleSpecifier: '@rdf-esm/namespace',
+  })
+
+  sourceFile.addImportDeclaration({
+    namedImports: [{
+      name: 'NamedNode',
+    }],
+    moduleSpecifier: 'rdf-js',
+  })
+
+  const prefixInterface = sourceFile.addInterface({
+    name: interfaceName,
+  })
+
+  prefixInterface.addMembers(await createMembers(prefix, vocabs))
+
+  sourceFile.addVariableStatement({
+    declarations: [{
+      name: 'builder',
+      initializer: `namespace("${namespace}")`,
+      trailingTrivia: ' as any',
+    }],
+    declarationKind: VariableDeclarationKind.Const,
+  })
+
+  sourceFile.addVariableStatement({
+    declarations: [{
+      name: 'strict',
+      initializer: 'builder',
+      trailingTrivia: ` as NamespaceBuilder<keyof ${interfaceName}> & ${interfaceName}`,
+    }],
+    declarationKind: VariableDeclarationKind.Const,
+    isExported: true,
+  })
+
+  sourceFile.addVariableStatement({
+    declarations: [{
+      name: 'loose',
+      initializer: 'builder',
+      trailingTrivia: ` as NamespaceBuilder & ${interfaceName}`,
+    }],
+    declarationKind: VariableDeclarationKind.Const,
+    isExported: true,
+  })
 }

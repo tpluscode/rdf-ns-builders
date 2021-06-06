@@ -28,6 +28,18 @@ import { NamedNode } from 'rdf-js'
 const schemaPerson: NamedNode = schema.Person
 ```
 
+### Strict builder
+
+The namespace builders exported from the main module allow arbitrary term, even if they do not exist in the vocabulary. Alternatively, strict builders can be imported which will report compiler errors if a term name is incorrect, such as to prevent typos.
+
+```
+import { schema } from '@tpluscode/rdf-ns-builders/strict'
+import { NamedNode } from 'rdf-js'
+
+// will show error
+const schemaPerson: NamedNode = schema.Persona
+```
+
 ## Roll your own
 
 Given a package with same exports a `@zazuko/rdf-vocabularies`, it is possible to generate a set of namespace builders generated from your own vocabularies.
@@ -41,10 +53,10 @@ npm i -D typescript
 Run the following command to generate builders package by providing the source package name and output directory.
 
 ```
-npm run rdf-ns-builders generate -p @my/vocabularies -o source/vocabularies
+npm run rdf-ns-builders generate -p @my/vocabularies -o source
 ```
 
-This will create a directory `source/vocabularies`, containing typescript modules for all vocabularies, similar to those from [src/vocabularies](src/vocabularies).
+This will create a directory `source`, containing typescript modules for all vocabularies, similar to those from [src](src/vocabularies).
 
 [rdfv]: https://github.com/zazuko/rdf-vocabularies
 [ns]: http://npm.im/@rdfjs/namespace

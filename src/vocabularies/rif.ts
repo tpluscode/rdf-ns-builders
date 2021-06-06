@@ -1,4 +1,10 @@
 import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
 import { NamedNode } from "rdf-js";
-type Rif = NamespaceBuilder & {};
-export const rif: Rif = (namespace("http://www.w3.org/2007/rif#") as any);
+
+interface Rif {
+    
+}
+
+const builder = namespace("http://www.w3.org/2007/rif#") as any;
+export const strict = builder as NamespaceBuilder<keyof Rif> & Rif;
+export const loose = builder as NamespaceBuilder & Rif;

@@ -1,6 +1,7 @@
 import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
 import { NamedNode } from "rdf-js";
-type Discipline = NamespaceBuilder & {
+
+interface Discipline {
     "Acoustics": NamedNode<'http://qudt.org/vocab/discipline/Acoustics'>;
     "AeroThermalDynamics": NamedNode<'http://qudt.org/vocab/discipline/AeroThermalDynamics'>;
     "Aerodynamics": NamedNode<'http://qudt.org/vocab/discipline/Aerodynamics'>;
@@ -136,5 +137,8 @@ type Discipline = NamespaceBuilder & {
     "VehicleSystemsDesign": NamedNode<'http://qudt.org/vocab/discipline/VehicleSystemsDesign'>;
     "Vibration": NamedNode<'http://qudt.org/vocab/discipline/Vibration'>;
     "VibrationAnalysis": NamedNode<'http://qudt.org/vocab/discipline/VibrationAnalysis'>;
-};
-export const discipline: Discipline = (namespace("http://qudt.org/vocab/discipline/") as any);
+}
+
+const builder = namespace("http://qudt.org/vocab/discipline/") as any;
+export const strict = builder as NamespaceBuilder<keyof Discipline> & Discipline;
+export const loose = builder as NamespaceBuilder & Discipline;

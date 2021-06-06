@@ -1,6 +1,7 @@
 import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
 import { NamedNode } from "rdf-js";
-type Prefix = NamespaceBuilder & {
+
+interface Prefix {
     "Atto": NamedNode<'http://qudt.org/2.1/vocab/prefix/Atto'>;
     "Centi": NamedNode<'http://qudt.org/2.1/vocab/prefix/Centi'>;
     "Deca": NamedNode<'http://qudt.org/2.1/vocab/prefix/Deca'>;
@@ -30,5 +31,8 @@ type Prefix = NamespaceBuilder & {
     "Zebi": NamedNode<'http://qudt.org/2.1/vocab/prefix/Zebi'>;
     "Zepto": NamedNode<'http://qudt.org/2.1/vocab/prefix/Zepto'>;
     "Zetta": NamedNode<'http://qudt.org/2.1/vocab/prefix/Zetta'>;
-};
-export const prefix: Prefix = (namespace("http://qudt.org/2.1/vocab/prefix/") as any);
+}
+
+const builder = namespace("http://qudt.org/2.1/vocab/prefix/") as any;
+export const strict = builder as NamespaceBuilder<keyof Prefix> & Prefix;
+export const loose = builder as NamespaceBuilder & Prefix;
