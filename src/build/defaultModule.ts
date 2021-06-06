@@ -1,18 +1,17 @@
 import * as ts from 'typescript'
-import { prefixes } from '@zazuko/rdf-vocabularies'
 
 function createExport(prefix: string) {
   return ts.createExportDeclaration(
     undefined,
     undefined,
     undefined,
-    ts.createStringLiteral(`./vocabularies/${prefix}`)
+    ts.createStringLiteral(`./vocabularies/${prefix}`),
   )
 }
 
-export function createDefaultModule() {
+export function createDefaultModule(prefixes: Record<string, string>) {
   return ts.updateSourceFileNode(
     ts.createSourceFile('index.ts', '', ts.ScriptTarget.Latest),
-    Object.keys(prefixes).map(createExport)
+    Object.keys(prefixes).map(createExport),
   )
 }

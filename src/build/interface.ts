@@ -1,21 +1,21 @@
 import ts from 'typescript'
-import { prefixes, shrink, vocabularies } from '@zazuko/rdf-vocabularies'
+import type * as RdfVocabularies from '@zazuko/rdf-vocabularies'
 import cf from 'clownface'
 import { namedNode } from '@rdfjs/data-model'
 import { toProperCase } from './strings'
 
 const rdfsComment = namedNode('http://www.w3.org/2000/01/rdf-schema#comment')
 
-function createMember(prefix: string, term: string, comment?: string) {
+function createMember(prefixes: typeof RdfVocabularies['prefixes'], prefix: string, term: string, comment?: string) {
   const member = ts.createPropertySignature(
     undefined,
     ts.createStringLiteral(term),
     undefined,
     ts.createTypeReferenceNode(
       ts.createIdentifier(`NamedNode<'${prefixes[prefix]}${term}'>`),
-      undefined
+      undefined,
     ),
-    undefined
+    undefined,
   )
 
   if (comment) {
@@ -25,7 +25,7 @@ function createMember(prefix: string, term: string, comment?: string) {
   return member
 }
 
-async function createMembers(prefix: string) {
+async function createMembers(prefix: string, { vocabularies, shrink, prefixes }: typeof RdfVocabularies) {
   const prefixedRegex = new RegExp(`^${prefix}:(.+)$`)
   const terms = new Map<string, ts.PropertySignature>()
   const dataset = (await vocabularies({ only: [prefix] }))[prefix]
@@ -44,7 +44,7 @@ async function createMembers(prefix: string) {
         const term = matchesPrefix[1]
 
         if (!terms.has(matchesPrefix[1])) {
-          terms.set(term, createMember(prefix, term, node.out(rdfsComment).values[0]))
+          terms.set(term, createMember(prefixes, prefix, term, node.out(rdfsComment).values[0]))
         }
       }
     })
@@ -52,7 +52,7 @@ async function createMembers(prefix: string) {
   return [...terms.values()].sort()
 }
 
-export async function generateInterface(prefix: string) {
+export async function generateInterface(prefix: string, vocabs: typeof RdfVocabularies) {
   return ts.createTypeAliasDeclaration(
     undefined,
     undefined,
@@ -61,9 +61,9 @@ export async function generateInterface(prefix: string) {
     ts.createIntersectionTypeNode([
       ts.createTypeReferenceNode(
         ts.createIdentifier('NamespaceBuilder'),
-        undefined
+        undefined,
       ),
-      ts.createTypeLiteralNode(await createMembers(prefix)),
-    ])
+      ts.createTypeLiteralNode(await createMembers(prefix, vocabs)),
+    ]),
   )
 }

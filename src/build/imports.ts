@@ -8,10 +8,10 @@ export default [ts.createImportDeclaration(
     ts.createNamedImports([
       ts.createImportSpecifier(
         undefined,
-        ts.createIdentifier('NamespaceBuilder')
+        ts.createIdentifier('NamespaceBuilder'),
       ),
     ])),
-  ts.createStringLiteral('@rdf-esm/namespace')
+  ts.createStringLiteral('@rdf-esm/namespace'),
 ),
 ts.createImportDeclaration(
   undefined,
@@ -20,7 +20,7 @@ ts.createImportDeclaration(
     undefined,
     ts.createNamedImports([
       ts.createImportSpecifier(undefined, ts.createIdentifier('NamedNode')),
-    ])
+    ]),
   ),
-  ts.createStringLiteral('rdf-js')
+  ts.createStringLiteral('rdf-js'),
 )]

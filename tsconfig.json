@@ -18,7 +18,8 @@
     "declarationMap": true
   },
   "files": [
-    "src/index.ts"
+    "src/index.ts",
+    "src/bin/index.ts"
   ],
-  "include": ["tests", "build"]
+  "include": ["tests", "src"]
 }
