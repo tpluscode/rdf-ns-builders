@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.4.4
+
+### Patch Changes
+
+- 40878c6: Make bin work with local module path
+
 ## 0.4.3
 
 ### Patch Changes
