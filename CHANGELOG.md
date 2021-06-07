@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.4.3
+
+### Patch Changes
+
+- cfc2cff: Added a strict builders module
+- 17f45d0: Added bin for generating own builders package
+
 ## 0.4.2
 
 ### Patch Changes
