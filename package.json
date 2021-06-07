@@ -43,7 +43,10 @@
     "fs-extra": "^10.0.0"
   },
   "peerDependencies": {
-    "@types/rdf-js": "3.x || 4.x"
+    "@zazuko/rdf-vocabularies": "*",
+    "clownface": "^1.2.0",
+    "ts-morph": "^11.0.0",
+    "ts-node": "^10.0.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.10.3",

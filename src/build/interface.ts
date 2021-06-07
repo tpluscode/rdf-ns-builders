@@ -1,11 +1,12 @@
 import { PropertySignatureStructure, StructureKind } from 'ts-morph'
-import type * as RdfVocabularies from '@zazuko/rdf-vocabularies'
+import { shrink } from '@zazuko/rdf-vocabularies'
 import cf from 'clownface'
 import { namedNode } from '@rdfjs/data-model'
+import { ImportedVocabularies } from './'
 
 const rdfsComment = namedNode('http://www.w3.org/2000/01/rdf-schema#comment')
 
-function createMember(prefixes: typeof RdfVocabularies['prefixes'], prefix: string, term: string, comment?: string): PropertySignatureStructure {
+function createMember(prefixes: ImportedVocabularies['prefixes'], prefix: string, term: string, comment?: string): PropertySignatureStructure {
   const member: PropertySignatureStructure = {
     name: `"${term}"`,
     kind: StructureKind.PropertySignature,
@@ -19,7 +20,7 @@ function createMember(prefixes: typeof RdfVocabularies['prefixes'], prefix: stri
   return member
 }
 
-export async function createMembers(prefix: string, { vocabularies, shrink, prefixes }: typeof RdfVocabularies): Promise<PropertySignatureStructure[]> {
+export async function createMembers(prefix: string, { vocabularies, prefixes }: ImportedVocabularies): Promise<PropertySignatureStructure[]> {
   const prefixedRegex = new RegExp(`^${prefix}:(.+)$`)
   const terms = new Map<string, PropertySignatureStructure>()
   const dataset = (await vocabularies({ only: [prefix] }))[prefix]

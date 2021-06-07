@@ -11,8 +11,11 @@ interface Build {
   vocabsPackage: string
 }
 
+export type ImportedVocabularies = Pick<typeof RdfVocabularies, 'vocabularies' | 'prefixes'>
+
 export async function build({ outDir, vocabsPackage }: Build): Promise<void> {
-  const rdfVocabularies: typeof RdfVocabularies = await import(vocabsPackage)
+  const packagePath = vocabsPackage.startsWith('.') ? resolve(process.cwd(), vocabsPackage) : vocabsPackage
+  const rdfVocabularies: ImportedVocabularies = await import(packagePath)
 
   const promises = Object.entries(rdfVocabularies.prefixes).map(([prefix, namespace]) => {
     const sourceFile = project.createSourceFile(resolve(outDir, 'vocabularies', `${prefix}.ts`), undefined, { overwrite: true })
