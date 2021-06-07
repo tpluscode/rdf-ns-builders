@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.4.5
+
+### Patch Changes
+
+- Missing ts-node/register
+
 ## 0.4.4
 
 ### Patch Changes

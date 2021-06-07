@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
+import 'ts-node/register'
 import Program from 'commander'
 import { build } from '../build'
 
