@@ -42,7 +42,7 @@ const schemaPerson: NamedNode = schema.Persona
 
 ## Roll your own
 
-Given a package with same exports a `@zazuko/rdf-vocabularies`, it is possible to generate a set of namespace builders generated from your own vocabularies.
+Given a package with same exports as `@zazuko/rdf-vocabularies`, it is possible to generate a set of namespace builders generated from your own vocabularies.
 
 `ts-morph` is needed to generate the sources. Install it as a dev dependency:
 
