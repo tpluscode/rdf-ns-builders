@@ -94,7 +94,7 @@ interface Quantitykind {
     "CanonicalPartitionFunction": NamedNode<'http://qudt.org/vocab/quantitykind/CanonicalPartitionFunction'>;
     "Capacitance": NamedNode<'http://qudt.org/vocab/quantitykind/Capacitance'>;
     "Capacity": NamedNode<'http://qudt.org/vocab/quantitykind/Capacity'>;
-    "CarrierLifetIme": NamedNode<'http://qudt.org/vocab/quantitykind/CarrierLifetIme'>;
+    "CarrierLifetime": NamedNode<'http://qudt.org/vocab/quantitykind/CarrierLifetime'>;
     "CartesianArea": NamedNode<'http://qudt.org/vocab/quantitykind/CartesianArea'>;
     "CartesianCoordinates": NamedNode<'http://qudt.org/vocab/quantitykind/CartesianCoordinates'>;
     "CartesianVolume": NamedNode<'http://qudt.org/vocab/quantitykind/CartesianVolume'>;

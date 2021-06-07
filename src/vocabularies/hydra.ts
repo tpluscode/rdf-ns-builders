@@ -16,6 +16,8 @@ interface Hydra {
     "Error": NamedNode<'http://www.w3.org/ns/hydra/core#Error'>;
     /** A representation that serializes a variable value including its language and type information and thus differentiating between IRIs and literals. */
     "ExplicitRepresentation": NamedNode<'http://www.w3.org/ns/hydra/core#ExplicitRepresentation'>;
+    /** Specifies a possible either expected or returned header values */
+    "HeaderSpecification": NamedNode<'http://www.w3.org/ns/hydra/core#HeaderSpecification'>;
     /** The class of IRI templates. */
     "IriTemplate": NamedNode<'http://www.w3.org/ns/hydra/core#IriTemplate'>;
     /** A mapping from an IRI template variable to a property. */
@@ -44,6 +46,8 @@ interface Hydra {
     "VariableRepresentation": NamedNode<'http://www.w3.org/ns/hydra/core#VariableRepresentation'>;
     /** A link to the API documentation */
     "apiDocumentation": NamedNode<'http://www.w3.org/ns/hydra/core#apiDocumentation'>;
+    /** Determines whether the provided set of header values is closed or not. */
+    "closedSet": NamedNode<'http://www.w3.org/ns/hydra/core#closedSet'>;
     /** Collections somehow related to this resource. */
     "collection": NamedNode<'http://www.w3.org/ns/hydra/core#collection'>;
     /** A description. */
@@ -54,10 +58,14 @@ interface Hydra {
     "expects": NamedNode<'http://www.w3.org/ns/hydra/core#expects'>;
     /** Specification of the header expected by the operation. */
     "expectsHeader": NamedNode<'http://www.w3.org/ns/hydra/core#expectsHeader'>;
+    /** Hint on what kind of extensions are in use. */
+    "extension": NamedNode<'http://www.w3.org/ns/hydra/core#extension'>;
     /** The first resource of an interlinked set of resources. */
     "first": NamedNode<'http://www.w3.org/ns/hydra/core#first'>;
     /** A property representing a freetext query. */
     "freetextQuery": NamedNode<'http://www.w3.org/ns/hydra/core#freetextQuery'>;
+    /** Name of the header. */
+    "headerName": NamedNode<'http://www.w3.org/ns/hydra/core#headerName'>;
     /** The last resource of an interlinked set of resources. */
     "last": NamedNode<'http://www.w3.org/ns/hydra/core#last'>;
     /** Instructs to limit set only to N elements. */
@@ -86,6 +94,8 @@ interface Hydra {
     "pageReference": NamedNode<'http://www.w3.org/ns/hydra/core#pageReference'>;
     /** A status that might be returned by the Web API (other statuses should be expected and properly handled as well) */
     "possibleStatus": NamedNode<'http://www.w3.org/ns/hydra/core#possibleStatus'>;
+    /** Possible value of the header. */
+    "possibleValue": NamedNode<'http://www.w3.org/ns/hydra/core#possibleValue'>;
     /** The resource preceding the current instance in an interlinked set of resources. */
     "previous": NamedNode<'http://www.w3.org/ns/hydra/core#previous'>;
     /** A property */
