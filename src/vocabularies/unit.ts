@@ -354,6 +354,7 @@ interface Unit {
     "ERG-SEC": NamedNode<'http://qudt.org/vocab/unit/ERG-SEC'>;
     "ERG": NamedNode<'http://qudt.org/vocab/unit/ERG'>;
     "ERLANG": NamedNode<'http://qudt.org/vocab/unit/ERLANG'>;
+    "EV-PER-ANGSTROM": NamedNode<'http://qudt.org/vocab/unit/EV-PER-ANGSTROM'>;
     "EV-PER-K": NamedNode<'http://qudt.org/vocab/unit/EV-PER-K'>;
     "EV-PER-M": NamedNode<'http://qudt.org/vocab/unit/EV-PER-M'>;
     "EV-PER-T": NamedNode<'http://qudt.org/vocab/unit/EV-PER-T'>;
@@ -1023,6 +1024,7 @@ interface Unit {
     "MicroMOL-PER-M2-DAY": NamedNode<'http://qudt.org/vocab/unit/MicroMOL-PER-M2-DAY'>;
     "MicroMOL-PER-M2-HR": NamedNode<'http://qudt.org/vocab/unit/MicroMOL-PER-M2-HR'>;
     "MicroMOL-PER-M2-SEC": NamedNode<'http://qudt.org/vocab/unit/MicroMOL-PER-M2-SEC'>;
+    "MicroMOL-PER-M2": NamedNode<'http://qudt.org/vocab/unit/MicroMOL-PER-M2'>;
     "MicroMOL-PER-MOL": NamedNode<'http://qudt.org/vocab/unit/MicroMOL-PER-MOL'>;
     "MicroMOL-PER-MicroMOL-DAY": NamedNode<'http://qudt.org/vocab/unit/MicroMOL-PER-MicroMOL-DAY'>;
     "MicroMOL": NamedNode<'http://qudt.org/vocab/unit/MicroMOL'>;
@@ -1220,6 +1222,7 @@ interface Unit {
     "NanoGM": NamedNode<'http://qudt.org/vocab/unit/NanoGM'>;
     "NanoH-PER-M": NamedNode<'http://qudt.org/vocab/unit/NanoH-PER-M'>;
     "NanoH": NamedNode<'http://qudt.org/vocab/unit/NanoH'>;
+    "NanoM2": NamedNode<'http://qudt.org/vocab/unit/NanoM2'>;
     "NanoM": NamedNode<'http://qudt.org/vocab/unit/NanoM'>;
     "NanoMOL-PER-CentiM3-HR": NamedNode<'http://qudt.org/vocab/unit/NanoMOL-PER-CentiM3-HR'>;
     "NanoMOL-PER-KiloGM": NamedNode<'http://qudt.org/vocab/unit/NanoMOL-PER-KiloGM'>;
