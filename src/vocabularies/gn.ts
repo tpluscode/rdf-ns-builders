@@ -1,5 +1,5 @@
 import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
-import { NamedNode } from "rdf-js";
+import { NamedNode } from "@rdfjs/types";
 
 interface Gn {
     "A.ADM1": NamedNode<'http://www.geonames.org/ontology#A.ADM1'>;

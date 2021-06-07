@@ -1,5 +1,5 @@
 import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
-import { NamedNode } from "rdf-js";
+import { NamedNode } from "@rdfjs/types";
 
 interface Dash {
     /** An executable command triggered by an agent, backed by a Script implementation. Actions may get deactivated using sh:deactivated. */

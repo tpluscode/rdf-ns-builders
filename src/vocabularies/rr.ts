@@ -1,5 +1,5 @@
 import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
-import { NamedNode } from "rdf-js";
+import { NamedNode } from "@rdfjs/types";
 
 interface Rr {
     "BaseTableOrView": NamedNode<'http://www.w3.org/ns/r2rml#BaseTableOrView'>;

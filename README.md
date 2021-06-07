@@ -23,7 +23,7 @@ Simply import a namespace builder by its prefix defined in [`@zazuko/rdf-vocabul
 
 ```ts
 import { schema } from '@tpluscode/rdf-ns-builders'
-import { NamedNode } from 'rdf-js'
+import { NamedNode } from '@rdfjs/types'
 
 const schemaPerson: NamedNode = schema.Person
 ```
@@ -34,7 +34,7 @@ The namespace builders exported from the main module allow arbitrary term, even 
 
 ```
 import { schema } from '@tpluscode/rdf-ns-builders/strict'
-import { NamedNode } from 'rdf-js'
+import { NamedNode } from '@rdfjs/types'
 
 // will show error
 const schemaPerson: NamedNode = schema.Persona

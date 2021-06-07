@@ -1,5 +1,5 @@
 import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
-import { NamedNode } from "rdf-js";
+import { NamedNode } from "@rdfjs/types";
 
 interface Prefix {
     "Atto": NamedNode<'http://qudt.org/2.1/vocab/prefix/Atto'>;
