@@ -1,5 +1,5 @@
 import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
-import { NamedNode } from "rdf-js";
+import { NamedNode } from "@rdfjs/types";
 
 interface Ssn {
     /** Describes the Deployment of one or more Systems for a particular purpose. Deployment may be done on a Platform. */

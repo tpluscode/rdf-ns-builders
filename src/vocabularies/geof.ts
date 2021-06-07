@@ -1,5 +1,5 @@
 import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
-import { NamedNode } from "rdf-js";
+import { NamedNode } from "@rdfjs/types";
 
 interface Geof {
     "boundary": NamedNode<'http://www.opengis.net/def/function/geosparql/boundary'>;

@@ -38,12 +38,10 @@
     "*.d.ts.map"
   ],
   "dependencies": {
+    "@rdfjs/types": "*",
     "@rdf-esm/namespace": "^0.5.1",
     "commander": "^7.2.0",
     "fs-extra": "^10.0.0"
-  },
-  "peerDependencies": {
-    "@types/rdf-js": "3.x || 4.x"
   },
   "devDependencies": {
     "@babel/cli": "^7.10.3",
@@ -58,7 +56,6 @@
     "@types/clownface": "^0.12.7",
     "@types/mocha": "^8.0.0",
     "@types/rdf-ext": "^1.3.5",
-    "@types/rdf-js": "*",
     "@types/rdfjs__namespace": "^1.1.1",
     "@typescript-eslint/eslint-plugin": "^2.19.0",
     "@typescript-eslint/parser": "^2.19.0",

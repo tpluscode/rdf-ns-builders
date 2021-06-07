@@ -1,5 +1,5 @@
 import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
-import { NamedNode } from "rdf-js";
+import { NamedNode } from "@rdfjs/types";
 
 interface Ical {
     "DomainOf_rrule": NamedNode<'http://www.w3.org/2002/12/cal/icaltzd#DomainOf_rrule'>;

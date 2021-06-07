@@ -1,5 +1,5 @@
 import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
-import { NamedNode } from "rdf-js";
+import { NamedNode } from "@rdfjs/types";
 
 interface Qkdv {
     "A-1E0L-3I0M0H0T0D0": NamedNode<'http://qudt.org/vocab/dimensionvector/A-1E0L-3I0M0H0T0D0'>;

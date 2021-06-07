@@ -1,5 +1,5 @@
 import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
-import { NamedNode } from "rdf-js";
+import { NamedNode } from "@rdfjs/types";
 
 interface Dcat {
     /** A curated collection of metadata about resources (e.g., datasets and data services in the context of a data catalog). */

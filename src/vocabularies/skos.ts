@@ -1,5 +1,5 @@
 import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
-import { NamedNode } from "rdf-js";
+import { NamedNode } from "@rdfjs/types";
 
 interface Skos {
     "Collection": NamedNode<'http://www.w3.org/2004/02/skos/core#Collection'>;

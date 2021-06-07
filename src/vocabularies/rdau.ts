@@ -1,5 +1,5 @@
 import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
-import { NamedNode } from "rdf-js";
+import { NamedNode } from "@rdfjs/types";
 
 interface Rdau {
     "P60001": NamedNode<'http://rdaregistry.info/Elements/u/P60001'>;

@@ -1,5 +1,5 @@
 import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
-import { NamedNode } from "rdf-js";
+import { NamedNode } from "@rdfjs/types";
 
 interface Dtype {
     "CodeList": NamedNode<'http://www.linkedmodel.org/schema/dtype#CodeList'>;

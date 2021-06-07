@@ -18,7 +18,7 @@ export async function createPrefixFile(sourceFile: SourceFile, prefix: string, n
     namedImports: [{
       name: 'NamedNode',
     }],
-    moduleSpecifier: 'rdf-js',
+    moduleSpecifier: '@rdfjs/types',
   })
 
   const prefixInterface = sourceFile.addInterface({

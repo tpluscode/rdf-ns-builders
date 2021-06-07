@@ -1,5 +1,5 @@
 import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
-import { NamedNode } from "rdf-js";
+import { NamedNode } from "@rdfjs/types";
 
 interface Duv {
     /** Predefined criteria used to express a user opinion about a dataset or distribution using a discrete range of values. */
