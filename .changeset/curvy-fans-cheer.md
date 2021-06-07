@@ -1,5 +1,5 @@
 ---
-"@tpluscode/rdf-ns-builders": minor
+"@tpluscode/rdf-ns-builders": major
 ---
 
 Updated vocabularies from `@zazuko/rdf-vocabularies@2021.5.3`:
