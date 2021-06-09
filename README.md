@@ -53,7 +53,7 @@ npm i -D ts-node ts-morph clownface @zazuko/rdf-vocabularies
 Run the following command to generate builders package by providing the source package name and output directory.
 
 ```
-npm run rdf-ns-builders generate -p @my/vocabularies -o builders
+npm run rdf-ns-builders generate -p @my/vocabularies -o builders safe-identifier
 ```
 
 This will create a directory `source`, containing typescript modules for all vocabularies, similar to those from [src](src/vocabularies).

@@ -1,11 +1,11 @@
 import { ExportDeclarationStructure, OptionalKind, SourceFile } from 'ts-morph'
-import { aliases } from './strings'
+import { identifier } from 'safe-identifier'
 
 function createExport(prefix: string, exportName: string): OptionalKind<ExportDeclarationStructure> {
   return {
     namedExports: [{
       name: exportName,
-      alias: aliases[prefix] || prefix,
+      alias: identifier(prefix),
     }],
     moduleSpecifier: `./vocabularies/${prefix}`,
   }
