@@ -44,16 +44,16 @@ const schemaPerson: NamedNode = schema.Persona
 
 Given a package with same exports as `@zazuko/rdf-vocabularies`, it is possible to generate a set of namespace builders generated from your own vocabularies.
 
-`ts-morph` is needed to generate the sources. Install it as a dev dependency:
+Install required peer dependencies:
 
 ```
-npm i -D ts-morph
+npm i -D ts-node ts-morph clownface @zazuko/rdf-vocabularies
 ```
 
 Run the following command to generate builders package by providing the source package name and output directory.
 
 ```
-npm run rdf-ns-builders generate -p @my/vocabularies -o source
+npm run rdf-ns-builders generate -p @my/vocabularies -o builders
 ```
 
 This will create a directory `source`, containing typescript modules for all vocabularies, similar to those from [src](src/vocabularies).

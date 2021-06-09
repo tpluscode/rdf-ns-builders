@@ -1,6 +1,6 @@
 {
   "name": "@tpluscode/rdf-ns-builders",
-  "version": "0.4.3",
+  "version": "0.4.5",
   "description": "Generated RDF/JS namespace builders for common vocabularies",
   "main": "index.js",
   "module": "index.mjs",
@@ -44,7 +44,10 @@
     "fs-extra": "^10.0.0"
   },
   "peerDependencies": {
-    "ts-morph": "^11.0.0"
+    "@zazuko/rdf-vocabularies": "*",
+    "clownface": "^1",
+    "ts-morph": ">=11",
+    "ts-node": ">= 8"
   },
   "devDependencies": {
     "@babel/cli": "^7.10.3",

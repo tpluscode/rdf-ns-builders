@@ -1,9 +1,9 @@
 import { SourceFile, VariableDeclarationKind } from 'ts-morph'
-import type * as RdfVocabularies from '@zazuko/rdf-vocabularies'
+import type { ImportedVocabularies } from '.'
 import { createMembers } from './interface'
 import { toProperCase } from './strings'
 
-export async function createPrefixFile(sourceFile: SourceFile, prefix: string, namespace: string, vocabs: typeof RdfVocabularies) {
+export async function createPrefixFile(sourceFile: SourceFile, prefix: string, namespace: string, vocabs: ImportedVocabularies) {
   const interfaceName = toProperCase(prefix)
 
   sourceFile.addImportDeclaration({
