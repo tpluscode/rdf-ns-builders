@@ -1,5 +1,20 @@
 # Changelog
 
+## 1.0.0
+
+### Major Changes
+
+- 2495728: Updated vocabularies from `@zazuko/rdf-vocabularies@2021.5.3`:
+
+  - New terms: `hydra`, `quantitykind`, `unit`
+  - Fixed namespace of `prefix` (`http://qudt.org/vocab/prefix`)
+
+### Patch Changes
+
+- 04704d8: Use `@rdfjs/types` package instead of old typing
+- 768379b: CLI did not work locally because of double ts-node
+- f9f8edb: Generating failed on prefix with hyphens
+
 ## 0.4.5
 
 ### Patch Changes
