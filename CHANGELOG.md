@@ -1,5 +1,29 @@
 # Changelog
 
+## 1.1.0
+
+### Minor Changes
+
+- 3aefaf6: Added latest namespaces from `@zazuko/rdf-ns-vocabularies`:
+  - `bibo`
+  - `dcam`
+  - `dcmitype`
+  - `ebucore`
+  - `exif`
+  - `gs1`[early-tomatoes-tease](early-tomatoes-tease.md)
+  - `locn`
+
+### Patch Changes
+
+- 3aefaf6: Updated namespaces:
+  - `constants`
+  - `dbo`
+  - `qkdv`
+  - `quantitykind`
+  - `qudt`
+  - `schema`
+  - `unit`
+
 ## 1.0.0
 
 ### Major Changes
