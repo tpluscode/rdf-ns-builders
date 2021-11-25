@@ -117,7 +117,7 @@ interface Hydra {
     "subject": NamedNode<'http://www.w3.org/ns/hydra/core#subject'>;
     /** A class known to be supported by the Web API */
     "supportedClass": NamedNode<'http://www.w3.org/ns/hydra/core#supportedClass'>;
-    /** An operation supported by instances of the specific Hydra class or the target of the Hydra link */
+    /** An operation supported by instances of the specific Hydra class, or the target of the Hydra link, or IRI template. */
     "supportedOperation": NamedNode<'http://www.w3.org/ns/hydra/core#supportedOperation'>;
     /** The properties known to be supported by a Hydra class */
     "supportedProperty": NamedNode<'http://www.w3.org/ns/hydra/core#supportedProperty'>;

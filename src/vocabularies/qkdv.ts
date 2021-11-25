@@ -53,6 +53,7 @@ interface Qkdv {
     "A0E0L-2I0M0H0T2D0": NamedNode<'http://qudt.org/vocab/dimensionvector/A0E0L-2I0M0H0T2D0'>;
     "A0E0L-2I0M1H0T-1D0": NamedNode<'http://qudt.org/vocab/dimensionvector/A0E0L-2I0M1H0T-1D0'>;
     "A0E0L-2I0M1H0T-2D0": NamedNode<'http://qudt.org/vocab/dimensionvector/A0E0L-2I0M1H0T-2D0'>;
+    "A0E0L-2I0M1H0T-3D0": NamedNode<'http://qudt.org/vocab/dimensionvector/A0E0L-2I0M1H0T-3D0'>;
     "A0E0L-2I0M1H0T0D0": NamedNode<'http://qudt.org/vocab/dimensionvector/A0E0L-2I0M1H0T0D0'>;
     "A0E0L-2I0M1H1T0D0": NamedNode<'http://qudt.org/vocab/dimensionvector/A0E0L-2I0M1H1T0D0'>;
     "A0E0L-2I0M2H0T-2D0": NamedNode<'http://qudt.org/vocab/dimensionvector/A0E0L-2I0M2H0T-2D0'>;
@@ -76,6 +77,7 @@ interface Qkdv {
     "A0E0L0I0M-1H1T3D0": NamedNode<'http://qudt.org/vocab/dimensionvector/A0E0L0I0M-1H1T3D0'>;
     "A0E0L0I0M-2H0T0D0": NamedNode<'http://qudt.org/vocab/dimensionvector/A0E0L0I0M-2H0T0D0'>;
     "A0E0L0I0M0H-1T-1D0": NamedNode<'http://qudt.org/vocab/dimensionvector/A0E0L0I0M0H-1T-1D0'>;
+    "A0E0L0I0M0H-1T0D0": NamedNode<'http://qudt.org/vocab/dimensionvector/A0E0L0I0M0H-1T0D0'>;
     "A0E0L0I0M0H0T-1D0": NamedNode<'http://qudt.org/vocab/dimensionvector/A0E0L0I0M0H0T-1D0'>;
     "A0E0L0I0M0H0T-1D1": NamedNode<'http://qudt.org/vocab/dimensionvector/A0E0L0I0M0H0T-1D1'>;
     "A0E0L0I0M0H0T-2D0": NamedNode<'http://qudt.org/vocab/dimensionvector/A0E0L0I0M0H0T-2D0'>;
@@ -148,6 +150,7 @@ interface Qkdv {
     "A0E0L3I0M0H0T-1D0": NamedNode<'http://qudt.org/vocab/dimensionvector/A0E0L3I0M0H0T-1D0'>;
     "A0E0L3I0M0H0T-2D0": NamedNode<'http://qudt.org/vocab/dimensionvector/A0E0L3I0M0H0T-2D0'>;
     "A0E0L3I0M0H0T0D0": NamedNode<'http://qudt.org/vocab/dimensionvector/A0E0L3I0M0H0T0D0'>;
+    "A0E0L3I0M0H1T0D0": NamedNode<'http://qudt.org/vocab/dimensionvector/A0E0L3I0M0H1T0D0'>;
     "A0E0L3I0M1H0T-1D0": NamedNode<'http://qudt.org/vocab/dimensionvector/A0E0L3I0M1H0T-1D0'>;
     "A0E0L3I0M1H0T-2D0": NamedNode<'http://qudt.org/vocab/dimensionvector/A0E0L3I0M1H0T-2D0'>;
     "A0E0L4I0M0H0T-1D0": NamedNode<'http://qudt.org/vocab/dimensionvector/A0E0L4I0M0H0T-1D0'>;

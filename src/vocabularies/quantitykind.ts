@@ -31,6 +31,7 @@ interface Quantitykind {
     "AmountOfSubstanceConcentrationOfB": NamedNode<'http://qudt.org/vocab/quantitykind/AmountOfSubstanceConcentrationOfB'>;
     "AmountOfSubstanceFractionOfB": NamedNode<'http://qudt.org/vocab/quantitykind/AmountOfSubstanceFractionOfB'>;
     "AmountOfSubstancePerUnitMass": NamedNode<'http://qudt.org/vocab/quantitykind/AmountOfSubstancePerUnitMass'>;
+    "AmountOfSubstancePerUnitMassPressure": NamedNode<'http://qudt.org/vocab/quantitykind/AmountOfSubstancePerUnitMassPressure'>;
     "AmountOfSubstancePerUnitVolume": NamedNode<'http://qudt.org/vocab/quantitykind/AmountOfSubstancePerUnitVolume'>;
     "Angle": NamedNode<'http://qudt.org/vocab/quantitykind/Angle'>;
     "AngleOfAttack": NamedNode<'http://qudt.org/vocab/quantitykind/AngleOfAttack'>;
@@ -77,6 +78,8 @@ interface Quantitykind {
     "BindingFraction": NamedNode<'http://qudt.org/vocab/quantitykind/BindingFraction'>;
     /** citation: https://en.wikipedia.org/wiki/Blood_sugar_level */
     "BloodGlucoseLevel": NamedNode<'http://qudt.org/vocab/quantitykind/BloodGlucoseLevel'>;
+    /** citation: https://en.wikipedia.org/wiki/Blood_sugar_level */
+    "BloodGlucoseLevel_Mass": NamedNode<'http://qudt.org/vocab/quantitykind/BloodGlucoseLevel_Mass'>;
     "BodyMassIndex": NamedNode<'http://qudt.org/vocab/quantitykind/BodyMassIndex'>;
     "BraggAngle": NamedNode<'http://qudt.org/vocab/quantitykind/BraggAngle'>;
     "Breadth": NamedNode<'http://qudt.org/vocab/quantitykind/Breadth'>;
@@ -119,7 +122,7 @@ interface Quantitykind {
     "Concentration": NamedNode<'http://qudt.org/vocab/quantitykind/Concentration'>;
     "Conductance": NamedNode<'http://qudt.org/vocab/quantitykind/Conductance'>;
     "ConductionSpeed": NamedNode<'http://qudt.org/vocab/quantitykind/ConductionSpeed'>;
-    "ConductiveHeatTransfer": NamedNode<'http://qudt.org/vocab/quantitykind/ConductiveHeatTransfer'>;
+    "ConductiveHeatTransferRate": NamedNode<'http://qudt.org/vocab/quantitykind/ConductiveHeatTransferRate'>;
     "Conductivity": NamedNode<'http://qudt.org/vocab/quantitykind/Conductivity'>;
     "ConvectiveHeatTransfer": NamedNode<'http://qudt.org/vocab/quantitykind/ConvectiveHeatTransfer'>;
     "CouplingFactor": NamedNode<'http://qudt.org/vocab/quantitykind/CouplingFactor'>;
@@ -332,7 +335,9 @@ interface Quantitykind {
     "IgnitionIntervalTime": NamedNode<'http://qudt.org/vocab/quantitykind/IgnitionIntervalTime'>;
     "Illuminance": NamedNode<'http://qudt.org/vocab/quantitykind/Illuminance'>;
     "Impedance": NamedNode<'http://qudt.org/vocab/quantitykind/Impedance'>;
+    "Incidence": NamedNode<'http://qudt.org/vocab/quantitykind/Incidence'>;
     "IncidenceProportion": NamedNode<'http://qudt.org/vocab/quantitykind/IncidenceProportion'>;
+    "IncidenceRate": NamedNode<'http://qudt.org/vocab/quantitykind/IncidenceRate'>;
     "Inductance": NamedNode<'http://qudt.org/vocab/quantitykind/Inductance'>;
     "InfiniteMultiplicationFactor": NamedNode<'http://qudt.org/vocab/quantitykind/InfiniteMultiplicationFactor'>;
     "InformationEntropy": NamedNode<'http://qudt.org/vocab/quantitykind/InformationEntropy'>;
@@ -436,7 +441,7 @@ interface Quantitykind {
     "MagneticAreaMoment": NamedNode<'http://qudt.org/vocab/quantitykind/MagneticAreaMoment'>;
     "MagneticDipoleMoment": NamedNode<'http://qudt.org/vocab/quantitykind/MagneticDipoleMoment'>;
     "MagneticField": NamedNode<'http://qudt.org/vocab/quantitykind/MagneticField'>;
-    "MagneticFieldStrength": NamedNode<'http://qudt.org/vocab/quantitykind/MagneticFieldStrength'>;
+    "MagneticFieldStrength_H": NamedNode<'http://qudt.org/vocab/quantitykind/MagneticFieldStrength_H'>;
     "MagneticFlux": NamedNode<'http://qudt.org/vocab/quantitykind/MagneticFlux'>;
     "MagneticFluxDensity": NamedNode<'http://qudt.org/vocab/quantitykind/MagneticFluxDensity'>;
     "MagneticFluxPerUnitLength": NamedNode<'http://qudt.org/vocab/quantitykind/MagneticFluxPerUnitLength'>;
@@ -587,6 +592,8 @@ interface Quantitykind {
     "PhotoThresholdOfAwarenessFunction": NamedNode<'http://qudt.org/vocab/quantitykind/PhotoThresholdOfAwarenessFunction'>;
     "PhotonIntensity": NamedNode<'http://qudt.org/vocab/quantitykind/PhotonIntensity'>;
     "PhotonRadiance": NamedNode<'http://qudt.org/vocab/quantitykind/PhotonRadiance'>;
+    "PhotosyntheticPhotonFlux": NamedNode<'http://qudt.org/vocab/quantitykind/PhotosyntheticPhotonFlux'>;
+    "PhotosyntheticPhotonFluxDensity": NamedNode<'http://qudt.org/vocab/quantitykind/PhotosyntheticPhotonFluxDensity'>;
     "PlanckFunction": NamedNode<'http://qudt.org/vocab/quantitykind/PlanckFunction'>;
     "PlaneAngle": NamedNode<'http://qudt.org/vocab/quantitykind/PlaneAngle'>;
     "PoissonRatio": NamedNode<'http://qudt.org/vocab/quantitykind/PoissonRatio'>;
@@ -610,6 +617,7 @@ interface Quantitykind {
     "PressureCoefficient": NamedNode<'http://qudt.org/vocab/quantitykind/PressureCoefficient'>;
     "PressurePercentage": NamedNode<'http://qudt.org/vocab/quantitykind/PressurePercentage'>;
     "PressureRatio": NamedNode<'http://qudt.org/vocab/quantitykind/PressureRatio'>;
+    "Prevalence": NamedNode<'http://qudt.org/vocab/quantitykind/Prevalence'>;
     "PrincipalQuantumNumber": NamedNode<'http://qudt.org/vocab/quantitykind/PrincipalQuantumNumber'>;
     "PropagationCoefficient": NamedNode<'http://qudt.org/vocab/quantitykind/PropagationCoefficient'>;
     "PropellantBurnRate": NamedNode<'http://qudt.org/vocab/quantitykind/PropellantBurnRate'>;

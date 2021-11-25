@@ -1053,7 +1053,6 @@ interface Qudt {
     "Double_X": NamedNode<'http://qudt.org/schema/qudt/Double_X'>;
     "Double_Y": NamedNode<'http://qudt.org/schema/qudt/Double_Y'>;
     "Double_Z": NamedNode<'http://qudt.org/schema/qudt/Double_Z'>;
-    "ResourceUnit": NamedNode<'http://qudt.org/schema/qudt/ResourceUnit'>;
     "DataElement": NamedNode<'http://qudt.org/schema/qudt/DataElement'>;
     "fieldLabel": NamedNode<'http://qudt.org/schema/qudt/fieldLabel'>;
     "fieldType": NamedNode<'http://qudt.org/schema/qudt/fieldType'>;

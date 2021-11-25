@@ -26,7 +26,7 @@ interface Constant {
     "AtomicUnitOfCharge": NamedNode<'http://qudt.org/vocab/constant/AtomicUnitOfCharge'>;
     "AtomicUnitOfChargeDensity": NamedNode<'http://qudt.org/vocab/constant/AtomicUnitOfChargeDensity'>;
     "AtomicUnitOfCurrent": NamedNode<'http://qudt.org/vocab/constant/AtomicUnitOfCurrent'>;
-    "AtomicUnitOfElectricDipoleMom.": NamedNode<'http://qudt.org/vocab/constant/AtomicUnitOfElectricDipoleMom.'>;
+    "AtomicUnitOfElectricDipoleMoment": NamedNode<'http://qudt.org/vocab/constant/AtomicUnitOfElectricDipoleMoment'>;
     "AtomicUnitOfElectricField": NamedNode<'http://qudt.org/vocab/constant/AtomicUnitOfElectricField'>;
     "AtomicUnitOfElectricFieldGradient": NamedNode<'http://qudt.org/vocab/constant/AtomicUnitOfElectricFieldGradient'>;
     "AtomicUnitOfElectricPolarizablity": NamedNode<'http://qudt.org/vocab/constant/AtomicUnitOfElectricPolarizablity'>;
@@ -258,10 +258,10 @@ interface Constant {
     "ProtonGFactor": NamedNode<'http://qudt.org/vocab/constant/ProtonGFactor'>;
     "ProtonGyromagneticRatio": NamedNode<'http://qudt.org/vocab/constant/ProtonGyromagneticRatio'>;
     "ProtonGyromagneticRatioOver2Pi": NamedNode<'http://qudt.org/vocab/constant/ProtonGyromagneticRatioOver2Pi'>;
-    "ProtonMag.ShieldingCorrection": NamedNode<'http://qudt.org/vocab/constant/ProtonMag.ShieldingCorrection'>;
     "ProtonMagneticMoment": NamedNode<'http://qudt.org/vocab/constant/ProtonMagneticMoment'>;
     "ProtonMagneticMomentToBohrMagnetonRatio": NamedNode<'http://qudt.org/vocab/constant/ProtonMagneticMomentToBohrMagnetonRatio'>;
     "ProtonMagneticMomentToNuclearMagnetonRatio": NamedNode<'http://qudt.org/vocab/constant/ProtonMagneticMomentToNuclearMagnetonRatio'>;
+    "ProtonMagneticShieldingCorrection": NamedNode<'http://qudt.org/vocab/constant/ProtonMagneticShieldingCorrection'>;
     "ProtonMass": NamedNode<'http://qudt.org/vocab/constant/ProtonMass'>;
     "ProtonMassEnergyEquivalent": NamedNode<'http://qudt.org/vocab/constant/ProtonMassEnergyEquivalent'>;
     "ProtonMassEnergyEquivalentInMeV": NamedNode<'http://qudt.org/vocab/constant/ProtonMassEnergyEquivalentInMeV'>;

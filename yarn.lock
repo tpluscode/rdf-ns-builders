@@ -1346,10 +1346,10 @@
   resolved "https://registry.yarnpkg.com/@ungap/promise-all-settled/-/promise-all-settled-1.1.2.tgz#aa58042711d6e3275dd37dc597e5d31e8c290a44"
   integrity sha512-sL/cEvJWAnClXw0wHk85/2L0G6Sj8UB0Ctc1TEMbKSsmpRosqhwj9gWgFRZSrBr2f9tiXISwNhCPmlfqUqyb9Q==
 
-"@zazuko/rdf-vocabularies@2021.5.3":
-  version "2021.5.3"
-  resolved "https://registry.yarnpkg.com/@zazuko/rdf-vocabularies/-/rdf-vocabularies-2021.5.3.tgz#04b09c43ddbec65c70527aa21b1fe1fc4931bcfa"
-  integrity sha512-cbT2Cx+nnzbkY26O5Si0IZ01oNjqdE+WaMp89ijkcs9vxBzOCMGadKrucDXPEUIuVjk18TfPUYQ6tFqSB8R7CA==
+"@zazuko/rdf-vocabularies@2021.9.22-3":
+  version "2021.9.22-3"
+  resolved "https://registry.yarnpkg.com/@zazuko/rdf-vocabularies/-/rdf-vocabularies-2021.9.22-3.tgz#4b22a916246c769e09ddb7638cb455bb917b8e67"
+  integrity sha512-+4732eaxvNR8DM3TuBNncb8DLTGgjD5slhp54Bed1G4YMmLfRg426ZHGKWQHg2sHg6GaY5N5XYqzqEaEpn3u+w==
   dependencies:
     "@rdfjs/parser-n3" "^1.1.4"
     commander "^5.0.0"

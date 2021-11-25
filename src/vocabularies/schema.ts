@@ -140,6 +140,8 @@ interface Schema {
     "Audience": NamedNode<'http://schema.org/Audience'>;
     /** An audio file. */
     "AudioObject": NamedNode<'http://schema.org/AudioObject'>;
+    /** A specific and exact (byte-for-byte) version of an [[AudioObject]]. Two byte-for-byte identical files, for the purposes of this type, considered identical. If they have different embedded metadata the files will differ. Different external facts about the files, e.g. creator or dateCreated that aren't represented in their actual content, do not affect this notion of identity. */
+    "AudioObjectSnapshot": NamedNode<'http://schema.org/AudioObjectSnapshot'>;
     /** An audiobook. */
     "Audiobook": NamedNode<'http://schema.org/Audiobook'>;
     /** Book format: Audiobook. This is an enumerated value for use with the bookFormat property. There is also a type 'Audiobook' in the bib extension which includes Audiobook specific properties. */
@@ -207,7 +209,9 @@ interface Schema {
     "BenefitsHealthAspect": NamedNode<'http://schema.org/BenefitsHealthAspect'>;
     /** A bike store. */
     "BikeStore": NamedNode<'http://schema.org/BikeStore'>;
-    /** A blog. */
+    /** Any biological, chemical, or biochemical thing. For example: a protein; a gene; a chemical; a synthetic chemical. */
+    "BioChemEntity": NamedNode<'http://schema.org/BioChemEntity'>;
+    /** A [blog](https://en.wikipedia.org/wiki/Blog), sometimes known as a "weblog". Note that the individual posts ([[BlogPosting]]s) in a [[Blog]] are often colloqually referred to by the same term. */
     "Blog": NamedNode<'http://schema.org/Blog'>;
     /** A blog post. */
     "BlogPosting": NamedNode<'http://schema.org/BlogPosting'>;
@@ -399,6 +403,8 @@ interface Schema {
     "CheckOutAction": NamedNode<'http://schema.org/CheckOutAction'>;
     /** Web page type: Checkout page. */
     "CheckoutPage": NamedNode<'http://schema.org/CheckoutPage'>;
+    /** A chemical substance is 'a portion of matter of constant composition, composed of molecular entities of the same type or of different types' (source: [ChEBI:59999](https://www.ebi.ac.uk/chebi/searchId.do?chebiId=59999)). */
+    "ChemicalSubstance": NamedNode<'http://schema.org/ChemicalSubstance'>;
     /** A Childcare center. */
     "ChildCare": NamedNode<'http://schema.org/ChildCare'>;
     /** Event type: Children's event. */
@@ -928,7 +934,7 @@ interface Schema {
     "EvidenceLevelC": NamedNode<'http://schema.org/EvidenceLevelC'>;
     /** A structured value representing exchange rate. */
     "ExchangeRateSpecification": NamedNode<'http://schema.org/ExchangeRateSpecification'>;
-    /** A ExchangeRefund ... */
+    /** Specifies that a refund can be done as an exchange for the same product. */
     "ExchangeRefund": NamedNode<'http://schema.org/ExchangeRefund'>;
     /** The act of participating in exertive activity for the purposes of improving health and fitness. */
     "ExerciseAction": NamedNode<'http://schema.org/ExerciseAction'>;
@@ -1000,11 +1006,13 @@ interface Schema {
     "FoodService": NamedNode<'http://schema.org/FoodService'>;
     /** Four-wheel drive is a transmission layout where the engine primarily drives two wheels with a part-time four-wheel drive capability. */
     "FourWheelDriveConfiguration": NamedNode<'http://schema.org/FourWheelDriveConfiguration'>;
+    /** Specifies that product returns are free of charge for the customer. */
+    "FreeReturn": NamedNode<'http://schema.org/FreeReturn'>;
     /** The day of the week between Thursday and Saturday. */
     "Friday": NamedNode<'http://schema.org/Friday'>;
     /** Front-wheel drive is a transmission layout where the engine drives the front wheels. */
     "FrontWheelDriveConfiguration": NamedNode<'http://schema.org/FrontWheelDriveConfiguration'>;
-    /** A FullRefund ... */
+    /** Specifies that a refund can be done in the full amount the customer paid for the product */
     "FullRefund": NamedNode<'http://schema.org/FullRefund'>;
     /**
      * A FundingAgency is an organization that implements one or more [[FundingScheme]]s and manages
@@ -1043,6 +1051,8 @@ interface Schema {
     "GatedResidenceCommunity": NamedNode<'http://schema.org/GatedResidenceCommunity'>;
     /** An enumeration of genders. */
     "GenderType": NamedNode<'http://schema.org/GenderType'>;
+    /** A discrete unit of inheritance which affects one or more biological traits (Source: [https://en.wikipedia.org/wiki/Gene](https://en.wikipedia.org/wiki/Gene)). Examples include FOXP2 (Forkhead box protein P2), SCARNA21 (small Cajal body-specific RNA 21), A- (agouti genotype). */
+    "Gene": NamedNode<'http://schema.org/Gene'>;
     /** A general contractor. */
     "GeneralContractor": NamedNode<'http://schema.org/GeneralContractor'>;
     /** A specific branch of medical science that pertains to hereditary transmission and the variation of inherited characteristics and disorders. */
@@ -1216,6 +1226,8 @@ interface Schema {
     "ImageGallery": NamedNode<'http://schema.org/ImageGallery'>;
     /** An image file. */
     "ImageObject": NamedNode<'http://schema.org/ImageObject'>;
+    /** A specific and exact (byte-for-byte) version of an [[ImageObject]]. Two byte-for-byte identical files, for the purposes of this type, considered identical. If they have different embedded metadata (e.g. XMP, EXIF) the files will differ. Different external facts about the files, e.g. creator or dateCreated that aren't represented in their actual content, do not affect this notion of identity. */
+    "ImageObjectSnapshot": NamedNode<'http://schema.org/ImageObjectSnapshot'>;
     /** Any medical imaging modality typically used for diagnostic purposes. */
     "ImagingTest": NamedNode<'http://schema.org/ImagingTest'>;
     /** Indicates that a legislation is in force. */
@@ -1358,7 +1370,7 @@ interface Schema {
     "LiteraryEvent": NamedNode<'http://schema.org/LiteraryEvent'>;
     /** LiveAlbum. */
     "LiveAlbum": NamedNode<'http://schema.org/LiveAlbum'>;
-    /** A blog post intended to provide a rolling textual coverage of an ongoing event through continuous updates. */
+    /** A [[LiveBlogPosting]] is a [[BlogPosting]] intended to provide a rolling textual coverage of an ongoing event through continuous updates. */
     "LiveBlogPosting": NamedNode<'http://schema.org/LiveBlogPosting'>;
     /** Information about coping or life related to the topic. */
     "LivingWithHealthAspect": NamedNode<'http://schema.org/LivingWithHealthAspect'>;
@@ -1429,6 +1441,8 @@ interface Schema {
      *     to combat misinformation, the specific structures for representing media objects, their versions and publication context, is still evolving. Similarly, best practices for the relationship between [[MediaReview]] and [[ClaimReview]] markup has not yet been finalized.
      */
     "MediaReview": NamedNode<'http://schema.org/MediaReview'>;
+    /** Represents an item or group of closely related items treated as a unit for the sake of evaluation in a [[MediaReview]]. Authorship etc. apply to the items rather than to the curation/grouping or reviewing party. */
+    "MediaReviewItem": NamedNode<'http://schema.org/MediaReviewItem'>;
     /** A subscription which allows a user to access media including audio, video, books, etc. */
     "MediaSubscription": NamedNode<'http://schema.org/MediaSubscription'>;
     /** Target audiences for medical web pages. */
@@ -1534,17 +1548,19 @@ interface Schema {
     "MenuItem": NamedNode<'http://schema.org/MenuItem'>;
     /** A sub-grouping of food or drink items in a menu. E.g. courses (such as 'Dinner', 'Breakfast', etc.), specific type of dishes (such as 'Meat', 'Vegan', 'Drinks', etc.), or some other classification made by the menu provider. */
     "MenuSection": NamedNode<'http://schema.org/MenuSection'>;
-    /** MerchantReturnEnumeration enumerates several kinds of product return policy. Note that this structure may not capture all aspects of the policy. */
+    /** Enumerates several kinds of product return policies. */
     "MerchantReturnEnumeration": NamedNode<'http://schema.org/MerchantReturnEnumeration'>;
-    /** MerchantReturnFiniteReturnWindow: there is a finite window for product returns. */
+    /** Specifies that there is a finite window for product returns. */
     "MerchantReturnFiniteReturnWindow": NamedNode<'http://schema.org/MerchantReturnFiniteReturnWindow'>;
-    /** MerchantReturnNotPermitted: product returns are not permitted. */
+    /** Specifies that product returns are not permitted. */
     "MerchantReturnNotPermitted": NamedNode<'http://schema.org/MerchantReturnNotPermitted'>;
-    /** A MerchantReturnPolicy provides information about product return policies associated with an [[Organization]] or [[Product]]. */
+    /** A MerchantReturnPolicy provides information about product return policies associated with an [[Organization]], [[Product]], or [[Offer]]. */
     "MerchantReturnPolicy": NamedNode<'http://schema.org/MerchantReturnPolicy'>;
-    /** MerchantReturnUnlimitedWindow: there is an unlimited window for product returns. */
+    /** A seasonal override of a return policy, for example used for holidays. */
+    "MerchantReturnPolicySeasonalOverride": NamedNode<'http://schema.org/MerchantReturnPolicySeasonalOverride'>;
+    /** Specifies that there is an unlimited window for product returns. */
     "MerchantReturnUnlimitedWindow": NamedNode<'http://schema.org/MerchantReturnUnlimitedWindow'>;
-    /** MerchantReturnUnspecified: a product return policy is not specified here. */
+    /** Specifies that a product return policy is not provided. */
     "MerchantReturnUnspecified": NamedNode<'http://schema.org/MerchantReturnUnspecified'>;
     /** A single message from a sender to one or more organizations or people. */
     "Message": NamedNode<'http://schema.org/Message'>;
@@ -1564,6 +1580,8 @@ interface Schema {
     "MobileApplication": NamedNode<'http://schema.org/MobileApplication'>;
     /** A store that sells mobile phones and related accessories. */
     "MobilePhoneStore": NamedNode<'http://schema.org/MobilePhoneStore'>;
+    /** Any constitutionally or isotopically distinct atom, molecule, ion, ion pair, radical, radical ion, complex, conformer etc., identifiable as a separately distinguishable entity. */
+    "MolecularEntity": NamedNode<'http://schema.org/MolecularEntity'>;
     /** The day of the week between Sunday and Tuesday. */
     "Monday": NamedNode<'http://schema.org/Monday'>;
     /** A monetary value or range. This type can be used to describe an amount of money such as $50 USD, or a range as in describing a bank account being suitable for a balance between £1,000 and £1,000,000 GBP, or the value of a salary, etc. It is recommended to use [[PriceSpecification]] Types to describe the price of an Offer, Invoice, etc. */
@@ -1914,7 +1932,7 @@ interface Schema {
      *
      */
     "OriginalMediaContent": NamedNode<'http://schema.org/OriginalMediaContent'>;
-    /** OriginalShippingFees ... */
+    /** Specifies that the customer must pay the original shipping costs when returning a product. */
     "OriginalShippingFees": NamedNode<'http://schema.org/OriginalShippingFees'>;
     /** A system of medicine focused on promoting the body's innate ability to heal itself. */
     "Osteopathic": NamedNode<'http://schema.org/Osteopathic'>;
@@ -2046,7 +2064,7 @@ interface Schema {
     "PlanAction": NamedNode<'http://schema.org/PlanAction'>;
     /** A specific branch of medical science that pertains to therapeutic or cosmetic repair or re-formation of missing, injured or malformed tissues or body parts by manual and instrumental means. */
     "PlasticSurgery": NamedNode<'http://schema.org/PlasticSurgery'>;
-    /** A play is a form of literature, usually consisting of dialogue between characters, intended for theatrical performance rather than just reading. Note the peformance of a Play would be a [[TheaterEvent]] - the *Play* being the [[workPerformed]]. */
+    /** A play is a form of literature, usually consisting of dialogue between characters, intended for theatrical performance rather than just reading. Note: A performance of a Play would be a [[TheaterEvent]] or [[BroadcastEvent]] - the *Play* being the [[workPerformed]]. */
     "Play": NamedNode<'http://schema.org/Play'>;
     /** The act of playing/exercising/training/performing for enjoyment, leisure, recreation, Competition or exercise.\n\nRelated actions:\n\n* [[ListenAction]]: Unlike ListenAction (which is under ConsumeAction), PlayAction refers to performing for an audience or at an event, rather than consuming music.\n* [[WatchAction]]: Unlike WatchAction (which is under ConsumeAction), PlayAction refers to showing/displaying for an audience or at an event, rather than consuming visual content. */
     "PlayAction": NamedNode<'http://schema.org/PlayAction'>;
@@ -2147,6 +2165,8 @@ interface Schema {
     "PropertyValue": NamedNode<'http://schema.org/PropertyValue'>;
     /** A Property value specification. */
     "PropertyValueSpecification": NamedNode<'http://schema.org/PropertyValueSpecification'>;
+    /** Protein is here used in its widest possible definition, as classes of amino acid based molecules. Amyloid-beta Protein in human (UniProt P05067), eukaryota (e.g. an OrthoDB group) or even a single molecule that one can point to are all of type schema:Protein. A protein can thus be a subclass of another protein, e.g. schema:Protein as a UniProt record can have multiple isoforms inside it which would also be schema:Protein. They can be imagined, synthetic, hypothetical or naturally occurring. */
+    "Protein": NamedNode<'http://schema.org/Protein'>;
     /** Single-celled organism that causes an infection. */
     "Protozoa": NamedNode<'http://schema.org/Protozoa'>;
     /** A specific branch of medical science that is concerned with the study, treatment, and prevention of mental illness, using both medical and psychological therapies. */
@@ -2239,7 +2259,7 @@ interface Schema {
     "Recruiting": NamedNode<'http://schema.org/Recruiting'>;
     /** A recycling center. */
     "RecyclingCenter": NamedNode<'http://schema.org/RecyclingCenter'>;
-    /** RefundTypeEnumeration enumerates several kinds of product return refund types. */
+    /** Enumerates several kinds of product return refund types. */
     "RefundTypeEnumeration": NamedNode<'http://schema.org/RefundTypeEnumeration'>;
     /** Indicates that the item is refurbished. */
     "RefurbishedCondition": NamedNode<'http://schema.org/RefurbishedCondition'>;
@@ -2285,6 +2305,8 @@ interface Schema {
     "ReportageNewsArticle": NamedNode<'http://schema.org/ReportageNewsArticle'>;
     /** A patient-reported or observed dosing schedule for a drug or supplement. */
     "ReportedDoseSchedule": NamedNode<'http://schema.org/ReportedDoseSchedule'>;
+    /** A Research Organization (e.g. scientific institute, research company). */
+    "ResearchOrganization": NamedNode<'http://schema.org/ResearchOrganization'>;
     /** A Research project. */
     "ResearchProject": NamedNode<'http://schema.org/ResearchProject'>;
     /** Researchers. */
@@ -2320,7 +2342,7 @@ interface Schema {
     "RespiratoryTherapy": NamedNode<'http://schema.org/RespiratoryTherapy'>;
     /** A restaurant. */
     "Restaurant": NamedNode<'http://schema.org/Restaurant'>;
-    /** RestockingFees ... */
+    /** Specifies that the customer must pay a restocking fee when returning a product */
     "RestockingFees": NamedNode<'http://schema.org/RestockingFees'>;
     /** A diet restricted to certain foods or preparations for cultural, religious, health or lifestyle reasons. */
     "RestrictedDiet": NamedNode<'http://schema.org/RestrictedDiet'>;
@@ -2334,9 +2356,27 @@ interface Schema {
     "Retail": NamedNode<'http://schema.org/Retail'>;
     /** The act of returning to the origin that which was previously received (concrete objects) or taken (ownership). */
     "ReturnAction": NamedNode<'http://schema.org/ReturnAction'>;
-    /** ReturnFeesEnumeration expresses policies for return fees. */
+    /** Specifies that product returns must be made at a kiosk. */
+    "ReturnAtKiosk": NamedNode<'http://schema.org/ReturnAtKiosk'>;
+    /** Specifies that product returns must to be done by mail. */
+    "ReturnByMail": NamedNode<'http://schema.org/ReturnByMail'>;
+    /** Specifies that product returns must be paid for, and are the responsibility of, the customer. */
+    "ReturnFeesCustomerResponsibility": NamedNode<'http://schema.org/ReturnFeesCustomerResponsibility'>;
+    /** Enumerates several kinds of policies for product return fees. */
     "ReturnFeesEnumeration": NamedNode<'http://schema.org/ReturnFeesEnumeration'>;
-    /** ReturnShippingFees ... */
+    /** Specifies that product returns must be made in a store. */
+    "ReturnInStore": NamedNode<'http://schema.org/ReturnInStore'>;
+    /** Indicated that creating a return label is the responsibility of the customer. */
+    "ReturnLabelCustomerResponsibility": NamedNode<'http://schema.org/ReturnLabelCustomerResponsibility'>;
+    /** Indicated that a return label must be downloaded and printed by the customer. */
+    "ReturnLabelDownloadAndPrint": NamedNode<'http://schema.org/ReturnLabelDownloadAndPrint'>;
+    /** Specifies that a return label will be provided by the seller in the shipping box. */
+    "ReturnLabelInBox": NamedNode<'http://schema.org/ReturnLabelInBox'>;
+    /** Enumerates several types of return labels for product returns. */
+    "ReturnLabelSourceEnumeration": NamedNode<'http://schema.org/ReturnLabelSourceEnumeration'>;
+    /** Enumerates several types of product return methods. */
+    "ReturnMethodEnumeration": NamedNode<'http://schema.org/ReturnMethodEnumeration'>;
+    /** Specifies that the customer must pay the return shipping costs when returning a product */
     "ReturnShippingFees": NamedNode<'http://schema.org/ReturnShippingFees'>;
     /** A review of an item - for example, of a restaurant, movie, or store. */
     "Review": NamedNode<'http://schema.org/Review'>;
@@ -2382,7 +2422,7 @@ interface Schema {
     /** Represents a sale price (usually active for a limited period) of an offered product. */
     "SalePrice": NamedNode<'http://schema.org/SalePrice'>;
     /**
-     * Content coded 'satire or content' in a [[MediaReview]], considered in the context of how it was published or shared.
+     * Content coded 'satire or parody content' in a [[MediaReview]], considered in the context of how it was published or shared.
      *
      * For a [[VideoObject]] to be 'satire or parody content': A video that was created as political or humorous commentary and is presented in that context. (Reshares of satire/parody content that do not include relevant context are more likely to fall under the “missing context” rating.)
      *
@@ -2586,6 +2626,8 @@ interface Schema {
     "StagesHealthAspect": NamedNode<'http://schema.org/StagesHealthAspect'>;
     /** A state or province of a country. */
     "State": NamedNode<'http://schema.org/State'>;
+    /** A statement about something, for example a fun or interesting fact. If known, the main entity this statement is about, can be indicated using mainEntity. For more formal claims (e.g. in Fact Checking), consider using [[Claim]] instead. Use the [[text]] property to capture the text of the statement. */
+    "Statement": NamedNode<'http://schema.org/Statement'>;
     /**
      * A StatisticalPopulation is a set of instances of a certain given type that satisfy some set of constraints. The property [[populationType]] is used to specify the type. Any property that can be used on instances of that type can appear on the statistical population. For example, a [[StatisticalPopulation]] representing all [[Person]]s with a [[homeLocation]] of East Podunk California, would be described by applying the appropriate [[homeLocation]] and [[populationType]] properties to a [[StatisticalPopulation]] item that stands for that set of people.
      * The properties [[numConstraints]] and [[constrainingProperty]] are used to specify which of the populations properties are used to specify the population. Note that the sense of "population" used here is the general sense of a statistical
@@ -2599,7 +2641,7 @@ interface Schema {
     "SteeringPositionValue": NamedNode<'http://schema.org/SteeringPositionValue'>;
     /** A retail good store. */
     "Store": NamedNode<'http://schema.org/Store'>;
-    /** A StoreCreditRefund ... */
+    /** Specifies that the customer receives a store credit as refund when returning a product */
     "StoreCreditRefund": NamedNode<'http://schema.org/StoreCreditRefund'>;
     /** Physical activity that is engaged in to improve muscle and bone strength. Also referred to as resistance training. */
     "StrengthTraining": NamedNode<'http://schema.org/StrengthTraining'>;
@@ -2662,6 +2704,8 @@ interface Schema {
     "TaxiStand": NamedNode<'http://schema.org/TaxiStand'>;
     /** Indicates the usage of the car as a taxi. */
     "TaxiVehicleUsage": NamedNode<'http://schema.org/TaxiVehicleUsage'>;
+    /** A set of organisms asserted to represent a natural cohesive biological unit. */
+    "Taxon": NamedNode<'http://schema.org/Taxon'>;
     /** A technical article - Example: How-to (task) topics, step-by-step, procedural troubleshooting, specifications, etc. */
     "TechArticle": NamedNode<'http://schema.org/TechArticle'>;
     /** A unique instance of a television BroadcastService on a CableOrSatelliteService lineup. */
@@ -2847,6 +2891,8 @@ interface Schema {
     "VideoGameSeries": NamedNode<'http://schema.org/VideoGameSeries'>;
     /** A video file. */
     "VideoObject": NamedNode<'http://schema.org/VideoObject'>;
+    /** A specific and exact (byte-for-byte) version of a [[VideoObject]]. Two byte-for-byte identical files, for the purposes of this type, considered identical. If they have different embedded metadata the files will differ. Different external facts about the files, e.g. creator or dateCreated that aren't represented in their actual content, do not affect this notion of identity. */
+    "VideoObjectSnapshot": NamedNode<'http://schema.org/VideoObjectSnapshot'>;
     /** The act of consuming static visual content. */
     "ViewAction": NamedNode<'http://schema.org/ViewAction'>;
     /** VinylFormat. */
@@ -3161,6 +3207,8 @@ interface Schema {
     "alternateName": NamedNode<'http://schema.org/alternateName'>;
     /** A secondary title of the CreativeWork. */
     "alternativeHeadline": NamedNode<'http://schema.org/alternativeHeadline'>;
+    /** Another gene which is a variation of this one. */
+    "alternativeOf": NamedNode<'http://schema.org/alternativeOf'>;
     /** Alumni of an organization. */
     "alumni": NamedNode<'http://schema.org/alumni'>;
     /** An organization that the person is an alumni of. */
@@ -3207,6 +3255,8 @@ interface Schema {
     "appliesToPaymentMethod": NamedNode<'http://schema.org/appliesToPaymentMethod'>;
     /** Collection, [fonds](https://en.wikipedia.org/wiki/Fonds), or item held, kept or maintained by an [[ArchiveOrganization]]. */
     "archiveHeld": NamedNode<'http://schema.org/archiveHeld'>;
+    /** Indicates a page or other link involved in archival of a [[CreativeWork]]. In the case of [[MediaReview]], the items in a [[MediaReviewItem]] may often become inaccessible, but be archived by archival, journalistic, activist, or law enforcement organizations. In such cases, the referenced page may not directly publish the content. */
+    "archivedAt": NamedNode<'http://schema.org/archivedAt'>;
     /** The area within which users can expect to reach the broadcast service. */
     "area": NamedNode<'http://schema.org/area'>;
     /** The geographic area where a service or offered item is provided. */
@@ -3259,10 +3309,18 @@ interface Schema {
     "associatedAnatomy": NamedNode<'http://schema.org/associatedAnatomy'>;
     /** A NewsArticle associated with the Media Object. */
     "associatedArticle": NamedNode<'http://schema.org/associatedArticle'>;
+    /** An associated [[ClaimReview]], related by specific common content, topic or claim. The expectation is that this property would be most typically used in cases where a single activity is conducting both claim reviews and media reviews, in which case [[relatedMediaReview]] would commonly be used on a [[ClaimReview]], while [[relatedClaimReview]] would be used on [[MediaReview]]. */
+    "associatedClaimReview": NamedNode<'http://schema.org/associatedClaimReview'>;
+    /** Disease associated to this BioChemEntity. Such disease can be a MedicalCondition or a URL. If you want to add an evidence supporting the association, please use PropertyValue. */
+    "associatedDisease": NamedNode<'http://schema.org/associatedDisease'>;
     /** A media object that encodes this CreativeWork. This property is a synonym for encoding. */
     "associatedMedia": NamedNode<'http://schema.org/associatedMedia'>;
+    /** An associated [[MediaReview]], related by specific common content, topic or claim. The expectation is that this property would be most typically used in cases where a single activity is conducting both claim reviews and media reviews, in which case [[relatedMediaReview]] would commonly be used on a [[ClaimReview]], while [[relatedClaimReview]] would be used on [[MediaReview]]. */
+    "associatedMediaReview": NamedNode<'http://schema.org/associatedMediaReview'>;
     /** If applicable, a description of the pathophysiology associated with the anatomical system, including potential abnormal changes in the mechanical, physical, and biochemical functions of the system. */
     "associatedPathophysiology": NamedNode<'http://schema.org/associatedPathophysiology'>;
+    /** An associated [[Review]]. */
+    "associatedReview": NamedNode<'http://schema.org/associatedReview'>;
     /** A person that acts as performing member of a sports team; a player as opposed to a coach. */
     "athlete": NamedNode<'http://schema.org/athlete'>;
     /** A person or organization attending the event. */
@@ -3346,6 +3404,12 @@ interface Schema {
     "billingPeriod": NamedNode<'http://schema.org/billingPeriod'>;
     /** Specifies after how much time this price (or price component) becomes valid and billing starts. Can be used, for example, to model a price increase after the first year of a subscription. The unit of measurement is specified by the unitCode property. */
     "billingStart": NamedNode<'http://schema.org/billingStart'>;
+    /** A BioChemEntity that is known to interact with this item. */
+    "bioChemInteraction": NamedNode<'http://schema.org/bioChemInteraction'>;
+    /** A similar BioChemEntity, e.g., obtained by fingerprint similarity algorithms. */
+    "bioChemSimilarity": NamedNode<'http://schema.org/bioChemSimilarity'>;
+    /** A role played by the BioChemEntity within a biological context. */
+    "biologicalRole": NamedNode<'http://schema.org/biologicalRole'>;
     /** The biomechanical properties of the bone. */
     "biomechnicalClass": NamedNode<'http://schema.org/biomechnicalClass'>;
     /** Date of birth. */
@@ -3356,7 +3420,7 @@ interface Schema {
     "bitrate": NamedNode<'http://schema.org/bitrate'>;
     /** A posting that is part of this blog. */
     "blogPost": NamedNode<'http://schema.org/blogPost'>;
-    /** The postings that are part of this blog. */
+    /** Indicates a post that is part of a [[Blog]]. Note that historically, what we term a "Blog" was once known as a "weblog", and that what we term a "BlogPosting" is now often colloquially referred to as a "blog". */
     "blogPosts": NamedNode<'http://schema.org/blogPosts'>;
     /** The blood vessel that carries blood from the heart to the muscle. */
     "bloodSupply": NamedNode<'http://schema.org/bloodSupply'>;
@@ -3481,10 +3545,16 @@ interface Schema {
     "checkinTime": NamedNode<'http://schema.org/checkinTime'>;
     /** The latest someone may check out of a lodging establishment. */
     "checkoutTime": NamedNode<'http://schema.org/checkoutTime'>;
+    /** The chemical composition describes the identity and relative ratio of the chemical elements that make up the substance. */
+    "chemicalComposition": NamedNode<'http://schema.org/chemicalComposition'>;
+    /** A role played by the BioChemEntity within a chemical context. */
+    "chemicalRole": NamedNode<'http://schema.org/chemicalRole'>;
     /** Maximal age of the child. */
     "childMaxAge": NamedNode<'http://schema.org/childMaxAge'>;
     /** Minimal age of the child. */
     "childMinAge": NamedNode<'http://schema.org/childMinAge'>;
+    /** Closest child taxa of the taxon in question. */
+    "childTaxon": NamedNode<'http://schema.org/childTaxon'>;
     /** A child of the person. */
     "children": NamedNode<'http://schema.org/children'>;
     /** The number of milligrams of cholesterol. */
@@ -3493,6 +3563,11 @@ interface Schema {
     "circle": NamedNode<'http://schema.org/circle'>;
     /** A citation or reference to another creative work, such as another publication, web page, scholarly article, etc. */
     "citation": NamedNode<'http://schema.org/citation'>;
+    /**
+     * For a [[Claim]] interpreted from [[MediaObject]] content
+     *     sed to indicate a claim contained, implied or refined from the content of a [[MediaObject]].
+     */
+    "claimInterpreter": NamedNode<'http://schema.org/claimInterpreter'>;
     /** A short summary of the specific claims reviewed in a ClaimReview. */
     "claimReviewed": NamedNode<'http://schema.org/claimReviewed'>;
     /** Description of the absorption and elimination of drugs, including their concentration (pharmacokinetics, pK) and biological effects (pharmacodynamics, pD). */
@@ -3614,7 +3689,17 @@ interface Schema {
     "countriesNotSupported": NamedNode<'http://schema.org/countriesNotSupported'>;
     /** Countries for which the application is supported. You can also provide the two-letter ISO 3166-1 alpha-2 country code. */
     "countriesSupported": NamedNode<'http://schema.org/countriesSupported'>;
-    /** The country of the principal offices of the production company or individual responsible for the movie or program. */
+    /** The place where the product was assembled. */
+    "countryOfAssembly": NamedNode<'http://schema.org/countryOfAssembly'>;
+    /** The place where the item (typically [[Product]]) was last processed and tested before importation. */
+    "countryOfLastProcessing": NamedNode<'http://schema.org/countryOfLastProcessing'>;
+    /**
+     * The country of origin of something, including products as well as creative  works such as movie and TV content.
+     *
+     * In the case of TV and movie, this would be the country of the principle offices of the production company or individual responsible for the movie. For other kinds of [[CreativeWork]] it is difficult to provide fully general guidance, and properties such as [[contentLocation]] and [[locationCreated]] may be more applicable.
+     *
+     * In the case of products, the country of origin of the product. The exact interpretation of this may vary by context and product type, and cannot be fully enumerated here.
+     */
     "countryOfOrigin": NamedNode<'http://schema.org/countryOfOrigin'>;
     /** A sub property of location. The course where this action was taken. */
     "course": NamedNode<'http://schema.org/course'>;
@@ -3650,6 +3735,12 @@ interface Schema {
     "currentExchangeRate": NamedNode<'http://schema.org/currentExchangeRate'>;
     /** Party placing the order or paying the invoice. */
     "customer": NamedNode<'http://schema.org/customer'>;
+    /** The type of return fees if the product is returned due to customer remorse. */
+    "customerRemorseReturnFees": NamedNode<'http://schema.org/customerRemorseReturnFees'>;
+    /** The method (from an enumeration) by which the customer obtains a return shipping label for a product returned due to customer remorse. */
+    "customerRemorseReturnLabelSource": NamedNode<'http://schema.org/customerRemorseReturnLabelSource'>;
+    /** The amount of shipping costs if a product is returned due to customer remorse. Applicable when property [[customerRemorseReturnFees]] equals [[ReturnShippingFees]]. */
+    "customerRemorseReturnShippingFeesAmount": NamedNode<'http://schema.org/customerRemorseReturnShippingFeesAmount'>;
     /** Order cutoff time allows merchants to describe the time after which they will no longer process orders received on that day. For orders processed after cutoff time, one day gets added to the delivery time estimate. This property is expected to be most typically used via the [[ShippingRateSettings]] publication pattern. The time is indicated using the ISO-8601 Time format, e.g. "23:30:00-05:00" would represent 6:30 pm Eastern Standard Time (EST) which is 5 hours behind Coordinated Universal Time (UTC). */
     "cutoffTime": NamedNode<'http://schema.org/cutoffTime'>;
     /** collectiondate - Date for which patient counts are reported. */
@@ -3773,6 +3864,8 @@ interface Schema {
     "dietFeatures": NamedNode<'http://schema.org/dietFeatures'>;
     /** One of a set of differential diagnoses for the condition. Specifically, a closely-related or competing diagnosis typically considered later in the cognitive process whereby this medical condition is distinguished from others most likely responsible for a similar collection of signs and symptoms to reach the most parsimonious diagnosis or diagnoses in a patient. */
     "differentialDiagnosis": NamedNode<'http://schema.org/differentialDiagnosis'>;
+    /** Indicates whether an [[url]] that is associated with a [[JobPosting]] enables direct application for the job, via the posting website. A job posting is considered to have directApply of [[True]] if an application process for the specified job can be directly initiated via the url(s) given (noting that e.g. multiple internet domains might nevertheless be involved at an implementation level). A value of [[False]] is appropriate if there is no clear path to applying directly online for the specified job, navigating directly from the JobPosting url(s) supplied. */
+    "directApply": NamedNode<'http://schema.org/directApply'>;
     /** A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip. */
     "director": NamedNode<'http://schema.org/director'>;
     /** A director of e.g. tv, radio, movie, video games etc. content. Directors can be associated with individual items or with a series, episode, clip. */
@@ -3913,6 +4006,8 @@ interface Schema {
     "email": NamedNode<'http://schema.org/email'>;
     /** A URL pointing to a player for a specific video. In general, this is the information in the ```src``` element of an ```embed``` tag and should not be the same as the content of the ```loc``` tag. */
     "embedUrl": NamedNode<'http://schema.org/embedUrl'>;
+    /** Represents textual captioning from a [[MediaObject]], e.g. text of a 'meme'. */
+    "embeddedTextCaption": NamedNode<'http://schema.org/embeddedTextCaption'>;
     /** The CO2 emissions in g/km. When used in combination with a QuantitativeValue, put "g/km" into the unitText property of that value, since there is no UN/CEFACT Common Code for "g/km". */
     "emissionsCO2": NamedNode<'http://schema.org/emissionsCO2'>;
     /** Someone working for this organization. */
@@ -3925,6 +4020,8 @@ interface Schema {
     "employmentType": NamedNode<'http://schema.org/employmentType'>;
     /** Indicates the department, unit and/or facility where the employee reports and/or in which the job is to be performed. */
     "employmentUnit": NamedNode<'http://schema.org/employmentUnit'>;
+    /** Another BioChemEntity encoded by this one. */
+    "encodesBioChemEntity": NamedNode<'http://schema.org/encodesBioChemEntity'>;
     /** The CreativeWork encoded by this media object. */
     "encodesCreativeWork": NamedNode<'http://schema.org/encodesCreativeWork'>;
     /** A media object that encodes this CreativeWork. This property is a synonym for associatedMedia. */
@@ -4048,6 +4145,8 @@ interface Schema {
     "expertConsiderations": NamedNode<'http://schema.org/expertConsiderations'>;
     /** Date the content expires and is no longer useful or available. For example a [[VideoObject]] or [[NewsArticle]] whose availability or relevance is time-limited, or a [[ClaimReview]] fact check whose publisher wants to indicate that it may no longer be relevant (or helpful to highlight) after some date. */
     "expires": NamedNode<'http://schema.org/expires'>;
+    /** Tissue, organ, biological sample, etc in which activity of this gene has been observed experimentally. For example brain, digestive system. */
+    "expressedIn": NamedNode<'http://schema.org/expressedIn'>;
     /** Family name. In the U.S., the last name of a Person. */
     "familyName": NamedNode<'http://schema.org/familyName'>;
     /** The number of grams of fat. */
@@ -4209,6 +4308,10 @@ interface Schema {
     "guidelineSubject": NamedNode<'http://schema.org/guidelineSubject'>;
     /** The typical delay between the receipt of the order and the goods either leaving the warehouse or being prepared for pickup, in case the delivery method is on site pickup. Typical properties: minValue, maxValue, unitCode (d for DAY).  This is by common convention assumed to mean business days (if a unitCode is used, coded as "d"), i.e. only counting days when the business normally operates. */
     "handlingTime": NamedNode<'http://schema.org/handlingTime'>;
+    /** Indicates a BioChemEntity that (in some sense) has this BioChemEntity as a part. */
+    "hasBioChemEntityPart": NamedNode<'http://schema.org/hasBioChemEntityPart'>;
+    /** A symbolic representation of a BioChemEnity. For example, a nucleotide sequence of a Gene or an amino acid sequence of a Protein. */
+    "hasBioPolymerSequence": NamedNode<'http://schema.org/hasBioPolymerSequence'>;
     /** A broadcast channel of a broadcast service. */
     "hasBroadcastChannel": NamedNode<'http://schema.org/hasBroadcastChannel'>;
     /** A Category code contained in this code set. */
@@ -4243,8 +4346,10 @@ interface Schema {
     "hasMenuItem": NamedNode<'http://schema.org/hasMenuItem'>;
     /** A subgrouping of the menu (by dishes, course, serving time period, etc.). */
     "hasMenuSection": NamedNode<'http://schema.org/hasMenuSection'>;
-    /** Indicates a MerchantReturnPolicy that may be applicable. */
+    /** Specifies a MerchantReturnPolicy that may be applicable. */
     "hasMerchantReturnPolicy": NamedNode<'http://schema.org/hasMerchantReturnPolicy'>;
+    /** Molecular function performed by this BioChemEntity; please use PropertyValue if you want to include any evidence. */
+    "hasMolecularFunction": NamedNode<'http://schema.org/hasMolecularFunction'>;
     /** The Person's occupation. For past professions, use Role for expressing dates. */
     "hasOccupation": NamedNode<'http://schema.org/hasOccupation'>;
     /** Indicates an OfferCatalog listing for this Organization, Person, or Service. */
@@ -4253,6 +4358,8 @@ interface Schema {
     "hasPOS": NamedNode<'http://schema.org/hasPOS'>;
     /** Indicates an item or CreativeWork that is part of this item, or CreativeWork (in some sense). */
     "hasPart": NamedNode<'http://schema.org/hasPart'>;
+    /** A common representation such as a protein sequence or chemical structure for this entity. For images use schema.org/image. */
+    "hasRepresentation": NamedNode<'http://schema.org/hasRepresentation'>;
     /** Indicates a [[Product]] that is a member of this [[ProductGroup]] (or [[ProductModel]]). */
     "hasVariant": NamedNode<'http://schema.org/hasVariant'>;
     /** Headline of the article. */
@@ -4334,6 +4441,10 @@ interface Schema {
     "inAlbum": NamedNode<'http://schema.org/inAlbum'>;
     /** The CableOrSatelliteService offering the channel. */
     "inBroadcastLineup": NamedNode<'http://schema.org/inBroadcastLineup'>;
+    /** Non-proprietary identifier for molecular entity that can be used in printed and electronic data sources thus enabling easier linking of diverse data compilations. */
+    "inChI": NamedNode<'http://schema.org/inChI'>;
+    /** InChIKey is a hashed version of the full InChI (using the SHA-256 algorithm). */
+    "inChIKey": NamedNode<'http://schema.org/inChIKey'>;
     /** A [[CategoryCodeSet]] that contains this category code. */
     "inCodeSet": NamedNode<'http://schema.org/inCodeSet'>;
     /** A [[DefinedTermSet]] that contains this term. */
@@ -4344,7 +4455,7 @@ interface Schema {
     "inPlaylist": NamedNode<'http://schema.org/inPlaylist'>;
     /** Indicates the [[productGroupID]] for a [[ProductGroup]] that this product [[isVariantOf]]. */
     "inProductGroupWithID": NamedNode<'http://schema.org/inProductGroupWithID'>;
-    /** Are in-store returns offered? */
+    /** Are in-store returns offered? (for more advanced return methods use the [[returnMethod]] property) */
     "inStoreReturnsOffered": NamedNode<'http://schema.org/inStoreReturnsOffered'>;
     /** Qualification, candidature, degree, application that Thesis supports. */
     "inSupportOf": NamedNode<'http://schema.org/inSupportOf'>;
@@ -4411,6 +4522,8 @@ interface Schema {
     "interactivityType": NamedNode<'http://schema.org/interactivityType'>;
     /** The interest rate, charged or paid, applicable to the financial product. Note: This is different from the calculated annualPercentageRate. */
     "interestRate": NamedNode<'http://schema.org/interestRate'>;
+    /** Used to indicate a specific claim contained, implied, translated or refined from the content of a [[MediaObject]] or other [[CreativeWork]]. The interpreting party can be indicated using [[claimInterpreter]]. */
+    "interpretedAsClaim": NamedNode<'http://schema.org/interpretedAsClaim'>;
     /** The current approximate inventory level for the item or items. */
     "inventoryLevel": NamedNode<'http://schema.org/inventoryLevel'>;
     /** Relates a property to a property that is its inverse. Inverse properties relate the same pairs of items to each other, but in reversed direction. For example, the 'alumni' and 'alumniOf' properties are inverseOf each other. Some properties don't have explicit inverses; in these situations RDFa and JSON-LD syntax for reverse properties can be used. */
@@ -4429,14 +4542,22 @@ interface Schema {
     "isBasedOnUrl": NamedNode<'http://schema.org/isBasedOnUrl'>;
     /** A pointer to another product (or multiple products) for which this product is a consumable. */
     "isConsumableFor": NamedNode<'http://schema.org/isConsumableFor'>;
+    /** Another BioChemEntity encoding by this one. */
+    "isEncodedByBioChemEntity": NamedNode<'http://schema.org/isEncodedByBioChemEntity'>;
     /** Indicates whether this content is family friendly. */
     "isFamilyFriendly": NamedNode<'http://schema.org/isFamilyFriendly'>;
     /** Was the offer accepted as a gift for someone other than the buyer. */
     "isGift": NamedNode<'http://schema.org/isGift'>;
+    /** Biological process this BioChemEntity is involved in; please use PropertyValue if you want to include any evidence. */
+    "isInvolvedInBiologicalProcess": NamedNode<'http://schema.org/isInvolvedInBiologicalProcess'>;
     /** True if the broadcast is of a live event. */
     "isLiveBroadcast": NamedNode<'http://schema.org/isLiveBroadcast'>;
+    /** Subcellular location where this BioChemEntity is located; please use PropertyValue if you want to include any evidence. */
+    "isLocatedInSubcellularLocation": NamedNode<'http://schema.org/isLocatedInSubcellularLocation'>;
     /** Indicates an item or CreativeWork that this item, or CreativeWork (in some sense), is part of. */
     "isPartOf": NamedNode<'http://schema.org/isPartOf'>;
+    /** Indicates a BioChemEntity that is (in some sense) a part of this BioChemEntity. */
+    "isPartOfBioChemEntity": NamedNode<'http://schema.org/isPartOfBioChemEntity'>;
     /** Indicates some accommodation that this floor plan describes. */
     "isPlanForApartment": NamedNode<'http://schema.org/isPlanForApartment'>;
     /** True if this item's name is a proprietary/brand name (vs. generic name). */
@@ -4469,8 +4590,14 @@ interface Schema {
     "iswcCode": NamedNode<'http://schema.org/iswcCode'>;
     /** An entity represented by an entry in a list or data feed (e.g. an 'artist' in a list of 'artists')’. */
     "item": NamedNode<'http://schema.org/item'>;
-    /** A predefined value from OfferItemCondition or a textual description of the condition of the product or service, or the products or services included in the offer. */
+    /** A predefined value from OfferItemCondition specifying the condition of the product or service, or the products or services included in the offer. Also used for product return policies to specify the condition of products accepted for returns. */
     "itemCondition": NamedNode<'http://schema.org/itemCondition'>;
+    /** The type of return fees for returns of defect products. */
+    "itemDefectReturnFees": NamedNode<'http://schema.org/itemDefectReturnFees'>;
+    /** The method (from an enumeration) by which the customer obtains a return shipping label for a defect product. */
+    "itemDefectReturnLabelSource": NamedNode<'http://schema.org/itemDefectReturnLabelSource'>;
+    /** Amount of shipping costs for defect product returns. Applicable when property [[itemDefectReturnFees]] equals [[ReturnShippingFees]]. */
+    "itemDefectReturnShippingFeesAmount": NamedNode<'http://schema.org/itemDefectReturnShippingFeesAmount'>;
     /** For itemListElement values, you can use simple strings (e.g. "Peter", "Paul", "Mary"), existing entities, or use ListItem.\n\nText values are best if the elements in the list are plain strings. Existing entities are best for a simple, unordered list of existing things in your data. ListItem is used with ordered lists when you want to provide additional context about the element in that list or when the same item might be in different places in different lists.\n\nNote: The order of elements in your mark-up is not sufficient for indicating the order or elements.  Use ListItem with a 'position' property in such cases. */
     "itemListElement": NamedNode<'http://schema.org/itemListElement'>;
     /** Type of ordering (e.g. Ascending, Descending, Unordered). */
@@ -4485,6 +4612,8 @@ interface Schema {
     "itemShipped": NamedNode<'http://schema.org/itemShipped'>;
     /** Destination(s) ( [[Place]] ) that make up a trip. For a trip where destination order is important use [[ItemList]] to specify that order (see examples). */
     "itinerary": NamedNode<'http://schema.org/itinerary'>;
+    /** Systematic method of naming chemical compounds as recommended by the International Union of Pure and Applied Chemistry (IUPAC). */
+    "iupacName": NamedNode<'http://schema.org/iupacName'>;
     /** Description of benefits associated with the job. */
     "jobBenefits": NamedNode<'http://schema.org/jobBenefits'>;
     /** An indicator as to whether a position is available for an immediate start. */
@@ -4672,6 +4801,8 @@ interface Schema {
     "mechanismOfAction": NamedNode<'http://schema.org/mechanismOfAction'>;
     /** Indicates a MediaManipulationRatingEnumeration classification of a media object (in the context of how it was published or shared). */
     "mediaAuthenticityCategory": NamedNode<'http://schema.org/mediaAuthenticityCategory'>;
+    /** In the context of a [[MediaReview]], indicates specific media item(s) that are grouped using a [[MediaReviewItem]]. */
+    "mediaItemAppearance": NamedNode<'http://schema.org/mediaItemAppearance'>;
     /** The median value. */
     "median": NamedNode<'http://schema.org/median'>;
     /** Medical audience for page. */
@@ -4702,9 +4833,9 @@ interface Schema {
     "menuAddOn": NamedNode<'http://schema.org/menuAddOn'>;
     /** 'merchant' is an out-dated term for 'seller'. */
     "merchant": NamedNode<'http://schema.org/merchant'>;
-    /** The merchantReturnDays property indicates the number of days (from purchase) within which relevant merchant return policy is applicable. */
+    /** Specifies either a fixed return date or the number of days (from the delivery date) that a product can be returned. Used when the [[returnPolicyCategory]] property is specified as [[MerchantReturnFiniteReturnWindow]]. */
     "merchantReturnDays": NamedNode<'http://schema.org/merchantReturnDays'>;
-    /** Indicates a Web page or service by URL, for product return. */
+    /** Specifies a Web page or service by URL, for product returns. */
     "merchantReturnLink": NamedNode<'http://schema.org/merchantReturnLink'>;
     /** A CreativeWork attached to the message. */
     "messageAttachment": NamedNode<'http://schema.org/messageAttachment'>;
@@ -4724,6 +4855,12 @@ interface Schema {
     "modelDate": NamedNode<'http://schema.org/modelDate'>;
     /** The date and time the reservation was modified. */
     "modifiedTime": NamedNode<'http://schema.org/modifiedTime'>;
+    /** The empirical formula is the simplest whole number ratio of all the atoms in a molecule. */
+    "molecularFormula": NamedNode<'http://schema.org/molecularFormula'>;
+    /** This is the molecular weight of the entity being described, not of the parent. Units should be included in the form '&lt;Number&gt; &lt;unit&gt;', for example '12 amu' or as '&lt;QuantitativeValue&gt;. */
+    "molecularWeight": NamedNode<'http://schema.org/molecularWeight'>;
+    /** The monoisotopic mass is the sum of the masses of the atoms in a molecule using the unbound, ground-state, rest mass of the principal (most abundant) isotope for each element instead of the isotopic average mass. Please include the units the form '&lt;Number&gt; &lt;unit&gt;', for example '770.230488 g/mol' or as '&lt;QuantitativeValue&gt;. */
+    "monoisotopicMolecularWeight": NamedNode<'http://schema.org/monoisotopicMolecularWeight'>;
     /** The minimum payment is the lowest amount of money that one is required to pay on a credit card statement each month. */
     "monthlyMinimumRepaymentAmount": NamedNode<'http://schema.org/monthlyMinimumRepaymentAmount'>;
     /** Indicates the minimal number of months of experience required for a position. */
@@ -4756,6 +4893,8 @@ interface Schema {
     "nationality": NamedNode<'http://schema.org/nationality'>;
     /** The expected progression of the condition if it is not treated and allowed to progress naturally. */
     "naturalProgression": NamedNode<'http://schema.org/naturalProgression'>;
+    /** Indicates, in the context of a [[Review]] (e.g. framed as 'pro' vs 'con' considerations), negative considerations - either as unstructured text, or a list. */
+    "negativeNotes": NamedNode<'http://schema.org/negativeNotes'>;
     /** The underlying innervation associated with the muscle. */
     "nerve": NamedNode<'http://schema.org/nerve'>;
     /** The neurological pathway extension that involves muscle control. */
@@ -4898,6 +5037,10 @@ interface Schema {
     "organizer": NamedNode<'http://schema.org/organizer'>;
     /** Shipper's address. */
     "originAddress": NamedNode<'http://schema.org/originAddress'>;
+    /** Describes, in a [[MediaReview]] when dealing with [[DecontextualizedContent]], background information that can contribute to better interpretation of the [[MediaObject]]. */
+    "originalMediaContextDescription": NamedNode<'http://schema.org/originalMediaContextDescription'>;
+    /** Link to the page containing an original version of the content, or directly to an online copy of the original [[MediaObject]] content, e.g. video file. */
+    "originalMediaLink": NamedNode<'http://schema.org/originalMediaLink'>;
     /** The vasculature the lymphatic structure originates, or afferents, from. */
     "originatesFrom": NamedNode<'http://schema.org/originatesFrom'>;
     /** Any information related to overdose on a drug, including signs or symptoms, treatments, contact information for emergency response. */
@@ -4924,6 +5067,8 @@ interface Schema {
     "parentOrganization": NamedNode<'http://schema.org/parentOrganization'>;
     /** A broadcast service to which the broadcast service may belong to such as regional variations of a national channel. */
     "parentService": NamedNode<'http://schema.org/parentService'>;
+    /** Closest parent taxon of the taxon in question. */
+    "parentTaxon": NamedNode<'http://schema.org/parentTaxon'>;
     /** A parents of the person. */
     "parents": NamedNode<'http://schema.org/parents'>;
     /** The episode to which this clip belongs. */
@@ -5024,6 +5169,8 @@ interface Schema {
     "populationType": NamedNode<'http://schema.org/populationType'>;
     /** The position of an item in a series or sequence of items. */
     "position": NamedNode<'http://schema.org/position'>;
+    /** Indicates, in the context of a [[Review]] (e.g. framed as 'pro' vs 'con' considerations), positive considerations - either as unstructured text, or a list. */
+    "positiveNotes": NamedNode<'http://schema.org/positiveNotes'>;
     /** A possible unexpected and unfavorable evolution of a medical condition. Complications may include worsening of the signs or symptoms of the disease, extension of the condition to other organ systems, etc. */
     "possibleComplication": NamedNode<'http://schema.org/possibleComplication'>;
     /** A possible treatment to address this condition, sign or symptom. */
@@ -5044,6 +5191,8 @@ interface Schema {
     "postalCodeRange": NamedNode<'http://schema.org/postalCodeRange'>;
     /** Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role. */
     "potentialAction": NamedNode<'http://schema.org/potentialAction'>;
+    /** Intended use of the BioChemEntity by humans. */
+    "potentialUse": NamedNode<'http://schema.org/potentialUse'>;
     /** A description of the workup, testing, and other preparations required before implanting this device. */
     "preOp": NamedNode<'http://schema.org/preOp'>;
     /** A pointer from a previous, often discontinued variant of the product to its newer variant. */
@@ -5237,7 +5386,7 @@ interface Schema {
     "referenceQuantity": NamedNode<'http://schema.org/referenceQuantity'>;
     /** The Order(s) related to this Invoice. One or more Orders may be combined into a single Invoice. */
     "referencesOrder": NamedNode<'http://schema.org/referencesOrder'>;
-    /** A refundType, from an enumerated list. */
+    /** A refund type, from an enumerated list. */
     "refundType": NamedNode<'http://schema.org/refundType'>;
     /** The anatomical or organ system drained by this vessel; generally refers to a specific part of an organ. */
     "regionDrained": NamedNode<'http://schema.org/regionDrained'>;
@@ -5318,16 +5467,28 @@ interface Schema {
     "responsibilities": NamedNode<'http://schema.org/responsibilities'>;
     /** How often one should break from the activity. */
     "restPeriods": NamedNode<'http://schema.org/restPeriods'>;
+    /** Use [[MonetaryAmount]] to specify a fixed restocking fee for product returns, or use [[Number]] to specify a percentage of the product price paid by the customer. */
+    "restockingFee": NamedNode<'http://schema.org/restockingFee'>;
     /** The result produced in the action. e.g. John wrote *a book*. */
     "result": NamedNode<'http://schema.org/result'>;
     /** A sub property of result. The Comment created or sent as a result of this action. */
     "resultComment": NamedNode<'http://schema.org/resultComment'>;
     /** A sub property of result. The review that resulted in the performing of the action. */
     "resultReview": NamedNode<'http://schema.org/resultReview'>;
-    /** Indicates (via enumerated options) the return fees policy for a MerchantReturnPolicy */
+    /** The type of return fees for purchased products (for any return reason) */
     "returnFees": NamedNode<'http://schema.org/returnFees'>;
-    /** A returnPolicyCategory expresses at most one of several enumerated kinds of return. */
+    /** The method (from an enumeration) by which the customer obtains a return shipping label for a product returned for any reason. */
+    "returnLabelSource": NamedNode<'http://schema.org/returnLabelSource'>;
+    /** The type of return method offered, specified from an enumeration. */
+    "returnMethod": NamedNode<'http://schema.org/returnMethod'>;
+    /** Specifies an applicable return policy (from an enumeration). */
     "returnPolicyCategory": NamedNode<'http://schema.org/returnPolicyCategory'>;
+    /** The country where the product has to be sent to for returns, for example "Ireland" using the [[name]] property of [[Country]]. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1). Note that this can be different from the country where the product was originally shipped from or sent too. */
+    "returnPolicyCountry": NamedNode<'http://schema.org/returnPolicyCountry'>;
+    /** Seasonal override of a return policy. */
+    "returnPolicySeasonalOverride": NamedNode<'http://schema.org/returnPolicySeasonalOverride'>;
+    /** Amount of shipping costs for product returns (for any reason). Applicable when property [[returnFees]] equals [[ReturnShippingFees]]. */
+    "returnShippingFeesAmount": NamedNode<'http://schema.org/returnShippingFeesAmount'>;
     /** A review of the item. */
     "review": NamedNode<'http://schema.org/review'>;
     /** This Review or Rating is relevant to this part or facet of the itemReviewed. */
@@ -5460,6 +5621,8 @@ interface Schema {
     "serviceUrl": NamedNode<'http://schema.org/serviceUrl'>;
     /** The serving size, in terms of the number of volume or mass. */
     "servingSize": NamedNode<'http://schema.org/servingSize'>;
+    /** The [SHA-2](https://en.wikipedia.org/wiki/SHA-2) SHA256 hash of the content of the item. For example, a zero-length input has value 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855' */
+    "sha256": NamedNode<'http://schema.org/sha256'>;
     /** A CreativeWork such as an image, video, or audio clip shared as part of this posting. */
     "sharedContent": NamedNode<'http://schema.org/sharedContent'>;
     /** indicates (possibly multiple) shipping destinations. These can be defined in several ways e.g. postalCode ranges. */
@@ -5498,6 +5661,8 @@ interface Schema {
     "sku": NamedNode<'http://schema.org/sku'>;
     /** A slogan or motto associated with the item. */
     "slogan": NamedNode<'http://schema.org/slogan'>;
+    /** A specification in form of a line notation for describing the structure of chemical species using short ASCII strings.  Double bond stereochemistry \ indicators may need to be escaped in the string in formats where the backslash is an escape character. */
+    "smiles": NamedNode<'http://schema.org/smiles'>;
     /** Indicates whether it is allowed to smoke in the place, e.g. in the restaurant, hotel or hotel room. */
     "smokingAllowed": NamedNode<'http://schema.org/smokingAllowed'>;
     /** The number of milligrams of sodium. */
@@ -5677,6 +5842,10 @@ interface Schema {
     "targetUrl": NamedNode<'http://schema.org/targetUrl'>;
     /** The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain. */
     "taxID": NamedNode<'http://schema.org/taxID'>;
+    /** The taxonomic rank of this taxon given preferably as a URI from a controlled vocabulary – (typically the ranks from TDWG TaxonRank ontology or equivalent Wikidata URIs). */
+    "taxonRank": NamedNode<'http://schema.org/taxonRank'>;
+    /** The taxonomic grouping of the organism that expresses, encodes, or in someway related to the BioChemEntity. */
+    "taxonomicRange": NamedNode<'http://schema.org/taxonomicRange'>;
     /** The item being described is intended to help a person learn the competency or learning outcome defined by the referenced term. */
     "teaches": NamedNode<'http://schema.org/teaches'>;
     /** The telephone number. */

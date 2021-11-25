@@ -5,6 +5,6 @@ interface Xml {
     
 }
 
-const builder = namespace("http://www.w3.org/XML/1998/namespace") as any;
+const builder = namespace("http://www.w3.org/XML/1998/namespace/") as any;
 export const strict = builder as NamespaceBuilder<keyof Xml> & Xml;
 export const loose = builder as NamespaceBuilder & Xml;

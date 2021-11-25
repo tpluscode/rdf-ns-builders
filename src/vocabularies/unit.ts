@@ -164,7 +164,6 @@ interface Unit {
     "C": NamedNode<'http://qudt.org/vocab/unit/C'>;
     "CAD": NamedNode<'http://qudt.org/vocab/unit/CAD'>;
     "CAL_15_DEG_C": NamedNode<'http://qudt.org/vocab/unit/CAL_15_DEG_C'>;
-    "CAL_IT-PER-G": NamedNode<'http://qudt.org/vocab/unit/CAL_IT-PER-G'>;
     "CAL_IT-PER-GM-DEG_C": NamedNode<'http://qudt.org/vocab/unit/CAL_IT-PER-GM-DEG_C'>;
     "CAL_IT-PER-GM-K": NamedNode<'http://qudt.org/vocab/unit/CAL_IT-PER-GM-K'>;
     "CAL_IT-PER-GM": NamedNode<'http://qudt.org/vocab/unit/CAL_IT-PER-GM'>;
@@ -439,7 +438,7 @@ interface Unit {
     "Forint": NamedNode<'http://qudt.org/vocab/unit/Forint'>;
     "FrancCongolais": NamedNode<'http://qudt.org/vocab/unit/FrancCongolais'>;
     "G": NamedNode<'http://qudt.org/vocab/unit/G'>;
-    "GAL": NamedNode<'http://qudt.org/vocab/unit/GAL'>;
+    "GALILEO": NamedNode<'http://qudt.org/vocab/unit/GALILEO'>;
     "GAL_IMP": NamedNode<'http://qudt.org/vocab/unit/GAL_IMP'>;
     "GAL_UK-PER-DAY": NamedNode<'http://qudt.org/vocab/unit/GAL_UK-PER-DAY'>;
     "GAL_UK-PER-HR": NamedNode<'http://qudt.org/vocab/unit/GAL_UK-PER-HR'>;
@@ -683,6 +682,7 @@ interface Unit {
     "KiloGM-PER-KiloMOL": NamedNode<'http://qudt.org/vocab/unit/KiloGM-PER-KiloMOL'>;
     "KiloGM-PER-L": NamedNode<'http://qudt.org/vocab/unit/KiloGM-PER-L'>;
     "KiloGM-PER-M-HR": NamedNode<'http://qudt.org/vocab/unit/KiloGM-PER-M-HR'>;
+    "KiloGM-PER-M-SEC2": NamedNode<'http://qudt.org/vocab/unit/KiloGM-PER-M-SEC2'>;
     "KiloGM-PER-M-SEC": NamedNode<'http://qudt.org/vocab/unit/KiloGM-PER-M-SEC'>;
     "KiloGM-PER-M2-SEC": NamedNode<'http://qudt.org/vocab/unit/KiloGM-PER-M2-SEC'>;
     "KiloGM-PER-M2": NamedNode<'http://qudt.org/vocab/unit/KiloGM-PER-M2'>;
@@ -725,6 +725,7 @@ interface Unit {
     "KiloM3-PER-SEC2": NamedNode<'http://qudt.org/vocab/unit/KiloM3-PER-SEC2'>;
     "KiloM": NamedNode<'http://qudt.org/vocab/unit/KiloM'>;
     "KiloMOL-PER-HR": NamedNode<'http://qudt.org/vocab/unit/KiloMOL-PER-HR'>;
+    "KiloMOL-PER-KiloGM": NamedNode<'http://qudt.org/vocab/unit/KiloMOL-PER-KiloGM'>;
     "KiloMOL-PER-M3": NamedNode<'http://qudt.org/vocab/unit/KiloMOL-PER-M3'>;
     "KiloMOL-PER-MIN": NamedNode<'http://qudt.org/vocab/unit/KiloMOL-PER-MIN'>;
     "KiloMOL-PER-SEC": NamedNode<'http://qudt.org/vocab/unit/KiloMOL-PER-SEC'>;
@@ -904,6 +905,7 @@ interface Unit {
     "MOL-PER-DeciM3": NamedNode<'http://qudt.org/vocab/unit/MOL-PER-DeciM3'>;
     "MOL-PER-GM-HR": NamedNode<'http://qudt.org/vocab/unit/MOL-PER-GM-HR'>;
     "MOL-PER-HR": NamedNode<'http://qudt.org/vocab/unit/MOL-PER-HR'>;
+    "MOL-PER-KiloGM-PA": NamedNode<'http://qudt.org/vocab/unit/MOL-PER-KiloGM-PA'>;
     "MOL-PER-KiloGM": NamedNode<'http://qudt.org/vocab/unit/MOL-PER-KiloGM'>;
     "MOL-PER-L": NamedNode<'http://qudt.org/vocab/unit/MOL-PER-L'>;
     "MOL-PER-M2-DAY": NamedNode<'http://qudt.org/vocab/unit/MOL-PER-M2-DAY'>;
@@ -1027,6 +1029,7 @@ interface Unit {
     "MicroMOL-PER-M2": NamedNode<'http://qudt.org/vocab/unit/MicroMOL-PER-M2'>;
     "MicroMOL-PER-MOL": NamedNode<'http://qudt.org/vocab/unit/MicroMOL-PER-MOL'>;
     "MicroMOL-PER-MicroMOL-DAY": NamedNode<'http://qudt.org/vocab/unit/MicroMOL-PER-MicroMOL-DAY'>;
+    "MicroMOL-PER-SEC": NamedNode<'http://qudt.org/vocab/unit/MicroMOL-PER-SEC'>;
     "MicroMOL": NamedNode<'http://qudt.org/vocab/unit/MicroMOL'>;
     "MicroN-M": NamedNode<'http://qudt.org/vocab/unit/MicroN-M'>;
     "MicroN": NamedNode<'http://qudt.org/vocab/unit/MicroN'>;
@@ -1124,6 +1127,7 @@ interface Unit {
     "MilliMOL-PER-KiloGM": NamedNode<'http://qudt.org/vocab/unit/MilliMOL-PER-KiloGM'>;
     "MilliMOL-PER-L": NamedNode<'http://qudt.org/vocab/unit/MilliMOL-PER-L'>;
     "MilliMOL-PER-M2-DAY": NamedNode<'http://qudt.org/vocab/unit/MilliMOL-PER-M2-DAY'>;
+    "MilliMOL-PER-M2-SEC": NamedNode<'http://qudt.org/vocab/unit/MilliMOL-PER-M2-SEC'>;
     "MilliMOL-PER-M2": NamedNode<'http://qudt.org/vocab/unit/MilliMOL-PER-M2'>;
     "MilliMOL-PER-M3-DAY": NamedNode<'http://qudt.org/vocab/unit/MilliMOL-PER-M3-DAY'>;
     "MilliMOL-PER-M3": NamedNode<'http://qudt.org/vocab/unit/MilliMOL-PER-M3'>;
@@ -1168,6 +1172,7 @@ interface Unit {
     "N-M-PER-KiloGM": NamedNode<'http://qudt.org/vocab/unit/N-M-PER-KiloGM'>;
     "N-M-PER-M2": NamedNode<'http://qudt.org/vocab/unit/N-M-PER-M2'>;
     "N-M-SEC": NamedNode<'http://qudt.org/vocab/unit/N-M-SEC'>;
+    "N-M2-PER-A": NamedNode<'http://qudt.org/vocab/unit/N-M2-PER-A'>;
     "N-M2-PER-KiloGM2": NamedNode<'http://qudt.org/vocab/unit/N-M2-PER-KiloGM2'>;
     "N-M": NamedNode<'http://qudt.org/vocab/unit/N-M'>;
     "N-PER-A": NamedNode<'http://qudt.org/vocab/unit/N-PER-A'>;
@@ -1367,6 +1372,7 @@ interface Unit {
     "PERMITTIVITY_REL": NamedNode<'http://qudt.org/vocab/unit/PERMITTIVITY_REL'>;
     /** Unsure about dimensionality of pH; conversion requires a log function not just a multiplier */
     "PH": NamedNode<'http://qudt.org/vocab/unit/PH'>;
+    "PHOT": NamedNode<'http://qudt.org/vocab/unit/PHOT'>;
     "PINT": NamedNode<'http://qudt.org/vocab/unit/PINT'>;
     "PINT_UK-PER-DAY": NamedNode<'http://qudt.org/vocab/unit/PINT_UK-PER-DAY'>;
     "PINT_UK-PER-HR": NamedNode<'http://qudt.org/vocab/unit/PINT_UK-PER-HR'>;
@@ -1415,7 +1421,6 @@ interface Unit {
     "PetaC": NamedNode<'http://qudt.org/vocab/unit/PetaC'>;
     "PetaJ": NamedNode<'http://qudt.org/vocab/unit/PetaJ'>;
     "PhilippinePeso": NamedNode<'http://qudt.org/vocab/unit/PhilippinePeso'>;
-    "Phot": NamedNode<'http://qudt.org/vocab/unit/Phot'>;
     "PicoA-PER-MicroMOL-L": NamedNode<'http://qudt.org/vocab/unit/PicoA-PER-MicroMOL-L'>;
     "PicoA": NamedNode<'http://qudt.org/vocab/unit/PicoA'>;
     "PicoC": NamedNode<'http://qudt.org/vocab/unit/PicoC'>;
@@ -1424,6 +1429,7 @@ interface Unit {
     "PicoGM-PER-GM": NamedNode<'http://qudt.org/vocab/unit/PicoGM-PER-GM'>;
     "PicoGM-PER-KiloGM": NamedNode<'http://qudt.org/vocab/unit/PicoGM-PER-KiloGM'>;
     "PicoGM-PER-L": NamedNode<'http://qudt.org/vocab/unit/PicoGM-PER-L'>;
+    "PicoGM-PER-MilliL": NamedNode<'http://qudt.org/vocab/unit/PicoGM-PER-MilliL'>;
     "PicoGM": NamedNode<'http://qudt.org/vocab/unit/PicoGM'>;
     "PicoH": NamedNode<'http://qudt.org/vocab/unit/PicoH'>;
     "PicoM": NamedNode<'http://qudt.org/vocab/unit/PicoM'>;
