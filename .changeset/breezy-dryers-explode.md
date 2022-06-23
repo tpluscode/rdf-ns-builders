@@ -1,5 +1,5 @@
 ---
-"@tpluscode/rdf-ns-builders": minor
+"@tpluscode/rdf-ns-builders": major
 ---
 
 Make strict the default export
