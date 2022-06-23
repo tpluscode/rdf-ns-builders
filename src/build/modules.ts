@@ -11,13 +11,13 @@ function createExport(prefix: string, exportName: string): OptionalKind<ExportDe
   }
 }
 
-export function createDefaultModule(sourceFile: SourceFile, prefixes: Record<string, string>): void {
+export function createLooseModule(sourceFile: SourceFile, prefixes: Record<string, string>): void {
   Object.keys(prefixes).forEach(prefix => {
     sourceFile.addExportDeclaration(createExport(prefix, 'loose'))
   })
 }
 
-export function createStrictModule(sourceFile: SourceFile, prefixes: Record<string, string>): void {
+export function createDefaultModule(sourceFile: SourceFile, prefixes: Record<string, string>): void {
   Object.keys(prefixes).forEach(prefix => {
     sourceFile.addExportDeclaration(createExport(prefix, 'strict'))
   })

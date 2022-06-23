@@ -2,7 +2,7 @@ import { resolve } from 'path'
 import { Project } from 'ts-morph'
 import type * as RdfVocabularies from '@zazuko/rdf-vocabularies'
 import { createPrefixFile } from './prefix'
-import { createDefaultModule, createStrictModule } from './modules'
+import { createDefaultModule, createLooseModule } from './modules'
 
 const project = new Project()
 
@@ -28,8 +28,8 @@ export async function build({ outDir, vocabsPackage }: Build): Promise<void> {
   const defaultModule = project.createSourceFile(resolve(outDir, 'index.ts'), undefined, { overwrite: true })
   createDefaultModule(defaultModule, rdfVocabularies.prefixes)
 
-  const strictModule = project.createSourceFile(resolve(outDir, 'strict.ts'), undefined, { overwrite: true })
-  createStrictModule(strictModule, rdfVocabularies.prefixes)
+  const looseModule = project.createSourceFile(resolve(outDir, 'loose.ts'), undefined, { overwrite: true })
+  createLooseModule(looseModule, rdfVocabularies.prefixes)
 
   await project.save()
 }

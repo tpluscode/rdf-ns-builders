@@ -19,7 +19,7 @@
   },
   "files": [
     "src/index.ts",
-    "src/strict.ts",
+    "src/loose.ts",
     "src/bin/index.ts"
   ],
   "include": ["tests", "src"]

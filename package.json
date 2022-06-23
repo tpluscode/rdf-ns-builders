@@ -23,9 +23,9 @@
       "require": "./index.js",
       "import": "./index.mjs"
     },
-    "./strict": {
-      "require": "./strict.js",
-      "import": "./strict.mjs"
+    "./loose": {
+      "require": "./loose.js",
+      "import": "./loose.mjs"
     }
   },
   "files": [
