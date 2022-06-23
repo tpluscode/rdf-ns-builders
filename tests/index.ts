@@ -1,7 +1,7 @@
 import { describe, it } from 'mocha'
 import { expect } from 'chai'
 import { expand } from '@zazuko/rdf-vocabularies'
-import { schema, foaf, dcterms, xml } from '../src'
+import { schema, foaf, dcterms, xml } from '../src/loose'
 
 describe('generated types', () => {
   it('export a class', () => {
