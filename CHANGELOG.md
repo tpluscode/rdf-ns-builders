@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.0.0
+
+### Major Changes
+
+- 0687532: Make strict the default export
+
 ## 1.1.0
 
 ### Minor Changes
