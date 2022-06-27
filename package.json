@@ -14,7 +14,7 @@
     "test": "c8 --reporter=lcov mocha --require ts-node/register test/index.test.ts",
     "prepack": "npm run build",
     "build": "run-p build:*",
-    "build:cjs": "tsc --outDir .",
+    "build:cjs": "tsc -P tsconfig.build.json",
     "build:esm": "babel src --out-dir . --extensions .ts --out-file-extension .mjs",
     "release": "changeset publish"
   },
