@@ -1,8 +1,8 @@
 import { SourceFile, StructureKind, VariableDeclarationKind } from 'ts-morph'
 import { identifier } from 'safe-identifier'
-import type { ImportedVocabularies } from '.'
 import { createMembers } from './interface'
 import { toProperCase } from './strings'
+import type { ImportedVocabularies } from '.'
 
 export async function createPrefixFile(sourceFile: SourceFile, prefix: string, namespace: string, vocabs: ImportedVocabularies) {
   const interfaceName = identifier(toProperCase(prefix))
