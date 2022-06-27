@@ -2,6 +2,7 @@ import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
 import { NamedNode } from "@rdfjs/types";
 
 interface Dpv {
+    '': NamedNode<'http://www.w3.org/ns/dpv#'>;
     "AcademicResearch": NamedNode<'http://www.w3.org/ns/dpv#AcademicResearch'>;
     "Accent": NamedNode<'http://www.w3.org/ns/dpv#Accent'>;
     "AccessControl": NamedNode<'http://www.w3.org/ns/dpv#AccessControl'>;

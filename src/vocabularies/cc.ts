@@ -2,6 +2,7 @@ import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
 import { NamedNode } from "@rdfjs/types";
 
 interface Cc {
+    '': NamedNode<'http://creativecommons.org/ns#'>;
     /**
      * credit be given to
      * 		    copyright holder and/or author

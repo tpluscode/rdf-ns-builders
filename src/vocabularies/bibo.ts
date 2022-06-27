@@ -2,6 +2,7 @@ import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
 import { NamedNode } from "@rdfjs/types";
 
 interface Bibo {
+    '': NamedNode<'http://purl.org/ontology/bibo/'>;
     /** A scholarly academic article, typically published in a journal. */
     "AcademicArticle": NamedNode<'http://purl.org/ontology/bibo/AcademicArticle'>;
     /** A written composition in prose, usually nonfiction, on a specific topic, forming an independent part of a book or other publication, as a newspaper or magazine. */

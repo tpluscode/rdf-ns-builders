@@ -2,6 +2,7 @@ import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
 import { NamedNode } from "@rdfjs/types";
 
 interface Shex {
+    '': NamedNode<'http://www.w3.org/ns/shex#'>;
     /** Annotations provide a format-independent way to provide additional information about elements in a schema. */
     "Annotation": NamedNode<'http://www.w3.org/ns/shex#Annotation'>;
     /** A TripleExpression composed of one or more sub-expressions, all of which must match. */

@@ -2,6 +2,7 @@ import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
 import { NamedNode } from "@rdfjs/types";
 
 interface Xsd {
+    '': NamedNode<'http://www.w3.org/2001/XMLSchema#'>;
     /**
      *     ENTITIES represents the ENTITIES attribute type from [XML]. The ·value
      *     space· of ENTITIES is the set of finite, non-zero-length sequences of

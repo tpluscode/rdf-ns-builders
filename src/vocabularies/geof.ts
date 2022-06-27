@@ -2,6 +2,7 @@ import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
 import { NamedNode } from "@rdfjs/types";
 
 interface Geof {
+    '': NamedNode<'http://www.opengis.net/def/function/geosparql/'>;
     "boundary": NamedNode<'http://www.opengis.net/def/function/geosparql/boundary'>;
     "buffer": NamedNode<'http://www.opengis.net/def/function/geosparql/buffer'>;
     "convexHull": NamedNode<'http://www.opengis.net/def/function/geosparql/convexHull'>;

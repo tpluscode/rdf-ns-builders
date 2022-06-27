@@ -2,6 +2,7 @@ import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
 import { NamedNode } from "@rdfjs/types";
 
 interface Rdfs {
+    '': NamedNode<'http://www.w3.org/2000/01/rdf-schema#'>;
     /** The class of classes. */
     "Class": NamedNode<'http://www.w3.org/2000/01/rdf-schema#Class'>;
     /** The class of RDF containers. */

@@ -2,6 +2,7 @@ import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
 import { NamedNode } from "@rdfjs/types";
 
 interface Cnt {
+    '': NamedNode<'http://www.w3.org/2011/content#'>;
     /** The content. */
     "Content": NamedNode<'http://www.w3.org/2011/content#Content'>;
     /** The base64 encoded content (can be used for binary content). */

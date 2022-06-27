@@ -2,6 +2,7 @@ import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
 import { NamedNode } from "@rdfjs/types";
 
 interface Dash {
+    '': NamedNode<'http://datashapes.org/dash#'>;
     /** An executable command triggered by an agent, backed by a Script implementation. Actions may get deactivated using sh:deactivated. */
     "Action": NamedNode<'http://datashapes.org/dash#Action'>;
     /** A group of ResourceActions, used to arrange items in menus etc. Similar to sh:PropertyGroups, they may have a sh:order and should have labels (in multiple languages if applicable). */

@@ -2,6 +2,7 @@ import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
 import { NamedNode } from "@rdfjs/types";
 
 interface Qb {
+    '': NamedNode<'http://purl.org/linked-data/cube#'>;
     /** Abstract superclass for everything that can have attributes and dimensions */
     "Attachable": NamedNode<'http://purl.org/linked-data/cube#Attachable'>;
     /** The class of components which represent attributes of observations in the cube, e.g. unit of measurement */

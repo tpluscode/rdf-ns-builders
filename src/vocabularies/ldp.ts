@@ -2,6 +2,7 @@ import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
 import { NamedNode } from "@rdfjs/types";
 
 interface Ldp {
+    '': NamedNode<'http://www.w3.org/ns/ldp#'>;
     /** Ascending order. */
     "Ascending": NamedNode<'http://www.w3.org/ns/ldp#Ascending'>;
     /** An LDPC that uses a predefined predicate to simply link to its contained resources. */

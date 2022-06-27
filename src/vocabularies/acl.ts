@@ -2,6 +2,7 @@ import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
 import { NamedNode } from "@rdfjs/types";
 
 interface Acl {
+    '': NamedNode<'http://www.w3.org/ns/auth/acl#'>;
     /** Any kind of access to a resource. Don't use this, use R W and RW */
     "Access": NamedNode<'http://www.w3.org/ns/auth/acl#Access'>;
     /**

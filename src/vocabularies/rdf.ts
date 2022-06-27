@@ -2,6 +2,7 @@ import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
 import { NamedNode } from "@rdfjs/types";
 
 interface Rdf {
+    '': NamedNode<'http://www.w3.org/1999/02/22-rdf-syntax-ns#'>;
     /** The class of containers of alternatives. */
     "Alt": NamedNode<'http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt'>;
     /** The class of unordered containers. */

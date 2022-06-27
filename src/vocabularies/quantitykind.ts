@@ -2,6 +2,7 @@ import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
 import { NamedNode } from "@rdfjs/types";
 
 interface Quantitykind {
+    '': NamedNode<'http://qudt.org/vocab/quantitykind/'>;
     "AbsoluteActivity": NamedNode<'http://qudt.org/vocab/quantitykind/AbsoluteActivity'>;
     "AbsoluteHumidity": NamedNode<'http://qudt.org/vocab/quantitykind/AbsoluteHumidity'>;
     /** Note that the absorbed dose is not a good indicator of the likely biological effect. 1 Gy of alpha radiation would be much more biologically damaging than 1 Gy of photon radiation for example. Appropriate weighting factors can be applied reflecting the different relative biological effects to find the equivalent dose. The risk of stoctic effects due to radiation exposure can be quantified using the effective dose, which is a weighted average of the equivalent dose to each organ depending upon its radiosensitivity. When ionising radiation is used to treat cancer, the doctor will usually prescribe the radiotherapy treatment in Gy. When risk from ionising radiation is being discussed, a related unit, the Sievert is used. */

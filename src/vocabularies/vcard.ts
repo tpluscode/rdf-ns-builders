@@ -2,6 +2,7 @@ import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
 import { NamedNode } from "@rdfjs/types";
 
 interface Vcard {
+    '': NamedNode<'http://www.w3.org/2006/vcard/ns#'>;
     "Acquaintance": NamedNode<'http://www.w3.org/2006/vcard/ns#Acquaintance'>;
     /** To specify the components of the delivery address for the  object */
     "Address": NamedNode<'http://www.w3.org/2006/vcard/ns#Address'>;

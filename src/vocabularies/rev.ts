@@ -2,6 +2,7 @@ import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
 import { NamedNode } from "@rdfjs/types";
 
 interface Rev {
+    '': NamedNode<'http://purl.org/stuff/rev#'>;
     
 }
 

@@ -2,6 +2,7 @@ import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
 import { NamedNode } from "@rdfjs/types";
 
 interface Dcterms {
+    '': NamedNode<'http://purl.org/dc/terms/'>;
     /** A resource that acts or has the power to act. */
     "Agent": NamedNode<'http://purl.org/dc/terms/Agent'>;
     /** A group of agents. */

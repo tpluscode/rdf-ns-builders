@@ -2,6 +2,7 @@ import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
 import { NamedNode } from "@rdfjs/types";
 
 interface Dcmitype {
+    '': NamedNode<'http://purl.org/dc/dcmitype/'>;
     /** An aggregation of resources. */
     "Collection": NamedNode<'http://purl.org/dc/dcmitype/Collection'>;
     /** Data encoded in a defined structure. */

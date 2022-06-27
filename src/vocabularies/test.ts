@@ -2,6 +2,7 @@ import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
 import { NamedNode } from "@rdfjs/types";
 
 interface Test {
+    '': NamedNode<'http://www.w3.org/2006/03/test-description#'>;
     /** A particular stage in a review process */
     "ReviewStatus": NamedNode<'http://www.w3.org/2006/03/test-description#ReviewStatus'>;
     "SimpleReviewStatus": NamedNode<'http://www.w3.org/2006/03/test-description#SimpleReviewStatus'>;

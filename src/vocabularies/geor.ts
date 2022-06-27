@@ -2,6 +2,7 @@ import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
 import { NamedNode } from "@rdfjs/types";
 
 interface Geor {
+    '': NamedNode<'http://www.opengis.net/def/rule/geosparql/'>;
     "ehContains": NamedNode<'http://www.opengis.net/def/rule/geosparql/ehContains'>;
     "ehCoveredBy": NamedNode<'http://www.opengis.net/def/rule/geosparql/ehCoveredBy'>;
     "ehCovers": NamedNode<'http://www.opengis.net/def/rule/geosparql/ehCovers'>;

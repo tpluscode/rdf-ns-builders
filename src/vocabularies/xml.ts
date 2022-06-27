@@ -2,6 +2,7 @@ import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
 import { NamedNode } from "@rdfjs/types";
 
 interface Xml {
+    '': NamedNode<'http://www.w3.org/XML/1998/namespace/'>;
     
 }
 

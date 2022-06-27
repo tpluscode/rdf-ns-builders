@@ -2,6 +2,7 @@ import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
 import { NamedNode } from "@rdfjs/types";
 
 interface Prefix {
+    '': NamedNode<'http://qudt.org/vocab/prefix/'>;
     "Atto": NamedNode<'http://qudt.org/vocab/prefix/Atto'>;
     "Centi": NamedNode<'http://qudt.org/vocab/prefix/Centi'>;
     "Deca": NamedNode<'http://qudt.org/vocab/prefix/Deca'>;

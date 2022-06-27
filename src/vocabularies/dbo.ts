@@ -2,6 +2,7 @@ import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
 import { NamedNode } from "@rdfjs/types";
 
 interface Dbo {
+    '': NamedNode<'http://dbpedia.org/ontology/'>;
     /** An abbey is a Catholic monastery or convent, under the authority of an Abbot or an Abbess, who serves as the spiritual father or mother of the community. */
     "Abbey": NamedNode<'http://dbpedia.org/ontology/Abbey'>;
     "AcademicConference": NamedNode<'http://dbpedia.org/ontology/AcademicConference'>;

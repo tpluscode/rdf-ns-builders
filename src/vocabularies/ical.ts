@@ -2,6 +2,7 @@ import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
 import { NamedNode } from "@rdfjs/types";
 
 interface Ical {
+    '': NamedNode<'http://www.w3.org/2002/12/cal/icaltzd#'>;
     "DomainOf_rrule": NamedNode<'http://www.w3.org/2002/12/cal/icaltzd#DomainOf_rrule'>;
     "List_of_Float": NamedNode<'http://www.w3.org/2002/12/cal/icaltzd#List_of_Float'>;
     /** Provide a grouping of component properties that define an alarm. */

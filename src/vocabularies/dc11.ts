@@ -2,6 +2,7 @@ import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
 import { NamedNode } from "@rdfjs/types";
 
 interface Dc11 {
+    '': NamedNode<'http://purl.org/dc/elements/1.1/'>;
     /** An entity responsible for making contributions to the resource. */
     "contributor": NamedNode<'http://purl.org/dc/elements/1.1/contributor'>;
     /** The spatial or temporal topic of the resource, spatial applicability of the resource, or jurisdiction under which the resource is relevant. */

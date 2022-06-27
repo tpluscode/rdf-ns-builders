@@ -2,6 +2,7 @@ import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
 import { NamedNode } from "@rdfjs/types";
 
 interface Dcam {
+    '': NamedNode<'http://purl.org/dc/dcam/'>;
     /** An enumerated set of resources. */
     "VocabularyEncodingScheme": NamedNode<'http://purl.org/dc/dcam/VocabularyEncodingScheme'>;
     /** A suggested class for subjects of this property. */

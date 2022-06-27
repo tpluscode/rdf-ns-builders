@@ -2,6 +2,7 @@ import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
 import { NamedNode } from "@rdfjs/types";
 
 interface Rdfa {
+    '': NamedNode<'http://www.w3.org/ns/rdfa#'>;
     "DocumentError": NamedNode<'http://www.w3.org/ns/rdfa#DocumentError'>;
     "Error": NamedNode<'http://www.w3.org/ns/rdfa#Error'>;
     "Info": NamedNode<'http://www.w3.org/ns/rdfa#Info'>;

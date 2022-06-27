@@ -2,6 +2,7 @@ import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
 import { NamedNode } from "@rdfjs/types";
 
 interface Wdr {
+    '': NamedNode<'http://www.w3.org/2007/05/powder#'>;
     
 }
 

@@ -2,6 +2,7 @@ import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
 import { NamedNode } from "@rdfjs/types";
 
 interface Gr {
+    '': NamedNode<'http://purl.org/goodrelations/v1#'>;
     /** DEPRECATED - This class is superseded by gr:Individual. Replace all occurrences of gr:ActualProductOrServiceInstance by gr:Individual, if possible. */
     "ActualProductOrServiceInstance": NamedNode<'http://purl.org/goodrelations/v1#ActualProductOrServiceInstance'>;
     /** Payment by credit or debit cards issued by the American Express network. */

@@ -2,6 +2,7 @@ import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
 import { NamedNode } from "@rdfjs/types";
 
 interface Og {
+    '': NamedNode<'http://ogp.me/ns#'>;
     /** [DEPRECATED] An album to which some audio belongs. */
     "audio:album": NamedNode<'http://ogp.me/ns#audio:album'>;
     /** [DEPRECATED] An artist of some audio. */

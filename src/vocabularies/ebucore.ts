@@ -2,6 +2,7 @@ import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
 import { NamedNode } from "@rdfjs/types";
 
 interface Ebucore {
+    '': NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#'>;
     /** The conditions under which content can be accessed. */
     "AccessConditions": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#AccessConditions'>;
     /** A class to log Actions. */

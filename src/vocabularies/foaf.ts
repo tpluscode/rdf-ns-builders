@@ -2,6 +2,7 @@ import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
 import { NamedNode } from "@rdfjs/types";
 
 interface Foaf {
+    '': NamedNode<'http://xmlns.com/foaf/0.1/'>;
     /** An agent (eg. person, group, software or physical artifact). */
     "Agent": NamedNode<'http://xmlns.com/foaf/0.1/Agent'>;
     /** A document. */

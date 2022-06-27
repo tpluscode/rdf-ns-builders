@@ -2,6 +2,7 @@ import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
 import { NamedNode } from "@rdfjs/types";
 
 interface Unit {
+    '': NamedNode<'http://qudt.org/vocab/unit/'>;
     "A-HR": NamedNode<'http://qudt.org/vocab/unit/A-HR'>;
     "A-M2-PER-J-SEC": NamedNode<'http://qudt.org/vocab/unit/A-M2-PER-J-SEC'>;
     "A-M2": NamedNode<'http://qudt.org/vocab/unit/A-M2'>;

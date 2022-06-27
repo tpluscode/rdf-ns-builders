@@ -2,6 +2,7 @@ import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
 import { NamedNode } from "@rdfjs/types";
 
 interface Gs1 {
+    '': NamedNode<'https://gs1.org/voc/'>;
     /** A Data Type that corresponds to GS1 Application Identifiers defined in the GS1 General Specifications */
     "AI": NamedNode<'https://gs1.org/voc/AI'>;
     /** A product classification for the product other than the Global Product Classification(GPC brick value). */
