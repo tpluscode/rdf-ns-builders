@@ -2,6 +2,7 @@ import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
 import { NamedNode } from "@rdfjs/types";
 
 interface Dqv {
+    '': NamedNode<'http://www.w3.org/ns/dqv#'>;
     /** Represents a group of quality dimensions in which a common type of information is used as quality indicator. */
     "Category": NamedNode<'http://www.w3.org/ns/dqv#Category'>;
     /** Represents criteria relevant for assessing quality. Each quality dimension must have one or more metric to measure it. A dimension is linked with a category using the dqv:inCategory property. */

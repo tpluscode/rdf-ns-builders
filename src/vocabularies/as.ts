@@ -2,6 +2,7 @@ import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
 import { NamedNode } from "@rdfjs/types";
 
 interface As {
+    '': NamedNode<'https://www.w3.org/ns/activitystreams#'>;
     /** Actor accepts the Object */
     "Accept": NamedNode<'https://www.w3.org/ns/activitystreams#Accept'>;
     /** An Object representing some form of Action that has been taken */

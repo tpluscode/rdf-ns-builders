@@ -2,6 +2,7 @@ import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
 import { NamedNode } from "@rdfjs/types";
 
 interface Constant {
+    '': NamedNode<'http://qudt.org/vocab/constant/'>;
     "AlphaParticleElectronMassRatio": NamedNode<'http://qudt.org/vocab/constant/AlphaParticleElectronMassRatio'>;
     "AlphaParticleMass": NamedNode<'http://qudt.org/vocab/constant/AlphaParticleMass'>;
     "AlphaParticleMassEnergyEquivalent": NamedNode<'http://qudt.org/vocab/constant/AlphaParticleMassEnergyEquivalent'>;

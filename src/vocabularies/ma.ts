@@ -2,6 +2,7 @@ import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
 import { NamedNode } from "@rdfjs/types";
 
 interface Ma {
+    '': NamedNode<'http://www.w3.org/ns/ma-ont#'>;
     /** A person or organisation contributing to the media resource. */
     "Agent": NamedNode<'http://www.w3.org/ns/ma-ont#Agent'>;
     /** A specialisation of Track for Audio to provide a link to specific data properties such as sampleRate, etc. Specialisation is defined through object properties. */

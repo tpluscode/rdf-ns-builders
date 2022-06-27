@@ -2,6 +2,7 @@ import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
 import { NamedNode } from "@rdfjs/types";
 
 interface Qudt {
+    '': NamedNode<'http://qudt.org/schema/qudt/'>;
     "AbstractDatatype": NamedNode<'http://qudt.org/schema/qudt/AbstractDatatype'>;
     "AbstractQuantityKind": NamedNode<'http://qudt.org/schema/qudt/AbstractQuantityKind'>;
     "AerospaceCoordinateSystem": NamedNode<'http://qudt.org/schema/qudt/AerospaceCoordinateSystem'>;

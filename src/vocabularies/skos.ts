@@ -2,6 +2,7 @@ import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
 import { NamedNode } from "@rdfjs/types";
 
 interface Skos {
+    '': NamedNode<'http://www.w3.org/2004/02/skos/core#'>;
     "Collection": NamedNode<'http://www.w3.org/2004/02/skos/core#Collection'>;
     "Concept": NamedNode<'http://www.w3.org/2004/02/skos/core#Concept'>;
     "ConceptScheme": NamedNode<'http://www.w3.org/2004/02/skos/core#ConceptScheme'>;

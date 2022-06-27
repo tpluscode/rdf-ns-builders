@@ -2,6 +2,7 @@ import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
 import { NamedNode } from "@rdfjs/types";
 
 interface Gtfs {
+    '': NamedNode<'http://vocab.gtfs.org/terms#'>;
     /** An agency operates a certain schedule based transport mode */
     "Agency": NamedNode<'http://vocab.gtfs.org/terms#Agency'>;
     /** La tarifa se debe pagar antes de subir a bordo */

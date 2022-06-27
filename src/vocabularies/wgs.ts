@@ -2,6 +2,7 @@ import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
 import { NamedNode } from "@rdfjs/types";
 
 interface Wgs {
+    '': NamedNode<'http://www.w3.org/2003/01/geo/wgs84_pos#'>;
     /**
      *  
      * Uniquely identified by lat/long/alt. i.e.

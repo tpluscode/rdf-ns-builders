@@ -2,6 +2,7 @@ import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
 import { NamedNode } from "@rdfjs/types";
 
 interface Rico {
+    '': NamedNode<'https://www.ica.org/standards/RiC/ontology#'>;
     /**
      * Connects at least one Record Resource or Instantiation to at
      *             least one Agent, when the Agent accumulates it, be it intentionally (collecting it) or

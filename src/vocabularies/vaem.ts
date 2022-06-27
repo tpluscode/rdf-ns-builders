@@ -2,6 +2,7 @@ import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
 import { NamedNode } from "@rdfjs/types";
 
 interface Vaem {
+    '': NamedNode<'http://www.linkedmodel.org/schema/vaem#'>;
     "Aspect": NamedNode<'http://www.linkedmodel.org/schema/vaem#Aspect'>;
     "CatalogEntry": NamedNode<'http://www.linkedmodel.org/schema/vaem#CatalogEntry'>;
     "CollectionGraph": NamedNode<'http://www.linkedmodel.org/schema/vaem#CollectionGraph'>;

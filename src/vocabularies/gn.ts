@@ -2,6 +2,7 @@ import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
 import { NamedNode } from "@rdfjs/types";
 
 interface Gn {
+    '': NamedNode<'http://www.geonames.org/ontology#'>;
     "A.ADM1": NamedNode<'http://www.geonames.org/ontology#A.ADM1'>;
     "A.ADM1H": NamedNode<'http://www.geonames.org/ontology#A.ADM1H'>;
     "A.ADM2": NamedNode<'http://www.geonames.org/ontology#A.ADM2'>;

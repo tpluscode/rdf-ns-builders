@@ -2,6 +2,7 @@ import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
 import { NamedNode } from "@rdfjs/types";
 
 interface Vann {
+    '': NamedNode<'http://purl.org/vocab/vann/'>;
     /** A reference to a resource that describes changes between this version of a vocabulary and the previous. */
     "changes": NamedNode<'http://purl.org/vocab/vann/changes'>;
     /** A reference to a resource that provides an example of how this resource can be used. */

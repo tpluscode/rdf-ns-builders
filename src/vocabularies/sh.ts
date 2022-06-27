@@ -2,6 +2,7 @@ import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
 import { NamedNode } from "@rdfjs/types";
 
 interface Sh {
+    '': NamedNode<'http://www.w3.org/ns/shacl#'>;
     /** The base class of validation results, typically not instantiated directly. */
     "AbstractResult": NamedNode<'http://www.w3.org/ns/shacl#AbstractResult'>;
     "AndConstraintComponent-and": NamedNode<'http://www.w3.org/ns/shacl#AndConstraintComponent-and'>;

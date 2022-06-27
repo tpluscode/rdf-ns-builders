@@ -2,6 +2,7 @@ import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
 import { NamedNode } from "@rdfjs/types";
 
 interface Geo {
+    '': NamedNode<'http://www.opengis.net/ont/geosparql#'>;
     /**
      *       This class represents the top-level feature type. This class is 
      *       equivalent to GFI_Feature defined in ISO 19156:2011, and it is 

@@ -2,6 +2,7 @@ import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
 import { NamedNode } from "@rdfjs/types";
 
 interface Earl {
+    '': NamedNode<'https://www.w3.org/ns/earl#'>;
     /** a statement that embodies the results of a test */
     "Assertion": NamedNode<'https://www.w3.org/ns/earl#Assertion'>;
     /** an entity such as a person, a software tool, an organization, or any other grouping that carries out a test collectively */

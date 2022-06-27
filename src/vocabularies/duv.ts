@@ -2,6 +2,7 @@ import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
 import { NamedNode } from "@rdfjs/types";
 
 interface Duv {
+    '': NamedNode<'http://www.w3.org/ns/duv#'>;
     /** Predefined criteria used to express a user opinion about a dataset or distribution using a discrete range of values. */
     "RatingFeedback": NamedNode<'http://www.w3.org/ns/duv#RatingFeedback'>;
     /** A helpful description of actions that can be performed on a given dataset or distribution. */

@@ -2,6 +2,7 @@ import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
 import { NamedNode } from "@rdfjs/types";
 
 interface Sdmx {
+    '': NamedNode<'http://purl.org/linked-data/sdmx#'>;
     "CodeList": NamedNode<'http://purl.org/linked-data/sdmx#CodeList'>;
     /** Denotes an SDMX concept, used in the particular SDMX terminological sense, which is in principle narrower than skos:Concept */
     "Concept": NamedNode<'http://purl.org/linked-data/sdmx#Concept'>;

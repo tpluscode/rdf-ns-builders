@@ -2,6 +2,7 @@ import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
 import { NamedNode } from "@rdfjs/types";
 
 interface Oa {
+    '': NamedNode<'http://www.w3.org/ns/oa#'>;
     /** The class for Web Annotations. */
     "Annotation": NamedNode<'http://www.w3.org/ns/oa#Annotation'>;
     /** A subClass of  as:OrderedCollection  that conveys to a consuming application that it should select one of the resources in the  as:items  list to use, rather than all of them.  This is typically used to provide a choice of resources to render to the user, based on further supplied properties.  If the consuming application cannot determine the user's preference, then it should use the first in the list. */

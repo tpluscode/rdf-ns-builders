@@ -2,6 +2,7 @@ import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
 import { NamedNode } from "@rdfjs/types";
 
 interface Discipline {
+    '': NamedNode<'http://qudt.org/vocab/discipline/'>;
     "Acoustics": NamedNode<'http://qudt.org/vocab/discipline/Acoustics'>;
     "AeroThermalDynamics": NamedNode<'http://qudt.org/vocab/discipline/AeroThermalDynamics'>;
     "Aerodynamics": NamedNode<'http://qudt.org/vocab/discipline/Aerodynamics'>;

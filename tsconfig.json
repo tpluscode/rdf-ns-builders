@@ -2,10 +2,6 @@
   "compilerOptions": {
     "module": "commonjs",
     "target": "es2018",
-    "lib": [
-      "es6",
-      "esnext"
-    ],
     "strictNullChecks": true,
     "strict": true,
     "noImplicitAny": true,
@@ -13,7 +9,6 @@
     "noImplicitThis": true,
     "moduleResolution": "node",
     "esModuleInterop": true,
-    "outDir": ".",
     "declaration": true,
     "declarationMap": true
   },
@@ -22,5 +17,7 @@
     "src/loose.ts",
     "src/bin/index.ts"
   ],
-  "include": ["tests", "src"]
+  "include": [
+    "test", "docs"
+  ]
 }

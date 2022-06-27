@@ -2,6 +2,7 @@ import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
 import { NamedNode } from "@rdfjs/types";
 
 interface Csvw {
+    '': NamedNode<'http://www.w3.org/ns/csvw#'>;
     /** A Cell represents a cell at the intersection of a Row and a Column within a Table. */
     "Cell": NamedNode<'http://www.w3.org/ns/csvw#Cell'>;
     /** A Column represents a vertical arrangement of Cells within a Table. */

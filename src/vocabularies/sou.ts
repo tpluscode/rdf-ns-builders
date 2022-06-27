@@ -2,6 +2,7 @@ import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
 import { NamedNode } from "@rdfjs/types";
 
 interface Sou {
+    '': NamedNode<'http://qudt.org/vocab/sou/'>;
     "ASU": NamedNode<'http://qudt.org/vocab/sou/ASU'>;
     "CGS-EMU": NamedNode<'http://qudt.org/vocab/sou/CGS-EMU'>;
     "CGS-ESU": NamedNode<'http://qudt.org/vocab/sou/CGS-ESU'>;

@@ -2,6 +2,7 @@ import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
 import { NamedNode } from "@rdfjs/types";
 
 interface Xkos {
+    '': NamedNode<'http://rdf-vocabulary.ddialliance.org/xkos#'>;
     "ClassificationLevel": NamedNode<'http://rdf-vocabulary.ddialliance.org/xkos#ClassificationLevel'>;
     "ConceptAssociation": NamedNode<'http://rdf-vocabulary.ddialliance.org/xkos#ConceptAssociation'>;
     "Correspondence": NamedNode<'http://rdf-vocabulary.ddialliance.org/xkos#Correspondence'>;

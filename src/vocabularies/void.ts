@@ -2,6 +2,7 @@ import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
 import { NamedNode } from "@rdfjs/types";
 
 interface Void {
+    '': NamedNode<'http://rdfs.org/ns/void#'>;
     /** A set of RDF triples that are published, maintained or aggregated by a single provider. */
     "Dataset": NamedNode<'http://rdfs.org/ns/void#Dataset'>;
     /** A web resource whose foaf:primaryTopic or foaf:topics include void:Datasets. */

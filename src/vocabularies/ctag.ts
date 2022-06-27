@@ -2,6 +2,7 @@ import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
 import { NamedNode } from "@rdfjs/types";
 
 interface Ctag {
+    '': NamedNode<'http://commontag.org/ns#'>;
     
 }
 

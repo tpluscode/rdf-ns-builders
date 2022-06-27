@@ -2,6 +2,7 @@ import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
 import { NamedNode } from "@rdfjs/types";
 
 interface Prov {
+    '': NamedNode<'http://www.w3.org/ns/prov#'>;
     "Accept": NamedNode<'http://www.w3.org/ns/prov#Accept'>;
     "Activity": NamedNode<'http://www.w3.org/ns/prov#Activity'>;
     /** ActivityInfluence provides additional descriptions of an Activity's binary influence upon any other kind of resource. Instances of ActivityInfluence use the prov:activity property to cite the influencing Activity. */

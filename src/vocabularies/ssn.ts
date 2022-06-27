@@ -2,6 +2,7 @@ import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
 import { NamedNode } from "@rdfjs/types";
 
 interface Ssn {
+    '': NamedNode<'http://www.w3.org/ns/ssn/'>;
     /** Describes the Deployment of one or more Systems for a particular purpose. Deployment may be done on a Platform. */
     "Deployment": NamedNode<'http://www.w3.org/ns/ssn/Deployment'>;
     /** Any information that is provided to a Procedure for its use. */

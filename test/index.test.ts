@@ -1,9 +1,15 @@
 import { describe, it } from 'mocha'
 import { expect } from 'chai'
-import { expand } from '@zazuko/rdf-vocabularies'
-import { schema, foaf, dcterms, xml } from '../src/loose'
+import { expand, prefixes } from '@zazuko/rdf-vocabularies'
+import { namedNode } from '@rdf-esm/data-model'
+import { schema, foaf, dcterms } from '../src'
+import { xml } from '../src/loose'
 
 describe('generated types', () => {
+  it('export a getter for namespace itself', () => {
+    expect(schema['']).to.deep.eq(namedNode(prefixes.schema))
+  })
+
   it('export a class', () => {
     expect(schema.Person.value).to.eq(expand('schema:Person'))
   })
@@ -13,7 +19,7 @@ describe('generated types', () => {
   })
 
   it('is callable', () => {
-    expect(dcterms('foo').value).to.eq(expand('dcterms:foo'))
+    expect(dcterms('language').value).to.eq(expand('dcterms:language'))
   })
 
   it('is a dynamic proxy', () => {

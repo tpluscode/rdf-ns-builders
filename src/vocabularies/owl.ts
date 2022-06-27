@@ -2,6 +2,7 @@ import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
 import { NamedNode } from "@rdfjs/types";
 
 interface Owl {
+    '': NamedNode<'http://www.w3.org/2002/07/owl#'>;
     /** The class of collections of pairwise different individuals. */
     "AllDifferent": NamedNode<'http://www.w3.org/2002/07/owl#AllDifferent'>;
     /** The class of collections of pairwise disjoint classes. */

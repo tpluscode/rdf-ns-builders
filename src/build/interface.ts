@@ -1,7 +1,7 @@
 import { PropertySignatureStructure, StructureKind } from 'ts-morph'
 import { shrink } from '@zazuko/rdf-vocabularies'
 import cf from 'clownface'
-import { namedNode } from '@rdfjs/data-model'
+import { namedNode } from '@rdf-esm/data-model'
 import { ImportedVocabularies } from './'
 
 const rdfsComment = namedNode('http://www.w3.org/2000/01/rdf-schema#comment')

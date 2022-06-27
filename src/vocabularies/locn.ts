@@ -2,6 +2,7 @@ import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
 import { NamedNode } from "@rdfjs/types";
 
 interface Locn {
+    '': NamedNode<'http://www.w3.org/ns/locn#'>;
     /** An "address representation" as conceptually defined by the INSPIRE Address Representation data type. The locn:addressId property may be used to link this locn:Address to other representations. */
     "Address": NamedNode<'http://www.w3.org/ns/locn#Address'>;
     /** The locn:Geometry class provides the means to identify a location as a point, line, polygon, etc. expressed using coordinates in some coordinate reference system. */

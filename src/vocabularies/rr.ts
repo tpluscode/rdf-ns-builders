@@ -2,6 +2,7 @@ import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
 import { NamedNode } from "@rdfjs/types";
 
 interface Rr {
+    '': NamedNode<'http://www.w3.org/ns/r2rml#'>;
     "BaseTableOrView": NamedNode<'http://www.w3.org/ns/r2rml#BaseTableOrView'>;
     /** Denotes a blank node, used with termType */
     "BlankNode": NamedNode<'http://www.w3.org/ns/r2rml#BlankNode'>;

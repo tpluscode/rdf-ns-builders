@@ -2,6 +2,7 @@ import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
 import { NamedNode } from "@rdfjs/types";
 
 interface Doap {
+    '': NamedNode<'http://usefulinc.com/ns/doap#'>;
     /** Dépôt GNU Arch du code source. */
     "ArchRepository": NamedNode<'http://usefulinc.com/ns/doap#ArchRepository'>;
     /** BitKeeper Quellcode-Versionierungssystem. */

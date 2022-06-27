@@ -2,6 +2,7 @@ import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
 import { NamedNode } from "@rdfjs/types";
 
 interface Dtype {
+    '': NamedNode<'http://www.linkedmodel.org/schema/dtype#'>;
     "CodeList": NamedNode<'http://www.linkedmodel.org/schema/dtype#CodeList'>;
     "CompositeCodeList": NamedNode<'http://www.linkedmodel.org/schema/dtype#CompositeCodeList'>;
     "DerivedCodeList": NamedNode<'http://www.linkedmodel.org/schema/dtype#DerivedCodeList'>;

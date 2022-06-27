@@ -2,6 +2,7 @@ import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
 import { NamedNode } from "@rdfjs/types";
 
 interface Xhv {
+    '': NamedNode<'http://www.w3.org/1999/xhtml/vocab#'>;
     /**
      * A message
      *       with important, and usually time-sensitive, information. Also see

@@ -2,6 +2,7 @@ import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
 import { NamedNode } from "@rdfjs/types";
 
 interface Hydra {
+    '': NamedNode<'http://www.w3.org/ns/hydra/core#'>;
     /** The Hydra API documentation class */
     "ApiDocumentation": NamedNode<'http://www.w3.org/ns/hydra/core#ApiDocumentation'>;
     /** Provides a base abstract for base Uri source for Iri template resolution. */
