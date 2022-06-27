@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.0.1
+
+### Patch Changes
+
+- cd656db: Strict module interface did not include the empty getter for namespace itself
+
 ## 2.0.0
 
 ### Major Changes
