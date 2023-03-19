@@ -11,7 +11,7 @@
     "rdf-ns-builders": "bin/index.js"
   },
   "scripts": {
-    "postinstall": "patch-package",
+    "prepare": "patch-package",
     "generate": "node --loader ts-node/esm src/bin/index.ts generate -p @zazuko/vocabularies -o src",
     "test": "c8 --reporter=lcov mocha test/index.test.ts",
     "prepack": "npm run build",
