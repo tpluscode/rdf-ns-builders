@@ -1,5 +1,11 @@
 # Changelog
 
+## 3.0.2
+
+### Patch Changes
+
+- b649157: v3 was packaged without the modules
+
 ## 3.0.1
 
 ### Patch Changes
