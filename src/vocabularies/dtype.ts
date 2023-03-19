@@ -1,14 +1,14 @@
-import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
+import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
 interface Dtype {
     '': NamedNode<'http://www.linkedmodel.org/schema/dtype#'>;
     "CodeList": NamedNode<'http://www.linkedmodel.org/schema/dtype#CodeList'>;
+    "Enumeration": NamedNode<'http://www.linkedmodel.org/schema/dtype#Enumeration'>;
     "CompositeCodeList": NamedNode<'http://www.linkedmodel.org/schema/dtype#CompositeCodeList'>;
     "DerivedCodeList": NamedNode<'http://www.linkedmodel.org/schema/dtype#DerivedCodeList'>;
-    "EnumeratedValue": NamedNode<'http://www.linkedmodel.org/schema/dtype#EnumeratedValue'>;
-    "Enumeration": NamedNode<'http://www.linkedmodel.org/schema/dtype#Enumeration'>;
     "SimpleCodeList": NamedNode<'http://www.linkedmodel.org/schema/dtype#SimpleCodeList'>;
+    "EnumeratedValue": NamedNode<'http://www.linkedmodel.org/schema/dtype#EnumeratedValue'>;
     "ValueReference": NamedNode<'http://www.linkedmodel.org/schema/dtype#ValueReference'>;
     "code": NamedNode<'http://www.linkedmodel.org/schema/dtype#code'>;
     "compositeOf": NamedNode<'http://www.linkedmodel.org/schema/dtype#compositeOf'>;

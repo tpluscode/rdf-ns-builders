@@ -1,33 +1,39 @@
-import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
+import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
 interface Time {
     '': NamedNode<'http://www.w3.org/2006/time#'>;
     /** Descripción de fecha y tiempo estructurada con valores separados para los diferentes elementos de un sistema calendario-reloj. El sistema de referencia temporal está fijado al calendario gregoriano, y el rango de las propiedades año, mes, día restringidas a los correspondientes tipos del XML Schema xsd:gYear, xsd:gMonth y xsd:gDay respectivamente. */
     "DateTimeDescription": NamedNode<'http://www.w3.org/2006/time#DateTimeDescription'>;
+    /** Descripción de fecha y hora estructurada con valores separados para los distintos elementos de un sistema calendario-reloj. */
+    "GeneralDateTimeDescription": NamedNode<'http://www.w3.org/2006/time#GeneralDateTimeDescription'>;
     /** 'intervalo de fecha-hora' es una subclase de 'intervalo propio', definida utilizando el multi-elemento 'descripción de fecha-hora'. */
     "DateTimeInterval": NamedNode<'http://www.w3.org/2006/time#DateTimeInterval'>;
+    /** A temporal entity with non-zero extent or duration, i.e. for which the value of the beginning and end are different */
+    "ProperInterval": NamedNode<'http://www.w3.org/2006/time#ProperInterval'>;
     /** El día de la semana */
     "DayOfWeek": NamedNode<'http://www.w3.org/2006/time#DayOfWeek'>;
     /** Duración de una extensión temporal expresada como un número escalado por una unidad temporal. */
     "Duration": NamedNode<'http://www.w3.org/2006/time#Duration'>;
+    /** Extensión de tiempo; duración de un intervalo de tiempo independiente de su posición de inicio particular. */
+    "TemporalDuration": NamedNode<'http://www.w3.org/2006/time#TemporalDuration'>;
     /** Descripción de extensión temporal estructurada con valores separados para los distintos elementos de un sistema de horario-calendario. El sistema de referencia temporal se fija al calendario gregoriano, y el intervalo de cada una de las propiedades numéricas se restringe a xsd:decimal. */
     "DurationDescription": NamedNode<'http://www.w3.org/2006/time#DurationDescription'>;
-    "Friday": NamedNode<'http://www.w3.org/2006/time#Friday'>;
-    /** Descripción de fecha y hora estructurada con valores separados para los distintos elementos de un sistema calendario-reloj. */
-    "GeneralDateTimeDescription": NamedNode<'http://www.w3.org/2006/time#GeneralDateTimeDescription'>;
     /** Descripción de extensión temporal estructurada con valores separados para los distintos elementos de un sistema de horario-calendario. */
     "GeneralDurationDescription": NamedNode<'http://www.w3.org/2006/time#GeneralDurationDescription'>;
+    "Friday": NamedNode<'http://www.w3.org/2006/time#Friday'>;
+    /** A position on a time-line */
+    "TemporalPosition": NamedNode<'http://www.w3.org/2006/time#TemporalPosition'>;
     /** A temporal entity with zero extent or duration */
     "Instant": NamedNode<'http://www.w3.org/2006/time#Instant'>;
+    /** A temporal interval or instant. */
+    "TemporalEntity": NamedNode<'http://www.w3.org/2006/time#TemporalEntity'>;
     /** A temporal entity with an extent or duration */
     "Interval": NamedNode<'http://www.w3.org/2006/time#Interval'>;
     "January": NamedNode<'http://www.w3.org/2006/time#January'>;
     "Monday": NamedNode<'http://www.w3.org/2006/time#Monday'>;
     /** El mes del año. */
     "MonthOfYear": NamedNode<'http://www.w3.org/2006/time#MonthOfYear'>;
-    /** A temporal entity with non-zero extent or duration, i.e. for which the value of the beginning and end are different */
-    "ProperInterval": NamedNode<'http://www.w3.org/2006/time#ProperInterval'>;
     "Saturday": NamedNode<'http://www.w3.org/2006/time#Saturday'>;
     "Sunday": NamedNode<'http://www.w3.org/2006/time#Sunday'>;
     /**
@@ -36,12 +42,6 @@ interface Time {
      * This is a stub class, representing the set of all temporal reference systems.
      */
     "TRS": NamedNode<'http://www.w3.org/2006/time#TRS'>;
-    /** Extensión de tiempo; duración de un intervalo de tiempo independiente de su posición de inicio particular. */
-    "TemporalDuration": NamedNode<'http://www.w3.org/2006/time#TemporalDuration'>;
-    /** A temporal interval or instant. */
-    "TemporalEntity": NamedNode<'http://www.w3.org/2006/time#TemporalEntity'>;
-    /** A position on a time-line */
-    "TemporalPosition": NamedNode<'http://www.w3.org/2006/time#TemporalPosition'>;
     /** A standard duration, which provides a scale factor for a time extent, or the granularity or precision for a time position. */
     "TemporalUnit": NamedNode<'http://www.w3.org/2006/time#TemporalUnit'>;
     "Thursday": NamedNode<'http://www.w3.org/2006/time#Thursday'>;
@@ -90,20 +90,20 @@ interface Time {
     "generalYear": NamedNode<'http://www.w3.org/2006/time#generalYear'>;
     /** Beginning of a temporal entity */
     "hasBeginning": NamedNode<'http://www.w3.org/2006/time#hasBeginning'>;
+    /** Proporciona soporte a la asociación de una entidad temporal (instante o intervalo) a cualquier cosa. */
+    "hasTime": NamedNode<'http://www.w3.org/2006/time#hasTime'>;
     /** Valor de intervalo de fecha-hora expresado como un valor estructurado. El principio y el final del intervalo coincide con los límites del elemento más corto en la descripción. */
     "hasDateTimeDescription": NamedNode<'http://www.w3.org/2006/time#hasDateTimeDescription'>;
     /** Duración de una entidad temporal, expresada como un valor escalado o un valor nominal. */
     "hasDuration": NamedNode<'http://www.w3.org/2006/time#hasDuration'>;
+    /** Duración de una entidad temporal. */
+    "hasTemporalDuration": NamedNode<'http://www.w3.org/2006/time#hasTemporalDuration'>;
     /** Duración de una entidad temporal, expresada utilizando una descripción estructurada. */
     "hasDurationDescription": NamedNode<'http://www.w3.org/2006/time#hasDurationDescription'>;
     /** End of a temporal entity. */
     "hasEnd": NamedNode<'http://www.w3.org/2006/time#hasEnd'>;
     /** El sistema de referencia temporal utilizado por una posición temporal o descripción de extensión. */
     "hasTRS": NamedNode<'http://www.w3.org/2006/time#hasTRS'>;
-    /** Duración de una entidad temporal. */
-    "hasTemporalDuration": NamedNode<'http://www.w3.org/2006/time#hasTemporalDuration'>;
-    /** Proporciona soporte a la asociación de una entidad temporal (instante o intervalo) a cualquier cosa. */
-    "hasTime": NamedNode<'http://www.w3.org/2006/time#hasTime'>;
     /** Extensión de una entidad temporal, expresada utilizando xsd:duration. */
     "hasXSDDuration": NamedNode<'http://www.w3.org/2006/time#hasXSDDuration'>;
     /** Hour position in a calendar-clock system. */
@@ -130,22 +130,22 @@ interface Time {
     "inside": NamedNode<'http://www.w3.org/2006/time#inside'>;
     /** If a proper interval T1 is intervalAfter another proper interval T2, then the beginning of T1 is after the end of T2. */
     "intervalAfter": NamedNode<'http://www.w3.org/2006/time#intervalAfter'>;
+    /** If a proper interval T1 is intervalDisjoint another proper interval T2, then the beginning of T1 is after the end of T2, or the end of T1 is before the beginning of T2, i.e. the intervals do not overlap in any way, but their ordering relationship is not known. */
+    "intervalDisjoint": NamedNode<'http://www.w3.org/2006/time#intervalDisjoint'>;
     /** If a proper interval T1 is intervalBefore another proper interval T2, then the end of T1 is before the beginning of T2. */
     "intervalBefore": NamedNode<'http://www.w3.org/2006/time#intervalBefore'>;
     /** If a proper interval T1 is intervalContains another proper interval T2, then the beginning of T1 is before the beginning of T2, and the end of T1 is after the end of T2. */
     "intervalContains": NamedNode<'http://www.w3.org/2006/time#intervalContains'>;
-    /** If a proper interval T1 is intervalDisjoint another proper interval T2, then the beginning of T1 is after the end of T2, or the end of T1 is before the beginning of T2, i.e. the intervals do not overlap in any way, but their ordering relationship is not known. */
-    "intervalDisjoint": NamedNode<'http://www.w3.org/2006/time#intervalDisjoint'>;
     /** If a proper interval T1 is intervalDuring another proper interval T2, then the beginning of T1 is after the beginning of T2, and the end of T1 is before the end of T2. */
     "intervalDuring": NamedNode<'http://www.w3.org/2006/time#intervalDuring'>;
+    /** If a proper interval T1 is intervalIn another proper interval T2, then the beginning of T1 is after the beginning of T2 or is coincident with the beginning of T2, and the end of T1 is before the end of T2, or is coincident with the end of T2, except that end of T1 may not be coincident with the end of T2 if the beginning of T1 is coincident with the beginning of T2. */
+    "intervalIn": NamedNode<'http://www.w3.org/2006/time#intervalIn'>;
     /** If a proper interval T1 is intervalEquals another proper interval T2, then the beginning of T1 is coincident with the beginning of T2, and the end of T1 is coincident with the end of T2. */
     "intervalEquals": NamedNode<'http://www.w3.org/2006/time#intervalEquals'>;
     /** If a proper interval T1 is intervalFinishedBy another proper interval T2, then the beginning of T1 is before the beginning of T2, and the end of T1 is coincident with the end of T2. */
     "intervalFinishedBy": NamedNode<'http://www.w3.org/2006/time#intervalFinishedBy'>;
     /** If a proper interval T1 is intervalFinishes another proper interval T2, then the beginning of T1 is after the beginning of T2, and the end of T1 is coincident with the end of T2. */
     "intervalFinishes": NamedNode<'http://www.w3.org/2006/time#intervalFinishes'>;
-    /** If a proper interval T1 is intervalIn another proper interval T2, then the beginning of T1 is after the beginning of T2 or is coincident with the beginning of T2, and the end of T1 is before the end of T2, or is coincident with the end of T2, except that end of T1 may not be coincident with the end of T2 if the beginning of T1 is coincident with the beginning of T2. */
-    "intervalIn": NamedNode<'http://www.w3.org/2006/time#intervalIn'>;
     /** If a proper interval T1 is intervalMeets another proper interval T2, then the end of T1 is coincident with the beginning of T2. */
     "intervalMeets": NamedNode<'http://www.w3.org/2006/time#intervalMeets'>;
     /** If a proper interval T1 is intervalMetBy another proper interval T2, then the beginning of T1 is coincident with the end of T2. */
@@ -185,6 +185,10 @@ interface Time {
     /** The time zone for clock elements in the temporal position */
     "timeZone": NamedNode<'http://www.w3.org/2006/time#timeZone'>;
     "unitDay": NamedNode<'http://www.w3.org/2006/time#unitDay'>;
+    /** Longitud de, o elemento de la longitud de, una extensión temporal expresada en semanas. */
+    "weeks": NamedNode<'http://www.w3.org/2006/time#weeks'>;
+    /** Longitud de, o elemento de la longitud de, una extensión temporal expresada en años. */
+    "years": NamedNode<'http://www.w3.org/2006/time#years'>;
     "unitHour": NamedNode<'http://www.w3.org/2006/time#unitHour'>;
     "unitMinute": NamedNode<'http://www.w3.org/2006/time#unitMinute'>;
     "unitMonth": NamedNode<'http://www.w3.org/2006/time#unitMonth'>;
@@ -195,8 +199,6 @@ interface Time {
     "unitYear": NamedNode<'http://www.w3.org/2006/time#unitYear'>;
     /** Número de semana en el año. */
     "week": NamedNode<'http://www.w3.org/2006/time#week'>;
-    /** Longitud de, o elemento de la longitud de, una extensión temporal expresada en semanas. */
-    "weeks": NamedNode<'http://www.w3.org/2006/time#weeks'>;
     /** Valor de 'intervalo de fecha-hora' expresado como un valor compacto. */
     "xsdDateTime": NamedNode<'http://www.w3.org/2006/time#xsdDateTime'>;
     /**
@@ -205,8 +207,6 @@ interface Time {
      * l rango de esta propiedad no está especificado, por tanto, se puede reemplazar por cualquier representación específica de un año de calendario de un calendario cualquiera.
      */
     "year": NamedNode<'http://www.w3.org/2006/time#year'>;
-    /** Longitud de, o elemento de la longitud de, una extensión temporal expresada en años. */
-    "years": NamedNode<'http://www.w3.org/2006/time#years'>;
     "2006": NamedNode<'http://www.w3.org/2006/time#2006'>;
     "2016": NamedNode<'http://www.w3.org/2006/time#2016'>;
 }

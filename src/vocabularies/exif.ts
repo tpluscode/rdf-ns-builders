@@ -1,4 +1,4 @@
-import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
+import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
 interface Exif {
@@ -9,18 +9,30 @@ interface Exif {
     "_unknown": NamedNode<'http://www.w3.org/2003/12/exif/ns#_unknown'>;
     /** The lens aperture. The unit is the APEX value. */
     "apertureValue": NamedNode<'http://www.w3.org/2003/12/exif/ns#apertureValue'>;
+    /** An attribute relating to Picture-Taking Conditions */
+    "pictTaking": NamedNode<'http://www.w3.org/2003/12/exif/ns#pictTaking'>;
     /** Person who created the image */
     "artist": NamedNode<'http://www.w3.org/2003/12/exif/ns#artist'>;
+    /** A property that connects an IFD to one of its entries. Super property which integrates all Exif tags. */
+    "exifAttribute": NamedNode<'http://www.w3.org/2003/12/exif/ns#exifAttribute'>;
     /** The number of bits per image component. In this standard each component of the image is 8 bits, so the value for this tag is 8. See also SamplesPerPixel. In JPEG compressed data a JPEG marker is used instead of this tag. */
     "bitsPerSample": NamedNode<'http://www.w3.org/2003/12/exif/ns#bitsPerSample'>;
+    /** An attribute relating to image data structure */
+    "imageDataStruct": NamedNode<'http://www.w3.org/2003/12/exif/ns#imageDataStruct'>;
+    /** a rational number representing a resolution. Could be a subProperty of other general schema. */
+    "resolution": NamedNode<'http://www.w3.org/2003/12/exif/ns#resolution'>;
     /** The value of brightness. The unit is the APEX value. Ordinarily it is given in the range of -99.99 to 99.99. Note that if the numerator of the recorded value is FFFFFFFF.H, Unknown shall be indicated. */
     "brightnessValue": NamedNode<'http://www.w3.org/2003/12/exif/ns#brightnessValue'>;
     /** CCDに付いているColor filter array(CFA)のパターン。例えば普通のRGBフィルターだと、CFAPatternのデータは 02 02 00 01 01 02 */
     "cfaPattern": NamedNode<'http://www.w3.org/2003/12/exif/ns#cfaPattern'>;
     /** The color space information tag (ColorSpace) is always recorded as the color space specifier. Normally sRGB (=1) is used to define the color space based on the PC monitor conditions and environment. */
     "colorSpace": NamedNode<'http://www.w3.org/2003/12/exif/ns#colorSpace'>;
+    /** An attribute relating to image data characteristics */
+    "imageDataCharacter": NamedNode<'http://www.w3.org/2003/12/exif/ns#imageDataCharacter'>;
     /** Information specific to compressed data. The channels of each component are arranged in order from the 1st component to the 4th. For uncompressed data the data arrangement is given in the PhotometricInterpretation tag. However, since PhotometricInterpretation can only express the order of Y,Cb and Cr, this tag is provided for cases when compressed data uses components other than Y, Cb, and Cr and to enable support of other sequences. */
     "componentsConfiguration": NamedNode<'http://www.w3.org/2003/12/exif/ns#componentsConfiguration'>;
+    /** An attribute relating to Image Configuration */
+    "imageConfig": NamedNode<'http://www.w3.org/2003/12/exif/ns#imageConfig'>;
     /** Information specific to compressed data. The compression mode used for a compressed image is indicated in unit bits per pixel. */
     "compressedBitsPerPixel": NamedNode<'http://www.w3.org/2003/12/exif/ns#compressedBitsPerPixel'>;
     /** The compression scheme used for the image data. When a primary image is JPEG compressed, this designation is not necessary and is omitted. When thumbnails use JPEG compression, this tag value is set to 6. */
@@ -47,12 +59,14 @@ interface Exif {
     "deviceSettingDescription": NamedNode<'http://www.w3.org/2003/12/exif/ns#deviceSettingDescription'>;
     /** The digital zoom ratio when the image was shot. If the numerator of the recorded value is 0, this indicates that digital zoom was not used. */
     "digitalZoomRatio": NamedNode<'http://www.w3.org/2003/12/exif/ns#digitalZoomRatio'>;
-    /** A property that connects an IFD to one of its entries. Super property which integrates all Exif tags. */
-    "exifAttribute": NamedNode<'http://www.w3.org/2003/12/exif/ns#exifAttribute'>;
     /** Exif Version */
     "exifVersion": NamedNode<'http://www.w3.org/2003/12/exif/ns#exifVersion'>;
+    /** An attribute relating to Version */
+    "versionInfo": NamedNode<'http://www.w3.org/2003/12/exif/ns#versionInfo'>;
     /** A pointer to the Exif IFD, which is a set of tags for recording Exif-specific attribute information. */
     "exif_IFD_Pointer": NamedNode<'http://www.w3.org/2003/12/exif/ns#exif_IFD_Pointer'>;
+    /** A tag that refers a child IFD */
+    "ifdPointer": NamedNode<'http://www.w3.org/2003/12/exif/ns#ifdPointer'>;
     /** An Exif IFD data entry */
     "exifdata": NamedNode<'http://www.w3.org/2003/12/exif/ns#exifdata'>;
     /** The exposure bias. The unit is the APEX value. Ordinarily it is given in the range of -99.99 to 99.99. */
@@ -65,6 +79,8 @@ interface Exif {
     "exposureProgram": NamedNode<'http://www.w3.org/2003/12/exif/ns#exposureProgram'>;
     /** Exposure time, given in seconds (sec). */
     "exposureTime": NamedNode<'http://www.w3.org/2003/12/exif/ns#exposureTime'>;
+    /** a mesurement of time length with unit of second */
+    "seconds": NamedNode<'http://www.w3.org/2003/12/exif/ns#seconds'>;
     /** F number */
     "fNumber": NamedNode<'http://www.w3.org/2003/12/exif/ns#fNumber'>;
     /** The image source. If a DSC recorded the image, this tag value of this tag always be set to 3, indicating that the image was recorded on a DSC. */
@@ -77,8 +93,12 @@ interface Exif {
     "flashpixVersion": NamedNode<'http://www.w3.org/2003/12/exif/ns#flashpixVersion'>;
     /** The actual focal length of the lens, in mm. Conversion is not made to the focal length of a 35 mm film camera. */
     "focalLength": NamedNode<'http://www.w3.org/2003/12/exif/ns#focalLength'>;
+    /** A length with unit of mm */
+    "mm": NamedNode<'http://www.w3.org/2003/12/exif/ns#mm'>;
     /** 35mm換算した焦点距離 */
     "focalLengthIn35mmFilm": NamedNode<'http://www.w3.org/2003/12/exif/ns#focalLengthIn35mmFilm'>;
+    /** Length of an object. Could be a subProperty of other general schema. */
+    "length": NamedNode<'http://www.w3.org/2003/12/exif/ns#length'>;
     /** CCD画素密度の単位 */
     "focalPlaneResolutionUnit": NamedNode<'http://www.w3.org/2003/12/exif/ns#focalPlaneResolutionUnit'>;
     /** The number of pixels in the image width (X) direction per FocalPlaneResolutionUnit on the camera focal plane. */
@@ -91,6 +111,8 @@ interface Exif {
     "geo": NamedNode<'http://www.w3.org/2003/12/exif/ns#geo'>;
     /** The altitude based on the reference in GPSAltitudeRef. Altitude is expressed as one RATIONAL value. The reference unit is meters. */
     "gpsAltitude": NamedNode<'http://www.w3.org/2003/12/exif/ns#gpsAltitude'>;
+    /** An attribute relating to GPS information */
+    "gpsInfo": NamedNode<'http://www.w3.org/2003/12/exif/ns#gpsInfo'>;
     /** Indicates the altitude used as the reference altitude. If the reference is sea level and the altitude is above sea level, 0 is given. If the altitude is below sea level, a value of 1 is given and the altitude is indicated as an absolute value in the GPSAltitude tag. The reference unit is meters. */
     "gpsAltitudeRef": NamedNode<'http://www.w3.org/2003/12/exif/ns#gpsAltitudeRef'>;
     /** A character string recording the name of the GPS area. The first byte indicates the character code used, and this is followed by the name of the GPS area. */
@@ -121,8 +143,6 @@ interface Exif {
     "gpsImgDirection": NamedNode<'http://www.w3.org/2003/12/exif/ns#gpsImgDirection'>;
     /** The reference for giving the direction of the image when it is captured. 'T' denotes true direction and 'M' is magnetic direction. */
     "gpsImgDirectionRef": NamedNode<'http://www.w3.org/2003/12/exif/ns#gpsImgDirectionRef'>;
-    /** An attribute relating to GPS information */
-    "gpsInfo": NamedNode<'http://www.w3.org/2003/12/exif/ns#gpsInfo'>;
     /** A pointer to the GPS IFD, which is a set of tags for recording GPS information. */
     "gpsInfo_IFD_Pointer": NamedNode<'http://www.w3.org/2003/12/exif/ns#gpsInfo_IFD_Pointer'>;
     /** The latitude, expressed as three values giving the degrees, minutes, and seconds, respectively. */
@@ -157,14 +177,6 @@ interface Exif {
     "gpsVersionID": NamedNode<'http://www.w3.org/2003/12/exif/ns#gpsVersionID'>;
     /** Height of an object */
     "height": NamedNode<'http://www.w3.org/2003/12/exif/ns#height'>;
-    /** A tag that refers a child IFD */
-    "ifdPointer": NamedNode<'http://www.w3.org/2003/12/exif/ns#ifdPointer'>;
-    /** An attribute relating to Image Configuration */
-    "imageConfig": NamedNode<'http://www.w3.org/2003/12/exif/ns#imageConfig'>;
-    /** An attribute relating to image data characteristics */
-    "imageDataCharacter": NamedNode<'http://www.w3.org/2003/12/exif/ns#imageDataCharacter'>;
-    /** An attribute relating to image data structure */
-    "imageDataStruct": NamedNode<'http://www.w3.org/2003/12/exif/ns#imageDataStruct'>;
     /** A character string giving the title of the image. It may be a comment such as "1988 company picnic" or the like. Two-byte character codes cannot be used. When a 2-byte code is necessary, the Exif Private tag UserComment is to be used. */
     "imageDescription": NamedNode<'http://www.w3.org/2003/12/exif/ns#imageDescription'>;
     /** Image height. The number of rows of image data. In JPEG compressed data a JPEG marker is used. */
@@ -173,6 +185,8 @@ interface Exif {
     "imageUniqueID": NamedNode<'http://www.w3.org/2003/12/exif/ns#imageUniqueID'>;
     /** Image width. The number of columns of image data, equal to the number of pixels per row. In JPEG compressed data a JPEG marker is used instead of this tag. */
     "imageWidth": NamedNode<'http://www.w3.org/2003/12/exif/ns#imageWidth'>;
+    /** Width of an object */
+    "width": NamedNode<'http://www.w3.org/2003/12/exif/ns#width'>;
     /**
      * An attribute relating to Interoperability. Tags stored in
      * Interoperability IFD may be defined dependently to each Interoperability rule.
@@ -188,24 +202,24 @@ interface Exif {
     "isoSpeedRatings": NamedNode<'http://www.w3.org/2003/12/exif/ns#isoSpeedRatings'>;
     /** The offset to the start byte (SOI) of JPEG compressed thumbnail data. This is not used for primary image JPEG data. */
     "jpegInterchangeFormat": NamedNode<'http://www.w3.org/2003/12/exif/ns#jpegInterchangeFormat'>;
+    /** An attribute relating to recording offset */
+    "recOffset": NamedNode<'http://www.w3.org/2003/12/exif/ns#recOffset'>;
     /** The number of bytes of JPEG compressed thumbnail data. This is not used for primary image JPEG data. */
     "jpegInterchangeFormatLength": NamedNode<'http://www.w3.org/2003/12/exif/ns#jpegInterchangeFormatLength'>;
-    /** Length of an object. Could be a subProperty of other general schema. */
-    "length": NamedNode<'http://www.w3.org/2003/12/exif/ns#length'>;
     /** Light source such as Daylight, Tungsten, Flash etc. */
     "lightSource": NamedNode<'http://www.w3.org/2003/12/exif/ns#lightSource'>;
     /** Manufacturer of image input equipment */
     "make": NamedNode<'http://www.w3.org/2003/12/exif/ns#make'>;
     /** Manufacturer notes */
     "makerNote": NamedNode<'http://www.w3.org/2003/12/exif/ns#makerNote'>;
+    /** An attribute relating to User Information */
+    "userInfo": NamedNode<'http://www.w3.org/2003/12/exif/ns#userInfo'>;
     /** The smallest F number of the lens. The unit is the APEX value. Ordinarily it is given in the range of 00.00 to 99.99, but it is not limited to this range. */
     "maxApertureValue": NamedNode<'http://www.w3.org/2003/12/exif/ns#maxApertureValue'>;
     /** A length with unit of meter */
     "meter": NamedNode<'http://www.w3.org/2003/12/exif/ns#meter'>;
     /** Metering mode, such as CenterWeightedAverage, Spot, MultiSpot,Pattern, Partial etc. */
     "meteringMode": NamedNode<'http://www.w3.org/2003/12/exif/ns#meteringMode'>;
-    /** A length with unit of mm */
-    "mm": NamedNode<'http://www.w3.org/2003/12/exif/ns#mm'>;
     /** Model of image input equipment */
     "model": NamedNode<'http://www.w3.org/2003/12/exif/ns#model'>;
     /** Indicates the Opto-Electric Conversion Function (OECF) specified in ISO 14524. OECF is the relationship between the camera optical input and the image values. */
@@ -214,16 +228,14 @@ interface Exif {
     "orientation": NamedNode<'http://www.w3.org/2003/12/exif/ns#orientation'>;
     /** Pixel composition. In JPEG compressed data a JPEG marker is used instead of this tag. */
     "photometricInterpretation": NamedNode<'http://www.w3.org/2003/12/exif/ns#photometricInterpretation'>;
-    /** An attribute relating to Picture-Taking Conditions */
-    "pictTaking": NamedNode<'http://www.w3.org/2003/12/exif/ns#pictTaking'>;
     /** Brightness info for print image matching */
     "pimBrightness": NamedNode<'http://www.w3.org/2003/12/exif/ns#pimBrightness'>;
+    /** An attribute relating to print image matching */
+    "pimInfo": NamedNode<'http://www.w3.org/2003/12/exif/ns#pimInfo'>;
     /** ColorBalance info for print image matching */
     "pimColorBalance": NamedNode<'http://www.w3.org/2003/12/exif/ns#pimColorBalance'>;
     /** Contrast info for print image matching */
     "pimContrast": NamedNode<'http://www.w3.org/2003/12/exif/ns#pimContrast'>;
-    /** An attribute relating to print image matching */
-    "pimInfo": NamedNode<'http://www.w3.org/2003/12/exif/ns#pimInfo'>;
     /** Saturation info for print image matching */
     "pimSaturation": NamedNode<'http://www.w3.org/2003/12/exif/ns#pimSaturation'>;
     /** Sharpness info for print image matching */
@@ -238,8 +250,6 @@ interface Exif {
     "primaryChromaticities": NamedNode<'http://www.w3.org/2003/12/exif/ns#primaryChromaticities'>;
     /** A pointer to the print image matching IFD */
     "printImageMatching_IFD_Pointer": NamedNode<'http://www.w3.org/2003/12/exif/ns#printImageMatching_IFD_Pointer'>;
-    /** An attribute relating to recording offset */
-    "recOffset": NamedNode<'http://www.w3.org/2003/12/exif/ns#recOffset'>;
     /** The reference black point value and reference white point value. The color space is declared in a color space information tag, with the default being the value that gives the optimal image characteristics Interoperability these conditions. */
     "referenceBlackWhite": NamedNode<'http://www.w3.org/2003/12/exif/ns#referenceBlackWhite'>;
     /** Tag Relating to Related File Information */
@@ -252,8 +262,6 @@ interface Exif {
     "relatedImageWidth": NamedNode<'http://www.w3.org/2003/12/exif/ns#relatedImageWidth'>;
     /** Related audio file */
     "relatedSoundFile": NamedNode<'http://www.w3.org/2003/12/exif/ns#relatedSoundFile'>;
-    /** a rational number representing a resolution. Could be a subProperty of other general schema. */
-    "resolution": NamedNode<'http://www.w3.org/2003/12/exif/ns#resolution'>;
     /** The unit for measuring XResolution and YResolution. The same unit is used for both XResolution and YResolution. If the image resolution in unknown, 2 (inches) is designated. */
     "resolutionUnit": NamedNode<'http://www.w3.org/2003/12/exif/ns#resolutionUnit'>;
     /** The number of rows per strip. This is the number of rows in the image of one strip when an image is divided into strips. With JPEG compressed data this designation is not needed and is omitted. */
@@ -266,8 +274,6 @@ interface Exif {
     "sceneCaptureType": NamedNode<'http://www.w3.org/2003/12/exif/ns#sceneCaptureType'>;
     /** The type of scene. If a DSC recorded the image, this tag value shall always be set to 1, indicating that the image was directly photographed. */
     "sceneType": NamedNode<'http://www.w3.org/2003/12/exif/ns#sceneType'>;
-    /** a mesurement of time length with unit of second */
-    "seconds": NamedNode<'http://www.w3.org/2003/12/exif/ns#seconds'>;
     /** The image sensor type on the camera or input device, such as One-chip color area sensor etc. */
     "sensingMethod": NamedNode<'http://www.w3.org/2003/12/exif/ns#sensingMethod'>;
     /** The direction of sharpness processing applied by the camera when the image was shot. */
@@ -308,16 +314,10 @@ interface Exif {
     "transferFunction": NamedNode<'http://www.w3.org/2003/12/exif/ns#transferFunction'>;
     /** A tag for Exif users to write keywords or comments on the image besides those in ImageDescription, and without the character code limitations of the ImageDescription tag. The character code used in the UserComment tag is identified based on an ID code in a fixed 8-byte area at the start of the tag data area. */
     "userComment": NamedNode<'http://www.w3.org/2003/12/exif/ns#userComment'>;
-    /** An attribute relating to User Information */
-    "userInfo": NamedNode<'http://www.w3.org/2003/12/exif/ns#userInfo'>;
-    /** An attribute relating to Version */
-    "versionInfo": NamedNode<'http://www.w3.org/2003/12/exif/ns#versionInfo'>;
     /** The white balance mode set when the image was shot. */
     "whiteBalance": NamedNode<'http://www.w3.org/2003/12/exif/ns#whiteBalance'>;
     /** The chromaticity of the white point of the image. Normally this tag is not necessary, since color space is specified in the color space information tag (ColorSpace). */
     "whitePoint": NamedNode<'http://www.w3.org/2003/12/exif/ns#whitePoint'>;
-    /** Width of an object */
-    "width": NamedNode<'http://www.w3.org/2003/12/exif/ns#width'>;
     /** The number of pixels per ResolutionUnit in the ImageWidth direction. When the image resolution is unknown, 72 [dpi] is designated. */
     "xResolution": NamedNode<'http://www.w3.org/2003/12/exif/ns#xResolution'>;
     /** RGB形式からYCbCr形式に変換するための3つの係数。通常は0.299、0.587、0.114という値 */

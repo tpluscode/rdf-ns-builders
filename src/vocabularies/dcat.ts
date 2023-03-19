@@ -1,24 +1,26 @@
-import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
+import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
 interface Dcat {
     '': NamedNode<'http://www.w3.org/ns/dcat#'>;
     /** A curated collection of metadata about resources (e.g., datasets and data services in the context of a data catalog). */
     "Catalog": NamedNode<'http://www.w3.org/ns/dcat#Catalog'>;
+    /** 1つのエージェントによって公開またはキュレートされ、1つ以上の形式でアクセスまたはダウンロードできるデータの集合。 */
+    "Dataset": NamedNode<'http://www.w3.org/ns/dcat#Dataset'>;
     /** 1つのデータセットを記述したデータ・カタログ内のレコード。 */
     "CatalogRecord": NamedNode<'http://www.w3.org/ns/dcat#CatalogRecord'>;
     /** A site or end-point providing operations related to the discovery of, access to, or processing functions on, data or related resources. */
     "DataService": NamedNode<'http://www.w3.org/ns/dcat#DataService'>;
-    /** 1つのエージェントによって公開またはキュレートされ、1つ以上の形式でアクセスまたはダウンロードできるデータの集合。 */
-    "Dataset": NamedNode<'http://www.w3.org/ns/dcat#Dataset'>;
+    /** Recurso publicado o curado por un agente único. */
+    "Resource": NamedNode<'http://www.w3.org/ns/dcat#Resource'>;
     /** A specific representation of a dataset. A dataset might be available in multiple serializations that may differ in various ways, including natural language, media-type or format, schematic organization, temporal and spatial resolution, level of detail or profiles (which might specify any or all of the above). */
     "Distribution": NamedNode<'http://www.w3.org/ns/dcat#Distribution'>;
     /** An association class for attaching additional information to a relationship between DCAT Resources. */
     "Relationship": NamedNode<'http://www.w3.org/ns/dcat#Relationship'>;
-    /** Recurso publicado o curado por un agente único. */
-    "Resource": NamedNode<'http://www.w3.org/ns/dcat#Resource'>;
     /** A role is the function of a resource or agent with respect to another resource, in the context of resource attribution or resource relationships. */
     "Role": NamedNode<'http://www.w3.org/ns/dcat#Role'>;
+    /** Den funktion en entitet eller aktør har i forhold til en anden ressource. */
+    "hadRole": NamedNode<'http://www.w3.org/ns/dcat#hadRole'>;
     /** A site or end-point that gives access to the distribution of the dataset. */
     "accessService": NamedNode<'http://www.w3.org/ns/dcat#accessService'>;
     /** A URL of a resource that gives access to a distribution of the dataset. E.g. landing page, feed, SPARQL endpoint. Use for all cases except a simple download link, in which case downloadURL is preferred. */
@@ -44,8 +46,6 @@ interface Dcat {
     "endpointDescription": NamedNode<'http://www.w3.org/ns/dcat#endpointDescription'>;
     /** Kořenové umístění nebo hlavní přístupový bod služby (IRI přístupné přes Web). */
     "endpointURL": NamedNode<'http://www.w3.org/ns/dcat#endpointURL'>;
-    /** Den funktion en entitet eller aktør har i forhold til en anden ressource. */
-    "hadRole": NamedNode<'http://www.w3.org/ns/dcat#hadRole'>;
     /** A keyword or tag describing a resource. */
     "keyword": NamedNode<'http://www.w3.org/ns/dcat#keyword'>;
     /** A Web page that can be navigated to in a Web browser to gain access to the catalog, a dataset, its distributions and/or additional information. */

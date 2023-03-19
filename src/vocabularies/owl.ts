@@ -1,4 +1,4 @@
-import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
+import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
 interface Owl {
@@ -15,6 +15,8 @@ interface Owl {
     "AnnotationProperty": NamedNode<'http://www.w3.org/2002/07/owl#AnnotationProperty'>;
     /** The class of asymmetric properties. */
     "AsymmetricProperty": NamedNode<'http://www.w3.org/2002/07/owl#AsymmetricProperty'>;
+    /** The class of object properties. */
+    "ObjectProperty": NamedNode<'http://www.w3.org/2002/07/owl#ObjectProperty'>;
     /** The class of annotated axioms for which the RDF serialization consists of an annotated subject, predicate and object. */
     "Axiom": NamedNode<'http://www.w3.org/2002/07/owl#Axiom'>;
     /** The class of OWL classes. */
@@ -35,12 +37,12 @@ interface Owl {
     "IrreflexiveProperty": NamedNode<'http://www.w3.org/2002/07/owl#IrreflexiveProperty'>;
     /** The class of named individuals. */
     "NamedIndividual": NamedNode<'http://www.w3.org/2002/07/owl#NamedIndividual'>;
+    /** The class of OWL individuals. */
+    "Thing": NamedNode<'http://www.w3.org/2002/07/owl#Thing'>;
     /** The class of negative property assertions. */
     "NegativePropertyAssertion": NamedNode<'http://www.w3.org/2002/07/owl#NegativePropertyAssertion'>;
     /** This is the empty class. */
     "Nothing": NamedNode<'http://www.w3.org/2002/07/owl#Nothing'>;
-    /** The class of object properties. */
-    "ObjectProperty": NamedNode<'http://www.w3.org/2002/07/owl#ObjectProperty'>;
     /** The class of ontologies. */
     "Ontology": NamedNode<'http://www.w3.org/2002/07/owl#Ontology'>;
     /** The class of ontology properties. */
@@ -51,8 +53,6 @@ interface Owl {
     "Restriction": NamedNode<'http://www.w3.org/2002/07/owl#Restriction'>;
     /** The class of symmetric properties. */
     "SymmetricProperty": NamedNode<'http://www.w3.org/2002/07/owl#SymmetricProperty'>;
-    /** The class of OWL individuals. */
-    "Thing": NamedNode<'http://www.w3.org/2002/07/owl#Thing'>;
     /** The class of transitive properties. */
     "TransitiveProperty": NamedNode<'http://www.w3.org/2002/07/owl#TransitiveProperty'>;
     /** The property that determines the class that a universal property restriction refers to. */

@@ -1,16 +1,47 @@
-import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
+import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
 interface Gs1 {
     '': NamedNode<'https://gs1.org/voc/'>;
     /** A Data Type that corresponds to GS1 Application Identifiers defined in the GS1 General Specifications */
     "AI": NamedNode<'https://gs1.org/voc/AI'>;
+    /** Indicates the reporting of an alarm condition detected by a sensor device */
+    "ALARM_CONDITION": NamedNode<'https://gs1.org/voc/ALARM_CONDITION'>;
+    /** A code list for reasons for generating a sensor alert, including an alarm condition or an error condition */
+    "SensorAlertType": NamedNode<'https://gs1.org/voc/SensorAlertType'>;
+    /** The ratio of the mass of water vapour in a sample of moist air to the volume of the sample.  SI Units: kilogram per cubic metre */
+    "AbsoluteHumidity": NamedNode<'https://gs1.org/voc/AbsoluteHumidity'>;
+    /** A set of measurement types for properties that can be measured or sensed by appropriate measuring devices or sensors */
+    "MeasurementType": NamedNode<'https://gs1.org/voc/MeasurementType'>;
+    /** The energy absorbed per unit mass of the patient from the decay of a radionuclide given to a patient for diagnostic or therapeutic purposes.  SI Units: gray */
+    "AbsorbedDose": NamedNode<'https://gs1.org/voc/AbsorbedDose'>;
+    /** The energy absorbed per unit time per unit mass of the patient from the decay of a radionuclide given to a patient for diagnostic or therapeutic purposes.  SI Units: gray per second */
+    "AbsorbedDoseRate": NamedNode<'https://gs1.org/voc/AbsorbedDoseRate'>;
+    /** The rate of change of velocity, a vector quantity with magnitude and direction.  SI Units: metre per second per second */
+    "Acceleration": NamedNode<'https://gs1.org/voc/Acceleration'>;
     /** A product classification for the product other than the Global Product Classification(GPC brick value). */
     "AdditionalProductClassificationDetails": NamedNode<'https://gs1.org/voc/AdditionalProductClassificationDetails'>;
     /** A set of details about one of the additives within the product. */
     "AdditiveDetails": NamedNode<'https://gs1.org/voc/AdditiveDetails'>;
     /** Details of an allergen for a product. */
     "AllergenDetails": NamedNode<'https://gs1.org/voc/AllergenDetails'>;
+    "AllergenTypeCode": NamedNode<'https://gs1.org/voc/AllergenTypeCode'>;
+    /** Links to the alphanumeric code value defined elsewhere in GS1 or the GS1 Global Data Dictionary */
+    "originalCodeValue": NamedNode<'https://gs1.org/voc/originalCodeValue'>;
+    /** Refers to the presence of 1-Naphthol as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
+    "AllergenTypeCode-1-NAPHTHOL": NamedNode<'https://gs1.org/voc/AllergenTypeCode-1-NAPHTHOL'>;
+    /** Refers to the presence of 2-Hydroxyethyl-picramic acid as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
+    "AllergenTypeCode-2-HYDROXYETHYL-PICRAMIC_ACID": NamedNode<'https://gs1.org/voc/AllergenTypeCode-2-HYDROXYETHYL-PICRAMIC_ACID'>;
+    /** Refers to the presence of 2-Methyl-5-hydroxyethylaminophenol as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
+    "AllergenTypeCode-2-METHYL-5-HYDROXYETHYLAMINOPHENOL": NamedNode<'https://gs1.org/voc/AllergenTypeCode-2-METHYL-5-HYDROXYETHYLAMINOPHENOL'>;
+    /** Refers to the presence of 3-Aminophenol as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
+    "AllergenTypeCode-3-AMINOPHENOL": NamedNode<'https://gs1.org/voc/AllergenTypeCode-3-AMINOPHENOL'>;
+    /** Refers to the presence of 4-Amino-3-nitrophenol as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
+    "AllergenTypeCode-4-AMINO-3-NITROPHENOL": NamedNode<'https://gs1.org/voc/AllergenTypeCode-4-AMINO-3-NITROPHENOL'>;
+    /** Refers to the presence of 4-Hydroxy-propylamino-3-nitrophenol as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
+    "AllergenTypeCode-4-HYDROXY-PROPYLAMINO-3-NITROPHENOL": NamedNode<'https://gs1.org/voc/AllergenTypeCode-4-HYDROXY-PROPYLAMINO-3-NITROPHENOL'>;
+    /** Refers to the presence of Abalone and its derivatives in the product, as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
+    "AllergenTypeCode-ABALONE": NamedNode<'https://gs1.org/voc/AllergenTypeCode-ABALONE'>;
     /** Refers to the presence of almond and almond products as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
     "AllergenTypeCode-ALMONDS": NamedNode<'https://gs1.org/voc/AllergenTypeCode-ALMONDS'>;
     /** Refers to the presence of Alpha-Isomethyl Ionone as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
@@ -19,10 +50,22 @@ interface Gs1 {
     "AllergenTypeCode-AMYLCINNAMYL_ALCOHOL": NamedNode<'https://gs1.org/voc/AllergenTypeCode-AMYLCINNAMYL_ALCOHOL'>;
     /** Refers to the presence of Amyl Cinnamal as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
     "AllergenTypeCode-AMYL_CINNAMAL": NamedNode<'https://gs1.org/voc/AllergenTypeCode-AMYL_CINNAMAL'>;
+    /** Refers to the presence of anchovies and their derivatives in the product, as listed as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
+    "AllergenTypeCode-ANCHOVY": NamedNode<'https://gs1.org/voc/AllergenTypeCode-ANCHOVY'>;
     /** Refers to the presence of Anise Alcohol as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
     "AllergenTypeCode-ANISE_ALCOHOL": NamedNode<'https://gs1.org/voc/AllergenTypeCode-ANISE_ALCOHOL'>;
     /** Refers to the presence of Barley and barley products (glutencontaining grain) as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
     "AllergenTypeCode-BARLEY": NamedNode<'https://gs1.org/voc/AllergenTypeCode-BARLEY'>;
+    /** Refers to the presence of Barnacles and their derivatives in the product, as listed as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
+    "AllergenTypeCode-BARNACLE": NamedNode<'https://gs1.org/voc/AllergenTypeCode-BARNACLE'>;
+    /** Refers to the presence of Basa and its derivatives in the product, as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
+    "AllergenTypeCode-BASA": NamedNode<'https://gs1.org/voc/AllergenTypeCode-BASA'>;
+    /** Refers to the presence of bass and their derivatives in the product, as listed as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
+    "AllergenTypeCode-BASS": NamedNode<'https://gs1.org/voc/AllergenTypeCode-BASS'>;
+    /** Refers to the presence of Beech nuts [Fagus spp. (Fagaceae)] and their derivatives in the product, as listed as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
+    "AllergenTypeCode-BEECH_NUTS": NamedNode<'https://gs1.org/voc/AllergenTypeCode-BEECH_NUTS'>;
+    /** Refers to the presence of beef and its derivative in the product, as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
+    "AllergenTypeCode-BEEF": NamedNode<'https://gs1.org/voc/AllergenTypeCode-BEEF'>;
     /** Refers to the presence of Benzyl Alcohol as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
     "AllergenTypeCode-BENZYL_ALCOHOL": NamedNode<'https://gs1.org/voc/AllergenTypeCode-BENZYL_ALCOHOL'>;
     /** Refers to the presence of Benzyl Benzoate as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
@@ -31,36 +74,80 @@ interface Gs1 {
     "AllergenTypeCode-BENZYL_CINNAMATE": NamedNode<'https://gs1.org/voc/AllergenTypeCode-BENZYL_CINNAMATE'>;
     /** Refers to the presence of Benzyl Salicylate as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
     "AllergenTypeCode-BENZYL_SALICYLATE": NamedNode<'https://gs1.org/voc/AllergenTypeCode-BENZYL_SALICYLATE'>;
+    /** Refers to the presence of Bluefish and its derivatives in the product, as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
+    "AllergenTypeCode-BLUEFISH": NamedNode<'https://gs1.org/voc/AllergenTypeCode-BLUEFISH'>;
     /** Refers to the presence of brazil nut and brazil nut products as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
     "AllergenTypeCode-BRAZIL_NUTS": NamedNode<'https://gs1.org/voc/AllergenTypeCode-BRAZIL_NUTS'>;
+    /** Refers to the presence of Bream and its derivatives in the product, as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
+    "AllergenTypeCode-BREAM": NamedNode<'https://gs1.org/voc/AllergenTypeCode-BREAM'>;
+    /** Refers to the presence of Butternuts [Juglans cinerea (Juglandaceae)] and their derivatives in the product, as listed as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
+    "AllergenTypeCode-BUTTERNUTS": NamedNode<'https://gs1.org/voc/AllergenTypeCode-BUTTERNUTS'>;
     /** Refers to the presence of Butylphenyl Methylpropionate as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
     "AllergenTypeCode-BUTYLPHENYL_METHYLPROPIONATE": NamedNode<'https://gs1.org/voc/AllergenTypeCode-BUTYLPHENYL_METHYLPROPIONATE'>;
+    /** Refers to the presence of Carp and their derivatives in the product, as listed as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
+    "AllergenTypeCode-CARP": NamedNode<'https://gs1.org/voc/AllergenTypeCode-CARP'>;
     /** Refers to the presence of carrot and their derivatives in the product, as listed in as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName */
     "AllergenTypeCode-CARROTS": NamedNode<'https://gs1.org/voc/AllergenTypeCode-CARROTS'>;
     /** Refers to the presence of cashew and cashew products as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
     "AllergenTypeCode-CASHEW_NUTS": NamedNode<'https://gs1.org/voc/AllergenTypeCode-CASHEW_NUTS'>;
+    /** Refers to the presence of catfish and their derivatives in the product, as listed as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
+    "AllergenTypeCode-CATFISH": NamedNode<'https://gs1.org/voc/AllergenTypeCode-CATFISH'>;
     /** Refers to the presence of celery or their derivatives in the product, as listed in as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName */
     "AllergenTypeCode-CELERY": NamedNode<'https://gs1.org/voc/AllergenTypeCode-CELERY'>;
     /** Refers to the presence of Cereals containing gluten and their derivatives in the product, as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName */
     "AllergenTypeCode-CEREALS_CONTAINING_GLUTEN": NamedNode<'https://gs1.org/voc/AllergenTypeCode-CEREALS_CONTAINING_GLUTEN'>;
+    /** Refers to the presence of Char and its derivatives in the product, as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
+    "AllergenTypeCode-CHAR": NamedNode<'https://gs1.org/voc/AllergenTypeCode-CHAR'>;
+    /** Refers to the presence of Chestnuts [Castanea spp. (Fagaceae)] and their derivatives in the product, as listed as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
+    "AllergenTypeCode-CHESTNUTS": NamedNode<'https://gs1.org/voc/AllergenTypeCode-CHESTNUTS'>;
+    /** Refers to the presence of chicken meat and its derivative in the product, as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
+    "AllergenTypeCode-CHICKEN_MEAT": NamedNode<'https://gs1.org/voc/AllergenTypeCode-CHICKEN_MEAT'>;
+    /** Refers to the presence of Chinquapins [Castanea pumila (Fagaceae)] and their derivatives in the product, as listed as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
+    "AllergenTypeCode-CHINQUAPINS": NamedNode<'https://gs1.org/voc/AllergenTypeCode-CHINQUAPINS'>;
+    /** Refers to the presence of Chub and its derivatives in the product, as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
+    "AllergenTypeCode-CHUB": NamedNode<'https://gs1.org/voc/AllergenTypeCode-CHUB'>;
     /** Refers to the presence of Cinnamal as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
     "AllergenTypeCode-CINNAMAL": NamedNode<'https://gs1.org/voc/AllergenTypeCode-CINNAMAL'>;
     /** Refers to the presence of Cinnamyl Alcohol as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
     "AllergenTypeCode-CINNAMYL_ALCOHOL": NamedNode<'https://gs1.org/voc/AllergenTypeCode-CINNAMYL_ALCOHOL'>;
+    /** Refers to the presence of Cisco and its derivatives in the product, as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
+    "AllergenTypeCode-CISCO": NamedNode<'https://gs1.org/voc/AllergenTypeCode-CISCO'>;
     /** Refers to the presence of Citral as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
     "AllergenTypeCode-CITRAL": NamedNode<'https://gs1.org/voc/AllergenTypeCode-CITRAL'>;
     /** Refers to the presence of Citronellol as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
     "AllergenTypeCode-CITRONELLOL": NamedNode<'https://gs1.org/voc/AllergenTypeCode-CITRONELLOL'>;
+    /** Refers to the presence of Clam and its derivatives in the product, as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
+    "AllergenTypeCode-CLAM": NamedNode<'https://gs1.org/voc/AllergenTypeCode-CLAM'>;
+    /** Refers to the presence of Cockle and its derivatives in the product, as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
+    "AllergenTypeCode-COCKLE": NamedNode<'https://gs1.org/voc/AllergenTypeCode-COCKLE'>;
     /** Refers to the presence of cocoa and their derivatives in the product, as listed in as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName */
     "AllergenTypeCode-COCOA": NamedNode<'https://gs1.org/voc/AllergenTypeCode-COCOA'>;
+    /** Refers to the presence of Coconuts [Cocos (Arecaceae)] and their derivatives in the product, as listed as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
+    "AllergenTypeCode-COCONUTS": NamedNode<'https://gs1.org/voc/AllergenTypeCode-COCONUTS'>;
+    /** Refers to the presence of Cod and their derivatives in the product, as listed as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
+    "AllergenTypeCode-COD": NamedNode<'https://gs1.org/voc/AllergenTypeCode-COD'>;
+    /** Refers to the presence of Conch and its derivatives in the product, as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
+    "AllergenTypeCode-CONCH": NamedNode<'https://gs1.org/voc/AllergenTypeCode-CONCH'>;
     /** Refers to the presence of coriander and their derivatives in the product, as listed in as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName */
     "AllergenTypeCode-CORIANDER": NamedNode<'https://gs1.org/voc/AllergenTypeCode-CORIANDER'>;
     /** Refers to the presence of corn and their derivatives in the product, as listed in as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName */
     "AllergenTypeCode-CORN": NamedNode<'https://gs1.org/voc/AllergenTypeCode-CORN'>;
+    /** Refers to the presence of Cotton Seeds or their derivatives in the product as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName */
+    "AllergenTypeCode-COTTON_SEEDS": NamedNode<'https://gs1.org/voc/AllergenTypeCode-COTTON_SEEDS'>;
     /** Refers to the presence of Coumarin as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
     "AllergenTypeCode-COUMARIN": NamedNode<'https://gs1.org/voc/AllergenTypeCode-COUMARIN'>;
+    /** Refers to the presence of Crab and their derivatives in the product, as listed as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
+    "AllergenTypeCode-CRAB": NamedNode<'https://gs1.org/voc/AllergenTypeCode-CRAB'>;
+    /** Refers to the presence of Crawfish and their derivatives in the product, as listed as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
+    "AllergenTypeCode-CRAWFISH": NamedNode<'https://gs1.org/voc/AllergenTypeCode-CRAWFISH'>;
     /** Refers to the presence of Crustaceans and their derivatives in the product, as listed as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName */
     "AllergenTypeCode-CRUSTACEANS": NamedNode<'https://gs1.org/voc/AllergenTypeCode-CRUSTACEANS'>;
+    /** Refers to the presence of d-Limonene as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName */
+    "AllergenTypeCode-D-LIMONENE": NamedNode<'https://gs1.org/voc/AllergenTypeCode-D-LIMONENE'>;
+    /** Refers to the presence of Diaminophenols as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
+    "AllergenTypeCode-DIAMINOPHENOLS": NamedNode<'https://gs1.org/voc/AllergenTypeCode-DIAMINOPHENOLS'>;
+    /** Refers to the presence of Eel and its derivatives in the product, as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
+    "AllergenTypeCode-EEL": NamedNode<'https://gs1.org/voc/AllergenTypeCode-EEL'>;
     /** Refers to the presence of eggs and their derivatives in the product, as listed as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName */
     "AllergenTypeCode-EGGS": NamedNode<'https://gs1.org/voc/AllergenTypeCode-EGGS'>;
     /** Refers to the presence of Eugenol as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
@@ -73,70 +160,218 @@ interface Gs1 {
     "AllergenTypeCode-FARNESOL": NamedNode<'https://gs1.org/voc/AllergenTypeCode-FARNESOL'>;
     /** Refers to the presence of Fish and their derivatives in the product, as listed in as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName */
     "AllergenTypeCode-FISH": NamedNode<'https://gs1.org/voc/AllergenTypeCode-FISH'>;
+    /** Refers to the presence of Flounder and their derivatives in the product, as listed as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
+    "AllergenTypeCode-FLOUNDER": NamedNode<'https://gs1.org/voc/AllergenTypeCode-FLOUNDER'>;
     /** Refers to the presence of Geraniol as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
     "AllergenTypeCode-GERANIOL": NamedNode<'https://gs1.org/voc/AllergenTypeCode-GERANIOL'>;
+    /** Refers to the presence of Ginkgo nuts [Ginkgo biloba L. (Ginkgoaceae)] and their derivatives in the product, as listed as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
+    "AllergenTypeCode-GINKGO_NUTS": NamedNode<'https://gs1.org/voc/AllergenTypeCode-GINKGO_NUTS'>;
+    /** Refers to the presence of glutamate and its derivative in the product, as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
+    "AllergenTypeCode-GLUTAMATE": NamedNode<'https://gs1.org/voc/AllergenTypeCode-GLUTAMATE'>;
     /** Refers to the presense of other gluten containing grain and gluten containing grain products as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
     "AllergenTypeCode-GLUTEN": NamedNode<'https://gs1.org/voc/AllergenTypeCode-GLUTEN'>;
+    /** Refers to the presence of Grouper and their derivatives in the product, as listed as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
+    "AllergenTypeCode-GROUPER": NamedNode<'https://gs1.org/voc/AllergenTypeCode-GROUPER'>;
+    /** Refers to the presence of Haddock and their derivatives in the product, as listed as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
+    "AllergenTypeCode-HADDOCK": NamedNode<'https://gs1.org/voc/AllergenTypeCode-HADDOCK'>;
+    /** Refers to the presence of Hake and their derivatives in the product, as listed as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
+    "AllergenTypeCode-HAKE": NamedNode<'https://gs1.org/voc/AllergenTypeCode-HAKE'>;
+    /** Refers to the presence of Halibut and their derivatives in the product, as listed as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
+    "AllergenTypeCode-HALIBUT": NamedNode<'https://gs1.org/voc/AllergenTypeCode-HALIBUT'>;
     /** Refers to the presence of hazelnut and hazelnut products as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
     "AllergenTypeCode-HAZELNUTS": NamedNode<'https://gs1.org/voc/AllergenTypeCode-HAZELNUTS'>;
+    /** Refers to the presence of HC Blue No 11 as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
+    "AllergenTypeCode-HC_BLUE_NO_11": NamedNode<'https://gs1.org/voc/AllergenTypeCode-HC_BLUE_NO_11'>;
+    /** Refers to the presence of HC Blue No 12 as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
+    "AllergenTypeCode-HC_BLUE_NO_12": NamedNode<'https://gs1.org/voc/AllergenTypeCode-HC_BLUE_NO_12'>;
+    /** Refers to the presence of Herring and their derivatives in the product, as listed as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
+    "AllergenTypeCode-HERRING": NamedNode<'https://gs1.org/voc/AllergenTypeCode-HERRING'>;
     /** Refers to the presence of Hexyl Cinnamal as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
     "AllergenTypeCode-HEXYL_CINNAMAL": NamedNode<'https://gs1.org/voc/AllergenTypeCode-HEXYL_CINNAMAL'>;
+    /** Refers to the presence of hickory nuts [Carya spp. (Junglandacease)] and their derivatives in the product, as listed as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
+    "AllergenTypeCode-HICKORY_NUTS": NamedNode<'https://gs1.org/voc/AllergenTypeCode-HICKORY_NUTS'>;
+    /** Refers to the presence of Hydroxybenzomorpholine as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
+    "AllergenTypeCode-HYDROXYBENZOMORPHOLINE": NamedNode<'https://gs1.org/voc/AllergenTypeCode-HYDROXYBENZOMORPHOLINE'>;
     /** Refers to the presence of Hydroxycitronellal as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
     "AllergenTypeCode-HYDROXYCITRONELLAL": NamedNode<'https://gs1.org/voc/AllergenTypeCode-HYDROXYCITRONELLAL'>;
+    /** Refers to the presence of Hydroxyethyl-2-nitro-p-toluidine as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
+    "AllergenTypeCode-HYDROXYETHYL-2-NITRO-P-TOLUIDINE": NamedNode<'https://gs1.org/voc/AllergenTypeCode-HYDROXYETHYL-2-NITRO-P-TOLUIDINE'>;
     /** Refers to the presence of Hydroxyisohexyl 3-Cyclohexene Carboxaldehyde Isoeugenol Limonene Linal as listed in the regulations specified in AllergenSpecificationAgency and llergenSpecificationName. */
     "AllergenTypeCode-HYDROXYISOHEXYL_3-CYCLOHEXENE_CARBOXALDEHYDE_ISOEUGENOL_LIMONENE_LINAL": NamedNode<'https://gs1.org/voc/AllergenTypeCode-HYDROXYISOHEXYL_3-CYCLOHEXENE_CARBOXALDEHYDE_ISOEUGENOL_LIMONENE_LINAL'>;
+    /** Refers to the presence of Isoeugenol as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName */
+    "AllergenTypeCode-ISOEUGENOL": NamedNode<'https://gs1.org/voc/AllergenTypeCode-ISOEUGENOL'>;
     /** Refers to the presence of kamut and kamut products (glutencontaining grain) as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
     "AllergenTypeCode-KAMUT": NamedNode<'https://gs1.org/voc/AllergenTypeCode-KAMUT'>;
+    /** Refers to the presence of Krill and their derivatives in the product, as listed as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
+    "AllergenTypeCode-KRILL": NamedNode<'https://gs1.org/voc/AllergenTypeCode-KRILL'>;
     /** Refers to the presence of lactose as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
     "AllergenTypeCode-LACTOSE": NamedNode<'https://gs1.org/voc/AllergenTypeCode-LACTOSE'>;
+    /** Refers to the presence of Land and sea snails (Escargot) and its derivatives in the product, as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
+    "AllergenTypeCode-LAND": NamedNode<'https://gs1.org/voc/AllergenTypeCode-LAND'>;
+    /** Refers to the presence of Lichee nuts [Litchi chinensis Sonn. (Sapindaceae)] and their derivatives in the product, as listed as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
+    "AllergenTypeCode-LICHEE_NUTS": NamedNode<'https://gs1.org/voc/AllergenTypeCode-LICHEE_NUTS'>;
+    /** Refers to the presence of Limpets and its derivatives in the product, as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
+    "AllergenTypeCode-LIMPETS": NamedNode<'https://gs1.org/voc/AllergenTypeCode-LIMPETS'>;
+    /** Refers to the presence of Linalool as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName */
+    "AllergenTypeCode-LINALOOL": NamedNode<'https://gs1.org/voc/AllergenTypeCode-LINALOOL'>;
+    /** Refers to the presence of Lobster and their derivatives in the product, as listed as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
+    "AllergenTypeCode-LOBSTER": NamedNode<'https://gs1.org/voc/AllergenTypeCode-LOBSTER'>;
     /** Refers to the presence of Lupine and their derivatives in the product, as listed in as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName */
     "AllergenTypeCode-LUPINE": NamedNode<'https://gs1.org/voc/AllergenTypeCode-LUPINE'>;
     /** Refers to the presence of macadamia nut and macadamia nut products as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName */
     "AllergenTypeCode-MACADAMIA_NUTS": NamedNode<'https://gs1.org/voc/AllergenTypeCode-MACADAMIA_NUTS'>;
+    /** Refers to the presence of Mackerel and its derivatives in the product, as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
+    "AllergenTypeCode-MACKEREL": NamedNode<'https://gs1.org/voc/AllergenTypeCode-MACKEREL'>;
+    /** Refers to the presence of Mahi Mahi and their derivatives in the product, as listed as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
+    "AllergenTypeCode-MAHI_MAHI": NamedNode<'https://gs1.org/voc/AllergenTypeCode-MAHI_MAHI'>;
+    /** Refers to the presence of Marlin and its derivatives in the product, as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
+    "AllergenTypeCode-MARLIN": NamedNode<'https://gs1.org/voc/AllergenTypeCode-MARLIN'>;
+    /** Refers to the presence of Melatonin, a hormone secreted by the pineal gland that inhibits melanin formation and is thought to be concerned with regulating the reproductive cycle. */
+    "AllergenTypeCode-MELATONIN": NamedNode<'https://gs1.org/voc/AllergenTypeCode-MELATONIN'>;
     /** Refers to the presence of Methyl 2-Octynoate as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
     "AllergenTypeCode-METHYL_2_OCTYNOATE": NamedNode<'https://gs1.org/voc/AllergenTypeCode-METHYL_2_OCTYNOATE'>;
+    /** Refers to the presence of Methyl heptin carbonate as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName */
+    "AllergenTypeCode-METHYL_HEPTIN_CARBONATE": NamedNode<'https://gs1.org/voc/AllergenTypeCode-METHYL_HEPTIN_CARBONATE'>;
     /** Refers to the presence of milk and their derivatives in the product, as listed in as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName */
     "AllergenTypeCode-MILK": NamedNode<'https://gs1.org/voc/AllergenTypeCode-MILK'>;
     /** Refers to the presence of molluscs and their derivatives in the product, as listed in as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName */
     "AllergenTypeCode-MOLLUSCS": NamedNode<'https://gs1.org/voc/AllergenTypeCode-MOLLUSCS'>;
+    /** Refers to the presence of Mussels and its derivatives in the product, as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
+    "AllergenTypeCode-MUSSELS": NamedNode<'https://gs1.org/voc/AllergenTypeCode-MUSSELS'>;
     /** Refers to the presence of mustard or their derivatives in the product, as listed in as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName */
     "AllergenTypeCode-MUSTARD": NamedNode<'https://gs1.org/voc/AllergenTypeCode-MUSTARD'>;
     /** Does not contain declaration obligatory allergens as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
     "AllergenTypeCode-NO_DECLARED_ALLERGENS": NamedNode<'https://gs1.org/voc/AllergenTypeCode-NO_DECLARED_ALLERGENS'>;
     /** Refers to the presence of oat and oat products (gluten containing grain) as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
     "AllergenTypeCode-OAT": NamedNode<'https://gs1.org/voc/AllergenTypeCode-OAT'>;
+    /** Refers to the presence of Octopus and its derivatives in the product, as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
+    "AllergenTypeCode-OCTOPUS": NamedNode<'https://gs1.org/voc/AllergenTypeCode-OCTOPUS'>;
+    /** Refers to the presence of Orange roughy and its derivatives in the product, as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
+    "AllergenTypeCode-ORANGE_ROUGHY": NamedNode<'https://gs1.org/voc/AllergenTypeCode-ORANGE_ROUGHY'>;
+    /** Refers to the presence Oysters and its derivatives in the product, as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
+    "AllergenTypeCode-OYSTERS": NamedNode<'https://gs1.org/voc/AllergenTypeCode-OYSTERS'>;
+    /** Refers to the presence of p-Methylaminophenol as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
+    "AllergenTypeCode-P-METHYLAMINOPHENOL": NamedNode<'https://gs1.org/voc/AllergenTypeCode-P-METHYLAMINOPHENOL'>;
+    /** Refers to the presence of p-Phenylenediamine in the product as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
+    "AllergenTypeCode-P-PHENYLENEDIAMINE": NamedNode<'https://gs1.org/voc/AllergenTypeCode-P-PHENYLENEDIAMINE'>;
     /** Refers to the presence of peanuts and their derivatives in the product, as listed in as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName */
     "AllergenTypeCode-PEANUTS": NamedNode<'https://gs1.org/voc/AllergenTypeCode-PEANUTS'>;
     /** Refers to the presence of peas and pea products as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
     "AllergenTypeCode-PEAS": NamedNode<'https://gs1.org/voc/AllergenTypeCode-PEAS'>;
     /** Refers to the presence of pecan nut and pecan nut products as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
     "AllergenTypeCode-PECAN_NUTS": NamedNode<'https://gs1.org/voc/AllergenTypeCode-PECAN_NUTS'>;
+    /** Refers to the presence of Perch and their derivatives in the product, as listed as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
+    "AllergenTypeCode-PERCH": NamedNode<'https://gs1.org/voc/AllergenTypeCode-PERCH'>;
+    /** Refers to the presence of Periwinkle and its derivatives in the product, as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
+    "AllergenTypeCode-PERIWINKLE": NamedNode<'https://gs1.org/voc/AllergenTypeCode-PERIWINKLE'>;
+    /** Refers to the presence of Pike and their derivatives in the product, as listed as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
+    "AllergenTypeCode-PIKE": NamedNode<'https://gs1.org/voc/AllergenTypeCode-PIKE'>;
+    /** Refers to the presence of Pili nuts [Canarium ovatum (Burseraceae)] and their derivatives in the product, as listed as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
+    "AllergenTypeCode-PILI_NUTS": NamedNode<'https://gs1.org/voc/AllergenTypeCode-PILI_NUTS'>;
+    /** Refers to the presence of Pine Nuts and their derivatives as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
+    "AllergenTypeCode-PINE_NUTS": NamedNode<'https://gs1.org/voc/AllergenTypeCode-PINE_NUTS'>;
     /** Refers to the presence of pistachio and pistachio products as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
     "AllergenTypeCode-PISTACHIOS": NamedNode<'https://gs1.org/voc/AllergenTypeCode-PISTACHIOS'>;
+    /** Refers to the presence of Plaice and its derivatives in the product, as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
+    "AllergenTypeCode-PLAICE": NamedNode<'https://gs1.org/voc/AllergenTypeCode-PLAICE'>;
     /** Refers to the presence of pod fruits and their derivatives in the product, as listed in as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName */
     "AllergenTypeCode-POD_FRUITS": NamedNode<'https://gs1.org/voc/AllergenTypeCode-POD_FRUITS'>;
+    /** Refers to the presence of Pollock and their derivatives in the product, as listed as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
+    "AllergenTypeCode-POLLOCK": NamedNode<'https://gs1.org/voc/AllergenTypeCode-POLLOCK'>;
+    /** Refers to the presence of Pompano and its derivatives in the product, as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
+    "AllergenTypeCode-POMPANO": NamedNode<'https://gs1.org/voc/AllergenTypeCode-POMPANO'>;
+    /** Refers to the presence of Poppy Seeds or their derivatives in the product as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
+    "AllergenTypeCode-POPPY_SEEDS": NamedNode<'https://gs1.org/voc/AllergenTypeCode-POPPY_SEEDS'>;
+    /** Refers to the presence of Porgy and its derivatives in the product, as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
+    "AllergenTypeCode-PORGY": NamedNode<'https://gs1.org/voc/AllergenTypeCode-PORGY'>;
+    /** Refers to the presence of pork and its derivative in the product, as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
+    "AllergenTypeCode-PORK": NamedNode<'https://gs1.org/voc/AllergenTypeCode-PORK'>;
+    /** Refers to the presence of Prawns and their derivatives in the product, as listed as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
+    "AllergenTypeCode-PRAWNS": NamedNode<'https://gs1.org/voc/AllergenTypeCode-PRAWNS'>;
+    /** Refers to the presence of pulses. An annual leguminous crop yielding from one to twelve seeds of variable size, shape, and colour within a pod. Pulses are used for food and animal feed. The term 'pulse', as used by the Food and Agricultural Organization (FAO), is reserved for crops harvested solely for the dry seed. This excludes green beans and green peas, which are considered vegetable crops. Also excluded are crops that are mainly grown for oil extraction */
+    "AllergenTypeCode-PULSES": NamedNode<'https://gs1.org/voc/AllergenTypeCode-PULSES'>;
+    /** Refers to the presence of Quahaugs and its derivatives in the product, listed as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
+    "AllergenTypeCode-QUAHAUGS": NamedNode<'https://gs1.org/voc/AllergenTypeCode-QUAHAUGS'>;
     /** Refers to the presence of queensland nut and queensland nut products as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
     "AllergenTypeCode-QUEENSLAND_NUTS": NamedNode<'https://gs1.org/voc/AllergenTypeCode-QUEENSLAND_NUTS'>;
+    /** Refers to the presence of Rockfish and its derivatives in the product, as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
+    "AllergenTypeCode-ROCKFISH": NamedNode<'https://gs1.org/voc/AllergenTypeCode-ROCKFISH'>;
     /** Refers to the presence of rye and their derivatives in the product, as listed in as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName */
     "AllergenTypeCode-RYE": NamedNode<'https://gs1.org/voc/AllergenTypeCode-RYE'>;
+    /** Refers to the presence of Salicylate, a salt or ester of salicylic acid. */
+    "AllergenTypeCode-SALICYLATE": NamedNode<'https://gs1.org/voc/AllergenTypeCode-SALICYLATE'>;
+    /** Refers to the presence of Salmon and their derivatives in the product, as listed as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
+    "AllergenTypeCode-SALMON": NamedNode<'https://gs1.org/voc/AllergenTypeCode-SALMON'>;
+    /** Refers to the presence of Sardine and its derivatives in the product, as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
+    "AllergenTypeCode-SARDINE": NamedNode<'https://gs1.org/voc/AllergenTypeCode-SARDINE'>;
+    /** Refers to the presence of Scallops and its derivatives in the product, as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
+    "AllergenTypeCode-SCALLOPS": NamedNode<'https://gs1.org/voc/AllergenTypeCode-SCALLOPS'>;
+    /** Refers to the presence of seed products as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName */
+    "AllergenTypeCode-SEED_PRODUCTS": NamedNode<'https://gs1.org/voc/AllergenTypeCode-SEED_PRODUCTS'>;
     /** Refers to the presence of sesame seeds or their derivatives in the product, as listed in as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName */
     "AllergenTypeCode-SESAME_SEEDS": NamedNode<'https://gs1.org/voc/AllergenTypeCode-SESAME_SEEDS'>;
+    /** Refers to the presence of Shark and its derivatives in the product, as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
+    "AllergenTypeCode-SHARK": NamedNode<'https://gs1.org/voc/AllergenTypeCode-SHARK'>;
+    /** Refers to the presence of Shea nuts [Vitellaria paradoxa C.F. Gaertn. (Sapotaceae)] and their derivatives in the product, as listed as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
+    "AllergenTypeCode-SHEA_NUTS": NamedNode<'https://gs1.org/voc/AllergenTypeCode-SHEA_NUTS'>;
+    /** Refers to the presence of shellfish and its derivatives as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
+    "AllergenTypeCode-SHELLFISH": NamedNode<'https://gs1.org/voc/AllergenTypeCode-SHELLFISH'>;
+    /** Refers to the presence of Shrimp and their derivatives in the product, as listed as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
+    "AllergenTypeCode-SHRIMP": NamedNode<'https://gs1.org/voc/AllergenTypeCode-SHRIMP'>;
+    /** Refers to the presence of Smelt and its derivatives in the product, as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
+    "AllergenTypeCode-SMELT": NamedNode<'https://gs1.org/voc/AllergenTypeCode-SMELT'>;
+    /** Refers to the presence of Snapper and their derivatives in the product, as listed as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
+    "AllergenTypeCode-SNAPPER": NamedNode<'https://gs1.org/voc/AllergenTypeCode-SNAPPER'>;
+    /** Refers to the presence of Sole and their derivatives in the product, as listed as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
+    "AllergenTypeCode-SOLE": NamedNode<'https://gs1.org/voc/AllergenTypeCode-SOLE'>;
     /** Refers to the presence of soybeans and their derivatives in the product, as listed in as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName */
     "AllergenTypeCode-SOYBEANS": NamedNode<'https://gs1.org/voc/AllergenTypeCode-SOYBEANS'>;
     /** Refers to the presence of spelt and spelt products (gluten containing grain) as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
     "AllergenTypeCode-SPELT": NamedNode<'https://gs1.org/voc/AllergenTypeCode-SPELT'>;
+    /** Refers to the presence of Sturgeon and its derivatives in the product, as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
+    "AllergenTypeCode-STURGEON": NamedNode<'https://gs1.org/voc/AllergenTypeCode-STURGEON'>;
     /** Refers to the presence of sulphur dioxide and sulphites as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
     "AllergenTypeCode-SULPHUR_DIOXIDE": NamedNode<'https://gs1.org/voc/AllergenTypeCode-SULPHUR_DIOXIDE'>;
+    /** Refers to the presence of Sunflower Seeds or their derivatives in the product as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
+    "AllergenTypeCode-SUNFLOWER_SEEDS": NamedNode<'https://gs1.org/voc/AllergenTypeCode-SUNFLOWER_SEEDS'>;
+    /** Refers to the presence of Swordfish and their derivatives in the product, as listed as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
+    "AllergenTypeCode-SWORDFISH": NamedNode<'https://gs1.org/voc/AllergenTypeCode-SWORDFISH'>;
+    /** Refers to the presence of Tilapia and their derivatives in the product, as listed as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
+    "AllergenTypeCode-TILAPIA": NamedNode<'https://gs1.org/voc/AllergenTypeCode-TILAPIA'>;
     /** Refers to the presence of tree nuts and their derivatives in the product, as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. Tree nuts can include almonds, hazelnut, walnut, cashews, etc. */
     "AllergenTypeCode-TREE_NUTS": NamedNode<'https://gs1.org/voc/AllergenTypeCode-TREE_NUTS'>;
     /** Contains Traces of Tree Nuts, i.e. almonds, various kinds of tree nuts. */
     "AllergenTypeCode-TREE_NUT_TRACES": NamedNode<'https://gs1.org/voc/AllergenTypeCode-TREE_NUT_TRACES'>;
+    /** Refers to the presence of Triticale and their derivatives as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
+    "AllergenTypeCode-TRITICALE": NamedNode<'https://gs1.org/voc/AllergenTypeCode-TRITICALE'>;
+    /** Refers to the presence of Trout and their derivatives in the product, as listed as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
+    "AllergenTypeCode-TROUT": NamedNode<'https://gs1.org/voc/AllergenTypeCode-TROUT'>;
+    /** Refers to the presence of Tuna and their derivatives in the product, as listed as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
+    "AllergenTypeCode-TUNA": NamedNode<'https://gs1.org/voc/AllergenTypeCode-TUNA'>;
+    /** Refers to the presence of Turbot and its derivatives in the product, as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
+    "AllergenTypeCode-TURBOT": NamedNode<'https://gs1.org/voc/AllergenTypeCode-TURBOT'>;
+    /** Refers to the presence of Walleye and their derivatives in the product, as listed as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
+    "AllergenTypeCode-WALLEYE": NamedNode<'https://gs1.org/voc/AllergenTypeCode-WALLEYE'>;
     /** Refers to the presence of walnut and walnut products as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName */
     "AllergenTypeCode-WALNUTS": NamedNode<'https://gs1.org/voc/AllergenTypeCode-WALNUTS'>;
     /** Refers to the presence of wheat and their derivatives in the product, as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName */
     "AllergenTypeCode-WHEAT": NamedNode<'https://gs1.org/voc/AllergenTypeCode-WHEAT'>;
-    "AllergenTypeCode": NamedNode<'https://gs1.org/voc/AllergenTypeCode'>;
+    /** Refers to the presence of Whelks and its derivatives in the product, as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
+    "AllergenTypeCode-WHELKS": NamedNode<'https://gs1.org/voc/AllergenTypeCode-WHELKS'>;
+    /** Refers to the presence of Whitefish and their derivatives in the product, as listed as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
+    "AllergenTypeCode-WHITEFISH": NamedNode<'https://gs1.org/voc/AllergenTypeCode-WHITEFISH'>;
+    /** Refers to the presence of Whiting and its derivatives in the product, as listed in the regulations specified in AllergenSpecificationAgency and AllergenSpecificationName. */
+    "AllergenTypeCode-WHITING": NamedNode<'https://gs1.org/voc/AllergenTypeCode-WHITING'>;
+    /** A code list. */
+    "TypeCode": NamedNode<'https://gs1.org/voc/TypeCode'>;
+    /** The height above the surface of a defined geoid, typically the World Geodetic System (WGS 84) geoid for measurements from location sensors using satellite technology (e.g. GPS, Glonass, Galileo) , which approximates to the surface of the earth at sea level.  Positive values indicate height above the geoid surface. Negative values indicate depth below the geoid surface.  SI Units: metres */
+    "Altitude": NamedNode<'https://gs1.org/voc/Altitude'>;
+    /** The amount of substance that contains a number of atoms, molecules etc. that is equal to the Avogadro constant.  SI Units: mole */
+    "AmountOfSubstance": NamedNode<'https://gs1.org/voc/AmountOfSubstance'>;
+    /** The concentration of a solution expressed as the number of moles of dissolved substance per unit volume of solution.  SI Units: mole per cubic metre */
+    "AmountOfSubstancePerUnitVolume": NamedNode<'https://gs1.org/voc/AmountOfSubstancePerUnitVolume'>;
     "AnatomicalFormCode-BELLY": NamedNode<'https://gs1.org/voc/AnatomicalFormCode-BELLY'>;
+    "AnatomicalFormCode": NamedNode<'https://gs1.org/voc/AnatomicalFormCode'>;
     "AnatomicalFormCode-BLOOD": NamedNode<'https://gs1.org/voc/AnatomicalFormCode-BLOOD'>;
     "AnatomicalFormCode-BONE": NamedNode<'https://gs1.org/voc/AnatomicalFormCode-BONE'>;
     "AnatomicalFormCode-BRAIN": NamedNode<'https://gs1.org/voc/AnatomicalFormCode-BRAIN'>;
@@ -182,27 +417,51 @@ interface Gs1 {
     "AnatomicalFormCode-WHOLE_MUSCLE_SLICE_CUTLET": NamedNode<'https://gs1.org/voc/AnatomicalFormCode-WHOLE_MUSCLE_SLICE_CUTLET'>;
     "AnatomicalFormCode-WHOLE_MUSCLE_STEAK_CHOPCUT": NamedNode<'https://gs1.org/voc/AnatomicalFormCode-WHOLE_MUSCLE_STEAK_CHOPCUT'>;
     "AnatomicalFormCode-WHOLE_MUSCLE_SUBPRIMAL": NamedNode<'https://gs1.org/voc/AnatomicalFormCode-WHOLE_MUSCLE_SUBPRIMAL'>;
-    "AnatomicalFormCode": NamedNode<'https://gs1.org/voc/AnatomicalFormCode'>;
+    /** The inclination of one line or plane to another.  Units: degrees, radians, etc. */
+    "Angle": NamedNode<'https://gs1.org/voc/Angle'>;
+    /** The rate of change of angular velocity with respect to time.  SI Units: radian per second per second */
+    "AngularAcceleration": NamedNode<'https://gs1.org/voc/AngularAcceleration'>;
+    /** The integral over time of the torque acting on a body that is free to rotate, resulting in a corresponding change in its angular momentum.  SI Units: newton metre second, kilogram metre squared per second */
+    "AngularMomentum": NamedNode<'https://gs1.org/voc/AngularMomentum'>;
+    /** The rate of change of angle with respect to time; a measure of the number of revolutions per unit time.  SI Units: radian per second */
+    "AngularVelocity": NamedNode<'https://gs1.org/voc/AngularVelocity'>;
+    /** The amount of two-dimensional space occupied, measured in units of length squared.  SI Units: square metre */
+    "Area": NamedNode<'https://gs1.org/voc/Area'>;
+    /** A set of details about covert or overt security features that may contribute to checking the authenticity of a product or product instance. */
+    "AuthenticityDetails": NamedNode<'https://gs1.org/voc/AuthenticityDetails'>;
     /** Describes a prize or award won by a product or organization. */
     "AwardPrizeDetails": NamedNode<'https://gs1.org/voc/AwardPrizeDetails'>;
     /** Any potable liquid. */
     "Beverage": NamedNode<'https://gs1.org/voc/Beverage'>;
+    /** A food, beverage or tobacco product. */
+    "FoodBeverageTobaccoProduct": NamedNode<'https://gs1.org/voc/FoodBeverageTobaccoProduct'>;
     /** Information on brands and sub-brands for a product. */
     "Brand": NamedNode<'https://gs1.org/voc/Brand'>;
-    /** Information about the type of certification issued by a certifying body. */
+    /** The capacitance of an isolated conductor is defined as the ratio of the total charge on it to its electric potential.  SI Units: farad */
+    "Capacitance": NamedNode<'https://gs1.org/voc/Capacitance'>;
+    /** Certification issued by a certifying body to a certification subject (Organization, Place, Product). */
     "CertificationDetails": NamedNode<'https://gs1.org/voc/CertificationDetails'>;
+    /** This certification instance is declared to be in effect for the certified subject. */
+    "CertificationStatus-ACTIVE": NamedNode<'https://gs1.org/voc/CertificationStatus-ACTIVE'>;
+    /** A set of codes for the status of a certification instance */
+    "CertificationStatus": NamedNode<'https://gs1.org/voc/CertificationStatus'>;
+    /** This certification instance is declared to be no longer in effect. */
+    "CertificationStatus-INACTIVE": NamedNode<'https://gs1.org/voc/CertificationStatus-INACTIVE'>;
     "CheeseFirmnessCode-EXTRA_HARD": NamedNode<'https://gs1.org/voc/CheeseFirmnessCode-EXTRA_HARD'>;
+    "CheeseFirmnessCode": NamedNode<'https://gs1.org/voc/CheeseFirmnessCode'>;
     "CheeseFirmnessCode-FIRM_SEMIHARD": NamedNode<'https://gs1.org/voc/CheeseFirmnessCode-FIRM_SEMIHARD'>;
     "CheeseFirmnessCode-HARD": NamedNode<'https://gs1.org/voc/CheeseFirmnessCode-HARD'>;
     "CheeseFirmnessCode-SOFT": NamedNode<'https://gs1.org/voc/CheeseFirmnessCode-SOFT'>;
     "CheeseFirmnessCode-UNIDENTIFIED": NamedNode<'https://gs1.org/voc/CheeseFirmnessCode-UNIDENTIFIED'>;
-    "CheeseFirmnessCode": NamedNode<'https://gs1.org/voc/CheeseFirmnessCode'>;
     /**  A product that is worn on the body. */
     "Clothing": NamedNode<'https://gs1.org/voc/Clothing'>;
+    /** Products that are worn on the body. */
+    "WearableProduct": NamedNode<'https://gs1.org/voc/WearableProduct'>;
     /** A set of colour code details (colour code, party controlling the code list) for the product. */
     "ColourCodeDetails": NamedNode<'https://gs1.org/voc/ColourCodeDetails'>;
     /** Assigned by buyer. */
     "ColourCodeList-BUYER": NamedNode<'https://gs1.org/voc/ColourCodeList-BUYER'>;
+    "ColourCodeListCode": NamedNode<'https://gs1.org/voc/ColourCodeListCode'>;
     /** International Federation for Produce Standards. */
     "ColourCodeList-IFPS": NamedNode<'https://gs1.org/voc/ColourCodeList-IFPS'>;
     /** Natural Colour System. */
@@ -223,17 +482,21 @@ interface Gs1 {
     "ColourCodeList-SELLER": NamedNode<'https://gs1.org/voc/ColourCodeList-SELLER'>;
     /** Waren Wirtschafts System. */
     "ColourCodeList-WWS": NamedNode<'https://gs1.org/voc/ColourCodeList-WWS'>;
-    "ColourCodeListCode": NamedNode<'https://gs1.org/voc/ColourCodeListCode'>;
+    /** The ratio of the current in the conductor to the potential difference between its ends; reciprocal of resistance.  SI Units: siemen */
+    "Conductance": NamedNode<'https://gs1.org/voc/Conductance'>;
+    /** A measure of how strongly a material conducts electric current. The ratio of the current density to the electric field that causes the current to flow.  SI Units: siemen per metre */
+    "Conductivity": NamedNode<'https://gs1.org/voc/Conductivity'>;
     "ConsumerLifestageCode-ADULT": NamedNode<'https://gs1.org/voc/ConsumerLifestageCode-ADULT'>;
+    "ConsumerLifestageCode": NamedNode<'https://gs1.org/voc/ConsumerLifestageCode'>;
     "ConsumerLifestageCode-ALL_AGES": NamedNode<'https://gs1.org/voc/ConsumerLifestageCode-ALL_AGES'>;
     "ConsumerLifestageCode-BABY_INFANT": NamedNode<'https://gs1.org/voc/ConsumerLifestageCode-BABY_INFANT'>;
     "ConsumerLifestageCode-CHILD_1_To_2_YEARS": NamedNode<'https://gs1.org/voc/ConsumerLifestageCode-CHILD_1_To_2_YEARS'>;
     "ConsumerLifestageCode-CHILD_2_YEARS_ONWARDS": NamedNode<'https://gs1.org/voc/ConsumerLifestageCode-CHILD_2_YEARS_ONWARDS'>;
     "ConsumerLifestageCode-UNCLASSIFIED": NamedNode<'https://gs1.org/voc/ConsumerLifestageCode-UNCLASSIFIED'>;
     "ConsumerLifestageCode-UNIDENTIFIED": NamedNode<'https://gs1.org/voc/ConsumerLifestageCode-UNIDENTIFIED'>;
-    "ConsumerLifestageCode": NamedNode<'https://gs1.org/voc/ConsumerLifestageCode'>;
     /** Products that are sold without a prescription but must be distributed through a pharmacy. */
     "ConsumerSalesConditionsCode-BTC": NamedNode<'https://gs1.org/voc/ConsumerSalesConditionsCode-BTC'>;
+    "ConsumerSalesConditionsCode": NamedNode<'https://gs1.org/voc/ConsumerSalesConditionsCode'>;
     /** Products that may be sold without a prescription. These products are generally available without restrictions. */
     "ConsumerSalesConditionsCode-OTC": NamedNode<'https://gs1.org/voc/ConsumerSalesConditionsCode-OTC'>;
     /** Product may only be sold or dispensed under the direction of a prescription. */
@@ -244,13 +507,17 @@ interface Gs1 {
     "ConsumerSalesConditionsCode-RESTRICTED_TO_SELL_18": NamedNode<'https://gs1.org/voc/ConsumerSalesConditionsCode-RESTRICTED_TO_SELL_18'>;
     /** Based upon legal regulatory restrictions it is illegal to sell the product to anyone under the age of 21 years old. */
     "ConsumerSalesConditionsCode-RESTRICTED_TO_SELL_21": NamedNode<'https://gs1.org/voc/ConsumerSalesConditionsCode-RESTRICTED_TO_SELL_21'>;
-    "ConsumerSalesConditionsCode": NamedNode<'https://gs1.org/voc/ConsumerSalesConditionsCode'>;
     /** Information on an individual or department acting as point of contact for an organiation. */
     "ContactPoint": NamedNode<'https://gs1.org/voc/ContactPoint'>;
+    /** A measure of the total quantity of something; the number of individual units present.  Typically dimensionless (no units) */
+    "Count": NamedNode<'https://gs1.org/voc/Count'>;
     /** Country is a complex data type that indicates a country and a country subdivision. */
     "Country": NamedNode<'https://gs1.org/voc/Country'>;
+    /** The mass per unit volume of a substance.  SI Units: kilogram per cubic metre */
+    "Density": NamedNode<'https://gs1.org/voc/Density'>;
     /** Denotes a product that can be safely consumed by a person with coeliac disease. Coeliac disease is caused by a reaction to gladin (a gluten protein found in wheat) and similar proteins found in other crops. */
     "DietTypeCode-COELIAC": NamedNode<'https://gs1.org/voc/DietTypeCode-COELIAC'>;
+    "DietTypeCode": NamedNode<'https://gs1.org/voc/DietTypeCode'>;
     /** Denotes a product that is specially prepared or processed for people on restrictive diets. */
     "DietTypeCode-DIETETIC": NamedNode<'https://gs1.org/voc/DietTypeCode-DIETETIC'>;
     /** Denotes a product that can be used in a gluten free diet, as specified by the appropriate authority within a target market. */
@@ -269,13 +536,15 @@ interface Gs1 {
     "DietTypeCode-WITHOUT_BEEF": NamedNode<'https://gs1.org/voc/DietTypeCode-WITHOUT_BEEF'>;
     /** Denotes a product that contains no pork meat. */
     "DietTypeCode-WITHOUT_PORK": NamedNode<'https://gs1.org/voc/DietTypeCode-WITHOUT_PORK'>;
-    "DietTypeCode": NamedNode<'https://gs1.org/voc/DietTypeCode'>;
     /** A set of diet type code details (diet type code and diet type sub code) for the product. */
     "DietTypeCodeDetails": NamedNode<'https://gs1.org/voc/DietTypeCodeDetails'>;
+    /** A measurement whose units are dimensionless.  gs1:Count or gs1:VolumeFraction or gs1:RelativeHumidity should be used in preference if appropriate. */
+    "Dimensionless": NamedNode<'https://gs1.org/voc/Dimensionless'>;
     /** Provides information on a discount applicable to an offer for example 2 percent. */
     "Discount": NamedNode<'https://gs1.org/voc/Discount'>;
     /** Buy one item and get the second item free of charge */
     "DiscountTypeCode-BOGO": NamedNode<'https://gs1.org/voc/DiscountTypeCode-BOGO'>;
+    "DiscountTypeCode": NamedNode<'https://gs1.org/voc/DiscountTypeCode'>;
     /** A discount on the item expressed as an amount (value and currency) */
     "DiscountTypeCode-DISCOUNTED_ITEM": NamedNode<'https://gs1.org/voc/DiscountTypeCode-DISCOUNTED_ITEM'>;
     /** A gift given to a consumer as part of a promotional contingent on the consumer making a purchase of another item or items. */
@@ -286,28 +555,48 @@ interface Gs1 {
     "DiscountTypeCode-OTHER": NamedNode<'https://gs1.org/voc/DiscountTypeCode-OTHER'>;
     /** A percentage off the product price. */
     "DiscountTypeCode-PERCENTAGE_OFF": NamedNode<'https://gs1.org/voc/DiscountTypeCode-PERCENTAGE_OFF'>;
-    "DiscountTypeCode": NamedNode<'https://gs1.org/voc/DiscountTypeCode'>;
+    /** The product of the absorbed dose multiplied by a Q factor (relating to the type of radiation) and a factor relating to all relevant aspects of the body being irradiated, multiplied by the exposure time.  SI Units: sievert */
+    "DoseEquivalent": NamedNode<'https://gs1.org/voc/DoseEquivalent'>;
+    /** The product of the absorbed dose rate multiplied by a Q factor (relating to the type of radiation) and a factor relating to all relevant aspects of the body being irradiated.  SI Units: sievert per second */
+    "DoseEquivalentRate": NamedNode<'https://gs1.org/voc/DoseEquivalentRate'>;
+    /** The value of the tangential force per unit area which is necessary to maintain unit relative velocty between two parallel planes unit distance apart in a fluid.  SI Units: pascal */
+    "DynamicViscosity": NamedNode<'https://gs1.org/voc/DynamicViscosity'>;
+    /** Indicates the reporting of an error condition detected by a sensor device */
+    "ERROR_CONDITION": NamedNode<'https://gs1.org/voc/ERROR_CONDITION'>;
+    /** Quantity of unbalanced electricity in an object, i.e. excess or deficiency of electrons, resulting in negative or positive electrification, respectively.  SI Units: coulomb */
+    "ElectricCharge": NamedNode<'https://gs1.org/voc/ElectricCharge'>;
+    /** Rate of flow of charge in a substance, whether solid, liquid or gas.  SI Units: ampere */
+    "ElectricCurrent": NamedNode<'https://gs1.org/voc/ElectricCurrent'>;
+    /** Rate of flow of charge in a substance per unit area perpendicular to the current.  SI Units: ampere per square metre */
+    "ElectricCurrentDensity": NamedNode<'https://gs1.org/voc/ElectricCurrentDensity'>;
+    /** The electric force acting on a unit charge. The linear gradient of the electrostatic potential.  SI Units: volt per metre = newton / coulomb */
+    "ElectricFieldStrength": NamedNode<'https://gs1.org/voc/ElectricFieldStrength'>;
+    /** A measure of a the capacity of a system or body to do work.  SI Units: joule */
+    "Energy": NamedNode<'https://gs1.org/voc/Energy'>;
+    /** The product of light intensity and time duration of the exposure.  SI Units: lux second */
+    "Exposure": NamedNode<'https://gs1.org/voc/Exposure'>;
     /** Food and Beverage Preparation Information is a complex data type that indicates a preparation state code and preparation instructions. */
     "FoodAndBeveragePreparationInformation": NamedNode<'https://gs1.org/voc/FoodAndBeveragePreparationInformation'>;
     "FoodBeverageRefrigerationClaimCode-CAN_BE_REFRIGERATED": NamedNode<'https://gs1.org/voc/FoodBeverageRefrigerationClaimCode-CAN_BE_REFRIGERATED'>;
+    "FoodBeverageRefrigerationClaimCode": NamedNode<'https://gs1.org/voc/FoodBeverageRefrigerationClaimCode'>;
     "FoodBeverageRefrigerationClaimCode-MUST_BE_REFRIGERATED": NamedNode<'https://gs1.org/voc/FoodBeverageRefrigerationClaimCode-MUST_BE_REFRIGERATED'>;
     "FoodBeverageRefrigerationClaimCode-SHELF_STABLE": NamedNode<'https://gs1.org/voc/FoodBeverageRefrigerationClaimCode-SHELF_STABLE'>;
     "FoodBeverageRefrigerationClaimCode-UNIDENTIFIED": NamedNode<'https://gs1.org/voc/FoodBeverageRefrigerationClaimCode-UNIDENTIFIED'>;
-    "FoodBeverageRefrigerationClaimCode": NamedNode<'https://gs1.org/voc/FoodBeverageRefrigerationClaimCode'>;
     "FoodBeverageTargetUseCode-ANY_MEAL": NamedNode<'https://gs1.org/voc/FoodBeverageTargetUseCode-ANY_MEAL'>;
+    "FoodBeverageTargetUseCode": NamedNode<'https://gs1.org/voc/FoodBeverageTargetUseCode'>;
     "FoodBeverageTargetUseCode-BREAKFAST": NamedNode<'https://gs1.org/voc/FoodBeverageTargetUseCode-BREAKFAST'>;
     "FoodBeverageTargetUseCode-MAIN_MEAL": NamedNode<'https://gs1.org/voc/FoodBeverageTargetUseCode-MAIN_MEAL'>;
     "FoodBeverageTargetUseCode-PORTABLE_MEAL": NamedNode<'https://gs1.org/voc/FoodBeverageTargetUseCode-PORTABLE_MEAL'>;
     "FoodBeverageTargetUseCode-SNACK": NamedNode<'https://gs1.org/voc/FoodBeverageTargetUseCode-SNACK'>;
     "FoodBeverageTargetUseCode-UNCLASSIFIED": NamedNode<'https://gs1.org/voc/FoodBeverageTargetUseCode-UNCLASSIFIED'>;
-    "FoodBeverageTargetUseCode": NamedNode<'https://gs1.org/voc/FoodBeverageTargetUseCode'>;
     /** Food Beverage Tobacco Ingredient is a complex data type that includes an ingredient statement and details. */
     "FoodBeverageTobaccoIngredientDetails": NamedNode<'https://gs1.org/voc/FoodBeverageTobaccoIngredientDetails'>;
-    /** A food, beverage or tobacco product. */
-    "FoodBeverageTobaccoProduct": NamedNode<'https://gs1.org/voc/FoodBeverageTobaccoProduct'>;
+    /** Any item (product or service) upon which there is a need to retrieve pre-defined information and that may be priced, or ordered, or invoiced at any point in any supply chain. */
+    "Product": NamedNode<'https://gs1.org/voc/Product'>;
     /**  Outerwear that is worn on the feet such as shoes or boots. */
     "Footwear": NamedNode<'https://gs1.org/voc/Footwear'>;
     "FootwearFasteningTypeCode-MULTIPLE_FASTENING": NamedNode<'https://gs1.org/voc/FootwearFasteningTypeCode-MULTIPLE_FASTENING'>;
+    "FootwearFasteningTypeCode": NamedNode<'https://gs1.org/voc/FootwearFasteningTypeCode'>;
     "FootwearFasteningTypeCode-SHOE_LACE": NamedNode<'https://gs1.org/voc/FootwearFasteningTypeCode-SHOE_LACE'>;
     "FootwearFasteningTypeCode-SLIP_ON_WITHOUT_ELASTIC": NamedNode<'https://gs1.org/voc/FootwearFasteningTypeCode-SLIP_ON_WITHOUT_ELASTIC'>;
     "FootwearFasteningTypeCode-SLIP_ON_WITH_ELASTIC": NamedNode<'https://gs1.org/voc/FootwearFasteningTypeCode-SLIP_ON_WITH_ELASTIC'>;
@@ -315,18 +604,24 @@ interface Gs1 {
     "FootwearFasteningTypeCode-UNCLASSIFIED": NamedNode<'https://gs1.org/voc/FootwearFasteningTypeCode-UNCLASSIFIED'>;
     "FootwearFasteningTypeCode-UNIDENTIFIED": NamedNode<'https://gs1.org/voc/FootwearFasteningTypeCode-UNIDENTIFIED'>;
     "FootwearFasteningTypeCode-VELCRO": NamedNode<'https://gs1.org/voc/FootwearFasteningTypeCode-VELCRO'>;
-    "FootwearFasteningTypeCode": NamedNode<'https://gs1.org/voc/FootwearFasteningTypeCode'>;
+    /** The rate of change of linear momentum of a body on which a force acts. A force acting on a body which is free to move produces an acceleration in the motion of the body.  SI Units: newton */
+    "Force": NamedNode<'https://gs1.org/voc/Force'>;
+    /** The rate of repetition of a periodic oscillation or disturbance; the number of cycles per unit time.  SI Units: hertz */
+    "Frequency": NamedNode<'https://gs1.org/voc/Frequency'>;
     "FreshOrSeawaterFarmedCode-FRESHWATER_FARMED": NamedNode<'https://gs1.org/voc/FreshOrSeawaterFarmedCode-FRESHWATER_FARMED'>;
+    "FreshOrSeawaterFarmedCode": NamedNode<'https://gs1.org/voc/FreshOrSeawaterFarmedCode'>;
     "FreshOrSeawaterFarmedCode-SEAWATER_FARMED": NamedNode<'https://gs1.org/voc/FreshOrSeawaterFarmedCode-SEAWATER_FARMED'>;
     "FreshOrSeawaterFarmedCode-UNCLASSIFIED": NamedNode<'https://gs1.org/voc/FreshOrSeawaterFarmedCode-UNCLASSIFIED'>;
     "FreshOrSeawaterFarmedCode-UNIDENTIFIED": NamedNode<'https://gs1.org/voc/FreshOrSeawaterFarmedCode-UNIDENTIFIED'>;
-    "FreshOrSeawaterFarmedCode": NamedNode<'https://gs1.org/voc/FreshOrSeawaterFarmedCode'>;
     /** Contains properties related specifically to fruit and vegetable products. */
     "FruitsVegetables": NamedNode<'https://gs1.org/voc/FruitsVegetables'>;
     /** The geographic coordinates of a place or event. */
     "GeoCoordinates": NamedNode<'https://gs1.org/voc/GeoCoordinates'>;
+    /** The geographic shape of a place. A GeoShape can be described using several properties whose values are based on latitude/longitude pairs. Either whitespace or commas can be used to separate latitude and longitude; whitespace should be used when writing a list of several such points. */
+    "GeoShape": NamedNode<'https://gs1.org/voc/GeoShape'>;
     /** Animal is not confined to a cage. */
     "GrowingMethodCode-CAGE_FREE": NamedNode<'https://gs1.org/voc/GrowingMethodCode-CAGE_FREE'>;
+    "GrowingMethodCode": NamedNode<'https://gs1.org/voc/GrowingMethodCode'>;
     /** Product is a result of genetic engineering. */
     "GrowingMethodCode-CLONED_FOODS": NamedNode<'https://gs1.org/voc/GrowingMethodCode-CLONED_FOODS'>;
     /** Foods grown non-organically, either indoors or outdoors without any special processes. */
@@ -356,46 +651,90 @@ interface Gs1 {
     "GrowingMethodCode-SUSTAINABLE": NamedNode<'https://gs1.org/voc/GrowingMethodCode-SUSTAINABLE'>;
     /** The animal or plant was not inhibited or prohibited from roving, wandering, and not tamed or domesticated. */
     "GrowingMethodCode-WILD": NamedNode<'https://gs1.org/voc/GrowingMethodCode-WILD'>;
-    "GrowingMethodCode": NamedNode<'https://gs1.org/voc/GrowingMethodCode'>;
+    /** The energy in the form of visible radiation reaching a surface per unit area in unit time; the amount of luminous flux per unit area.  SI Units: lux = 1 lumen per square metre */
+    "Illuminance": NamedNode<'https://gs1.org/voc/Illuminance'>;
+    /** The magnitude of the property of an element or circuit to form a magnetic field and store magnetic energy when carrying a current. The property of an electric circuit or component that causes an electromotive force to be generated in it as a result of a change in the current flowing through the circuit (self inductance) or of a change in the current flowing through a neighbouring circuit with which it is magnetically linked (mutual inductance).  SI Units: henry */
+    "Inductance": NamedNode<'https://gs1.org/voc/Inductance'>;
+    /** The flux of radiant energy per unit area, especially an area perpendicular to the direction of travel through a medium. A measure of the radiant power per unit area that flows across a surface.  SI Units: watt per square metre */
+    "Irradiance": NamedNode<'https://gs1.org/voc/Irradiance'>;
+    /** The ratio of the viscosity of a liquid to its density.  SI Units: square metres per second */
+    "KinematicViscosity": NamedNode<'https://gs1.org/voc/KinematicViscosity'>;
+    /** The linear magnitude of any thing, as measured end to end.  Length, width, depth, height, diameter are all measured in units of length.  SI Units: metre */
+    "Length": NamedNode<'https://gs1.org/voc/Length'>;
     /** Intentionally included in the product. */
     "LevelOfContainmentCode-CONTAINS": NamedNode<'https://gs1.org/voc/LevelOfContainmentCode-CONTAINS'>;
+    "LevelOfContainmentCode": NamedNode<'https://gs1.org/voc/LevelOfContainmentCode'>;
     /** The product is free from the indicated substance. */
     "LevelOfContainmentCode-FREE_FROM": NamedNode<'https://gs1.org/voc/LevelOfContainmentCode-FREE_FROM'>;
     /** The substance is not intentionally included, but due to shared production facilities or other reasons, the product may contain the substance. */
     "LevelOfContainmentCode-MAY_CONTAIN": NamedNode<'https://gs1.org/voc/LevelOfContainmentCode-MAY_CONTAIN'>;
-    "LevelOfContainmentCode": NamedNode<'https://gs1.org/voc/LevelOfContainmentCode'>;
+    /** The impulse is the integral over time of the force acting between two colliding bodies. Linear momentum of a body is the product of its mass and its velocity.  SI Units: newton seconds */
+    "LinearMomentum": NamedNode<'https://gs1.org/voc/LinearMomentum'>;
+    /** A measure of the light-emitting intensity of a light source, in a specific direction per unit area of the emitting surface. For a very narrow cone containing the direction, it is the ratio of the luminous flux emitted within that cone to the solid angle of the cone per unit area of the emitting surface.  SI Units: candela per square metre */
+    "Luminance": NamedNode<'https://gs1.org/voc/Luminance'>;
+    /** A measure of the perceived power of light emitted by a source or received by a surface and irrespective of direction, taking into account the sensitivity of the human eye to different wavelengths of light.  SI Units: lumen = 1 candela per steradian */
+    "LuminousFlux": NamedNode<'https://gs1.org/voc/LuminousFlux'>;
+    /** A measure of the light-emitting intensity of a light source, in a specific direction. For a very narrow cone containing the direction, it is the ratio of the luminous flex emitted within that cone to the solid angle of the cone.  SI Units: candela */
+    "LuminousIntensity": NamedNode<'https://gs1.org/voc/LuminousIntensity'>;
+    /** A measure of the total magnetic field that passes through a specific area. The surface integral of the product of the permeability of the medium and the magnetic field intensity perpendicular to the surface.  SI Units: weber */
+    "MagneticFlux": NamedNode<'https://gs1.org/voc/MagneticFlux'>;
+    /** The product of the magnetic field strength and the permeability of a material.  SI Units: tesla = weber per square metre */
+    "MagneticFluxDensity": NamedNode<'https://gs1.org/voc/MagneticFluxDensity'>;
+    /** The potential energy per unit element of current (current multiplied by length).    SI Units: weber per metre  (Joules per ampere metre) */
+    "MagneticVectorPotential": NamedNode<'https://gs1.org/voc/MagneticVectorPotential'>;
+    /** The quantity of matter in a body. Inertial mass is the measure of the inertia of a body; its resistance to acceleration.  SI Units: kilogram */
+    "Mass": NamedNode<'https://gs1.org/voc/Mass'>;
+    /** The mass of the consistutent (or solute) divided by the volume of the mixture (or solvent).  SI Units: kilogram per cubic metre */
+    "MassConcentration": NamedNode<'https://gs1.org/voc/MassConcentration'>;
+    /** The mass of fluid that passes per unit of time.  SI Units: kilogram per second */
+    "MassFlowRate": NamedNode<'https://gs1.org/voc/MassFlowRate'>;
+    /** The mass of fluid that passes per unit of time per unit area perpendicular to the flow direction.  SI Units: kilogram per second per square metre */
+    "MassPerAreaTime": NamedNode<'https://gs1.org/voc/MassPerAreaTime'>;
     /** Freshly picked and immediately packed and shipped at mature stage and flown to destination for adequate distribution (i.e. imports from South America, Africa or Europe). Flown by jet to market; the carton will be labelled Jet Fresh, when applicable, stickered Jet Fresh. For the produce industry, most common with berries, stone fruits and pineapples. */
     "MaturationMethodCode-JET_FRESH": NamedNode<'https://gs1.org/voc/MaturationMethodCode-JET_FRESH'>;
+    "MaturationMethodCode": NamedNode<'https://gs1.org/voc/MaturationMethodCode'>;
     /** Product stored at proper temperature prior to shipment to allow ripening and/or colouring, adequate for distribution and/or consumption. Pre-conditioned product is matured to a specific maturity level as a result of ripening through either temperature, gas treatment, humidity or any combination thereof. */
     "MaturationMethodCode-PRECONDITIONED": NamedNode<'https://gs1.org/voc/MaturationMethodCode-PRECONDITIONED'>;
     /** Product that is picked at optimum maturity or just shy of. It is almost ripe or ready to eat. This fruit will be shipped immediately (imported = flown) from the pack-house and stickered as Tree or Vine Ripe. */
     "MaturationMethodCode-TREE_VINE_RIPE": NamedNode<'https://gs1.org/voc/MaturationMethodCode-TREE_VINE_RIPE'>;
-    "MaturationMethodCode": NamedNode<'https://gs1.org/voc/MaturationMethodCode'>;
     /** The method used to analyse the products resulted in approximate value of the nutritional content. */
     "MeasurementPrecisionCode-APPROXIMATELY": NamedNode<'https://gs1.org/voc/MeasurementPrecisionCode-APPROXIMATELY'>;
+    "MeasurementPrecisionCode": NamedNode<'https://gs1.org/voc/MeasurementPrecisionCode'>;
     /** The method used to analyse the products resulted in exact value of the nutritional content. */
     "MeasurementPrecisionCode-EXACT": NamedNode<'https://gs1.org/voc/MeasurementPrecisionCode-EXACT'>;
     /** To indicate presence when the measurement value is too small to be measured precisely (rule states less than 0.5). */
     "MeasurementPrecisionCode-LESS_THAN": NamedNode<'https://gs1.org/voc/MeasurementPrecisionCode-LESS_THAN'>;
-    "MeasurementPrecisionCode": NamedNode<'https://gs1.org/voc/MeasurementPrecisionCode'>;
     /** Meat and poultry products. */
     "MeatPoultry": NamedNode<'https://gs1.org/voc/MeatPoultry'>;
+    /** A measure of the size of a data structure or capacity of a data carrier, typically measured in bits (binary digits), bytes or octets (8 bits) or multiples thereof.  Units: byte */
+    "MemoryCapacity": NamedNode<'https://gs1.org/voc/MemoryCapacity'>;
     /** Milk butter cream yogurts cheese eggs and any substitutes for these products. */
     "MilkButterCreamYogurtCheeseEggsSubstitutes": NamedNode<'https://gs1.org/voc/MilkButterCreamYogurtCheeseEggsSubstitutes'>;
+    /** The concentration of a solution expressed as the number of moles of dissolved substance per unit mass of solvent.  SI Units: mole per kg */
+    "MolalityOfSolute": NamedNode<'https://gs1.org/voc/MolalityOfSolute'>;
+    /** The ratio of the thermodynamic energy of a chemical compound to the amount of substance (atoms or molecules) contained within it, the amount of substance being measured in moles.  SI Units: joule per mole */
+    "MolarEnergy": NamedNode<'https://gs1.org/voc/MolarEnergy'>;
+    /** The ratio of the mass of a chemical compound to the amount of substance (atoms or molecules) contained within it, the amount of substance being measured in moles.  SI Units: kilogram per mole */
+    "MolarMass": NamedNode<'https://gs1.org/voc/MolarMass'>;
+    /** The volume occupied by a substance per unit amount of substance at a specified temperature and pressure.  SI Units: cubic metre per mole */
+    "MolarVolume": NamedNode<'https://gs1.org/voc/MolarVolume'>;
     "NonbinaryLogicCode-FALSE": NamedNode<'https://gs1.org/voc/NonbinaryLogicCode-FALSE'>;
+    "NonbinaryLogicCode": NamedNode<'https://gs1.org/voc/NonbinaryLogicCode'>;
     "NonbinaryLogicCode-NOT_APPLICABLE": NamedNode<'https://gs1.org/voc/NonbinaryLogicCode-NOT_APPLICABLE'>;
     "NonbinaryLogicCode-TRUE": NamedNode<'https://gs1.org/voc/NonbinaryLogicCode-TRUE'>;
     "NonbinaryLogicCode-UNSPECIFIED": NamedNode<'https://gs1.org/voc/NonbinaryLogicCode-UNSPECIFIED'>;
-    "NonbinaryLogicCode": NamedNode<'https://gs1.org/voc/NonbinaryLogicCode'>;
     /** Nutrient measurement is based on a measurement value for example grams or ounces. */
     "NutrientBasisQuantityCode-BY_MEASURE": NamedNode<'https://gs1.org/voc/NutrientBasisQuantityCode-BY_MEASURE'>;
+    "NutrientBasisQuantityCode": NamedNode<'https://gs1.org/voc/NutrientBasisQuantityCode'>;
     /** Nutrient measurement is based on a specified serving amount. */
     "NutrientBasisQuantityCode-BY_SERVING": NamedNode<'https://gs1.org/voc/NutrientBasisQuantityCode-BY_SERVING'>;
-    "NutrientBasisQuantityCode": NamedNode<'https://gs1.org/voc/NutrientBasisQuantityCode'>;
     /** A class providing nutritional value and intake percent. */
     "NutritionMeasurementType": NamedNode<'https://gs1.org/voc/NutritionMeasurementType'>;
+    /** A point value or interval for product characteristics and other purposes. A unit of measurement is also specified. */
+    "QuantitativeValue": NamedNode<'https://gs1.org/voc/QuantitativeValue'>;
     /** A claim that a food is free from additives. Note the amount that determines containment or lack of containment is based on target market regulations. */
     "NutritionalClaimTypeCode-ADDITIVE_FREE": NamedNode<'https://gs1.org/voc/NutritionalClaimTypeCode-ADDITIVE_FREE'>;
+    "NutritionalClaimTypeCode": NamedNode<'https://gs1.org/voc/NutritionalClaimTypeCode'>;
     /** A claim that a food contains artificial sweeteners. Artificial sweeteners are sugar substitutes that are synthetic. */
     "NutritionalClaimTypeCode-ARTIFICIALLY_SWEETENED": NamedNode<'https://gs1.org/voc/NutritionalClaimTypeCode-ARTIFICIALLY_SWEETENED'>;
     /** A claim that a food is free from Cholesterol. Note the amount that determines containment or lack of containment is based on target market regulations. */
@@ -502,11 +841,11 @@ interface Gs1 {
     "NutritionalClaimTypeCode-WHEAT_FREE": NamedNode<'https://gs1.org/voc/NutritionalClaimTypeCode-WHEAT_FREE'>;
     /** A claim stating that sugar has not been added to a food, and any claim likely to have the same meaning for the consumer, may only be made where the product does not contain any added mono- or disaccharides or any other food used for its sweetening properties. */
     "NutritionalClaimTypeCode-WITH_NO_ADDED_SUGARS": NamedNode<'https://gs1.org/voc/NutritionalClaimTypeCode-WITH_NO_ADDED_SUGARS'>;
-    "NutritionalClaimTypeCode": NamedNode<'https://gs1.org/voc/NutritionalClaimTypeCode'>;
     /** An offer to transfer some rights to an item or to provide a service,for example, an offer to sell tickets to an event, to rent the DVD of a movie, to stream a TV show over the internet, to repair a motorcycle, or to loan a book. */
     "Offer": NamedNode<'https://gs1.org/voc/Offer'>;
     /** Offer available as a code that can be entered to redeem the coupon or voucher. */
     "OfferRedemptionTypeCode-COUPON_CODE": NamedNode<'https://gs1.org/voc/OfferRedemptionTypeCode-COUPON_CODE'>;
+    "OfferRedemptionTypeCode": NamedNode<'https://gs1.org/voc/OfferRedemptionTypeCode'>;
     /** A prepaid stored-value money card. */
     "OfferRedemptionTypeCode-GIFT_CARD": NamedNode<'https://gs1.org/voc/OfferRedemptionTypeCode-GIFT_CARD'>;
     /** A partial refund upon purchase of a product. */
@@ -515,9 +854,9 @@ interface Gs1 {
     "OfferRedemptionTypeCode-SALE": NamedNode<'https://gs1.org/voc/OfferRedemptionTypeCode-SALE'>;
     /** Offer available as a code that can be entered once to redeem the coupon. */
     "OfferRedemptionTypeCode-SINGLE_USE_CODE": NamedNode<'https://gs1.org/voc/OfferRedemptionTypeCode-SINGLE_USE_CODE'>;
-    "OfferRedemptionTypeCode": NamedNode<'https://gs1.org/voc/OfferRedemptionTypeCode'>;
     /** Biological Farmers of Australia */
     "OrganicClaimAgencyCode-BFA": NamedNode<'https://gs1.org/voc/OrganicClaimAgencyCode-BFA'>;
+    "OrganicClaimAgencyCode": NamedNode<'https://gs1.org/voc/OrganicClaimAgencyCode'>;
     /** Bioland: The leading organic farmers' association in Germany for the economy of organic-based businesses without synthetic pesticides and synthetic chemical nitrogen fertilizer. The animals are kept humanely and processed food carefully. This provides an environmentally sound and sustainable food production. http://www.bioland.de. */
     "OrganicClaimAgencyCode-BIOLAND": NamedNode<'https://gs1.org/voc/OrganicClaimAgencyCode-BIOLAND'>;
     /** The Demeter movement as an entrepreneurial network promotes the development of bio-dynamic economy, to secure the livelihoods of the world and to strengthen the positive people in his ministry. In cooperation contribute producers, processors, traders and consumers in partnership to shape the market. */
@@ -548,13 +887,13 @@ interface Gs1 {
     "OrganicClaimAgencyCode-SUDITIROL": NamedNode<'https://gs1.org/voc/OrganicClaimAgencyCode-SUDITIROL'>;
     /** US Department of Agriculture. */
     "OrganicClaimAgencyCode-USDA": NamedNode<'https://gs1.org/voc/OrganicClaimAgencyCode-USDA'>;
-    "OrganicClaimAgencyCode": NamedNode<'https://gs1.org/voc/OrganicClaimAgencyCode'>;
     /** A set of organic claim details for the product. */
     "OrganicClaimDetails": NamedNode<'https://gs1.org/voc/OrganicClaimDetails'>;
     /** An Organization is any legal or physical entity involved at any point in any supply chain and upon which there is a need to retrieve predefined information. An Organization is uniquely identified by a Global Location Number (GLN). */
     "Organization": NamedNode<'https://gs1.org/voc/Organization'>;
     /** Organization accepting goods, products, services etc. */
     "OrganizationRoleType-ACCEPTING_PARTY": NamedNode<'https://gs1.org/voc/OrganizationRoleType-ACCEPTING_PARTY'>;
+    "OrganizationRoleType": NamedNode<'https://gs1.org/voc/OrganizationRoleType'>;
     /** Organization to receive Bill of Lading. */
     "OrganizationRoleType-BILL_OF_LADING_RECIPIENT": NamedNode<'https://gs1.org/voc/OrganizationRoleType-BILL_OF_LADING_RECIPIENT'>;
     /** Organization which receives goods and invoice. */
@@ -728,11 +1067,11 @@ interface Gs1 {
     "OrganizationRoleType-WAREHOUSE_KEEPER": NamedNode<'https://gs1.org/voc/OrganizationRoleType-WAREHOUSE_KEEPER'>;
     /** Seller of articles, often in large quantities, to be retailed by others. */
     "OrganizationRoleType-WHOLESALER": NamedNode<'https://gs1.org/voc/OrganizationRoleType-WHOLESALER'>;
-    "OrganizationRoleType": NamedNode<'https://gs1.org/voc/OrganizationRoleType'>;
     /** Details on packaging for a product for example packaging type (bottle), materials, features, recycling, etc.. */
     "PackagingDetails": NamedNode<'https://gs1.org/voc/PackagingDetails'>;
     /** A general term applied to the support or pedestal of an object. */
     "PackagingFeatureCode-BASE": NamedNode<'https://gs1.org/voc/PackagingFeatureCode-BASE'>;
+    "PackagingFeatureCode": NamedNode<'https://gs1.org/voc/PackagingFeatureCode'>;
     /** Long sturdy piece of squared timber or metal used in house-building etc. */
     "PackagingFeatureCode-BEAM": NamedNode<'https://gs1.org/voc/PackagingFeatureCode-BEAM'>;
     /** A bung is an apparatus used to seal a container, such as a bottle, barrel or tubes. A bung is partially inserted inside the container to act as a seal. The most common every-day example of a bung is the stopper of a wine bottle. */
@@ -783,9 +1122,9 @@ interface Gs1 {
     "PackagingFeatureCode-WICKER_OUTER_CONTAINER": NamedNode<'https://gs1.org/voc/PackagingFeatureCode-WICKER_OUTER_CONTAINER'>;
     /** A layer of any material which completely enclose a product. A wrap can have many purposes, from providing additional protection to an item to serving as a gift-wrap. */
     "PackagingFeatureCode-WRAP": NamedNode<'https://gs1.org/voc/PackagingFeatureCode-WRAP'>;
-    "PackagingFeatureCode": NamedNode<'https://gs1.org/voc/PackagingFeatureCode'>;
     /** The process by which a sterile (aseptic) product (typically food or pharmaceutical) is packaged in a sterile container in a way which maintains sterility. */
     "PackagingFunctionCode-ANTISEPTIC": NamedNode<'https://gs1.org/voc/PackagingFunctionCode-ANTISEPTIC'>;
+    "PackagingFunctionCode": NamedNode<'https://gs1.org/voc/PackagingFunctionCode'>;
     /** A methodology used to hinder, or deter unauthorized access to a device. */
     "PackagingFunctionCode-ANTI_TAMPERING": NamedNode<'https://gs1.org/voc/PackagingFunctionCode-ANTI_TAMPERING'>;
     /** Covered with a material (paraffin, wax) that protects the product or packaging. */
@@ -816,9 +1155,9 @@ interface Gs1 {
     "PackagingFunctionCode-TAMPER_EVIDENT": NamedNode<'https://gs1.org/voc/PackagingFunctionCode-TAMPER_EVIDENT'>;
     /** Coated with materials that make the packaging impervious to the effects of water. */
     "PackagingFunctionCode-WATER_RESISTANT": NamedNode<'https://gs1.org/voc/PackagingFunctionCode-WATER_RESISTANT'>;
-    "PackagingFunctionCode": NamedNode<'https://gs1.org/voc/PackagingFunctionCode'>;
     /** Definitions made by the asthma and allergist association. */
     "PackagingMarkedDietAllergenCode-APPROVED_BY_ASTHMA_AND_ALLERGY_ASSOC": NamedNode<'https://gs1.org/voc/PackagingMarkedDietAllergenCode-APPROVED_BY_ASTHMA_AND_ALLERGY_ASSOC'>;
+    "PackagingMarkedDietAllergenCode": NamedNode<'https://gs1.org/voc/PackagingMarkedDietAllergenCode'>;
     /** The item is physically marked that it is approved for tube feeding by the appropriate authority of the target market. */
     "PackagingMarkedDietAllergenCode-APPROVED_FOR_TUBE_FEEDING": NamedNode<'https://gs1.org/voc/PackagingMarkedDietAllergenCode-APPROVED_FOR_TUBE_FEEDING'>;
     /** Indicates the product has been marked as a biological item which indicates a food product that was produced with the use of feed or fertilizer of plant or animal origin, without employment of chemically formulated fertilizers, growth stimulants, antibiotics or pesticides. */
@@ -859,9 +1198,9 @@ interface Gs1 {
     "PackagingMarkedDietAllergenCode-NYCKELHAL_MARK": NamedNode<'https://gs1.org/voc/PackagingMarkedDietAllergenCode-NYCKELHAL_MARK'>;
     /** Indicates the product has been marked as vegetarian which denotes a product that contains no meat, fish or other animal products. */
     "PackagingMarkedDietAllergenCode-VEGETARIAN": NamedNode<'https://gs1.org/voc/PackagingMarkedDietAllergenCode-VEGETARIAN'>;
-    "PackagingMarkedDietAllergenCode": NamedNode<'https://gs1.org/voc/PackagingMarkedDietAllergenCode'>;
     /** The item is physically marked as having no artificial colouring. */
     "PackagingMarkedFreeFromCode-FREE_FROM_ARTIFICIAL_COLOURING": NamedNode<'https://gs1.org/voc/PackagingMarkedFreeFromCode-FREE_FROM_ARTIFICIAL_COLOURING'>;
+    "PackagingMarkedFreeFromCode": NamedNode<'https://gs1.org/voc/PackagingMarkedFreeFromCode'>;
     /** The item is physically marked as having no artificial flavouring. */
     "PackagingMarkedFreeFromCode-FREE_FROM_ARTIFICIAL_FLAVOURING": NamedNode<'https://gs1.org/voc/PackagingMarkedFreeFromCode-FREE_FROM_ARTIFICIAL_FLAVOURING'>;
     /** The item is physically marked as having no artificial preservatives. */
@@ -916,9 +1255,9 @@ interface Gs1 {
     "PackagingMarkedFreeFromCode-WITHOUT_ADDED_SUGAR": NamedNode<'https://gs1.org/voc/PackagingMarkedFreeFromCode-WITHOUT_ADDED_SUGAR'>;
     /** The item is physically marked that no sweetener has been added when manufacturing the product. */
     "PackagingMarkedFreeFromCode-WITHOUT_ADDED_SWEETENER": NamedNode<'https://gs1.org/voc/PackagingMarkedFreeFromCode-WITHOUT_ADDED_SWEETENER'>;
-    "PackagingMarkedFreeFromCode": NamedNode<'https://gs1.org/voc/PackagingMarkedFreeFromCode'>;
     /** Austria Ministry of Agriculture Organic Label, AMA Marketing licenses the AMA organic logo. Red, white and black indicates the majority of ingredients are of Austrian origin. */
     "PackagingMarkedLabelAccreditationCode-AMA_ORGANIC_SEAL": NamedNode<'https://gs1.org/voc/PackagingMarkedLabelAccreditationCode-AMA_ORGANIC_SEAL'>;
+    "PackagingMarkedLabelAccreditationCode": NamedNode<'https://gs1.org/voc/PackagingMarkedLabelAccreditationCode'>;
     /** Used to specify Estonia Meat in their product. */
     "PackagingMarkedLabelAccreditationCode-AUS_KAUP_ESTONIA": NamedNode<'https://gs1.org/voc/PackagingMarkedLabelAccreditationCode-AUS_KAUP_ESTONIA'>;
     "PackagingMarkedLabelAccreditationCode-BDIH_LOGO": NamedNode<'https://gs1.org/voc/PackagingMarkedLabelAccreditationCode-BDIH_LOGO'>;
@@ -1035,10 +1374,10 @@ interface Gs1 {
     "PackagingMarkedLabelAccreditationCode-VAELG_FULDKORN_FORST": NamedNode<'https://gs1.org/voc/PackagingMarkedLabelAccreditationCode-VAELG_FULDKORN_FORST'>;
     /** Products that support the World Wildlife Federation. */
     "PackagingMarkedLabelAccreditationCode-WWF_PANDA_LABEL": NamedNode<'https://gs1.org/voc/PackagingMarkedLabelAccreditationCode-WWF_PANDA_LABEL'>;
-    "PackagingMarkedLabelAccreditationCode": NamedNode<'https://gs1.org/voc/PackagingMarkedLabelAccreditationCode'>;
     /** Information on any material used for packaging. */
     "PackagingMaterialDetails": NamedNode<'https://gs1.org/voc/PackagingMaterialDetails'>;
     "PackagingMaterialTypeCode-CERAMIC": NamedNode<'https://gs1.org/voc/PackagingMaterialTypeCode-CERAMIC'>;
+    "PackagingMaterialTypeCode": NamedNode<'https://gs1.org/voc/PackagingMaterialTypeCode'>;
     "PackagingMaterialTypeCode-CLOTH_OR_FABRIC": NamedNode<'https://gs1.org/voc/PackagingMaterialTypeCode-CLOTH_OR_FABRIC'>;
     "PackagingMaterialTypeCode-COMPOSITE": NamedNode<'https://gs1.org/voc/PackagingMaterialTypeCode-COMPOSITE'>;
     "PackagingMaterialTypeCode-CORRUGATED_BOARD_DOUBLE_WALL": NamedNode<'https://gs1.org/voc/PackagingMaterialTypeCode-CORRUGATED_BOARD_DOUBLE_WALL'>;
@@ -1102,27 +1441,27 @@ interface Gs1 {
     "PackagingMaterialTypeCode-POLYMER_PVC": NamedNode<'https://gs1.org/voc/PackagingMaterialTypeCode-POLYMER_PVC'>;
     "PackagingMaterialTypeCode-POLYMER_PVDC": NamedNode<'https://gs1.org/voc/PackagingMaterialTypeCode-POLYMER_PVDC'>;
     "PackagingMaterialTypeCode-POLYMER_TPS": NamedNode<'https://gs1.org/voc/PackagingMaterialTypeCode-POLYMER_TPS'>;
-    "PackagingMaterialTypeCode": NamedNode<'https://gs1.org/voc/PackagingMaterialTypeCode'>;
     /** Packaging that can biodegrade generating a relatively homogeneous and stable humus-like substance. */
     "PackagingRecyclingProcessTypeCode-COMPOSTABLE": NamedNode<'https://gs1.org/voc/PackagingRecyclingProcessTypeCode-COMPOSTABLE'>;
+    "PackagingRecyclingProcessTypeCode": NamedNode<'https://gs1.org/voc/PackagingRecyclingProcessTypeCode'>;
     /** Packaging which allows for a net calorific gain in energy recovery operations. */
     "PackagingRecyclingProcessTypeCode-ENERGY_RECOVERABLE": NamedNode<'https://gs1.org/voc/PackagingRecyclingProcessTypeCode-ENERGY_RECOVERABLE'>;
     /** Packaging material and format which can be diverted from the waste stream through available processes and programmes and can be collected, processed and returned to use in the form of raw materials or products. */
     "PackagingRecyclingProcessTypeCode-RECYCLABLE": NamedNode<'https://gs1.org/voc/PackagingRecyclingProcessTypeCode-RECYCLABLE'>;
     /** Packaging that has been conceived and designed to accomplished within its life cycle a certain number of trips, rotations or uses for the same purpose for which it was conceived. */
     "PackagingRecyclingProcessTypeCode-REUSABLE": NamedNode<'https://gs1.org/voc/PackagingRecyclingProcessTypeCode-REUSABLE'>;
-    "PackagingRecyclingProcessTypeCode": NamedNode<'https://gs1.org/voc/PackagingRecyclingProcessTypeCode'>;
     /** Alko inc. is an independent, entirely State-owned company. Alko is administered and supervised by the Ministry of Social Affairs and Health. They have own recycling system for alcohol products bottles called Alko. This is a recycling system used in Finland */
     "PackagingRecyclingSchemeCode-ALKO": NamedNode<'https://gs1.org/voc/PackagingRecyclingSchemeCode-ALKO'>;
+    "PackagingRecyclingSchemeCode": NamedNode<'https://gs1.org/voc/PackagingRecyclingSchemeCode'>;
     /** PALPA stands for Suomen Palautuspakkaus Oy. PALPA administers the recycling of beverage containers and promotes recycling in Finland. A-pullo is one of the recycling systems. PALPA is the administrator. This is a recycling system used in Finland. */
     "PackagingRecyclingSchemeCode-A_PULLO": NamedNode<'https://gs1.org/voc/PackagingRecyclingSchemeCode-A_PULLO'>;
     /** PALPA Standas for Suomen Palautuspakkaus Oy. PALPA administers the recycling of beverage containers and promotes recycling in Finland. EKO-pullo is one of the recycling systems PALPA is administer. This is a recycling system used in Finland. */
     "PackagingRecyclingSchemeCode-EKO_PULLO": NamedNode<'https://gs1.org/voc/PackagingRecyclingSchemeCode-EKO_PULLO'>;
     /** PALPA stands for Suomen Palautuspakkaus Oy. PALPA administers the recycling of beverage containers and promotes recycling in Finland. PALPA is on of the recycling systems PALPA is administer. This is a recycling system used in Finland. */
     "PackagingRecyclingSchemeCode-PALPA": NamedNode<'https://gs1.org/voc/PackagingRecyclingSchemeCode-PALPA'>;
-    "PackagingRecyclingSchemeCode": NamedNode<'https://gs1.org/voc/PackagingRecyclingSchemeCode'>;
     /** A relatively long, evenly shaped piece of some solid substance */
     "PackagingShapeCode-BAR": NamedNode<'https://gs1.org/voc/PackagingShapeCode-BAR'>;
+    "PackagingShapeCode": NamedNode<'https://gs1.org/voc/PackagingShapeCode'>;
     /** A spiral structure made by winding a material into a series of loops. A coil may or may not have a spindle around which the loops are formed. */
     "PackagingShapeCode-COIL": NamedNode<'https://gs1.org/voc/PackagingShapeCode-COIL'>;
     /** A cone is a three-dimensional geometric shape that tapers smoothly from a flat, round base to a point. */
@@ -1139,9 +1478,10 @@ interface Gs1 {
     "PackagingShapeCode-TABLET": NamedNode<'https://gs1.org/voc/PackagingShapeCode-TABLET'>;
     /** Shape is not currently specified in the list. To be used as a temporary means until a specific missing value is added to the list. */
     "PackagingShapeCode-UNSPECIFIED": NamedNode<'https://gs1.org/voc/PackagingShapeCode-UNSPECIFIED'>;
-    "PackagingShapeCode": NamedNode<'https://gs1.org/voc/PackagingShapeCode'>;
     /** Issue of a banker's draft in payment of the funds. */
     "PaymentMethod-BANKERS_DRAFT": NamedNode<'https://gs1.org/voc/PaymentMethod-BANKERS_DRAFT'>;
+    /** A code indicating an accepted method of payment */
+    "PaymentMethod": NamedNode<'https://gs1.org/voc/PaymentMethod'>;
     /** Payment by a pre-printed form, which has been completed by a financial institution, on which instructions are given to an account holder (a bank or building society) to pay a stated sum to a named recipient. */
     "PaymentMethod-BANK_CHEQUE": NamedNode<'https://gs1.org/voc/PaymentMethod-BANK_CHEQUE'>;
     /** The payment was originally made by bankgiro. */
@@ -1205,14 +1545,16 @@ interface Gs1 {
     "PaymentMethod-WIRE_TRANSFER_CREDIT": NamedNode<'https://gs1.org/voc/PaymentMethod-WIRE_TRANSFER_CREDIT'>;
     /** Payment by wire transfer debit */
     "PaymentMethod-WIRE_TRANSFER_DEBIT": NamedNode<'https://gs1.org/voc/PaymentMethod-WIRE_TRANSFER_DEBIT'>;
-    /** A code indicating an accepted method of payment */
-    "PaymentMethod": NamedNode<'https://gs1.org/voc/PaymentMethod'>;
     /** Entities that have a somewhat fixed, physical location. */
     "Place": NamedNode<'https://gs1.org/voc/Place'>;
     /** The location at which a particular organization or person may be found or reached. */
     "PostalAddress": NamedNode<'https://gs1.org/voc/PostalAddress'>;
+    /** The rate of doing work or rate of production, transfer or consumption of energy; the amount of energy transferred or converted per unit time.  SI Units: watt */
+    "Power": NamedNode<'https://gs1.org/voc/Power'>;
     /** The state of the product after it has been separated from any liquid within the package. For example, a can of apricots in syrup would have a different nutritional composition if the apricots are consumed with the syrup rather than if the syrup is drained before consuming the apricots (because of the high sugar and energy content of the syrup). */
     "PreparationTypeCode-AS_DRAINED": NamedNode<'https://gs1.org/voc/PreparationTypeCode-AS_DRAINED'>;
+    /** A code indicating a method of preparation of a food or beverage product */
+    "PreparationTypeCode": NamedNode<'https://gs1.org/voc/PreparationTypeCode'>;
     /** Cooking food in an oven by dry heat applied evenly throughout the oven */
     "PreparationTypeCode-BAKE": NamedNode<'https://gs1.org/voc/PreparationTypeCode-BAKE'>;
     /** Method of cooking meat with the heat and hot gasses of a fire */
@@ -1285,10 +1627,9 @@ interface Gs1 {
     "PreparationTypeCode-UNPREPARED": NamedNode<'https://gs1.org/voc/PreparationTypeCode-UNPREPARED'>;
     /** Unknown, not applicable */
     "PreparationTypeCode-UNSPECIFIED": NamedNode<'https://gs1.org/voc/PreparationTypeCode-UNSPECIFIED'>;
-    /** A code indicating a method of preparation of a food or beverage product */
-    "PreparationTypeCode": NamedNode<'https://gs1.org/voc/PreparationTypeCode'>;
     /** Dropping pH of food */
     "PreservationTechniqueCode-ACIDIFICATION": NamedNode<'https://gs1.org/voc/PreservationTechniqueCode-ACIDIFICATION'>;
+    "PreservationTechniqueCode": NamedNode<'https://gs1.org/voc/PreservationTechniqueCode'>;
     /** Treatment of food by adding alcohol in order to preserve the product */
     "PreservationTechniqueCode-ALCOHOL_CURING": NamedNode<'https://gs1.org/voc/PreservationTechniqueCode-ALCOHOL_CURING'>;
     /** Raw Milk (without heat treatment) */
@@ -1339,28 +1680,32 @@ interface Gs1 {
     "PreservationTechniqueCode-UNDER_MODIFIED_ATMOSPHERE": NamedNode<'https://gs1.org/voc/PreservationTechniqueCode-UNDER_MODIFIED_ATMOSPHERE'>;
     /** Sealed after the partial removal of air */
     "PreservationTechniqueCode-VACUUM_PACKED": NamedNode<'https://gs1.org/voc/PreservationTechniqueCode-VACUUM_PACKED'>;
-    "PreservationTechniqueCode": NamedNode<'https://gs1.org/voc/PreservationTechniqueCode'>;
+    /** The perpendicular force per unit area acting on a material and tending to change its dimensions.  SI Units: pascal, newton per square metre */
+    "Pressure": NamedNode<'https://gs1.org/voc/Pressure'>;
     /** A structured value representing a monetary amount, consisting of a value and currency code. */
     "PriceSpecification": NamedNode<'https://gs1.org/voc/PriceSpecification'>;
-    /** Any item (product or service) upon which there is a need to retrieve pre-defined information and that may be priced, or ordered, or invoiced at any point in any supply chain. */
-    "Product": NamedNode<'https://gs1.org/voc/Product'>;
     /** A grouping of properties related to the yield of a food or beverage product according to a specified type of preparation. */
     "ProductYieldDetails": NamedNode<'https://gs1.org/voc/ProductYieldDetails'>;
     /** Weight or volume of food product after it has been prepared. */
     "ProductYieldTypeCode-AFTER_COOKING": NamedNode<'https://gs1.org/voc/ProductYieldTypeCode-AFTER_COOKING'>;
+    "ProductYieldTypeCode": NamedNode<'https://gs1.org/voc/ProductYieldTypeCode'>;
     /** Volume of food product after a fluid has been added. */
     "ProductYieldTypeCode-AFTER_DILUTION": NamedNode<'https://gs1.org/voc/ProductYieldTypeCode-AFTER_DILUTION'>;
     /** Weight of food product after the fluid in which the food product was preserved has been removed. */
     "ProductYieldTypeCode-DRAINED_WEIGHT": NamedNode<'https://gs1.org/voc/ProductYieldTypeCode-DRAINED_WEIGHT'>;
     /** Product yield type is unknown or irrelevant */
     "ProductYieldTypeCode-UNSPECIFIED": NamedNode<'https://gs1.org/voc/ProductYieldTypeCode-UNSPECIFIED'>;
-    "ProductYieldTypeCode": NamedNode<'https://gs1.org/voc/ProductYieldTypeCode'>;
-    /** A point value or interval for product characteristics and other purposes. A unit of measurement is also specified. */
-    "QuantitativeValue": NamedNode<'https://gs1.org/voc/QuantitativeValue'>;
+    /** The total power emitted, received or passing in the form of electromagnetic radiation; a measure of electromagnetic energy per unit time.  SI Units: watt */
+    "RadiantFlux": NamedNode<'https://gs1.org/voc/RadiantFlux'>;
+    /** The radiant flux per unit solid angle emitted by a point source.  SI Units: watt / steradian */
+    "RadiantIntensity": NamedNode<'https://gs1.org/voc/RadiantIntensity'>;
+    /** The rate of spontaneous disintegration or decay of certain natural heavy elements, accompanied by alpha-rays, beta-rays or gamma-rays.  SI Units: becquerel */
+    "Radioactivity": NamedNode<'https://gs1.org/voc/Radioactivity'>;
     /** Provides URL and other information on a referenced electronic file. */
     "ReferencedFileDetails": NamedNode<'https://gs1.org/voc/ReferencedFileDetails'>;
     /** Link to a website or file containing a diet certificate granted to the product. */
     "ReferencedFileTypeCode-DIET_CERTIFICATE": NamedNode<'https://gs1.org/voc/ReferencedFileTypeCode-DIET_CERTIFICATE'>;
+    "ReferencedFileTypeCode": NamedNode<'https://gs1.org/voc/ReferencedFileTypeCode'>;
     /** Link to a document or text file containing product information. Examples of this type could be an instruction manual, assembly guide, or warranty document. */
     "ReferencedFileTypeCode-DOCUMENT": NamedNode<'https://gs1.org/voc/ReferencedFileTypeCode-DOCUMENT'>;
     "ReferencedFileTypeCode-GROUP_CHARACTERISTIC_SHEET": NamedNode<'https://gs1.org/voc/ReferencedFileTypeCode-GROUP_CHARACTERISTIC_SHEET'>;
@@ -1386,13 +1731,19 @@ interface Gs1 {
     "ReferencedFileTypeCode-WARRANTY_INFORMATION": NamedNode<'https://gs1.org/voc/ReferencedFileTypeCode-WARRANTY_INFORMATION'>;
     /** Link to a website containing product or manufacturer information. */
     "ReferencedFileTypeCode-WEBSITE": NamedNode<'https://gs1.org/voc/ReferencedFileTypeCode-WEBSITE'>;
-    "ReferencedFileTypeCode": NamedNode<'https://gs1.org/voc/ReferencedFileTypeCode'>;
+    /** The ratio of the partial pressure of water vapour in an an air-water mixture to the saturated vapour pressure of water at a prescribed temperature.  Typically expressed as a percentage. */
+    "RelativeHumidity": NamedNode<'https://gs1.org/voc/RelativeHumidity'>;
+    /** The ratio of the potential difference across an electrical component to the current passing through it. It is a measure of the opposition to the flow of electric charge. The real part of the impedance, characterised by the dissipation of energy as opposed to its storage.  SI Units: ohm */
+    "Resistance": NamedNode<'https://gs1.org/voc/Resistance'>;
+    /** A measure of how strongly a material resists the flow of electric current. The electric field required to achieve unit current density flowing through the material.  SI Units: ohm metre */
+    "Resistivity": NamedNode<'https://gs1.org/voc/Resistivity'>;
     /** Details of the deposit for returnable packaging for a product. */
     "ReturnablePackageDepositDetails": NamedNode<'https://gs1.org/voc/ReturnablePackageDepositDetails'>;
     /** Seafood Products including fish and shellfish. */
     "Seafood": NamedNode<'https://gs1.org/voc/Seafood'>;
     /** All Year */
     "SeasonParameterCode-ALL_YEAR": NamedNode<'https://gs1.org/voc/SeasonParameterCode-ALL_YEAR'>;
+    "SeasonParameterCode": NamedNode<'https://gs1.org/voc/SeasonParameterCode'>;
     /** For products that are seasonal in nature and apply to the Autumn selling season only */
     "SeasonParameterCode-AUTUMN": NamedNode<'https://gs1.org/voc/SeasonParameterCode-AUTUMN'>;
     /** For products that are seasonal in nature and apply to both the Autumn and Winter selling seasons */
@@ -1405,19 +1756,28 @@ interface Gs1 {
     "SeasonParameterCode-SUMMER": NamedNode<'https://gs1.org/voc/SeasonParameterCode-SUMMER'>;
     /** For products that are seasonal in nature and apply to the Winter selling season only */
     "SeasonParameterCode-WINTER": NamedNode<'https://gs1.org/voc/SeasonParameterCode-WINTER'>;
-    "SeasonParameterCode": NamedNode<'https://gs1.org/voc/SeasonParameterCode'>;
+    /** A holographic image formed using light diffraction and interference of light waves, capable of representing a three-dimensional object or multiple images, depending on the angle of observation. */
+    "SecurityMarking-HOLOGRAM": NamedNode<'https://gs1.org/voc/SecurityMarking-HOLOGRAM'>;
+    "SecurityMarking": NamedNode<'https://gs1.org/voc/SecurityMarking'>;
+    /** A hidden pattern that is too small to read easily without means of optical magnification such as a microscope */
+    "SecurityMarking-MICROPRINTING": NamedNode<'https://gs1.org/voc/SecurityMarking-MICROPRINTING'>;
+    /** A hidden pattern or marking that is invisible when observed under normal visible light but which fluoresces when observed using ultra-violet light */
+    "SecurityMarking-UVINK": NamedNode<'https://gs1.org/voc/SecurityMarking-UVINK'>;
+    /** A conventional watermark in which a pattern within a translucent sheet becomes visible when observed via transmitted light (typically due to reduced opacity of the pattern), whereas the pattern remains hidden when observed via light reflected off the surface */
+    "SecurityMarking-WATERMARK": NamedNode<'https://gs1.org/voc/SecurityMarking-WATERMARK'>;
     "SharpnessOfCheeseCode-EXTRA_EXTRA_SHARP": NamedNode<'https://gs1.org/voc/SharpnessOfCheeseCode-EXTRA_EXTRA_SHARP'>;
+    "SharpnessOfCheeseCode": NamedNode<'https://gs1.org/voc/SharpnessOfCheeseCode'>;
     "SharpnessOfCheeseCode-EXTRA_SHARP": NamedNode<'https://gs1.org/voc/SharpnessOfCheeseCode-EXTRA_SHARP'>;
     "SharpnessOfCheeseCode-MILD": NamedNode<'https://gs1.org/voc/SharpnessOfCheeseCode-MILD'>;
     "SharpnessOfCheeseCode-REGULAR": NamedNode<'https://gs1.org/voc/SharpnessOfCheeseCode-REGULAR'>;
     "SharpnessOfCheeseCode-SHARP": NamedNode<'https://gs1.org/voc/SharpnessOfCheeseCode-SHARP'>;
     "SharpnessOfCheeseCode-UNCLASSIFIED": NamedNode<'https://gs1.org/voc/SharpnessOfCheeseCode-UNCLASSIFIED'>;
-    "SharpnessOfCheeseCode": NamedNode<'https://gs1.org/voc/SharpnessOfCheeseCode'>;
     /** A grouping of properties related to the representing the size of a product, by specifying a value from a specified code list. */
     "SizeCodeDetails": NamedNode<'https://gs1.org/voc/SizeCodeDetails'>;
     /** A grouping of properties related to the size of a wearable product */
     "SizeDetails": NamedNode<'https://gs1.org/voc/SizeDetails'>;
     "SizeGroupCode-BOYS": NamedNode<'https://gs1.org/voc/SizeGroupCode-BOYS'>;
+    "SizeGroupCode": NamedNode<'https://gs1.org/voc/SizeGroupCode'>;
     "SizeGroupCode-GIRLS": NamedNode<'https://gs1.org/voc/SizeGroupCode-GIRLS'>;
     "SizeGroupCode-INFANTS": NamedNode<'https://gs1.org/voc/SizeGroupCode-INFANTS'>;
     "SizeGroupCode-JUNIORS": NamedNode<'https://gs1.org/voc/SizeGroupCode-JUNIORS'>;
@@ -1428,16 +1788,16 @@ interface Gs1 {
     "SizeGroupCode-PETITE": NamedNode<'https://gs1.org/voc/SizeGroupCode-PETITE'>;
     "SizeGroupCode-WOMENS": NamedNode<'https://gs1.org/voc/SizeGroupCode-WOMENS'>;
     "SizeGroupCode-WOMENS_TALL": NamedNode<'https://gs1.org/voc/SizeGroupCode-WOMENS_TALL'>;
-    "SizeGroupCode": NamedNode<'https://gs1.org/voc/SizeGroupCode'>;
     "SizeSystemCode-AUSTRALIA": NamedNode<'https://gs1.org/voc/SizeSystemCode-AUSTRALIA'>;
+    "SizeSystemCode": NamedNode<'https://gs1.org/voc/SizeSystemCode'>;
     "SizeSystemCode-CONTINENTAL": NamedNode<'https://gs1.org/voc/SizeSystemCode-CONTINENTAL'>;
     "SizeSystemCode-EUROPE": NamedNode<'https://gs1.org/voc/SizeSystemCode-EUROPE'>;
     "SizeSystemCode-JAPAN": NamedNode<'https://gs1.org/voc/SizeSystemCode-JAPAN'>;
     "SizeSystemCode-MEXICO": NamedNode<'https://gs1.org/voc/SizeSystemCode-MEXICO'>;
     "SizeSystemCode-UK": NamedNode<'https://gs1.org/voc/SizeSystemCode-UK'>;
     "SizeSystemCode-US": NamedNode<'https://gs1.org/voc/SizeSystemCode-US'>;
-    "SizeSystemCode": NamedNode<'https://gs1.org/voc/SizeSystemCode'>;
     "SizeTypeCode-BACK": NamedNode<'https://gs1.org/voc/SizeTypeCode-BACK'>;
+    "SizeTypeCode": NamedNode<'https://gs1.org/voc/SizeTypeCode'>;
     /** The measurement around the widest part of the chest/bust. */
     "SizeTypeCode-CHEST_BUST": NamedNode<'https://gs1.org/voc/SizeTypeCode-CHEST_BUST'>;
     "SizeTypeCode-COLLAR": NamedNode<'https://gs1.org/voc/SizeTypeCode-COLLAR'>;
@@ -1452,9 +1812,11 @@ interface Gs1 {
     "SizeTypeCode-SLEEVE": NamedNode<'https://gs1.org/voc/SizeTypeCode-SLEEVE'>;
     "SizeTypeCode-WAIST": NamedNode<'https://gs1.org/voc/SizeTypeCode-WAIST'>;
     "SizeTypeCode-WIDTH": NamedNode<'https://gs1.org/voc/SizeTypeCode-WIDTH'>;
-    "SizeTypeCode": NamedNode<'https://gs1.org/voc/SizeTypeCode'>;
+    /** A three-dimensional equivalent to planar angle, indicating a measure of the field of view subtended by an object when viewed from a specified point, the apex.  The solid angle is the surface area subtended at radius r from the apex divided by the square of that radius r.    SI Units: steradian etc. */
+    "SolidAngle": NamedNode<'https://gs1.org/voc/SolidAngle'>;
     /** A crocodilian in the genus Alligator of the family Alligatoridae. */
     "SourceAnimalCode-ALLIGATOR": NamedNode<'https://gs1.org/voc/SourceAnimalCode-ALLIGATOR'>;
+    "SourceAnimalCode": NamedNode<'https://gs1.org/voc/SourceAnimalCode'>;
     /** A domesticated member of the horse family. */
     "SourceAnimalCode-ASS": NamedNode<'https://gs1.org/voc/SourceAnimalCode-ASS'>;
     /** Mammals of the family Ursidae. */
@@ -1557,8 +1919,12 @@ interface Gs1 {
     "SourceAnimalCode-WOODCOCK": NamedNode<'https://gs1.org/voc/SourceAnimalCode-WOODCOCK'>;
     /** A long-haired bovine found throughout the Himalayan region of south Central Asia, the Tibetan Plateau and as far north as Mongolia. */
     "SourceAnimalCode-YAK": NamedNode<'https://gs1.org/voc/SourceAnimalCode-YAK'>;
-    "SourceAnimalCode": NamedNode<'https://gs1.org/voc/SourceAnimalCode'>;
+    /** The volume of a substance per unit mass. The reciprocal of density.  SI Units: cubic metres per kilogram */
+    "SpecificVolume": NamedNode<'https://gs1.org/voc/SpecificVolume'>;
+    /** The ratio of the linear distance travelled by a body to the time taken. Speed is a scalar quantity. Velocity is a vector with magnitude and direction.  SI Units: metre per second */
+    "Speed": NamedNode<'https://gs1.org/voc/Speed'>;
     "SportingActivityTypeCode-AMERICAN_FOOTBALL": NamedNode<'https://gs1.org/voc/SportingActivityTypeCode-AMERICAN_FOOTBALL'>;
+    "SportingActivityTypeCode": NamedNode<'https://gs1.org/voc/SportingActivityTypeCode'>;
     "SportingActivityTypeCode-ARCHERY": NamedNode<'https://gs1.org/voc/SportingActivityTypeCode-ARCHERY'>;
     "SportingActivityTypeCode-BADMINTON": NamedNode<'https://gs1.org/voc/SportingActivityTypeCode-BADMINTON'>;
     "SportingActivityTypeCode-BASEBALL": NamedNode<'https://gs1.org/voc/SportingActivityTypeCode-BASEBALL'>;
@@ -1587,25 +1953,33 @@ interface Gs1 {
     "SportingActivityTypeCode-TENNIS": NamedNode<'https://gs1.org/voc/SportingActivityTypeCode-TENNIS'>;
     "SportingActivityTypeCode-UNCLASSIFIED": NamedNode<'https://gs1.org/voc/SportingActivityTypeCode-UNCLASSIFIED'>;
     "SportingActivityTypeCode-UNIDENTIFIED": NamedNode<'https://gs1.org/voc/SportingActivityTypeCode-UNIDENTIFIED'>;
-    "SportingActivityTypeCode": NamedNode<'https://gs1.org/voc/SportingActivityTypeCode'>;
+    /** The mass per unit area distributed over a surface.  SI Units: kilogram per square metre */
+    "SurfaceDensity": NamedNode<'https://gs1.org/voc/SurfaceDensity'>;
+    /** The attractive force exerted upon the surface molecules of a liquid by the molecules beneath that tends to draw the surface molecules into the bulk of the liquid and makes the liquid assume the shape having the minimum surface area.  SI Units: newton per metre */
+    "SurfaceTension": NamedNode<'https://gs1.org/voc/SurfaceTension'>;
     "TargetConsumerGenderCode-FEMALE": NamedNode<'https://gs1.org/voc/TargetConsumerGenderCode-FEMALE'>;
+    "TargetConsumerGenderCode": NamedNode<'https://gs1.org/voc/TargetConsumerGenderCode'>;
     "TargetConsumerGenderCode-MALE": NamedNode<'https://gs1.org/voc/TargetConsumerGenderCode-MALE'>;
     "TargetConsumerGenderCode-UNISEX": NamedNode<'https://gs1.org/voc/TargetConsumerGenderCode-UNISEX'>;
-    "TargetConsumerGenderCode": NamedNode<'https://gs1.org/voc/TargetConsumerGenderCode'>;
     /** A set of target market details (product release date and associated countries) for the product. */
     "TargetMarketDetails": NamedNode<'https://gs1.org/voc/TargetMarketDetails'>;
+    /** A measure of whether two systems are relatively hot or cold with respect to one another; two systems brought into contact will eventually reach thermal equilibrium and reach the same temperature as thermal energy (heat) flows from the system with higher temperature to the system with lower temperature.  SI Units: kelvin */
+    "Temperature": NamedNode<'https://gs1.org/voc/Temperature'>;
     /** Details on the composition of any materials used to make a product using textiles. */
     "TextileMaterialDetails": NamedNode<'https://gs1.org/voc/TextileMaterialDetails'>;
+    /** A dimension that enables distinction between two otherwise identical events that occur at the same point in space. The interval between such events is the basis of time measurement.  SI Units: second */
+    "Time": NamedNode<'https://gs1.org/voc/Time'>;
+    /** The product of a force and its perpendicular distance from a point about which it causes rotation or torsion.  SI Units: newton metre */
+    "Torque": NamedNode<'https://gs1.org/voc/Torque'>;
     /** Offer avalilable only in stores. */
     "TradeChannelCode-INSTORE_ONLY": NamedNode<'https://gs1.org/voc/TradeChannelCode-INSTORE_ONLY'>;
+    "TradeChannelCode": NamedNode<'https://gs1.org/voc/TradeChannelCode'>;
     /** Offer avalilable both in stores and online. */
     "TradeChannelCode-OMNICHANNEL": NamedNode<'https://gs1.org/voc/TradeChannelCode-OMNICHANNEL'>;
     /** Offer avalilable online only. */
     "TradeChannelCode-ONLINE_ONLY": NamedNode<'https://gs1.org/voc/TradeChannelCode-ONLINE_ONLY'>;
-    "TradeChannelCode": NamedNode<'https://gs1.org/voc/TradeChannelCode'>;
-    /** A code list. */
-    "TypeCode": NamedNode<'https://gs1.org/voc/TypeCode'>;
     "UpperTypeCode-CLOSED_TOE_CLOSED_BACK_OPEN_INSTEP": NamedNode<'https://gs1.org/voc/UpperTypeCode-CLOSED_TOE_CLOSED_BACK_OPEN_INSTEP'>;
+    "UpperTypeCode": NamedNode<'https://gs1.org/voc/UpperTypeCode'>;
     "UpperTypeCode-CLOSED_TOE_OPEN_BACK": NamedNode<'https://gs1.org/voc/UpperTypeCode-CLOSED_TOE_OPEN_BACK'>;
     "UpperTypeCode-CLOSED_TOE_STRAP_BACK": NamedNode<'https://gs1.org/voc/UpperTypeCode-CLOSED_TOE_STRAP_BACK'>;
     "UpperTypeCode-FULLY_CLOSED": NamedNode<'https://gs1.org/voc/UpperTypeCode-FULLY_CLOSED'>;
@@ -1613,15 +1987,26 @@ interface Gs1 {
     "UpperTypeCode-OPEN_TOE_OPEN_BACK": NamedNode<'https://gs1.org/voc/UpperTypeCode-OPEN_TOE_OPEN_BACK'>;
     "UpperTypeCode-OPEN_TOE_STRAP_BACK": NamedNode<'https://gs1.org/voc/UpperTypeCode-OPEN_TOE_STRAP_BACK'>;
     "UpperTypeCode-UNCLASSIFIED": NamedNode<'https://gs1.org/voc/UpperTypeCode-UNCLASSIFIED'>;
-    "UpperTypeCode": NamedNode<'https://gs1.org/voc/UpperTypeCode'>;
+    /** The value of an electromotive force or electrostatic potential difference, expressed in volts.  SI Units: volt */
+    "Voltage": NamedNode<'https://gs1.org/voc/Voltage'>;
+    /** The amount of three-dimensional space occupied by a body, measured in cubic length units.  SI Units: cubic metre */
+    "Volume": NamedNode<'https://gs1.org/voc/Volume'>;
+    /** The volume of fluid that passes per unit of time.  SI Units: cubic metre per second */
+    "VolumeFlowRate": NamedNode<'https://gs1.org/voc/VolumeFlowRate'>;
+    /** The dimensionless ratio of a volume of one substance to the volume of solid, liquid or gas in which it is contained.  Typical units: parts per million, parts per billion, etc. */
+    "VolumeFraction": NamedNode<'https://gs1.org/voc/VolumeFraction'>;
+    /** The volume of fluid that passes per unit of time per unit area perpendicular to the flow direction.  SI Units: cubic metre per second per square metre */
+    "VolumetricFlux": NamedNode<'https://gs1.org/voc/VolumetricFlux'>;
     /** An assurance that the product is reliable and that repairs or replacement will be done free of charge within a given time limit and under certain conditions in the event of a defect. */
     "WarrantyPromise": NamedNode<'https://gs1.org/voc/WarrantyPromise'>;
-    /** Products that are worn on the body. */
-    "WearableProduct": NamedNode<'https://gs1.org/voc/WearableProduct'>;
+    /** The number of waves per unit length.  SI Units: reciprocal metre */
+    "Wavenumber": NamedNode<'https://gs1.org/voc/Wavenumber'>;
     /** Code indicating a means of payment, for example, BANK_CHEQUE, CASH, etc. */
     "acceptedPaymentMethod": NamedNode<'https://gs1.org/voc/acceptedPaymentMethod'>;
-    /** A link to ideas for using the product, particularly with children. */
+    /** A link to ideas for using a product or engaging in other forms of entertainment, particularly with children. */
     "activityIdeas": NamedNode<'https://gs1.org/voc/activityIdeas'>;
+    /** Provides a URL for related information or services. This is not expected to be used directly but provides a super property for all other link types in the GS1 ecosystem. */
+    "linkType": NamedNode<'https://gs1.org/voc/linkType'>;
     /** The value associated with the Additional Organization Identification Type Value. */
     "additionalOrganizationIdentificationTypeValue": NamedNode<'https://gs1.org/voc/additionalOrganizationIdentificationTypeValue'>;
     /** Relates to a set of additional product classification details */
@@ -1648,11 +2033,15 @@ interface Gs1 {
     "addressLocality": NamedNode<'https://gs1.org/voc/addressLocality'>;
     /** Text specifying a province or state in abbreviated format for example NJ. */
     "addressRegion": NamedNode<'https://gs1.org/voc/addressRegion'>;
+    /** A suburb within a town or city. */
+    "addressSuburb": NamedNode<'https://gs1.org/voc/addressSuburb'>;
     /** Links to afterhours contact information for an organization. */
     "afterHoursContact": NamedNode<'https://gs1.org/voc/afterHoursContact'>;
+    /** Links to information about a business location for an organization. */
+    "contactPoint": NamedNode<'https://gs1.org/voc/contactPoint'>;
     /** A legally defined geographical region where the grapes for a wine were grown also known as an appellation. It is recommended to populate this property with an ISO 3166-2 code to indicate country and subdivision. */
     "alcoholicBeverageSubregion": NamedNode<'https://gs1.org/voc/alcoholicBeverageSubregion'>;
-    /** A link to a description of the allergens in the product. */
+    /** A link to a description of the allergen information. */
     "allergenInfo": NamedNode<'https://gs1.org/voc/allergenInfo'>;
     /** Code specifying the level of presence of the allergen. */
     "allergenLevelOfContainmentCode": NamedNode<'https://gs1.org/voc/allergenLevelOfContainmentCode'>;
@@ -1670,6 +2059,18 @@ interface Gs1 {
     "applicableTo": NamedNode<'https://gs1.org/voc/applicableTo'>;
     /** Link to a file containing an audio clip which is relevant to the product. Examples are commercials, or instructional/ how to use audio files. */
     "audioFile": NamedNode<'https://gs1.org/voc/audioFile'>;
+    /** Links to details of covert/overt security markings that may be used to check authenticity of a product instance. */
+    "authenticity": NamedNode<'https://gs1.org/voc/authenticity'>;
+    /** Provides human-readable instructions about how to locate a physical security marking and read a value from it. */
+    "authenticitySecurityFeatureInstructions": NamedNode<'https://gs1.org/voc/authenticitySecurityFeatureInstructions'>;
+    /** Links to online instructions about how to locate a physical security marking and read a value from it. */
+    "authenticitySecurityFeatureInstructionsURL": NamedNode<'https://gs1.org/voc/authenticitySecurityFeatureInstructionsURL'>;
+    /** Links to a regular expression to be used to perform syntax validation (plausibility checking) of a string value read from a physical security marking. */
+    "authenticitySecurityFeatureRegularExpression": NamedNode<'https://gs1.org/voc/authenticitySecurityFeatureRegularExpression'>;
+    /** Links to a URI code value indicating a particular type of physical security marking. */
+    "authenticitySecurityFeatureType": NamedNode<'https://gs1.org/voc/authenticitySecurityFeatureType'>;
+    /** Links to a string value read from a physical security marking. */
+    "authenticitySecurityFeatureValue": NamedNode<'https://gs1.org/voc/authenticitySecurityFeatureValue'>;
     /** The date from which the product is no longer available from the information provider, including seasonal or temporary product and services . */
     "availabilityEnds": NamedNode<'https://gs1.org/voc/availabilityEnds'>;
     /** The date from which the product is available from the information provider, including seasonal or temporary product and services. */
@@ -1714,17 +2115,39 @@ interface Gs1 {
     "calciumPerNutrientBasis": NamedNode<'https://gs1.org/voc/calciumPerNutrientBasis'>;
     /** Carbohydrates per specified nutrient basis quantity. */
     "carbohydratesPerNutrientBasis": NamedNode<'https://gs1.org/voc/carbohydratesPerNutrientBasis'>;
+    /** A link to information about jobs, careers, or other employment opportunities associated to an organisation or location. */
+    "careersInfo": NamedNode<'https://gs1.org/voc/careersInfo'>;
     /** Free text field describing the sea zone from which the product was caught in. */
     "catchZone": NamedNode<'https://gs1.org/voc/catchZone'>;
-    /** Information on certification to which the product complies. */
+    /** Certification information about a product, organisation or location. */
     "certification": NamedNode<'https://gs1.org/voc/certification'>;
-    /** Name of the organization issuing the certification standard or other requirement being met . */
+    /** Name of the organisation issuing the certification standard or other requirement being met . */
     "certificationAgency": NamedNode<'https://gs1.org/voc/certificationAgency'>;
-    /** A link to certification information about the product. */
+    /** URL of the organisation issuing the certification standard or other requirement being met. e.g. https://www.msc.org , https://www.fsc.org */
+    "certificationAgencyURL": NamedNode<'https://gs1.org/voc/certificationAgencyURL'>;
+    /** Date of completion of the auditing needed for certification */
+    "certificationAuditDate": NamedNode<'https://gs1.org/voc/certificationAuditDate'>;
+    /** Last date of validity for the certification. (After this date the certification lapses and would need to be renewed/replaced) */
+    "certificationEndDate": NamedNode<'https://gs1.org/voc/certificationEndDate'>;
+    /** A reference (i.e, to a certificate instance) issued to confirm that a product, party or location has passed certification. e.g. 'XSC-C-12345' */
+    "certificationIdentification": NamedNode<'https://gs1.org/voc/certificationIdentification'>;
+    /** A link to certification information. */
     "certificationInfo": NamedNode<'https://gs1.org/voc/certificationInfo'>;
-    /** Name of the certification standard. Free text. Example: Egg classification . */
+    /** Name of the certification standard. Free text. Example: 'Egg classification' . */
     "certificationStandard": NamedNode<'https://gs1.org/voc/certificationStandard'>;
-    /** The product's certification standard value. Example:4. */
+    /** First date of validity for the certification */
+    "certificationStartDate": NamedNode<'https://gs1.org/voc/certificationStartDate'>;
+    /** Certification scope statement of the individual certification instance. The same certificationStandard can be issued with different values of certificationStatement in different instances. */
+    "certificationStatement": NamedNode<'https://gs1.org/voc/certificationStatement'>;
+    /** Indicates the current status of the certification, e.g. active or inactive. */
+    "certificationStatus": NamedNode<'https://gs1.org/voc/certificationStatus'>;
+    /** References the object (e.g. product, asset, container), party or location being certified. If multiple values are specified, the certification details apply to the logical conjunction (AND) of groups of different types, while a logical disjunction (OR) applies within each group of the same type. For example, two sibling organisations O1 and O2 can process products P1 and P2 at locations L1 and L2: meaning that either organisation can process either product at either location (OR); but the certificate holds for the combinations of organisation (either O1 OR O2) AND product (either P1 OR P2) AND location (either L1 OR L2) */
+    "certificationSubject": NamedNode<'https://gs1.org/voc/certificationSubject'>;
+    /** Indicates the type of certification */
+    "certificationType": NamedNode<'https://gs1.org/voc/certificationType'>;
+    /** If gs1:certificationURI is present, it should point to data about this individual certificate within a repository maintained by the certification agency. */
+    "certificationURI": NamedNode<'https://gs1.org/voc/certificationURI'>;
+    /** The certification's standard value. Example: '4'. */
     "certificationValue": NamedNode<'https://gs1.org/voc/certificationValue'>;
     /** The firmness of the cheese product for example EXTRA_HARD. */
     "cheeseFirmness": NamedNode<'https://gs1.org/voc/cheeseFirmness'>;
@@ -1736,6 +2159,8 @@ interface Gs1 {
     "cholesterolPerNutrientBasis": NamedNode<'https://gs1.org/voc/cholesterolPerNutrientBasis'>;
     /** Chromium per specified nutrient basis quantity. */
     "chromiumPerNutrientBasis": NamedNode<'https://gs1.org/voc/chromiumPerNutrientBasis'>;
+    /** A circle is the circular region of a specified radius centred at a specified latitude and longitude. A circle is expressed as a pair followed by a radius in meters. */
+    "circle": NamedNode<'https://gs1.org/voc/circle'>;
     /** Supplemental information to indicate the clothing cut or silhouette make of the garment. For example, silhouette details for a pair of jeans such as boot cut, or loose fit, comfort fit. */
     "clothingCut": NamedNode<'https://gs1.org/voc/clothingCut'>;
     /** A free text description of the type of collar on the garment. */
@@ -1752,7 +2177,7 @@ interface Gs1 {
     "consumerFirstAvailabilityDateTime": NamedNode<'https://gs1.org/voc/consumerFirstAvailabilityDateTime'>;
     /** Link to a website, file, or image containing the manufacturer's recommendations for how the consumer or end user should store and handle the product. */
     "consumerHandlingStorage": NamedNode<'https://gs1.org/voc/consumerHandlingStorage'>;
-    /** A link to information about safe handling and storage of the product. */
+    /** A link to information about safe handling and storage for consumer use. */
     "consumerHandlingStorageInfo": NamedNode<'https://gs1.org/voc/consumerHandlingStorageInfo'>;
     /** Indicates, with reference to the product branding, labelling or packaging, the descriptive term that is used by the product manufacturer to identify the period or stage in the consumer's life during which the product is considered to be suitable. */
     "consumerLifestage": NamedNode<'https://gs1.org/voc/consumerLifestage'>;
@@ -1768,14 +2193,14 @@ interface Gs1 {
     "consumerStorageInstructions": NamedNode<'https://gs1.org/voc/consumerStorageInstructions'>;
     /** Free text containing the usage instructions of a product, which are normally held on the label or accompanying the product. This information may or may not be labelled on the pack. */
     "consumerUsageInstructions": NamedNode<'https://gs1.org/voc/consumerUsageInstructions'>;
-    /** Links to information about a business location for an organization. */
-    "contactPoint": NamedNode<'https://gs1.org/voc/contactPoint'>;
     /** The job title of the person that can be contacted for example Manager. */
     "contactTitle": NamedNode<'https://gs1.org/voc/contactTitle'>;
     /** The function or role of a contact for example Customer Support. */
     "contactType": NamedNode<'https://gs1.org/voc/contactType'>;
     /** An indication of the ease of preparation for semi-prepared products. The convenience level indicates the level of preparation in percentage required to prepare and helps the consumer to assess how long it will take to prepare the meal. */
     "convenienceLevelPercent": NamedNode<'https://gs1.org/voc/convenienceLevelPercent'>;
+    /** Open standard spatial reference systems or coordinate reference systems that provide coordinate-based local, regional or global system used to locate geographical entities.  Values should be URIs already defined by the IOPG Geomatics Committee (https://epsg.org/), such as https://epsg.io/4326 (WGS84); https://epsg.io/4267 (NAD27); https://epsg.io/4230 (ED50); https://epsg.io/4618 (SAD69); https://epsg.io/4269 (NAD83) */
+    "coordinateReferenceSystem": NamedNode<'https://gs1.org/voc/coordinateReferenceSystem'>;
     /** Copper per specified nutrient basis quantity. */
     "copperPerNutrientBasis": NamedNode<'https://gs1.org/voc/copperPerNutrientBasis'>;
     /** A short text string code (see values defined in ISO 3166) specifying the country in which a processing or other activity is performed, for example processing, bottling, manufacturing. */
@@ -1798,8 +2223,6 @@ interface Gs1 {
     "customerSupportCentre": NamedNode<'https://gs1.org/voc/customerSupportCentre'>;
     /** The percentage of the recommended daily intake of a nutrient as recommended by authorities of the target market. Is expressed relative to the serving size and base daily value intake. */
     "dailyValueIntakePercent": NamedNode<'https://gs1.org/voc/dailyValueIntakePercent'>;
-    /** Originally proposed as the term for defaultLinkMulti. Do not use. */
-    "defaultLink%2A": NamedNode<'https://gs1.org/voc/defaultLink%2A'>;
     /** The default link for a given identified item to which a resolver will redirect unless there is information in the request that is a better match. */
     "defaultLink": NamedNode<'https://gs1.org/voc/defaultLink'>;
     /** A set of 'default links' that may be differentiated by information in the HTTP request headers sent to a resolver to enable a better match than the single default link. */
@@ -1818,8 +2241,8 @@ interface Gs1 {
     "dietTypeDescription": NamedNode<'https://gs1.org/voc/dietTypeDescription'>;
     /** Indicates a set of agreements or a certificate name that guarantees the product is permitted in a particular diet. A diet type subcode is a subclassification of a specific diet type. For example, Pareve is a diet type subcode of Kosher. */
     "dietTypeSubcode": NamedNode<'https://gs1.org/voc/dietTypeSubcode'>;
-    /** A link to the instructions for dismantling/disassembly. */
-    "disassemblyInfo": NamedNode<'https://gs1.org/voc/disassemblyInfo'>;
+    /** The location reference associated to a digital place. If gs1:glnType is present, SHALL only be associated if the value of gs1:glnType is gs1:GLN_TypeCode-DIGITAL_LOCATION. */
+    "digitalAddress": NamedNode<'https://gs1.org/voc/digitalAddress'>;
     /** If specified and set to true, the discount is available for each time the minimum qualifying criteria are met.  This can be used to express '$10 off each $50 spend', which is distinct from a 20% discount because it is quantized in units of spending. */
     "discountRepeatsPerMultipleMinimum": NamedNode<'https://gs1.org/voc/discountRepeatsPerMultipleMinimum'>;
     /** A code that specifies the type of payment discount applicable to an offer, for example BOGO. */
@@ -1832,10 +2255,14 @@ interface Gs1 {
     "durationOfWarranty": NamedNode<'https://gs1.org/voc/durationOfWarranty'>;
     /** The current tax or duty or fee amount applicable to the product, expressed as a floating-point numeric value that is qualified by the corresponding currency. See also gs1:priceCurrency. */
     "dutyFeeTaxAmount": NamedNode<'https://gs1.org/voc/dutyFeeTaxAmount'>;
+    /** A string value indicating a currency from ISO 4217 for example USD . */
+    "priceCurrency": NamedNode<'https://gs1.org/voc/priceCurrency'>;
     /** A description of tax type for example Taxes sure les supports audio. */
     "dutyFeeTaxDescription": NamedNode<'https://gs1.org/voc/dutyFeeTaxDescription'>;
     /** The current tax or duty rate percentage applicable to the product. */
     "dutyFeeTaxRate": NamedNode<'https://gs1.org/voc/dutyFeeTaxRate'>;
+    /** The elevation of a location (WGS 84). Values may be of the form 'NUMBER UNITOFMEASUREMENT' (e.g., '1,000 m', '3,200 ft') while numbers alone SHALL be a value in meters. */
+    "elevation": NamedNode<'https://gs1.org/voc/elevation'>;
     /** The quantity including unit of measure for which the offer for good or service is valid.  If this is not specified, an eligible quantity of 1 should be assumed. */
     "eligibleQuantity": NamedNode<'https://gs1.org/voc/eligibleQuantity'>;
     /** The maximum quantity including unit of measure for which the offer for good or service is valid. */
@@ -1856,6 +2283,8 @@ interface Gs1 {
     "epil": NamedNode<'https://gs1.org/voc/epil'>;
     /** A product which can be substituted for the product based on supplier-defined functional equivalence to the product. */
     "equivalentProduct": NamedNode<'https://gs1.org/voc/equivalentProduct'>;
+    /** A link to event details.  For a page specifically for scheduling a reservation or booking an appointment, see gs1:scheduleTime. */
+    "eventsInfo": NamedNode<'https://gs1.org/voc/eventsInfo'>;
     /** Links to a gs1:PriceSpecification that indicates in terms of an amount and specified currency, the exact discount on the sales price associated with a particular gs1:Discount. This property can be used to express '$10 off'. */
     "exactDiscountAmount": NamedNode<'https://gs1.org/voc/exactDiscountAmount'>;
     /** A floating-point value indicating an exact percentage discount on the sales price associated with a particular gs1:Discount.  This property can be used to express '15% discount'. */
@@ -1864,7 +2293,7 @@ interface Gs1 {
     "exclusionDescription": NamedNode<'https://gs1.org/voc/exclusionDescription'>;
     /** The expiration date is the date that determines the limit of consumption or use of a product/coupon. Its meaning is determined based on the trade item context (e.g., for food, the date will indicate the possibility of a direct health risk resulting from use of the product after the date, for pharmaceutical products, it will indicate the possibility of an indirect health risk resulting from the ineffectiveness of the product after the date). It is often referred to as 'use by date' or 'maximum durability date'. */
     "expirationDate": NamedNode<'https://gs1.org/voc/expirationDate'>;
-    /** The manufacturer determines the expiration date and time, which is relevant only for short duration and for items that will not be sent on long distances and not outside of the time zone. A typical application of AI (7003) is in hospitals or public pharmacies for special, customised, products which may have a 'life duration' shorter than one single day. The life duration varies according the pharmaceutical substances used in the treatment. The precise expiration date and time is defined at the end of the manufacturing process, and can be barcoded on the product label as an attribute to the item’s GTIN. Where there is no business requirement to express the expiration date to the nearest hour (or less), AI (17) Expiration date should be used. */
+    /** The manufacturer determines the expiration date and time, which is relevant only for short duration and for items that will not be sent on long distances and not outside of the time zone. A typical application of AI (7003) is in hospitals or public pharmacies for special, customised, products which may have a 'life duration' shorter than one single day. The life duration varies according the pharmaceutical substances used in the treatment. The precise expiration date and time is defined at the end of the manufacturing process, and can be barcoded on the product label as an attribute to the item's GTIN. Where there is no business requirement to express the expiration date to the nearest hour (or less), AI (17) Expiration date should be used. */
     "expirationDateTime": NamedNode<'https://gs1.org/voc/expirationDateTime'>;
     /** A link to a set of frequently asked questions. */
     "faqs": NamedNode<'https://gs1.org/voc/faqs'>;
@@ -1906,15 +2335,15 @@ interface Gs1 {
     "functionalName": NamedNode<'https://gs1.org/voc/functionalName'>;
     /** A statement of the presence or absence of genetically modified protein or DNA. */
     "geneticallyModifiedDeclaration": NamedNode<'https://gs1.org/voc/geneticallyModifiedDeclaration'>;
-    /** Links to information about geocoordinates for a place. */
+    /** Links to information about geocoordinates or geoshapes for a place. */
     "geo": NamedNode<'https://gs1.org/voc/geo'>;
-    /** A Global Location Number (GLN) is the GS1 Identification Key used to identify physical locations or parties. The key comprises a GS1 Company Prefix, Location Reference and Check Digit. For more information see http://www.gs1.org/gln. */
+    /** A Global Location Number (GLN) is the GS1 Identification Key used to identify physical locations or parties. The key comprises a GS1 Company Prefix, Location Reference and Check Digit. For more information see https://www.gs1.org/gln. */
     "globalLocationNumber": NamedNode<'https://gs1.org/voc/globalLocationNumber'>;
-    /** 8-digit code (GPC Brick Value) specifying a product category according to the GS1 Global Product Classification (GPC) standard. For more information see http://www.gs1.org/gpc */
+    /** 8-digit code (GPC Brick Value) specifying a product category according to the GS1 Global Product Classification (GPC) standard. For more information see https://www.gs1.org/gpc */
     "gpcCategoryCode": NamedNode<'https://gs1.org/voc/gpcCategoryCode'>;
     /** A description of the code specifying a product category according to the GS1 Global Product Classification (GPC) standard. */
     "gpcCategoryDescription": NamedNode<'https://gs1.org/voc/gpcCategoryDescription'>;
-    /** The gross area of a product (including its packaging) */
+    /** The overall area of the item including packaging. This can be given using a number of different AI ranges that depend on the units in which the area is measured. */
     "grossArea": NamedNode<'https://gs1.org/voc/grossArea'>;
     /** The overall volume of the item including packaging. This can be given using a number of different AI ranges that depend on the units in which the volume is measured. */
     "grossVolume": NamedNode<'https://gs1.org/voc/grossVolume'>;
@@ -1922,12 +2351,10 @@ interface Gs1 {
     "grossWeight": NamedNode<'https://gs1.org/voc/grossWeight'>;
     /** The process through which fresh produce is grown and cultivated. */
     "growingMethod": NamedNode<'https://gs1.org/voc/growingMethod'>;
-    /** A Global Trade Item Number (GTIN) is the 14 digit GS1 Identification Key used to identify products. The key comprises a GS1 Company Prefix followed by an Item Reference Number and a Check Digit. See http://www.gs1.org/gtin  for more details. */
+    /** A Global Trade Item Number (GTIN) is the 14 digit GS1 Identification Key used to identify products. The key comprises a GS1 Company Prefix followed by an Item Reference Number and a Check Digit. See https://www.gs1.org/gtin  for more details. */
     "gtin": NamedNode<'https://gs1.org/voc/gtin'>;
-    /** Used when one resolver redirects all request URIs that match a given pattern without further processing, such as from GS1 to a brand-operated service. See section 8.7.1 of the Digital Link standard, version 1.1. */
+    /** Used when one resolver redirects all request URIs that match a given pattern without further processing, such as from GS1 to a brand-operated service. See section 7.7.1 of the Digital Link standard, version 1.1. */
     "handledBy": NamedNode<'https://gs1.org/voc/handledBy'>;
-    /** A link to the instructions for end-of-life handling as required by a product passport. The information will include instructions for reuse, repair, disassembly and recycling. */
-    "handlingEndOfLife": NamedNode<'https://gs1.org/voc/handlingEndOfLife'>;
     /** The harvest date. For example, the harvest date can be the date when an animal was slaughtered or killed, a fish has been harvested, or a crop was harvested. This date  is determined by the organisation conducting the harvesting. Different organisations may use more specific terminology when referring to their specific needs and use terms such as: Date of catch or slaughter date. */
     "harvestDate": NamedNode<'https://gs1.org/voc/harvestDate'>;
     /** The harvest end date. For example, the harvest end date can be the date when an animal was slaughtered or killed, a fish has been harvested, or a crop was harvested. This end date is determined by the organisation conducting the harvesting. Different organisations may use more specific terminology when referring to their specific needs and use terms such as: Date of catch or slaughter date. When referring to animals the date range refers to the whole animal and all meat or fish cuts derived from this animal. */
@@ -1936,27 +2363,31 @@ interface Gs1 {
     "harvestDateStart": NamedNode<'https://gs1.org/voc/harvestDateStart'>;
     /** Relates to details about allergens */
     "hasAllergen": NamedNode<'https://gs1.org/voc/hasAllergen'>;
-    /** The batch or lot number associates an item with information the manufacturer considers relevant for traceability of the trade item to which the element string is applied. The data may refer to the trade item itself or to items contained. The number may be, for example, a production lot number, a shift number, a machine number, a time, or an internal production code. In cases where the same product is manufactured in different locations the brand owner and the manufacturer are responsible for ensuring the non-duplication of batch/lot numbers for a GTIN. For the re-use of batch/lot numbers with a GTIN, sector-specific constraints need to be considered.  */
+    /** The batch or lot number associates an item with information the manufacturer considers relevant for traceability of the trade item to which the element string is applied. The data may refer to the trade item itself or to items contained. The number may be, for example, a production lot number, a shift number, a machine number, a time, or an internal production code. In cases where the same product is manufactured in different locations the brand owner and the manufacturer are responsible for ensuring the non-duplication of batch/lot numbers for a GTIN. For the re-use of batch/lot numbers with a GTIN, sector-specific constraints need to be considered. */
     "hasBatchLotNumber": NamedNode<'https://gs1.org/voc/hasBatchLotNumber'>;
-    /** A link to a list of retailers for this item */
+    /** Links to the place(s) that this organisation designates as their primary location(s). */
+    "hasPrimaryLocation": NamedNode<'https://gs1.org/voc/hasPrimaryLocation'>;
+    /** A link to a list of retailers. */
     "hasRetailers": NamedNode<'https://gs1.org/voc/hasRetailers'>;
     /** links to details of amounts refunded for returnable package in a specified region. */
     "hasReturnablePackageDeposit": NamedNode<'https://gs1.org/voc/hasReturnablePackageDeposit'>;
-    /** A serial number is assigned to an entity for its lifetime. When combined with a GTIN, a serial number uniquely identifies an individual item. The serial number field is alphanumeric and may include all characters contained in figure 7.11-1. The brand owner and the manufacturer are responsible for ensuring the non-duplication of serial numbers for a GTIN. For the re-use of serial numbers with a GTIN, sector-specific constraints need to be considered.  */
+    /** A serial number is assigned to an entity for its lifetime. When combined with a GTIN, a serial number uniquely identifies an individual item. The serial number field is alphanumeric and may include all characters contained in figure 7.11-1. The brand owner and the manufacturer are responsible for ensuring the non-duplication of serial numbers for a GTIN. For the re-use of serial numbers with a GTIN, sector-specific constraints need to be considered. */
     "hasSerialNumber": NamedNode<'https://gs1.org/voc/hasSerialNumber'>;
     /** This identifier is assigned to an entity for its lifetime. When combined with a GTIN, a TPX uniquely identifies an individual item and forms a unit pack Unique Identifier (upUI) for tobacco traceability per EU 2018/574. The serial number field is alphanumeric and may include all characters contained in figure 7.11-1. The Third Party determines the TPX, but the TPX shall begin with the ID Issuer Unique Identification Code (UIC), followed by GS1 UIC Extension 1, and GS1 UIC Extension 2. */
     "hasThirdPartyControlledSerialNumber": NamedNode<'https://gs1.org/voc/hasThirdPartyControlledSerialNumber'>;
     /** A description of health claims according to regulations of the target market. */
     "healthClaimDescription": NamedNode<'https://gs1.org/voc/healthClaimDescription'>;
+    /** A link to general information about an organisation or brand. Typically the homepage of an organisation's website. It may include links to further information such as certifications, careers, payments, reservations, etc. */
+    "homepage": NamedNode<'https://gs1.org/voc/homepage'>;
     /** Link to a file containing a visual representation of the product. */
     "image": NamedNode<'https://gs1.org/voc/image'>;
-    /** The depth of the product in its packaging, as measured according to the GS1 Package Measurement Rules. See http://www.gs1.org/package-measurement-rules-implementation-guide for more details. */
+    /** The depth of the product in its packaging, as measured according to the GS1 Package Measurement Rules. See https://www.gs1.org/package-measurement-rules-implementation-guide for more details. */
     "inPackageDepth": NamedNode<'https://gs1.org/voc/inPackageDepth'>;
     /** The measurement of the diameter of the product in its package at its largest point. For example, 165 MMT. */
     "inPackageDiameter": NamedNode<'https://gs1.org/voc/inPackageDiameter'>;
-    /** The height of the product in the package, as measured according to the GS1 Package Measurement Rules. See http://www.gs1.org/package-measurement-rules-implementation-guide for more details. */
+    /** The height of the product in the package, as measured according to the GS1 Package Measurement Rules. See https://www.gs1.org/package-measurement-rules-implementation-guide for more details. */
     "inPackageHeight": NamedNode<'https://gs1.org/voc/inPackageHeight'>;
-    /** The width of the product in the package, as measured according to the GS1 Package Measurement Rules. See http://www.gs1.org/package-measurement-rules-implementation-guide for more details. */
+    /** The width of the product in the package, as measured according to the GS1 Package Measurement Rules. See https://www.gs1.org/package-measurement-rules-implementation-guide for more details. */
     "inPackageWidth": NamedNode<'https://gs1.org/voc/inPackageWidth'>;
     /** Any included object or device not part of the core product itself but which adds to its functionality or use. */
     "includedAccessories": NamedNode<'https://gs1.org/voc/includedAccessories'>;
@@ -1972,9 +2403,11 @@ interface Gs1 {
     "ingredientSequence": NamedNode<'https://gs1.org/voc/ingredientSequence'>;
     /** Information on the constituent ingredient make up of the product specified as one string. */
     "ingredientStatement": NamedNode<'https://gs1.org/voc/ingredientStatement'>;
-    /** A link to facts about the product's ingredients. */
+    /** A link to facts about ingredients. */
     "ingredientsInfo": NamedNode<'https://gs1.org/voc/ingredientsInfo'>;
-    /** A link to instructions related to the item, such as assembly instructions, usage tips etc. */
+    /** The date when the certification was originally issued. May differ from the certificationStartDate of the current recertification cycle. */
+    "initialCertificationDate": NamedNode<'https://gs1.org/voc/initialCertificationDate'>;
+    /** A link to instructions, such as assembly instructions, usage tips etc. */
     "instructions": NamedNode<'https://gs1.org/voc/instructions'>;
     /** Link to a file containing the Instructions For Use. */
     "instructionsForUse": NamedNode<'https://gs1.org/voc/instructionsForUse'>;
@@ -2036,20 +2469,40 @@ interface Gs1 {
     "itemOffered": NamedNode<'https://gs1.org/voc/itemOffered'>;
     /** The fruit juice content of the product expressed as a percentage. */
     "juiceContentPercent": NamedNode<'https://gs1.org/voc/juiceContentPercent'>;
+    /** A link to a JSON Web Signature */
+    "jws": NamedNode<'https://gs1.org/voc/jws'>;
     /** Angular distance North or South from the earth's equator measured through 90 degrees. */
     "latitude": NamedNode<'https://gs1.org/voc/latitude'>;
+    /** Links to the organisation (lessor) from which this place is leased. */
+    "leasedFrom": NamedNode<'https://gs1.org/voc/leasedFrom'>;
+    /** Links to the organisation(s) (lessee(s)) to which this place is leased. Property SHOULD be applied to a specific sub-location, rather than a main location, wherever possible. */
+    "leasedTo": NamedNode<'https://gs1.org/voc/leasedTo'>;
     /** A link through which a review can be added. */
     "leaveReview": NamedNode<'https://gs1.org/voc/leaveReview'>;
-    /** A property representing a link to an online resource that is directly related to the identified item.  More specific link types are defined as subproperties of gs1:linkType */
-    "linkType": NamedNode<'https://gs1.org/voc/linkType'>;
-    /** The place associated with an organization. */
+    /** Links to the place(s) for which this organisation is the lessee (i.e., this organisation leases those places from another organisation, the lessor). */
+    "lesseeOf": NamedNode<'https://gs1.org/voc/lesseeOf'>;
+    /** Links to the place(s) for which this organisation is the lessor (i.e., this organisation leases those places to others). */
+    "lessorFor": NamedNode<'https://gs1.org/voc/lessorFor'>;
+    /** A line is a point-to-point path consisting of two or more points. A line is expressed as a series of two or more point objects separated by space. */
+    "line": NamedNode<'https://gs1.org/voc/line'>;
+    /** The place(s) associated with an organization. */
     "location": NamedNode<'https://gs1.org/voc/location'>;
+    /** A link to a map, directions, or other location-related information.  For B2B location  information, see gs1:logisticsInfo.  For details specific to hours of operation, see gs1:openingHoursInfo */
+    "locationInfo": NamedNode<'https://gs1.org/voc/locationInfo'>;
+    /** A link to B2B logistics information related to a physical location. */
+    "logisticsInfo": NamedNode<'https://gs1.org/voc/logisticsInfo'>;
     /** The arc or portion of the earth's equator intersected between the meridian of a given place and the prime meridian and expressed in degrees */
     "longitude": NamedNode<'https://gs1.org/voc/longitude'>;
     /** Magnesium per specified nutrient basis quantity. */
     "magnesiumPerNutrientBasis": NamedNode<'https://gs1.org/voc/magnesiumPerNutrientBasis'>;
     /** An offer made by an organization. */
     "makesOffer": NamedNode<'https://gs1.org/voc/makesOffer'>;
+    /** Links to the organisation that manages this place or organisation, as designated by the owner or another organisation. */
+    "managedBy": NamedNode<'https://gs1.org/voc/managedBy'>;
+    /** Links to the organisation(s) for whom this place is managed. Property SHOULD be applied to a specific sub-location, rather than a main location, wherever possible. */
+    "managedFor": NamedNode<'https://gs1.org/voc/managedFor'>;
+    /** Links to the place(s) or organisation(s) that this organisation manages, on behalf of the owner or another organisation. */
+    "manages": NamedNode<'https://gs1.org/voc/manages'>;
     /** Manganese per specified nutrient basis quantity. */
     "manganesePerNutrientBasis": NamedNode<'https://gs1.org/voc/manganesePerNutrientBasis'>;
     /** The organization that produces the item. */
@@ -2060,7 +2513,7 @@ interface Gs1 {
     "manufacturersWarranty": NamedNode<'https://gs1.org/voc/manufacturersWarranty'>;
     /** A physical location consisting of one or more buildings with facilities for manufacturing. */
     "manufacturingPlant": NamedNode<'https://gs1.org/voc/manufacturingPlant'>;
-    /** The mass per unit area of a particular product */
+    /** The mass per unit area of the item. This can be given using a number of different AI ranges that depend on the units in which the mass and area are measured. */
     "massPerUnitArea": NamedNode<'https://gs1.org/voc/massPerUnitArea'>;
     /** A link to a source of structured master data for the entity. This is typically for B2B applications. */
     "masterData": NamedNode<'https://gs1.org/voc/masterData'>;
@@ -2080,6 +2533,8 @@ interface Gs1 {
     "maximumQualifyingSpend": NamedNode<'https://gs1.org/voc/maximumQualifyingSpend'>;
     /** The fish, meat, or poultry type for this food and beverage item. */
     "meatPoultryType": NamedNode<'https://gs1.org/voc/meatPoultryType'>;
+    /** A link to menu details. This may include food menus, services, or other offerings provided by an organisation or at a location.  For details specific to allergens only, see gs1:allergenInfo .  For details specific to nutrition information only, see gs1:nutritionalInfo .  For details specific to ingredients only, see gs1:ingredientsInfo . */
+    "menuInfo": NamedNode<'https://gs1.org/voc/menuInfo'>;
     /** Provides a minimum price value as a floating-point numeric value that is qualified by the corresponding currency. See also gs1:priceCurrency */
     "minPrice": NamedNode<'https://gs1.org/voc/minPrice'>;
     /** Links to a gs1:PriceSpecification that indicates in terms of an amount and specified currency, the minimum discount on the sales price associated with a particular gs1:Discount. This property can be used to express 'at least $10 off'. */
@@ -2100,7 +2555,7 @@ interface Gs1 {
     "molybdenumPerNutrientBasis": NamedNode<'https://gs1.org/voc/molybdenumPerNutrientBasis'>;
     /** Monounsaturated fat per specified nutrient basis quantity. */
     "monounsaturatedFatPerNutrientBasis": NamedNode<'https://gs1.org/voc/monounsaturatedFatPerNutrientBasis'>;
-    /** The net area of a product (excluding its packaging) */
+    /** The net area of the item. This can be given using a number of different AI ranges that depend on the units in which the area is measured. */
     "netArea": NamedNode<'https://gs1.org/voc/netArea'>;
     /** The quantity of the product contained by a package, usually as claimed on the label. Indicates the net content of the total product. For fixed value products use the value claimed on the package, to avoid variable fill rate issue that arises with some product which are sold by volume or weight, and whose actual content may vary slightly from batch to batch. */
     "netContent": NamedNode<'https://gs1.org/voc/netContent'>;
@@ -2124,8 +2579,12 @@ interface Gs1 {
     "nutritionalClaim": NamedNode<'https://gs1.org/voc/nutritionalClaim'>;
     /** Free text field for any additional nutritional claims. */
     "nutritionalClaimStatement": NamedNode<'https://gs1.org/voc/nutritionalClaimStatement'>;
-    /** A link to nutritional facts about the product. */
+    /** A link to nutritional facts. */
     "nutritionalInfo": NamedNode<'https://gs1.org/voc/nutritionalInfo'>;
+    /** Links to the organisation(s) that occupy this place. Property SHOULD be applied to a specific sub-location, rather than a main location, wherever possible. */
+    "occupiedBy": NamedNode<'https://gs1.org/voc/occupiedBy'>;
+    /** Links to the place(s) that this organisation occupies. */
+    "occupies": NamedNode<'https://gs1.org/voc/occupies'>;
     /** A description of the offer including goods or services offered for sale or use. */
     "offerDescription": NamedNode<'https://gs1.org/voc/offerDescription'>;
     /** A discount associated with an offer. */
@@ -2136,6 +2595,8 @@ interface Gs1 {
     "offerRedemptionURL": NamedNode<'https://gs1.org/voc/offerRedemptionURL'>;
     /** A description of what the offer is restricted to, relative to all other offerings by the issuer, for example payment restrictions, subscription required, new customers only. */
     "offerRestrictionDescription": NamedNode<'https://gs1.org/voc/offerRestrictionDescription'>;
+    /** A link to details on hours of operation. */
+    "openingHoursInfo": NamedNode<'https://gs1.org/voc/openingHoursInfo'>;
     /** Relates to an organic claim about the product */
     "organicClaim": NamedNode<'https://gs1.org/voc/organicClaim'>;
     /** A governing body that creates and maintains standards related to organic products. */
@@ -2146,14 +2607,18 @@ interface Gs1 {
     "organizationName": NamedNode<'https://gs1.org/voc/organizationName'>;
     /** Code indicating an organization role. Allowed code values are specified in OrganizationalRole code list. */
     "organizationRole": NamedNode<'https://gs1.org/voc/organizationRole'>;
-    /** The depth of the product out of its packaging, as measured according to the GS1 Package Measurement Rules. See http://www.gs1.org/package-measurement-rules-implementation-guide for more details. */
+    /** The depth of the product out of its packaging, as measured according to the GS1 Package Measurement Rules. See https://www.gs1.org/package-measurement-rules-implementation-guide for more details. */
     "outOfPackageDepth": NamedNode<'https://gs1.org/voc/outOfPackageDepth'>;
     /** The measurement of the diameter of the product out of its package at its largest point. For example, 165 MMT. */
     "outOfPackageDiameter": NamedNode<'https://gs1.org/voc/outOfPackageDiameter'>;
-    /** The height of the product out of the package, as measured according to the GS1 Package Measurement Rules. See http://www.gs1.org/package-measurement-rules-implementation-guide for more details. */
+    /** The height of the product out of the package, as measured according to the GS1 Package Measurement Rules. See https://www.gs1.org/package-measurement-rules-implementation-guide for more details. */
     "outOfPackageHeight": NamedNode<'https://gs1.org/voc/outOfPackageHeight'>;
-    /** The width of the product out of the package, as measured according to the GS1 Package Measurement Rules. See http://www.gs1.org/package-measurement-rules-implementation-guide for more details. */
+    /** The width of the product out of the package, as measured according to the GS1 Package Measurement Rules. See https://www.gs1.org/package-measurement-rules-implementation-guide for more details. */
     "outOfPackageWidth": NamedNode<'https://gs1.org/voc/outOfPackageWidth'>;
+    /** Links to the organisation(s) that own this place, in full or in part. This includes joint ventures. For leased locations, see gs1:lessorFor and gs1:leasedFrom. */
+    "ownedBy": NamedNode<'https://gs1.org/voc/ownedBy'>;
+    /** Links to the place(s) or organisation(s) that this organisation owns. */
+    "owns": NamedNode<'https://gs1.org/voc/owns'>;
     /** Details on the packaging for a product including type, weight and materials. */
     "packaging": NamedNode<'https://gs1.org/voc/packaging'>;
     /** The packaging date is the date when the goods were packed as determined by the packager. The date may refer to the trade item itself or to items contained. */
@@ -2186,6 +2651,8 @@ interface Gs1 {
     "packagingType": NamedNode<'https://gs1.org/voc/packagingType'>;
     /** Pantothenic Acid per specified nutrient basis quantity. */
     "pantothenicAcidPerNutrientBasis": NamedNode<'https://gs1.org/voc/pantothenicAcidPerNutrientBasis'>;
+    /** A link to a place where payments details are provided and/or payments can be made by the user. */
+    "paymentLink": NamedNode<'https://gs1.org/voc/paymentLink'>;
     /** The type of payment term expressed as a code, for example Discount. */
     "paymentTerms": NamedNode<'https://gs1.org/voc/paymentTerms'>;
     /** The percentage of alcohol contained in product. */
@@ -2194,6 +2661,8 @@ interface Gs1 {
     "phosphorusPerNutrientBasis": NamedNode<'https://gs1.org/voc/phosphorusPerNutrientBasis'>;
     /** A link to information specifically about the identified item, typically operated by the brand owner or a retailer of the product and aimed at consumers. It may include links to further information, product description, specifications etc. */
     "pip": NamedNode<'https://gs1.org/voc/pip'>;
+    /** A polygon is the area enclosed by a point-to-point path for which the starting and ending points are the same. A polygon is expressed as a series of four or more space delimited points where the first and final points are identical. */
+    "polygon": NamedNode<'https://gs1.org/voc/polygon'>;
     /** Polyols per specified nutrient basis quantity. */
     "polyolsPerNutrientBasis": NamedNode<'https://gs1.org/voc/polyolsPerNutrientBasis'>;
     /** Polyunsaturated fat per specified nutrient basis quantity. */
@@ -2202,6 +2671,8 @@ interface Gs1 {
     "postOfficeBoxNumber": NamedNode<'https://gs1.org/voc/postOfficeBoxNumber'>;
     /** Text specifying the postal code for an address. */
     "postalCode": NamedNode<'https://gs1.org/voc/postalCode'>;
+    /** The name of the recipient expressed in text. Note that this may be different than gs1:OrganizationName. */
+    "postalName": NamedNode<'https://gs1.org/voc/postalName'>;
     /** Potassium per specified nutrient basis quantity. */
     "potassiumPerNutrientBasis": NamedNode<'https://gs1.org/voc/potassiumPerNutrientBasis'>;
     /** Code specifying the preparation state of the product for which the nutrient information is valid. PREPARED, UNPREPARED. */
@@ -2216,12 +2687,12 @@ interface Gs1 {
     "preservationTechnique": NamedNode<'https://gs1.org/voc/preservationTechnique'>;
     /** Provides a price value as a floating-point numeric value that is qualified by the corresponding currency. See also gs1:priceCurrency. The price value indicates the unit price unless the property gs1:eligibleQuantity is specified and indicates multiple units */
     "price": NamedNode<'https://gs1.org/voc/price'>;
-    /** A string value indicating a currency from ISO 4217 for example USD . */
-    "priceCurrency": NamedNode<'https://gs1.org/voc/priceCurrency'>;
     /** The price related to an offer. If the offer is a multi-buy offer for a quantity of product greater than one unit, this should be indicated using the property gs1:eligibleQuantity */
     "priceSpecification": NamedNode<'https://gs1.org/voc/priceSpecification'>;
     /** A product that is similar to the current product but is not exact match. Same form fit function, e.g. same product different colour, different package size, better quality. */
     "primaryAlternateProduct": NamedNode<'https://gs1.org/voc/primaryAlternateProduct'>;
+    /** Links to the organisation(s) that designate this place as its/their primary location. Property SHOULD be applied to a specific sub-location, rather than a main location, wherever possible. */
+    "primaryLocationOf": NamedNode<'https://gs1.org/voc/primaryLocationOf'>;
     /** An understandable and useable description of a product using brand and other descriptors. This attribute is filled with as little abbreviation as possible, while keeping to a reasonable length.  This should be a meaningful description of the product with full spelling to facilitate message processing. Retailers can use this description as the base to fully understand the brand, flavour, scent etc. of the specific product, in order to accurately create a product description as needed for their internal systems. Examples: XYZ Brand Base Invisible Solid Deodorant AP Stick Spring Breeze. */
     "productDescription": NamedNode<'https://gs1.org/voc/productDescription'>;
     /** Element for consumer facing marketing content to describe the key features or benefits of the style suitable for display purposes. */
@@ -2234,11 +2705,9 @@ interface Gs1 {
     "productMarketingMessage": NamedNode<'https://gs1.org/voc/productMarketingMessage'>;
     /** Consumer friendly short description of the product suitable for compact presentation. */
     "productName": NamedNode<'https://gs1.org/voc/productName'>;
-    /** A link to the product passport which provides information on a product’s origin, durability, composition, reuse, repair and dismantling possibilities, and end-of-life handling. */
-    "productPassport": NamedNode<'https://gs1.org/voc/productPassport'>;
     /** A name, used by a Brand Owner, that span multiple consumer categories or uses. E.g. (Waist Watchers). */
     "productRange": NamedNode<'https://gs1.org/voc/productRange'>;
-    /** A link to information about the product's sustainability of manufacture, recycling information etc. */
+    /** This term has been deprecated. Please use gs1:sustainabilityInfo instead. */
     "productSustainabilityInfo": NamedNode<'https://gs1.org/voc/productSustainabilityInfo'>;
     /** Product quantity after preparation. This can differ based on productYieldType */
     "productYield": NamedNode<'https://gs1.org/voc/productYield'>;
@@ -2254,7 +2723,7 @@ interface Gs1 {
     "productionVariantDescription": NamedNode<'https://gs1.org/voc/productionVariantDescription'>;
     /** The start date of a production variant. The variant applies to products having a date mark (a best before date or expiration date) on the package that comes on or after the effective date. */
     "productionVariantEffectiveDateTime": NamedNode<'https://gs1.org/voc/productionVariantEffectiveDateTime'>;
-    /** A link to a promotion for the product. */
+    /** A link to a promotion. */
     "promotion": NamedNode<'https://gs1.org/voc/promotion'>;
     /** Protein per specified nutrient basis quantity. */
     "proteinPerNutrientBasis": NamedNode<'https://gs1.org/voc/proteinPerNutrientBasis'>;
@@ -2274,14 +2743,12 @@ interface Gs1 {
     "qualifyingProductGTINs": NamedNode<'https://gs1.org/voc/qualifyingProductGTINs'>;
     /** If specified, the discount is only available when purchasing a product from one of the sub-brand names (specified product ranges for a given brand) specified via this property. */
     "qualifyingSubBrandName": NamedNode<'https://gs1.org/voc/qualifyingSubBrandName'>;
-    /** A link to a description of the key features needed to be understood to begin using the item. */
+    /** A link to a description of the key features needed to be understood to begin using the item or interacting with something new. */
     "quickStartGuide": NamedNode<'https://gs1.org/voc/quickStartGuide'>;
     /** A link to information about whether the product has been recalled or not, typically an API. */
     "recallStatus": NamedNode<'https://gs1.org/voc/recallStatus'>;
-    /** A link to a recipe website for the product. */
+    /** A link to a recipe website. */
     "recipeInfo": NamedNode<'https://gs1.org/voc/recipeInfo'>;
-    /** A link to the instructions for recycling a product. */
-    "recyclingInfo": NamedNode<'https://gs1.org/voc/recyclingInfo'>;
     /** Link to a file or website containing additional information on product. */
     "referencedFile": NamedNode<'https://gs1.org/voc/referencedFile'>;
     /** The date upon which the target of this external link ceases to be effective for use. */
@@ -2296,36 +2763,42 @@ interface Gs1 {
     "referencedFileURL": NamedNode<'https://gs1.org/voc/referencedFileURL'>;
     /** A link to an entry point for registering ownership of a product including for warranty purposes. */
     "registerProduct": NamedNode<'https://gs1.org/voc/registerProduct'>;
+    /** A link to an entry in a register, such as a business register or register of locations. Such registers may act as alternative identifiers, such as official company numbers, LEIs, other location identifiers etc. */
+    "registryEntry": NamedNode<'https://gs1.org/voc/registryEntry'>;
     /** The prescribed, regulated or generic product name or denomination that describes the true nature of the product. For example for a food product in order to distinguish it from other foods according to country specific regulations. */
     "regulatedProductName": NamedNode<'https://gs1.org/voc/regulatedProductName'>;
     /** Indicates, with reference to the product branding, labelling or packaging whether a food product which is ready to eat can be reheated if required prior to consumption. */
     "reheatingClaim": NamedNode<'https://gs1.org/voc/reheatingClaim'>;
-    /** A link to any video, or document that has an embedded video, that describes or relates to the identified item in some way. */
+    /** The organisation(s) associated with a place. */
+    "relatedOrganization": NamedNode<'https://gs1.org/voc/relatedOrganization'>;
+    /** A link to any video, or document that has an embedded video, that describes or relates to the identified item, organisation, or location in some way. */
     "relatedVideo": NamedNode<'https://gs1.org/voc/relatedVideo'>;
-    /** A link to the instructions for the repair of a product. */
-    "repairInfo": NamedNode<'https://gs1.org/voc/repairInfo'>;
     /** The product which permanently replaces the current product. This product is sent in the record for the original item that is being replaced. */
     "replacedByProduct": NamedNode<'https://gs1.org/voc/replacedByProduct'>;
     /** Indicates the product identification of an item that is being permanently replaced by this product. */
     "replacedProduct": NamedNode<'https://gs1.org/voc/replacedProduct'>;
     /** Text further specifying the area of responsibility of the trade contact. */
     "responsibility": NamedNode<'https://gs1.org/voc/responsibility'>;
+    /** Links to the place(s) for which this organisation is responsible. */
+    "responsibleForLocation": NamedNode<'https://gs1.org/voc/responsibleForLocation'>;
+    /** Links to the organisation that is directly responsible for this place. */
+    "responsibleOrganization": NamedNode<'https://gs1.org/voc/responsibleOrganization'>;
     /** The monetary amount for the individual returnable package. */
     "returnablePackageDepositAmount": NamedNode<'https://gs1.org/voc/returnablePackageDepositAmount'>;
     /** The geographic region associated with the returnable package deposit amount. */
     "returnablePackageDepositRegion": NamedNode<'https://gs1.org/voc/returnablePackageDepositRegion'>;
-    /** A link to the information on how to re-use a product when it changes from one user to the other (like how to deal with exiting certifications or warrantees, quality control instructions) */
-    "reuseInfo": NamedNode<'https://gs1.org/voc/reuseInfo'>;
-    /** A link to reviews of the product or service. */
+    /** A link to reviews. */
     "review": NamedNode<'https://gs1.org/voc/review'>;
     /** Riboflavin per specified nutrient basis quantity. */
     "riboflavinPerNutrientBasis": NamedNode<'https://gs1.org/voc/riboflavinPerNutrientBasis'>;
-    /** A link to safety information about the item */
+    /** A link to safety information. */
     "safetyInfo": NamedNode<'https://gs1.org/voc/safetyInfo'>;
     /** Salt per specified nutrient basis quantity. */
     "saltPerNutrientBasis": NamedNode<'https://gs1.org/voc/saltPerNutrientBasis'>;
     /** Saturated fat per specified nutrient basis quantity. */
     "saturatedFatPerNutrientBasis": NamedNode<'https://gs1.org/voc/saturatedFatPerNutrientBasis'>;
+    /** A link to a site that offers information on scheduling, appointments, or reservations. This may or may not allow the user to book the reservation. */
+    "scheduleTime": NamedNode<'https://gs1.org/voc/scheduleTime'>;
     /** The calendar year in which the product is seasonally available. */
     "seasonCalendarYear": NamedNode<'https://gs1.org/voc/seasonCalendarYear'>;
     /** Element defines the season applicable to the item for example Winter. */
@@ -2342,7 +2815,7 @@ interface Gs1 {
     "sellByDate": NamedNode<'https://gs1.org/voc/sellByDate'>;
     /** The organization seeking to sell a product or service. */
     "seller": NamedNode<'https://gs1.org/voc/seller'>;
-    /** A link to service or maintenance instructions for the item. */
+    /** A link to service or maintenance instructions. */
     "serviceInfo": NamedNode<'https://gs1.org/voc/serviceInfo'>;
     /** Measurement value specifying the serving size in which the information per nutrient has been stated. Example: Per 100 GRM. */
     "servingSize": NamedNode<'https://gs1.org/voc/servingSize'>;
@@ -2382,8 +2855,16 @@ interface Gs1 {
     "sportingActivityType": NamedNode<'https://gs1.org/voc/sportingActivityType'>;
     /** Starch per specified nutrient basis quantity. */
     "starchPerNutrientBasis": NamedNode<'https://gs1.org/voc/starchPerNutrientBasis'>;
+    /** A link to information about statistics regarding an organisation, location, or other entity. */
+    "statisticInfo": NamedNode<'https://gs1.org/voc/statisticInfo'>;
     /** The street address expressed as free form text. The street address is printed on paper as the first lines below the name. For example, the name of the street and the number in the street or the name of a building. */
     "streetAddress": NamedNode<'https://gs1.org/voc/streetAddress'>;
+    /** The street address, expressed as free form text. The street address is printed on paper as the first lines below the name. For example, the name of the street and the number in the street or the name of a building. A total of four street address lines are available. gs1:streetAddress SHOULD be used before populating lines two through four. */
+    "streetAddressLine2": NamedNode<'https://gs1.org/voc/streetAddressLine2'>;
+    /** The street address, expressed as free form text. The street address is printed on paper as the first lines below the name. For example, the name of the street and the number in the street or the name of a building. A total of four street address lines are available. gs1:streetAddress and gs1:streetaddressLine2 SHOULD be used before populating lines three and four. */
+    "streetAddressLine3": NamedNode<'https://gs1.org/voc/streetAddressLine3'>;
+    /** The street address, expressed as free form text. The street address is printed on paper as the first lines below the name. For example, the name of the street and the number in the street or the name of a building. gs1:streetAddress, gs1:streetaddressLine2 and gs1:streetaddressLine3 SHOULD be used before populating gs1:streetaddressLine4. */
+    "streetAddressLine4": NamedNode<'https://gs1.org/voc/streetAddressLine4'>;
     /** An attribute that classifies products that share many of the same characteristics (attribute values) that does NOT vary by GTIN, and are presented by the supplier as a single merchandise selection for the buyer. */
     "styleDescription": NamedNode<'https://gs1.org/voc/styleDescription'>;
     /** Second level of brand. Can be a trademark. It is the primary differentiating factor that a brand owner wants to communicate to the consumer or buyer. E.g. Yummy-Cola Classic. In this example Yummy-Cola is the brand and Classic is the sub-brand. */
@@ -2394,6 +2875,8 @@ interface Gs1 {
     "supplierSpecifiedMinimumConsumerStorageDays": NamedNode<'https://gs1.org/voc/supplierSpecifiedMinimumConsumerStorageDays'>;
     /** A link to a source of support such as a helpdesk, chat support, email etc. */
     "support": NamedNode<'https://gs1.org/voc/support'>;
+    /** A link to information relating to sustainability and recycling requirements or processes. */
+    "sustainabilityInfo": NamedNode<'https://gs1.org/voc/sustainabilityInfo'>;
     /** Identifies the target consumer age range for which a product has been designed. */
     "targetConsumerAge": NamedNode<'https://gs1.org/voc/targetConsumerAge'>;
     /** Identifies the target consumer gender for which a product has been designed for example MALE */
@@ -2418,7 +2901,7 @@ interface Gs1 {
     "textileMaterialWeight": NamedNode<'https://gs1.org/voc/textileMaterialWeight'>;
     /** Thiamin per specified nutrient basis quantity. */
     "thiaminPerNutrientBasis": NamedNode<'https://gs1.org/voc/thiaminPerNutrientBasis'>;
-    /** A link to traceability information about the product (includes track & trace). */
+    /** A link to traceability information (includes track and trace).  Traceability information may be provided for consumption by humans or computers. If the target is an EPCIS repository, use gs1:epcis instead. */
     "traceability": NamedNode<'https://gs1.org/voc/traceability'>;
     /** Trans Fat per specified nutrient basis quantity. */
     "transFatPerNutrientBasis": NamedNode<'https://gs1.org/voc/transFatPerNutrientBasis'>;
@@ -2428,6 +2911,10 @@ interface Gs1 {
     "unitCode": NamedNode<'https://gs1.org/voc/unitCode'>;
     /** The material(s) used for the upper part of the footwear product. The upper is the part of a shoe, boot, slipper or other item of footwear that is above the sole. */
     "upperMaterialType": NamedNode<'https://gs1.org/voc/upperMaterialType'>;
+    /** A link to an agreement or waiver. */
+    "userAgreement": NamedNode<'https://gs1.org/voc/userAgreement'>;
+    /** Links to the place(s) that this organisation uses as a managed space. */
+    "usesManagedLocation": NamedNode<'https://gs1.org/voc/usesManagedLocation'>;
     /** The effective start date of the price . */
     "validFrom": NamedNode<'https://gs1.org/voc/validFrom'>;
     /** The effective end date of the price . */
@@ -2436,7 +2923,7 @@ interface Gs1 {
     "value": NamedNode<'https://gs1.org/voc/value'>;
     /** Free text field used to identify the variant of the product. Variants are the distinguishing characteristics that differentiate products with the same brand and size including such things as the particular flavour, fragrance, taste. */
     "variantDescription": NamedNode<'https://gs1.org/voc/variantDescription'>;
-    /** A link to a GS1 Lightweight Messaging Service for verifying the status of a product and its identifier . */
+    /** A link to a GS1 Lightweight Messaging Service for verifying the status of a product, organisation, or location and its identifier. */
     "verificationService": NamedNode<'https://gs1.org/voc/verificationService'>;
     /** The person hired by a winery or wine company who is responsible for many of the processes in the preparation, taste and quality of the wine produced. The science of wine making is referred to as oenology. The vintner is the oenologist. */
     "vintner": NamedNode<'https://gs1.org/voc/vintner'>;
@@ -2466,8 +2953,6 @@ interface Gs1 {
     "yield": NamedNode<'https://gs1.org/voc/yield'>;
     /** Zinc per specified nutrient basis quantity. */
     "zincPerNutrientBasis": NamedNode<'https://gs1.org/voc/zincPerNutrientBasis'>;
-    "MeasurementPrecisionTypeCode": NamedNode<'https://gs1.org/voc/MeasurementPrecisionTypeCode'>;
-    "PreservationTechniqueTypeCode": NamedNode<'https://gs1.org/voc/PreservationTechniqueTypeCode'>;
 }
 
 const builder = namespace("https://gs1.org/voc/") as any;

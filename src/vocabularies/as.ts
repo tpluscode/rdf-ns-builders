@@ -1,12 +1,15 @@
-import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
+import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
 interface As {
     '': NamedNode<'https://www.w3.org/ns/activitystreams#'>;
+    /** A rdf:List variant for Objects and Links */
+    "OrderedItems": NamedNode<'https://www.w3.org/ns/activitystreams#OrderedItems'>;
     /** Actor accepts the Object */
     "Accept": NamedNode<'https://www.w3.org/ns/activitystreams#Accept'>;
     /** An Object representing some form of Action that has been taken */
     "Activity": NamedNode<'https://www.w3.org/ns/activitystreams#Activity'>;
+    "Object": NamedNode<'https://www.w3.org/ns/activitystreams#Object'>;
     /** To Add an Object or Link to Something */
     "Add": NamedNode<'https://www.w3.org/ns/activitystreams#Add'>;
     /** Actor announces the object to the target */
@@ -15,11 +18,17 @@ interface As {
     "Application": NamedNode<'https://www.w3.org/ns/activitystreams#Application'>;
     /** To Arrive Somewhere (can be used, for instance, to indicate that a particular entity is currently located somewhere, e.g. a "check-in") */
     "Arrive": NamedNode<'https://www.w3.org/ns/activitystreams#Arrive'>;
+    /** An Activity that has no direct object */
+    "IntransitiveActivity": NamedNode<'https://www.w3.org/ns/activitystreams#IntransitiveActivity'>;
     /** A written work. Typically several paragraphs long. For example, a blog post or a news article. */
     "Article": NamedNode<'https://www.w3.org/ns/activitystreams#Article'>;
     /** An audio file */
     "Audio": NamedNode<'https://www.w3.org/ns/activitystreams#Audio'>;
+    /** Represents a digital document/file of any sort */
+    "Document": NamedNode<'https://www.w3.org/ns/activitystreams#Document'>;
     "Block": NamedNode<'https://www.w3.org/ns/activitystreams#Block'>;
+    /** Actor is ignoring the Object */
+    "Ignore": NamedNode<'https://www.w3.org/ns/activitystreams#Ignore'>;
     /** An ordered or unordered collection of Objects or Links */
     "Collection": NamedNode<'https://www.w3.org/ns/activitystreams#Collection'>;
     /** A subset of items from a Collection */
@@ -30,8 +39,6 @@ interface As {
     "Delete": NamedNode<'https://www.w3.org/ns/activitystreams#Delete'>;
     /** The actor dislikes the object */
     "Dislike": NamedNode<'https://www.w3.org/ns/activitystreams#Dislike'>;
-    /** Represents a digital document/file of any sort */
-    "Document": NamedNode<'https://www.w3.org/ns/activitystreams#Document'>;
     /** An Event of any kind */
     "Event": NamedNode<'https://www.w3.org/ns/activitystreams#Event'>;
     /** To flag something (e.g. flag as inappropriate, flag as spam, etc) */
@@ -40,14 +47,12 @@ interface As {
     "Follow": NamedNode<'https://www.w3.org/ns/activitystreams#Follow'>;
     /** A Group of any kind. */
     "Group": NamedNode<'https://www.w3.org/ns/activitystreams#Group'>;
-    /** Actor is ignoring the Object */
-    "Ignore": NamedNode<'https://www.w3.org/ns/activitystreams#Ignore'>;
     /** An Image file */
     "Image": NamedNode<'https://www.w3.org/ns/activitystreams#Image'>;
-    /** An Activity that has no direct object */
-    "IntransitiveActivity": NamedNode<'https://www.w3.org/ns/activitystreams#IntransitiveActivity'>;
     /** To invite someone or something to something */
     "Invite": NamedNode<'https://www.w3.org/ns/activitystreams#Invite'>;
+    /** To Offer something to someone or something */
+    "Offer": NamedNode<'https://www.w3.org/ns/activitystreams#Offer'>;
     /** To Join Something */
     "Join": NamedNode<'https://www.w3.org/ns/activitystreams#Join'>;
     /** To Leave Something */
@@ -64,15 +69,10 @@ interface As {
     "Move": NamedNode<'https://www.w3.org/ns/activitystreams#Move'>;
     /** A Short note, typically less than a single paragraph. A "tweet" is an example, or a "status update" */
     "Note": NamedNode<'https://www.w3.org/ns/activitystreams#Note'>;
-    "Object": NamedNode<'https://www.w3.org/ns/activitystreams#Object'>;
-    /** To Offer something to someone or something */
-    "Offer": NamedNode<'https://www.w3.org/ns/activitystreams#Offer'>;
     /** A variation of Collection in which items are strictly ordered */
     "OrderedCollection": NamedNode<'https://www.w3.org/ns/activitystreams#OrderedCollection'>;
     /** An ordered subset of items from an OrderedCollection */
     "OrderedCollectionPage": NamedNode<'https://www.w3.org/ns/activitystreams#OrderedCollectionPage'>;
-    /** A rdf:List variant for Objects and Links */
-    "OrderedItems": NamedNode<'https://www.w3.org/ns/activitystreams#OrderedItems'>;
     /** An Organization */
     "Organization": NamedNode<'https://www.w3.org/ns/activitystreams#Organization'>;
     /** A Web Page */
@@ -115,14 +115,14 @@ interface As {
     "accuracy": NamedNode<'https://www.w3.org/ns/activitystreams#accuracy'>;
     /** Subproperty of as:attributedTo that identifies the primary actor */
     "actor": NamedNode<'https://www.w3.org/ns/activitystreams#actor'>;
+    /** Identifies an entity to which an object is attributed */
+    "attributedTo": NamedNode<'https://www.w3.org/ns/activitystreams#attributedTo'>;
     /** The altitude of a place */
     "altitude": NamedNode<'https://www.w3.org/ns/activitystreams#altitude'>;
     /** Describes a possible inclusive answer or option for a question. */
     "anyOf": NamedNode<'https://www.w3.org/ns/activitystreams#anyOf'>;
     "attachment": NamedNode<'https://www.w3.org/ns/activitystreams#attachment'>;
     "attachments": NamedNode<'https://www.w3.org/ns/activitystreams#attachments'>;
-    /** Identifies an entity to which an object is attributed */
-    "attributedTo": NamedNode<'https://www.w3.org/ns/activitystreams#attributedTo'>;
     "audience": NamedNode<'https://www.w3.org/ns/activitystreams#audience'>;
     /** Identifies the author of an object. Deprecated. Use as:attributedTo instead */
     "author": NamedNode<'https://www.w3.org/ns/activitystreams#author'>;

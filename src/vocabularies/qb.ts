@@ -1,4 +1,4 @@
-import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
+import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
 interface Qb {
@@ -7,10 +7,12 @@ interface Qb {
     "Attachable": NamedNode<'http://purl.org/linked-data/cube#Attachable'>;
     /** The class of components which represent attributes of observations in the cube, e.g. unit of measurement */
     "AttributeProperty": NamedNode<'http://purl.org/linked-data/cube#AttributeProperty'>;
-    /** Superclass of all coded ComponentProperties */
-    "CodedProperty": NamedNode<'http://purl.org/linked-data/cube#CodedProperty'>;
     /** Abstract super-property of all properties representing dimensions, attributes or measures */
     "ComponentProperty": NamedNode<'http://purl.org/linked-data/cube#ComponentProperty'>;
+    /** The class of components which represent the measured value of the phenomenon being observed */
+    "MeasureProperty": NamedNode<'http://purl.org/linked-data/cube#MeasureProperty'>;
+    /** Superclass of all coded ComponentProperties */
+    "CodedProperty": NamedNode<'http://purl.org/linked-data/cube#CodedProperty'>;
     /** Abstract class of things which reference one or more ComponentProperties */
     "ComponentSet": NamedNode<'http://purl.org/linked-data/cube#ComponentSet'>;
     /** Used to define properties of a component (attribute, dimension etc) which are specific to its usage in a DSD. */
@@ -23,8 +25,6 @@ interface Qb {
     "DimensionProperty": NamedNode<'http://purl.org/linked-data/cube#DimensionProperty'>;
     /** Represents a generalized hierarchy of concepts which can be used for coding. The hierarchy is defined by one or more roots together with a property which relates concepts in the hierarchy to thier child concept .  The same concepts may be members of multiple hierarchies provided that different qb:parentChildProperty values are used for each hierarchy. */
     "HierarchicalCodeList": NamedNode<'http://purl.org/linked-data/cube#HierarchicalCodeList'>;
-    /** The class of components which represent the measured value of the phenomenon being observed */
-    "MeasureProperty": NamedNode<'http://purl.org/linked-data/cube#MeasureProperty'>;
     /** A single observation in the cube, may have one or more associated measured values */
     "Observation": NamedNode<'http://purl.org/linked-data/cube#Observation'>;
     /** A, possibly arbitrary, group of observations. */
@@ -35,14 +35,14 @@ interface Qb {
     "SliceKey": NamedNode<'http://purl.org/linked-data/cube#SliceKey'>;
     /** An alternative to qb:componentProperty which makes explicit that the component is a attribute */
     "attribute": NamedNode<'http://purl.org/linked-data/cube#attribute'>;
+    /** indicates a ComponentProperty (i.e. attribute/dimension) expected on a DataSet, or a dimension fixed in a SliceKey */
+    "componentProperty": NamedNode<'http://purl.org/linked-data/cube#componentProperty'>;
     /** gives the code list associated with a CodedProperty */
     "codeList": NamedNode<'http://purl.org/linked-data/cube#codeList'>;
     /** indicates a component specification which is included in the structure of the dataset */
     "component": NamedNode<'http://purl.org/linked-data/cube#component'>;
     /** Indicates the level at which the component property should be attached, this might an qb:DataSet, qb:Slice or qb:Observation, or a qb:MeasureProperty. */
     "componentAttachment": NamedNode<'http://purl.org/linked-data/cube#componentAttachment'>;
-    /** indicates a ComponentProperty (i.e. attribute/dimension) expected on a DataSet, or a dimension fixed in a SliceKey */
-    "componentProperty": NamedNode<'http://purl.org/linked-data/cube#componentProperty'>;
     /**
      * Indicates whether a component property is required (true) or optional (false) in the context of a DSD. Only applicable
      *     to components correspond to an attribute. Defaults to false (optional).

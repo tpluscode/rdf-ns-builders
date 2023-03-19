@@ -1,4 +1,4 @@
-import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
+import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
 interface Oa {
@@ -9,8 +9,12 @@ interface Oa {
     "Choice": NamedNode<'http://www.w3.org/ns/oa#Choice'>;
     /** A CssSelector describes a Segment of interest in a representation that conforms to the Document Object Model through the use of the CSS selector specification. */
     "CssSelector": NamedNode<'http://www.w3.org/ns/oa#CssSelector'>;
+    /** A resource which describes the segment of interest in a representation of a Source resource, indicated with oa:hasSelector from the Specific Resource. This class is not used directly in the Annotation model, only its subclasses. */
+    "Selector": NamedNode<'http://www.w3.org/ns/oa#Selector'>;
     /** A resource which describes styles for resources participating in the Annotation using CSS. */
     "CssStyle": NamedNode<'http://www.w3.org/ns/oa#CssStyle'>;
+    /** A Style describes the intended styling of a resource as applied to the particular Annotation, and thus provides the information to ensure that rendering is consistent across implementations. */
+    "Style": NamedNode<'http://www.w3.org/ns/oa#Style'>;
     /** DataPositionSelector describes a range of data by recording the start and end positions of the selection in the stream. Position 0 would be immediately before the first byte, position 1 would be immediately before the second byte, and so on. The start byte is thus included in the list, but the end byte is not. */
     "DataPositionSelector": NamedNode<'http://www.w3.org/ns/oa#DataPositionSelector'>;
     /** A class to encapsulate the different text directions that a textual resource might take.  It is not used directly in the Annotation Model, only its three instances. */
@@ -19,6 +23,8 @@ interface Oa {
     "FragmentSelector": NamedNode<'http://www.w3.org/ns/oa#FragmentSelector'>;
     /** The HttpRequestState class is used to record the HTTP request headers that a client SHOULD use to request the correct representation from the resource. */
     "HttpRequestState": NamedNode<'http://www.w3.org/ns/oa#HttpRequestState'>;
+    /** A State describes the intended state of a resource as applied to the particular Annotation, and thus provides the information needed to retrieve the correct representation of that resource. */
+    "State": NamedNode<'http://www.w3.org/ns/oa#State'>;
     /** The Motivation class is used to record the user's intent or motivation for the creation of the Annotation, or the inclusion of the body or target, that it is associated with. */
     "Motivation": NamedNode<'http://www.w3.org/ns/oa#Motivation'>;
     /** An IRI to signal the client prefers to receive full descriptions of the Annotations from a container, not just their IRIs. */
@@ -29,14 +35,8 @@ interface Oa {
     "RangeSelector": NamedNode<'http://www.w3.org/ns/oa#RangeSelector'>;
     /** Instances of the ResourceSelection class identify part (described by an oa:Selector) of another resource (referenced with oa:hasSource), possibly from a particular representation of a resource (described by an oa:State). Please note that ResourceSelection is not used directly in the Web Annotation model, but is provided as a separate class for further application profiles to use, separate from oa:SpecificResource which has many Annotation specific features. */
     "ResourceSelection": NamedNode<'http://www.w3.org/ns/oa#ResourceSelection'>;
-    /** A resource which describes the segment of interest in a representation of a Source resource, indicated with oa:hasSelector from the Specific Resource. This class is not used directly in the Annotation model, only its subclasses. */
-    "Selector": NamedNode<'http://www.w3.org/ns/oa#Selector'>;
     /** Instances of the SpecificResource class identify part of another resource (referenced with oa:hasSource), a particular representation of a resource, a resource with styling hints for renders, or any combination of these, as used within an Annotation. */
     "SpecificResource": NamedNode<'http://www.w3.org/ns/oa#SpecificResource'>;
-    /** A State describes the intended state of a resource as applied to the particular Annotation, and thus provides the information needed to retrieve the correct representation of that resource. */
-    "State": NamedNode<'http://www.w3.org/ns/oa#State'>;
-    /** A Style describes the intended styling of a resource as applied to the particular Annotation, and thus provides the information to ensure that rendering is consistent across implementations. */
-    "Style": NamedNode<'http://www.w3.org/ns/oa#Style'>;
     /** An SvgSelector defines an area through the use of the Scalable Vector Graphics [SVG] standard. This allows the user to select a non-rectangular area of the content, such as a circle or polygon by describing the region using SVG. The SVG may be either embedded within the Annotation or referenced as an External Resource. */
     "SvgSelector": NamedNode<'http://www.w3.org/ns/oa#SvgSelector'>;
     /** The TextPositionSelector describes a range of text by recording the start and end positions of the selection in the stream. Position 0 would be immediately before the first character, position 1 would be immediately before the second character, and so on. */

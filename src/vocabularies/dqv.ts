@@ -1,4 +1,4 @@
-import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
+import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
 interface Dqv {
@@ -25,12 +25,12 @@ interface Dqv {
     "UserQualityFeedback": NamedNode<'http://www.w3.org/ns/dqv#UserQualityFeedback'>;
     /** Refers to the resource (e.g., a dataset, a linkset, a graph, a set of triples) on which the quality measurement is performed. In the DQV context, this property is generally expected to be used in statements in which objects are instances of dcat:Dataset or dcat:Distribution. */
     "computedOn": NamedNode<'http://www.w3.org/ns/dqv#computedOn'>;
+    /** Refers to the performed quality measurements. Quality measurements can be performed to any kind of resource (e.g., a dataset, a linkset, a graph, a set of triples). However, in the DQV context, this property is generally expected to be used in statements in which subjects are instances of dcat:Dataset or dcat:Distribution. */
+    "hasQualityMeasurement": NamedNode<'http://www.w3.org/ns/dqv#hasQualityMeasurement'>;
     /** Represents the expected data type for metric's observed value (e.g. xsd:boolean, xsd:double etc...) */
     "expectedDataType": NamedNode<'http://www.w3.org/ns/dqv#expectedDataType'>;
     /** Refers to a quality annotation. Quality annotation can be applied to any kind of resource, e.g., a dataset, a linkset, a graph, a set of triples. However, in the DQV context, this property is generally expected to be used in statements in which subjects are instances of dcat:Dataset or dcat:Distribution. */
     "hasQualityAnnotation": NamedNode<'http://www.w3.org/ns/dqv#hasQualityAnnotation'>;
-    /** Refers to the performed quality measurements. Quality measurements can be performed to any kind of resource (e.g., a dataset, a linkset, a graph, a set of triples). However, in the DQV context, this property is generally expected to be used in statements in which subjects are instances of dcat:Dataset or dcat:Distribution. */
-    "hasQualityMeasurement": NamedNode<'http://www.w3.org/ns/dqv#hasQualityMeasurement'>;
     /** Refers to a grouping of quality information such as certificates, policies, measurements and annotations as a named graph. Quality information represented in such a grouping can pertain to any kind of resource (e.g., a dataset, a linkset, a graph, a set of triples). However, in the DQV context, this property is generally expected to be used in statements in which subjects are instances of dcat:Dataset or dcat:Distribution. */
     "hasQualityMetadata": NamedNode<'http://www.w3.org/ns/dqv#hasQualityMetadata'>;
     /** Represents the category a dimension is grouped in. */

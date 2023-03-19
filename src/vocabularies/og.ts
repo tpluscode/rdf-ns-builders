@@ -1,18 +1,8 @@
-import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
+import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
 interface Og {
     '': NamedNode<'http://ogp.me/ns#'>;
-    /** [DEPRECATED] An album to which some audio belongs. */
-    "audio:album": NamedNode<'http://ogp.me/ns#audio:album'>;
-    /** [DEPRECATED] An artist of some audio. */
-    "audio:artist": NamedNode<'http://ogp.me/ns#audio:artist'>;
-    /** A relevant, secure audio URL for your object. */
-    "audio:secure_url": NamedNode<'http://ogp.me/ns#audio:secure_url'>;
-    /** [DEPRECATED] A title for some audio. */
-    "audio:title": NamedNode<'http://ogp.me/ns#audio:title'>;
-    /** The mime type of an audio file e.g., "application/mp3" */
-    "audio:type": NamedNode<'http://ogp.me/ns#audio:type'>;
     /** A relevant audio URL for your object. */
     "audio": NamedNode<'http://ogp.me/ns#audio'>;
     /** [DEPRECATED] The country name of the resource e.g., "USA" */
@@ -25,14 +15,6 @@ interface Og {
     "email": NamedNode<'http://ogp.me/ns#email'>;
     /** [DEPRECATED] Fax number of the contact for your object. */
     "fax_number": NamedNode<'http://ogp.me/ns#fax_number'>;
-    /** The height of an image. */
-    "image:height": NamedNode<'http://ogp.me/ns#image:height'>;
-    /** A secure image URL which should represent your object within the graph. */
-    "image:secure_url": NamedNode<'http://ogp.me/ns#image:secure_url'>;
-    /** The mime type of an image. */
-    "image:type": NamedNode<'http://ogp.me/ns#image:type'>;
-    /** The width of an image. */
-    "image:width": NamedNode<'http://ogp.me/ns#image:width'>;
     /** An image URL which should represent your object within the graph. */
     "image": NamedNode<'http://ogp.me/ns#image'>;
     /** [DEPRECATED] International Standard Book Number for you object. */
@@ -63,14 +45,6 @@ interface Og {
     "upc": NamedNode<'http://ogp.me/ns#upc'>;
     /** The canonical URL of your object that will be used as its permanent ID in the graph, e.g., "http://www.imdb.com/title/tt0117500/". */
     "url": NamedNode<'http://ogp.me/ns#url'>;
-    /** The height of a video. */
-    "video:height": NamedNode<'http://ogp.me/ns#video:height'>;
-    /** A relevant, secure video URL for your object. */
-    "video:secure_url": NamedNode<'http://ogp.me/ns#video:secure_url'>;
-    /** The mime type of a video e.g., "application/x-shockwave-flash" */
-    "video:type": NamedNode<'http://ogp.me/ns#video:type'>;
-    /** The width of a video. */
-    "video:width": NamedNode<'http://ogp.me/ns#video:width'>;
     /** A relevant video URL for your object. */
     "video": NamedNode<'http://ogp.me/ns#video'>;
 }

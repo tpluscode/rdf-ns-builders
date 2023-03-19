@@ -7,7 +7,7 @@ function createExport(prefix: string, exportName: string): OptionalKind<ExportDe
       name: exportName,
       alias: identifier(prefix),
     }],
-    moduleSpecifier: `./vocabularies/${prefix}`,
+    moduleSpecifier: `./vocabularies/${prefix}.js`,
   }
 }
 

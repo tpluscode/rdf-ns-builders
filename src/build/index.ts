@@ -1,8 +1,8 @@
 import { resolve } from 'path'
 import { Project } from 'ts-morph'
-import type * as RdfVocabularies from '@zazuko/rdf-vocabularies'
-import { createPrefixFile } from './prefix'
-import { createDefaultModule, createLooseModule } from './modules'
+import type * as RdfVocabularies from '@zazuko/vocabularies'
+import { createPrefixFile } from './prefix.js'
+import { createDefaultModule, createLooseModule } from './modules.js'
 
 const project = new Project()
 

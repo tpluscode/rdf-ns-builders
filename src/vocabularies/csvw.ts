@@ -1,4 +1,4 @@
-import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
+import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
 interface Csvw {
@@ -33,6 +33,7 @@ interface Csvw {
     "Transformation": NamedNode<'http://www.w3.org/ns/csvw#Transformation'>;
     /** A URI template property that MAY be used to indicate what a cell contains information about. */
     "aboutUrl": NamedNode<'http://www.w3.org/ns/csvw#aboutUrl'>;
+    "uriTemplate": NamedNode<'http://www.w3.org/ns/csvw#uriTemplate'>;
     /** Indicates whether the tables in the group should be displayed based on the first character in the table that has a specific direction. */
     "auto": NamedNode<'http://www.w3.org/ns/csvw#auto'>;
     /** An atomic property that contains a single string: a term defined in the default context representing a built-in datatype URL, as listed above. */
@@ -173,7 +174,6 @@ interface Csvw {
     "transformations": NamedNode<'http://www.w3.org/ns/csvw#transformations'>;
     /** An atomic property that, if the boolean `true`, sets the trim flag to `true` and if the boolean `false` to `false`. If the value provided is a string, sets the trim flag to the provided value, which must be one of "true", "false", "start" or "end". */
     "trim": NamedNode<'http://www.w3.org/ns/csvw#trim'>;
-    "uriTemplate": NamedNode<'http://www.w3.org/ns/csvw#uriTemplate'>;
     /**
      * For a Table: This link property gives the single URL of the CSV file that the table is held in, relative to the location of the metadata document.
      *

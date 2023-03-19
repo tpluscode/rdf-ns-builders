@@ -1,18 +1,61 @@
-import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
+import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
 interface Ebucore {
     '': NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#'>;
+    /**
+     * The Class "Asset" is an
+     *             object to which an identifier will be associated at commissioning. It will serve as a
+     *             central reference point to manage rights associated to EditorialObjects, Resources,
+     *             MediaResources or Essences, and PublicationEvents (distribution and exploitation
+     *             conditions).
+     */
+    "Asset": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Asset'>;
+    /**
+     * The use of MediaResource is reserved to
+     *             audiovisual content. In a production process, several MediaResources can be edited and assembled to realsie an Essence ready for distribution (see IMF package and OPL)
+     */
+    "MediaResource": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#MediaResource'>;
+    /**
+     * To describe any manifestation of a media
+     *             resource on any media (live, on demand, catch-up TV, etc.) and the appropriate
+     *             PublciationChannel.
+     */
+    "PublicationEvent": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#PublicationEvent'>;
+    /**
+     * An image, a document, an annotation
+     *             (descriptive textual metadata or audio/video tag), a tag (time related in audiovisual
+     *             media resources), or an audiovisual media resource (optionally composed of one or more
+     *             fragment / part and / or audio, video data tracks). Other types of BusinessObjects may
+     *             be defined as subclasses.
+     */
+    "BusinessObject": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#BusinessObject'>;
+    /** A physical person. */
+    "Contact": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Contact'>;
     /** The conditions under which content can be accessed. */
     "AccessConditions": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#AccessConditions'>;
+    /**
+     * To provide information on the rights, including
+     *             intellectual property, related to a BusinessObject or Resource.
+     */
+    "Rights": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Rights'>;
     /** A class to log Actions. */
     "Action": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Action'>;
     /** To define a type of Action. */
     "Action_Type": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Action_Type'>;
     /** To define an active format code. */
     "ActiveFormatDescriptorCode": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#ActiveFormatDescriptorCode'>;
+    /**
+     * The format provides technical information on
+     *             the format of a Resource. A BusinessObject can be instantiated in a variety of Resources
+     *             each in a particular Format. Other specific data formats may be defined as subclasses of
+     *             format.
+     */
+    "Format": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Format'>;
     /** An Organisation to which a Contact is affiliated (with period of validity). */
     "Affiliation": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Affiliation'>;
+    /** An organisation (business, corporation, federation, etc.) or moral agent (government body). */
+    "Organisation": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Organisation'>;
     /** A person / contact or organisation. */
     "Agent": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Agent'>;
     /**
@@ -21,12 +64,24 @@ interface Ebucore {
      */
     "AncillaryData": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#AncillaryData'>;
     /**
+     * Ancillary data track e.g. Â¨captioning"
+     *             or "subtitling" in addition to video and audio tracks.
+     */
+    "DataTrack": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#DataTrack'>;
+    /**
      * To define the format of AncillaryData such as
      *             legacy data used to be carried in vertical blanking intervals. This is provided as free
      *             text in an annotation label or as an identifier pointing to a term in a classification
      *             scheme.
      */
     "AncillaryDataFormat": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#AncillaryDataFormat'>;
+    /**
+     * To provide addtional technical information on
+     *             the characteristics of data streams in a MediaResource including but not limited to
+     *             AncillaryData, Subtilting and Captioning. Additional specific data format may be defined
+     *             as subclasses of DataFormat.
+     */
+    "DataFormat": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#DataFormat'>;
     /** To identify an animal. */
     "Animal": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Animal'>;
     /** To provide a breed code for an animal.. */
@@ -41,24 +96,23 @@ interface Ebucore {
     "Artefact": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Artefact'>;
     /** To define a type of artefact. */
     "Artefact_Type": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Artefact_Type'>;
-    /**
-     * The Class "Asset" is an
-     *             object to which an identifier will be associated at commissioning. It will serve as a
-     *             central reference point to manage rights associated to EditorialObjects, Resources,
-     *             MediaResources or Essences, and PublicationEvents (distribution and exploitation
-     *             conditions).
-     */
-    "Asset": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Asset'>;
     /** To define a type of asset. */
     "Asset_Type": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Asset_Type'>;
     /** To describe a feeling summarising the atmosphere. */
     "Atmosphere": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Atmosphere'>;
+    /** An expression of type in textual form or as a term from a classification scheme. */
+    "Type": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Type'>;
     /**
      * The target audience (target region, target
      *             audience category but also parental guidance recommendation) for which the media
      *             resource is intended.
      */
     "AudienceLevel": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#AudienceLevel'>;
+    /**
+     * This is provided as free text in an annotation
+     *             label or as an identifier pointing to a term in a classification scheme.
+     */
+    "Rating": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Rating'>;
     /**
      * The audience by which the Resource can be
      *             seen according to ratings like MPAA  (http://en.wikipedia.org/wiki/Motion_picture_rating_system) or other organisational / national / local standards.
@@ -72,6 +126,8 @@ interface Ebucore {
     "AudioChannelPurpose": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#AudioChannelPurpose'>;
     /** To provide information about an audio codec. */
     "AudioCodec": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#AudioCodec'>;
+    /** To provide information on a codec. */
+    "Codec": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Codec'>;
     /**
      * An audioContent defines one component of a programme (e.g. background
      * 				music), its association with an audioGroup (e.g. a 2.0 audioPackFormat of
@@ -79,12 +135,30 @@ interface Ebucore {
      * 				audioStreamFormat, and its set of loudness parameters.
      */
     "AudioContent": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#AudioContent'>;
+    /**
+     * An EditorialObject corresponding to a
+     *             MediaResource ready for publication.
+     */
+    "Programme": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Programme'>;
     /** to define a type of AudioContent. */
     "AudioContent_Type": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#AudioContent_Type'>;
     /** A Track containing audio description. */
     "AudioDescription": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#AudioDescription'>;
+    /**
+     * An audioTrack is the basic audio data container of a medium. Attribute is
+     * 				an unambiguous reference to this container in a given medium.
+     */
+    "AudioTrack": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#AudioTrack'>;
     /** The encoding format for the audio. */
     "AudioEncodingFormat": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#AudioEncodingFormat'>;
+    /**
+     * To provide a definition of the encoding format
+     *             for audio and video. This is provided as free text in an annotation label or as an
+     *             identifier pointing to a term in a classification scheme e.g.
+     *             http://www.ebu.ch/metadata/ontologies/skos/ebu_AudioCompressionCodeCS.rdf or
+     *             http://www.ebu.ch/metadata/ontologies/skos/ebu_VideoCompressionCodeCS.rdf.
+     */
+    "EncodingFormat": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#EncodingFormat'>;
     /** To define an AudioFormat. */
     "AudioFormat": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#AudioFormat'>;
     /** To define an audio object in reference to the Audio Definition Model (ADM) */
@@ -99,11 +173,13 @@ interface Ebucore {
     "AudioProgramme_Type": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#AudioProgramme_Type'>;
     /** An audioStreamFormat describes a decodable signal - PCM signal or a Dolby E stream for example. It is composed of one or more AudioTracks. */
     "AudioStream": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#AudioStream'>;
+    /** A continuous stream of bits. */
+    "Stream": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Stream'>;
     /**
-     * An audioTrack is the basic audio data container of a medium. Attribute is
-     * 				an unambiguous reference to this container in a given medium.
+     * Audiovisual content can be composed of audio,
+     *             video and data Tracks (including captioning and subtitling).
      */
-    "AudioTrack": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#AudioTrack'>;
+    "Track": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Track'>;
     /** To describe the purpose of an AudioTrack e.g. dubbing. */
     "AudioTrackPurpose": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#AudioTrackPurpose'>;
     /** To describe an Award and associated information. */
@@ -112,10 +188,25 @@ interface Ebucore {
     "Award_Type": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Award_Type'>;
     /** The FIMS BMContent. */
     "BMContent": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#BMContent'>;
+    /**
+     * In the audiovisual domain, the Class
+     *             EditorialObject transforms a commissioned concept into an editorial definition of a
+     *             MediaResource before fabrication (in the Production Domain) and Distribution (in the
+     *             Distribution Domain). An EditorialObject is a set of descriptive metadata summarising
+     *             e.g. editing decisions. An EditorialObject can also be a part of an EditorialObject,
+     *             which is defined by its start time and duration. An EditorialObject can also be a group
+     *             of EditorialObjects. For example a series composed of episodes is defined as an
+     *             EditorialObject.
+     */
+    "EditorialObject": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#EditorialObject'>;
     /** The FIMS Essence */
     "BMEssence": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#BMEssence'>;
+    /** Essence is content ready for distribution. Essence can become a MediaResource in further production processes. */
+    "Essence": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Essence'>;
     /** A template describe as a BMEssence. */
     "BMTemplate": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#BMTemplate'>;
+    /** An Essence defined as a Template with all associated technical parameters. */
+    "Template": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Template'>;
     /** Documents of various nature. */
     "BibliographicalObject": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#BibliographicalObject'>;
     /** To record a biography. */
@@ -125,16 +216,15 @@ interface Ebucore {
      *             common denominator.
      */
     "Brand": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Brand'>;
+    /**
+     * To define a collection / group of media
+     *             resources, for example a series made of episodes.
+     */
+    "Group": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Group'>;
     /** To describe a breaking news. */
     "BreakingNewsItem": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#BreakingNewsItem'>;
-    /**
-     * An image, a document, an annotation
-     *             (descriptive textual metadata or audio/video tag), a tag (time related in audiovisual
-     *             media resources), or an audiovisual media resource (optionally composed of one or more
-     *             fragment / part and / or audio, video data tracks). Other types of BusinessObjects may
-     *             be defined as subclasses.
-     */
-    "BusinessObject": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#BusinessObject'>;
+    /** An item e.g. newsItem or sportItem */
+    "Item": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Item'>;
     /** To define a type of business object. */
     "BusinessObject_Type": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#BusinessObject_Type'>;
     /**
@@ -156,6 +246,8 @@ interface Ebucore {
     "Cast": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Cast'>;
     /** E.g. a fictitious contact / person. */
     "Character": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Character'>;
+    /** To describe a Person. */
+    "Person": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Person'>;
     /** To allocate a city code. */
     "CityCode": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#CityCode'>;
     /** For use in models where Clip is common. */
@@ -170,8 +262,11 @@ interface Ebucore {
      *             content.
      */
     "ClosedSubtitling": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#ClosedSubtitling'>;
-    /** To provide information on a codec. */
-    "Codec": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Codec'>;
+    /**
+     * To signal the presence of subtitles for
+     *             translation in alternative languages.
+     */
+    "Subtitling": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Subtitling'>;
     /**
      * A group of EditorialObjects. There can be many
      *             types of collections for which specific sub-classes should be defined. In the worl of
@@ -190,8 +285,6 @@ interface Ebucore {
     "CommercialCode": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#CommercialCode'>;
     /** A component e.g. audio, video, data or else or a MediaResource or Essence. */
     "Component": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Component'>;
-    /** A physical person. */
-    "Contact": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Contact'>;
     /** To identify an container codec, e.g. MXF */
     "ContainerCodec": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#ContainerCodec'>;
     /** To define the conatiner encoding format. */
@@ -242,18 +335,6 @@ interface Ebucore {
      */
     "DID": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#DID'>;
     /**
-     * To provide addtional technical information on
-     *             the characteristics of data streams in a MediaResource including but not limited to
-     *             AncillaryData, Subtilting and Captioning. Additional specific data format may be defined
-     *             as subclasses of DataFormat.
-     */
-    "DataFormat": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#DataFormat'>;
-    /**
-     * Ancillary data track e.g. Â¨captioning"
-     *             or "subtitling" in addition to video and audio tracks.
-     */
-    "DataTrack": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#DataTrack'>;
-    /**
      * A department within and
      *             organisation.
      */
@@ -265,6 +346,11 @@ interface Ebucore {
      */
     "DepictedEvent": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#DepictedEvent'>;
     /**
+     * Additional types of event shall be defined as
+     *             new sub-classes of event.
+     */
+    "Event": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Event'>;
+    /**
      * To provide a disclaimer of any
      *             form.
      */
@@ -274,6 +360,8 @@ interface Ebucore {
      *             document e.g. a html webpage (news item) or a pdf document e.g. a script.
      */
     "Document": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Document'>;
+    /** To describe a Resource. */
+    "Resource": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Resource'>;
     /**
      * To provide technical information about the
      *             format of a document such as the orientation. This is provided as free text in an
@@ -283,40 +371,14 @@ interface Ebucore {
     "DocumentFormat": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#DocumentFormat'>;
     /** Provides additional information about a NewsItem, e.g. date and place, subject. */
     "Dopesheet": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Dopesheet'>;
-    /**
-     * In the audiovisual domain, the Class
-     *             EditorialObject transforms a commissioned concept into an editorial definition of a
-     *             MediaResource before fabrication (in the Production Domain) and Distribution (in the
-     *             Distribution Domain). An EditorialObject is a set of descriptive metadata summarising
-     *             e.g. editing decisions. An EditorialObject can also be a part of an EditorialObject,
-     *             which is defined by its start time and duration. An EditorialObject can also be a group
-     *             of EditorialObjects. For example a series composed of episodes is defined as an
-     *             EditorialObject.
-     */
-    "EditorialObject": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#EditorialObject'>;
     /** To define a type of editorial object. */
     "EditorialObject_Type": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#EditorialObject_Type'>;
     /** A class to log Emotions. */
     "Emotion": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Emotion'>;
     /** To define a type of emotion. */
     "Emotion_Type": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Emotion_Type'>;
-    /**
-     * To provide a definition of the encoding format
-     *             for audio and video. This is provided as free text in an annotation label or as an
-     *             identifier pointing to a term in a classification scheme e.g.
-     *             http://www.ebu.ch/metadata/ontologies/skos/ebu_AudioCompressionCodeCS.rdf or
-     *             http://www.ebu.ch/metadata/ontologies/skos/ebu_VideoCompressionCodeCS.rdf.
-     */
-    "EncodingFormat": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#EncodingFormat'>;
     /** To describe an episode in a series. */
     "Episode": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Episode'>;
-    /** Essence is content ready for distribution. Essence can become a MediaResource in further production processes. */
-    "Essence": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Essence'>;
-    /**
-     * Additional types of event shall be defined as
-     *             new sub-classes of event.
-     */
-    "Event": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Event'>;
     /** To define a type of event. */
     "EventType": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#EventType'>;
     /** To define a type of exclusity rights. */
@@ -332,6 +394,11 @@ interface Ebucore {
     "FictionalEvent": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#FictionalEvent'>;
     /** To describe a fictional Location. */
     "FictionalLocation": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#FictionalLocation'>;
+    /**
+     * This is provided as free text in an annotation
+     *             label or as an identifier pointing to a term in a classification scheme.
+     */
+    "Location": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Location'>;
     /** To define a fictional Organisation. */
     "FictionalOrganisation": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#FictionalOrganisation'>;
     /** To describe a fictional Person, e.g. a character in a drama. */
@@ -347,13 +414,6 @@ interface Ebucore {
     "Food": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Food'>;
     /** To define a style of food. */
     "FoodStyle": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#FoodStyle'>;
-    /**
-     * The format provides technical information on
-     *             the format of a Resource. A BusinessObject can be instantiated in a variety of Resources
-     *             each in a particular Format. Other specific data formats may be defined as subclasses of
-     *             format.
-     */
-    "Format": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Format'>;
     /** Identifies the generation of a version of a resource, i.e. master, edit master, distribution copy, etc. */
     "Generation": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Generation'>;
     /**
@@ -364,11 +424,6 @@ interface Ebucore {
      *             http://www.ebu.ch/metadata/ontologies/skos/ebu_EditorialFormatCodeCS.rdf.
      */
     "Genre": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Genre'>;
-    /**
-     * To define a collection / group of media
-     *             resources, for example a series made of episodes.
-     */
-    "Group": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Group'>;
     /**
      * To provide information on intellectual
      *             property.
@@ -394,8 +449,6 @@ interface Ebucore {
     "ImageFormat": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#ImageFormat'>;
     /** To indicate the purpose for which content was created. */
     "IntentionCode": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#IntentionCode'>;
-    /** An item e.g. newsItem or sportItem */
-    "Item": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Item'>;
     /** To describe a key career Event of a Contact. */
     "KeyCareerEvent": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#KeyCareerEvent'>;
     /** To describe a significant event. */
@@ -407,6 +460,8 @@ interface Ebucore {
      *             e.g. representative of a part of a MediaResource.
      */
     "Keyframe": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Keyframe'>;
+    /** A photography, a logo, a pictogram, etc. */
+    "Picture": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Picture'>;
     /**
      * To proivde keywords and define key concepts
      *             illustrating the content of the Resource or EditorialObject. This is provided as free
@@ -425,12 +480,6 @@ interface Ebucore {
     "Licensing": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Licensing'>;
     /** To define a custom link. */
     "Link": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Link'>;
-    /**
-     * A location related to the media resource, e.g.
-     *             depicted in the resource (possibly fictional) or where the resource was created
-     *             (shooting location), etc.
-     */
-    "Location": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Location'>;
     /** A code given to a Location. */
     "LocationCode": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#LocationCode'>;
     /** To define a type of time at a location. */
@@ -447,11 +496,6 @@ interface Ebucore {
     "Logo": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Logo'>;
     /** A MediaFragment is a temporal or spatial segment of a resource identified by a MediaGragment URI (http://www.w3.org/2008/WebVideo/Fragments/WD-media-fragments-spec/). */
     "MediaFragment": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#MediaFragment'>;
-    /**
-     * The use of MediaResource is reserved to
-     *             audiovisual content. In a production process, several MediaResources can be edited and assembled to realsie an Essence ready for distribution (see IMF package and OPL)
-     */
-    "MediaResource": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#MediaResource'>;
     /** To define a type of MediaResource. */
     "MediaResource_Type": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#MediaResource_Type'>;
     /** To provide additional information on the type of media. */
@@ -491,8 +535,6 @@ interface Ebucore {
      *             image.
      */
     "OpenSubtitling": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#OpenSubtitling'>;
-    /** An organisation (business, corporation, federation, etc.) or moral agent (government body). */
-    "Organisation": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Organisation'>;
     /**
      * The original language in which the
      *             BusinessObject or Resource has been created and released. This is provided as free text
@@ -510,23 +552,19 @@ interface Ebucore {
     "Part_Type": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Part_Type'>;
     /** To identify a Party intervening in a transaction or contractual agreement. */
     "Party": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Party'>;
-    /** To describe a Person. */
-    "Person": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Person'>;
     /** To describe a physical resource e.g. a tape. */
     "PhysicalResource": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#PhysicalResource'>;
     /** A visual / graphical representation of a concept. */
     "Pictogram": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Pictogram'>;
-    /** A photography, a logo, a pictogram, etc. */
-    "Picture": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Picture'>;
     /** To define a picture display format code. */
     "PictureDisplayFormat": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#PictureDisplayFormat'>;
     /** A platform like a network or operator platform. */
     "Platform": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Platform'>;
     /**
-     * An EditorialObject corresponding to a
-     *             MediaResource ready for publication.
+     * A service is the umbrella under which one or
+     *             more PublicationChannel is operated.
      */
-    "Programme": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Programme'>;
+    "Service": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Service'>;
     /** To identify and describe Props used in productions (e.g. vehicles, objects of various shapes and brand and purpose, etc.). */
     "Props": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Props'>;
     "Provenance": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Provenance'>;
@@ -538,12 +576,6 @@ interface Ebucore {
     "PublicationChannel": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#PublicationChannel'>;
     /** To define a type of publication channel. */
     "PublicationChannel_Type": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#PublicationChannel_Type'>;
-    /**
-     * To describe any manifestation of a media
-     *             resource on any media (live, on demand, catch-up TV, etc.) and the appropriate
-     *             PublciationChannel.
-     */
-    "PublicationEvent": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#PublicationEvent'>;
     /** To define a type of publication event. */
     "PublicationEvent_Type": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#PublicationEvent_Type'>;
     /**
@@ -561,12 +593,6 @@ interface Ebucore {
      *             channels.
      */
     "RadioProgramme": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#RadioProgramme'>;
-    /**
-     * All the information about the rating/evaluation
-     *             given to a media resource by an Agent i.e. a person/Contact or
-     *             Organisation.
-     */
-    "Rating": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Rating'>;
     /** The record the description of an Asset. */
     "Record": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Record'>;
     /** To define a region.(@en} */
@@ -575,17 +601,10 @@ interface Ebucore {
     "Relation": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Relation'>;
     /** To specify a type of relation. */
     "Relation_Type": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Relation_Type'>;
-    /** To describe a Resource. */
-    "Resource": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Resource'>;
     /** To define a type of resource. */
     "Resource_Type": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Resource_Type'>;
     /** To provide a Review. */
     "Review": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Review'>;
-    /**
-     * To provide information on the rights, including
-     *             intellectual property, related to a BusinessObject or Resource.
-     */
-    "Rights": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Rights'>;
     /**
      * To signal that rights have been cleared (or
      *             not)
@@ -618,11 +637,6 @@ interface Ebucore {
      *             or Radio Series are composed of Episodes.
      */
     "Series": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Series'>;
-    /**
-     * A service is the umbrella under which one or
-     *             more PublicationChannel is operated.
-     */
-    "Service": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Service'>;
     /** To define a type of service. */
     "Service_Type": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Service_Type'>;
     /** A specifc type of Part. */
@@ -635,6 +649,14 @@ interface Ebucore {
      *             can be specified using the appropriate properties.
      */
     "Signing": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Signing'>;
+    /**
+     * A specialisation of Track for Video to provide
+     *             a link to specific data properties such as frameRate, etc. Signing is another possible
+     *             example of video track. Specific VideoTracks such as Signing can be defined as sub
+     *             VideoTracks.. In advanced systems, different VideoTracks can be used to provide e.g.
+     *             different viewing angles.
+     */
+    "VideoTrack": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#VideoTrack'>;
     /**
      * To provide additional information on the
      *             signing format. This is provided as free text in an annotation label or as an identifier
@@ -655,19 +677,12 @@ interface Ebucore {
      *             term in a classification scheme.
      */
     "Storage_Type": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Storage_Type'>;
-    /** A continuous stream of bits. */
-    "Stream": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Stream'>;
     /**
      * A term describing the topic covered by the
      *             BusinessObject or resource. This is provided as free text in an annotation label or as
      *             an identifier pointing to a term in a classification scheme.
      */
     "Subject": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Subject'>;
-    /**
-     * To signal the presence of subtitles for
-     *             translation in alternative languages.
-     */
-    "Subtitling": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Subtitling'>;
     /**
      * To define the format of subtitling.
      *             subtitling's main use isfor translation. This is provided as free text in an
@@ -686,8 +701,6 @@ interface Ebucore {
     "TargetPlatform": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#TargetPlatform'>;
     /** To define a Team. */
     "Team": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Team'>;
-    /** An Essence defined as a Template with all associated technical parameters. */
-    "Template": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Template'>;
     /** To identify a territory e.g. by its UN code. */
     "TerritoryCode": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#TerritoryCode'>;
     /** A class specific to the annotation of a text or portions of text. */
@@ -724,17 +737,10 @@ interface Ebucore {
      *             in a classification scheme.
      */
     "Topic": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Topic'>;
-    /**
-     * Audiovisual content can be composed of audio,
-     *             video and data Tracks (including captioning and subtitling).
-     */
-    "Track": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Track'>;
     /** To define the prupose of a track. */
     "TrackPurpose": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#TrackPurpose'>;
     /** To define a type of track. */
     "Track_Type": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Track_Type'>;
-    /** An expression of type in textual form or as a term from a classification scheme. */
-    "Type": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Type'>;
     /** To define a set of UsageRestrictions. */
     "UsageRestrictions": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#UsageRestrictions'>;
     /** Usage rights associated with content. */
@@ -749,20 +755,21 @@ interface Ebucore {
     "VideoFormat": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#VideoFormat'>;
     /** A decodable video stream of bits. */
     "VideoStream": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#VideoStream'>;
-    /**
-     * A specialisation of Track for Video to provide
-     *             a link to specific data properties such as frameRate, etc. Signing is another possible
-     *             example of video track. Specific VideoTracks such as Signing can be defined as sub
-     *             VideoTracks.. In advanced systems, different VideoTracks can be used to provide e.g.
-     *             different viewing angles.
-     */
-    "VideoTrack": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#VideoTrack'>;
     /** To define a type of wrapping. */
     "WrappingType": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#WrappingType'>;
     /** An abridged title. */
     "abrigedTitle": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#abrigedTitle'>;
+    /** To provide an alternative title. */
+    "alternativeTitle": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#alternativeTitle'>;
     /** To provide an abstract. */
     "abstract": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#abstract'>;
+    /**
+     * This can be specialised by using sub-properties
+     *             like defined in http://www.ebu.ch/metadata/cs/web/ebu_DescriptionTypeCodeCS_p.xml.htm
+     *             implemented as examples as e.g. 'summary' or
+     *             'script'.
+     */
+    "description": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#description'>;
     /** The description of an Action. */
     "actionDescription": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#actionDescription'>;
     /** An identifier attributed to an Action. */
@@ -795,11 +802,15 @@ interface Ebucore {
     "age": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#age'>;
     /** A link to a DBPedia page. */
     "agentDbpedia": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#agentDbpedia'>;
+    /** Range: a URL or URI. */
+    "agentLinkedData": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#agentLinkedData'>;
     /** To provide a description of an Agent. */
     "agentDescription": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#agentDescription'>;
     /** To provide an email address. */
     "agentEmailAddress": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#agentEmailAddress'>;
     "agentFacebook": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#agentFacebook'>;
+    /** Links to an Agent's social media. */
+    "agentSocialMedia": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#agentSocialMedia'>;
     /** The fee of an Agent. */
     "agentFee": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#agentFee'>;
     "agentFlickr": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#agentFlickr'>;
@@ -808,14 +819,17 @@ interface Ebucore {
     /** A link to an imdb page. */
     "agentImdb": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#agentImdb'>;
     "agentInstagram": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#agentInstagram'>;
-    /** Range: a URL or URI. */
-    "agentLinkedData": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#agentLinkedData'>;
     "agentLinkedIn": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#agentLinkedIn'>;
     /**
      * To provide the mobile telephone number of an
      *             Agent (Contact/Person or organisation)
      */
     "agentMobileTelephoneNumber": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#agentMobileTelephoneNumber'>;
+    /**
+     * To provide the telephone number of an Agent
+     *             (Contact/Person or Organisation).
+     */
+    "agentTelephoneNumber": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#agentTelephoneNumber'>;
     /** To provide a name of an Agent. */
     "agentName": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#agentName'>;
     /** To provide a nickname of a Contact/Person. */
@@ -834,13 +848,6 @@ interface Ebucore {
      *             information related to an Agent (Contact/Person or Organisation).
      */
     "agentRelatedPressLink": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#agentRelatedPressLink'>;
-    /** Links to an Agent's social media. */
-    "agentSocialMedia": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#agentSocialMedia'>;
-    /**
-     * To provide the telephone number of an Agent
-     *             (Contact/Person or Organisation).
-     */
-    "agentTelephoneNumber": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#agentTelephoneNumber'>;
     "agentTwitter": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#agentTwitter'>;
     /** Range: string or anyURI or Concept. */
     "agentType": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#agentType'>;
@@ -852,8 +859,6 @@ interface Ebucore {
     /** A link to a wikidata page. */
     "agentWikidata": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#agentWikidata'>;
     "agentWikipedia": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#agentWikipedia'>;
-    /** To provide an alternative title. */
-    "alternativeTitle": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#alternativeTitle'>;
     /** To year of birth of an animal. */
     "animalBirthYear": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#animalBirthYear'>;
     /** To associate a fictitious character name with an animal. */
@@ -882,7 +887,7 @@ interface Ebucore {
     "annotationName": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#annotationName'>;
     /** To estimate the saliency of an Annotation. */
     "annotationSaliency": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#annotationSaliency'>;
-    /** Range: string, anyURI or Concept. */
+    /** To define a type of Annotation. */
     "annotationType": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#annotationType'>;
     /** Range: string or CountryCode. */
     "appliesOutOf": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#appliesOutOf'>;
@@ -938,7 +943,7 @@ interface Ebucore {
     "aspectRatio": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#aspectRatio'>;
     /** To provide a description of an Asset. */
     "assetDescription": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#assetDescription'>;
-    /** An identifier attributed to an Asset. */
+    /** Range: an Identifier or anyURI or string. */
     "assetId": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#assetId'>;
     /** To provide a name of an Asset. */
     "assetName": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#assetName'>;
@@ -946,10 +951,22 @@ interface Ebucore {
     "assetType": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#assetType'>;
     /** The audio bitrate. */
     "audioBitRate": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#audioBitRate'>;
+    /**
+     * To provide the bitrate at which the
+     *             MediaResource can be played in bits/second. Current bitrate if constant, and average bitrate if variable.
+     */
+    "bitRate": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#bitRate'>;
     /** The max audio bitrate. */
     "audioBitRateMax": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#audioBitRateMax'>;
+    /** The maximum bitrate when variable, in bits per second. */
+    "bitRateMax": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#bitRateMax'>;
     /** The audio bitrate mode. */
     "audioBitRateMode": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#audioBitRateMode'>;
+    /**
+     * A flag to indicate if the bit rate is fixed or
+     *             variable.
+     */
+    "bitRateMode": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#bitRateMode'>;
     /**
      * The total number of audio channels contained in
      *             the MediaResource.
@@ -957,8 +974,12 @@ interface Ebucore {
     "audioChannelNumber": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#audioChannelNumber'>;
     /** The encoding level as defined in specifications. */
     "audioEncodingLevel": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#audioEncodingLevel'>;
+    /** To define an encoding level. */
+    "encodingLevel": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#encodingLevel'>;
     /** The encoding profile as defined in specifications. */
     "audioEncodingProfile": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#audioEncodingProfile'>;
+    /** The encoding profile as defined in specifications. */
+    "encodingProfile": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#encodingProfile'>;
     /**
      * The configuration of audio tracks contained in
      *             the MediaResource.
@@ -979,25 +1000,13 @@ interface Ebucore {
     "awardId": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#awardId'>;
     /** To provide the name of an Award. */
     "awardName": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#awardName'>;
-    /** Range: string or Award_Type */
+    /** To define a type of Award. */
     "awardType": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#awardType'>;
     /**
      * To provide the bitdepth at which the
      *             MediaResource has been encoded.
      */
     "bitDepth": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#bitDepth'>;
-    /**
-     * To provide the bitrate at which the
-     *             MediaResource can be played in bits/second. Current bitrate if constant, and average bitrate if variable.
-     */
-    "bitRate": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#bitRate'>;
-    /** The maximum bitrate when variable, in bits per second. */
-    "bitRateMax": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#bitRateMax'>;
-    /**
-     * A flag to indicate if the bit rate is fixed or
-     *             variable.
-     */
-    "bitRateMode": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#bitRateMode'>;
     /**
      * To provide the overall bitrate at which the
      *             MediaResource can be played in bits/second. Current bitrate if constant, and average bitrate if variable.
@@ -1007,7 +1016,7 @@ interface Ebucore {
     "bookmark": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#bookmark'>;
     /** To provide a description of an BusinessObject. */
     "businessObjectDescription": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#businessObjectDescription'>;
-    /** An identifier attributed to an BusinessObject. */
+    /** Range: an Identifier or anyURI or string. */
     "businessObjectId": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#businessObjectId'>;
     /** To provide a name of an BusinessObject. */
     "businessObjectName": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#businessObjectName'>;
@@ -1023,6 +1032,8 @@ interface Ebucore {
     "characterStartIndex": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#characterStartIndex'>;
     /** Identifies relationship between a digital instantiation of a Resource and its direct copy, with no generational loss. */
     "clonedTo": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#clonedTo'>;
+    /** To identify the source of a clone Editorial Object or Resource */
+    "isClonedFrom": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isClonedFrom'>;
     /** To provide information on the product family of the Codec. */
     "codecFamily": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#codecFamily'>;
     /** Range: string or Identifier. */
@@ -1085,13 +1096,6 @@ interface Ebucore {
     "datelicensed": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#datelicensed'>;
     /** To identify a new version derived from the original. */
     "derivedTo": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#derivedTo'>;
-    /**
-     * This can be specialised by using sub-properties
-     *             like defined in http://www.ebu.ch/metadata/cs/web/ebu_DescriptionTypeCodeCS_p.xml.htm
-     *             implemented as examples as e.g. 'summary' or
-     *             'script'.
-     */
-    "description": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#description'>;
     /** Describes the physical dimensions of a MediaResource, with units of measure concatenated to become part of the value. */
     "dimensions": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#dimensions'>;
     /** The description of a Dish. */
@@ -1104,6 +1108,8 @@ interface Ebucore {
     "displayOrder": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#displayOrder'>;
     /** Range: string or Language. */
     "dubbedTo": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#dubbedTo'>;
+    /** the origin of a dubbed MediaResource. */
+    "isDubbedFrom": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isDubbedFrom'>;
     /** To provide information on the duration of an EditorialObject or MediaResource. */
     "duration": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#duration'>;
     /** To provide a duration in edit units. */
@@ -1134,7 +1140,7 @@ interface Ebucore {
     "editUnit": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#editUnit'>;
     /** To provide a description of an EditorialObject. */
     "editorialObjectDescription": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#editorialObjectDescription'>;
-    /** An identifier attributed to an EditorialObject. */
+    /** Range: an Identifier or anyURI or string. */
     "editorialObjectId": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#editorialObjectId'>;
     /** A name attributed to an EditorialObject. */
     "editorialObjectName": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#editorialObjectName'>;
@@ -1146,7 +1152,9 @@ interface Ebucore {
     "emotionDescription": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#emotionDescription'>;
     /** The edit unit number at which the Emotion occurs. */
     "emotionEditUnit": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#emotionEditUnit'>;
-    /** An identifier attributed to an Emotion. */
+    /** To identify a timestamp at which an Emotion can be seen. */
+    "emotionTimestamp": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#emotionTimestamp'>;
+    /** Range: anyURI or string or Identifier */
     "emotionId": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#emotionId'>;
     /** A name attributed to an Emotion. */
     "emotionName": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#emotionName'>;
@@ -1156,14 +1164,8 @@ interface Ebucore {
     "emotionTimecode": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#emotionTimecode'>;
     /** The timecode (dropframe) at which the Emotion occurs. */
     "emotionTimecodeDropFrame": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#emotionTimecodeDropFrame'>;
-    /** To identify a timestamp at which an Emotion can be seen. */
-    "emotionTimestamp": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#emotionTimestamp'>;
     /** A type of Emotion. */
     "emotionType": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#emotionType'>;
-    /** To define an encoding level. */
-    "encodingLevel": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#encodingLevel'>;
-    /** The encoding profile as defined in specifications. */
-    "encodingProfile": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#encodingProfile'>;
     /** To define an end timestamp, e.g. the end point of a MediaResource. */
     "end": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#end'>;
     /** The end time in edit units. */
@@ -1245,8 +1247,16 @@ interface Ebucore {
     "formatVersionId": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#formatVersionId'>;
     /** The height of a video frame. */
     "frameHeight": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#frameHeight'>;
+    /**
+     * The height of e.g. a video frame typically
+     *             expressed as a number of lines or the height of a picture/image expressed in millimeters
+     *             or else.
+     */
+    "height": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#height'>;
     /** The unit used to measure the height of a frame. */
     "frameHeightUnit": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#frameHeightUnit'>;
+    /** To specify a unit to express height. */
+    "heightUnit": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#heightUnit'>;
     /** The unit used to express the frame rate of a MediaResource in frames/second. */
     "frameRate": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#frameRate'>;
     /**
@@ -1256,8 +1266,18 @@ interface Ebucore {
     "frameSizeUnit": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#frameSizeUnit'>;
     /** The width of a video frame. */
     "frameWidth": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#frameWidth'>;
+    /**
+     * The width of e.g. a video frame typically
+     *             expressed as a number of pixels, or picture/image in millimeters.
+     */
+    "width": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#width'>;
     /** The unit used to measure the width of a frame. */
     "frameWidthUnit": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#frameWidthUnit'>;
+    /**
+     * The unit used to measure a width e.g. in pixels
+     *             or number of lines or millimeters or else.
+     */
+    "widthUnit": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#widthUnit'>;
     /** A flag to indicate that the access to the PublicationEvent is 'free'. */
     "free": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#free'>;
     /** The gender of a Person e.g. male or female. */
@@ -1279,6 +1299,8 @@ interface Ebucore {
     "groupType": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#groupType'>;
     /** Range: string or AccessConditions. */
     "hasAccessConditions": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAccessConditions'>;
+    /** Range: a link to Rights or open text (string). */
+    "isCoveredBy": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isCoveredBy'>;
     /** Range: string or Agent. */
     "hasActionRelatedAgent": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasActionRelatedAgent'>;
     /** Range: string or Scene. */
@@ -1298,13 +1320,15 @@ interface Ebucore {
     "hasAgentMember": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAgentMember'>;
     /** Range: a string or CountryCode. */
     "hasAgentNationality": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAgentNationality'>;
-    /** Range: string or Location */
+    /** To indicate the place of residence of an Agent. */
     "hasAgentPlaceOfResidence": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAgentPlaceOfResidence'>;
     "hasAgentRelatedPicture": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAgentRelatedPicture'>;
     /** To identify ancillary data in the media resource. */
     "hasAncillaryData": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAncillaryData'>;
     /** Range: string or AncillaryDataFormat */
     "hasAncillaryDataFormat": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAncillaryDataFormat'>;
+    /** Range: string, Format or any Format-related Concept */
+    "hasFormat": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasFormat'>;
     /** To associate a breed code with an animal. */
     "hasAnimalBreedCode": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAnimalBreedCode'>;
     /** To associate a colour code with an animal. */
@@ -1366,6 +1390,8 @@ interface Ebucore {
     "hasAudienceScoreRecordingTechnique": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAudienceScoreRecordingTechnique'>;
     /** Range:string or AudioCodec */
     "hasAudioCodec": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAudioCodec'>;
+    /** Range: string or Codec */
+    "hasCodec": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasCodec'>;
     /** Range:string or AudioContent_Type. */
     "hasAudioContentType": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAudioContentType'>;
     /**
@@ -1403,14 +1429,17 @@ interface Ebucore {
     /** The logo of a Publication Channel */
     "hasChannelLogo": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasChannelLogo'>;
     /**
+     * Logos can be used in a variety of contexts.
+     *             Logo can be associated with an Organisation or a Service or a PublicationChannel.
+     */
+    "hasLogo": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasLogo'>;
+    /**
      * To associate PublicationEvents with
      *             PublicationChannels.
      */
     "hasChannelPublicationEvent": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasChannelPublicationEvent'>;
     /** Range: a string or a "fictitious" person - Character. */
     "hasCharacter": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasCharacter'>;
-    /** Range: string or Codec */
-    "hasCodec": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasCodec'>;
     /** Range: string or Agent. */
     "hasCodecVendor": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasCodecVendor'>;
     /** Range: string or Concept */
@@ -1467,8 +1496,12 @@ interface Ebucore {
     "hasDopesheet": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasDopesheet'>;
     /** Range: string or Language. */
     "hasDubbedLanguage": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasDubbedLanguage'>;
+    /** Range: string or Language. */
+    "hasLanguage": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasLanguage'>;
     /** Range: string or Identifier. */
     "hasEidrIdentifier": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasEidrIdentifier'>;
+    /** Range: string or Identifier. */
+    "hasIdentifier": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasIdentifier'>;
     /** Range: String or Agent */
     "hasEmotionRelatedAgent": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasEmotionRelatedAgent'>;
     /** Range: string or Scene */
@@ -1477,7 +1510,7 @@ interface Ebucore {
     "hasEncodingFormat": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasEncodingFormat'>;
     /** Range: string or Episode. */
     "hasEpisode": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasEpisode'>;
-    /** An Agent relates to an Event. */
+    /** Range: string or Agent */
     "hasEventRelatedAgent": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasEventRelatedAgent'>;
     /** An artefact related to an Event. */
     "hasEventRelatedArtefact": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasEventRelatedArtefact'>;
@@ -1489,7 +1522,7 @@ interface Ebucore {
     "hasEventRelatedLocation": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasEventRelatedLocation'>;
     /** A Resource relates to an Event. */
     "hasEventRelatedResource": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasEventRelatedResource'>;
-    /** Range: string or EventType */
+    /** To define a type of Event. */
     "hasEventType": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasEventType'>;
     /** Range: string or Exploitation Issues. */
     "hasExploitationIssues": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasExploitationIssues'>;
@@ -1497,9 +1530,7 @@ interface Ebucore {
     "hasFileFormat": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasFileFormat'>;
     /** Range: string or FoodStyle. */
     "hasFoodStyle": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasFoodStyle'>;
-    /** Range: string, Format or any Format-related Concept */
-    "hasFormat": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasFormat'>;
-    /** An identifier attributed to a Format. */
+    /** Range: Identifier or string or anyURI. */
     "hasFormatId": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasFormatId'>;
     /**
      * Identifies the generation of a version of a resource, i.e. master,
@@ -1517,8 +1548,6 @@ interface Ebucore {
     "hasIPRRestrictions": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasIPRRestrictions'>;
     /** A locator / URI or a Picture. */
     "hasIdPicture": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasIdPicture'>;
-    /** Range: string or Identifier. */
-    "hasIdentifier": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasIdentifier'>;
     /** Range: Concept or string */
     "hasIdentifierType": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasIdentifierType'>;
     /** Range: string or Codec */
@@ -1533,8 +1562,8 @@ interface Ebucore {
     "hasKeyPersonalEvent": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasKeyPersonalEvent'>;
     /** Range: Keyword or string or any URI from a controlled vocabulary */
     "hasKeyword": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasKeyword'>;
-    /** Range: string or Language. */
-    "hasLanguage": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasLanguage'>;
+    /** Range: string, anyURI or Subject */
+    "hasSubject": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasSubject'>;
     /** Range: string or Licensing. */
     "hasLicensing": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasLicensing'>;
     /** Range: string or LocationCode. */
@@ -1551,11 +1580,6 @@ interface Ebucore {
     "hasLocationType": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasLocationType'>;
     /** A locator from where the MediaResource can be accessed. */
     "hasLocator": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasLocator'>;
-    /**
-     * Logos can be used in a variety of contexts.
-     *             Logo can be associated with an Organisation or a Service or a PublicationChannel.
-     */
-    "hasLogo": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasLogo'>;
     /** A manifestation is the physical embodiment of work e.g. a tape, a file... */
     "hasManifestation": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasManifestation'>;
     /** To identify the master of a Resource */
@@ -1565,6 +1589,8 @@ interface Ebucore {
      *             withiin a MediaResource.
      */
     "hasMediaFragment": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasMediaFragment'>;
+    /** To identify the Media Resource to which a Media Fragment belongs to */
+    "isMediaFragmentOf": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isMediaFragmentOf'>;
     /** Range: string or Medium */
     "hasMedium": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasMedium'>;
     /** To establish group/collection relationship between EditorialObjects. */
@@ -1719,7 +1745,7 @@ interface Ebucore {
     "hasStaffMember": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasStaffMember'>;
     /** Range: a string or a Role/Concept from a controlled vocabulary. */
     "hasStaffRole": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasStaffRole'>;
-    /** An Agent related to the PublicationPlan. */
+    /** Range: Agent or string */
     "hasStakeholder": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasStakeholder'>;
     /** Identifies the technical video standard of a MediaResource, i.e. NTSC or PAL. */
     "hasStandard": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasStandard'>;
@@ -1727,8 +1753,6 @@ interface Ebucore {
     "hasStorageId": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasStorageId'>;
     /** Range:; string or Storage_Type */
     "hasStorageType": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasStorageType'>;
-    /** Range: string, anyURI or Subject */
-    "hasSubject": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasSubject'>;
     /** Range: string or Subtitling */
     "hasSubtitling": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasSubtitling'>;
     /** Range: string or SubtitlingFormat */
@@ -1737,7 +1761,7 @@ interface Ebucore {
     "hasSubtitlingSource": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasSubtitlingSource'>;
     /** Range: string or TargetAudience. */
     "hasTargetAudience": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasTargetAudience'>;
-    /** Range: string or TargetPlatform. */
+    /** To specify a target platform. */
     "hasTargetPlatform": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasTargetPlatform'>;
     /** Range: a Person or a string */
     "hasTeamMember": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasTeamMember'>;
@@ -1779,6 +1803,8 @@ interface Ebucore {
     "hasUsageRights": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasUsageRights'>;
     /** To identify another version of an Asset, BusinessObject or Resource. */
     "hasVersion": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasVersion'>;
+    /** To identify related versions. */
+    "isVersionOf": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isVersionOf'>;
     /** Range: string or VideoCodec */
     "hasVideoCodec": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasVideoCodec'>;
     /** Range: string or VideoEncodingFormat */
@@ -1793,14 +1819,6 @@ interface Ebucore {
      *             subproperties.
      */
     "hashValue": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hashValue'>;
-    /**
-     * The height of e.g. a video frame typically
-     *             expressed as a number of lines or the height of a picture/image expressed in millimeters
-     *             or else.
-     */
-    "height": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#height'>;
-    /** To specify a unit to express height. */
-    "heightUnit": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#heightUnit'>;
     /** To provide highlights. */
     "highlights": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#highlights'>;
     /** The hobbies of a Person. */
@@ -1813,6 +1831,8 @@ interface Ebucore {
     "identifierValue": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#identifierValue'>;
     /** Identifies the inches per second at which an analog audio tape should be played back for human consumption. */
     "inchesPerSecond": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#inchesPerSecond'>;
+    /** Identifies the rate of units against time at which the resource should be played back for human consumption.  If the unit of measure is known, use sub-properties framesPerSecond or inchesPerSecond. */
+    "playbackSpeed": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#playbackSpeed'>;
     /**
      * To link a particular manifestation of a
      *             BusinessObject to the corresponding Resource.
@@ -1836,25 +1856,19 @@ interface Ebucore {
     "isCharacter": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isCharacter'>;
     /** To link a BusinessOject or Resource to a parent. */
     "isChildOf": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isChildOf'>;
-    /** To identify the source of a clone Editorial Object or Resource */
-    "isClonedFrom": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isClonedFrom'>;
     /** To identify mediaResources used to compose an Essence. */
     "isComposedOf": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isComposedOf'>;
-    /** Range: a link to Rights or open text (string). */
-    "isCoveredBy": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isCoveredBy'>;
     /** Identifies a content-based relationship between two resources. */
     "isDerivedFrom": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isDerivedFrom'>;
     /** Range: Service or string. */
     "isDistributedOn": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isDistributedOn'>;
-    /** the origin of a dubbed MediaResource. */
-    "isDubbedFrom": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isDubbedFrom'>;
     /** To identify an Editorial Object based on the same Editorial format */
     "isEditorialFormatOf": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isEditorialFormatOf'>;
     /** Range: Series or string. */
     "isEpisodeOf": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isEpisodeOf'>;
-    /** Range: string or Season. */
+    /** The Episode of a Series or a Season. */
     "isEpisodeOfSeason": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isEpisodeOfSeason'>;
-    /** Range: string or Series. */
+    /** The Episode of a Series or a Season. */
     "isEpisodeOfSeries": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isEpisodeOfSeries'>;
     /** Range: a string or a FictitiousPerson. */
     "isFictitiousPerson": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isFictitiousPerson'>;
@@ -1864,8 +1878,6 @@ interface Ebucore {
     "isIssuedBy": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isIssuedBy'>;
     /** To identify the master of a derived media resource. */
     "isMasterOf": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isMasterOf'>;
-    /** To identify the Media Resource to which a Media Fragment belongs to */
-    "isMediaFragmentOf": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isMediaFragmentOf'>;
     /** Range: string or Group. */
     "isMemberOf": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isMemberOf'>;
     /** To identify a parent Publication Plan */
@@ -1904,8 +1916,6 @@ interface Ebucore {
     "isTimelineTrackPartOf": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isTimelineTrackPartOf'>;
     /** An element to identify a part of a track by a title, a start time and an end time in both the media source and media destination. */
     "isTrackPartOf": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isTrackPartOf'>;
-    /** To identify related versions. */
-    "isVersionOf": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isVersionOf'>;
     /**
      * To provide the number of the line on which
      *             ancillary data is being carried and the equivalent in the digital domain.
@@ -1983,6 +1993,8 @@ interface Ebucore {
     "log": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#log'>;
     /** The value for integrated loudness measured at AudioProgramme or AudioContent level. */
     "loudnessIntegratedLoudness": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#loudnessIntegratedLoudness'>;
+    /** To provide loudness parameters. */
+    "loudnessParameters": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#loudnessParameters'>;
     /** The value for maximum momentary loudness measured at AudioProgramme or AudioContent level. */
     "loudnessMaxMomentary": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#loudnessMaxMomentary'>;
     /** The value for maximum max short term loudness measured at AudioProgramme or AudioContent level. */
@@ -1991,8 +2003,6 @@ interface Ebucore {
     "loudnessMaxTruepeak": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#loudnessMaxTruepeak'>;
     /** The method for loudness measurement at AudioProgramme or AudioContent level. */
     "loudnessMethod": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#loudnessMethod'>;
-    /** To provide loudness parameters. */
-    "loudnessParameters": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#loudnessParameters'>;
     /** The loudness range measured at AudioProgramme or AudioContent level. */
     "loudnessRange": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#loudnessRange'>;
     /**
@@ -2000,13 +2010,21 @@ interface Ebucore {
      *             EditorialObject.
      */
     "mainTitle": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#mainTitle'>;
+    /**
+     * All value of the EBU title status
+     *             classification scheme
+     *             (http://www.ebu.ch/metadata/cs/web/ebu_TitleStatusCodeCS_p.xml.htm) are candidates
+     *             subproperties of the title property as implemented for an example with
+     *             alternativeTitle.
+     */
+    "title": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#title'>;
     /** To identify the marital status of a Person. */
     "maritalStatus": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#maritalStatus'>;
     /** A description of a MediaResource. */
     "mediaResourceDescription": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#mediaResourceDescription'>;
     /** Range: Identifier or string */
     "mediaResourceId": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#mediaResourceId'>;
-    /** Range: MediaResource_Type or string */
+    /** To identify a type of MediaResource, e.g. a template'. */
     "mediaResourceType": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#mediaResourceType'>;
     /** A flag to indicate whether it is allowed to insert ad breaks in mid-roll. */
     "midRollAdAllowed": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#midRollAdAllowed'>;
@@ -2092,7 +2110,7 @@ interface Ebucore {
     "personDescription": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#personDescription'>;
     /** To indicate the height of a person. */
     "personHeight": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#personHeight'>;
-    /** An identifier attributed to a Person. */
+    /** Range: an Identifier or anyURI or string. */
     "personId": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#personId'>;
     /** To provide e.g. compound names. */
     "personName": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#personName'>;
@@ -2100,8 +2118,6 @@ interface Ebucore {
     "personType": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#personType'>;
     /** To indicate the weight of a person. */
     "personWeight": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#personWeight'>;
-    /** Identifies the rate of units against time at which the resource should be played back for human consumption.  If the unit of measure is known, use sub-properties framesPerSecond or inchesPerSecond. */
-    "playbackSpeed": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#playbackSpeed'>;
     /** To provide a playlist. */
     "playlist": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#playlist'>;
     /** To identify the Essence used in a PublicationEvent */
@@ -2151,7 +2167,7 @@ interface Ebucore {
     "pubStatus": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#pubStatus'>;
     /** To provide a description of a PublicationChannel e.g. a TV channel or website. */
     "publicationChannelDescription": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#publicationChannelDescription'>;
-    /** An identifier attributed to a PublicationChannel. */
+    /** Range: Identifier, anyURI, string */
     "publicationChannelId": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#publicationChannelId'>;
     /** To provide a name to a PublicationChannel e.g. a TV channel or website. */
     "publicationChannelName": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#publicationChannelName'>;
@@ -2165,7 +2181,7 @@ interface Ebucore {
     "publicationEventAbstract": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#publicationEventAbstract'>;
     /** To provide the description of a PublicationEvent. */
     "publicationEventDescription": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#publicationEventDescription'>;
-    /** An identifier attributed to a PublicationEvent. */
+    /** Range: Identifier, anyURI, string */
     "publicationEventId": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#publicationEventId'>;
     /** To provide a name to a PublicationEvent. */
     "publicationEventName": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#publicationEventName'>;
@@ -2177,7 +2193,7 @@ interface Ebucore {
     "publicationPlanDescription": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#publicationPlanDescription'>;
     /** The end date of a PublicationPlan */
     "publicationPlanEndDate": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#publicationPlanEndDate'>;
-    /** An identifier attributed to a PublicationPlan. */
+    /** Range: Identifier, anyURI, string */
     "publicationPlanId": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#publicationPlanId'>;
     /** A name attributed to a PublicationPlan. */
     "publicationPlanName": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#publicationPlanName'>;
@@ -2305,7 +2321,7 @@ interface Ebucore {
     "rightsEndDateTime": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#rightsEndDateTime'>;
     /** To express an expression of Rights. */
     "rightsExpression": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#rightsExpression'>;
-    /** An identifier attributed to a set of Rights. */
+    /** Range: Identifier, anyURI, string */
     "rightsId": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#rightsId'>;
     /**
      * A link to e.g. a webpage where an expression of
@@ -2314,9 +2330,9 @@ interface Ebucore {
     "rightsLink": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#rightsLink'>;
     /** To define the start time since when Rights are applicable. */
     "rightsStartDateTime": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#rightsStartDateTime'>;
-    /** A list of country or region codes to which Rights do not apply. */
+    /** Range: string or CountryCode. */
     "rightsTerritoryExcludes": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#rightsTerritoryExcludes'>;
-    /** A list of country or region codes to which Rights apply. */
+    /** Range: string or CountryCode. */
     "rightsTerritoryIncludes": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#rightsTerritoryIncludes'>;
     /** Range: a string or a Rights_Type or a ContractType. */
     "rightsType": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#rightsType'>;
@@ -2417,10 +2433,10 @@ interface Ebucore {
     "textLineContent": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#textLineContent'>;
     /** The end time of a TextLine expressed as a number of edit units. */
     "textLineEndEditUnits": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#textLineEndEditUnits'>;
-    /** The end time of a TextLine expressed as a normal play time. */
-    "textLineEndNormalPlayTime": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#textLineEndNormalPlayTime'>;
     /** The end time point of a TextLine in a Scene. */
     "textLineEndTime": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#textLineEndTime'>;
+    /** The end time of a TextLine expressed as a normal play time. */
+    "textLineEndNormalPlayTime": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#textLineEndNormalPlayTime'>;
     /** The end time of a TextLine expressed as timecode. */
     "textLineEndTimecode": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#textLineEndTimecode'>;
     /** The end time of a TextLine expressed as timecode with drop frames. */
@@ -2429,10 +2445,10 @@ interface Ebucore {
     "textLineOrder": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#textLineOrder'>;
     /** The start time of a TextLine expressed as a number of edit units. */
     "textLineStartEditUnits": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#textLineStartEditUnits'>;
-    /** The start time of a TextLine expressed as a normal play time. */
-    "textLineStartNormalPlayTime": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#textLineStartNormalPlayTime'>;
     /** The start time point of a TextLine in a Scene. */
     "textLineStartTime": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#textLineStartTime'>;
+    /** The start time of a TextLine expressed as a normal play time. */
+    "textLineStartNormalPlayTime": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#textLineStartNormalPlayTime'>;
     /** The start time of a TextLine expressed as timecode. */
     "textLineStartTimecode": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#textLineStartTimecode'>;
     /** The start time of a TextLine expressed as timecode with drop frames. */
@@ -2458,14 +2474,6 @@ interface Ebucore {
      *             timecode with drop frames.
      */
     "timelineTrackDurationTimecodeDropFrame": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#timelineTrackDurationTimecodeDropFrame'>;
-    /**
-     * All value of the EBU title status
-     *             classification scheme
-     *             (http://www.ebu.ch/metadata/cs/web/ebu_TitleStatusCodeCS_p.xml.htm) are candidates
-     *             subproperties of the title property as implemented for an example with
-     *             alternativeTitle.
-     */
-    "title": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#title'>;
     /** To provide the total number of episodes in a Series or a Season. */
     "totalNumberOfEpisodes": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#totalNumberOfEpisodes'>;
     /** To provide the total number of members in a Group. */
@@ -2475,7 +2483,7 @@ interface Ebucore {
      *             Track.
      */
     "trackDefinition": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#trackDefinition'>;
-    /** An Identifier attributed to a Track. */
+    /** Range: Identifier, anyURI, string */
     "trackId": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#trackId'>;
     /**
      * To provide  name of a
@@ -2509,16 +2517,6 @@ interface Ebucore {
     "videoEncodingLevel": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#videoEncodingLevel'>;
     /** The encoding level as defined in specifications. */
     "videoEncodingProfile": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#videoEncodingProfile'>;
-    /**
-     * The width of e.g. a video frame typically
-     *             expressed as a number of pixels, or picture/image in millimeters.
-     */
-    "width": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#width'>;
-    /**
-     * The unit used to measure a width e.g. in pixels
-     *             or number of lines or millimeters or else.
-     */
-    "widthUnit": NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#widthUnit'>;
     /**
      * The number of words contained in a
      *             document.

@@ -1,244 +1,73 @@
-import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
+import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
 interface Geo {
     '': NamedNode<'http://www.opengis.net/ont/geosparql#'>;
-    /**
-     *       This class represents the top-level feature type. This class is 
-     *       equivalent to GFI_Feature defined in ISO 19156:2011, and it is 
-     *       superclass of all feature types.
-     *     
-     */
     "Feature": NamedNode<'http://www.opengis.net/ont/geosparql#Feature'>;
-    /**
-     *       The class represents the top-level geometry type. This class is 
-     *       equivalent to the UML class GM_Object defined in ISO 19107, and 
-     *       it is superclass of all geometry types.
-     *     
-     */
-    "Geometry": NamedNode<'http://www.opengis.net/ont/geosparql#Geometry'>;
-    /**
-     *       The class spatial-object represents everything that can have 
-     *       a spatial representation. It is superclass of feature and geometry.
-     *     
-     */
     "SpatialObject": NamedNode<'http://www.opengis.net/ont/geosparql#SpatialObject'>;
-    /**
-     *       The GML serialization of a geometry
-     *     
-     */
-    "asGML": NamedNode<'http://www.opengis.net/ont/geosparql#asGML'>;
-    /**
-     *       The WKT serialization of a geometry
-     *     
-     */
-    "asWKT": NamedNode<'http://www.opengis.net/ont/geosparql#asWKT'>;
-    /**
-     *       The number of measurements or axes needed to describe the position of this
-     *       geometry in a coordinate system.
-     *     
-     */
-    "coordinateDimension": NamedNode<'http://www.opengis.net/ont/geosparql#coordinateDimension'>;
-    /**
-     *       The default geometry to be used in spatial calculations.
-     *       It is Usually the most detailed geometry.
-     *     
-     */
-    "defaultGeometry": NamedNode<'http://www.opengis.net/ont/geosparql#defaultGeometry'>;
-    /**
-     *       The topological dimension of this geometric object, which 
-     *       must be less than or equal to the coordinate dimension. 
-     *       In non-homogeneous collections, this will return the largest 
-     *       topological dimension of the contained objects.
-     *     
-     */
-    "dimension": NamedNode<'http://www.opengis.net/ont/geosparql#dimension'>;
-    /**
-     *       Exists if the subject SpatialObject spatially contains the 
-     *       object SpatialObject. DE-9IM: T*TFF*FF*
-     *     
-     */
-    "ehContains": NamedNode<'http://www.opengis.net/ont/geosparql#ehContains'>;
-    /**
-     *       Exists if the subject SpatialObject is spatially covered 
-     *       by the object SpatialObject. DE-9IM: TFF*TFT**
-     *     
-     */
-    "ehCoveredBy": NamedNode<'http://www.opengis.net/ont/geosparql#ehCoveredBy'>;
-    /**
-     *       Exists if the subject SpatialObject spatially covers the 
-     *       object SpatialObject. DE-9IM: T*TFT*FF*
-     *     
-     */
-    "ehCovers": NamedNode<'http://www.opengis.net/ont/geosparql#ehCovers'>;
-    /**
-     *       Exists if the subject SpatialObject is spatially disjoint
-     *       from the object SpatialObject. DE-9IM: FF*FF****
-     *     
-     */
-    "ehDisjoint": NamedNode<'http://www.opengis.net/ont/geosparql#ehDisjoint'>;
-    /**
-     *       Exists if the subject SpatialObject spatially equals the 
-     *       object SpatialObject. DE-9IM: TFFFTFFFT
-     *     
-     */
-    "ehEquals": NamedNode<'http://www.opengis.net/ont/geosparql#ehEquals'>;
-    /**
-     *       Exists if the subject SpatialObject is spatially inside 
-     *       the object SpatialObject. DE-9IM: TFF*FFT**
-     *     
-     */
-    "ehInside": NamedNode<'http://www.opengis.net/ont/geosparql#ehInside'>;
-    /**
-     *       Exists if the subject SpatialObject spatially meets the 
-     *       object SpatialObject. 
-     *       DE-9IM: FT******* ^ F**T***** ^ F***T****
-     *     
-     */
-    "ehMeet": NamedNode<'http://www.opengis.net/ont/geosparql#ehMeet'>;
-    /**
-     *       Exists if the subject SpatialObject spatially overlaps the 
-     *       object SpatialObject. DE-9IM: T*T***T**
-     *     
-     */
-    "ehOverlap": NamedNode<'http://www.opengis.net/ont/geosparql#ehOverlap'>;
-    /**
-     *       A GML serialization of a geometry object.
-     *     
-     */
-    "gmlLiteral": NamedNode<'http://www.opengis.net/ont/geosparql#gmlLiteral'>;
-    /**
-     *       A spatial representation for a given feature.
-     *     
-     */
-    "hasGeometry": NamedNode<'http://www.opengis.net/ont/geosparql#hasGeometry'>;
-    /**
-     *       Connects a geometry object with its text-based serialization.
-     *     
-     */
+    "Geometry": NamedNode<'http://www.opengis.net/ont/geosparql#Geometry'>;
+    "FeatureCollection": NamedNode<'http://www.opengis.net/ont/geosparql#FeatureCollection'>;
+    "SpatialObjectCollection": NamedNode<'http://www.opengis.net/ont/geosparql#SpatialObjectCollection'>;
+    "GeometryCollection": NamedNode<'http://www.opengis.net/ont/geosparql#GeometryCollection'>;
+    "asDGGS": NamedNode<'http://www.opengis.net/ont/geosparql#asDGGS'>;
+    "dggsLiteral": NamedNode<'http://www.opengis.net/ont/geosparql#dggsLiteral'>;
     "hasSerialization": NamedNode<'http://www.opengis.net/ont/geosparql#hasSerialization'>;
-    /**
-     *       (true) if this geometric object is the empty Geometry. If 
-     *       true, then this geometric object represents the empty point 
-     *       set for the coordinate space.
-     *     
-     */
-    "isEmpty": NamedNode<'http://www.opengis.net/ont/geosparql#isEmpty'>;
-    /**
-     *       (true) if this geometric object has no anomalous geometric 
-     *       points, such as self intersection or self tangency.
-     *     
-     */
-    "isSimple": NamedNode<'http://www.opengis.net/ont/geosparql#isSimple'>;
-    /**
-     *       Exists if the subject SpatialObject is spatially disjoint
-     *       from the object SpatialObject. DE-9IM: FFTFFTTTT
-     *     
-     */
-    "rcc8dc": NamedNode<'http://www.opengis.net/ont/geosparql#rcc8dc'>;
-    /**
-     *       Exists if the subject SpatialObject spatially meets the 
-     *       object SpatialObject. DE-9IM: FFTFTTTTT
-     *     
-     */
-    "rcc8ec": NamedNode<'http://www.opengis.net/ont/geosparql#rcc8ec'>;
-    /**
-     *       Exists if the subject SpatialObject spatially equals the 
-     *       object SpatialObject. DE-9IM: TFFFTFFFT
-     *     
-     */
-    "rcc8eq": NamedNode<'http://www.opengis.net/ont/geosparql#rcc8eq'>;
-    /**
-     *       Exists if the subject SpatialObject is spatially inside 
-     *       the object SpatialObject. DE-9IM: TFFTFFTTT
-     *     
-     */
-    "rcc8ntpp": NamedNode<'http://www.opengis.net/ont/geosparql#rcc8ntpp'>;
-    /**
-     *       Exists if the subject SpatialObject spatially contains the 
-     *       object SpatialObject. DE-9IM: TTTFFTFFT
-     *     
-     */
-    "rcc8ntppi": NamedNode<'http://www.opengis.net/ont/geosparql#rcc8ntppi'>;
-    /**
-     *       Exists if the subject SpatialObject spatially overlaps the 
-     *       object SpatialObject. DE-9IM: TTTTTTTTT
-     *     
-     */
-    "rcc8po": NamedNode<'http://www.opengis.net/ont/geosparql#rcc8po'>;
-    /**
-     *       Exists if the subject SpatialObject is spatially covered 
-     *       by the object SpatialObject. DE-9IM: TFFTTFTTT
-     *     
-     */
-    "rcc8tpp": NamedNode<'http://www.opengis.net/ont/geosparql#rcc8tpp'>;
-    /**
-     *       Exists if the subject SpatialObject spatially covers the 
-     *       object SpatialObject. DE-9IM: TTTFTTFFT
-     *     
-     */
-    "rcc8tppi": NamedNode<'http://www.opengis.net/ont/geosparql#rcc8tppi'>;
-    /**
-     *       Exists if the subject SpatialObject spatially contains the 
-     *       object SpatialObject. DE-9IM: T*****FF*
-     *     
-     */
-    "sfContains": NamedNode<'http://www.opengis.net/ont/geosparql#sfContains'>;
-    /**
-     *       Exists if the subject SpatialObject spatially crosses the 
-     *       object SpatialObject. DE-9IM: T*T******
-     *     
-     */
-    "sfCrosses": NamedNode<'http://www.opengis.net/ont/geosparql#sfCrosses'>;
-    /**
-     *       Exists if the subject SpatialObject is spatially disjoint 
-     *       from the object SpatialObject. DE-9IM: FF*FF****
-     *     
-     */
-    "sfDisjoint": NamedNode<'http://www.opengis.net/ont/geosparql#sfDisjoint'>;
-    /**
-     *       Exists if the subject SpatialObject spatially equals the 
-     *       object SpatialObject. DE-9IM: TFFFTFFFT
-     *     
-     */
-    "sfEquals": NamedNode<'http://www.opengis.net/ont/geosparql#sfEquals'>;
-    /**
-     *       Exists if the subject SpatialObject is not spatially disjoint 
-     *       from the object SpatialObject.
-     *       DE-9IM: T******** ^ *T******* ^ ***T***** ^ ****T**** 
-     *     
-     */
-    "sfIntersects": NamedNode<'http://www.opengis.net/ont/geosparql#sfIntersects'>;
-    /**
-     *       Exists if the subject SpatialObject spatially overlaps the 
-     *       object SpatialObject. DE-9IM: T*T***T** 
-     *     
-     */
-    "sfOverlaps": NamedNode<'http://www.opengis.net/ont/geosparql#sfOverlaps'>;
-    /**
-     *       Exists if the subject SpatialObject spatially touches the 
-     *       object SpatialObject.
-     *       DE-9IM: FT******* ^ F**T***** ^ F***T****
-     *     
-     */
-    "sfTouches": NamedNode<'http://www.opengis.net/ont/geosparql#sfTouches'>;
-    /**
-     *       Exists if the subject SpatialObject is spatially within the 
-     *       object SpatialObject. DE-9IM: T*F**F***
-     *     
-     */
-    "sfWithin": NamedNode<'http://www.opengis.net/ont/geosparql#sfWithin'>;
-    /**
-     *       The number of measurements or axes needed to describe the spatial position of 
-     *       this geometry in a coordinate system.
-     *     
-     */
-    "spatialDimension": NamedNode<'http://www.opengis.net/ont/geosparql#spatialDimension'>;
-    /**
-     *       A Well-known Text serialization of a geometry object.
-     *     
-     */
+    "asGML": NamedNode<'http://www.opengis.net/ont/geosparql#asGML'>;
+    "gmlLiteral": NamedNode<'http://www.opengis.net/ont/geosparql#gmlLiteral'>;
+    "asGeoJSON": NamedNode<'http://www.opengis.net/ont/geosparql#asGeoJSON'>;
+    "geoJSONLiteral": NamedNode<'http://www.opengis.net/ont/geosparql#geoJSONLiteral'>;
+    "asKML": NamedNode<'http://www.opengis.net/ont/geosparql#asKML'>;
+    "kmlLiteral": NamedNode<'http://www.opengis.net/ont/geosparql#kmlLiteral'>;
+    "asWKT": NamedNode<'http://www.opengis.net/ont/geosparql#asWKT'>;
     "wktLiteral": NamedNode<'http://www.opengis.net/ont/geosparql#wktLiteral'>;
+    "coordinateDimension": NamedNode<'http://www.opengis.net/ont/geosparql#coordinateDimension'>;
+    "defaultGeometry": NamedNode<'http://www.opengis.net/ont/geosparql#defaultGeometry'>;
+    "hasGeometry": NamedNode<'http://www.opengis.net/ont/geosparql#hasGeometry'>;
+    "hasDefaultGeometry": NamedNode<'http://www.opengis.net/ont/geosparql#hasDefaultGeometry'>;
+    "dimension": NamedNode<'http://www.opengis.net/ont/geosparql#dimension'>;
+    "ehContains": NamedNode<'http://www.opengis.net/ont/geosparql#ehContains'>;
+    "ehCoveredBy": NamedNode<'http://www.opengis.net/ont/geosparql#ehCoveredBy'>;
+    "ehCovers": NamedNode<'http://www.opengis.net/ont/geosparql#ehCovers'>;
+    "ehDisjoint": NamedNode<'http://www.opengis.net/ont/geosparql#ehDisjoint'>;
+    "sfDisjoint": NamedNode<'http://www.opengis.net/ont/geosparql#sfDisjoint'>;
+    "ehEquals": NamedNode<'http://www.opengis.net/ont/geosparql#ehEquals'>;
+    "sfEquals": NamedNode<'http://www.opengis.net/ont/geosparql#sfEquals'>;
+    "ehInside": NamedNode<'http://www.opengis.net/ont/geosparql#ehInside'>;
+    "ehMeet": NamedNode<'http://www.opengis.net/ont/geosparql#ehMeet'>;
+    "sfTouches": NamedNode<'http://www.opengis.net/ont/geosparql#sfTouches'>;
+    "ehOverlap": NamedNode<'http://www.opengis.net/ont/geosparql#ehOverlap'>;
+    "hasArea": NamedNode<'http://www.opengis.net/ont/geosparql#hasArea'>;
+    "hasSize": NamedNode<'http://www.opengis.net/ont/geosparql#hasSize'>;
+    "hasBoundingBox": NamedNode<'http://www.opengis.net/ont/geosparql#hasBoundingBox'>;
+    "hasCentroid": NamedNode<'http://www.opengis.net/ont/geosparql#hasCentroid'>;
+    "hasLength": NamedNode<'http://www.opengis.net/ont/geosparql#hasLength'>;
+    "hasMetricArea": NamedNode<'http://www.opengis.net/ont/geosparql#hasMetricArea'>;
+    "hasMetricSize": NamedNode<'http://www.opengis.net/ont/geosparql#hasMetricSize'>;
+    "hasMetricLength": NamedNode<'http://www.opengis.net/ont/geosparql#hasMetricLength'>;
+    "hasMetricPerimeterLength": NamedNode<'http://www.opengis.net/ont/geosparql#hasMetricPerimeterLength'>;
+    "hasMetricSpatialAccuracy": NamedNode<'http://www.opengis.net/ont/geosparql#hasMetricSpatialAccuracy'>;
+    "hasMetricSpatialResolution": NamedNode<'http://www.opengis.net/ont/geosparql#hasMetricSpatialResolution'>;
+    "hasMetricVolume": NamedNode<'http://www.opengis.net/ont/geosparql#hasMetricVolume'>;
+    "hasPerimeterLength": NamedNode<'http://www.opengis.net/ont/geosparql#hasPerimeterLength'>;
+    "hasSpatialAccuracy": NamedNode<'http://www.opengis.net/ont/geosparql#hasSpatialAccuracy'>;
+    "hasSpatialResolution": NamedNode<'http://www.opengis.net/ont/geosparql#hasSpatialResolution'>;
+    "hasVolume": NamedNode<'http://www.opengis.net/ont/geosparql#hasVolume'>;
+    "isEmpty": NamedNode<'http://www.opengis.net/ont/geosparql#isEmpty'>;
+    "isSimple": NamedNode<'http://www.opengis.net/ont/geosparql#isSimple'>;
+    "rcc8dc": NamedNode<'http://www.opengis.net/ont/geosparql#rcc8dc'>;
+    "rcc8ec": NamedNode<'http://www.opengis.net/ont/geosparql#rcc8ec'>;
+    "rcc8eq": NamedNode<'http://www.opengis.net/ont/geosparql#rcc8eq'>;
+    "rcc8ntpp": NamedNode<'http://www.opengis.net/ont/geosparql#rcc8ntpp'>;
+    "rcc8ntppi": NamedNode<'http://www.opengis.net/ont/geosparql#rcc8ntppi'>;
+    "rcc8po": NamedNode<'http://www.opengis.net/ont/geosparql#rcc8po'>;
+    "rcc8tpp": NamedNode<'http://www.opengis.net/ont/geosparql#rcc8tpp'>;
+    "rcc8tppi": NamedNode<'http://www.opengis.net/ont/geosparql#rcc8tppi'>;
+    "sfContains": NamedNode<'http://www.opengis.net/ont/geosparql#sfContains'>;
+    "sfCrosses": NamedNode<'http://www.opengis.net/ont/geosparql#sfCrosses'>;
+    "sfIntersects": NamedNode<'http://www.opengis.net/ont/geosparql#sfIntersects'>;
+    "sfOverlaps": NamedNode<'http://www.opengis.net/ont/geosparql#sfOverlaps'>;
+    "sfWithin": NamedNode<'http://www.opengis.net/ont/geosparql#sfWithin'>;
+    "spatialDimension": NamedNode<'http://www.opengis.net/ont/geosparql#spatialDimension'>;
 }
 
 const builder = namespace("http://www.opengis.net/ont/geosparql#") as any;

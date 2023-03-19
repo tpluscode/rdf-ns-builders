@@ -1,4 +1,4 @@
-import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
+import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
 interface Cc {
@@ -9,10 +9,20 @@ interface Cc {
      */
     "Attribution": NamedNode<'http://creativecommons.org/ns#Attribution'>;
     /**
+     * an action that may or
+     * 		    may not be requested of you
+     */
+    "Requirement": NamedNode<'http://creativecommons.org/ns#Requirement'>;
+    /**
      * exercising rights for
      * 		    commercial purposes
      */
     "CommercialUse": NamedNode<'http://creativecommons.org/ns#CommercialUse'>;
+    /**
+     * something you may be
+     * 		    asked not to do
+     */
+    "Prohibition": NamedNode<'http://creativecommons.org/ns#Prohibition'>;
     /**
      * derivative and
      * 		    combined works must be licensed under specified
@@ -25,6 +35,11 @@ interface Cc {
      * 		    derivative works
      */
     "DerivativeWorks": NamedNode<'http://creativecommons.org/ns#DerivativeWorks'>;
+    /**
+     * an action that may or
+     * 		    may not be allowed or desired
+     */
+    "Permission": NamedNode<'http://creativecommons.org/ns#Permission'>;
     /**
      * distribution, public
      * 		    display, and publicly performance
@@ -61,25 +76,10 @@ interface Cc {
      */
     "Notice": NamedNode<'http://creativecommons.org/ns#Notice'>;
     /**
-     * an action that may or
-     * 		    may not be allowed or desired
-     */
-    "Permission": NamedNode<'http://creativecommons.org/ns#Permission'>;
-    /**
-     * something you may be
-     * 		    asked not to do
-     */
-    "Prohibition": NamedNode<'http://creativecommons.org/ns#Prohibition'>;
-    /**
      * making multiple
      * 		    copies
      */
     "Reproduction": NamedNode<'http://creativecommons.org/ns#Reproduction'>;
-    /**
-     * an action that may or
-     * 		    may not be requested of you
-     */
-    "Requirement": NamedNode<'http://creativecommons.org/ns#Requirement'>;
     /**
      * derivative works be
      * 		    licensed under the same terms or compatible terms

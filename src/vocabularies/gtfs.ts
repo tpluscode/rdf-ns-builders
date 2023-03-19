@@ -1,4 +1,4 @@
-import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
+import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
 interface Gtfs {
@@ -7,20 +7,32 @@ interface Gtfs {
     "Agency": NamedNode<'http://vocab.gtfs.org/terms#Agency'>;
     /** La tarifa se debe pagar antes de subir a bordo */
     "BeforeBoarding": NamedNode<'http://vocab.gtfs.org/terms#BeforeBoarding'>;
+    /** Method to pay for the public transit service */
+    "PaymentMethod": NamedNode<'http://vocab.gtfs.org/terms#PaymentMethod'>;
     /** Used for short- and long-distance bus routes. */
     "Bus": NamedNode<'http://vocab.gtfs.org/terms#Bus'>;
+    /** Describe el tipo de transporte usado en una ruta */
+    "RouteType": NamedNode<'http://vocab.gtfs.org/terms#RouteType'>;
     /** Used for street-level cable cars where the cable runs beneath the car. */
     "CableCar": NamedNode<'http://vocab.gtfs.org/terms#CableCar'>;
     /** Defines service availability for a specific date */
     "CalendarDateRule": NamedNode<'http://vocab.gtfs.org/terms#CalendarDateRule'>;
+    /** A comment on the relation between the RDFS ontology and the CSV specification. */
+    "comment": NamedNode<'http://vocab.gtfs.org/terms#comment'>;
+    /** One or more service rules define a set of dates */
+    "ServiceRule": NamedNode<'http://vocab.gtfs.org/terms#ServiceRule'>;
     /** Define en qué días de la semana el servicio está disponible para un periodo concreto. */
     "CalendarRule": NamedNode<'http://vocab.gtfs.org/terms#CalendarRule'>;
     /** Check the (parent) station for accessibility information. */
     "CheckParentStation": NamedNode<'http://vocab.gtfs.org/terms#CheckParentStation'>;
+    /** A class whom's instances indicate how accessible a gtfs:Trip, gtfs:Stop or gtfs:Station is. */
+    "WheelchairBoardingStatus": NamedNode<'http://vocab.gtfs.org/terms#WheelchairBoardingStatus'>;
     /** Instances of this class can be used by gtfs:dropOffType */
     "DropOffType": NamedNode<'http://vocab.gtfs.org/terms#DropOffType'>;
     /** Este es un punto de transbordo sincronizado entre dos rutas. El vehículo que sale espera al que llega, dejando tiempo suficiente para que un pasajero haga transbordo entre rutas. */
     "EnsuredTransfer": NamedNode<'http://vocab.gtfs.org/terms#EnsuredTransfer'>;
+    /** Instances of this class can be used to describe how to handle a transfer rule */
+    "TransferType": NamedNode<'http://vocab.gtfs.org/terms#TransferType'>;
     /** A class describing how the fare is calculated. */
     "FareClass": NamedNode<'http://vocab.gtfs.org/terms#FareClass'>;
     /** A rule which binds a gtfs:FareClass to a part of the network. */
@@ -40,11 +52,15 @@ interface Gtfs {
     /** Este transbordo requiere una cantidad mínima de tiempo entre la llegada y la salida para garantizar la conexión. El tiempo necesario para el transbordo se especifica mediante min_transfer_time */
     "MinimumTimeTransfer": NamedNode<'http://vocab.gtfs.org/terms#MinimumTimeTransfer'>;
     "MustCoordinateWithDriver": NamedNode<'http://vocab.gtfs.org/terms#MustCoordinateWithDriver'>;
+    /** Instances of this class can be used by gtfs:pickupType */
+    "PickupType": NamedNode<'http://vocab.gtfs.org/terms#PickupType'>;
     "MustPhone": NamedNode<'http://vocab.gtfs.org/terms#MustPhone'>;
     /** No es posible realizar transbordos entre rutas en esta ubicación. */
     "NoTransfer": NamedNode<'http://vocab.gtfs.org/terms#NoTransfer'>;
     /** Indica que el pasajero debe comprar un nuevo billete para realizar un transbordo */
     "NoTransfersAllowed": NamedNode<'http://vocab.gtfs.org/terms#NoTransfersAllowed'>;
+    /** Instances of this class describe whether tickets remain valid when transferring */
+    "TransfersAllowedType": NamedNode<'http://vocab.gtfs.org/terms#TransfersAllowedType'>;
     "NotAvailable": NamedNode<'http://vocab.gtfs.org/terms#NotAvailable'>;
     /** No riders in wheelchairs can be accommodated on this trip or wheelchair boarding is not possible at this stop and/or there exists no accessible path from outside the station to the specific stop. */
     "NotWheelchairAccessible": NamedNode<'http://vocab.gtfs.org/terms#NotWheelchairAccessible'>;
@@ -52,10 +68,6 @@ interface Gtfs {
     "OnBoard": NamedNode<'http://vocab.gtfs.org/terms#OnBoard'>;
     /** Indica que el pasajero puede hacer un transbordo con su billete */
     "OneTransfersAllowed": NamedNode<'http://vocab.gtfs.org/terms#OneTransfersAllowed'>;
-    /** Method to pay for the public transit service */
-    "PaymentMethod": NamedNode<'http://vocab.gtfs.org/terms#PaymentMethod'>;
-    /** Instances of this class can be used by gtfs:pickupType */
-    "PickupType": NamedNode<'http://vocab.gtfs.org/terms#PickupType'>;
     /** Used for intercity or long-distance travel. */
     "Rail": NamedNode<'http://vocab.gtfs.org/terms#Rail'>;
     /** Este es un punto de transbordo recomendado entre dos rutas */
@@ -63,12 +75,8 @@ interface Gtfs {
     "Regular": NamedNode<'http://vocab.gtfs.org/terms#Regular'>;
     /** A gtfs:Route is a commercial route followed entirely or partly by gtfs:Trips */
     "Route": NamedNode<'http://vocab.gtfs.org/terms#Route'>;
-    /** Describe el tipo de transporte usado en una ruta */
-    "RouteType": NamedNode<'http://vocab.gtfs.org/terms#RouteType'>;
     /** A gtfs:Service identifies a set of dates when a service is available for one or more routes */
     "Service": NamedNode<'http://vocab.gtfs.org/terms#Service'>;
-    /** One or more service rules define a set of dates */
-    "ServiceRule": NamedNode<'http://vocab.gtfs.org/terms#ServiceRule'>;
     /** A polygon formed by gtfs:ShapePoints */
     "Shape": NamedNode<'http://vocab.gtfs.org/terms#Shape'>;
     /** A geographic point within a gtfs:Shape */
@@ -83,10 +91,6 @@ interface Gtfs {
     "Subway": NamedNode<'http://vocab.gtfs.org/terms#Subway'>;
     /** Define additional rules for making connections between routes. */
     "TransferRule": NamedNode<'http://vocab.gtfs.org/terms#TransferRule'>;
-    /** Instances of this class can be used to describe how to handle a transfer rule */
-    "TransferType": NamedNode<'http://vocab.gtfs.org/terms#TransferType'>;
-    /** Instances of this class describe whether tickets remain valid when transferring */
-    "TransfersAllowedType": NamedNode<'http://vocab.gtfs.org/terms#TransfersAllowedType'>;
     /** A collection of gtfs:StopTimes followed by a transit vehicle */
     "Trip": NamedNode<'http://vocab.gtfs.org/terms#Trip'>;
     /** Indica que el pasajero puede hacer dos transbordos con su billete */
@@ -95,8 +99,6 @@ interface Gtfs {
     "UnlimitedTransfersAllowed": NamedNode<'http://vocab.gtfs.org/terms#UnlimitedTransfersAllowed'>;
     /** Indica que el vehículo usado en este viaje es accesible para, al menos, un pasajero en silla de ruedas, o indica que la parada específica está habilitada para sillas de ruedas, que algunos viajes desde esta parada son accesibles para silla de ruedas y si esta parada tiene una estación matriz, que hay alguna ruta accesible desde el exterior de la estación hasta la parada. */
     "WheelchairAccessible": NamedNode<'http://vocab.gtfs.org/terms#WheelchairAccessible'>;
-    /** A class whom's instances indicate how accessible a gtfs:Trip, gtfs:Stop or gtfs:Station is. */
-    "WheelchairBoardingStatus": NamedNode<'http://vocab.gtfs.org/terms#WheelchairBoardingStatus'>;
     /** Las zonas son necesarias si quiere proporcionar información de tarifas usando gtfs:FareClass */
     "Zone": NamedNode<'http://vocab.gtfs.org/terms#Zone'>;
     /** Enlaza a una agencia de la que este concepto es parte. */
@@ -110,8 +112,6 @@ interface Gtfs {
     "code": NamedNode<'http://vocab.gtfs.org/terms#code'>;
     /** A 6 character hexidecimal color (without #) */
     "color": NamedNode<'http://vocab.gtfs.org/terms#color'>;
-    /** A comment on the relation between the RDFS ontology and the CSV specification. */
-    "comment": NamedNode<'http://vocab.gtfs.org/terms#comment'>;
     /** A boolean whether to add (true) or remove (false) a date */
     "dateAddition": NamedNode<'http://vocab.gtfs.org/terms#dateAddition'>;
     /** Check the original specification for special cases */
