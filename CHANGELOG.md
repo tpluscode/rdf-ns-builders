@@ -1,5 +1,16 @@
 # Changelog
 
+## 3.0.0
+
+### Major Changes
+
+- 6405678: Export ES Modules only
+
+### Minor Changes
+
+- 6405678: Updated all vocabularies
+- 6405678: Added `crm` and `mads` prefixes
+
 ## 2.0.1
 
 ### Patch Changes
