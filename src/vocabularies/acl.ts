@@ -1,4 +1,4 @@
-import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
+import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
 interface Acl {
@@ -15,6 +15,7 @@ interface Acl {
      *     
      */
     "Append": NamedNode<'http://www.w3.org/ns/auth/acl#Append'>;
+    "Write": NamedNode<'http://www.w3.org/ns/auth/acl#Write'>;
     /**
      * A class of agents who have been authenticated.
      * In other words, anyone can access this resource, but not anonymously.
@@ -43,11 +44,10 @@ interface Acl {
     "Origin": NamedNode<'http://www.w3.org/ns/auth/acl#Origin'>;
     /** The class of read operations */
     "Read": NamedNode<'http://www.w3.org/ns/auth/acl#Read'>;
-    "Write": NamedNode<'http://www.w3.org/ns/auth/acl#Write'>;
     /**
      * The Access Control file for this information resource.
      *         This may of course be a virtual resource implemented by the access control system.
-     *         Note also HTTP's header  Link:  foo.meta ;rel=meta can be used for this.
+     *         Note that HTTP header `Link: <foo.acl>; rel="acl"` can also be used for this.
      */
     "accessControl": NamedNode<'http://www.w3.org/ns/auth/acl#accessControl'>;
     /** The information resource to which access is being granted. */
@@ -66,11 +66,11 @@ interface Acl {
     "agentGroup": NamedNode<'http://www.w3.org/ns/auth/acl#agentGroup'>;
     /**
      * If a resource has no ACL file (it is 404),
-     *         then access to the resource if given by the ACL of the immediately
+     *         then access to the resource is given by the ACL of the immediately
      *         containing directory, or failing that (404) the ACL of the recursively next
      *         containing directory which has an ACL file.
      *         Within that ACL file,
-     *         any Authentication which has that directory as its acl:default applies to the
+     *         any Authorization which has that directory as its acl:default applies to the
      *         resource. (The highest directory must have an ACL file.)
      *
      */
@@ -99,8 +99,8 @@ interface Acl {
     /**
      * The person or other agent which owns this.
      *     For example, the owner of a file in a filesystem.
-     *     There is a sense of right to control.   Typically defaults to the agent who craeted
-     *     something but can be changed.
+     *     There is a sense of "right to control".   Typically defaults to the agent who created
+     *     something, but can be changed.
      */
     "owner": NamedNode<'http://www.w3.org/ns/auth/acl#owner'>;
 }

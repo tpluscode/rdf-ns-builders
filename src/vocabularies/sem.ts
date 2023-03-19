@@ -1,4 +1,4 @@
-import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
+import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
 interface Sem {
@@ -8,14 +8,16 @@ interface Sem {
      *
      */
     "Actor": NamedNode<'http://semanticweb.cs.vu.nl/2009/11/sem/Actor'>;
-    /** EventType contains all resources that are used to classify Actors, e.g. person */
-    "ActorType": NamedNode<'http://semanticweb.cs.vu.nl/2009/11/sem/ActorType'>;
     /** Authorities are entities that state SEM properties. Their nature is not specified. They can symbolize people, organizations, sources of information, etc. */
     "Authority": NamedNode<'http://semanticweb.cs.vu.nl/2009/11/sem/Authority'>;
-    /** The SEM Constraint class contains instances of properties that have a constrained (i.e. not universal) validity. This includes time dependent validity (Temporary), validity in the guise of a specific role (Role), or validity according to a given Authority (View). */
-    "Constraint": NamedNode<'http://semanticweb.cs.vu.nl/2009/11/sem/Constraint'>;
     /** The SEM Core class contains all entities that make up the context of an event: Events, Actors, Places, Times. This class is meant to be extended for each application domain. */
     "Core": NamedNode<'http://semanticweb.cs.vu.nl/2009/11/sem/Core'>;
+    /** EventType contains all resources that are used to classify Actors, e.g. person */
+    "ActorType": NamedNode<'http://semanticweb.cs.vu.nl/2009/11/sem/ActorType'>;
+    /** The SEM Type class contains all types of Core instances. These can be either individuals of classes themselves. This class is meant to be extended for each application domain. */
+    "Type": NamedNode<'http://semanticweb.cs.vu.nl/2009/11/sem/Type'>;
+    /** The SEM Constraint class contains instances of properties that have a constrained (i.e. not universal) validity. This includes time dependent validity (Temporary), validity in the guise of a specific role (Role), or validity according to a given Authority (View). */
+    "Constraint": NamedNode<'http://semanticweb.cs.vu.nl/2009/11/sem/Constraint'>;
     /** Events are things that happen. This comprises everything from historical events to web site sessions and mythical journeys. Event is the central class of SEM. */
     "Event": NamedNode<'http://semanticweb.cs.vu.nl/2009/11/sem/Event'>;
     /** EventType contains all resources that are used to classify Events, e.g. meeting. */
@@ -36,14 +38,14 @@ interface Sem {
     "Time": NamedNode<'http://semanticweb.cs.vu.nl/2009/11/sem/Time'>;
     /** EventType contains all resources that are used to classify Time, e.g. century. */
     "TimeType": NamedNode<'http://semanticweb.cs.vu.nl/2009/11/sem/TimeType'>;
-    /** The SEM Type class contains all types of Core instances. These can be either individuals of classes themselves. This class is meant to be extended for each application domain. */
-    "Type": NamedNode<'http://semanticweb.cs.vu.nl/2009/11/sem/Type'>;
     /** Views are properties that only hold according to a certain Authority. */
     "View": NamedNode<'http://semanticweb.cs.vu.nl/2009/11/sem/View'>;
     /** According to is used to state which Authority sais that a property constrained by the View Constraint is true. */
     "accordingTo": NamedNode<'http://semanticweb.cs.vu.nl/2009/11/sem/accordingTo'>;
     /** Has actor type is used to assign a type to an actor. */
     "actorType": NamedNode<'http://semanticweb.cs.vu.nl/2009/11/sem/actorType'>;
+    /** Type is the super property of the properties that are used to indicate the type of a Core instance, eventType, actorType, placeType, timeType; and of roleType. Types can be both classes and individuals, cf. OWL 2 punning. */
+    "type": NamedNode<'http://semanticweb.cs.vu.nl/2009/11/sem/type'>;
     /** Event properties connect Events to other SEM Core entities. */
     "eventProperty": NamedNode<'http://semanticweb.cs.vu.nl/2009/11/sem/eventProperty'>;
     /** Has event type is used to assign a type to an event. */
@@ -52,6 +54,8 @@ interface Sem {
     "hasActor": NamedNode<'http://semanticweb.cs.vu.nl/2009/11/sem/hasActor'>;
     /** Has begin timestamp is used to indicate the beginning of a time interval. Omitting the hasBeginTimeStamp while stating a hasEndTimeStamp is interpreted as an open ended interval. */
     "hasBeginTimeStamp": NamedNode<'http://semanticweb.cs.vu.nl/2009/11/sem/hasBeginTimeStamp'>;
+    /** Has timestamp is used to put time indicators on any individual. It is the most common way to state when an Event took place. There are subproperties of hasTimeStamp to represent time intervals and uncertain time intervals. If the exact moment is not known, but it is necessary to specify a certain time, use hasTime instead. All of these properties are also used to indicate the time at which a property under the Temporary Constraint is valid. */
+    "hasTimeStamp": NamedNode<'http://semanticweb.cs.vu.nl/2009/11/sem/hasTimeStamp'>;
     /** Has earliest begin timestamp is used to indicate the earliest possible starting time of an uncertain time interval. */
     "hasEarliestBeginTimeStamp": NamedNode<'http://semanticweb.cs.vu.nl/2009/11/sem/hasEarliestBeginTimeStamp'>;
     /** Has earliest end timestamp is used to indicate the earliest possible ending time of an uncertain time interval. */
@@ -66,24 +70,20 @@ interface Sem {
     "hasPlace": NamedNode<'http://semanticweb.cs.vu.nl/2009/11/sem/hasPlace'>;
     /** Has subevent connects an Event to other Events that belong to it. This is a very generic property that does not mean the subevents fully define the superconcept or that there is any causal relationship. */
     "hasSubEvent": NamedNode<'http://semanticweb.cs.vu.nl/2009/11/sem/hasSubEvent'>;
+    /** Inverse property of hasSubEvent */
+    "subEventOf": NamedNode<'http://semanticweb.cs.vu.nl/2009/11/sem/subEventOf'>;
     /** Has sub type is used to state that a type falls under another type. This is a generic aggregation relation that is used to generalize over various hierarchical relations that can exist between types. */
     "hasSubType": NamedNode<'http://semanticweb.cs.vu.nl/2009/11/sem/hasSubType'>;
+    /** The inverse property of hasSubType. */
+    "subTypeOf": NamedNode<'http://semanticweb.cs.vu.nl/2009/11/sem/subTypeOf'>;
     /** Has time is used to indicate at which time an Event took place or when a property under the Temporary Constraint is valid. Has time points to a symbolic representation of time, which allows semantic relations between time resources. (see http://www.w3.org/TR/owl-time/) */
     "hasTime": NamedNode<'http://semanticweb.cs.vu.nl/2009/11/sem/hasTime'>;
-    /** Has timestamp is used to put time indicators on any individual. It is the most common way to state when an Event took place. There are subproperties of hasTimeStamp to represent time intervals and uncertain time intervals. If the exact moment is not known, but it is necessary to specify a certain time, use hasTime instead. All of these properties are also used to indicate the time at which a property under the Temporary Constraint is valid. */
-    "hasTimeStamp": NamedNode<'http://semanticweb.cs.vu.nl/2009/11/sem/hasTimeStamp'>;
     /** Has place type is used to assign a type to a place. */
     "placeType": NamedNode<'http://semanticweb.cs.vu.nl/2009/11/sem/placeType'>;
     /** Has role type is used to assign a role type to a Role property constraint. This role is a subspecification of the eventProperty which it constrains. For example, if an Event hasActor an Actor and this property is given a Role Constraint, then roleType can be used to assign a role to the participation of the Actor in the Event indicated by hasActor. */
     "roleType": NamedNode<'http://semanticweb.cs.vu.nl/2009/11/sem/roleType'>;
-    /** Inverse property of hasSubEvent */
-    "subEventOf": NamedNode<'http://semanticweb.cs.vu.nl/2009/11/sem/subEventOf'>;
-    /** The inverse property of hasSubType. */
-    "subTypeOf": NamedNode<'http://semanticweb.cs.vu.nl/2009/11/sem/subTypeOf'>;
     /** Has time type is used to assign a type to a time individual. */
     "timeType": NamedNode<'http://semanticweb.cs.vu.nl/2009/11/sem/timeType'>;
-    /** Type is the super property of the properties that are used to indicate the type of a Core instance, eventType, actorType, placeType, timeType; and of roleType. Types can be both classes and individuals, cf. OWL 2 punning. */
-    "type": NamedNode<'http://semanticweb.cs.vu.nl/2009/11/sem/type'>;
 }
 
 const builder = namespace("http://semanticweb.cs.vu.nl/2009/11/sem/") as any;

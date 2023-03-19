@@ -1,4 +1,4 @@
-import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
+import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
 interface Lvont {
@@ -15,14 +15,26 @@ interface Lvont {
     /** Groups of human language variants that are or were spoken, written, or signed at some point in time. */
     "Language": NamedNode<'http://lexvo.org/ontology#Language'>;
     /**
+     * The property of being at least somewhat the same as something else. For instance,
+     *     the City of Los Angeles is somewhat the same as the Greater Los Angeles area.
+     */
+    "somewhatSameAs": NamedNode<'http://lexvo.org/ontology#somewhatSameAs'>;
+    /**
      * A writing system considered abstractly, i.e. independent
      *     of language-specific variations.
      */
     "Script": NamedNode<'http://lexvo.org/ontology#Script'>;
     /** A term in a specific language. */
     "Term": NamedNode<'http://lexvo.org/ontology#Term'>;
+    /**
+     * The property of being at least nearly the same as something else. For instance,
+     *     the geographical area comprising the island of Malta is nearly the same as the island of Malta.
+     */
+    "nearlySameAs": NamedNode<'http://lexvo.org/ontology#nearlySameAs'>;
     /** The property of having a broader, more generic concept. */
     "broader": NamedNode<'http://lexvo.org/ontology#broader'>;
+    /** The property of having a narrower, less generic concept. */
+    "narrower": NamedNode<'http://lexvo.org/ontology#narrower'>;
     /**
      * The property of a CJK character being conventionally
      *     associated with a CJK character radical.
@@ -36,6 +48,8 @@ interface Lvont {
     "hasCharacterComponent": NamedNode<'http://lexvo.org/ontology#hasCharacterComponent'>;
     /** The property of having a member. */
     "hasMember": NamedNode<'http://lexvo.org/ontology#hasMember'>;
+    /** The property of being a member of a group. */
+    "memberOf": NamedNode<'http://lexvo.org/ontology#memberOf'>;
     /**
      * The property of a document being written in a specific script,
      *     or a language being written or having being written in a specific script by a considerable
@@ -55,46 +69,37 @@ interface Lvont {
     "iso639P5Code": NamedNode<'http://lexvo.org/ontology#iso639P5Code'>;
     /** If C lvont:Label L and L skosxl:literalForm V, then X rdfs:label V. */
     "label": NamedNode<'http://lexvo.org/ontology#label'>;
+    "representedBy": NamedNode<'http://lexvo.org/ontology#representedBy'>;
+    /**
+     * the semiotic property of a natural language word meaning something, i.e. a
+     *     relationship between words and resources that they represent (or represented) to a considerable number of humans
+     */
+    "means": NamedNode<'http://lexvo.org/ontology#means'>;
     /** The property of a resource being mainly encoded in a specific language. */
     "language": NamedNode<'http://lexvo.org/ontology#language'>;
     /** A lexical category that a term can be used in. */
     "lexicalCategory": NamedNode<'http://lexvo.org/ontology#lexicalCategory'>;
     "marcCode": NamedNode<'http://lexvo.org/ontology#marcCode'>;
     /**
-     * the semiotic property of a natural language word meaning something, i.e. a
-     *     relationship between words and resources that they represent (or represented) to a considerable number of humans
+     * the semiotic property of semantically representing something, i.e. a
+     *     relationship between words and other signs and resources that they represent (or represented) to a considerable number of humans
      */
-    "means": NamedNode<'http://lexvo.org/ontology#means'>;
-    /** The property of being a member of a group. */
-    "memberOf": NamedNode<'http://lexvo.org/ontology#memberOf'>;
-    /** The property of having a narrower, less generic concept. */
-    "narrower": NamedNode<'http://lexvo.org/ontology#narrower'>;
-    /**
-     * The property of being at least nearly the same as something else. For instance,
-     *     the geographical area comprising the island of Malta is nearly the same as the island of Malta.
-     */
-    "nearlySameAs": NamedNode<'http://lexvo.org/ontology#nearlySameAs'>;
+    "represents": NamedNode<'http://lexvo.org/ontology#represents'>;
     /**
      * The property of a character conventionally being
      *     written with a specific number strokes, excluding the strokes of its radical.
      */
     "nonRadicalStrokes": NamedNode<'http://lexvo.org/ontology#nonRadicalStrokes'>;
-    "representedBy": NamedNode<'http://lexvo.org/ontology#representedBy'>;
-    /**
-     * the semiotic property of semantically representing something, i.e. a
-     *     relationship between words and other signs and resources that they represent (or represented) to a considerable number of humans
-     */
-    "represents": NamedNode<'http://lexvo.org/ontology#represents'>;
     /**
      * The property of a script being used for a particular language by
      *    a considerable of language users (but not necessarily the majority of all language users).
      */
     "scriptFor": NamedNode<'http://lexvo.org/ontology#scriptFor'>;
     /**
-     * The property of being at least somewhat the same as something else. For instance,
-     *     the City of Los Angeles is somewhat the same as the Greater Los Angeles area.
+     * The property of a language being written or having being written in a specific 
+     *     script by a considerable group of language users.
      */
-    "somewhatSameAs": NamedNode<'http://lexvo.org/ontology#somewhatSameAs'>;
+    "usesScript": NamedNode<'http://lexvo.org/ontology#usesScript'>;
     /** The strength of an rdf:Statement, given is a value in [0,1]. */
     "strength": NamedNode<'http://lexvo.org/ontology#strength'>;
     /** The property of genuine identity in the Leibnizian sense. */
@@ -110,11 +115,6 @@ interface Lvont {
      *     at some point in time.
      */
     "usedIn": NamedNode<'http://lexvo.org/ontology#usedIn'>;
-    /**
-     * The property of a language being written or having being written in a specific 
-     *     script by a considerable group of language users.
-     */
-    "usesScript": NamedNode<'http://lexvo.org/ontology#usesScript'>;
     /** The property of being a variant of another resource. */
     "variant": NamedNode<'http://lexvo.org/ontology#variant'>;
 }

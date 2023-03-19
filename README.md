@@ -1,6 +1,6 @@
 > # @tpluscode/rdf-ns-builders
 
-Common RDF vocabularies extracted from [`@zazuko/rdf-vocabularies`][rdfv] and wrapped
+Common RDF vocabularies extracted from [`@zazuko/vocabularies`][rdfv] and wrapped
 as [`@rdfjs/namespace`][ns] builder objects.
 
 Also includes TypeScript declarations of the terms included in the known
@@ -19,7 +19,7 @@ npm i -S @tpluscode/rdf-ns-builders
 
 ## Usage
 
-Simply import a namespace builder by its prefix defined in [`@zazuko/rdf-vocabularies`][rdfv]
+Simply import a namespace builder by its prefix defined in [`@zazuko/vocabularies`][rdfv]
 
 ```ts
 import { schema } from '@tpluscode/rdf-ns-builders'
@@ -42,12 +42,12 @@ const schemaPerson: NamedNode = schema.Persona
 
 ## Roll your own
 
-Given a package with same exports as `@zazuko/rdf-vocabularies`, it is possible to generate a set of namespace builders generated from your own vocabularies.
+Given a package with same exports as `@zazuko/vocabularies`, it is possible to generate a set of namespace builders generated from your own vocabularies.
 
 Install required peer dependencies:
 
 ```
-npm i -D ts-node ts-morph clownface @zazuko/rdf-vocabularies safe-identifier
+npm i -D ts-node ts-morph clownface @zazuko/vocabularies safe-identifier
 ```
 
 Run the following command to generate builders package by providing the source package name and output directory.

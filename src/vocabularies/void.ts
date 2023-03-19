@@ -1,4 +1,4 @@
-import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
+import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
 interface Void {
@@ -15,6 +15,7 @@ interface Void {
     "class": NamedNode<'http://rdfs.org/ns/void#class'>;
     /** A subset of a void:Dataset that contains only the entities of a certain rdfs:Class. */
     "classPartition": NamedNode<'http://rdfs.org/ns/void#classPartition'>;
+    "subset": NamedNode<'http://rdfs.org/ns/void#subset'>;
     /** The total number of distinct classes in a void:Dataset. In other words, the number of distinct resources occuring as objects of rdf:type triples in the dataset. */
     "classes": NamedNode<'http://rdfs.org/ns/void#classes'>;
     /** An RDF dump, partial or complete, of a void:Dataset. */
@@ -34,6 +35,8 @@ interface Void {
     "linkPredicate": NamedNode<'http://rdfs.org/ns/void#linkPredicate'>;
     /** The dataset describing the objects of the triples contained in the Linkset. */
     "objectsTarget": NamedNode<'http://rdfs.org/ns/void#objectsTarget'>;
+    /** One of the two datasets linked by the Linkset. */
+    "target": NamedNode<'http://rdfs.org/ns/void#target'>;
     /** An OpenSearch description document for a free-text search service over a void:Dataset. */
     "openSearchDescription": NamedNode<'http://rdfs.org/ns/void#openSearchDescription'>;
     /** The total number of distinct properties in a void:Dataset. In other words, the number of distinct resources that occur in the predicate position of triples in the dataset. */
@@ -47,9 +50,6 @@ interface Void {
     "sparqlEndpoint": NamedNode<'http://rdfs.org/ns/void#sparqlEndpoint'>;
     /** The dataset describing the subjects of triples contained in the Linkset. */
     "subjectsTarget": NamedNode<'http://rdfs.org/ns/void#subjectsTarget'>;
-    "subset": NamedNode<'http://rdfs.org/ns/void#subset'>;
-    /** One of the two datasets linked by the Linkset. */
-    "target": NamedNode<'http://rdfs.org/ns/void#target'>;
     /** The total number of triples contained in a void:Dataset. */
     "triples": NamedNode<'http://rdfs.org/ns/void#triples'>;
     /** Defines a simple URI look-up protocol for accessing a dataset. */

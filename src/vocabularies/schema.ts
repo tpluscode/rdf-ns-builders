@@ -1,4 +1,4 @@
-import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
+import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
 interface Schema {
@@ -8,16 +8,30 @@ interface Schema {
      * case of a single file published after Zip compression, the convention of appending '+zip' to the [[encodingFormat]] can be used. Geospatial, AR/VR, artistic/animation, gaming, engineering and scientific content can all be represented using [[3DModel]].
      */
     "3DModel": NamedNode<'http://schema.org/3DModel'>;
+    /** Indicates an item or CreativeWork that this item, or CreativeWork (in some sense), is part of. */
+    "isPartOf": NamedNode<'http://schema.org/isPartOf'>;
+    /** A media object, such as an image, video, or audio object embedded in a web page or a downloadable dataset, i.e. DataDownload. Note that a creative work may have many media objects associated with it on the same web page. For example, a page about a single song (MusicRecording) may have a music video (VideoObject), and a high and low bandwidth audio stream (2 [[AudioObject]]s). */
+    "MediaObject": NamedNode<'http://schema.org/MediaObject'>;
     /** A radio channel that uses AM. */
     "AMRadioChannel": NamedNode<'http://schema.org/AMRadioChannel'>;
+    /** A unique instance of a radio BroadcastService on a CableOrSatelliteService lineup. */
+    "RadioChannel": NamedNode<'http://schema.org/RadioChannel'>;
     /** Reference documentation for application programming interfaces (APIs). */
     "APIReference": NamedNode<'http://schema.org/APIReference'>;
+    /** A technical article - Example: How-to (task) topics, step-by-step, procedural troubleshooting, specifications, etc. */
+    "TechArticle": NamedNode<'http://schema.org/TechArticle'>;
     /** Abdomen clinical examination. */
     "Abdomen": NamedNode<'http://schema.org/Abdomen'>;
+    /** A type of physical examination of a patient performed by a physician. */
+    "PhysicalExam": NamedNode<'http://schema.org/PhysicalExam'>;
     /** Web page type: About page. */
     "AboutPage": NamedNode<'http://schema.org/AboutPage'>;
+    /** A web page. Every web page is implicitly assumed to be declared to be of type WebPage, so the various properties about that webpage, such as <code>breadcrumb</code> may be used. We recommend explicit declaration if these properties are specified, but if they are found outside of an itemscope, they will be assumed to be about the page. */
+    "WebPage": NamedNode<'http://schema.org/WebPage'>;
     /** The act of committing to/adopting an object.\n\nRelated actions:\n\n* [[RejectAction]]: The antonym of AcceptAction. */
     "AcceptAction": NamedNode<'http://schema.org/AcceptAction'>;
+    /** The act of organizing tasks/objects/events by associating resources to it. */
+    "AllocateAction": NamedNode<'http://schema.org/AllocateAction'>;
     /**
      * An accommodation is a place that can accommodate human beings, e.g. a hotel room, a camping pitch, or a meeting room. Many accommodations are for overnight stays, but this is not a mandatory requirement.
      * For more specific types of accommodations not defined in schema.org, one can use additionalType with external vocabularies.
@@ -26,49 +40,91 @@ interface Schema {
      *
      */
     "Accommodation": NamedNode<'http://schema.org/Accommodation'>;
+    /** Entities that have a somewhat fixed, physical extension. */
+    "Place": NamedNode<'http://schema.org/Place'>;
     /**
      * Accountancy business.\n\nAs a [[LocalBusiness]] it can be described as a [[provider]] of one or more [[Service]]\(s).
      *       
      */
     "AccountingService": NamedNode<'http://schema.org/AccountingService'>;
+    /** Financial services business. */
+    "FinancialService": NamedNode<'http://schema.org/FinancialService'>;
     /** The act of accomplishing something via previous efforts. It is an instantaneous action rather than an ongoing process. */
     "AchieveAction": NamedNode<'http://schema.org/AchieveAction'>;
     /** An action performed by a direct agent and indirect participants upon a direct object. Optionally happens at a location with the help of an inanimate instrument. The execution of the action may produce a result. Specific action sub-type documentation specifies the exact expectation of each argument/role.\n\nSee also [blog post](http://blog.schema.org/2014/04/announcing-schemaorg-actions.html) and [Actions overview document](http://schema.org/docs/actions.html). */
     "Action": NamedNode<'http://schema.org/Action'>;
-    /** A set of requirements that a must be fulfilled in order to perform an Action. */
+    /** The most generic type of item. */
+    "Thing": NamedNode<'http://schema.org/Thing'>;
+    /** A set of requirements that must be fulfilled in order to perform an Action. */
     "ActionAccessSpecification": NamedNode<'http://schema.org/ActionAccessSpecification'>;
+    /** A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc. */
+    "Intangible": NamedNode<'http://schema.org/Intangible'>;
     /** The status of an Action. */
     "ActionStatusType": NamedNode<'http://schema.org/ActionStatusType'>;
+    /** Lists or enumerations dealing with status types. */
+    "StatusEnumeration": NamedNode<'http://schema.org/StatusEnumeration'>;
     /** The act of starting or activating a device or application (e.g. starting a timer or turning on a flashlight). */
     "ActivateAction": NamedNode<'http://schema.org/ActivateAction'>;
+    /** An agent controls a device or application. */
+    "ControlAction": NamedNode<'http://schema.org/ControlAction'>;
     /** Represents the activation fee part of the total price for an offered product, for example a cellphone contract. */
     "ActivationFee": NamedNode<'http://schema.org/ActivationFee'>;
-    /** An in-progress action (e.g, while watching the movie, or driving to a location). */
+    /** Enumerates different price components that together make up the total price for an offered product. */
+    "PriceComponentTypeEnumeration": NamedNode<'http://schema.org/PriceComponentTypeEnumeration'>;
+    /** An in-progress action (e.g., while watching the movie, or driving to a location). */
     "ActiveActionStatus": NamedNode<'http://schema.org/ActiveActionStatus'>;
     /** Active, but not recruiting new participants. */
     "ActiveNotRecruiting": NamedNode<'http://schema.org/ActiveNotRecruiting'>;
+    /** The status of a medical study. Enumerated type. */
+    "MedicalStudyStatus": NamedNode<'http://schema.org/MedicalStudyStatus'>;
     /** The act of editing by adding an object to a collection. */
     "AddAction": NamedNode<'http://schema.org/AddAction'>;
+    /** The act of managing by changing/editing the state of the object. */
+    "UpdateAction": NamedNode<'http://schema.org/UpdateAction'>;
     /** A geographical region, typically under the jurisdiction of a particular government. */
     "AdministrativeArea": NamedNode<'http://schema.org/AdministrativeArea'>;
     /** An adult entertainment establishment. */
     "AdultEntertainment": NamedNode<'http://schema.org/AdultEntertainment'>;
+    /** A business providing entertainment. */
+    "EntertainmentBusiness": NamedNode<'http://schema.org/EntertainmentBusiness'>;
+    /** Enumeration of considerations that make a product relevant or potentially restricted for adults only. */
+    "AdultOrientedEnumeration": NamedNode<'http://schema.org/AdultOrientedEnumeration'>;
+    /** Lists or enumerations—for example, a list of cuisines or music genres, etc. */
+    "Enumeration": NamedNode<'http://schema.org/Enumeration'>;
     /** An [[Article]] that an external entity has paid to place or to produce to its specifications. Includes [advertorials](https://en.wikipedia.org/wiki/Advertorial), sponsored content, native advertising and other paid content. */
     "AdvertiserContentArticle": NamedNode<'http://schema.org/AdvertiserContentArticle'>;
+    /** An article, such as a news article or piece of investigative report. Newspapers and magazines have articles of many different types and this is intended to cover them all.\n\nSee also [blog post](http://blog.schema.org/2014/09/schemaorg-support-for-bibliographic_2.html). */
+    "Article": NamedNode<'http://schema.org/Article'>;
     /** Physical activity of relatively low intensity that depends primarily on the aerobic energy-generating process; during activity, the aerobic metabolism uses oxygen to adequately meet energy demands during exercise. */
     "AerobicActivity": NamedNode<'http://schema.org/AerobicActivity'>;
+    /** Categories of physical activity, organized by physiologic classification. */
+    "PhysicalActivityCategory": NamedNode<'http://schema.org/PhysicalActivityCategory'>;
     /** When a single product is associated with multiple offers (for example, the same pair of shoes is offered by different merchants), then AggregateOffer can be used.\n\nNote: AggregateOffers are normally expected to associate multiple offers that all share the same defined [[businessFunction]] value, or default to http://purl.org/goodrelations/v1#Sell if businessFunction is not explicitly defined. */
     "AggregateOffer": NamedNode<'http://schema.org/AggregateOffer'>;
+    /** An offer to transfer some rights to an item or to provide a service — for example, an offer to sell tickets to an event, to rent the DVD of a movie, to stream a TV show over the internet, to repair a motorcycle, or to loan a book.\n\nNote: As the [[businessFunction]] property, which identifies the form of offer (e.g. sell, lease, repair, dispose), defaults to http://purl.org/goodrelations/v1#Sell; an Offer without a defined businessFunction value can be assumed to be an offer to sell.\n\nFor [GTIN](http://www.gs1.org/barcodes/technical/idkeys/gtin)-related fields, see [Check Digit calculator](http://www.gs1.org/barcodes/support/check_digit_calculator) and [validation guide](http://www.gs1us.org/resources/standards/gtin-validation-guide) from [GS1](http://www.gs1.org/). */
+    "Offer": NamedNode<'http://schema.org/Offer'>;
     /** The average rating based on multiple ratings or reviews. */
     "AggregateRating": NamedNode<'http://schema.org/AggregateRating'>;
+    /** A rating is an evaluation on a numeric scale, such as 1 to 5 stars. */
+    "Rating": NamedNode<'http://schema.org/Rating'>;
     /** The act of expressing a consistency of opinion with the object. An agent agrees to/about an object (a proposition, topic or theme) with participants. */
     "AgreeAction": NamedNode<'http://schema.org/AgreeAction'>;
+    /** The act of responding instinctively and emotionally to an object, expressing a sentiment. */
+    "ReactAction": NamedNode<'http://schema.org/ReactAction'>;
     /** An organization that provides flights for passengers. */
     "Airline": NamedNode<'http://schema.org/Airline'>;
+    /** An organization such as a school, NGO, corporation, club, etc. */
+    "Organization": NamedNode<'http://schema.org/Organization'>;
     /** An airport. */
     "Airport": NamedNode<'http://schema.org/Airport'>;
+    /** A public structure, such as a town hall or concert hall. */
+    "CivicStructure": NamedNode<'http://schema.org/CivicStructure'>;
     /** AlbumRelease. */
     "AlbumRelease": NamedNode<'http://schema.org/AlbumRelease'>;
+    /** The kind of release which this album is: single, EP or album. */
+    "MusicAlbumReleaseType": NamedNode<'http://schema.org/MusicAlbumReleaseType'>;
+    /** Item contains alcohol or promotes alcohol consumption. */
+    "AlcoholConsideration": NamedNode<'http://schema.org/AlcoholConsideration'>;
     /**
      * An intangible item that describes an alignment between a learning resource and a node in an educational framework.
      *
@@ -77,40 +133,71 @@ interface Schema {
     "AlignmentObject": NamedNode<'http://schema.org/AlignmentObject'>;
     /** All-wheel Drive is a transmission layout where the engine drives all four wheels. */
     "AllWheelDriveConfiguration": NamedNode<'http://schema.org/AllWheelDriveConfiguration'>;
+    /** A value indicating which roadwheels will receive torque. */
+    "DriveWheelConfigurationValue": NamedNode<'http://schema.org/DriveWheelConfigurationValue'>;
     /** Content about the allergy-related aspects of a health topic. */
     "AllergiesHealthAspect": NamedNode<'http://schema.org/AllergiesHealthAspect'>;
-    /** The act of organizing tasks/objects/events by associating resources to it. */
-    "AllocateAction": NamedNode<'http://schema.org/AllocateAction'>;
+    /** HealthAspectEnumeration enumerates several aspects of health content online, each of which might be described using [[hasHealthAspect]] and [[HealthTopicContent]]. */
+    "HealthAspectEnumeration": NamedNode<'http://schema.org/HealthAspectEnumeration'>;
+    /** The act of manipulating/administering/supervising/controlling one or more objects. */
+    "OrganizeAction": NamedNode<'http://schema.org/OrganizeAction'>;
     /** A creative work with a visual storytelling format intended to be viewed online, particularly on mobile devices. */
     "AmpStory": NamedNode<'http://schema.org/AmpStory'>;
+    /** The most generic kind of creative work, including books, movies, photographs, software programs, etc. */
+    "CreativeWork": NamedNode<'http://schema.org/CreativeWork'>;
     /** An amusement park. */
     "AmusementPark": NamedNode<'http://schema.org/AmusementPark'>;
     /** Physical activity that is of high-intensity which utilizes the anaerobic metabolism of the body. */
     "AnaerobicActivity": NamedNode<'http://schema.org/AnaerobicActivity'>;
     /** An AnalysisNewsArticle is a [[NewsArticle]] that, while based on factual reporting, incorporates the expertise of the author/producer, offering interpretations and conclusions. */
     "AnalysisNewsArticle": NamedNode<'http://schema.org/AnalysisNewsArticle'>;
+    /**
+     * A NewsArticle is an article whose content reports news, or provides background context and supporting materials for understanding the news.
+     *
+     * A more detailed overview of [schema.org News markup](/docs/news.html) is also available.
+     *
+     */
+    "NewsArticle": NamedNode<'http://schema.org/NewsArticle'>;
     /** Any part of the human body, typically a component of an anatomical system. Organs, tissues, and cells are all anatomical structures. */
     "AnatomicalStructure": NamedNode<'http://schema.org/AnatomicalStructure'>;
-    /** An anatomical system is a group of anatomical structures that work together to perform a certain task. Anatomical systems, such as organ systems, are one organizing principle of anatomy, and can includes circulatory, digestive, endocrine, integumentary, immune, lymphatic, muscular, nervous, reproductive, respiratory, skeletal, urinary, vestibular, and other systems. */
+    /** The most generic type of entity related to health and the practice of medicine. */
+    "MedicalEntity": NamedNode<'http://schema.org/MedicalEntity'>;
+    /** An anatomical system is a group of anatomical structures that work together to perform a certain task. Anatomical systems, such as organ systems, are one organizing principle of anatomy, and can include circulatory, digestive, endocrine, integumentary, immune, lymphatic, muscular, nervous, reproductive, respiratory, skeletal, urinary, vestibular, and other systems. */
     "AnatomicalSystem": NamedNode<'http://schema.org/AnatomicalSystem'>;
+    /** Represents the broad notion of Android-based operating systems. */
+    "AndroidPlatform": NamedNode<'http://schema.org/AndroidPlatform'>;
+    /** Enumerates some common technology platforms, for use with properties such as [[actionPlatform]]. It is not supposed to be comprehensive - when a suitable code is not enumerated here, textual or URL values can be used instead. These codes are at a fairly high level and do not deal with versioning and other nuance. Additional codes can be suggested [in github](https://github.com/schemaorg/schemaorg/issues/3057). */
+    "DigitalPlatformEnumeration": NamedNode<'http://schema.org/DigitalPlatformEnumeration'>;
     /** A specific branch of medical science that pertains to study of anesthetics and their application. */
     "Anesthesia": NamedNode<'http://schema.org/Anesthesia'>;
+    /** Any specific branch of medical science or practice. Medical specialities include clinical specialties that pertain to particular organ systems and their respective disease states, as well as allied health specialties. Enumerated type. */
+    "MedicalSpecialty": NamedNode<'http://schema.org/MedicalSpecialty'>;
     /** Animal shelter. */
     "AnimalShelter": NamedNode<'http://schema.org/AnimalShelter'>;
+    /** A particular physical business or branch of an organization. Examples of LocalBusiness include a restaurant, a particular branch of a restaurant chain, a branch of a bank, a medical practice, a club, a bowling alley, etc. */
+    "LocalBusiness": NamedNode<'http://schema.org/LocalBusiness'>;
     /** An answer offered to a question; perhaps correct, perhaps opinionated or wrong. */
     "Answer": NamedNode<'http://schema.org/Answer'>;
-    /** An apartment (in American English) or flat (in British English) is a self-contained housing unit (a type of residential real estate) that occupies only part of a building (Source: Wikipedia, the free encyclopedia, see <a href="http://en.wikipedia.org/wiki/Apartment">http://en.wikipedia.org/wiki/Apartment</a>). */
+    /** A comment on an item - for example, a comment on a blog post. The comment's content is expressed via the [[text]] property, and its topic via [[about]], properties shared with all CreativeWorks. */
+    "Comment": NamedNode<'http://schema.org/Comment'>;
+    /** An apartment (in American English) or flat (in British English) is a self-contained housing unit (a type of residential real estate) that occupies only part of a building (source: Wikipedia, the free encyclopedia, see <a href="http://en.wikipedia.org/wiki/Apartment">http://en.wikipedia.org/wiki/Apartment</a>). */
     "Apartment": NamedNode<'http://schema.org/Apartment'>;
     /** Residence type: Apartment complex. */
     "ApartmentComplex": NamedNode<'http://schema.org/ApartmentComplex'>;
+    /** The place where a person lives. */
+    "Residence": NamedNode<'http://schema.org/Residence'>;
     /** Appearance assessment with clinical examination. */
     "Appearance": NamedNode<'http://schema.org/Appearance'>;
     /** The act of inserting at the end if an ordered collection. */
     "AppendAction": NamedNode<'http://schema.org/AppendAction'>;
+    /** The act of adding at a specific location in an ordered collection. */
+    "InsertAction": NamedNode<'http://schema.org/InsertAction'>;
     /** The act of registering to an organization/service without the guarantee to receive it.\n\nRelated actions:\n\n* [[RegisterAction]]: Unlike RegisterAction, ApplyAction has no guarantees that the application will be accepted. */
     "ApplyAction": NamedNode<'http://schema.org/ApplyAction'>;
     /** An indication for a medical therapy that has been formally specified or approved by a regulatory body that regulates use of the therapy; for example, the US FDA approves indications for most drugs in the US. */
     "ApprovedIndication": NamedNode<'http://schema.org/ApprovedIndication'>;
+    /** A condition or factor that indicates use of a medical therapy, including signs, symptoms, risk factors, anatomical states, etc. */
+    "MedicalIndication": NamedNode<'http://schema.org/MedicalIndication'>;
     /** Aquarium. */
     "Aquarium": NamedNode<'http://schema.org/Aquarium'>;
     /** An intangible type to be applied to any archive content, carrying with it a set of properties required to describe archival items and collections. */
@@ -119,14 +206,18 @@ interface Schema {
     "ArchiveOrganization": NamedNode<'http://schema.org/ArchiveOrganization'>;
     /** The act of arriving at a place. An agent arrives at a destination from a fromLocation, optionally with participants. */
     "ArriveAction": NamedNode<'http://schema.org/ArriveAction'>;
+    /** The act of an agent relocating to a place.\n\nRelated actions:\n\n* [[TransferAction]]: Unlike TransferAction, the subject of the move is a living Person or Organization rather than an inanimate object. */
+    "MoveAction": NamedNode<'http://schema.org/MoveAction'>;
     /** An art gallery. */
     "ArtGallery": NamedNode<'http://schema.org/ArtGallery'>;
     /** A type of blood vessel that specifically carries blood away from the heart. */
     "Artery": NamedNode<'http://schema.org/Artery'>;
-    /** An article, such as a news article or piece of investigative report. Newspapers and magazines have articles of many different types and this is intended to cover them all.\n\nSee also [blog post](http://blog.schema.org/2014/09/schemaorg-support-for-bibliographic_2.html). */
-    "Article": NamedNode<'http://schema.org/Article'>;
+    /** A component of the human body circulatory system comprised of an intricate network of hollow tubes that transport blood throughout the entire body. */
+    "Vessel": NamedNode<'http://schema.org/Vessel'>;
     /** The act of posing a question / favor to someone.\n\nRelated actions:\n\n* [[ReplyAction]]: Appears generally as a response to AskAction. */
     "AskAction": NamedNode<'http://schema.org/AskAction'>;
+    /** The act of conveying information to another person via a communication medium (instrument) such as speech, email, or telephone conversation. */
+    "CommunicateAction": NamedNode<'http://schema.org/CommunicateAction'>;
     /** A [[NewsArticle]] expressing an open call by a [[NewsMediaOrganization]] asking the public for input, insights, clarifications, anecdotes, documentation, etc., on an issue, for reporting purposes. */
     "AskPublicNewsArticle": NamedNode<'http://schema.org/AskPublicNewsArticle'>;
     /** The act of forming one's opinion, reaction or sentiment. */
@@ -137,6 +228,8 @@ interface Schema {
     "Atlas": NamedNode<'http://schema.org/Atlas'>;
     /** Professional service: Attorney. \n\nThis type is deprecated - [[LegalService]] is more inclusive and less ambiguous. */
     "Attorney": NamedNode<'http://schema.org/Attorney'>;
+    /** A LegalService is a business that provides legally-oriented services, advice and representation, e.g. law firms.\n\nAs a [[LocalBusiness]] it can be described as a [[provider]] of one or more [[Service]]\(s). */
+    "LegalService": NamedNode<'http://schema.org/LegalService'>;
     /** Intended audience for an item, i.e. the group for whom the item was created. */
     "Audience": NamedNode<'http://schema.org/Audience'>;
     /** An audio file. */
@@ -145,18 +238,28 @@ interface Schema {
     "AudioObjectSnapshot": NamedNode<'http://schema.org/AudioObjectSnapshot'>;
     /** An audiobook. */
     "Audiobook": NamedNode<'http://schema.org/Audiobook'>;
+    /** A book. */
+    "Book": NamedNode<'http://schema.org/Book'>;
     /** Book format: Audiobook. This is an enumerated value for use with the bookFormat property. There is also a type 'Audiobook' in the bib extension which includes Audiobook specific properties. */
     "AudiobookFormat": NamedNode<'http://schema.org/AudiobookFormat'>;
-    /** Indicates that the publisher gives some special status to the publication of the document. ("The Queens Printer" version of a UK Act of Parliament, or the PDF version of a Directive published by the EU Office of Publications). Something "Authoritative" is considered to be also [[OfficialLegalValue]]". */
+    /** The publication format of the book. */
+    "BookFormatType": NamedNode<'http://schema.org/BookFormatType'>;
+    /** Indicates that the publisher gives some special status to the publication of the document. ("The Queens Printer" version of a UK Act of Parliament, or the PDF version of a Directive published by the EU Office of Publications.) Something "Authoritative" is considered to be also [[OfficialLegalValue]]. */
     "AuthoritativeLegalValue": NamedNode<'http://schema.org/AuthoritativeLegalValue'>;
+    /** A list of possible levels for the legal validity of a legislation. */
+    "LegalValueLevel": NamedNode<'http://schema.org/LegalValueLevel'>;
     /** The act of granting permission to an object. */
     "AuthorizeAction": NamedNode<'http://schema.org/AuthorizeAction'>;
     /** Auto body shop. */
     "AutoBodyShop": NamedNode<'http://schema.org/AutoBodyShop'>;
+    /** Car repair, sales, or parts. */
+    "AutomotiveBusiness": NamedNode<'http://schema.org/AutomotiveBusiness'>;
     /** An car dealership. */
     "AutoDealer": NamedNode<'http://schema.org/AutoDealer'>;
     /** An auto parts store. */
     "AutoPartsStore": NamedNode<'http://schema.org/AutoPartsStore'>;
+    /** A retail good store. */
+    "Store": NamedNode<'http://schema.org/Store'>;
     /** A car rental business. */
     "AutoRental": NamedNode<'http://schema.org/AutoRental'>;
     /** Car repair business. */
@@ -165,34 +268,48 @@ interface Schema {
     "AutoWash": NamedNode<'http://schema.org/AutoWash'>;
     /** ATM/cash machine. */
     "AutomatedTeller": NamedNode<'http://schema.org/AutomatedTeller'>;
-    /** Car repair, sales, or parts. */
-    "AutomotiveBusiness": NamedNode<'http://schema.org/AutomotiveBusiness'>;
     /** A system of medicine that originated in India over thousands of years and that focuses on integrating and balancing the body, mind, and spirit. */
     "Ayurvedic": NamedNode<'http://schema.org/Ayurvedic'>;
+    /** Systems of medical practice. */
+    "MedicineSystem": NamedNode<'http://schema.org/MedicineSystem'>;
     /** Indicates that the item is available on back order. */
     "BackOrder": NamedNode<'http://schema.org/BackOrder'>;
+    /** A list of possible product availability options. */
+    "ItemAvailability": NamedNode<'http://schema.org/ItemAvailability'>;
     /** A [[NewsArticle]] providing historical context, definition and detail on a specific topic (aka "explainer" or "backgrounder"). For example, an in-depth article or frequently-asked-questions ([FAQ](https://en.wikipedia.org/wiki/FAQ)) document on topics such as Climate Change or the European Union. Other kinds of background material from a non-news setting are often described using [[Book]] or [[Article]], in particular [[ScholarlyArticle]]. See also [[NewsArticle]] for related vocabulary from a learning/education perspective. */
     "BackgroundNewsArticle": NamedNode<'http://schema.org/BackgroundNewsArticle'>;
     /** Pathogenic bacteria that cause bacterial infection. */
     "Bacteria": NamedNode<'http://schema.org/Bacteria'>;
+    /** Classes of agents or pathogens that transmit infectious diseases. Enumerated type. */
+    "InfectiousAgentClass": NamedNode<'http://schema.org/InfectiousAgentClass'>;
     /** A bakery. */
     "Bakery": NamedNode<'http://schema.org/Bakery'>;
+    /** A food-related business. */
+    "FoodEstablishment": NamedNode<'http://schema.org/FoodEstablishment'>;
     /** Physical activity that is engaged to help maintain posture and balance. */
     "Balance": NamedNode<'http://schema.org/Balance'>;
     /** A product or service offered by a bank whereby one may deposit, withdraw or transfer money and in some cases be paid interest. */
     "BankAccount": NamedNode<'http://schema.org/BankAccount'>;
+    /** A product provided to consumers and businesses by financial institutions such as banks, insurance companies, brokerage firms, consumer finance companies, and investment companies which comprise the financial services industry. */
+    "FinancialProduct": NamedNode<'http://schema.org/FinancialProduct'>;
     /** Bank or credit union. */
     "BankOrCreditUnion": NamedNode<'http://schema.org/BankOrCreditUnion'>;
     /** A bar or pub. */
     "BarOrPub": NamedNode<'http://schema.org/BarOrPub'>;
     /** An image of a visual machine-readable code such as a barcode or QR code. */
     "Barcode": NamedNode<'http://schema.org/Barcode'>;
+    /** An image file. */
+    "ImageObject": NamedNode<'http://schema.org/ImageObject'>;
     /** BasicIncome: this is a benefit for basic income. */
     "BasicIncome": NamedNode<'http://schema.org/BasicIncome'>;
+    /** GovernmentBenefitsType enumerates several kinds of government benefits to support the COVID-19 situation. Note that this structure may not capture all benefits offered. */
+    "GovernmentBenefitsType": NamedNode<'http://schema.org/GovernmentBenefitsType'>;
     /** Beach. */
     "Beach": NamedNode<'http://schema.org/Beach'>;
     /** Beauty salon. */
     "BeautySalon": NamedNode<'http://schema.org/BeautySalon'>;
+    /** Health and beauty. */
+    "HealthAndBeautyBusiness": NamedNode<'http://schema.org/HealthAndBeautyBusiness'>;
     /**
      * Bed and breakfast.
      * <br /><br />
@@ -200,24 +317,34 @@ interface Schema {
      *
      */
     "BedAndBreakfast": NamedNode<'http://schema.org/BedAndBreakfast'>;
+    /** A lodging business, such as a motel, hotel, or inn. */
+    "LodgingBusiness": NamedNode<'http://schema.org/LodgingBusiness'>;
     /** An entity holding detailed information about the available bed types, e.g. the quantity of twin beds for a hotel room. For the single case of just one bed of a certain type, you can use bed directly with a text. See also [[BedType]] (under development). */
     "BedDetails": NamedNode<'http://schema.org/BedDetails'>;
     /** A type of bed. This is used for indicating the bed or beds available in an accommodation. */
     "BedType": NamedNode<'http://schema.org/BedType'>;
+    /** A predefined value for a product characteristic, e.g. the power cord plug type 'US' or the garment sizes 'S', 'M', 'L', and 'XL'. */
+    "QualitativeValue": NamedNode<'http://schema.org/QualitativeValue'>;
     /** The act of forming a personal connection with someone (object) mutually/bidirectionally/symmetrically.\n\nRelated actions:\n\n* [[FollowAction]]: Unlike FollowAction, BefriendAction implies that the connection is reciprocal. */
     "BefriendAction": NamedNode<'http://schema.org/BefriendAction'>;
+    /** The act of interacting with another person or organization. */
+    "InteractAction": NamedNode<'http://schema.org/InteractAction'>;
     /** Content about the benefits and advantages of usage or utilization of topic. */
     "BenefitsHealthAspect": NamedNode<'http://schema.org/BenefitsHealthAspect'>;
     /** A bike store. */
     "BikeStore": NamedNode<'http://schema.org/BikeStore'>;
     /** Any biological, chemical, or biochemical thing. For example: a protein; a gene; a chemical; a synthetic chemical. */
     "BioChemEntity": NamedNode<'http://schema.org/BioChemEntity'>;
-    /** A [blog](https://en.wikipedia.org/wiki/Blog), sometimes known as a "weblog". Note that the individual posts ([[BlogPosting]]s) in a [[Blog]] are often colloqually referred to by the same term. */
+    /** A [blog](https://en.wikipedia.org/wiki/Blog), sometimes known as a "weblog". Note that the individual posts ([[BlogPosting]]s) in a [[Blog]] are often colloquially referred to by the same term. */
     "Blog": NamedNode<'http://schema.org/Blog'>;
     /** A blog post. */
     "BlogPosting": NamedNode<'http://schema.org/BlogPosting'>;
+    /** A post to a social media platform, including blog posts, tweets, Facebook posts, etc. */
+    "SocialMediaPosting": NamedNode<'http://schema.org/SocialMediaPosting'>;
     /** A medical test performed on a sample of a patient's blood. */
     "BloodTest": NamedNode<'http://schema.org/BloodTest'>;
+    /** Any medical test, typically performed for diagnostic purposes. */
+    "MedicalTest": NamedNode<'http://schema.org/MedicalTest'>;
     /** A type of boarding policy used by an airline. */
     "BoardingPolicyType": NamedNode<'http://schema.org/BoardingPolicyType'>;
     /**
@@ -226,12 +353,18 @@ interface Schema {
      * Note: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations. For offers of tickets, use [[Offer]].
      */
     "BoatReservation": NamedNode<'http://schema.org/BoatReservation'>;
+    /** Describes a reservation for travel, dining or an event. Some reservations require tickets. \n\nNote: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations. For offers of tickets, restaurant reservations, flights, or rental cars, use [[Offer]]. */
+    "Reservation": NamedNode<'http://schema.org/Reservation'>;
     /** A terminal for boats, ships, and other water vessels. */
     "BoatTerminal": NamedNode<'http://schema.org/BoatTerminal'>;
     /** A trip on a commercial ferry line. */
     "BoatTrip": NamedNode<'http://schema.org/BoatTrip'>;
+    /** A trip or journey. An itinerary of visits to one or more places. */
+    "Trip": NamedNode<'http://schema.org/Trip'>;
     /** Arm length (measured between arms/shoulder line intersection and the prominent wrist bone). Used, for example, to fit shirts. */
     "BodyMeasurementArm": NamedNode<'http://schema.org/BodyMeasurementArm'>;
+    /** Enumerates types (or dimensions) of a person's body measurements, for example for fitting of clothes. */
+    "BodyMeasurementTypeEnumeration": NamedNode<'http://schema.org/BodyMeasurementTypeEnumeration'>;
     /** Maximum girth of bust. Used, for example, to fit women's suits. */
     "BodyMeasurementBust": NamedNode<'http://schema.org/BodyMeasurementBust'>;
     /** Maximum girth of chest. Used, for example, to fit men's suits. */
@@ -250,8 +383,8 @@ interface Schema {
     "BodyMeasurementInsideLeg": NamedNode<'http://schema.org/BodyMeasurementInsideLeg'>;
     /** Girth of neck. Used, for example, to fit shirts. */
     "BodyMeasurementNeck": NamedNode<'http://schema.org/BodyMeasurementNeck'>;
-    /** Enumerates types (or dimensions) of a person's body measurements, for example for fitting of clothes. */
-    "BodyMeasurementTypeEnumeration": NamedNode<'http://schema.org/BodyMeasurementTypeEnumeration'>;
+    /** Enumeration of common measurement types (or dimensions), for example "chest" for a person, "inseam" for pants, "gauge" for screws, or "wheel" for bicycles. */
+    "MeasurementTypeEnumeration": NamedNode<'http://schema.org/MeasurementTypeEnumeration'>;
     /** Girth of body just below the bust. Used, for example, to fit women's swimwear. */
     "BodyMeasurementUnderbust": NamedNode<'http://schema.org/BodyMeasurementUnderbust'>;
     /** Girth of natural waistline (between hip bones and lower ribs). Used, for example, to fit pants. */
@@ -260,33 +393,44 @@ interface Schema {
     "BodyMeasurementWeight": NamedNode<'http://schema.org/BodyMeasurementWeight'>;
     /** A body of water, such as a sea, ocean, or lake. */
     "BodyOfWater": NamedNode<'http://schema.org/BodyOfWater'>;
+    /** A landform or physical feature.  Landform elements include mountains, plains, lakes, rivers, seascape and oceanic waterbody interface features such as bays, peninsulas, seas and so forth, including sub-aqueous terrain features such as submersed mountain ranges, volcanoes, and the great ocean basins. */
+    "Landform": NamedNode<'http://schema.org/Landform'>;
     /** Rigid connective tissue that comprises up the skeletal structure of the human body. */
     "Bone": NamedNode<'http://schema.org/Bone'>;
-    /** A book. */
-    "Book": NamedNode<'http://schema.org/Book'>;
-    /** The publication format of the book. */
-    "BookFormatType": NamedNode<'http://schema.org/BookFormatType'>;
     /** A series of books. Included books can be indicated with the hasPart property. */
     "BookSeries": NamedNode<'http://schema.org/BookSeries'>;
+    /**
+     * A CreativeWorkSeries in schema.org is a group of related items, typically but not necessarily of the same kind. CreativeWorkSeries are usually organized into some order, often chronological. Unlike [[ItemList]] which is a general purpose data structure for lists of things, the emphasis with CreativeWorkSeries is on published materials (written e.g. books and periodicals, or media such as TV, radio and games).\n\nSpecific subtypes are available for describing [[TVSeries]], [[RadioSeries]], [[MovieSeries]], [[BookSeries]], [[Periodical]] and [[VideoGameSeries]]. In each case, the [[hasPart]] / [[isPartOf]] properties can be used to relate the CreativeWorkSeries to its parts. The general CreativeWorkSeries type serves largely just to organize these more specific and practical subtypes.\n\nIt is common for properties applicable to an item from the series to be usefully applied to the containing group. Schema.org attempts to anticipate some of these cases, but publishers should be free to apply properties of the series parts to the series as a whole wherever they seem appropriate.
+     * 	  
+     */
+    "CreativeWorkSeries": NamedNode<'http://schema.org/CreativeWorkSeries'>;
     /** A bookstore. */
     "BookStore": NamedNode<'http://schema.org/BookStore'>;
     /** An agent bookmarks/flags/labels/tags/marks an object. */
     "BookmarkAction": NamedNode<'http://schema.org/BookmarkAction'>;
     /** Boolean: True or False. */
     "Boolean": NamedNode<'http://schema.org/Boolean'>;
+    /** The basic data types such as Integers, Strings, etc. */
+    "DataType": NamedNode<'http://schema.org/DataType'>;
     /** The act of obtaining an object under an agreement to return it at a later date. Reciprocal of LendAction.\n\nRelated actions:\n\n* [[LendAction]]: Reciprocal of BorrowAction. */
     "BorrowAction": NamedNode<'http://schema.org/BorrowAction'>;
+    /** The act of transferring/moving (abstract or concrete) animate or inanimate objects from one place to another. */
+    "TransferAction": NamedNode<'http://schema.org/TransferAction'>;
     /** A bowling alley. */
     "BowlingAlley": NamedNode<'http://schema.org/BowlingAlley'>;
+    /** A sports location, such as a playing field. */
+    "SportsActivityLocation": NamedNode<'http://schema.org/SportsActivityLocation'>;
     /** Any anatomical structure which pertains to the soft nervous tissue functioning as the coordinating center of sensation and intellectual and nervous activity. */
     "BrainStructure": NamedNode<'http://schema.org/BrainStructure'>;
     /** A brand is a name used by an organization or business person for labeling a product, product group, or similar. */
     "Brand": NamedNode<'http://schema.org/Brand'>;
     /**
-     * A BreadcrumbList is an ItemList consisting of a chain of linked Web pages, typically described using at least their URL and their name, and typically ending with the current page.\n\nThe [[position]] property is used to reconstruct the order of the items in a BreadcrumbList The convention is that a breadcrumb list has an [[itemListOrder]] of [[ItemListOrderAscending]] (lower values listed first), and that the first items in this list correspond to the "top" or beginning of the breadcrumb trail, e.g. with a site or section homepage. The specific values of 'position' are not assigned meaning for a BreadcrumbList, but they should be integers, e.g. beginning with '1' for the first item in the list.
+     * A BreadcrumbList is an ItemList consisting of a chain of linked Web pages, typically described using at least their URL and their name, and typically ending with the current page.\n\nThe [[position]] property is used to reconstruct the order of the items in a BreadcrumbList. The convention is that a breadcrumb list has an [[itemListOrder]] of [[ItemListOrderAscending]] (lower values listed first), and that the first items in this list correspond to the "top" or beginning of the breadcrumb trail, e.g. with a site or section homepage. The specific values of 'position' are not assigned meaning for a BreadcrumbList, but they should be integers, e.g. beginning with '1' for the first item in the list.
      *       
      */
     "BreadcrumbList": NamedNode<'http://schema.org/BreadcrumbList'>;
+    /** A list of items of any sort&#x2014;for example, Top 10 Movies About Weathermen, or Top 100 Party Songs. Not to be confused with HTML lists, which are often used only for formatting. */
+    "ItemList": NamedNode<'http://schema.org/ItemList'>;
     /** Brewery. */
     "Brewery": NamedNode<'http://schema.org/Brewery'>;
     /** A bridge. */
@@ -295,18 +439,28 @@ interface Schema {
     "BroadcastChannel": NamedNode<'http://schema.org/BroadcastChannel'>;
     /** An over the air or online broadcast event. */
     "BroadcastEvent": NamedNode<'http://schema.org/BroadcastEvent'>;
+    /** A PublicationEvent corresponds indifferently to the event of publication for a CreativeWork of any type, e.g. a broadcast event, an on-demand event, a book/journal publication via a variety of delivery media. */
+    "PublicationEvent": NamedNode<'http://schema.org/PublicationEvent'>;
     /** The frequency in MHz and the modulation used for a particular BroadcastService. */
     "BroadcastFrequencySpecification": NamedNode<'http://schema.org/BroadcastFrequencySpecification'>;
     /** BroadcastRelease. */
     "BroadcastRelease": NamedNode<'http://schema.org/BroadcastRelease'>;
     /** A delivery service through which content is provided via broadcast over the air or online. */
     "BroadcastService": NamedNode<'http://schema.org/BroadcastService'>;
+    /** A service provided by an organization, e.g. delivery service, print services, etc. */
+    "Service": NamedNode<'http://schema.org/Service'>;
     /** An account that allows an investor to deposit funds and place investment orders with a licensed broker or brokerage firm. */
     "BrokerageAccount": NamedNode<'http://schema.org/BrokerageAccount'>;
+    /** A type of financial product that typically requires the client to transfer funds to a financial service in return for potential beneficial financial return. */
+    "InvestmentOrDeposit": NamedNode<'http://schema.org/InvestmentOrDeposit'>;
     /** A Buddhist temple. */
     "BuddhistTemple": NamedNode<'http://schema.org/BuddhistTemple'>;
+    /** Place of worship, such as a church, synagogue, or mosque. */
+    "PlaceOfWorship": NamedNode<'http://schema.org/PlaceOfWorship'>;
     /** A bus (also omnibus or autobus) is a road vehicle designed to carry passengers. Coaches are luxury busses, usually in service for long distance travel. */
     "BusOrCoach": NamedNode<'http://schema.org/BusOrCoach'>;
+    /** A vehicle is a device that is designed or used to transport people or cargo over land, water, air, or through space. */
+    "Vehicle": NamedNode<'http://schema.org/Vehicle'>;
     /** A reservation for bus travel. \n\nNote: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations. For offers of tickets, use [[Offer]]. */
     "BusReservation": NamedNode<'http://schema.org/BusReservation'>;
     /** A bus station. */
@@ -324,6 +478,8 @@ interface Schema {
     "BusinessEntityType": NamedNode<'http://schema.org/BusinessEntityType'>;
     /** Event type: Business event. */
     "BusinessEvent": NamedNode<'http://schema.org/BusinessEvent'>;
+    /** An event happening at a certain time and location, such as a concert, lecture, or festival. Ticketing information may be added via the [[offers]] property. Repeated events may be structured as separate Event objects. */
+    "Event": NamedNode<'http://schema.org/Event'>;
     /**
      * The business function specifies the type of activity or access (i.e., the bundle of rights) offered by the organization or business person through the offer. Typical are sell, rental or lease, maintenance or repair, manufacture / produce, recycle / dispose, engineering / construction, or installation. Proprietary specifications of access rights are also instances of this class.\n\nCommonly used values:\n\n* http://purl.org/goodrelations/v1#ConstructionInstallation\n* http://purl.org/goodrelations/v1#Dispose\n* http://purl.org/goodrelations/v1#LeaseOut\n* http://purl.org/goodrelations/v1#Maintain\n* http://purl.org/goodrelations/v1#ProvideService\n* http://purl.org/goodrelations/v1#Repair\n* http://purl.org/goodrelations/v1#Sell\n* http://purl.org/goodrelations/v1#Buy
      *         
@@ -333,6 +489,8 @@ interface Schema {
     "BusinessSupport": NamedNode<'http://schema.org/BusinessSupport'>;
     /** The act of giving money to a seller in exchange for goods or services rendered. An agent buys an object, product, or service from a seller for a price. Reciprocal of SellAction. */
     "BuyAction": NamedNode<'http://schema.org/BuyAction'>;
+    /** The act of participating in an exchange of goods and services for monetary compensation. An agent trades an object, product or service with a participant in exchange for a one time or periodic payment. */
+    "TradeAction": NamedNode<'http://schema.org/TradeAction'>;
     /**
      * A CDCPMDRecord is a data structure representing a record in a CDC tabular data format
      *       used for hospital data reporting. See [documentation](/docs/cdc-covid.html) for details, and the linked CDC materials for authoritative
@@ -340,17 +498,23 @@ interface Schema {
      *       
      */
     "CDCPMDRecord": NamedNode<'http://schema.org/CDCPMDRecord'>;
+    /** Structured values are used when the value of a property has a more complex structure than simply being a textual value or a reference to another thing. */
+    "StructuredValue": NamedNode<'http://schema.org/StructuredValue'>;
     /** CDFormat. */
     "CDFormat": NamedNode<'http://schema.org/CDFormat'>;
+    /** Format of this release (the type of recording media used, i.e. compact disc, digital media, LP, etc.). */
+    "MusicReleaseFormatType": NamedNode<'http://schema.org/MusicReleaseFormatType'>;
     /** X-ray computed tomography imaging. */
     "CT": NamedNode<'http://schema.org/CT'>;
+    /** Any medical imaging modality typically used for diagnostic purposes. Enumerated type. */
+    "MedicalImagingTechnique": NamedNode<'http://schema.org/MedicalImagingTechnique'>;
     /** A service which provides access to media programming like TV or radio. Access may be via cable or satellite. */
     "CableOrSatelliteService": NamedNode<'http://schema.org/CableOrSatelliteService'>;
     /** A cafe or coffee shop. */
     "CafeOrCoffeeShop": NamedNode<'http://schema.org/CafeOrCoffeeShop'>;
     /**
      * A camping site, campsite, or [[Campground]] is a place used for overnight stay in the outdoors, typically containing individual [[CampingPitch]] locations. \n\n
-     * In British English a campsite is an area, usually divided into a number of pitches, where people can camp overnight using tents or camper vans or caravans; this British English use of the word is synonymous with the American English expression campground. In American English the term campsite generally means an area where an individual, family, group, or military unit can pitch a tent or park a camper; a campground may contain many campsites (Source: Wikipedia see [https://en.wikipedia.org/wiki/Campsite](https://en.wikipedia.org/wiki/Campsite)).\n\n
+     * In British English a campsite is an area, usually divided into a number of pitches, where people can camp overnight using tents or camper vans or caravans; this British English use of the word is synonymous with the American English expression campground. In American English the term campsite generally means an area where an individual, family, group, or military unit can pitch a tent or park a camper; a campground may contain many campsites (source: Wikipedia, see [https://en.wikipedia.org/wiki/Campsite](https://en.wikipedia.org/wiki/Campsite)).\n\n
      *
      * See also the dedicated [document on the use of schema.org for marking up hotels and other forms of accommodations](/docs/hotels.html).
      *
@@ -359,7 +523,7 @@ interface Schema {
     /**
      * A [[CampingPitch]] is an individual place for overnight stay in the outdoors, typically being part of a larger camping site, or [[Campground]].\n\n
      * In British English a campsite, or campground, is an area, usually divided into a number of pitches, where people can camp overnight using tents or camper vans or caravans; this British English use of the word is synonymous with the American English expression campground. In American English the term campsite generally means an area where an individual, family, group, or military unit can pitch a tent or park a camper; a campground may contain many campsites.
-     * (Source: Wikipedia see [https://en.wikipedia.org/wiki/Campsite](https://en.wikipedia.org/wiki/Campsite)).\n\n
+     * (Source: Wikipedia, see [https://en.wikipedia.org/wiki/Campsite](https://en.wikipedia.org/wiki/Campsite).)\n\n
      * See also the dedicated [document on the use of schema.org for marking up hotels and other forms of accommodations](/docs/hotels.html).
      *
      */
@@ -368,26 +532,36 @@ interface Schema {
     "Canal": NamedNode<'http://schema.org/Canal'>;
     /** The act of asserting that a future event/action is no longer going to happen.\n\nRelated actions:\n\n* [[ConfirmAction]]: The antonym of CancelAction. */
     "CancelAction": NamedNode<'http://schema.org/CancelAction'>;
+    /** The act of planning the execution of an event/task/action/reservation/plan to a future date. */
+    "PlanAction": NamedNode<'http://schema.org/PlanAction'>;
     /** A car is a wheeled, self-powered motor vehicle used for transportation. */
     "Car": NamedNode<'http://schema.org/Car'>;
     /** A value indicating a special usage of a car, e.g. commercial rental, driving school, or as a taxi. */
     "CarUsageType": NamedNode<'http://schema.org/CarUsageType'>;
     /** A specific branch of medical science that pertains to diagnosis and treatment of disorders of heart and vasculature. */
     "Cardiovascular": NamedNode<'http://schema.org/Cardiovascular'>;
-    /** Cardiovascular system assessment withclinical examination. */
+    /** Cardiovascular system assessment with clinical examination. */
     "CardiovascularExam": NamedNode<'http://schema.org/CardiovascularExam'>;
     /** A case series (also known as a clinical series) is a medical research study that tracks patients with a known exposure given similar treatment or examines their medical records for exposure and outcome. A case series can be retrospective or prospective and usually involves a smaller number of patients than the more powerful case-control studies or randomized controlled trials. Case series may be consecutive or non-consecutive, depending on whether all cases presenting to the reporting authors over a period of time were included, or only a selection. */
     "CaseSeries": NamedNode<'http://schema.org/CaseSeries'>;
+    /** Design models for observational medical studies. Enumerated type. */
+    "MedicalObservationalStudyDesign": NamedNode<'http://schema.org/MedicalObservationalStudyDesign'>;
     /** A casino. */
     "Casino": NamedNode<'http://schema.org/Casino'>;
     /** CassetteFormat. */
     "CassetteFormat": NamedNode<'http://schema.org/CassetteFormat'>;
     /** A Category Code. */
     "CategoryCode": NamedNode<'http://schema.org/CategoryCode'>;
+    /** A word, name, acronym, phrase, etc. with a formal definition. Often used in the context of category or subject classification, glossaries or dictionaries, product or creative work types, etc. Use the name property for the term being defined, use termCode if the term has an alpha-numeric code allocated, use description to provide the definition of the term. */
+    "DefinedTerm": NamedNode<'http://schema.org/DefinedTerm'>;
     /** A set of Category Code values. */
     "CategoryCodeSet": NamedNode<'http://schema.org/CategoryCodeSet'>;
+    /** A set of defined terms, for example a set of categories or a classification scheme, a glossary, dictionary or enumeration. */
+    "DefinedTermSet": NamedNode<'http://schema.org/DefinedTermSet'>;
     /** A Catholic church. */
     "CatholicChurch": NamedNode<'http://schema.org/CatholicChurch'>;
+    /** A church. */
+    "Church": NamedNode<'http://schema.org/Church'>;
     /** Information about the causes and main actions that gave rise to the topic. */
     "CausesHealthAspect": NamedNode<'http://schema.org/CausesHealthAspect'>;
     /** A graveyard. */
@@ -396,11 +570,15 @@ interface Schema {
     "Chapter": NamedNode<'http://schema.org/Chapter'>;
     /** CharitableIncorporatedOrganization: Non-profit type referring to a Charitable Incorporated Organization (UK). */
     "CharitableIncorporatedOrganization": NamedNode<'http://schema.org/CharitableIncorporatedOrganization'>;
+    /** UKNonprofitType: Non-profit organization type originating from the United Kingdom. */
+    "UKNonprofitType": NamedNode<'http://schema.org/UKNonprofitType'>;
     /** An agent inspects, determines, investigates, inquires, or examines an object's accuracy, quality, condition, or state. */
     "CheckAction": NamedNode<'http://schema.org/CheckAction'>;
-    /** The act of an agent communicating (service provider, social media, etc) their arrival by registering/confirming for a previously reserved service (e.g. flight check in) or at a place (e.g. hotel), possibly resulting in a result (boarding pass, etc).\n\nRelated actions:\n\n* [[CheckOutAction]]: The antonym of CheckInAction.\n* [[ArriveAction]]: Unlike ArriveAction, CheckInAction implies that the agent is informing/confirming the start of a previously reserved service.\n* [[ConfirmAction]]: Unlike ConfirmAction, CheckInAction implies that the agent is informing/confirming the *start* of a previously reserved service rather than its validity/existence. */
+    /** The act of finding an object.\n\nRelated actions:\n\n* [[SearchAction]]: FindAction is generally lead by a SearchAction, but not necessarily. */
+    "FindAction": NamedNode<'http://schema.org/FindAction'>;
+    /** The act of an agent communicating (service provider, social media, etc) their arrival by registering/confirming for a previously reserved service (e.g. flight check-in) or at a place (e.g. hotel), possibly resulting in a result (boarding pass, etc).\n\nRelated actions:\n\n* [[CheckOutAction]]: The antonym of CheckInAction.\n* [[ArriveAction]]: Unlike ArriveAction, CheckInAction implies that the agent is informing/confirming the start of a previously reserved service.\n* [[ConfirmAction]]: Unlike ConfirmAction, CheckInAction implies that the agent is informing/confirming the *start* of a previously reserved service rather than its validity/existence. */
     "CheckInAction": NamedNode<'http://schema.org/CheckInAction'>;
-    /** The act of an agent communicating (service provider, social media, etc) their departure of a previously reserved service (e.g. flight check in) or place (e.g. hotel).\n\nRelated actions:\n\n* [[CheckInAction]]: The antonym of CheckOutAction.\n* [[DepartAction]]: Unlike DepartAction, CheckOutAction implies that the agent is informing/confirming the end of a previously reserved service.\n* [[CancelAction]]: Unlike CancelAction, CheckOutAction implies that the agent is informing/confirming the end of a previously reserved service. */
+    /** The act of an agent communicating (service provider, social media, etc) their departure of a previously reserved service (e.g. flight check-in) or place (e.g. hotel).\n\nRelated actions:\n\n* [[CheckInAction]]: The antonym of CheckOutAction.\n* [[DepartAction]]: Unlike DepartAction, CheckOutAction implies that the agent is informing/confirming the end of a previously reserved service.\n* [[CancelAction]]: Unlike CancelAction, CheckOutAction implies that the agent is informing/confirming the end of a previously reserved service. */
     "CheckOutAction": NamedNode<'http://schema.org/CheckOutAction'>;
     /** Web page type: Checkout page. */
     "CheckoutPage": NamedNode<'http://schema.org/CheckoutPage'>;
@@ -414,14 +592,12 @@ interface Schema {
     "Chiropractic": NamedNode<'http://schema.org/Chiropractic'>;
     /** The act of expressing a preference from a set of options or a large or unbounded set of choices/options. */
     "ChooseAction": NamedNode<'http://schema.org/ChooseAction'>;
-    /** A church. */
-    "Church": NamedNode<'http://schema.org/Church'>;
     /** A city or town. */
     "City": NamedNode<'http://schema.org/City'>;
     /** A city hall. */
     "CityHall": NamedNode<'http://schema.org/CityHall'>;
-    /** A public structure, such as a town hall or concert hall. */
-    "CivicStructure": NamedNode<'http://schema.org/CivicStructure'>;
+    /** A government building. */
+    "GovernmentBuilding": NamedNode<'http://schema.org/GovernmentBuilding'>;
     /**
      * A [[Claim]] in Schema.org represents a specific, factually-oriented claim that could be the [[itemReviewed]] in a [[ClaimReview]]. The content of a claim can be summarized with the [[text]] property. Variations on well known claims can have their common identity indicated via [[sameAs]] links, and summarized with a [[name]]. Ideally, a [[Claim]] description includes enough contextual information to minimize the risk of ambiguity or inclarity. In practice, many claims are better understood in the context in which they appear or the interpretations provided by claim reviews.
      *
@@ -433,34 +609,54 @@ interface Schema {
     "Claim": NamedNode<'http://schema.org/Claim'>;
     /** A fact-checking review of claims made (or reported) in some creative work (referenced via itemReviewed). */
     "ClaimReview": NamedNode<'http://schema.org/ClaimReview'>;
+    /** A review of an item - for example, of a restaurant, movie, or store. */
+    "Review": NamedNode<'http://schema.org/Review'>;
     /** A class, also often called a 'Type'; equivalent to rdfs:Class. */
     "Class": NamedNode<'http://schema.org/Class'>;
     /** Represents the cleaning fee part of the total price for an offered product, for example a vacation rental. */
     "CleaningFee": NamedNode<'http://schema.org/CleaningFee'>;
     /** Medical clinicians, including practicing physicians and other medical professionals involved in clinical practice. */
     "Clinician": NamedNode<'http://schema.org/Clinician'>;
+    /** Target audiences types for medical web pages. Enumerated type. */
+    "MedicalAudienceType": NamedNode<'http://schema.org/MedicalAudienceType'>;
     /** A short TV or radio program or a segment/part of a program. */
     "Clip": NamedNode<'http://schema.org/Clip'>;
     /** A clothing store. */
     "ClothingStore": NamedNode<'http://schema.org/ClothingStore'>;
     /** Play mode: CoOp. Co-operative games, where you play on the same team with friends. */
     "CoOp": NamedNode<'http://schema.org/CoOp'>;
+    /** Indicates whether this game is multi-player, co-op or single-player. */
+    "GamePlayMode": NamedNode<'http://schema.org/GamePlayMode'>;
     /** Computer programming source code. Example: Full (compile ready) solutions, code snippet samples, scripts, templates. */
     "Code": NamedNode<'http://schema.org/Code'>;
+    /** Relates a term (i.e. a property, class or enumeration) to one that supersedes it. */
+    "supersededBy": NamedNode<'http://schema.org/supersededBy'>;
+    /** Computer programming source code. Example: Full (compile ready) solutions, code snippet samples, scripts, templates. */
+    "SoftwareSourceCode": NamedNode<'http://schema.org/SoftwareSourceCode'>;
     /** Also known as a panel study. A cohort study is a form of longitudinal study used in medicine and social science. It is one type of study design and should be compared with a cross-sectional study.  A cohort is a group of people who share a common characteristic or experience within a defined period (e.g., are born, leave school, lose their job, are exposed to a drug or a vaccine, etc.). The comparison group may be the general population from which the cohort is drawn, or it may be another cohort of persons thought to have had little or no exposure to the substance under investigation, but otherwise similar. Alternatively, subgroups within the cohort may be compared with each other. */
     "CohortStudy": NamedNode<'http://schema.org/CohortStudy'>;
-    /** A collection of items e.g. creative works or products. */
+    /** A collection of items, e.g. creative works or products. */
     "Collection": NamedNode<'http://schema.org/Collection'>;
     /** Web page type: Collection page. */
     "CollectionPage": NamedNode<'http://schema.org/CollectionPage'>;
     /** A college, university, or other third-level educational institution. */
     "CollegeOrUniversity": NamedNode<'http://schema.org/CollegeOrUniversity'>;
+    /** An educational organization. */
+    "EducationalOrganization": NamedNode<'http://schema.org/EducationalOrganization'>;
     /** A comedy club. */
     "ComedyClub": NamedNode<'http://schema.org/ComedyClub'>;
     /** Event type: Comedy event. */
     "ComedyEvent": NamedNode<'http://schema.org/ComedyEvent'>;
     /** The artwork on the cover of a comic. */
     "ComicCoverArt": NamedNode<'http://schema.org/ComicCoverArt'>;
+    /**
+     * The term "story" is any indivisible, re-printable
+     *     	unit of a comic, including the interior stories, covers, and backmatter. Most
+     *     	comics have at least two stories: a cover (ComicCoverArt) and an interior story.
+     */
+    "ComicStory": NamedNode<'http://schema.org/ComicStory'>;
+    /** The artwork on the outer surface of a CreativeWork. */
+    "CoverArt": NamedNode<'http://schema.org/CoverArt'>;
     /**
      * Individual comic issues are serially published as
      *     	part of a larger series. For the sake of consistency, even one-shot issues
@@ -470,48 +666,54 @@ interface Schema {
      *     	description of the issue (if any).
      */
     "ComicIssue": NamedNode<'http://schema.org/ComicIssue'>;
+    /** A part of a successively published publication such as a periodical or publication volume, often numbered, usually containing a grouping of works such as articles.\n\nSee also [blog post](http://blog.schema.org/2014/09/schemaorg-support-for-bibliographic_2.html). */
+    "PublicationIssue": NamedNode<'http://schema.org/PublicationIssue'>;
     /**
      * A sequential publication of comic stories under a
      *     	unifying title, for example "The Amazing Spider-Man" or "Groo the
      *     	Wanderer".
      */
     "ComicSeries": NamedNode<'http://schema.org/ComicSeries'>;
-    /**
-     * The term "story" is any indivisible, re-printable
-     *     	unit of a comic, including the interior stories, covers, and backmatter. Most
-     *     	comics have at least two stories: a cover (ComicCoverArt) and an interior story.
-     */
-    "ComicStory": NamedNode<'http://schema.org/ComicStory'>;
-    /** A comment on an item - for example, a comment on a blog post. The comment's content is expressed via the [[text]] property, and its topic via [[about]], properties shared with all CreativeWorks. */
-    "Comment": NamedNode<'http://schema.org/Comment'>;
+    /** A publication in any medium issued in successive parts bearing numerical or chronological designations and intended to continue indefinitely, such as a magazine, scholarly journal, or newspaper.\n\nSee also [blog post](http://blog.schema.org/2014/09/schemaorg-support-for-bibliographic_2.html). */
+    "Periodical": NamedNode<'http://schema.org/Periodical'>;
     /** The act of generating a comment about a subject. */
     "CommentAction": NamedNode<'http://schema.org/CommentAction'>;
     /** Permission to add comments to the document. */
     "CommentPermission": NamedNode<'http://schema.org/CommentPermission'>;
-    /** The act of conveying information to another person via a communication medium (instrument) such as speech, email, or telephone conversation. */
-    "CommunicateAction": NamedNode<'http://schema.org/CommunicateAction'>;
+    /** A type of permission which can be granted for accessing a digital document. */
+    "DigitalDocumentPermissionType": NamedNode<'http://schema.org/DigitalDocumentPermissionType'>;
     /** A field of public health focusing on improving health characteristics of a defined population in relation with their geographical or environment areas. */
     "CommunityHealth": NamedNode<'http://schema.org/CommunityHealth'>;
+    /** A particular physical or virtual business of an organization for medical purposes. Examples of MedicalBusiness include different businesses run by health professionals. */
+    "MedicalBusiness": NamedNode<'http://schema.org/MedicalBusiness'>;
     /** CompilationAlbum. */
     "CompilationAlbum": NamedNode<'http://schema.org/CompilationAlbum'>;
+    /** Classification of the album by its type of content: soundtrack, live album, studio album, etc. */
+    "MusicAlbumProductionType": NamedNode<'http://schema.org/MusicAlbumProductionType'>;
     /**
      * A [[CompleteDataFeed]] is a [[DataFeed]] whose standard representation includes content for every item currently in the feed.
      *
-     * This is the equivalent of Atom's element as defined in Feed Paging and Archiving [RFC 5005](https://tools.ietf.org/html/rfc5005), For example (and as defined for Atom), when using data from a feed that represents a collection of items that varies over time (e.g. "Top Twenty Records") there is no need to have newer entries mixed in alongside older, obsolete entries. By marking this feed as a CompleteDataFeed, old entries can be safely discarded when the feed is refreshed, since we can assume the feed has provided descriptions for all current items.
+     * This is the equivalent of Atom's element as defined in Feed Paging and Archiving [RFC 5005](https://tools.ietf.org/html/rfc5005), for example (and as defined for Atom), when using data from a feed that represents a collection of items that varies over time (e.g. "Top Twenty Records") there is no need to have newer entries mixed in alongside older, obsolete entries. By marking this feed as a CompleteDataFeed, old entries can be safely discarded when the feed is refreshed, since we can assume the feed has provided descriptions for all current items.
      */
     "CompleteDataFeed": NamedNode<'http://schema.org/CompleteDataFeed'>;
+    /** A single feed providing structured information about one or more entities or topics. */
+    "DataFeed": NamedNode<'http://schema.org/DataFeed'>;
     /** Completed. */
     "Completed": NamedNode<'http://schema.org/Completed'>;
     /** An action that has already taken place. */
     "CompletedActionStatus": NamedNode<'http://schema.org/CompletedActionStatus'>;
     /** A compound price specification is one that bundles multiple prices that all apply in combination for different dimensions of consumption. Use the name property of the attached unit price specification for indicating the dimension of a price component (e.g. "electricity" or "final cleaning"). */
     "CompoundPriceSpecification": NamedNode<'http://schema.org/CompoundPriceSpecification'>;
+    /** A structured value representing a price or price range. Typically, only the subclasses of this type are used for markup. It is recommended to use [[MonetaryAmount]] to describe independent amounts of money such as a salary, credit card limits, etc. */
+    "PriceSpecification": NamedNode<'http://schema.org/PriceSpecification'>;
     /** This type covers computer programming languages such as Scheme and Lisp, as well as other language-like computer representations. Natural languages are best represented with the [[Language]] type. */
     "ComputerLanguage": NamedNode<'http://schema.org/ComputerLanguage'>;
     /** A computer store. */
     "ComputerStore": NamedNode<'http://schema.org/ComputerStore'>;
     /** The act of notifying someone that a future event/action is going to happen as expected.\n\nRelated actions:\n\n* [[CancelAction]]: The antonym of ConfirmAction. */
     "ConfirmAction": NamedNode<'http://schema.org/ConfirmAction'>;
+    /** The act of notifying someone of information pertinent to them, with no expectation of a response. */
+    "InformAction": NamedNode<'http://schema.org/InformAction'>;
     /** A Consortium is a membership [[Organization]] whose members are typically Organizations. */
     "Consortium": NamedNode<'http://schema.org/Consortium'>;
     /** The act of ingesting information/resources/food. */
@@ -526,52 +728,59 @@ interface Schema {
     "ContagiousnessHealthAspect": NamedNode<'http://schema.org/ContagiousnessHealthAspect'>;
     /** One of the continents (for example, Europe or Africa). */
     "Continent": NamedNode<'http://schema.org/Continent'>;
-    /** An agent controls a device or application. */
-    "ControlAction": NamedNode<'http://schema.org/ControlAction'>;
     /** A convenience store. */
     "ConvenienceStore": NamedNode<'http://schema.org/ConvenienceStore'>;
     /** One or more messages between organizations or people on a particular topic. Individual messages can be linked to the conversation with isPartOf or hasPart properties. */
     "Conversation": NamedNode<'http://schema.org/Conversation'>;
     /** The act of producing/preparing food. */
     "CookAction": NamedNode<'http://schema.org/CookAction'>;
+    /** The act of deliberately creating/producing/generating/building a result out of the agent. */
+    "CreateAction": NamedNode<'http://schema.org/CreateAction'>;
     /** Organization: A business corporation. */
     "Corporation": NamedNode<'http://schema.org/Corporation'>;
     /** A [[comment]] that corrects [[CreativeWork]]. */
     "CorrectionComment": NamedNode<'http://schema.org/CorrectionComment'>;
     /** A country. */
     "Country": NamedNode<'http://schema.org/Country'>;
-    /** A description of an educational course which may be offered as distinct instances at which take place at different times or take place at different locations, or be offered through different media or modes of study. An educational course is a sequence of one or more educational events and/or creative works which aims to build knowledge, competence or ability of learners. */
+    /** A description of an educational course which may be offered as distinct instances which take place at different times or take place at different locations, or be offered through different media or modes of study. An educational course is a sequence of one or more educational events and/or creative works which aims to build knowledge, competence or ability of learners. */
     "Course": NamedNode<'http://schema.org/Course'>;
+    /**
+     * The LearningResource type can be used to indicate [[CreativeWork]]s (whether physical or digital) that have a particular and explicit orientation towards learning, education, skill acquisition, and other educational purposes.
+     *
+     * [[LearningResource]] is expected to be used as an addition to a primary type such as [[Book]], [[VideoObject]], [[Product]] etc.
+     *
+     * [[EducationEvent]] serves a similar purpose for event-like things (e.g. a [[Trip]]). A [[LearningResource]] may be created as a result of an [[EducationEvent]], for example by recording one.
+     */
+    "LearningResource": NamedNode<'http://schema.org/LearningResource'>;
     /** An instance of a [[Course]] which is distinct from other instances because it is offered at a different time or location or through different media or modes of study or to a specific section of students. */
     "CourseInstance": NamedNode<'http://schema.org/CourseInstance'>;
     /** A courthouse. */
     "Courthouse": NamedNode<'http://schema.org/Courthouse'>;
-    /** The artwork on the outer surface of a CreativeWork. */
-    "CoverArt": NamedNode<'http://schema.org/CoverArt'>;
+    /** A work of art that is primarily visual in character. */
+    "VisualArtwork": NamedNode<'http://schema.org/VisualArtwork'>;
     /**
      * A CovidTestingFacility is a [[MedicalClinic]] where testing for the COVID-19 Coronavirus
      *       disease is available. If the facility is being made available from an established [[Pharmacy]], [[Hotel]], or other
      *       non-medical organization, multiple types can be listed. This makes it easier to re-use existing schema.org information
-     *       about that place e.g. contact info, address, opening hours. Note that in an emergency, such information may not always be reliable.
+     *       about that place, e.g. contact info, address, opening hours. Note that in an emergency, such information may not always be reliable.
      *       
      */
     "CovidTestingFacility": NamedNode<'http://schema.org/CovidTestingFacility'>;
-    /** The act of deliberately creating/producing/generating/building a result out of the agent. */
-    "CreateAction": NamedNode<'http://schema.org/CreateAction'>;
-    /** The most generic kind of creative work, including books, movies, photographs, software programs, etc. */
-    "CreativeWork": NamedNode<'http://schema.org/CreativeWork'>;
-    /** A media season e.g. tv, radio, video game etc. */
+    /** A facility, often associated with a hospital or medical school, that is devoted to the specific diagnosis and/or healthcare. Previously limited to outpatients but with evolution it may be open to inpatients as well. */
+    "MedicalClinic": NamedNode<'http://schema.org/MedicalClinic'>;
+    /** A media season, e.g. TV, radio, video game etc. */
     "CreativeWorkSeason": NamedNode<'http://schema.org/CreativeWorkSeason'>;
-    /**
-     * A CreativeWorkSeries in schema.org is a group of related items, typically but not necessarily of the same kind. CreativeWorkSeries are usually organized into some order, often chronological. Unlike [[ItemList]] which is a general purpose data structure for lists of things, the emphasis with CreativeWorkSeries is on published materials (written e.g. books and periodicals, or media such as tv, radio and games).\n\nSpecific subtypes are available for describing [[TVSeries]], [[RadioSeries]], [[MovieSeries]], [[BookSeries]], [[Periodical]] and [[VideoGameSeries]]. In each case, the [[hasPart]] / [[isPartOf]] properties can be used to relate the CreativeWorkSeries to its parts. The general CreativeWorkSeries type serves largely just to organize these more specific and practical subtypes.\n\nIt is common for properties applicable to an item from the series to be usefully applied to the containing group. Schema.org attempts to anticipate some of these cases, but publishers should be free to apply properties of the series parts to the series as a whole wherever they seem appropriate.
-     * 	  
-     */
-    "CreativeWorkSeries": NamedNode<'http://schema.org/CreativeWorkSeries'>;
+    /** A Series in schema.org is a group of related items, typically but not necessarily of the same kind. See also [[CreativeWorkSeries]], [[EventSeries]]. */
+    "Series": NamedNode<'http://schema.org/Series'>;
     /**
      * A card payment method of a particular brand or name.  Used to mark up a particular payment method and/or the financial product/service that supplies the card account.\n\nCommonly used values:\n\n* http://purl.org/goodrelations/v1#AmericanExpress\n* http://purl.org/goodrelations/v1#DinersClub\n* http://purl.org/goodrelations/v1#Discover\n* http://purl.org/goodrelations/v1#JCB\n* http://purl.org/goodrelations/v1#MasterCard\n* http://purl.org/goodrelations/v1#VISA
      *        
      */
     "CreditCard": NamedNode<'http://schema.org/CreditCard'>;
+    /** A financial product for the loaning of an amount of money, or line of credit, under agreed terms and charges. */
+    "LoanOrCredit": NamedNode<'http://schema.org/LoanOrCredit'>;
+    /** A payment method using a credit, debit, store or other card to associate the payment with an account. */
+    "PaymentCard": NamedNode<'http://schema.org/PaymentCard'>;
     /** A crematorium. */
     "Crematorium": NamedNode<'http://schema.org/Crematorium'>;
     /** A [[CriticReview]] is a more specialized form of Review written or published by a source that is recognized for its reviewing activities. These can include online columns, travel and food guides, TV and radio shows, blogs and other independent Web sites. [[CriticReview]]s are typically more in-depth and professionally written. For simpler, casually written user/visitor/viewer/customer reviews, it is more appropriate to use the [[UserReview]] type. Review aggregator sites such as Metacritic already separate out the site's user reviews from selected critic reviews that originate from third-party sources. */
@@ -580,38 +789,46 @@ interface Schema {
     "CrossSectional": NamedNode<'http://schema.org/CrossSectional'>;
     /** Text representing a CSS selector. */
     "CssSelectorType": NamedNode<'http://schema.org/CssSelectorType'>;
+    /** Data type: Text. */
+    "Text": NamedNode<'http://schema.org/Text'>;
     /** A service to convert funds from one currency to another currency. */
     "CurrencyConversionService": NamedNode<'http://schema.org/CurrencyConversionService'>;
     /** An alternative, closely-related condition typically considered later in the differential diagnosis process along with the signs that are used to distinguish it. */
     "DDxElement": NamedNode<'http://schema.org/DDxElement'>;
+    /** A utility class that serves as the umbrella for a number of 'intangible' things in the medical space. */
+    "MedicalIntangible": NamedNode<'http://schema.org/MedicalIntangible'>;
     /** DJMixAlbum. */
     "DJMixAlbum": NamedNode<'http://schema.org/DJMixAlbum'>;
     /** DVDFormat. */
     "DVDFormat": NamedNode<'http://schema.org/DVDFormat'>;
     /** Indicates that the item is damaged. */
     "DamagedCondition": NamedNode<'http://schema.org/DamagedCondition'>;
+    /** A list of possible conditions for the item. */
+    "OfferItemCondition": NamedNode<'http://schema.org/OfferItemCondition'>;
     /** Event type: A social dance. */
     "DanceEvent": NamedNode<'http://schema.org/DanceEvent'>;
     /** A dance group&#x2014;for example, the Alvin Ailey Dance Theater or Riverdance. */
     "DanceGroup": NamedNode<'http://schema.org/DanceGroup'>;
+    /** A performance group, such as a band, an orchestra, or a circus. */
+    "PerformingGroup": NamedNode<'http://schema.org/PerformingGroup'>;
+    /** The item is dangerous and requires careful handling and/or special training of the user. See also the [UN Model Classification](https://unece.org/DAM/trans/danger/publi/unrec/rev17/English/02EREv17_Part2.pdf) defining the 9 classes of dangerous goods such as explosives, gases, flammables, and more. */
+    "DangerousGoodConsideration": NamedNode<'http://schema.org/DangerousGoodConsideration'>;
     /** A collection of datasets. */
     "DataCatalog": NamedNode<'http://schema.org/DataCatalog'>;
-    /** A dataset in downloadable form. */
+    /** All or part of a [[Dataset]] in downloadable form. */
     "DataDownload": NamedNode<'http://schema.org/DataDownload'>;
-    /** A single feed providing structured information about one or more entities or topics. */
-    "DataFeed": NamedNode<'http://schema.org/DataFeed'>;
-    /** A single item within a larger data feed. */
-    "DataFeedItem": NamedNode<'http://schema.org/DataFeedItem'>;
-    /** The basic data types such as Integers, Strings, etc. */
-    "DataType": NamedNode<'http://schema.org/DataType'>;
     /** A body of structured information describing some topic(s) of interest. */
     "Dataset": NamedNode<'http://schema.org/Dataset'>;
+    /** A single item within a larger data feed. */
+    "DataFeedItem": NamedNode<'http://schema.org/DataFeedItem'>;
     /** A date value in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601). */
     "Date": NamedNode<'http://schema.org/Date'>;
     /** A combination of date and time of day in the form [-]CCYY-MM-DDThh:mm:ss[Z|(+|-)hh:mm] (see Chapter 5.4 of ISO 8601). */
     "DateTime": NamedNode<'http://schema.org/DateTime'>;
-    /** A DatedMoneySpecification represents monetary values with optional start and end dates. For example, this could represent an employee's salary over a specific period of time. __Note:__ This type has been superseded by [[MonetaryAmount]] use of that type is recommended */
+    /** A DatedMoneySpecification represents monetary values with optional start and end dates. For example, this could represent an employee's salary over a specific period of time. __Note:__ This type has been superseded by [[MonetaryAmount]], use of that type is recommended. */
     "DatedMoneySpecification": NamedNode<'http://schema.org/DatedMoneySpecification'>;
+    /** A monetary value or range. This type can be used to describe an amount of money such as $50 USD, or a range as in describing a bank account being suitable for a balance between £1,000 and £1,000,000 GBP, or the value of a salary, etc. It is recommended to use [[PriceSpecification]] Types to describe the price of an Offer, Invoice, etc. */
+    "MonetaryAmount": NamedNode<'http://schema.org/MonetaryAmount'>;
     /**
      * The day of the week, e.g. used to specify to which day the opening hours of an OpeningHoursSpecification refer.
      *
@@ -636,6 +853,8 @@ interface Schema {
      *
      */
     "DecontextualizedContent": NamedNode<'http://schema.org/DecontextualizedContent'>;
+    /**  Codes for use with the [[mediaAuthenticityCategory]] property, indicating the authenticity of a media object (in the context of how it was published or shared). In general these codes are not mutually exclusive, although some combinations (such as 'original' versus 'transformed', 'edited' and 'staged') would be contradictory if applied in the same [[MediaReview]]. Note that the application of these codes is with regard to a piece of media shared or published in a particular context. */
+    "MediaManipulationRatingEnumeration": NamedNode<'http://schema.org/MediaManipulationRatingEnumeration'>;
     /** A defence establishment, such as an army or navy base. */
     "DefenceEstablishment": NamedNode<'http://schema.org/DefenceEstablishment'>;
     /**
@@ -655,12 +874,8 @@ interface Schema {
      *
      */
     "DefinedRegion": NamedNode<'http://schema.org/DefinedRegion'>;
-    /** A word, name, acronym, phrase, etc. with a formal definition. Often used in the context of category or subject classification, glossaries or dictionaries, product or creative work types, etc. Use the name property for the term being defined, use termCode if the term has an alpha-numeric code allocated, use description to provide the definition of the term. */
-    "DefinedTerm": NamedNode<'http://schema.org/DefinedTerm'>;
-    /** A set of defined terms for example a set of categories or a classification scheme, a glossary, dictionary or enumeration. */
-    "DefinedTermSet": NamedNode<'http://schema.org/DefinedTermSet'>;
     /**
-     * Indicates a document for which the text is conclusively what the law says and is legally binding. (e.g. The digitally signed version of an Official Journal.)
+     * Indicates a document for which the text is conclusively what the law says and is legally binding. (E.g. the digitally signed version of an Official Journal.)
      *   Something "Definitive" is considered to be also [[AuthoritativeLegalValue]].
      */
     "DefinitiveLegalValue": NamedNode<'http://schema.org/DefinitiveLegalValue'>;
@@ -675,17 +890,23 @@ interface Schema {
      *         
      */
     "DeliveryMethod": NamedNode<'http://schema.org/DeliveryMethod'>;
-    /** A DeliveryTimeSettings represents re-usable pieces of shipping information, relating to timing. It is designed for publication on an URL that may be referenced via the [[shippingSettingsLink]] property of a [[OfferShippingDetails]]. Several occurrences can be published, distinguished (and identified/referenced) by their different values for [[transitTimeLabel]]. */
+    /** A DeliveryTimeSettings represents re-usable pieces of shipping information, relating to timing. It is designed for publication on an URL that may be referenced via the [[shippingSettingsLink]] property of an [[OfferShippingDetails]]. Several occurrences can be published, distinguished (and identified/referenced) by their different values for [[transitTimeLabel]]. */
     "DeliveryTimeSettings": NamedNode<'http://schema.org/DeliveryTimeSettings'>;
     /** A demand entity represents the public, not necessarily binding, not necessarily exclusive, announcement by an organization or person to seek a certain type of goods or services. For describing demand using this type, the very same properties used for Offer apply. */
     "Demand": NamedNode<'http://schema.org/Demand'>;
     /** DemoAlbum. */
     "DemoAlbum": NamedNode<'http://schema.org/DemoAlbum'>;
+    /** Indicates demo game availability, i.e. a somehow limited demonstration of the full game. */
+    "DemoGameAvailability": NamedNode<'http://schema.org/DemoGameAvailability'>;
+    /** For a [[VideoGame]], such as used with a [[PlayGameAction]], an enumeration of the kind of game availability offered. */
+    "GameAvailabilityEnumeration": NamedNode<'http://schema.org/GameAvailabilityEnumeration'>;
     /** A dentist. */
     "Dentist": NamedNode<'http://schema.org/Dentist'>;
+    /** A medical organization (physical or not), such as hospital, institution or clinic. */
+    "MedicalOrganization": NamedNode<'http://schema.org/MedicalOrganization'>;
     /** A branch of medicine that is involved in the dental care. */
     "Dentistry": NamedNode<'http://schema.org/Dentistry'>;
-    /** The act of  departing from a place. An agent departs from an fromLocation for a destination, optionally with participants. */
+    /** The act of  departing from a place. An agent departs from a fromLocation for a destination, optionally with participants. */
     "DepartAction": NamedNode<'http://schema.org/DepartAction'>;
     /** A department store. */
     "DepartmentStore": NamedNode<'http://schema.org/DepartmentStore'>;
@@ -695,28 +916,40 @@ interface Schema {
     "Dermatologic": NamedNode<'http://schema.org/Dermatologic'>;
     /** A specific branch of medical science that pertains to diagnosis and treatment of disorders of skin. */
     "Dermatology": NamedNode<'http://schema.org/Dermatology'>;
+    /** Represents the broad notion of 'desktop' browsers as a Web Platform. */
+    "DesktopWebPlatform": NamedNode<'http://schema.org/DesktopWebPlatform'>;
     /** A diet appropriate for people with diabetes. */
     "DiabeticDiet": NamedNode<'http://schema.org/DiabeticDiet'>;
+    /** A diet restricted to certain foods or preparations for cultural, religious, health or lifestyle reasons. */
+    "RestrictedDiet": NamedNode<'http://schema.org/RestrictedDiet'>;
     /** A medical device used for diagnostic purposes. */
     "Diagnostic": NamedNode<'http://schema.org/Diagnostic'>;
+    /** Categories of medical devices, organized by the purpose or intended use of the device. */
+    "MedicalDevicePurpose": NamedNode<'http://schema.org/MedicalDevicePurpose'>;
     /** A medical laboratory that offers on-site or off-site diagnostic services. */
     "DiagnosticLab": NamedNode<'http://schema.org/DiagnosticLab'>;
     /** A medical procedure intended primarily for diagnostic, as opposed to therapeutic, purposes. */
     "DiagnosticProcedure": NamedNode<'http://schema.org/DiagnosticProcedure'>;
+    /** A process of care used in either a diagnostic, therapeutic, preventive or palliative capacity that relies on invasive (surgical), non-invasive, or other techniques. */
+    "MedicalProcedure": NamedNode<'http://schema.org/MedicalProcedure'>;
     /** A strategy of regulating the intake of food to achieve or maintain a specific health-related goal. */
     "Diet": NamedNode<'http://schema.org/Diet'>;
-    /** Dietetic and nutrition as a medical specialty. */
+    /** A process of care involving exercise, changes to diet, fitness routines, and other lifestyle changes aimed at improving a health condition. */
+    "LifestyleModification": NamedNode<'http://schema.org/LifestyleModification'>;
+    /** Dietetics and nutrition as a medical specialty. */
     "DietNutrition": NamedNode<'http://schema.org/DietNutrition'>;
     /** A product taken by mouth that contains a dietary ingredient intended to supplement the diet. Dietary ingredients may include vitamins, minerals, herbs or other botanicals, amino acids, and substances such as enzymes, organ tissues, glandulars and metabolites. */
     "DietarySupplement": NamedNode<'http://schema.org/DietarySupplement'>;
+    /** Any offered product or service. For example: a pair of shoes; a concert ticket; the rental of a car; a haircut; or an episode of a TV show streamed online. */
+    "Product": NamedNode<'http://schema.org/Product'>;
+    /** Any matter of defined composition that has discrete existence, whose origin may be biological, mineral or chemical. */
+    "Substance": NamedNode<'http://schema.org/Substance'>;
     /** DigitalAudioTapeFormat. */
     "DigitalAudioTapeFormat": NamedNode<'http://schema.org/DigitalAudioTapeFormat'>;
     /** An electronic file or document. */
     "DigitalDocument": NamedNode<'http://schema.org/DigitalDocument'>;
     /** A permission for a particular person or group to access a particular file. */
     "DigitalDocumentPermission": NamedNode<'http://schema.org/DigitalDocumentPermission'>;
-    /** A type of permission which can be granted for accessing a digital document. */
-    "DigitalDocumentPermissionType": NamedNode<'http://schema.org/DigitalDocumentPermissionType'>;
     /** DigitalFormat. */
     "DigitalFormat": NamedNode<'http://schema.org/DigitalFormat'>;
     /** DisabilitySupport: this is a benefit for disability support. */
@@ -733,6 +966,8 @@ interface Schema {
     "DislikeAction": NamedNode<'http://schema.org/DislikeAction'>;
     /** Properties that take Distances as values are of the form '&lt;Number&gt; &lt;Length unit of measure&gt;'. E.g., '7 ft'. */
     "Distance": NamedNode<'http://schema.org/Distance'>;
+    /** Quantities such as distance, time, mass, weight, etc. Particular instances of say Mass are entities like '3 kg' or '4 milligrams'. */
+    "Quantity": NamedNode<'http://schema.org/Quantity'>;
     /** Represents the distance fee (e.g., price per km or mile) part of the total price for an offered product, for example a car rental. */
     "DistanceFee": NamedNode<'http://schema.org/DistanceFee'>;
     /** A distillery. */
@@ -743,6 +978,8 @@ interface Schema {
     "DoseSchedule": NamedNode<'http://schema.org/DoseSchedule'>;
     /** A trial design in which neither the researcher nor the patient knows the details of the treatment the patient was randomly assigned to. */
     "DoubleBlindedTrial": NamedNode<'http://schema.org/DoubleBlindedTrial'>;
+    /** Design models for medical trials. Enumerated type. */
+    "MedicalTrialDesign": NamedNode<'http://schema.org/MedicalTrialDesign'>;
     /** The act of downloading an object. */
     "DownloadAction": NamedNode<'http://schema.org/DownloadAction'>;
     /** Represents the downpayment (up-front payment) price component of the total price for an offered product that has additional installment payments. */
@@ -753,11 +990,9 @@ interface Schema {
     "Drawing": NamedNode<'http://schema.org/Drawing'>;
     /** The act of swallowing liquids. */
     "DrinkAction": NamedNode<'http://schema.org/DrinkAction'>;
-    /** A value indicating which roadwheels will receive torque. */
-    "DriveWheelConfigurationValue": NamedNode<'http://schema.org/DriveWheelConfigurationValue'>;
     /** Indicates the usage of the vehicle for driving school. */
     "DrivingSchoolVehicleUsage": NamedNode<'http://schema.org/DrivingSchoolVehicleUsage'>;
-    /** A chemical or biologic substance, used as a medical therapy, that has a physiological effect on an organism. Here the term drug is used interchangeably with the term medicine although clinical knowledge make a clear difference between them. */
+    /** A chemical or biologic substance, used as a medical therapy, that has a physiological effect on an organism. Here the term drug is used interchangeably with the term medicine although clinical knowledge makes a clear difference between them. */
     "Drug": NamedNode<'http://schema.org/Drug'>;
     /** A class of medical drugs, e.g., statins. Classes can represent general pharmacological class, common mechanisms of action, common physiological effects, etc. */
     "DrugClass": NamedNode<'http://schema.org/DrugClass'>;
@@ -765,6 +1000,8 @@ interface Schema {
     "DrugCost": NamedNode<'http://schema.org/DrugCost'>;
     /** Enumerated categories of medical drug costs. */
     "DrugCostCategory": NamedNode<'http://schema.org/DrugCostCategory'>;
+    /** Enumerations related to health and the practice of medicine: A concept that is used to attribute a quality to another concept, as a qualifier, a collection of items or a listing of all of the elements of a set in medicine practice. */
+    "MedicalEnumeration": NamedNode<'http://schema.org/MedicalEnumeration'>;
     /** The legal availability status of a medical drug. */
     "DrugLegalStatus": NamedNode<'http://schema.org/DrugLegalStatus'>;
     /** Categories that represent an assessment of the risk of fetal injury due to a drug or pharmaceutical used as directed by the mother during pregnancy. */
@@ -783,6 +1020,8 @@ interface Schema {
     "EPRelease": NamedNode<'http://schema.org/EPRelease'>;
     /** Represents EU Energy Efficiency Class A+ as defined in EU energy labeling regulations. */
     "EUEnergyEfficiencyCategoryA1Plus": NamedNode<'http://schema.org/EUEnergyEfficiencyCategoryA1Plus'>;
+    /** Enumerates the EU energy efficiency classes A-G as well as A+, A++, and A+++ as defined in EU directive 2017/1369. */
+    "EUEnergyEfficiencyEnumeration": NamedNode<'http://schema.org/EUEnergyEfficiencyEnumeration'>;
     /** Represents EU Energy Efficiency Class A++ as defined in EU energy labeling regulations. */
     "EUEnergyEfficiencyCategoryA2Plus": NamedNode<'http://schema.org/EUEnergyEfficiencyCategoryA2Plus'>;
     /** Represents EU Energy Efficiency Class A+++ as defined in EU energy labeling regulations. */
@@ -801,8 +1040,8 @@ interface Schema {
     "EUEnergyEfficiencyCategoryF": NamedNode<'http://schema.org/EUEnergyEfficiencyCategoryF'>;
     /** Represents EU Energy Efficiency Class G as defined in EU energy labeling regulations. */
     "EUEnergyEfficiencyCategoryG": NamedNode<'http://schema.org/EUEnergyEfficiencyCategoryG'>;
-    /** Enumerates the EU energy efficiency classes A-G as well as A+, A++, and A+++ as defined in EU directive 2017/1369. */
-    "EUEnergyEfficiencyEnumeration": NamedNode<'http://schema.org/EUEnergyEfficiencyEnumeration'>;
+    /** Enumerates energy efficiency levels (also known as "classes" or "ratings") and certifications that are part of several international energy efficiency standards. */
+    "EnergyEfficiencyEnumeration": NamedNode<'http://schema.org/EnergyEfficiencyEnumeration'>;
     /** Ear function assessment with clinical examination. */
     "Ear": NamedNode<'http://schema.org/Ear'>;
     /** The act of swallowing solid objects. */
@@ -828,18 +1067,20 @@ interface Schema {
     "EducationalOccupationalCredential": NamedNode<'http://schema.org/EducationalOccupationalCredential'>;
     /** A program offered by an institution which determines the learning progress to achieve an outcome, usually a credential like a degree or certificate. This would define a discrete set of opportunities (e.g., job, courses) that together constitute a program with a clear start, end, set of requirements, and transition to a new occupational opportunity (e.g., a job), or sometimes a higher educational opportunity (e.g., an advanced degree). */
     "EducationalOccupationalProgram": NamedNode<'http://schema.org/EducationalOccupationalProgram'>;
-    /** An educational organization. */
-    "EducationalOrganization": NamedNode<'http://schema.org/EducationalOrganization'>;
     /** Content about the effectiveness-related aspects of a health topic. */
     "EffectivenessHealthAspect": NamedNode<'http://schema.org/EffectivenessHealthAspect'>;
     /** An electrician. */
     "Electrician": NamedNode<'http://schema.org/Electrician'>;
+    /** A construction business.\n\nA HomeAndConstructionBusiness is a [[LocalBusiness]] that provides services around homes and buildings.\n\nAs a [[LocalBusiness]] it can be described as a [[provider]] of one or more [[Service]]\(s). */
+    "HomeAndConstructionBusiness": NamedNode<'http://schema.org/HomeAndConstructionBusiness'>;
     /** An electronics store. */
     "ElectronicsStore": NamedNode<'http://schema.org/ElectronicsStore'>;
     /** An elementary school. */
     "ElementarySchool": NamedNode<'http://schema.org/ElementarySchool'>;
     /** An email message. */
     "EmailMessage": NamedNode<'http://schema.org/EmailMessage'>;
+    /** A single message from a sender to one or more organizations or people. */
+    "Message": NamedNode<'http://schema.org/Message'>;
     /** An embassy. */
     "Embassy": NamedNode<'http://schema.org/Embassy'>;
     /** A specific branch of medical science that deals with the evaluation and initial treatment of medical conditions caused by trauma or sudden illness. */
@@ -848,6 +1089,8 @@ interface Schema {
     "EmergencyService": NamedNode<'http://schema.org/EmergencyService'>;
     /** A subclass of OrganizationRole used to describe employee relationships. */
     "EmployeeRole": NamedNode<'http://schema.org/EmployeeRole'>;
+    /** A subclass of Role used to describe roles within organizations. */
+    "OrganizationRole": NamedNode<'http://schema.org/OrganizationRole'>;
     /** An aggregate rating of an Organization related to its role as an employer. */
     "EmployerAggregateRating": NamedNode<'http://schema.org/EmployerAggregateRating'>;
     /** An [[EmployerReview]] is a review of an [[Organization]] regarding its role as an employer, written by a current or former employee of that organization. */
@@ -856,7 +1099,7 @@ interface Schema {
     "EmploymentAgency": NamedNode<'http://schema.org/EmploymentAgency'>;
     /** A specific branch of medical science that pertains to diagnosis and treatment of disorders of endocrine glands and their secretions. */
     "Endocrine": NamedNode<'http://schema.org/Endocrine'>;
-    /** An agent approves/certifies/likes/supports/sanction an object. */
+    /** An agent approves/certifies/likes/supports/sanctions an object. */
     "EndorseAction": NamedNode<'http://schema.org/EndorseAction'>;
     /**
      * An EndorsementRating is a rating that expresses some level of endorsement, for example inclusion in a "critic's pick" blog, a
@@ -872,8 +1115,6 @@ interface Schema {
     "Energy": NamedNode<'http://schema.org/Energy'>;
     /** EnergyConsumptionDetails represents information related to the energy efficiency of a product that consumes energy. The information that can be provided is based on international regulations such as for example [EU directive 2017/1369](https://eur-lex.europa.eu/eli/reg/2017/1369/oj) for energy labeling and the [Energy labeling rule](https://www.ftc.gov/enforcement/rules/rulemaking-regulatory-reform-proceedings/energy-water-use-labeling-consumer) under the Energy Policy and Conservation Act (EPCA) in the US. */
     "EnergyConsumptionDetails": NamedNode<'http://schema.org/EnergyConsumptionDetails'>;
-    /** Enumerates energy efficiency levels (also known as "classes" or "ratings") and certifications that are part of several international energy efficiency standards. */
-    "EnergyEfficiencyEnumeration": NamedNode<'http://schema.org/EnergyEfficiencyEnumeration'>;
     /** Represents EnergyStar certification. */
     "EnergyStarCertified": NamedNode<'http://schema.org/EnergyStarCertified'>;
     /** Used to indicate whether a product is EnergyStar certified. */
@@ -882,25 +1123,21 @@ interface Schema {
     "EngineSpecification": NamedNode<'http://schema.org/EngineSpecification'>;
     /** Enrolling participants by invitation only. */
     "EnrollingByInvitation": NamedNode<'http://schema.org/EnrollingByInvitation'>;
-    /** A business providing entertainment. */
-    "EntertainmentBusiness": NamedNode<'http://schema.org/EntertainmentBusiness'>;
     /** An entry point, within some Web-based protocol. */
     "EntryPoint": NamedNode<'http://schema.org/EntryPoint'>;
-    /** Lists or enumerations—for example, a list of cuisines or music genres, etc. */
-    "Enumeration": NamedNode<'http://schema.org/Enumeration'>;
     /** A media episode (e.g. TV, radio, video game) which can be part of a series or season. */
     "Episode": NamedNode<'http://schema.org/Episode'>;
-    /** An event happening at a certain time and location, such as a concert, lecture, or festival. Ticketing information may be added via the [[offers]] property. Repeated events may be structured as separate Event objects. */
-    "Event": NamedNode<'http://schema.org/Event'>;
     /** An EventAttendanceModeEnumeration value is one of potentially several modes of organising an event, relating to whether it is online or offline. */
     "EventAttendanceModeEnumeration": NamedNode<'http://schema.org/EventAttendanceModeEnumeration'>;
     /** The event has been cancelled. If the event has multiple startDate values, all are assumed to be cancelled. Either startDate or previousStartDate may be used to specify the event's cancelled date(s). */
     "EventCancelled": NamedNode<'http://schema.org/EventCancelled'>;
+    /** EventStatusType is an enumeration type whose instances represent several states that an Event may be in. */
+    "EventStatusType": NamedNode<'http://schema.org/EventStatusType'>;
     /** Indicates that the event was changed to allow online participation. See [[eventAttendanceMode]] for specifics of whether it is now fully or partially online. */
     "EventMovedOnline": NamedNode<'http://schema.org/EventMovedOnline'>;
     /** The event has been postponed and no new date has been set. The event's previousStartDate should be set. */
     "EventPostponed": NamedNode<'http://schema.org/EventPostponed'>;
-    /** The event has been rescheduled. The event's previousStartDate should be set to the old date and the startDate should be set to the event's new date. (If the event has been rescheduled multiple times, the previousStartDate property may be repeated). */
+    /** The event has been rescheduled. The event's previousStartDate should be set to the old date and the startDate should be set to the event's new date. (If the event has been rescheduled multiple times, the previousStartDate property may be repeated.) */
     "EventRescheduled": NamedNode<'http://schema.org/EventRescheduled'>;
     /** A reservation for an event like a concert, sporting event, or lecture.\n\nNote: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations. For offers of tickets, use [[Offer]]. */
     "EventReservation": NamedNode<'http://schema.org/EventReservation'>;
@@ -923,12 +1160,12 @@ interface Schema {
      *    
      */
     "EventSeries": NamedNode<'http://schema.org/EventSeries'>;
-    /** EventStatusType is an enumeration type whose instances represent several states that an Event may be in. */
-    "EventStatusType": NamedNode<'http://schema.org/EventStatusType'>;
     /** An event venue. */
     "EventVenue": NamedNode<'http://schema.org/EventVenue'>;
     /** Data derived from multiple randomized clinical trials or meta-analyses. */
     "EvidenceLevelA": NamedNode<'http://schema.org/EvidenceLevelA'>;
+    /** Level of evidence for a medical guideline. Enumerated type. */
+    "MedicalEvidenceLevel": NamedNode<'http://schema.org/MedicalEvidenceLevel'>;
     /** Data derived from a single randomized trial, or nonrandomized studies. */
     "EvidenceLevelB": NamedNode<'http://schema.org/EvidenceLevelB'>;
     /** Only consensus opinion of experts, case studies, or standard-of-care. */
@@ -937,15 +1174,21 @@ interface Schema {
     "ExchangeRateSpecification": NamedNode<'http://schema.org/ExchangeRateSpecification'>;
     /** Specifies that a refund can be done as an exchange for the same product. */
     "ExchangeRefund": NamedNode<'http://schema.org/ExchangeRefund'>;
+    /** Enumerates several kinds of product return refund types. */
+    "RefundTypeEnumeration": NamedNode<'http://schema.org/RefundTypeEnumeration'>;
     /** The act of participating in exertive activity for the purposes of improving health and fitness. */
     "ExerciseAction": NamedNode<'http://schema.org/ExerciseAction'>;
+    /** The act of playing/exercising/training/performing for enjoyment, leisure, recreation, competition or exercise.\n\nRelated actions:\n\n* [[ListenAction]]: Unlike ListenAction (which is under ConsumeAction), PlayAction refers to performing for an audience or at an event, rather than consuming music.\n* [[WatchAction]]: Unlike WatchAction (which is under ConsumeAction), PlayAction refers to showing/displaying for an audience or at an event, rather than consuming visual content. */
+    "PlayAction": NamedNode<'http://schema.org/PlayAction'>;
     /** A gym. */
     "ExerciseGym": NamedNode<'http://schema.org/ExerciseGym'>;
     /** Fitness-related activity designed for a specific health-related purpose, including defined exercise routines as well as activity prescribed by a clinician. */
     "ExercisePlan": NamedNode<'http://schema.org/ExercisePlan'>;
+    /** Any bodily activity that enhances or maintains physical fitness and overall health and wellness. Includes activity that is part of daily living and routine, structured exercise, and exercise prescribed as part of a medical treatment or recovery plan. */
+    "PhysicalActivity": NamedNode<'http://schema.org/PhysicalActivity'>;
     /** Event type: Exhibition event, e.g. at a museum, library, archive, tradeshow, ... */
     "ExhibitionEvent": NamedNode<'http://schema.org/ExhibitionEvent'>;
-    /** Eye or ophtalmological function assessment with clinical examination. */
+    /** Eye or ophthalmological function assessment with clinical examination. */
     "Eye": NamedNode<'http://schema.org/Eye'>;
     /** A [[FAQPage]] is a [[WebPage]] presenting one or more "[Frequently asked questions](https://en.wikipedia.org/wiki/FAQ)" (see also [[QAPage]]). */
     "FAQPage": NamedNode<'http://schema.org/FAQPage'>;
@@ -971,16 +1214,12 @@ interface Schema {
     "FastFoodRestaurant": NamedNode<'http://schema.org/FastFoodRestaurant'>;
     /** The female gender. */
     "Female": NamedNode<'http://schema.org/Female'>;
+    /** An enumeration of genders. */
+    "GenderType": NamedNode<'http://schema.org/GenderType'>;
     /** Event type: Festival. */
     "Festival": NamedNode<'http://schema.org/Festival'>;
     /** The act of capturing sound and moving images on film, video, or digitally. */
     "FilmAction": NamedNode<'http://schema.org/FilmAction'>;
-    /** A product provided to consumers and businesses by financial institutions such as banks, insurance companies, brokerage firms, consumer finance companies, and investment companies which comprise the financial services industry. */
-    "FinancialProduct": NamedNode<'http://schema.org/FinancialProduct'>;
-    /** Financial services business. */
-    "FinancialService": NamedNode<'http://schema.org/FinancialService'>;
-    /** The act of finding an object.\n\nRelated actions:\n\n* [[SearchAction]]: FindAction is generally lead by a SearchAction, but not necessarily. */
-    "FindAction": NamedNode<'http://schema.org/FindAction'>;
     /** A fire station. With firemen. */
     "FireStation": NamedNode<'http://schema.org/FireStation'>;
     /** Physical activity that is engaged in to improve joint and muscle flexibility. */
@@ -991,14 +1230,14 @@ interface Schema {
     "FlightReservation": NamedNode<'http://schema.org/FlightReservation'>;
     /** Data type: Floating number. */
     "Float": NamedNode<'http://schema.org/Float'>;
+    /** Data type: Number.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator. */
+    "Number": NamedNode<'http://schema.org/Number'>;
     /** A FloorPlan is an explicit representation of a collection of similar accommodations, allowing the provision of common information (room counts, sizes, layout diagrams) and offers for rental or sale. In typical use, some [[ApartmentComplex]] has an [[accommodationFloorPlan]] which is a [[FloorPlan]].  A FloorPlan is always in the context of a particular place, either a larger [[ApartmentComplex]] or a single [[Apartment]]. The visual/spatial aspects of a floor plan (i.e. room layout, [see wikipedia](https://en.wikipedia.org/wiki/Floor_plan)) can be indicated using [[image]]. */
     "FloorPlan": NamedNode<'http://schema.org/FloorPlan'>;
     /** A florist. */
     "Florist": NamedNode<'http://schema.org/Florist'>;
     /** The act of forming a personal connection with someone/something (object) unidirectionally/asymmetrically to get updates polled from.\n\nRelated actions:\n\n* [[BefriendAction]]: Unlike BefriendAction, FollowAction implies that the connection is *not* necessarily reciprocal.\n* [[SubscribeAction]]: Unlike SubscribeAction, FollowAction implies that the follower acts as an active agent constantly/actively polling for updates.\n* [[RegisterAction]]: Unlike RegisterAction, FollowAction implies that the agent is interested in continuing receiving updates from the object.\n* [[JoinAction]]: Unlike JoinAction, FollowAction implies that the agent is interested in getting updates from the object.\n* [[TrackAction]]: Unlike TrackAction, FollowAction refers to the polling of updates of all aspects of animate objects rather than the location of inanimate objects (e.g. you track a package, but you don't follow it). */
     "FollowAction": NamedNode<'http://schema.org/FollowAction'>;
-    /** A food-related business. */
-    "FoodEstablishment": NamedNode<'http://schema.org/FoodEstablishment'>;
     /** A reservation to dine at a food-related business.\n\nNote: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations. */
     "FoodEstablishmentReservation": NamedNode<'http://schema.org/FoodEstablishmentReservation'>;
     /** Event type: Food event. */
@@ -1009,21 +1248,33 @@ interface Schema {
     "FourWheelDriveConfiguration": NamedNode<'http://schema.org/FourWheelDriveConfiguration'>;
     /** Specifies that product returns are free of charge for the customer. */
     "FreeReturn": NamedNode<'http://schema.org/FreeReturn'>;
+    /** Enumerates several kinds of policies for product return fees. */
+    "ReturnFeesEnumeration": NamedNode<'http://schema.org/ReturnFeesEnumeration'>;
     /** The day of the week between Thursday and Saturday. */
     "Friday": NamedNode<'http://schema.org/Friday'>;
+    /** URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website. */
+    "sameAs": NamedNode<'http://schema.org/sameAs'>;
     /** Front-wheel drive is a transmission layout where the engine drives the front wheels. */
     "FrontWheelDriveConfiguration": NamedNode<'http://schema.org/FrontWheelDriveConfiguration'>;
-    /** Specifies that a refund can be done in the full amount the customer paid for the product */
+    /** Indicates full game availability. */
+    "FullGameAvailability": NamedNode<'http://schema.org/FullGameAvailability'>;
+    /** Specifies that a refund can be done in the full amount the customer paid for the product. */
     "FullRefund": NamedNode<'http://schema.org/FullRefund'>;
     /**
      * A FundingAgency is an organization that implements one or more [[FundingScheme]]s and manages
      *     the granting process (via [[Grant]]s, typically [[MonetaryGrant]]s).
      *     A funding agency is not always required for grant funding, e.g. philanthropic giving, corporate sponsorship etc.
      *     
-     * Examples of funding agencies include ERC, REA, NIH, Bill and Melinda Gates Foundation...
+     * Examples of funding agencies include ERC, REA, NIH, Bill and Melinda Gates Foundation, ...
      *     
      */
     "FundingAgency": NamedNode<'http://schema.org/FundingAgency'>;
+    /**
+     * An enterprise (potentially individual but typically collaborative), planned to achieve a particular aim.
+     * Use properties from [[Organization]], [[subOrganization]]/[[parentOrganization]] to indicate project sub-structures. 
+     *    
+     */
+    "Project": NamedNode<'http://schema.org/Project'>;
     /**
      * A FundingScheme combines organizational, project and policy aspects of grant-based funding
      *     that sets guidelines, principles and mechanisms to support other kinds of projects and activities.
@@ -1036,8 +1287,6 @@ interface Schema {
     "FurnitureStore": NamedNode<'http://schema.org/FurnitureStore'>;
     /** The Game type represents things which are games. These are typically rule-governed recreational activities, e.g. role-playing games in which players assume the role of characters in a fictional setting. */
     "Game": NamedNode<'http://schema.org/Game'>;
-    /** Indicates whether this game is multi-player, co-op or single-player. */
-    "GamePlayMode": NamedNode<'http://schema.org/GamePlayMode'>;
     /** Server that provides game interaction in a multiplayer game. */
     "GameServer": NamedNode<'http://schema.org/GameServer'>;
     /** Status of a game server. */
@@ -1050,12 +1299,12 @@ interface Schema {
     "Gastroenterologic": NamedNode<'http://schema.org/Gastroenterologic'>;
     /** Residence type: Gated community. */
     "GatedResidenceCommunity": NamedNode<'http://schema.org/GatedResidenceCommunity'>;
-    /** An enumeration of genders. */
-    "GenderType": NamedNode<'http://schema.org/GenderType'>;
     /** A discrete unit of inheritance which affects one or more biological traits (Source: [https://en.wikipedia.org/wiki/Gene](https://en.wikipedia.org/wiki/Gene)). Examples include FOXP2 (Forkhead box protein P2), SCARNA21 (small Cajal body-specific RNA 21), A- (agouti genotype). */
     "Gene": NamedNode<'http://schema.org/Gene'>;
     /** A general contractor. */
     "GeneralContractor": NamedNode<'http://schema.org/GeneralContractor'>;
+    /** Represents the generic notion of the Web Platform. More specific codes include [[MobileWebPlatform]] and [[DesktopWebPlatform]], as an incomplete list. */
+    "GenericWebPlatform": NamedNode<'http://schema.org/GenericWebPlatform'>;
     /** A specific branch of medical science that pertains to hereditary transmission and the variation of inherited characteristics and disorders. */
     "Genetic": NamedNode<'http://schema.org/Genetic'>;
     /** Genitourinary system function assessment with clinical examination. */
@@ -1067,10 +1316,10 @@ interface Schema {
      *        
      */
     "GeoCircle": NamedNode<'http://schema.org/GeoCircle'>;
-    /** The geographic coordinates of a place or event. */
-    "GeoCoordinates": NamedNode<'http://schema.org/GeoCoordinates'>;
     /** The geographic shape of a place. A GeoShape can be described using several properties whose values are based on latitude/longitude pairs. Either whitespace or commas can be used to separate latitude and longitude; whitespace should be used when writing a list of several such points. */
     "GeoShape": NamedNode<'http://schema.org/GeoShape'>;
+    /** The geographic coordinates of a place or event. */
+    "GeoCoordinates": NamedNode<'http://schema.org/GeoCoordinates'>;
     /** (Eventually to be defined as) a supertype of GeoShape designed to accommodate definitions from Geo-Spatial best practices. */
     "GeospatialGeometry": NamedNode<'http://schema.org/GeospatialGeometry'>;
     /** A specific branch of medical science that is concerned with the diagnosis and treatment of diseases, debilities and provision of care to the aged. */
@@ -1083,16 +1332,14 @@ interface Schema {
     "GlutenFreeDiet": NamedNode<'http://schema.org/GlutenFreeDiet'>;
     /** A golf course. */
     "GolfCourse": NamedNode<'http://schema.org/GolfCourse'>;
-    /** GovernmentBenefitsType enumerates several kinds of government benefits to support the COVID-19 situation. Note that this structure may not capture all benefits offered. */
-    "GovernmentBenefitsType": NamedNode<'http://schema.org/GovernmentBenefitsType'>;
-    /** A government building. */
-    "GovernmentBuilding": NamedNode<'http://schema.org/GovernmentBuilding'>;
     /** A government office&#x2014;for example, an IRS or DMV office. */
     "GovernmentOffice": NamedNode<'http://schema.org/GovernmentOffice'>;
     /** A governmental organization or agency. */
     "GovernmentOrganization": NamedNode<'http://schema.org/GovernmentOrganization'>;
     /** A permit issued by a government agency. */
     "GovernmentPermit": NamedNode<'http://schema.org/GovernmentPermit'>;
+    /** A permit issued by an organization, e.g. a parking pass. */
+    "Permit": NamedNode<'http://schema.org/Permit'>;
     /** A service provided by a government organization, e.g. food stamps, veterans benefits, etc. */
     "GovernmentService": NamedNode<'http://schema.org/GovernmentService'>;
     /**
@@ -1111,11 +1358,11 @@ interface Schema {
     "GroceryStore": NamedNode<'http://schema.org/GroceryStore'>;
     /** The airline boards by groups based on check-in time, priority, etc. */
     "GroupBoardingPolicy": NamedNode<'http://schema.org/GroupBoardingPolicy'>;
-    /** [[Guide]] is a page or article that recommend specific products or services, or aspects of a thing for a user to consider. A [[Guide]] may represent a Buying Guide and detail aspects of products or services for a user to consider. A [[Guide]] may represent a Product Guide and recommend specific products or services. A [[Guide]] may represent a Ranked List and recommend specific products or services with ranking. */
+    /** [[Guide]] is a page or article that recommends specific products or services, or aspects of a thing for a user to consider. A [[Guide]] may represent a Buying Guide and detail aspects of products or services for a user to consider. A [[Guide]] may represent a Product Guide and recommend specific products or services. A [[Guide]] may represent a Ranked List and recommend specific products or services with ranking. */
     "Guide": NamedNode<'http://schema.org/Guide'>;
     /** A specific branch of medical science that pertains to the health care of women, particularly in the diagnosis and treatment of disorders affecting the female reproductive system. */
     "Gynecologic": NamedNode<'http://schema.org/Gynecologic'>;
-    /** A business that provide Heating, Ventilation and Air Conditioning services. */
+    /** A business that provides Heating, Ventilation and Air Conditioning services. */
     "HVACBusiness": NamedNode<'http://schema.org/HVACBusiness'>;
     /** A [hackathon](https://en.wikipedia.org/wiki/Hackathon) event. */
     "Hackathon": NamedNode<'http://schema.org/Hackathon'>;
@@ -1129,10 +1376,6 @@ interface Schema {
     "HardwareStore": NamedNode<'http://schema.org/HardwareStore'>;
     /** Head assessment with clinical examination. */
     "Head": NamedNode<'http://schema.org/Head'>;
-    /** Health and beauty. */
-    "HealthAndBeautyBusiness": NamedNode<'http://schema.org/HealthAndBeautyBusiness'>;
-    /** HealthAspectEnumeration enumerates several aspects of health content online, each of which might be described using [[hasHealthAspect]] and [[HealthTopicContent]]. */
-    "HealthAspectEnumeration": NamedNode<'http://schema.org/HealthAspectEnumeration'>;
     /** HealthCare: this is a benefit for health care. */
     "HealthCare": NamedNode<'http://schema.org/HealthCare'>;
     /** A health club. */
@@ -1150,6 +1393,10 @@ interface Schema {
      *   
      */
     "HealthTopicContent": NamedNode<'http://schema.org/HealthTopicContent'>;
+    /** WebContent is a type representing all [[WebPage]], [[WebSite]] and [[WebPageElement]] content. It is sometimes the case that detailed distinctions between Web pages, sites and their parts are not always important or obvious. The  [[WebContent]] type makes it easier to describe Web-addressable content without requiring such distinctions to always be stated. (The intent is that the existing types [[WebPage]], [[WebSite]] and [[WebPageElement]] will eventually be declared as subtypes of [[WebContent]].) */
+    "WebContent": NamedNode<'http://schema.org/WebContent'>;
+    /** Item is a pharmaceutical (e.g., a prescription or OTC drug) or a restricted medical device. */
+    "HealthcareConsideration": NamedNode<'http://schema.org/HealthcareConsideration'>;
     /** Uses devices to support users with hearing impairments. */
     "HearingImpairedSupported": NamedNode<'http://schema.org/HearingImpairedSupported'>;
     /** A specific branch of medical science that pertains to diagnosis and treatment of disorders of blood and blood producing organs. */
@@ -1162,8 +1409,6 @@ interface Schema {
     "HinduTemple": NamedNode<'http://schema.org/HinduTemple'>;
     /** A store that sells materials useful or necessary for various hobbies. */
     "HobbyShop": NamedNode<'http://schema.org/HobbyShop'>;
-    /** A construction business.\n\nA HomeAndConstructionBusiness is a [[LocalBusiness]] that provides services around homes and buildings.\n\nAs a [[LocalBusiness]] it can be described as a [[provider]] of one or more [[Service]]\(s). */
-    "HomeAndConstructionBusiness": NamedNode<'http://schema.org/HomeAndConstructionBusiness'>;
     /** A home goods store. */
     "HomeGoodsStore": NamedNode<'http://schema.org/HomeGoodsStore'>;
     /** A system of medicine based on the principle that a disease can be cured by a substance that produces similar symptoms in healthy people. */
@@ -1178,7 +1423,7 @@ interface Schema {
      */
     "Hostel": NamedNode<'http://schema.org/Hostel'>;
     /**
-     * A hotel is an establishment that provides lodging paid on a short-term basis (Source: Wikipedia, the free encyclopedia, see http://en.wikipedia.org/wiki/Hotel).
+     * A hotel is an establishment that provides lodging paid on a short-term basis (source: Wikipedia, the free encyclopedia, see http://en.wikipedia.org/wiki/Hotel).
      * <br /><br />
      * See also the <a href="/docs/hotels.html">dedicated document on the use of schema.org for marking up hotels and other forms of accommodations</a>.
      *
@@ -1191,7 +1436,14 @@ interface Schema {
      *
      */
     "HotelRoom": NamedNode<'http://schema.org/HotelRoom'>;
-    /** A house is a building or structure that has the ability to be occupied for habitation by humans or other creatures (Source: Wikipedia, the free encyclopedia, see <a href="http://en.wikipedia.org/wiki/House">http://en.wikipedia.org/wiki/House</a>). */
+    /**
+     * A room is a distinguishable space within a structure, usually separated from other spaces by interior walls (source: Wikipedia, the free encyclopedia, see <a href="http://en.wikipedia.org/wiki/Room">http://en.wikipedia.org/wiki/Room</a>).
+     * <br /><br />
+     * See also the <a href="/docs/hotels.html">dedicated document on the use of schema.org for marking up hotels and other forms of accommodations</a>.
+     *
+     */
+    "Room": NamedNode<'http://schema.org/Room'>;
+    /** A house is a building or structure that has the ability to be occupied for habitation by humans or other creatures (source: Wikipedia, the free encyclopedia, see <a href="http://en.wikipedia.org/wiki/House">http://en.wikipedia.org/wiki/House</a>). */
     "House": NamedNode<'http://schema.org/House'>;
     /** A house painting service. */
     "HousePainter": NamedNode<'http://schema.org/HousePainter'>;
@@ -1203,7 +1455,9 @@ interface Schema {
     "HowTo": NamedNode<'http://schema.org/HowTo'>;
     /** A direction indicating a single action to do in the instructions for how to achieve a result. */
     "HowToDirection": NamedNode<'http://schema.org/HowToDirection'>;
-    /** An item used as either a tool or supply when performing the instructions for how to to achieve a result. */
+    /** An list item, e.g. a step in a checklist or how-to description. */
+    "ListItem": NamedNode<'http://schema.org/ListItem'>;
+    /** An item used as either a tool or supply when performing the instructions for how to achieve a result. */
     "HowToItem": NamedNode<'http://schema.org/HowToItem'>;
     /** A sub-grouping of steps in the instructions for how to achieve a result (e.g. steps for making a pie crust within a pie recipe). */
     "HowToSection": NamedNode<'http://schema.org/HowToSection'>;
@@ -1219,50 +1473,46 @@ interface Schema {
     "HyperToc": NamedNode<'http://schema.org/HyperToc'>;
     /** A HyperToEntry is an item within a [[HyperToc]], which represents a hypertext table of contents for complex media objects, such as [[VideoObject]], [[AudioObject]]. The media object itself is indicated using [[associatedMedia]]. Each section of interest within that content can be described with a [[HyperTocEntry]], with associated [[startOffset]] and [[endOffset]]. When several entries are all from the same file, [[associatedMedia]] is used on the overarching [[HyperTocEntry]]; if the content has been split into multiple files, they can be referenced using [[associatedMedia]] on each [[HyperTocEntry]]. */
     "HyperTocEntry": NamedNode<'http://schema.org/HyperTocEntry'>;
+    /** Represents the broad notion of iOS-based operating systems. */
+    "IOSPlatform": NamedNode<'http://schema.org/IOSPlatform'>;
     /** An ice cream shop. */
     "IceCreamShop": NamedNode<'http://schema.org/IceCreamShop'>;
     /** The act of intentionally disregarding the object. An agent ignores an object. */
     "IgnoreAction": NamedNode<'http://schema.org/IgnoreAction'>;
     /** Web page type: Image gallery page. */
     "ImageGallery": NamedNode<'http://schema.org/ImageGallery'>;
-    /** An image file. */
-    "ImageObject": NamedNode<'http://schema.org/ImageObject'>;
+    /** Web page type: Media gallery page. A mixed-media page that can contain media such as images, videos, and other multimedia. */
+    "MediaGallery": NamedNode<'http://schema.org/MediaGallery'>;
     /** A specific and exact (byte-for-byte) version of an [[ImageObject]]. Two byte-for-byte identical files, for the purposes of this type, considered identical. If they have different embedded metadata (e.g. XMP, EXIF) the files will differ. Different external facts about the files, e.g. creator or dateCreated that aren't represented in their actual content, do not affect this notion of identity. */
     "ImageObjectSnapshot": NamedNode<'http://schema.org/ImageObjectSnapshot'>;
     /** Any medical imaging modality typically used for diagnostic purposes. */
     "ImagingTest": NamedNode<'http://schema.org/ImagingTest'>;
     /** Indicates that a legislation is in force. */
     "InForce": NamedNode<'http://schema.org/InForce'>;
+    /** A list of possible statuses for the legal force of a legislation. */
+    "LegalForceStatus": NamedNode<'http://schema.org/LegalForceStatus'>;
     /** Indicates that the item is in stock. */
     "InStock": NamedNode<'http://schema.org/InStock'>;
     /** Indicates that the item is available only at physical locations. */
     "InStoreOnly": NamedNode<'http://schema.org/InStoreOnly'>;
     /** A single, identifiable product instance (e.g. a laptop with a particular serial number). */
     "IndividualProduct": NamedNode<'http://schema.org/IndividualProduct'>;
-    /** Something in medical science that pertains to infectious diseases i.e caused by bacterial, viral, fungal or parasitic infections. */
+    /** Something in medical science that pertains to infectious diseases, i.e. caused by bacterial, viral, fungal or parasitic infections. */
     "Infectious": NamedNode<'http://schema.org/Infectious'>;
-    /** Classes of agents or pathogens that transmit infectious diseases. Enumerated type. */
-    "InfectiousAgentClass": NamedNode<'http://schema.org/InfectiousAgentClass'>;
     /** An infectious disease is a clinically evident human disease resulting from the presence of pathogenic microbial agents, like pathogenic viruses, pathogenic bacteria, fungi, protozoa, multicellular parasites, and prions. To be considered an infectious disease, such pathogens are known to be able to cause this disease. */
     "InfectiousDisease": NamedNode<'http://schema.org/InfectiousDisease'>;
-    /** The act of notifying someone of information pertinent to them, with no expectation of a response. */
-    "InformAction": NamedNode<'http://schema.org/InformAction'>;
+    /** Any condition of the human body that affects the normal functioning of a person, whether physically or mentally. Includes diseases, injuries, disabilities, disorders, syndromes, etc. */
+    "MedicalCondition": NamedNode<'http://schema.org/MedicalCondition'>;
     /** Content discussing ingredients-related aspects of a health topic. */
     "IngredientsHealthAspect": NamedNode<'http://schema.org/IngredientsHealthAspect'>;
-    /** The act of adding at a specific location in an ordered collection. */
-    "InsertAction": NamedNode<'http://schema.org/InsertAction'>;
     /** The act of installing an application. */
     "InstallAction": NamedNode<'http://schema.org/InstallAction'>;
     /** Represents the installment pricing component of the total price for an offered product. */
     "Installment": NamedNode<'http://schema.org/Installment'>;
     /** An Insurance agency. */
     "InsuranceAgency": NamedNode<'http://schema.org/InsuranceAgency'>;
-    /** A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc. */
-    "Intangible": NamedNode<'http://schema.org/Intangible'>;
     /** Data type: Integer. */
     "Integer": NamedNode<'http://schema.org/Integer'>;
-    /** The act of interacting with another person or organization. */
-    "InteractAction": NamedNode<'http://schema.org/InteractAction'>;
     /** A summary of how users have interacted with this CreativeWork. In most cases, authors will use a subtype to specify the specific type of interaction. */
     "InteractionCounter": NamedNode<'http://schema.org/InteractionCounter'>;
     /** An international trial. */
@@ -1271,24 +1521,20 @@ interface Schema {
     "InternetCafe": NamedNode<'http://schema.org/InternetCafe'>;
     /** A company or fund that gathers capital from a number of investors to create a pool of money that is then re-invested into stocks, bonds and other assets. */
     "InvestmentFund": NamedNode<'http://schema.org/InvestmentFund'>;
-    /** A type of financial product that typically requires the client to transfer funds to a financial service in return for potential beneficial financial return. */
-    "InvestmentOrDeposit": NamedNode<'http://schema.org/InvestmentOrDeposit'>;
     /** The act of asking someone to attend an event. Reciprocal of RsvpAction. */
     "InviteAction": NamedNode<'http://schema.org/InviteAction'>;
     /** A statement of the money due for goods or services; a bill. */
     "Invoice": NamedNode<'http://schema.org/Invoice'>;
     /** Represents the invoice price of an offered product. */
     "InvoicePrice": NamedNode<'http://schema.org/InvoicePrice'>;
-    /** A list of possible product availability options. */
-    "ItemAvailability": NamedNode<'http://schema.org/ItemAvailability'>;
-    /** A list of items of any sort&#x2014;for example, Top 10 Movies About Weathermen, or Top 100 Party Songs. Not to be confused with HTML lists, which are often used only for formatting. */
-    "ItemList": NamedNode<'http://schema.org/ItemList'>;
+    /** Enumerates different price types, for example list price, invoice price, and sale price. */
+    "PriceTypeEnumeration": NamedNode<'http://schema.org/PriceTypeEnumeration'>;
     /** An ItemList ordered with lower values listed first. */
     "ItemListOrderAscending": NamedNode<'http://schema.org/ItemListOrderAscending'>;
-    /** An ItemList ordered with higher values listed first. */
-    "ItemListOrderDescending": NamedNode<'http://schema.org/ItemListOrderDescending'>;
     /** Enumerated for values for itemListOrder for indicating how an ordered ItemList is organized. */
     "ItemListOrderType": NamedNode<'http://schema.org/ItemListOrderType'>;
+    /** An ItemList ordered with higher values listed first. */
+    "ItemListOrderDescending": NamedNode<'http://schema.org/ItemListOrderDescending'>;
     /** An ItemList ordered with no explicit order. */
     "ItemListUnordered": NamedNode<'http://schema.org/ItemListUnordered'>;
     /** A page devoted to a single item, such as a particular product or hotel. */
@@ -1307,32 +1553,18 @@ interface Schema {
     "LaboratoryScience": NamedNode<'http://schema.org/LaboratoryScience'>;
     /** A lake (for example, Lake Pontrachain). */
     "LakeBodyOfWater": NamedNode<'http://schema.org/LakeBodyOfWater'>;
-    /** A landform or physical feature.  Landform elements include mountains, plains, lakes, rivers, seascape and oceanic waterbody interface features such as bays, peninsulas, seas and so forth, including sub-aqueous terrain features such as submersed mountain ranges, volcanoes, and the great ocean basins. */
-    "Landform": NamedNode<'http://schema.org/Landform'>;
     /** An historical landmark or building. */
     "LandmarksOrHistoricalBuildings": NamedNode<'http://schema.org/LandmarksOrHistoricalBuildings'>;
     /** Natural languages such as Spanish, Tamil, Hindi, English, etc. Formal language code tags expressed in [BCP 47](https://en.wikipedia.org/wiki/IETF_language_tag) can be used via the [[alternateName]] property. The Language type previously also covered programming languages such as Scheme and Lisp, which are now best represented using [[ComputerLanguage]]. */
     "Language": NamedNode<'http://schema.org/Language'>;
     /** LaserDiscFormat. */
     "LaserDiscFormat": NamedNode<'http://schema.org/LaserDiscFormat'>;
-    /**
-     * The LearningResource type can be used to indicate [[CreativeWork]]s (whether physical or digital) that have a particular and explicit orientation towards learning, education, skill acquisition, and other educational purposes.
-     *
-     * [[LearningResource]] is expected to be used as an addition to a primary type such as [[Book]], [[VideoObject]], [[Product]] etc.
-     *
-     * [[EducationEvent]] serves a similar purpose for event-like things (e.g. a [[Trip]]). A [[LearningResource]] may be created as a result of an [[EducationEvent]], for example by recording one.
-     */
-    "LearningResource": NamedNode<'http://schema.org/LearningResource'>;
     /** An agent leaves an event / group with participants/friends at a location.\n\nRelated actions:\n\n* [[JoinAction]]: The antonym of LeaveAction.\n* [[UnRegisterAction]]: Unlike UnRegisterAction, LeaveAction implies leaving a group/team of people rather than a service. */
     "LeaveAction": NamedNode<'http://schema.org/LeaveAction'>;
     /** The steering position is on the left side of the vehicle (viewed from the main direction of driving). */
     "LeftHandDriving": NamedNode<'http://schema.org/LeftHandDriving'>;
-    /** A list of possible statuses for the legal force of a legislation. */
-    "LegalForceStatus": NamedNode<'http://schema.org/LegalForceStatus'>;
-    /** A LegalService is a business that provides legally-oriented services, advice and representation, e.g. law firms.\n\nAs a [[LocalBusiness]] it can be described as a [[provider]] of one or more [[Service]]\(s). */
-    "LegalService": NamedNode<'http://schema.org/LegalService'>;
-    /** A list of possible levels for the legal validity of a legislation. */
-    "LegalValueLevel": NamedNode<'http://schema.org/LegalValueLevel'>;
+    /** A value indicating a steering position. */
+    "SteeringPositionValue": NamedNode<'http://schema.org/SteeringPositionValue'>;
     /** A legal document such as an act, decree, bill, etc. (enforceable or not) or a component of a legal act (like an article). */
     "Legislation": NamedNode<'http://schema.org/Legislation'>;
     /** A specific object or file containing a Legislation. Note that the same Legislation can be published in multiple files. For example, a digitally signed PDF, a plain PDF and an HTML version. */
@@ -1347,8 +1579,6 @@ interface Schema {
     "Library": NamedNode<'http://schema.org/Library'>;
     /** A [[LibrarySystem]] is a collaborative system amongst several libraries. */
     "LibrarySystem": NamedNode<'http://schema.org/LibrarySystem'>;
-    /** A process of care involving exercise, changes to diet, fitness routines, and other lifestyle changes aimed at improving a health condition. */
-    "LifestyleModification": NamedNode<'http://schema.org/LifestyleModification'>;
     /** A short band of tough, flexible, fibrous connective tissue that functions to connect multiple bones, cartilages, and structurally support joints. */
     "Ligament": NamedNode<'http://schema.org/Ligament'>;
     /** The act of expressing a positive sentiment about the object. An agent likes an object (a proposition, topic or theme) with participants. */
@@ -1357,12 +1587,12 @@ interface Schema {
     "LimitedAvailability": NamedNode<'http://schema.org/LimitedAvailability'>;
     /** LimitedByGuaranteeCharity: Non-profit type referring to a charitable company that is limited by guarantee (UK). */
     "LimitedByGuaranteeCharity": NamedNode<'http://schema.org/LimitedByGuaranteeCharity'>;
-    /** A Role that represents a Web link e.g. as expressed via the 'url' property. Its linkRelationship property can indicate URL-based and plain textual link types e.g. those in IANA link registry or others such as 'amphtml'. This structure provides a placeholder where details from HTML's link element can be represented outside of HTML, e.g. in JSON-LD feeds. */
+    /** A Role that represents a Web link, e.g. as expressed via the 'url' property. Its linkRelationship property can indicate URL-based and plain textual link types, e.g. those in IANA link registry or others such as 'amphtml'. This structure provides a placeholder where details from HTML's link element can be represented outside of HTML, e.g. in JSON-LD feeds. */
     "LinkRole": NamedNode<'http://schema.org/LinkRole'>;
+    /** Represents additional information about a relationship or property. For example a Role can be used to say that a 'member' role linking some SportsTeam to a player occurred during a particular time period. Or that a Person's 'actor' role in a Movie was for some particular characterName. Such properties can be attached to a Role entity, which is then associated with the main entities using ordinary properties like 'member' or 'actor'.\n\nSee also [blog post](http://blog.schema.org/2014/06/introducing-role.html). */
+    "Role": NamedNode<'http://schema.org/Role'>;
     /** A shop that sells alcoholic drinks such as wine, beer, whisky and other spirits. */
     "LiquorStore": NamedNode<'http://schema.org/LiquorStore'>;
-    /** An list item, e.g. a step in a checklist or how-to description. */
-    "ListItem": NamedNode<'http://schema.org/ListItem'>;
     /** Represents the list price (the price a product is actually advertised for) of an offered product. */
     "ListPrice": NamedNode<'http://schema.org/ListPrice'>;
     /** The act of consuming audio content. */
@@ -1375,18 +1605,17 @@ interface Schema {
     "LiveBlogPosting": NamedNode<'http://schema.org/LiveBlogPosting'>;
     /** Information about coping or life related to the topic. */
     "LivingWithHealthAspect": NamedNode<'http://schema.org/LivingWithHealthAspect'>;
-    /** A financial product for the loaning of an amount of money, or line of credit, under agreed terms and charges. */
-    "LoanOrCredit": NamedNode<'http://schema.org/LoanOrCredit'>;
-    /** A particular physical business or branch of an organization. Examples of LocalBusiness include a restaurant, a particular branch of a restaurant chain, a branch of a bank, a medical practice, a club, a bowling alley, etc. */
-    "LocalBusiness": NamedNode<'http://schema.org/LocalBusiness'>;
     /** Specifies a location feature by providing a structured value representing a feature of an accommodation as a property-value pair of varying degrees of formality. */
     "LocationFeatureSpecification": NamedNode<'http://schema.org/LocationFeatureSpecification'>;
+    /**
+     * A property-value pair, e.g. representing a feature of a product or place. Use the 'name' property for the name of the property. If there is an additional human-readable version of the value, put that into the 'description' property.\n\n Always use specific schema.org properties when a) they exist and b) you can populate them. Using PropertyValue as a substitute will typically not trigger the same effect as using the original, specific property.
+     *     
+     */
+    "PropertyValue": NamedNode<'http://schema.org/PropertyValue'>;
     /** A DeliveryMethod in which an item is made available via locker. */
     "LockerDelivery": NamedNode<'http://schema.org/LockerDelivery'>;
     /** A locksmith. */
     "Locksmith": NamedNode<'http://schema.org/Locksmith'>;
-    /** A lodging business, such as a motel, hotel, or inn. */
-    "LodgingBusiness": NamedNode<'http://schema.org/LodgingBusiness'>;
     /** A reservation for lodging at a hotel, motel, inn, etc.\n\nNote: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations. */
     "LodgingReservation": NamedNode<'http://schema.org/LodgingReservation'>;
     /** Unlike cross-sectional studies, longitudinal studies track the same people, and therefore the differences observed in those people are less likely to be the result of cultural differences across generations. Longitudinal studies are also used in medicine to uncover predictors of certain diseases. */
@@ -1427,19 +1656,11 @@ interface Schema {
     "MaximumDoseSchedule": NamedNode<'http://schema.org/MaximumDoseSchedule'>;
     /** Related topics may be treated by a Topic. */
     "MayTreatHealthAspect": NamedNode<'http://schema.org/MayTreatHealthAspect'>;
-    /** Enumeration of common measurement types (or dimensions), for example "chest" for a person, "inseam" for pants, "gauge" for screws, or "wheel" for bicycles. */
-    "MeasurementTypeEnumeration": NamedNode<'http://schema.org/MeasurementTypeEnumeration'>;
-    /** Web page type: Media gallery page. A mixed-media page that can contains media such as images, videos, and other multimedia. */
-    "MediaGallery": NamedNode<'http://schema.org/MediaGallery'>;
-    /**  Codes for use with the [[mediaAuthenticityCategory]] property, indicating the authenticity of a media object (in the context of how it was published or shared). In general these codes are not mutually exclusive, although some combinations (such as 'original' versus 'transformed', 'edited' and 'staged') would be contradictory if applied in the same [[MediaReview]]. Note that the application of these codes is with regard to a piece of media shared or published in a particular context. */
-    "MediaManipulationRatingEnumeration": NamedNode<'http://schema.org/MediaManipulationRatingEnumeration'>;
-    /** A media object, such as an image, video, or audio object embedded in a web page or a downloadable dataset i.e. DataDownload. Note that a creative work may have many media objects associated with it on the same web page. For example, a page about a single song (MusicRecording) may have a music video (VideoObject), and a high and low bandwidth audio stream (2 AudioObject's). */
-    "MediaObject": NamedNode<'http://schema.org/MediaObject'>;
     /**
      * A [[MediaReview]] is a more specialized form of Review dedicated to the evaluation of media content online, typically in the context of fact-checking and misinformation.
      *     For more general reviews of media in the broader sense, use [[UserReview]], [[CriticReview]] or other [[Review]] types. This definition is
      *     a work in progress. While the [[MediaManipulationRatingEnumeration]] list reflects significant community review amongst fact-checkers and others working
-     *     to combat misinformation, the specific structures for representing media objects, their versions and publication context, is still evolving. Similarly, best practices for the relationship between [[MediaReview]] and [[ClaimReview]] markup has not yet been finalized.
+     *     to combat misinformation, the specific structures for representing media objects, their versions and publication context, are still evolving. Similarly, best practices for the relationship between [[MediaReview]] and [[ClaimReview]] markup have not yet been finalized.
      */
     "MediaReview": NamedNode<'http://schema.org/MediaReview'>;
     /** Represents an item or group of closely related items treated as a unit for the sake of evaluation in a [[MediaReview]]. Authorship etc. apply to the items rather than to the curation/grouping or reviewing party. */
@@ -1448,52 +1669,28 @@ interface Schema {
     "MediaSubscription": NamedNode<'http://schema.org/MediaSubscription'>;
     /** Target audiences for medical web pages. */
     "MedicalAudience": NamedNode<'http://schema.org/MedicalAudience'>;
-    /** Target audiences types for medical web pages. Enumerated type. */
-    "MedicalAudienceType": NamedNode<'http://schema.org/MedicalAudienceType'>;
-    /** A particular physical or virtual business of an organization for medical purposes. Examples of MedicalBusiness include differents business run by health professionals. */
-    "MedicalBusiness": NamedNode<'http://schema.org/MedicalBusiness'>;
+    /** A set of characteristics belonging to people, e.g. who compose an item's target audience. */
+    "PeopleAudience": NamedNode<'http://schema.org/PeopleAudience'>;
     /** The causative agent(s) that are responsible for the pathophysiologic process that eventually results in a medical condition, symptom or sign. In this schema, unless otherwise specified this is meant to be the proximate cause of the medical condition, symptom or sign. The proximate cause is defined as the causative agent that most directly results in the medical condition, symptom or sign. For example, the HIV virus could be considered a cause of AIDS. Or in a diagnostic context, if a patient fell and sustained a hip fracture and two days later sustained a pulmonary embolism which eventuated in a cardiac arrest, the cause of the cardiac arrest (the proximate cause) would be the pulmonary embolism and not the fall. Medical causes can include cardiovascular, chemical, dermatologic, endocrine, environmental, gastroenterologic, genetic, hematologic, gynecologic, iatrogenic, infectious, musculoskeletal, neurologic, nutritional, obstetric, oncologic, otolaryngologic, pharmacologic, psychiatric, pulmonary, renal, rheumatologic, toxic, traumatic, or urologic causes; medical conditions can be causes as well. */
     "MedicalCause": NamedNode<'http://schema.org/MedicalCause'>;
-    /** A facility, often associated with a hospital or medical school, that is devoted to the specific diagnosis and/or healthcare. Previously limited to outpatients but with evolution it may be open to inpatients as well. */
-    "MedicalClinic": NamedNode<'http://schema.org/MedicalClinic'>;
     /** A code for a medical entity. */
     "MedicalCode": NamedNode<'http://schema.org/MedicalCode'>;
-    /** Any condition of the human body that affects the normal functioning of a person, whether physically or mentally. Includes diseases, injuries, disabilities, disorders, syndromes, etc. */
-    "MedicalCondition": NamedNode<'http://schema.org/MedicalCondition'>;
     /** A stage of a medical condition, such as 'Stage IIIa'. */
     "MedicalConditionStage": NamedNode<'http://schema.org/MedicalConditionStage'>;
-    /** A condition or factor that serves as a reason to withhold a certain medical therapy. Contraindications can be absolute (there are no reasonable circumstances for undertaking a course of action) or relative (the patient is at higher risk of complications, but that these risks may be outweighed by other considerations or mitigated by other measures). */
+    /** A condition or factor that serves as a reason to withhold a certain medical therapy. Contraindications can be absolute (there are no reasonable circumstances for undertaking a course of action) or relative (the patient is at higher risk of complications, but these risks may be outweighed by other considerations or mitigated by other measures). */
     "MedicalContraindication": NamedNode<'http://schema.org/MedicalContraindication'>;
     /** Any object used in a medical capacity, such as to diagnose or treat a patient. */
     "MedicalDevice": NamedNode<'http://schema.org/MedicalDevice'>;
-    /** Categories of medical devices, organized by the purpose or intended use of the device. */
-    "MedicalDevicePurpose": NamedNode<'http://schema.org/MedicalDevicePurpose'>;
-    /** The most generic type of entity related to health and the practice of medicine. */
-    "MedicalEntity": NamedNode<'http://schema.org/MedicalEntity'>;
-    /** Enumerations related to health and the practice of medicine: A concept that is used to attribute a quality to another concept, as a qualifier, a collection of items or a listing of all of the elements of a set in medicine practice. */
-    "MedicalEnumeration": NamedNode<'http://schema.org/MedicalEnumeration'>;
-    /** Level of evidence for a medical guideline. Enumerated type. */
-    "MedicalEvidenceLevel": NamedNode<'http://schema.org/MedicalEvidenceLevel'>;
     /** Any recommendation made by a standard society (e.g. ACC/AHA) or consensus statement that denotes how to diagnose and treat a particular condition. Note: this type should be used to tag the actual guideline recommendation; if the guideline recommendation occurs in a larger scholarly article, use MedicalScholarlyArticle to tag the overall article, not this type. Note also: the organization making the recommendation should be captured in the recognizingAuthority base property of MedicalEntity. */
     "MedicalGuideline": NamedNode<'http://schema.org/MedicalGuideline'>;
     /** A guideline contraindication that designates a process as harmful and where quality of the data supporting the contraindication is sound. */
     "MedicalGuidelineContraindication": NamedNode<'http://schema.org/MedicalGuidelineContraindication'>;
     /** A guideline recommendation that is regarded as efficacious and where quality of the data supporting the recommendation is sound. */
     "MedicalGuidelineRecommendation": NamedNode<'http://schema.org/MedicalGuidelineRecommendation'>;
-    /** Any medical imaging modality typically used for diagnostic purposes. Enumerated type. */
-    "MedicalImagingTechnique": NamedNode<'http://schema.org/MedicalImagingTechnique'>;
-    /** A condition or factor that indicates use of a medical therapy, including signs, symptoms, risk factors, anatomical states, etc. */
-    "MedicalIndication": NamedNode<'http://schema.org/MedicalIndication'>;
-    /** A utility class that serves as the umbrella for a number of 'intangible' things in the medical space. */
-    "MedicalIntangible": NamedNode<'http://schema.org/MedicalIntangible'>;
     /** An observational study is a type of medical study that attempts to infer the possible effect of a treatment through observation of a cohort of subjects over a period of time. In an observational study, the assignment of subjects into treatment groups versus control groups is outside the control of the investigator. This is in contrast with controlled studies, such as the randomized controlled trials represented by MedicalTrial, where each subject is randomly assigned to a treatment group or a control group before the start of the treatment. */
     "MedicalObservationalStudy": NamedNode<'http://schema.org/MedicalObservationalStudy'>;
-    /** Design models for observational medical studies. Enumerated type. */
-    "MedicalObservationalStudyDesign": NamedNode<'http://schema.org/MedicalObservationalStudyDesign'>;
-    /** A medical organization (physical or not), such as hospital, institution or clinic. */
-    "MedicalOrganization": NamedNode<'http://schema.org/MedicalOrganization'>;
-    /** A process of care used in either a diagnostic, therapeutic, preventive or palliative capacity that relies on invasive (surgical), non-invasive, or other techniques. */
-    "MedicalProcedure": NamedNode<'http://schema.org/MedicalProcedure'>;
+    /** A medical study is an umbrella type covering all kinds of research studies relating to human medicine or health, including observational studies and interventional trials and registries, randomized, controlled or not. When the specific type of study is known, use one of the extensions of this type, such as MedicalTrial or MedicalObservationalStudy. Also, note that this type should be used to mark up data that describes the study itself; to tag an article that publishes the results of a study, use MedicalScholarlyArticle. Note: use the code property of MedicalEntity to store study IDs, e.g. clinicaltrials.gov ID. */
+    "MedicalStudy": NamedNode<'http://schema.org/MedicalStudy'>;
     /** An enumeration that describes different types of medical procedures. */
     "MedicalProcedureType": NamedNode<'http://schema.org/MedicalProcedureType'>;
     /** Medical researchers. */
@@ -1508,34 +1705,28 @@ interface Schema {
     "MedicalRiskScore": NamedNode<'http://schema.org/MedicalRiskScore'>;
     /** A scholarly article in the medical domain. */
     "MedicalScholarlyArticle": NamedNode<'http://schema.org/MedicalScholarlyArticle'>;
+    /** A scholarly article. */
+    "ScholarlyArticle": NamedNode<'http://schema.org/ScholarlyArticle'>;
     /** Any physical manifestation of a person's medical condition discoverable by objective diagnostic tests or physical examination. */
     "MedicalSign": NamedNode<'http://schema.org/MedicalSign'>;
     /** Any feature associated or not with a medical condition. In medicine a symptom is generally subjective while a sign is objective. */
     "MedicalSignOrSymptom": NamedNode<'http://schema.org/MedicalSignOrSymptom'>;
-    /** Any specific branch of medical science or practice. Medical specialities include clinical specialties that pertain to particular organ systems and their respective disease states, as well as allied health specialties. Enumerated type. */
-    "MedicalSpecialty": NamedNode<'http://schema.org/MedicalSpecialty'>;
-    /** A medical study is an umbrella type covering all kinds of research studies relating to human medicine or health, including observational studies and interventional trials and registries, randomized, controlled or not. When the specific type of study is known, use one of the extensions of this type, such as MedicalTrial or MedicalObservationalStudy. Also, note that this type should be used to mark up data that describes the study itself; to tag an article that publishes the results of a study, use MedicalScholarlyArticle. Note: use the code property of MedicalEntity to store study IDs, e.g. clinicaltrials.gov ID. */
-    "MedicalStudy": NamedNode<'http://schema.org/MedicalStudy'>;
-    /** The status of a medical study. Enumerated type. */
-    "MedicalStudyStatus": NamedNode<'http://schema.org/MedicalStudyStatus'>;
+    /** Any branch of a field in which people typically develop specific expertise, usually after significant study, time, and effort. */
+    "Specialty": NamedNode<'http://schema.org/Specialty'>;
     /** Any complaint sensed and expressed by the patient (therefore defined as subjective)  like stomachache, lower-back pain, or fatigue. */
     "MedicalSymptom": NamedNode<'http://schema.org/MedicalSymptom'>;
-    /** Any medical test, typically performed for diagnostic purposes. */
-    "MedicalTest": NamedNode<'http://schema.org/MedicalTest'>;
     /** Any collection of tests commonly ordered together. */
     "MedicalTestPanel": NamedNode<'http://schema.org/MedicalTestPanel'>;
     /** Any medical intervention designed to prevent, treat, and cure human diseases and medical conditions, including both curative and palliative therapies. Medical therapies are typically processes of care relying upon pharmacotherapy, behavioral therapy, supportive therapy (with fluid or nutrition for example), or detoxification (e.g. hemodialysis) aimed at improving or preventing a health condition. */
     "MedicalTherapy": NamedNode<'http://schema.org/MedicalTherapy'>;
-    /** A medical trial is a type of medical study that uses scientific process used to compare the safety and efficacy of medical therapies or medical procedures. In general, medical trials are controlled and subjects are allocated at random to the different treatment and/or control groups. */
+    /** A medical procedure intended primarily for therapeutic purposes, aimed at improving a health condition. */
+    "TherapeuticProcedure": NamedNode<'http://schema.org/TherapeuticProcedure'>;
+    /** A medical trial is a type of medical study that uses a scientific process to compare the safety and efficacy of medical therapies or medical procedures. In general, medical trials are controlled and subjects are allocated at random to the different treatment and/or control groups. */
     "MedicalTrial": NamedNode<'http://schema.org/MedicalTrial'>;
-    /** Design models for medical trials. Enumerated type. */
-    "MedicalTrialDesign": NamedNode<'http://schema.org/MedicalTrialDesign'>;
     /** A web page that provides medical information. */
     "MedicalWebPage": NamedNode<'http://schema.org/MedicalWebPage'>;
-    /** Systems of medical practice. */
-    "MedicineSystem": NamedNode<'http://schema.org/MedicineSystem'>;
     /**
-     * A meeting room, conference room, or conference hall is a room provided for singular events such as business conferences and meetings (Source: Wikipedia, the free encyclopedia, see <a href="http://en.wikipedia.org/wiki/Conference_hall">http://en.wikipedia.org/wiki/Conference_hall</a>).
+     * A meeting room, conference room, or conference hall is a room provided for singular events such as business conferences and meetings (source: Wikipedia, the free encyclopedia, see <a href="http://en.wikipedia.org/wiki/Conference_hall">http://en.wikipedia.org/wiki/Conference_hall</a>).
      * <br /><br />
      * See also the <a href="/docs/hotels.html">dedicated document on the use of schema.org for marking up hotels and other forms of accommodations</a>.
      *
@@ -1563,8 +1754,6 @@ interface Schema {
     "MerchantReturnUnlimitedWindow": NamedNode<'http://schema.org/MerchantReturnUnlimitedWindow'>;
     /** Specifies that a product return policy is not provided. */
     "MerchantReturnUnspecified": NamedNode<'http://schema.org/MerchantReturnUnspecified'>;
-    /** A single message from a sender to one or more organizations or people. */
-    "Message": NamedNode<'http://schema.org/Message'>;
     /** A middle school (typically for children aged around 11-14, although this varies somewhat). */
     "MiddleSchool": NamedNode<'http://schema.org/MiddleSchool'>;
     /** A nurse-like health profession that deals with pregnancy, childbirth, and the postpartum period (including care of the newborn), besides sexual and reproductive health of women throughout their lives. */
@@ -1579,21 +1768,25 @@ interface Schema {
     "MixtapeAlbum": NamedNode<'http://schema.org/MixtapeAlbum'>;
     /** A software application designed specifically to work well on a mobile device such as a telephone. */
     "MobileApplication": NamedNode<'http://schema.org/MobileApplication'>;
+    /** A software application. */
+    "SoftwareApplication": NamedNode<'http://schema.org/SoftwareApplication'>;
     /** A store that sells mobile phones and related accessories. */
     "MobilePhoneStore": NamedNode<'http://schema.org/MobilePhoneStore'>;
+    /** Represents the broad notion of 'mobile' browsers as a Web Platform. */
+    "MobileWebPlatform": NamedNode<'http://schema.org/MobileWebPlatform'>;
     /** Any constitutionally or isotopically distinct atom, molecule, ion, ion pair, radical, radical ion, complex, conformer etc., identifiable as a separately distinguishable entity. */
     "MolecularEntity": NamedNode<'http://schema.org/MolecularEntity'>;
     /** The day of the week between Sunday and Tuesday. */
     "Monday": NamedNode<'http://schema.org/Monday'>;
-    /** A monetary value or range. This type can be used to describe an amount of money such as $50 USD, or a range as in describing a bank account being suitable for a balance between £1,000 and £1,000,000 GBP, or the value of a salary, etc. It is recommended to use [[PriceSpecification]] Types to describe the price of an Offer, Invoice, etc. */
-    "MonetaryAmount": NamedNode<'http://schema.org/MonetaryAmount'>;
     /** A statistical distribution of monetary amounts. */
     "MonetaryAmountDistribution": NamedNode<'http://schema.org/MonetaryAmountDistribution'>;
+    /** A statistical distribution of values. */
+    "QuantitativeValueDistribution": NamedNode<'http://schema.org/QuantitativeValueDistribution'>;
     /** A monetary grant. */
     "MonetaryGrant": NamedNode<'http://schema.org/MonetaryGrant'>;
     /** The act of transferring money from one place to another place. This may occur electronically or physically. */
     "MoneyTransfer": NamedNode<'http://schema.org/MoneyTransfer'>;
-    /** A loan in which property or real estate is used as collateral. (A loan securitized against some real estate). */
+    /** A loan in which property or real estate is used as collateral. (A loan securitized against some real estate.) */
     "MortgageLoan": NamedNode<'http://schema.org/MortgageLoan'>;
     /** A mosque. */
     "Mosque": NamedNode<'http://schema.org/Mosque'>;
@@ -1614,8 +1807,6 @@ interface Schema {
     "MotorizedBicycle": NamedNode<'http://schema.org/MotorizedBicycle'>;
     /** A mountain, like Mount Whitney or Mount Everest. */
     "Mountain": NamedNode<'http://schema.org/Mountain'>;
-    /** The act of an agent relocating to a place.\n\nRelated actions:\n\n* [[TransferAction]]: Unlike TransferAction, the subject of the move is a living Person or Organization rather than an inanimate object. */
-    "MoveAction": NamedNode<'http://schema.org/MoveAction'>;
     /** A movie. */
     "Movie": NamedNode<'http://schema.org/Movie'>;
     /** A short segment/part of a movie. */
@@ -1644,24 +1835,18 @@ interface Schema {
     "Museum": NamedNode<'http://schema.org/Museum'>;
     /** A collection of music tracks. */
     "MusicAlbum": NamedNode<'http://schema.org/MusicAlbum'>;
-    /** Classification of the album by it's type of content: soundtrack, live album, studio album, etc. */
-    "MusicAlbumProductionType": NamedNode<'http://schema.org/MusicAlbumProductionType'>;
-    /** The kind of release which this album is: single, EP or album. */
-    "MusicAlbumReleaseType": NamedNode<'http://schema.org/MusicAlbumReleaseType'>;
+    /** A collection of music tracks in playlist form. */
+    "MusicPlaylist": NamedNode<'http://schema.org/MusicPlaylist'>;
     /** A musical composition. */
     "MusicComposition": NamedNode<'http://schema.org/MusicComposition'>;
     /** Event type: Music event. */
     "MusicEvent": NamedNode<'http://schema.org/MusicEvent'>;
     /** A musical group, such as a band, an orchestra, or a choir. Can also be a solo musician. */
     "MusicGroup": NamedNode<'http://schema.org/MusicGroup'>;
-    /** A collection of music tracks in playlist form. */
-    "MusicPlaylist": NamedNode<'http://schema.org/MusicPlaylist'>;
     /** A music recording (track), usually a single song. */
     "MusicRecording": NamedNode<'http://schema.org/MusicRecording'>;
     /** A MusicRelease is a specific release of a music album. */
     "MusicRelease": NamedNode<'http://schema.org/MusicRelease'>;
-    /** Format of this release (the type of recording media used, ie. compact disc, digital media, LP, etc.). */
-    "MusicReleaseFormatType": NamedNode<'http://schema.org/MusicReleaseFormatType'>;
     /** A music store. */
     "MusicStore": NamedNode<'http://schema.org/MusicStore'>;
     /** A music venue. */
@@ -1672,8 +1857,12 @@ interface Schema {
     "NGO": NamedNode<'http://schema.org/NGO'>;
     /** NLNonprofitType: Non-profit organization type originating from the Netherlands. */
     "NLNonprofitType": NamedNode<'http://schema.org/NLNonprofitType'>;
+    /** NonprofitType enumerates several kinds of official non-profit types of which a non-profit organization can be. */
+    "NonprofitType": NamedNode<'http://schema.org/NonprofitType'>;
     /** A nail salon. */
     "NailSalon": NamedNode<'http://schema.org/NailSalon'>;
+    /** Item is a narcotic as defined by the [1961 UN convention](https://www.incb.org/incb/en/narcotic-drugs/Yellowlist/yellow-list.html), for example marijuana or heroin. */
+    "NarcoticConsideration": NamedNode<'http://schema.org/NarcoticConsideration'>;
     /** Neck assessment with clinical examination. */
     "Neck": NamedNode<'http://schema.org/Neck'>;
     /** A common pathway for the electrochemical nerve impulses that are transmitted along each of the axons. */
@@ -1684,13 +1873,6 @@ interface Schema {
     "Neurologic": NamedNode<'http://schema.org/Neurologic'>;
     /** Indicates that the item is new. */
     "NewCondition": NamedNode<'http://schema.org/NewCondition'>;
-    /**
-     * A NewsArticle is an article whose content reports news, or provides background context and supporting materials for understanding the news.
-     *
-     * A more detailed overview of [schema.org News markup](/docs/news.html) is also available.
-     *
-     */
-    "NewsArticle": NamedNode<'http://schema.org/NewsArticle'>;
     /** A News/Media organization such as a newspaper or TV station. */
     "NewsMediaOrganization": NamedNode<'http://schema.org/NewsMediaOrganization'>;
     /** A publication containing information about varied topics that are pertinent to general information, a geographic area, or a specific subject matter (i.e. business, culture, education). Often published daily. */
@@ -1701,6 +1883,8 @@ interface Schema {
     "NoninvasiveProcedure": NamedNode<'http://schema.org/NoninvasiveProcedure'>;
     /** Nonprofit501a: Non-profit type referring to Farmers’ Cooperative Associations. */
     "Nonprofit501a": NamedNode<'http://schema.org/Nonprofit501a'>;
+    /** USNonprofitType: Non-profit organization type originating from the United States. */
+    "USNonprofitType": NamedNode<'http://schema.org/USNonprofitType'>;
     /** Nonprofit501c10: Non-profit type referring to Domestic Fraternal Societies and Associations. */
     "Nonprofit501c10": NamedNode<'http://schema.org/Nonprofit501c10'>;
     /** Nonprofit501c11: Non-profit type referring to Teachers' Retirement Fund Associations. */
@@ -1743,7 +1927,7 @@ interface Schema {
     "Nonprofit501c28": NamedNode<'http://schema.org/Nonprofit501c28'>;
     /** Nonprofit501c2: Non-profit type referring to Title-holding Corporations for Exempt Organizations. */
     "Nonprofit501c2": NamedNode<'http://schema.org/Nonprofit501c2'>;
-    /** Nonprofit501c3: Non-profit type referring to Religious, Educational, Charitable, Scientific, Literary, Testing for Public Safety, to Foster National or International Amateur Sports Competition, or Prevention of Cruelty to Children or Animals Organizations. */
+    /** Nonprofit501c3: Non-profit type referring to Religious, Educational, Charitable, Scientific, Literary, Testing for Public Safety, Fostering National or International Amateur Sports Competition, or Prevention of Cruelty to Children or Animals Organizations. */
     "Nonprofit501c3": NamedNode<'http://schema.org/Nonprofit501c3'>;
     /** Nonprofit501c4: Non-profit type referring to Civic Leagues, Social Welfare Organizations, and Local Associations of Employees. */
     "Nonprofit501c4": NamedNode<'http://schema.org/Nonprofit501c4'>;
@@ -1769,14 +1953,12 @@ interface Schema {
     "Nonprofit501n": NamedNode<'http://schema.org/Nonprofit501n'>;
     /** Nonprofit501q: Non-profit type referring to Credit Counseling Organizations. */
     "Nonprofit501q": NamedNode<'http://schema.org/Nonprofit501q'>;
-    /** Nonprofit527: Non-profit type referring to Political organizations. */
+    /** Nonprofit527: Non-profit type referring to political organizations. */
     "Nonprofit527": NamedNode<'http://schema.org/Nonprofit527'>;
     /** NonprofitANBI: Non-profit type referring to a Public Benefit Organization (NL). */
     "NonprofitANBI": NamedNode<'http://schema.org/NonprofitANBI'>;
     /** NonprofitSBBI: Non-profit type referring to a Social Interest Promoting Institution (NL). */
     "NonprofitSBBI": NamedNode<'http://schema.org/NonprofitSBBI'>;
-    /** NonprofitType enumerates several kinds of official non-profit types of which a non-profit organization can be. */
-    "NonprofitType": NamedNode<'http://schema.org/NonprofitType'>;
     /** Nose function assessment with clinical examination. */
     "Nose": NamedNode<'http://schema.org/Nose'>;
     /** Indicates that a legislation is currently not in force. */
@@ -1787,8 +1969,6 @@ interface Schema {
     "Notary": NamedNode<'http://schema.org/Notary'>;
     /** A file containing a note, primarily for the author. */
     "NoteDigitalDocument": NamedNode<'http://schema.org/NoteDigitalDocument'>;
-    /** Data type: Number.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator. */
-    "Number": NamedNode<'http://schema.org/Number'>;
     /** A health profession of a person formally educated and trained in the care of the sick or infirm person. */
     "Nursing": NamedNode<'http://schema.org/Nursing'>;
     /** Nutritional information about the recipe. */
@@ -1815,8 +1995,6 @@ interface Schema {
     "OccupationalTherapy": NamedNode<'http://schema.org/OccupationalTherapy'>;
     /** An ocean (for example, the Pacific). */
     "OceanBodyOfWater": NamedNode<'http://schema.org/OceanBodyOfWater'>;
-    /** An offer to transfer some rights to an item or to provide a service — for example, an offer to sell tickets to an event, to rent the DVD of a movie, to stream a TV show over the internet, to repair a motorcycle, or to loan a book.\n\nNote: As the [[businessFunction]] property, which identifies the form of offer (e.g. sell, lease, repair, dispose), defaults to http://purl.org/goodrelations/v1#Sell; an Offer without a defined businessFunction value can be assumed to be an offer to sell.\n\nFor [GTIN](http://www.gs1.org/barcodes/technical/idkeys/gtin)-related fields, see [Check Digit calculator](http://www.gs1.org/barcodes/support/check_digit_calculator) and [validation guide](http://www.gs1us.org/resources/standards/gtin-validation-guide) from [GS1](http://www.gs1.org/). */
-    "Offer": NamedNode<'http://schema.org/Offer'>;
     /** An OfferCatalog is an ItemList that contains related Offers and/or further OfferCatalogs that are offeredBy the same provider. */
     "OfferCatalog": NamedNode<'http://schema.org/OfferCatalog'>;
     /**
@@ -1833,26 +2011,24 @@ interface Schema {
      *   
      */
     "OfferForPurchase": NamedNode<'http://schema.org/OfferForPurchase'>;
-    /** A list of possible conditions for the item. */
-    "OfferItemCondition": NamedNode<'http://schema.org/OfferItemCondition'>;
     /**
      * OfferShippingDetails represents information about shipping destinations.
      *
      * Multiple of these entities can be used to represent different shipping rates for different destinations:
      *
-     * One entity for Alaska/Hawaii. A different one for continental US.A different one for all France.
+     * One entity for Alaska/Hawaii. A different one for continental US. A different one for all France.
      *
      * Multiple of these entities can be used to represent different shipping costs and delivery times.
      *
      * Two entities that are identical but differ in rate and time:
      *
-     * e.g. Cheaper and slower: $5 in 5-7days
+     * E.g. Cheaper and slower: $5 in 5-7 days
      * or Fast and expensive: $15 in 1-2 days.
      */
     "OfferShippingDetails": NamedNode<'http://schema.org/OfferShippingDetails'>;
     /** An office equipment store. */
     "OfficeEquipmentStore": NamedNode<'http://schema.org/OfficeEquipmentStore'>;
-    /** All the documents published by an official publisher should have at least the legal value level "OfficialLegalValue". This indicates that the document was published by an organisation with the public task of making it available (e.g. a consolidated version of a EU directive published by the EU Office of Publications). */
+    /** All the documents published by an official publisher should have at least the legal value level "OfficialLegalValue". This indicates that the document was published by an organisation with the public task of making it available (e.g. a consolidated version of an EU directive published by the EU Office of Publications). */
     "OfficialLegalValue": NamedNode<'http://schema.org/OfficialLegalValue'>;
     /** OfflineEventAttendanceMode - an event that is primarily conducted offline. */
     "OfflineEventAttendanceMode": NamedNode<'http://schema.org/OfflineEventAttendanceMode'>;
@@ -1860,7 +2036,7 @@ interface Schema {
     "OfflinePermanently": NamedNode<'http://schema.org/OfflinePermanently'>;
     /** Game server status: OfflineTemporarily. Server is offline now but it can be online soon. */
     "OfflineTemporarily": NamedNode<'http://schema.org/OfflineTemporarily'>;
-    /** A publication event e.g. catch-up TV or radio podcast, during which a program is available on-demand. */
+    /** A publication event, e.g. catch-up TV or radio podcast, during which a program is available on-demand. */
     "OnDemandEvent": NamedNode<'http://schema.org/OnDemandEvent'>;
     /** A DeliveryMethod in which an item is collected on site, e.g. in a store or at a box office. */
     "OnSitePickup": NamedNode<'http://schema.org/OnSitePickup'>;
@@ -1870,12 +2046,16 @@ interface Schema {
     "OneTimePayments": NamedNode<'http://schema.org/OneTimePayments'>;
     /** Game server status: Online. Server is available. */
     "Online": NamedNode<'http://schema.org/Online'>;
+    /** A particular online business, either standalone or the online part of a broader organization. Examples include an eCommerce site, an online travel booking site, an online learning site, an online logistics and shipping provider, an online (virtual) doctor, etc. */
+    "OnlineBusiness": NamedNode<'http://schema.org/OnlineBusiness'>;
     /** OnlineEventAttendanceMode - an event that is primarily conducted online. */
     "OnlineEventAttendanceMode": NamedNode<'http://schema.org/OnlineEventAttendanceMode'>;
     /** Game server status: OnlineFull. Server is online but unavailable. The maximum number of players has reached. */
     "OnlineFull": NamedNode<'http://schema.org/OnlineFull'>;
     /** Indicates that the item is available only online. */
     "OnlineOnly": NamedNode<'http://schema.org/OnlineOnly'>;
+    /** An eCommerce site. */
+    "OnlineStore": NamedNode<'http://schema.org/OnlineStore'>;
     /** A trial design in which the researcher knows the full details of the treatment, and so does the patient. */
     "OpenTrial": NamedNode<'http://schema.org/OpenTrial'>;
     /**
@@ -1896,6 +2076,8 @@ interface Schema {
     "OrderAction": NamedNode<'http://schema.org/OrderAction'>;
     /** OrderStatus representing cancellation of an order. */
     "OrderCancelled": NamedNode<'http://schema.org/OrderCancelled'>;
+    /** Enumerated status values for Order. */
+    "OrderStatus": NamedNode<'http://schema.org/OrderStatus'>;
     /** OrderStatus representing successful delivery of an order. */
     "OrderDelivered": NamedNode<'http://schema.org/OrderDelivered'>;
     /** OrderStatus representing that an order is in transit. */
@@ -1912,14 +2094,6 @@ interface Schema {
     "OrderProcessing": NamedNode<'http://schema.org/OrderProcessing'>;
     /** OrderStatus representing that an order has been returned. */
     "OrderReturned": NamedNode<'http://schema.org/OrderReturned'>;
-    /** Enumerated status values for Order. */
-    "OrderStatus": NamedNode<'http://schema.org/OrderStatus'>;
-    /** An organization such as a school, NGO, corporation, club, etc. */
-    "Organization": NamedNode<'http://schema.org/Organization'>;
-    /** A subclass of Role used to describe roles within organizations. */
-    "OrganizationRole": NamedNode<'http://schema.org/OrganizationRole'>;
-    /** The act of manipulating/administering/supervising/controlling one or more objects. */
-    "OrganizeAction": NamedNode<'http://schema.org/OrganizeAction'>;
     /**
      * Content coded 'as original media content' in a [[MediaReview]], considered in the context of how it was published or shared.
      *
@@ -1984,6 +2158,8 @@ interface Schema {
     "PathologyTest": NamedNode<'http://schema.org/PathologyTest'>;
     /** A patient is any person recipient of health care services. */
     "Patient": NamedNode<'http://schema.org/Patient'>;
+    /** A person (alive, dead, undead, or fictional). */
+    "Person": NamedNode<'http://schema.org/Person'>;
     /** Content about the real life experience of patients or people that have lived a similar experience about the topic. May be forums, topics, Q-and-A and related material. */
     "PatientExperienceHealthAspect": NamedNode<'http://schema.org/PatientExperienceHealthAspect'>;
     /** A shop that will buy, or lend money against the security of, personal possessions. */
@@ -1992,8 +2168,13 @@ interface Schema {
     "PayAction": NamedNode<'http://schema.org/PayAction'>;
     /** An automatic payment system is in place and will be used. */
     "PaymentAutomaticallyApplied": NamedNode<'http://schema.org/PaymentAutomaticallyApplied'>;
-    /** A payment method using a credit, debit, store or other card to associate the payment with an account. */
-    "PaymentCard": NamedNode<'http://schema.org/PaymentCard'>;
+    /** A specific payment status. For example, PaymentDue, PaymentComplete, etc. */
+    "PaymentStatusType": NamedNode<'http://schema.org/PaymentStatusType'>;
+    /**
+     * A payment method is a standardized procedure for transferring the monetary amount for a purchase. Payment methods are characterized by the legal and technical structures used, and by the organization or group carrying out the transaction.\n\nCommonly used values:\n\n* http://purl.org/goodrelations/v1#ByBankTransferInAdvance\n* http://purl.org/goodrelations/v1#ByInvoice\n* http://purl.org/goodrelations/v1#Cash\n* http://purl.org/goodrelations/v1#CheckInAdvance\n* http://purl.org/goodrelations/v1#COD\n* http://purl.org/goodrelations/v1#DirectDebit\n* http://purl.org/goodrelations/v1#GoogleCheckout\n* http://purl.org/goodrelations/v1#PayPal\n* http://purl.org/goodrelations/v1#PaySwarm
+     *         
+     */
+    "PaymentMethod": NamedNode<'http://schema.org/PaymentMethod'>;
     /** The costs of settling the payment using a particular payment method. */
     "PaymentChargeSpecification": NamedNode<'http://schema.org/PaymentChargeSpecification'>;
     /** The payment has been received and processed. */
@@ -2002,21 +2183,12 @@ interface Schema {
     "PaymentDeclined": NamedNode<'http://schema.org/PaymentDeclined'>;
     /** The payment is due, but still within an acceptable time to be received. */
     "PaymentDue": NamedNode<'http://schema.org/PaymentDue'>;
-    /**
-     * A payment method is a standardized procedure for transferring the monetary amount for a purchase. Payment methods are characterized by the legal and technical structures used, and by the organization or group carrying out the transaction.\n\nCommonly used values:\n\n* http://purl.org/goodrelations/v1#ByBankTransferInAdvance\n* http://purl.org/goodrelations/v1#ByInvoice\n* http://purl.org/goodrelations/v1#Cash\n* http://purl.org/goodrelations/v1#CheckInAdvance\n* http://purl.org/goodrelations/v1#COD\n* http://purl.org/goodrelations/v1#DirectDebit\n* http://purl.org/goodrelations/v1#GoogleCheckout\n* http://purl.org/goodrelations/v1#PayPal\n* http://purl.org/goodrelations/v1#PaySwarm
-     *         
-     */
-    "PaymentMethod": NamedNode<'http://schema.org/PaymentMethod'>;
     /** The payment is due and considered late. */
     "PaymentPastDue": NamedNode<'http://schema.org/PaymentPastDue'>;
     /** A Service to transfer funds from a person or organization to a beneficiary person or organization. */
     "PaymentService": NamedNode<'http://schema.org/PaymentService'>;
-    /** A specific payment status. For example, PaymentDue, PaymentComplete, etc. */
-    "PaymentStatusType": NamedNode<'http://schema.org/PaymentStatusType'>;
     /** A specific branch of medical science that specializes in the care of infants, children and adolescents. */
     "Pediatric": NamedNode<'http://schema.org/Pediatric'>;
-    /** A set of characteristics belonging to people, e.g. who compose an item's target audience. */
-    "PeopleAudience": NamedNode<'http://schema.org/PeopleAudience'>;
     /** A type of medical procedure that involves percutaneous techniques, where access to organs or tissue is achieved via needle-puncture of the skin. For example, catheter-based procedures like stent delivery. */
     "PercutaneousProcedure": NamedNode<'http://schema.org/PercutaneousProcedure'>;
     /** The act of participating in performance arts. */
@@ -2025,14 +2197,6 @@ interface Schema {
     "PerformanceRole": NamedNode<'http://schema.org/PerformanceRole'>;
     /** A theater or other performing art center. */
     "PerformingArtsTheater": NamedNode<'http://schema.org/PerformingArtsTheater'>;
-    /** A performance group, such as a band, an orchestra, or a circus. */
-    "PerformingGroup": NamedNode<'http://schema.org/PerformingGroup'>;
-    /** A publication in any medium issued in successive parts bearing numerical or chronological designations and intended, such as a magazine, scholarly journal, or newspaper to continue indefinitely.\n\nSee also [blog post](http://blog.schema.org/2014/09/schemaorg-support-for-bibliographic_2.html). */
-    "Periodical": NamedNode<'http://schema.org/Periodical'>;
-    /** A permit issued by an organization, e.g. a parking pass. */
-    "Permit": NamedNode<'http://schema.org/Permit'>;
-    /** A person (alive, dead, undead, or fictional). */
-    "Person": NamedNode<'http://schema.org/Person'>;
     /** A pet store. */
     "PetStore": NamedNode<'http://schema.org/PetStore'>;
     /** A pharmacy or drugstore. */
@@ -2043,32 +2207,20 @@ interface Schema {
     "Photograph": NamedNode<'http://schema.org/Photograph'>;
     /** The act of capturing still images of objects using a camera. */
     "PhotographAction": NamedNode<'http://schema.org/PhotographAction'>;
-    /** Any bodily activity that enhances or maintains physical fitness and overall health and wellness. Includes activity that is part of daily living and routine, structured exercise, and exercise prescribed as part of a medical treatment or recovery plan. */
-    "PhysicalActivity": NamedNode<'http://schema.org/PhysicalActivity'>;
-    /** Categories of physical activity, organized by physiologic classification. */
-    "PhysicalActivityCategory": NamedNode<'http://schema.org/PhysicalActivityCategory'>;
-    /** A type of physical examination of a patient performed by a physician. */
-    "PhysicalExam": NamedNode<'http://schema.org/PhysicalExam'>;
     /** A process of progressive physical care and rehabilitation aimed at improving a health condition. */
     "PhysicalTherapy": NamedNode<'http://schema.org/PhysicalTherapy'>;
     /** A doctor's office. */
     "Physician": NamedNode<'http://schema.org/Physician'>;
-    /** The practice of treatment of disease, injury, or deformity by physical methods such as massage, heat treatment, and exercise rather than by drugs or surgery.. */
+    /** The practice of treatment of disease, injury, or deformity by physical methods such as massage, heat treatment, and exercise rather than by drugs or surgery. */
     "Physiotherapy": NamedNode<'http://schema.org/Physiotherapy'>;
-    /** Entities that have a somewhat fixed, physical extension. */
-    "Place": NamedNode<'http://schema.org/Place'>;
-    /** Place of worship, such as a church, synagogue, or mosque. */
-    "PlaceOfWorship": NamedNode<'http://schema.org/PlaceOfWorship'>;
     /** A placebo-controlled trial design. */
     "PlaceboControlledTrial": NamedNode<'http://schema.org/PlaceboControlledTrial'>;
-    /** The act of planning the execution of an event/task/action/reservation/plan to a future date. */
-    "PlanAction": NamedNode<'http://schema.org/PlanAction'>;
     /** A specific branch of medical science that pertains to therapeutic or cosmetic repair or re-formation of missing, injured or malformed tissues or body parts by manual and instrumental means. */
     "PlasticSurgery": NamedNode<'http://schema.org/PlasticSurgery'>;
     /** A play is a form of literature, usually consisting of dialogue between characters, intended for theatrical performance rather than just reading. Note: A performance of a Play would be a [[TheaterEvent]] or [[BroadcastEvent]] - the *Play* being the [[workPerformed]]. */
     "Play": NamedNode<'http://schema.org/Play'>;
-    /** The act of playing/exercising/training/performing for enjoyment, leisure, recreation, Competition or exercise.\n\nRelated actions:\n\n* [[ListenAction]]: Unlike ListenAction (which is under ConsumeAction), PlayAction refers to performing for an audience or at an event, rather than consuming music.\n* [[WatchAction]]: Unlike WatchAction (which is under ConsumeAction), PlayAction refers to showing/displaying for an audience or at an event, rather than consuming visual content. */
-    "PlayAction": NamedNode<'http://schema.org/PlayAction'>;
+    /** The act of playing a video game. */
+    "PlayGameAction": NamedNode<'http://schema.org/PlayGameAction'>;
     /** A playground. */
     "Playground": NamedNode<'http://schema.org/Playground'>;
     /** A plumbing service. */
@@ -2089,7 +2241,7 @@ interface Schema {
     "PostOffice": NamedNode<'http://schema.org/PostOffice'>;
     /** The mailing address. */
     "PostalAddress": NamedNode<'http://schema.org/PostalAddress'>;
-    /** Indicates a range of postalcodes, usually defined as the set of valid codes between [[postalCodeBegin]] and [[postalCodeEnd]], inclusively. */
+    /** Indicates a range of postal codes, usually defined as the set of valid codes between [[postalCodeBegin]] and [[postalCodeEnd]], inclusively. */
     "PostalCodeRangeSpecification": NamedNode<'http://schema.org/PostalCodeRangeSpecification'>;
     /** A large, usually printed placard, bill, or announcement, often illustrated, that is posted to advertise or publicize something. */
     "Poster": NamedNode<'http://schema.org/Poster'>;
@@ -2115,18 +2267,10 @@ interface Schema {
     "PreventionHealthAspect": NamedNode<'http://schema.org/PreventionHealthAspect'>;
     /** An indication for preventing an underlying condition, symptom, etc. */
     "PreventionIndication": NamedNode<'http://schema.org/PreventionIndication'>;
-    /** Enumerates different price components that together make up the total price for an offered product. */
-    "PriceComponentTypeEnumeration": NamedNode<'http://schema.org/PriceComponentTypeEnumeration'>;
-    /** A structured value representing a price or price range. Typically, only the subclasses of this type are used for markup. It is recommended to use [[MonetaryAmount]] to describe independent amounts of money such as a salary, credit card limits, etc. */
-    "PriceSpecification": NamedNode<'http://schema.org/PriceSpecification'>;
-    /** Enumerates different price types, for example list price, invoice price, and sale price. */
-    "PriceTypeEnumeration": NamedNode<'http://schema.org/PriceTypeEnumeration'>;
     /** The medical care by a physician, or other health-care professional, who is the patient's first contact with the health-care system and who may recommend a specialist if necessary. */
     "PrimaryCare": NamedNode<'http://schema.org/PrimaryCare'>;
     /** A prion is an infectious agent composed of protein in a misfolded form. */
     "Prion": NamedNode<'http://schema.org/Prion'>;
-    /** Any offered product or service. For example: a pair of shoes; a concert ticket; the rental of a car; a haircut; or an episode of a TV show streamed online. */
-    "Product": NamedNode<'http://schema.org/Product'>;
     /** A set of products (either [[ProductGroup]]s or specific variants) that are listed together e.g. in an [[Offer]]. */
     "ProductCollection": NamedNode<'http://schema.org/ProductCollection'>;
     /**
@@ -2149,21 +2293,10 @@ interface Schema {
     "PrognosisHealthAspect": NamedNode<'http://schema.org/PrognosisHealthAspect'>;
     /** Used to describe membership in a loyalty programs (e.g. "StarAliance"), traveler clubs (e.g. "AAA"), purchase clubs ("Safeway Club"), etc. */
     "ProgramMembership": NamedNode<'http://schema.org/ProgramMembership'>;
-    /**
-     * An enterprise (potentially individual but typically collaborative), planned to achieve a particular aim.
-     * Use properties from [[Organization]], [[subOrganization]]/[[parentOrganization]] to indicate project sub-structures. 
-     *    
-     */
-    "Project": NamedNode<'http://schema.org/Project'>;
     /** Data type: PronounceableText. */
     "PronounceableText": NamedNode<'http://schema.org/PronounceableText'>;
     /** A property, used to indicate attributes and relationships of some Thing; equivalent to rdf:Property. */
     "Property": NamedNode<'http://schema.org/Property'>;
-    /**
-     * A property-value pair, e.g. representing a feature of a product or place. Use the 'name' property for the name of the property. If there is an additional human-readable version of the value, put that into the 'description' property.\n\n Always use specific schema.org properties when a) they exist and b) you can populate them. Using PropertyValue as a substitute will typically not trigger the same effect as using the original, specific property.
-     *     
-     */
-    "PropertyValue": NamedNode<'http://schema.org/PropertyValue'>;
     /** A Property value specification. */
     "PropertyValueSpecification": NamedNode<'http://schema.org/PropertyValueSpecification'>;
     /** Protein is here used in its widest possible definition, as classes of amino acid based molecules. Amyloid-beta Protein in human (UniProt P05067), eukaryota (e.g. an OrthoDB group) or even a single molecule that one can point to are all of type schema:Protein. A protein can thus be a subclass of another protein, e.g. schema:Protein as a UniProt record can have multiple isoforms inside it which would also be schema:Protein. They can be imagined, synthetic, hypothetical or naturally occurring. */
@@ -2182,24 +2315,14 @@ interface Schema {
     "PublicSwimmingPool": NamedNode<'http://schema.org/PublicSwimmingPool'>;
     /** A public toilet is a room or small building containing one or more toilets (and possibly also urinals) which is available for use by the general public, or by customers or employees of certain businesses. */
     "PublicToilet": NamedNode<'http://schema.org/PublicToilet'>;
-    /** A PublicationEvent corresponds indifferently to the event of publication for a CreativeWork of any type e.g. a broadcast event, an on-demand event, a book/journal publication via a variety of delivery media. */
-    "PublicationEvent": NamedNode<'http://schema.org/PublicationEvent'>;
-    /** A part of a successively published publication such as a periodical or publication volume, often numbered, usually containing a grouping of works such as articles.\n\nSee also [blog post](http://blog.schema.org/2014/09/schemaorg-support-for-bibliographic_2.html). */
-    "PublicationIssue": NamedNode<'http://schema.org/PublicationIssue'>;
     /** A part of a successively published publication such as a periodical or multi-volume work, often numbered. It may represent a time span, such as a year.\n\nSee also [blog post](http://blog.schema.org/2014/09/schemaorg-support-for-bibliographic_2.html). */
     "PublicationVolume": NamedNode<'http://schema.org/PublicationVolume'>;
     /** A specific branch of medical science that pertains to the study of the respiratory system and its respective disease states. */
     "Pulmonary": NamedNode<'http://schema.org/Pulmonary'>;
     /** A QAPage is a WebPage focussed on a specific Question and its Answer(s), e.g. in a question answering site or documenting Frequently Asked Questions (FAQs). */
     "QAPage": NamedNode<'http://schema.org/QAPage'>;
-    /** A predefined value for a product characteristic, e.g. the power cord plug type 'US' or the garment sizes 'S', 'M', 'L', and 'XL'. */
-    "QualitativeValue": NamedNode<'http://schema.org/QualitativeValue'>;
     /**  A point value or interval for product characteristics and other purposes. */
     "QuantitativeValue": NamedNode<'http://schema.org/QuantitativeValue'>;
-    /** A statistical distribution of values. */
-    "QuantitativeValueDistribution": NamedNode<'http://schema.org/QuantitativeValueDistribution'>;
-    /** Quantities such as distance, time, mass, weight, etc. Particular instances of say Mass are entities like '3 Kg' or '4 milligrams'. */
-    "Quantity": NamedNode<'http://schema.org/Quantity'>;
     /** A specific question - e.g. from a user seeking answers online, or collected in a Frequently Asked Questions (FAQ) document. */
     "Question": NamedNode<'http://schema.org/Question'>;
     /** Quiz: A test of knowledge, skills and abilities. */
@@ -2214,8 +2337,6 @@ interface Schema {
     "RadiationTherapy": NamedNode<'http://schema.org/RadiationTherapy'>;
     /** A delivery service through which radio content is provided via broadcast over the air or online. */
     "RadioBroadcastService": NamedNode<'http://schema.org/RadioBroadcastService'>;
-    /** A unique instance of a radio BroadcastService on a CableOrSatelliteService lineup. */
-    "RadioChannel": NamedNode<'http://schema.org/RadioChannel'>;
     /** A short radio program or a segment/part of a radio program. */
     "RadioClip": NamedNode<'http://schema.org/RadioClip'>;
     /** A radio episode which can be part of a series or season. */
@@ -2230,10 +2351,6 @@ interface Schema {
     "Radiography": NamedNode<'http://schema.org/Radiography'>;
     /** A randomized trial design. */
     "RandomizedTrial": NamedNode<'http://schema.org/RandomizedTrial'>;
-    /** A rating is an evaluation on a numeric scale, such as 1 to 5 stars. */
-    "Rating": NamedNode<'http://schema.org/Rating'>;
-    /** The act of responding instinctively and emotionally to an object, expressing a sentiment. */
-    "ReactAction": NamedNode<'http://schema.org/ReactAction'>;
     /** The act of consuming written content. */
     "ReadAction": NamedNode<'http://schema.org/ReadAction'>;
     /** Permission to read or view the document. */
@@ -2248,7 +2365,7 @@ interface Schema {
     "RealEstateListing": NamedNode<'http://schema.org/RealEstateListing'>;
     /** Real-wheel drive is a transmission layout where the engine drives the rear wheels. */
     "RearWheelDriveConfiguration": NamedNode<'http://schema.org/RearWheelDriveConfiguration'>;
-    /** The act of physically/electronically taking delivery of an object that has been transferred from an origin to a destination. Reciprocal of SendAction.\n\nRelated actions:\n\n* [[SendAction]]: The reciprocal of ReceiveAction.\n* [[TakeAction]]: Unlike TakeAction, ReceiveAction does not imply that the ownership has been transfered (e.g. I can receive a package, but it does not mean the package is now mine). */
+    /** The act of physically/electronically taking delivery of an object that has been transferred from an origin to a destination. Reciprocal of SendAction.\n\nRelated actions:\n\n* [[SendAction]]: The reciprocal of ReceiveAction.\n* [[TakeAction]]: Unlike TakeAction, ReceiveAction does not imply that the ownership has been transferred (e.g. I can receive a package, but it does not mean the package is now mine). */
     "ReceiveAction": NamedNode<'http://schema.org/ReceiveAction'>;
     /** A recipe. For dietary restrictions covered by the recipe, a few common restrictions are enumerated via [[suitableForDiet]]. The [[keywords]] property can also be used to add more detail. */
     "Recipe": NamedNode<'http://schema.org/Recipe'>;
@@ -2260,11 +2377,11 @@ interface Schema {
     "Recruiting": NamedNode<'http://schema.org/Recruiting'>;
     /** A recycling center. */
     "RecyclingCenter": NamedNode<'http://schema.org/RecyclingCenter'>;
-    /** Enumerates several kinds of product return refund types. */
-    "RefundTypeEnumeration": NamedNode<'http://schema.org/RefundTypeEnumeration'>;
+    /** A general code for cases where relevance to children is reduced, e.g. adult education, mortgages, retirement-related products, etc. */
+    "ReducedRelevanceForChildrenConsideration": NamedNode<'http://schema.org/ReducedRelevanceForChildrenConsideration'>;
     /** Indicates that the item is refurbished. */
     "RefurbishedCondition": NamedNode<'http://schema.org/RefurbishedCondition'>;
-    /** The act of registering to be a user of a service, product or web page.\n\nRelated actions:\n\n* [[JoinAction]]: Unlike JoinAction, RegisterAction implies you are registering to be a user of a service, *not* a group/team of people.\n* [FollowAction]]: Unlike FollowAction, RegisterAction doesn't imply that the agent is expecting to poll for updates from the object.\n* [[SubscribeAction]]: Unlike SubscribeAction, RegisterAction doesn't imply that the agent is expecting updates from the object. */
+    /** The act of registering to be a user of a service, product or web page.\n\nRelated actions:\n\n* [[JoinAction]]: Unlike JoinAction, RegisterAction implies you are registering to be a user of a service, *not* a group/team of people.\n* [[FollowAction]]: Unlike FollowAction, RegisterAction doesn't imply that the agent is expecting to poll for updates from the object.\n* [[SubscribeAction]]: Unlike SubscribeAction, RegisterAction doesn't imply that the agent is expecting updates from the object. */
     "RegisterAction": NamedNode<'http://schema.org/RegisterAction'>;
     /** A registry-based study design. */
     "Registry": NamedNode<'http://schema.org/Registry'>;
@@ -2288,7 +2405,7 @@ interface Schema {
     "RepaymentSpecification": NamedNode<'http://schema.org/RepaymentSpecification'>;
     /** The act of editing a recipient by replacing an old object with a new object. */
     "ReplaceAction": NamedNode<'http://schema.org/ReplaceAction'>;
-    /** The act of responding to a question/message asked/sent by the object. Related to [[AskAction]]\n\nRelated actions:\n\n* [[AskAction]]: Appears generally as an origin of a ReplyAction. */
+    /** The act of responding to a question/message asked/sent by the object. Related to [[AskAction]].\n\nRelated actions:\n\n* [[AskAction]]: Appears generally as an origin of a ReplyAction. */
     "ReplyAction": NamedNode<'http://schema.org/ReplyAction'>;
     /** A Report generated by governmental or non-governmental organization. */
     "Report": NamedNode<'http://schema.org/Report'>;
@@ -2312,10 +2429,10 @@ interface Schema {
     "ResearchProject": NamedNode<'http://schema.org/ResearchProject'>;
     /** Researchers. */
     "Researcher": NamedNode<'http://schema.org/Researcher'>;
-    /** Describes a reservation for travel, dining or an event. Some reservations require tickets. \n\nNote: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations. For offers of tickets, restaurant reservations, flights, or rental cars, use [[Offer]]. */
-    "Reservation": NamedNode<'http://schema.org/Reservation'>;
     /** The status for a previously confirmed reservation that is now cancelled. */
     "ReservationCancelled": NamedNode<'http://schema.org/ReservationCancelled'>;
+    /** Enumerated status values for Reservation. */
+    "ReservationStatusType": NamedNode<'http://schema.org/ReservationStatusType'>;
     /** The status of a confirmed reservation. */
     "ReservationConfirmed": NamedNode<'http://schema.org/ReservationConfirmed'>;
     /** The status of a reservation on hold pending an update like credit card number or flight changes. */
@@ -2324,16 +2441,12 @@ interface Schema {
     "ReservationPackage": NamedNode<'http://schema.org/ReservationPackage'>;
     /** The status of a reservation when a request has been sent, but not confirmed. */
     "ReservationPending": NamedNode<'http://schema.org/ReservationPending'>;
-    /** Enumerated status values for Reservation. */
-    "ReservationStatusType": NamedNode<'http://schema.org/ReservationStatusType'>;
     /** Reserving a concrete object.\n\nRelated actions:\n\n* [[ScheduleAction]]: Unlike ScheduleAction, ReserveAction reserves concrete objects (e.g. a table, a hotel) towards a time slot / spatial allocation. */
     "ReserveAction": NamedNode<'http://schema.org/ReserveAction'>;
     /** A reservoir of water, typically an artificially created lake, like the Lake Kariba reservoir. */
     "Reservoir": NamedNode<'http://schema.org/Reservoir'>;
-    /** The place where a person lives. */
-    "Residence": NamedNode<'http://schema.org/Residence'>;
     /**
-     * A resort is a place used for relaxation or recreation, attracting visitors for holidays or vacations. Resorts are places, towns or sometimes commercial establishment operated by a single company (Source: Wikipedia, the free encyclopedia, see <a href="http://en.wikipedia.org/wiki/Resort">http://en.wikipedia.org/wiki/Resort</a>).
+     * A resort is a place used for relaxation or recreation, attracting visitors for holidays or vacations. Resorts are places, towns or sometimes commercial establishments operated by a single company (source: Wikipedia, the free encyclopedia, see <a href="http://en.wikipedia.org/wiki/Resort">http://en.wikipedia.org/wiki/Resort</a>).
      * <br /><br />
      * See also the <a href="/docs/hotels.html">dedicated document on the use of schema.org for marking up hotels and other forms of accommodations</a>.
      *     
@@ -2343,10 +2456,8 @@ interface Schema {
     "RespiratoryTherapy": NamedNode<'http://schema.org/RespiratoryTherapy'>;
     /** A restaurant. */
     "Restaurant": NamedNode<'http://schema.org/Restaurant'>;
-    /** Specifies that the customer must pay a restocking fee when returning a product */
+    /** Specifies that the customer must pay a restocking fee when returning a product. */
     "RestockingFees": NamedNode<'http://schema.org/RestockingFees'>;
-    /** A diet restricted to certain foods or preparations for cultural, religious, health or lifestyle reasons. */
-    "RestrictedDiet": NamedNode<'http://schema.org/RestrictedDiet'>;
     /** Results are available. */
     "ResultsAvailable": NamedNode<'http://schema.org/ResultsAvailable'>;
     /** Results are not available. */
@@ -2359,28 +2470,24 @@ interface Schema {
     "ReturnAction": NamedNode<'http://schema.org/ReturnAction'>;
     /** Specifies that product returns must be made at a kiosk. */
     "ReturnAtKiosk": NamedNode<'http://schema.org/ReturnAtKiosk'>;
-    /** Specifies that product returns must to be done by mail. */
+    /** Enumerates several types of product return methods. */
+    "ReturnMethodEnumeration": NamedNode<'http://schema.org/ReturnMethodEnumeration'>;
+    /** Specifies that product returns must be done by mail. */
     "ReturnByMail": NamedNode<'http://schema.org/ReturnByMail'>;
     /** Specifies that product returns must be paid for, and are the responsibility of, the customer. */
     "ReturnFeesCustomerResponsibility": NamedNode<'http://schema.org/ReturnFeesCustomerResponsibility'>;
-    /** Enumerates several kinds of policies for product return fees. */
-    "ReturnFeesEnumeration": NamedNode<'http://schema.org/ReturnFeesEnumeration'>;
     /** Specifies that product returns must be made in a store. */
     "ReturnInStore": NamedNode<'http://schema.org/ReturnInStore'>;
     /** Indicated that creating a return label is the responsibility of the customer. */
     "ReturnLabelCustomerResponsibility": NamedNode<'http://schema.org/ReturnLabelCustomerResponsibility'>;
+    /** Enumerates several types of return labels for product returns. */
+    "ReturnLabelSourceEnumeration": NamedNode<'http://schema.org/ReturnLabelSourceEnumeration'>;
     /** Indicated that a return label must be downloaded and printed by the customer. */
     "ReturnLabelDownloadAndPrint": NamedNode<'http://schema.org/ReturnLabelDownloadAndPrint'>;
     /** Specifies that a return label will be provided by the seller in the shipping box. */
     "ReturnLabelInBox": NamedNode<'http://schema.org/ReturnLabelInBox'>;
-    /** Enumerates several types of return labels for product returns. */
-    "ReturnLabelSourceEnumeration": NamedNode<'http://schema.org/ReturnLabelSourceEnumeration'>;
-    /** Enumerates several types of product return methods. */
-    "ReturnMethodEnumeration": NamedNode<'http://schema.org/ReturnMethodEnumeration'>;
-    /** Specifies that the customer must pay the return shipping costs when returning a product */
+    /** Specifies that the customer must pay the return shipping costs when returning a product. */
     "ReturnShippingFees": NamedNode<'http://schema.org/ReturnShippingFees'>;
-    /** A review of an item - for example, of a restaurant, movie, or store. */
-    "Review": NamedNode<'http://schema.org/Review'>;
     /** The act of producing a balanced opinion about the object for an audience. An agent reviews an object with participants resulting in a review. */
     "ReviewAction": NamedNode<'http://schema.org/ReviewAction'>;
     /** A [[NewsArticle]] and [[CriticReview]] providing a professional critic's assessment of a service, product, performance, or artistic or literary work. */
@@ -2393,25 +2500,16 @@ interface Schema {
     "RisksOrComplicationsHealthAspect": NamedNode<'http://schema.org/RisksOrComplicationsHealthAspect'>;
     /** A river (for example, the broad majestic Shannon). */
     "RiverBodyOfWater": NamedNode<'http://schema.org/RiverBodyOfWater'>;
-    /** Represents additional information about a relationship or property. For example a Role can be used to say that a 'member' role linking some SportsTeam to a player occurred during a particular time period. Or that a Person's 'actor' role in a Movie was for some particular characterName. Such properties can be attached to a Role entity, which is then associated with the main entities using ordinary properties like 'member' or 'actor'.\n\nSee also [blog post](http://blog.schema.org/2014/06/introducing-role.html). */
-    "Role": NamedNode<'http://schema.org/Role'>;
     /** A roofing contractor. */
     "RoofingContractor": NamedNode<'http://schema.org/RoofingContractor'>;
-    /**
-     * A room is a distinguishable space within a structure, usually separated from other spaces by interior walls. (Source: Wikipedia, the free encyclopedia, see <a href="http://en.wikipedia.org/wiki/Room">http://en.wikipedia.org/wiki/Room</a>).
-     * <br /><br />
-     * See also the <a href="/docs/hotels.html">dedicated document on the use of schema.org for marking up hotels and other forms of accommodations</a>.
-     *
-     */
-    "Room": NamedNode<'http://schema.org/Room'>;
     /** The act of notifying an event organizer as to whether you expect to attend the event. */
     "RsvpAction": NamedNode<'http://schema.org/RsvpAction'>;
     /** The invitee may or may not attend. */
     "RsvpResponseMaybe": NamedNode<'http://schema.org/RsvpResponseMaybe'>;
-    /** The invitee will not attend. */
-    "RsvpResponseNo": NamedNode<'http://schema.org/RsvpResponseNo'>;
     /** RsvpResponseType is an enumeration type whose instances represent responding to an RSVP request. */
     "RsvpResponseType": NamedNode<'http://schema.org/RsvpResponseType'>;
+    /** The invitee will not attend. */
+    "RsvpResponseNo": NamedNode<'http://schema.org/RsvpResponseNo'>;
     /** The invitee will attend. */
     "RsvpResponseYes": NamedNode<'http://schema.org/RsvpResponseYes'>;
     /** Represents the suggested retail price ("SRP") of an offered product. */
@@ -2440,15 +2538,13 @@ interface Schema {
     /** The day of the week between Friday and Sunday. */
     "Saturday": NamedNode<'http://schema.org/Saturday'>;
     /**
-     * A schedule defines a repeating time period used to describe a regularly occurring [[Event]]. At a minimum a schedule will specify [[repeatFrequency]] which describes the interval between occurences of the event. Additional information can be provided to specify the schedule more precisely.
+     * A schedule defines a repeating time period used to describe a regularly occurring [[Event]]. At a minimum a schedule will specify [[repeatFrequency]] which describes the interval between occurrences of the event. Additional information can be provided to specify the schedule more precisely.
      *       This includes identifying the day(s) of the week or month when the recurring event will take place, in addition to its start and end time. Schedules may also
      *       have start and end dates to indicate when they are active, e.g. to define a limited calendar of events.
      */
     "Schedule": NamedNode<'http://schema.org/Schedule'>;
     /** Scheduling future actions, events, or tasks.\n\nRelated actions:\n\n* [[ReserveAction]]: Unlike ReserveAction, ScheduleAction allocates future actions (e.g. an event, a task, etc) towards a time slot / spatial allocation. */
     "ScheduleAction": NamedNode<'http://schema.org/ScheduleAction'>;
-    /** A scholarly article. */
-    "ScholarlyArticle": NamedNode<'http://schema.org/ScholarlyArticle'>;
     /** A school. */
     "School": NamedNode<'http://schema.org/School'>;
     /** A School District is an administrative area for the administration of schools. */
@@ -2463,9 +2559,11 @@ interface Schema {
     "SeaBodyOfWater": NamedNode<'http://schema.org/SeaBodyOfWater'>;
     /** The act of searching for an object.\n\nRelated actions:\n\n* [[FindAction]]: SearchAction generally leads to a FindAction, but not necessarily. */
     "SearchAction": NamedNode<'http://schema.org/SearchAction'>;
+    /** A Search and Rescue organization of some kind. */
+    "SearchRescueOrganization": NamedNode<'http://schema.org/SearchRescueOrganization'>;
     /** Web page type: Search results page. */
     "SearchResultsPage": NamedNode<'http://schema.org/SearchResultsPage'>;
-    /** A media season e.g. tv, radio, video game etc. */
+    /** A media season, e.g. TV, radio, video game etc. */
     "Season": NamedNode<'http://schema.org/Season'>;
     /** Used to describe a seat, such as a reserved seat in an event reservation. */
     "Seat": NamedNode<'http://schema.org/Seat'>;
@@ -2481,14 +2579,12 @@ interface Schema {
     "SelfStorage": NamedNode<'http://schema.org/SelfStorage'>;
     /** The act of taking money from a buyer in exchange for goods or services rendered. An agent sells an object, product, or service to a buyer for a price. Reciprocal of BuyAction. */
     "SellAction": NamedNode<'http://schema.org/SellAction'>;
-    /** The act of physically/electronically dispatching an object for transfer from an origin to a destination.Related actions:\n\n* [[ReceiveAction]]: The reciprocal of SendAction.\n* [[GiveAction]]: Unlike GiveAction, SendAction does not imply the transfer of ownership (e.g. I can send you my laptop, but I'm not necessarily giving it to you). */
+    /** The act of physically/electronically dispatching an object for transfer from an origin to a destination. Related actions:\n\n* [[ReceiveAction]]: The reciprocal of SendAction.\n* [[GiveAction]]: Unlike GiveAction, SendAction does not imply the transfer of ownership (e.g. I can send you my laptop, but I'm not necessarily giving it to you). */
     "SendAction": NamedNode<'http://schema.org/SendAction'>;
-    /** A Series in schema.org is a group of related items, typically but not necessarily of the same kind. See also [[CreativeWorkSeries]], [[EventSeries]]. */
-    "Series": NamedNode<'http://schema.org/Series'>;
-    /** A service provided by an organization, e.g. delivery service, print services, etc. */
-    "Service": NamedNode<'http://schema.org/Service'>;
     /** A means for accessing a service, e.g. a government office location, web site, or phone number. */
     "ServiceChannel": NamedNode<'http://schema.org/ServiceChannel'>;
+    /** The item contains sexually oriented content such as nudity, suggestive or explicit material, or related online services, or is intended to enhance sexual activity. Examples: Erotic videos or magazine, sexual enhancement devices, sex toys. */
+    "SexualContentConsideration": NamedNode<'http://schema.org/SexualContentConsideration'>;
     /** The act of distributing content to people for their amusement or edification. */
     "ShareAction": NamedNode<'http://schema.org/ShareAction'>;
     /** Printed music, as opposed to performed or recorded music. */
@@ -2517,6 +2613,8 @@ interface Schema {
     "SingleRelease": NamedNode<'http://schema.org/SingleRelease'>;
     /** A navigation element of the page. */
     "SiteNavigationElement": NamedNode<'http://schema.org/SiteNavigationElement'>;
+    /** A web page element, like a table or an image. */
+    "WebPageElement": NamedNode<'http://schema.org/WebPageElement'>;
     /** Enumerates common size groups for various product categories. */
     "SizeGroupEnumeration": NamedNode<'http://schema.org/SizeGroupEnumeration'>;
     /** Size related properties of a product, typically a size code ([[name]]) and optionally a [[sizeSystem]], [[sizeGroup]], and product measurements ([[hasMeasurement]]). In addition, the intended audience can be defined through [[suggestedAge]], [[suggestedGender]], and suggested body measurements ([[suggestedMeasurement]]). */
@@ -2533,12 +2631,6 @@ interface Schema {
     "Skin": NamedNode<'http://schema.org/Skin'>;
     /** Event type: Social event. */
     "SocialEvent": NamedNode<'http://schema.org/SocialEvent'>;
-    /** A post to a social media platform, including blog posts, tweets, Facebook posts, etc. */
-    "SocialMediaPosting": NamedNode<'http://schema.org/SocialMediaPosting'>;
-    /** A software application. */
-    "SoftwareApplication": NamedNode<'http://schema.org/SoftwareApplication'>;
-    /** Computer programming source code. Example: Full (compile ready) solutions, code snippet samples, scripts, templates. */
-    "SoftwareSourceCode": NamedNode<'http://schema.org/SoftwareSourceCode'>;
     /** Indicates that the item has sold out. */
     "SoldOut": NamedNode<'http://schema.org/SoldOut'>;
     /** The action that takes in a math expression and directs users to a page potentially capable of solving/simplifying that expression. */
@@ -2579,25 +2671,21 @@ interface Schema {
      * Many [[SpecialAnnouncement]]s will relate to particular regions and to identifiable local organizations. Use [[spatialCoverage]] for the region, and [[announcementLocation]] to indicate specific [[LocalBusiness]]es and [[CivicStructure]]s. If the announcement affects both a particular region and a specific location (for example, a library closure that serves an entire region), use both [[spatialCoverage]] and [[announcementLocation]].
      *
      * The [[about]] property can be used to indicate entities that are the focus of the announcement. We now recommend using [[about]] only
-     * for representing non-location entities (e.g. a [[Course]] or a [[RadioStation]]). For places, use [[announcementLocation]] and [[spatialCoverage]]. Consumers of this markup should be aware that the initial design encouraged the use of /about for locations too.
+     * for representing non-location entities (e.g. a [[Course]] or a [[RadioStation]]). For places, use [[announcementLocation]] and [[spatialCoverage]]. Consumers of this markup should be aware that the initial design encouraged the use of [[about]] for locations too.
      *
      * The basic content of [[SpecialAnnouncement]] is similar to that of an [RSS](https://en.wikipedia.org/wiki/RSS) or [Atom](https://en.wikipedia.org/wiki/Atom_(Web_standard)) feed. For publishers without such feeds, basic feed-like information can be shared by posting
      * [[SpecialAnnouncement]] updates in a page, e.g. using JSON-LD. For sites with Atom/RSS functionality, you can point to a feed
      * with the [[webFeed]] property. This can be a simple URL, or an inline [[DataFeed]] object, with [[encodingFormat]] providing
-     * media type information e.g. "application/rss+xml" or "application/atom+xml".
+     * media type information, e.g. "application/rss+xml" or "application/atom+xml".
      *
      */
     "SpecialAnnouncement": NamedNode<'http://schema.org/SpecialAnnouncement'>;
-    /** Any branch of a field in which people typically develop specific expertise, usually after significant study, time, and effort. */
-    "Specialty": NamedNode<'http://schema.org/Specialty'>;
     /** The scientific study and treatment of defects, disorders, and malfunctions of speech and voice, as stuttering, lisping, or lalling, and of language disturbances, as aphasia or delayed language acquisition. */
     "SpeechPathology": NamedNode<'http://schema.org/SpeechPathology'>;
     /** SpokenWordAlbum. */
     "SpokenWordAlbum": NamedNode<'http://schema.org/SpokenWordAlbum'>;
     /** A sporting goods store. */
     "SportingGoodsStore": NamedNode<'http://schema.org/SportingGoodsStore'>;
-    /** A sports location, such as a playing field. */
-    "SportsActivityLocation": NamedNode<'http://schema.org/SportsActivityLocation'>;
     /** A sports club. */
     "SportsClub": NamedNode<'http://schema.org/SportsClub'>;
     /** Event type: Sports event. */
@@ -2627,39 +2715,29 @@ interface Schema {
     "StagesHealthAspect": NamedNode<'http://schema.org/StagesHealthAspect'>;
     /** A state or province of a country. */
     "State": NamedNode<'http://schema.org/State'>;
-    /** A statement about something, for example a fun or interesting fact. If known, the main entity this statement is about, can be indicated using mainEntity. For more formal claims (e.g. in Fact Checking), consider using [[Claim]] instead. Use the [[text]] property to capture the text of the statement. */
+    /** A statement about something, for example a fun or interesting fact. If known, the main entity this statement is about can be indicated using mainEntity. For more formal claims (e.g. in Fact Checking), consider using [[Claim]] instead. Use the [[text]] property to capture the text of the statement. */
     "Statement": NamedNode<'http://schema.org/Statement'>;
     /**
-     * A StatisticalPopulation is a set of instances of a certain given type that satisfy some set of constraints. The property [[populationType]] is used to specify the type. Any property that can be used on instances of that type can appear on the statistical population. For example, a [[StatisticalPopulation]] representing all [[Person]]s with a [[homeLocation]] of East Podunk California, would be described by applying the appropriate [[homeLocation]] and [[populationType]] properties to a [[StatisticalPopulation]] item that stands for that set of people.
+     * A StatisticalPopulation is a set of instances of a certain given type that satisfy some set of constraints. The property [[populationType]] is used to specify the type. Any property that can be used on instances of that type can appear on the statistical population. For example, a [[StatisticalPopulation]] representing all [[Person]]s with a [[homeLocation]] of East Podunk California would be described by applying the appropriate [[homeLocation]] and [[populationType]] properties to a [[StatisticalPopulation]] item that stands for that set of people.
      * The properties [[numConstraints]] and [[constrainingProperty]] are used to specify which of the populations properties are used to specify the population. Note that the sense of "population" used here is the general sense of a statistical
      * population, and does not imply that the population consists of people. For example, a [[populationType]] of [[Event]] or [[NewsArticle]] could be used. See also [[Observation]], and the [data and datasets](/docs/data-and-datasets.html) overview for more details.
      *   
      */
     "StatisticalPopulation": NamedNode<'http://schema.org/StatisticalPopulation'>;
-    /** Lists or enumerations dealing with status types. */
-    "StatusEnumeration": NamedNode<'http://schema.org/StatusEnumeration'>;
-    /** A value indicating a steering position. */
-    "SteeringPositionValue": NamedNode<'http://schema.org/SteeringPositionValue'>;
-    /** A retail good store. */
-    "Store": NamedNode<'http://schema.org/Store'>;
-    /** Specifies that the customer receives a store credit as refund when returning a product */
+    /** Specifies that the customer receives a store credit as refund when returning a product. */
     "StoreCreditRefund": NamedNode<'http://schema.org/StoreCreditRefund'>;
     /** Physical activity that is engaged in to improve muscle and bone strength. Also referred to as resistance training. */
     "StrengthTraining": NamedNode<'http://schema.org/StrengthTraining'>;
-    /** Structured values are used when the value of a property has a more complex structure than simply being a textual value or a reference to another thing. */
-    "StructuredValue": NamedNode<'http://schema.org/StructuredValue'>;
     /** StudioAlbum. */
     "StudioAlbum": NamedNode<'http://schema.org/StudioAlbum'>;
     /** The act of forming a personal connection with someone/something (object) unidirectionally/asymmetrically to get updates pushed to.\n\nRelated actions:\n\n* [[FollowAction]]: Unlike FollowAction, SubscribeAction implies that the subscriber acts as a passive agent being constantly/actively pushed for updates.\n* [[RegisterAction]]: Unlike RegisterAction, SubscribeAction implies that the agent is interested in continuing receiving updates from the object.\n* [[JoinAction]]: Unlike JoinAction, SubscribeAction implies that the agent is interested in continuing receiving updates from the object. */
     "SubscribeAction": NamedNode<'http://schema.org/SubscribeAction'>;
     /** Represents the subscription pricing component of the total price for an offered product. */
     "Subscription": NamedNode<'http://schema.org/Subscription'>;
-    /** Any matter of defined composition that has discrete existence, whose origin may be biological, mineral or chemical. */
-    "Substance": NamedNode<'http://schema.org/Substance'>;
     /** A subway station. */
     "SubwayStation": NamedNode<'http://schema.org/SubwayStation'>;
     /**
-     * A suite in a hotel or other public accommodation, denotes a class of luxury accommodations, the key feature of which is multiple rooms (Source: Wikipedia, the free encyclopedia, see <a href="http://en.wikipedia.org/wiki/Suite_(hotel)">http://en.wikipedia.org/wiki/Suite_(hotel)</a>).
+     * A suite in a hotel or other public accommodation, denotes a class of luxury accommodations, the key feature of which is multiple rooms (source: Wikipedia, the free encyclopedia, see <a href="http://en.wikipedia.org/wiki/Suite_(hotel)">http://en.wikipedia.org/wiki/Suite_(hotel)</a>).
      * <br /><br />
      * See also the <a href="/docs/hotels.html">dedicated document on the use of schema.org for marking up hotels and other forms of accommodations</a>.
      *
@@ -2691,24 +2769,22 @@ interface Schema {
     "TVSeries": NamedNode<'http://schema.org/TVSeries'>;
     /** A table on a Web page. */
     "Table": NamedNode<'http://schema.org/Table'>;
-    /** The act of gaining ownership of an object from an origin. Reciprocal of GiveAction.\n\nRelated actions:\n\n* [[GiveAction]]: The reciprocal of TakeAction.\n* [[ReceiveAction]]: Unlike ReceiveAction, TakeAction implies that ownership has been transfered. */
+    /** The act of gaining ownership of an object from an origin. Reciprocal of GiveAction.\n\nRelated actions:\n\n* [[GiveAction]]: The reciprocal of TakeAction.\n* [[ReceiveAction]]: Unlike ReceiveAction, TakeAction implies that ownership has been transferred. */
     "TakeAction": NamedNode<'http://schema.org/TakeAction'>;
     /** A tattoo parlor. */
     "TattooParlor": NamedNode<'http://schema.org/TattooParlor'>;
     /** A taxi. */
     "Taxi": NamedNode<'http://schema.org/Taxi'>;
-    /** A reservation for a taxi.\n\nNote: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations. For offers of tickets, use [[Offer]]. */
-    "TaxiReservation": NamedNode<'http://schema.org/TaxiReservation'>;
     /** A service for a vehicle for hire with a driver for local travel. Fares are usually calculated based on distance traveled. */
     "TaxiService": NamedNode<'http://schema.org/TaxiService'>;
+    /** A reservation for a taxi.\n\nNote: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations. For offers of tickets, use [[Offer]]. */
+    "TaxiReservation": NamedNode<'http://schema.org/TaxiReservation'>;
     /** A taxi stand. */
     "TaxiStand": NamedNode<'http://schema.org/TaxiStand'>;
     /** Indicates the usage of the car as a taxi. */
     "TaxiVehicleUsage": NamedNode<'http://schema.org/TaxiVehicleUsage'>;
     /** A set of organisms asserted to represent a natural cohesive biological unit. */
     "Taxon": NamedNode<'http://schema.org/Taxon'>;
-    /** A technical article - Example: How-to (task) topics, step-by-step, procedural troubleshooting, specifications, etc. */
-    "TechArticle": NamedNode<'http://schema.org/TechArticle'>;
     /** A unique instance of a television BroadcastService on a CableOrSatelliteService lineup. */
     "TelevisionChannel": NamedNode<'http://schema.org/TelevisionChannel'>;
     /** A television station. */
@@ -2717,8 +2793,6 @@ interface Schema {
     "TennisComplex": NamedNode<'http://schema.org/TennisComplex'>;
     /** Terminated. */
     "Terminated": NamedNode<'http://schema.org/Terminated'>;
-    /** Data type: Text. */
-    "Text": NamedNode<'http://schema.org/Text'>;
     /** A file composed primarily of text. */
     "TextDigitalDocument": NamedNode<'http://schema.org/TextDigitalDocument'>;
     /** Event type: Theater performance. */
@@ -2727,12 +2801,8 @@ interface Schema {
     "TheaterGroup": NamedNode<'http://schema.org/TheaterGroup'>;
     /** A medical device used for therapeutic purposes. */
     "Therapeutic": NamedNode<'http://schema.org/Therapeutic'>;
-    /** A medical procedure intended primarily for therapeutic purposes, aimed at improving a health condition. */
-    "TherapeuticProcedure": NamedNode<'http://schema.org/TherapeuticProcedure'>;
     /** A thesis or dissertation document submitted in support of candidature for an academic degree or professional qualification. */
     "Thesis": NamedNode<'http://schema.org/Thesis'>;
-    /** The most generic type of item. */
-    "Thing": NamedNode<'http://schema.org/Thing'>;
     /** Throat assessment with  clinical examination. */
     "Throat": NamedNode<'http://schema.org/Throat'>;
     /** The day of the week between Wednesday and Friday. */
@@ -2747,20 +2817,22 @@ interface Schema {
     "TipAction": NamedNode<'http://schema.org/TipAction'>;
     /** A tire shop. */
     "TireShop": NamedNode<'http://schema.org/TireShop'>;
+    /** Item contains tobacco and/or nicotine, for example cigars, cigarettes, chewing tobacco, e-cigarettes, or hookahs. */
+    "TobaccoNicotineConsideration": NamedNode<'http://schema.org/TobaccoNicotineConsideration'>;
     /** The associated telephone number is toll free. */
     "TollFree": NamedNode<'http://schema.org/TollFree'>;
     /** A tourist attraction.  In principle any Thing can be a [[TouristAttraction]], from a [[Mountain]] and [[LandmarksOrHistoricalBuildings]] to a [[LocalBusiness]].  This Type can be used on its own to describe a general [[TouristAttraction]], or be used as an [[additionalType]] to add tourist attraction properties to any other type.  (See examples below) */
     "TouristAttraction": NamedNode<'http://schema.org/TouristAttraction'>;
     /**
      * A tourist destination. In principle any [[Place]] can be a [[TouristDestination]] from a [[City]], Region or [[Country]] to an [[AmusementPark]] or [[Hotel]]. This Type can be used on its own to describe a general [[TouristDestination]], or be used as an [[additionalType]] to add tourist relevant properties to any other [[Place]].  A [[TouristDestination]] is defined as a [[Place]] that contains, or is colocated with, one or more [[TouristAttraction]]s, often linked by a similar theme or interest to a particular [[touristType]]. The [UNWTO](http://www2.unwto.org/) defines Destination (main destination of a tourism trip) as the place visited that is central to the decision to take the trip.
-     *   (See examples below).
+     *   (See examples below.)
      */
     "TouristDestination": NamedNode<'http://schema.org/TouristDestination'>;
     /** A tourist information center. */
     "TouristInformationCenter": NamedNode<'http://schema.org/TouristInformationCenter'>;
     /**
      * A tourist trip. A created itinerary of visits to one or more places of interest ([[TouristAttraction]]/[[TouristDestination]]) often linked by a similar theme, geographic area, or interest to a particular [[touristType]]. The [UNWTO](http://www2.unwto.org/) defines tourism trip as the Trip taken by visitors.
-     *   (See examples below).
+     *   (See examples below.)
      */
     "TouristTrip": NamedNode<'http://schema.org/TouristTrip'>;
     /** A specific branch of medical science that is concerned with poisons, their nature, effects and detection and involved in the treatment of poisoning. */
@@ -2769,8 +2841,6 @@ interface Schema {
     "ToyStore": NamedNode<'http://schema.org/ToyStore'>;
     /** An agent tracks an object for updates.\n\nRelated actions:\n\n* [[FollowAction]]: Unlike FollowAction, TrackAction refers to the interest on the location of innanimates objects.\n* [[SubscribeAction]]: Unlike SubscribeAction, TrackAction refers to  the interest on the location of innanimate objects. */
     "TrackAction": NamedNode<'http://schema.org/TrackAction'>;
-    /** The act of participating in an exchange of goods and services for monetary compensation. An agent trades an object, product or service with a participant in exchange for a one time or periodic payment. */
-    "TradeAction": NamedNode<'http://schema.org/TradeAction'>;
     /** A system of medicine based on common theoretical concepts that originated in China and evolved over thousands of years, that uses herbs, acupuncture, exercise, massage, dietary therapy, and other methods to treat a wide range of conditions. */
     "TraditionalChinese": NamedNode<'http://schema.org/TraditionalChinese'>;
     /** A reservation for train travel.\n\nNote: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations. For offers of tickets, use [[Offer]]. */
@@ -2779,14 +2849,12 @@ interface Schema {
     "TrainStation": NamedNode<'http://schema.org/TrainStation'>;
     /** A trip on a commercial train line. */
     "TrainTrip": NamedNode<'http://schema.org/TrainTrip'>;
-    /** The act of transferring/moving (abstract or concrete) animate or inanimate objects from one place to another. */
-    "TransferAction": NamedNode<'http://schema.org/TransferAction'>;
     /**
      * Content coded 'transformed content' in a [[MediaReview]], considered in the context of how it was published or shared.
      *
      * For a [[VideoObject]] to be 'transformed content':  or all of the video has been manipulated to transform the footage itself. This category includes using tools like the Adobe Suite to change the speed of the video, add or remove visual elements or dub audio. Deepfakes are also a subset of transformation.
      *
-     * For an [[ImageObject]] to be transformed content': Adding or deleting visual elements to give the image a different meaning with the intention to mislead.
+     * For an [[ImageObject]] to be 'transformed content': Adding or deleting visual elements to give the image a different meaning with the intention to mislead.
      *
      * For an [[ImageObject]] with embedded text to be 'transformed content': Adding or deleting visual elements to give the image a different meaning with the intention to mislead.
      *
@@ -2796,7 +2864,7 @@ interface Schema {
     "TransformedContent": NamedNode<'http://schema.org/TransformedContent'>;
     /** A transit map. */
     "TransitMap": NamedNode<'http://schema.org/TransitMap'>;
-    /** The act of traveling from an fromLocation to a destination by a specified mode of transport, optionally with participants. */
+    /** The act of traveling from a fromLocation to a destination by a specified mode of transport, optionally with participants. */
     "TravelAction": NamedNode<'http://schema.org/TravelAction'>;
     /** A travel agency. */
     "TravelAgency": NamedNode<'http://schema.org/TravelAgency'>;
@@ -2804,8 +2872,6 @@ interface Schema {
     "TreatmentIndication": NamedNode<'http://schema.org/TreatmentIndication'>;
     /** Treatments or related therapies for a Topic. */
     "TreatmentsHealthAspect": NamedNode<'http://schema.org/TreatmentsHealthAspect'>;
-    /** A trip or journey. An itinerary of visits to one or more places. */
-    "Trip": NamedNode<'http://schema.org/Trip'>;
     /** A trial design in which neither the researcher, the person administering the therapy nor the patient knows the details of the treatment the patient was randomly assigned to. */
     "TripleBlindedTrial": NamedNode<'http://schema.org/TripleBlindedTrial'>;
     /** The boolean value true. */
@@ -2816,18 +2882,16 @@ interface Schema {
     "TypeAndQuantityNode": NamedNode<'http://schema.org/TypeAndQuantityNode'>;
     /** Categorization and other types related to a topic. */
     "TypesHealthAspect": NamedNode<'http://schema.org/TypesHealthAspect'>;
-    /** UKNonprofitType: Non-profit organization type originating from the United Kingdom. */
-    "UKNonprofitType": NamedNode<'http://schema.org/UKNonprofitType'>;
     /** UKTrust: Non-profit type referring to a UK trust. */
     "UKTrust": NamedNode<'http://schema.org/UKTrust'>;
     /** Data type: URL. */
     "URL": NamedNode<'http://schema.org/URL'>;
-    /** USNonprofitType: Non-profit organization type originating from the United States. */
-    "USNonprofitType": NamedNode<'http://schema.org/USNonprofitType'>;
     /** Ultrasound imaging. */
     "Ultrasound": NamedNode<'http://schema.org/Ultrasound'>;
-    /** The act of un-registering from a service.\n\nRelated actions:\n\n* [[RegisterAction]]: antonym of UnRegisterAction.\n* [[LeaveAction]]: Unlike LeaveAction, UnRegisterAction implies that you are unregistering from a service you werer previously registered, rather than leaving a team/group of people. */
+    /** The act of un-registering from a service.\n\nRelated actions:\n\n* [[RegisterAction]]: antonym of UnRegisterAction.\n* [[LeaveAction]]: Unlike LeaveAction, UnRegisterAction implies that you are unregistering from a service you were previously registered, rather than leaving a team/group of people. */
     "UnRegisterAction": NamedNode<'http://schema.org/UnRegisterAction'>;
+    /** The item is suitable only for adults, without indicating why. Due to widespread use of "adult" as a euphemism for "sexual", many such items are likely suited also for the SexualContentConsideration code. */
+    "UnclassifiedAdultConsideration": NamedNode<'http://schema.org/UnclassifiedAdultConsideration'>;
     /** UnemploymentSupport: this is a benefit for unemployment support. */
     "UnemploymentSupport": NamedNode<'http://schema.org/UnemploymentSupport'>;
     /** UnincorporatedAssociationCharity: Non-profit type referring to a charitable company that is not incorporated (UK). */
@@ -2836,8 +2900,6 @@ interface Schema {
     "UnitPriceSpecification": NamedNode<'http://schema.org/UnitPriceSpecification'>;
     /** Indicates that a document has no particular or special standing (e.g. a republication of a law by a private publisher). */
     "UnofficialLegalValue": NamedNode<'http://schema.org/UnofficialLegalValue'>;
-    /** The act of managing by changing/editing the state of the object. */
-    "UpdateAction": NamedNode<'http://schema.org/UpdateAction'>;
     /** A specific branch of medical science that is concerned with the diagnosis and treatment of diseases pertaining to the urinary tract and the urogenital system. */
     "Urologic": NamedNode<'http://schema.org/Urologic'>;
     /** Content about how, when, frequency and dosage of a topic. */
@@ -2849,13 +2911,13 @@ interface Schema {
     /** UserInteraction and its subtypes is an old way of talking about users interacting with pages. It is generally better to use [[Action]]-based vocabulary, alongside types such as [[Comment]]. */
     "UserBlocks": NamedNode<'http://schema.org/UserBlocks'>;
     /** UserInteraction and its subtypes is an old way of talking about users interacting with pages. It is generally better to use [[Action]]-based vocabulary, alongside types such as [[Comment]]. */
+    "UserInteraction": NamedNode<'http://schema.org/UserInteraction'>;
+    /** UserInteraction and its subtypes is an old way of talking about users interacting with pages. It is generally better to use [[Action]]-based vocabulary, alongside types such as [[Comment]]. */
     "UserCheckins": NamedNode<'http://schema.org/UserCheckins'>;
     /** UserInteraction and its subtypes is an old way of talking about users interacting with pages. It is generally better to use [[Action]]-based vocabulary, alongside types such as [[Comment]]. */
     "UserComments": NamedNode<'http://schema.org/UserComments'>;
     /** UserInteraction and its subtypes is an old way of talking about users interacting with pages. It is generally better to use [[Action]]-based vocabulary, alongside types such as [[Comment]]. */
     "UserDownloads": NamedNode<'http://schema.org/UserDownloads'>;
-    /** UserInteraction and its subtypes is an old way of talking about users interacting with pages. It is generally better to use [[Action]]-based vocabulary, alongside types such as [[Comment]]. */
-    "UserInteraction": NamedNode<'http://schema.org/UserInteraction'>;
     /** UserInteraction and its subtypes is an old way of talking about users interacting with pages. It is generally better to use [[Action]]-based vocabulary, alongside types such as [[Comment]]. */
     "UserLikes": NamedNode<'http://schema.org/UserLikes'>;
     /** UserInteraction and its subtypes is an old way of talking about users interacting with pages. It is generally better to use [[Action]]-based vocabulary, alongside types such as [[Comment]]. */
@@ -2872,14 +2934,10 @@ interface Schema {
     "VeganDiet": NamedNode<'http://schema.org/VeganDiet'>;
     /** A diet exclusive of animal meat. */
     "VegetarianDiet": NamedNode<'http://schema.org/VegetarianDiet'>;
-    /** A vehicle is a device that is designed or used to transport people or cargo over land, water, air, or through space. */
-    "Vehicle": NamedNode<'http://schema.org/Vehicle'>;
     /** A type of blood vessel that specifically carries blood to the heart. */
     "Vein": NamedNode<'http://schema.org/Vein'>;
     /** A venue map (e.g. for malls, auditoriums, museums, etc.). */
     "VenueMap": NamedNode<'http://schema.org/VenueMap'>;
-    /** A component of the human body circulatory system comprised of an intricate network of hollow tubes that transport blood throughout the entire body. */
-    "Vessel": NamedNode<'http://schema.org/Vessel'>;
     /** A vet's office. */
     "VeterinaryCare": NamedNode<'http://schema.org/VeterinaryCare'>;
     /** Web page type: Video gallery page. */
@@ -2898,17 +2956,17 @@ interface Schema {
     "ViewAction": NamedNode<'http://schema.org/ViewAction'>;
     /** VinylFormat. */
     "VinylFormat": NamedNode<'http://schema.org/VinylFormat'>;
+    /** Item shows or promotes violence. */
+    "ViolenceConsideration": NamedNode<'http://schema.org/ViolenceConsideration'>;
     /** An online or virtual location for attending events. For example, one may attend an online seminar or educational event. While a virtual location may be used as the location of an event, virtual locations should not be confused with physical locations in the real world. */
     "VirtualLocation": NamedNode<'http://schema.org/VirtualLocation'>;
     /** Pathogenic virus that causes viral infection. */
     "Virus": NamedNode<'http://schema.org/Virus'>;
     /** Event type: Visual arts event. */
     "VisualArtsEvent": NamedNode<'http://schema.org/VisualArtsEvent'>;
-    /** A work of art that is primarily visual in character. */
-    "VisualArtwork": NamedNode<'http://schema.org/VisualArtwork'>;
     /** Vital signs are measures of various physiological functions in order to assess the most basic body functions. */
     "VitalSign": NamedNode<'http://schema.org/VitalSign'>;
-    /** A volcano, like Fuji san. */
+    /** A volcano, like Fujisan. */
     "Volcano": NamedNode<'http://schema.org/Volcano'>;
     /** The act of expressing a preference from a fixed/finite/structured set of choices/options. */
     "VoteAction": NamedNode<'http://schema.org/VoteAction'>;
@@ -2925,7 +2983,7 @@ interface Schema {
     /** A structured value representing the duration and scope of services that will be provided to a customer free of charge in case of a defect or malfunction of a product. */
     "WarrantyPromise": NamedNode<'http://schema.org/WarrantyPromise'>;
     /**
-     * A range of of services that will be provided to a customer free of charge in case of a defect or malfunction of a product.\n\nCommonly used values:\n\n* http://purl.org/goodrelations/v1#Labor-BringIn\n* http://purl.org/goodrelations/v1#PartsAndLabor-BringIn\n* http://purl.org/goodrelations/v1#PartsAndLabor-PickUp
+     * A range of services that will be provided to a customer free of charge in case of a defect or malfunction of a product.\n\nCommonly used values:\n\n* http://purl.org/goodrelations/v1#Labor-BringIn\n* http://purl.org/goodrelations/v1#PartsAndLabor-BringIn\n* http://purl.org/goodrelations/v1#PartsAndLabor-PickUp
      *       
      */
     "WarrantyScope": NamedNode<'http://schema.org/WarrantyScope'>;
@@ -2933,10 +2991,14 @@ interface Schema {
     "WatchAction": NamedNode<'http://schema.org/WatchAction'>;
     /** A waterfall, like Niagara. */
     "Waterfall": NamedNode<'http://schema.org/Waterfall'>;
+    /** The item is intended to induce bodily harm, for example guns, mace, combat knives, brass knuckles, nail or other bombs, and spears. */
+    "WeaponConsideration": NamedNode<'http://schema.org/WeaponConsideration'>;
     /** The act of dressing oneself in clothing. */
     "WearAction": NamedNode<'http://schema.org/WearAction'>;
     /** Measurement of the back section, for example of a jacket */
     "WearableMeasurementBack": NamedNode<'http://schema.org/WearableMeasurementBack'>;
+    /** Enumerates common types of measurement for wearables products. */
+    "WearableMeasurementTypeEnumeration": NamedNode<'http://schema.org/WearableMeasurementTypeEnumeration'>;
     /** Measurement of the chest/bust section, for example of a suit */
     "WearableMeasurementChestOrBust": NamedNode<'http://schema.org/WearableMeasurementChestOrBust'>;
     /** Measurement of the collar, for example of a shirt */
@@ -2955,18 +3017,16 @@ interface Schema {
     "WearableMeasurementOutsideLeg": NamedNode<'http://schema.org/WearableMeasurementOutsideLeg'>;
     /** Measurement of the sleeve length, for example of a shirt */
     "WearableMeasurementSleeve": NamedNode<'http://schema.org/WearableMeasurementSleeve'>;
-    /** Enumerates common types of measurement for wearables products. */
-    "WearableMeasurementTypeEnumeration": NamedNode<'http://schema.org/WearableMeasurementTypeEnumeration'>;
     /** Measurement of the waist section, for example of pants */
     "WearableMeasurementWaist": NamedNode<'http://schema.org/WearableMeasurementWaist'>;
     /** Measurement of the width, for example of shoes */
     "WearableMeasurementWidth": NamedNode<'http://schema.org/WearableMeasurementWidth'>;
     /** Size group "Big" for wearables. */
     "WearableSizeGroupBig": NamedNode<'http://schema.org/WearableSizeGroupBig'>;
-    /** Size group "Boys" for wearables. */
-    "WearableSizeGroupBoys": NamedNode<'http://schema.org/WearableSizeGroupBoys'>;
     /** Enumerates common size groups (also known as "size types") for wearable products. */
     "WearableSizeGroupEnumeration": NamedNode<'http://schema.org/WearableSizeGroupEnumeration'>;
+    /** Size group "Boys" for wearables. */
+    "WearableSizeGroupBoys": NamedNode<'http://schema.org/WearableSizeGroupBoys'>;
     /** Size group "Extra Short" for wearables. */
     "WearableSizeGroupExtraShort": NamedNode<'http://schema.org/WearableSizeGroupExtraShort'>;
     /** Size group "Extra Tall" for wearables. */
@@ -2999,6 +3059,8 @@ interface Schema {
     "WearableSizeGroupWomens": NamedNode<'http://schema.org/WearableSizeGroupWomens'>;
     /** Australian size system for wearables. */
     "WearableSizeSystemAU": NamedNode<'http://schema.org/WearableSizeSystemAU'>;
+    /** Enumerates common size systems specific for wearable products */
+    "WearableSizeSystemEnumeration": NamedNode<'http://schema.org/WearableSizeSystemEnumeration'>;
     /** Brazilian size system for wearables. */
     "WearableSizeSystemBR": NamedNode<'http://schema.org/WearableSizeSystemBR'>;
     /** Chinese size system for wearables. */
@@ -3009,8 +3071,6 @@ interface Schema {
     "WearableSizeSystemDE": NamedNode<'http://schema.org/WearableSizeSystemDE'>;
     /** EN 13402 (joint European standard for size labelling of clothes). */
     "WearableSizeSystemEN13402": NamedNode<'http://schema.org/WearableSizeSystemEN13402'>;
-    /** Enumerates common size systems specific for wearable products */
-    "WearableSizeSystemEnumeration": NamedNode<'http://schema.org/WearableSizeSystemEnumeration'>;
     /** European size system for wearables. */
     "WearableSizeSystemEurope": NamedNode<'http://schema.org/WearableSizeSystemEurope'>;
     /** French size system for wearables. */
@@ -3031,12 +3091,6 @@ interface Schema {
     "WebAPI": NamedNode<'http://schema.org/WebAPI'>;
     /** Web applications. */
     "WebApplication": NamedNode<'http://schema.org/WebApplication'>;
-    /** WebContent is a type representing all [[WebPage]], [[WebSite]] and [[WebPageElement]] content. It is sometimes the case that detailed distinctions between Web pages, sites and their parts is not always important or obvious. The  [[WebContent]] type makes it easier to describe Web-addressable content without requiring such distinctions to always be stated. (The intent is that the existing types [[WebPage]], [[WebSite]] and [[WebPageElement]] will eventually be declared as subtypes of [[WebContent]]). */
-    "WebContent": NamedNode<'http://schema.org/WebContent'>;
-    /** A web page. Every web page is implicitly assumed to be declared to be of type WebPage, so the various properties about that webpage, such as <code>breadcrumb</code> may be used. We recommend explicit declaration if these properties are specified, but if they are found outside of an itemscope, they will be assumed to be about the page. */
-    "WebPage": NamedNode<'http://schema.org/WebPage'>;
-    /** A web page element, like a table or an image. */
-    "WebPageElement": NamedNode<'http://schema.org/WebPageElement'>;
     /** A WebSite is a set of related web pages and other items typically served from a single web domain and accessible via URLs. */
     "WebSite": NamedNode<'http://schema.org/WebSite'>;
     /** The day of the week between Tuesday and Thursday. */
@@ -3071,6 +3125,14 @@ interface Schema {
     "Zoo": NamedNode<'http://schema.org/Zoo'>;
     /** The subject matter of the content. */
     "about": NamedNode<'http://schema.org/about'>;
+    /** Relates a property to a class that is (one of) the type(s) the property is expected to be used on. */
+    "domainIncludes": NamedNode<'http://schema.org/domainIncludes'>;
+    /** Relates a property to a property that is its inverse. Inverse properties relate the same pairs of items to each other, but in reversed direction. For example, the 'alumni' and 'alumniOf' properties are inverseOf each other. Some properties don't have explicit inverses; in these situations RDFa and JSON-LD syntax for reverse properties can be used. */
+    "inverseOf": NamedNode<'http://schema.org/inverseOf'>;
+    /** A CreativeWork or Event about this Thing. */
+    "subjectOf": NamedNode<'http://schema.org/subjectOf'>;
+    /** Relates a property to a class that constitutes (one of) the expected type(s) for values of the property. */
+    "rangeIncludes": NamedNode<'http://schema.org/rangeIncludes'>;
     /** Indicates whether the book is an abridged edition. */
     "abridged": NamedNode<'http://schema.org/abridged'>;
     /** An abstract is a short description that summarizes a [[CreativeWork]]. */
@@ -3079,6 +3141,8 @@ interface Schema {
     "accelerationTime": NamedNode<'http://schema.org/accelerationTime'>;
     /** The answer(s) that has been accepted as best, typically on a Question/Answer site. Sites vary in their selection mechanisms, e.g. drawing on community opinion and/or the view of the Question author. */
     "acceptedAnswer": NamedNode<'http://schema.org/acceptedAnswer'>;
+    /** An answer (possibly one of several, possibly incorrect) to a Question, e.g. on a Question/Answer site. */
+    "suggestedAnswer": NamedNode<'http://schema.org/suggestedAnswer'>;
     /** The offer(s) -- e.g., product, quantity and price combinations -- included in the order. */
     "acceptedOffer": NamedNode<'http://schema.org/acceptedOffer'>;
     /** The payment method(s) accepted by seller for this offer. */
@@ -3087,32 +3151,33 @@ interface Schema {
     "acceptsReservations": NamedNode<'http://schema.org/acceptsReservations'>;
     /** Password, PIN, or access code needed for delivery (e.g. from a locker). */
     "accessCode": NamedNode<'http://schema.org/accessCode'>;
-    /**
-     * The human sensory perceptual system or cognitive faculty through which a person may process or perceive information. Expected values include: auditory, tactile, textual, visual, colorDependent, chartOnVisual, chemOnVisual, diagramOnVisual, mathOnVisual, musicOnVisual, textOnVisual.
-     *       
-     */
+    /** The human sensory perceptual system or cognitive faculty through which a person may process or perceive information. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessMode-vocabulary). */
     "accessMode": NamedNode<'http://schema.org/accessMode'>;
-    /**
-     * A list of single or combined accessModes that are sufficient to understand all the intellectual content of a resource. Expected values include:  auditory, tactile, textual, visual.
-     *       
-     */
+    /** A list of single or combined accessModes that are sufficient to understand all the intellectual content of a resource. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessModeSufficient-vocabulary). */
     "accessModeSufficient": NamedNode<'http://schema.org/accessModeSufficient'>;
-    /** Indicates that the resource is compatible with the referenced accessibility API ([WebSchemas wiki lists possible values](http://www.w3.org/wiki/WebSchemas/Accessibility)). */
+    /** Indicates that the resource is compatible with the referenced accessibility API. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityAPI-vocabulary). */
     "accessibilityAPI": NamedNode<'http://schema.org/accessibilityAPI'>;
-    /** Identifies input methods that are sufficient to fully control the described resource ([WebSchemas wiki lists possible values](http://www.w3.org/wiki/WebSchemas/Accessibility)). */
+    /** Identifies input methods that are sufficient to fully control the described resource. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityControl-vocabulary). */
     "accessibilityControl": NamedNode<'http://schema.org/accessibilityControl'>;
-    /** Content features of the resource, such as accessible media, alternatives and supported enhancements for accessibility ([WebSchemas wiki lists possible values](http://www.w3.org/wiki/WebSchemas/Accessibility)). */
+    /** Content features of the resource, such as accessible media, alternatives and supported enhancements for accessibility. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityFeature-vocabulary). */
     "accessibilityFeature": NamedNode<'http://schema.org/accessibilityFeature'>;
-    /** A characteristic of the described resource that is physiologically dangerous to some users. Related to WCAG 2.0 guideline 2.3 ([WebSchemas wiki lists possible values](http://www.w3.org/wiki/WebSchemas/Accessibility)). */
+    /** A characteristic of the described resource that is physiologically dangerous to some users. Related to WCAG 2.0 guideline 2.3. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityHazard-vocabulary). */
     "accessibilityHazard": NamedNode<'http://schema.org/accessibilityHazard'>;
     /** A human-readable summary of specific accessibility features or deficiencies, consistent with the other accessibility metadata but expressing subtleties such as "short descriptions are present but long descriptions will be needed for non-visual users" or "short descriptions are present and no long descriptions are needed." */
     "accessibilitySummary": NamedNode<'http://schema.org/accessibilitySummary'>;
-    /** Category of an [[Accommodation]], following real estate conventions e.g. RESO (see [PropertySubType](https://ddwiki.reso.org/display/DDW17/PropertySubType+Field), and [PropertyType](https://ddwiki.reso.org/display/DDW17/PropertyType+Field) fields  for suggested values). */
+    /** Category of an [[Accommodation]], following real estate conventions, e.g. RESO (see [PropertySubType](https://ddwiki.reso.org/display/DDW17/PropertySubType+Field), and [PropertyType](https://ddwiki.reso.org/display/DDW17/PropertyType+Field) fields  for suggested values). */
     "accommodationCategory": NamedNode<'http://schema.org/accommodationCategory'>;
+    /** A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy. */
+    "category": NamedNode<'http://schema.org/category'>;
     /** A floorplan of some [[Accommodation]]. */
     "accommodationFloorPlan": NamedNode<'http://schema.org/accommodationFloorPlan'>;
     /** The identifier for the account the payment will be applied to. */
     "accountId": NamedNode<'http://schema.org/accountId'>;
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     */
+    "identifier": NamedNode<'http://schema.org/identifier'>;
     /** A minimum amount that has to be paid in every month. */
     "accountMinimumInflow": NamedNode<'http://schema.org/accountMinimumInflow'>;
     /** An overdraft is an extension of credit from a lending institution when an account reaches zero. An overdraft allows the individual to continue withdrawing money even if the account has no funds in it. Basically the bank allows people to borrow a set amount of money. */
@@ -3121,40 +3186,57 @@ interface Schema {
     "accountablePerson": NamedNode<'http://schema.org/accountablePerson'>;
     /** Indicates a page documenting how licenses can be purchased or otherwise acquired, for the current item. */
     "acquireLicensePage": NamedNode<'http://schema.org/acquireLicensePage'>;
+    /**
+     * The schema.org [[usageInfo]] property indicates further information about a [[CreativeWork]]. This property is applicable both to works that are freely available and to those that require payment or other transactions. It can reference additional information, e.g. community expectations on preferred linking and citation conventions, as well as purchasing details. For something that can be commercially licensed, usageInfo can provide detailed, resource-specific information about licensing options.
+     *
+     * This property can be used alongside the license property which indicates license(s) applicable to some piece of content. The usageInfo property can provide information about other licensing options, e.g. acquiring commercial usage rights for an image that is also available under non-commercial creative commons licenses.
+     */
+    "usageInfo": NamedNode<'http://schema.org/usageInfo'>;
     /** The organization or person from which the product was acquired. */
     "acquiredFrom": NamedNode<'http://schema.org/acquiredFrom'>;
     /** The ACRISS Car Classification Code is a code used by many car rental companies, for classifying vehicles. ACRISS stands for Association of Car Rental Industry Systems and Standards. */
     "acrissCode": NamedNode<'http://schema.org/acrissCode'>;
-    /** A set of requirements that a must be fulfilled in order to perform an Action. If more than one value is specied, fulfilling one set of requirements will allow the Action to be performed. */
+    /** A set of requirements that must be fulfilled in order to perform an Action. If more than one value is specified, fulfilling one set of requirements will allow the Action to be performed. */
     "actionAccessibilityRequirement": NamedNode<'http://schema.org/actionAccessibilityRequirement'>;
     /** An application that can complete the request. */
     "actionApplication": NamedNode<'http://schema.org/actionApplication'>;
     /** A sub property of object. The options subject to this action. */
     "actionOption": NamedNode<'http://schema.org/actionOption'>;
+    /** The object upon which the action is carried out, whose state is kept intact or changed. Also known as the semantic roles patient, affected or undergoer (which change their state) or theme (which doesn't). E.g. John read *a book*. */
+    "object": NamedNode<'http://schema.org/object'>;
     /** The high level platform(s) where the Action can be performed for the given URL. To specify a specific application or operating system instance, use actionApplication. */
     "actionPlatform": NamedNode<'http://schema.org/actionPlatform'>;
     /** Indicates the current disposition of the Action. */
     "actionStatus": NamedNode<'http://schema.org/actionStatus'>;
     /** For a [[NewsMediaOrganization]] or other news-related [[Organization]], a statement about public engagement activities (for news media, the newsroom’s), including involving the public - digitally or otherwise -- in coverage decisions, reporting and activities after publication. */
     "actionableFeedbackPolicy": NamedNode<'http://schema.org/actionableFeedbackPolicy'>;
+    /**
+     * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual, e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
+     *
+     * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
+     *
+     */
+    "publishingPrinciples": NamedNode<'http://schema.org/publishingPrinciples'>;
     /** An active ingredient, typically chemical compounds and/or biologic substances. */
     "activeIngredient": NamedNode<'http://schema.org/activeIngredient'>;
     /** Length of time to engage in the activity. */
     "activityDuration": NamedNode<'http://schema.org/activityDuration'>;
     /** How often one should engage in the activity. */
     "activityFrequency": NamedNode<'http://schema.org/activityFrequency'>;
-    /** An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip. */
+    /** An actor, e.g. in TV, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip. */
     "actor": NamedNode<'http://schema.org/actor'>;
-    /** An actor, e.g. in tv, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip. */
+    /** An actor, e.g. in TV, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip. */
     "actors": NamedNode<'http://schema.org/actors'>;
     /** An additional offer that can only be obtained in combination with the first base offer (e.g. supplements and extensions that are available for a surcharge). */
     "addOn": NamedNode<'http://schema.org/addOn'>;
     /** An additional name for a Person, can be used for a middle name. */
     "additionalName": NamedNode<'http://schema.org/additionalName'>;
+    /** An alias for the item. */
+    "alternateName": NamedNode<'http://schema.org/alternateName'>;
     /** If responding yes, the number of guests who will attend in addition to the invitee. */
     "additionalNumberOfGuests": NamedNode<'http://schema.org/additionalNumberOfGuests'>;
     /**
-     * A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.\n\nNote: Publishers should be aware that applications designed to use specific schema.org properties (e.g. http://schema.org/width, http://schema.org/color, http://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
+     * A property-value pair representing an additional characteristic of the entity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.\n\nNote: Publishers should be aware that applications designed to use specific schema.org properties (e.g. http://schema.org/width, http://schema.org/color, http://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
      *
      */
     "additionalProperty": NamedNode<'http://schema.org/additionalProperty'>;
@@ -3168,21 +3250,23 @@ interface Schema {
     "addressCountry": NamedNode<'http://schema.org/addressCountry'>;
     /** The locality in which the street address is, and which is in the region. For example, Mountain View. */
     "addressLocality": NamedNode<'http://schema.org/addressLocality'>;
-    /** The region in which the locality is, and which is in the country. For example, California or another appropriate first-level [Administrative division](https://en.wikipedia.org/wiki/List_of_administrative_divisions_by_country) */
+    /** The region in which the locality is, and which is in the country. For example, California or another appropriate first-level [Administrative division](https://en.wikipedia.org/wiki/List_of_administrative_divisions_by_country). */
     "addressRegion": NamedNode<'http://schema.org/addressRegion'>;
     /** A route by which this drug may be administered, e.g. 'oral'. */
     "administrationRoute": NamedNode<'http://schema.org/administrationRoute'>;
     /** The amount of time that is required between accepting the offer and the actual usage of the resource or service. */
     "advanceBookingRequirement": NamedNode<'http://schema.org/advanceBookingRequirement'>;
-    /** A possible complication and/or side effect of this therapy. If it is known that an adverse outcome is serious (resulting in death, disability, or permanent damage; requiring hospitalization; or is otherwise life-threatening or requires immediate medical attention), tag it as a seriouseAdverseOutcome instead. */
+    /** A possible complication and/or side effect of this therapy. If it is known that an adverse outcome is serious (resulting in death, disability, or permanent damage; requiring hospitalization; or otherwise life-threatening or requiring immediate medical attention), tag it as a seriousAdverseOutcome instead. */
     "adverseOutcome": NamedNode<'http://schema.org/adverseOutcome'>;
     /** Drugs that affect the test's results. */
     "affectedBy": NamedNode<'http://schema.org/affectedBy'>;
     /** An organization that this person is affiliated with. For example, a school/university, a club, or a team. */
     "affiliation": NamedNode<'http://schema.org/affiliation'>;
+    /** An Organization (or ProgramMembership) to which this Person or Organization belongs. */
+    "memberOf": NamedNode<'http://schema.org/memberOf'>;
     /** A media object representing the circumstances after performing this direction. */
     "afterMedia": NamedNode<'http://schema.org/afterMedia'>;
-    /** The direct performer or driver of the action (animate or inanimate). e.g. *John* wrote a book. */
+    /** The direct performer or driver of the action (animate or inanimate). E.g. *John* wrote a book. */
     "agent": NamedNode<'http://schema.org/agent'>;
     /** The overall rating, based on a collection of reviews or ratings, of the item. */
     "aggregateRating": NamedNode<'http://schema.org/aggregateRating'>;
@@ -3190,10 +3274,12 @@ interface Schema {
     "aircraft": NamedNode<'http://schema.org/aircraft'>;
     /** A music album. */
     "album": NamedNode<'http://schema.org/album'>;
-    /** Classification of the album by it's type of content: soundtrack, live album, studio album, etc. */
+    /** Classification of the album by its type of content: soundtrack, live album, studio album, etc. */
     "albumProductionType": NamedNode<'http://schema.org/albumProductionType'>;
     /** A release of this album. */
     "albumRelease": NamedNode<'http://schema.org/albumRelease'>;
+    /** The album this is a release of. */
+    "releaseOf": NamedNode<'http://schema.org/releaseOf'>;
     /** The kind of release which this album is: single, EP or album. */
     "albumReleaseType": NamedNode<'http://schema.org/albumReleaseType'>;
     /** A collection of music albums. */
@@ -3204,8 +3290,6 @@ interface Schema {
     "algorithm": NamedNode<'http://schema.org/algorithm'>;
     /** A category of alignment between the learning resource and the framework node. Recommended values include: 'requires', 'textComplexity', 'readingLevel', and 'educationalSubject'. */
     "alignmentType": NamedNode<'http://schema.org/alignmentType'>;
-    /** An alias for the item. */
-    "alternateName": NamedNode<'http://schema.org/alternateName'>;
     /** A secondary title of the CreativeWork. */
     "alternativeHeadline": NamedNode<'http://schema.org/alternativeHeadline'>;
     /** Another gene which is a variation of this one. */
@@ -3222,6 +3306,12 @@ interface Schema {
     "amountOfThisGood": NamedNode<'http://schema.org/amountOfThisGood'>;
     /** Indicates a specific [[CivicStructure]] or [[LocalBusiness]] associated with the SpecialAnnouncement. For example, a specific testing facility or business with special opening hours. For a larger geographic region like a quarantine of an entire region, use [[spatialCoverage]]. */
     "announcementLocation": NamedNode<'http://schema.org/announcementLocation'>;
+    /**
+     * The spatialCoverage of a CreativeWork indicates the place(s) which are the focus of the content. It is a subproperty of
+     *       contentLocation intended primarily for more technical and detailed materials. For example with a Dataset, it indicates
+     *       areas that the dataset describes: a dataset of New York weather would have spatialCoverage which was the place: the state of New York.
+     */
+    "spatialCoverage": NamedNode<'http://schema.org/spatialCoverage'>;
     /** The annual rate that is charged for borrowing (or made by investing), expressed as a single percentage number that represents the actual yearly cost of funds over the term of a loan. This includes any fees or additional costs associated with the transaction. */
     "annualPercentageRate": NamedNode<'http://schema.org/annualPercentageRate'>;
     /** The number of answers this question has received. */
@@ -3230,8 +3320,12 @@ interface Schema {
     "answerExplanation": NamedNode<'http://schema.org/answerExplanation'>;
     /** The muscle whose action counteracts the specified muscle. */
     "antagonist": NamedNode<'http://schema.org/antagonist'>;
-    /** Indicates an occurence of a [[Claim]] in some [[CreativeWork]]. */
+    /** Indicates an occurrence of a [[Claim]] in some [[CreativeWork]]. */
     "appearance": NamedNode<'http://schema.org/appearance'>;
+    /** Example/instance/realization/derivation of the concept of this creative work. E.g. the paperback edition, first edition, or e-book. */
+    "workExample": NamedNode<'http://schema.org/workExample'>;
+    /** A country where a particular merchant return policy applies to, for example the two-letter ISO 3166-1 alpha-2 country code. */
+    "applicableCountry": NamedNode<'http://schema.org/applicableCountry'>;
     /** The location in which the status applies. */
     "applicableLocation": NamedNode<'http://schema.org/applicableLocation'>;
     /** The location(s) applicants can apply from. This is usually used for telecommuting jobs where the applicant does not need to be in a physical office. Note: This should not be used for citizenship or work visa requirements. */
@@ -3256,10 +3350,14 @@ interface Schema {
     "appliesToPaymentMethod": NamedNode<'http://schema.org/appliesToPaymentMethod'>;
     /** Collection, [fonds](https://en.wikipedia.org/wiki/Fonds), or item held, kept or maintained by an [[ArchiveOrganization]]. */
     "archiveHeld": NamedNode<'http://schema.org/archiveHeld'>;
+    /** [[ArchiveOrganization]] that holds, keeps or maintains the [[ArchiveComponent]]. */
+    "holdingArchive": NamedNode<'http://schema.org/holdingArchive'>;
     /** Indicates a page or other link involved in archival of a [[CreativeWork]]. In the case of [[MediaReview]], the items in a [[MediaReviewItem]] may often become inaccessible, but be archived by archival, journalistic, activist, or law enforcement organizations. In such cases, the referenced page may not directly publish the content. */
     "archivedAt": NamedNode<'http://schema.org/archivedAt'>;
     /** The area within which users can expect to reach the broadcast service. */
     "area": NamedNode<'http://schema.org/area'>;
+    /** The geographic area where the service is provided. */
+    "serviceArea": NamedNode<'http://schema.org/serviceArea'>;
     /** The geographic area where a service or offered item is provided. */
     "areaServed": NamedNode<'http://schema.org/areaServed'>;
     /** The airport where the flight terminates. */
@@ -3280,8 +3378,10 @@ interface Schema {
     "arrivalTime": NamedNode<'http://schema.org/arrivalTime'>;
     /** The number of copies when multiple copies of a piece of artwork are produced - e.g. for a limited edition of 20 prints, 'artEdition' refers to the total number of copies (in this example "20"). */
     "artEdition": NamedNode<'http://schema.org/artEdition'>;
-    /** The material used. (e.g. Oil, Watercolour, Acrylic, Linoprint, Marble, Cyanotype, Digital, Lithograph, DryPoint, Intaglio, Pastel, Woodcut, Pencil, Mixed Media, etc.) */
+    /** The material used. (E.g. Oil, Watercolour, Acrylic, Linoprint, Marble, Cyanotype, Digital, Lithograph, DryPoint, Intaglio, Pastel, Woodcut, Pencil, Mixed Media, etc.) */
     "artMedium": NamedNode<'http://schema.org/artMedium'>;
+    /** A material that something is made from, e.g. leather, wool, cotton, paper. */
+    "material": NamedNode<'http://schema.org/material'>;
     /** The branches that comprise the arterial structure. */
     "arterialBranch": NamedNode<'http://schema.org/arterialBranch'>;
     /** e.g. Painting, Drawing, Sculpture, Print, Photograph, Assemblage, Collage, etc. */
@@ -3298,11 +3398,22 @@ interface Schema {
     "artist": NamedNode<'http://schema.org/artist'>;
     /** The supporting materials for the artwork, e.g. Canvas, Paper, Wood, Board, etc. */
     "artworkSurface": NamedNode<'http://schema.org/artworkSurface'>;
+    /**
+     * An Amazon Standard Identification Number (ASIN) is a 10-character alphanumeric unique identifier assigned by Amazon.com and its partners for product identification within the Amazon organization (summary from [Wikipedia](https://en.wikipedia.org/wiki/Amazon_Standard_Identification_Number)'s article).
+     *
+     * Note also that this is a definition for how to include ASINs in Schema.org data, and not a definition of ASINs in general - see documentation from Amazon for authoritative details.
+     * ASINs are most commonly encoded as text strings, but the [asin] property supports URL/URI as potential values too.
+     */
+    "asin": NamedNode<'http://schema.org/asin'>;
     /** An aspect of medical practice that is considered on the page, such as 'diagnosis', 'treatment', 'causes', 'prognosis', 'etiology', 'epidemiology', etc. */
     "aspect": NamedNode<'http://schema.org/aspect'>;
-    /** Library file name e.g., mscorlib.dll, system.web.dll. */
+    /** Indicates if this web page element is the main subject of the page. */
+    "mainContentOfPage": NamedNode<'http://schema.org/mainContentOfPage'>;
+    /** Library file name, e.g., mscorlib.dll, system.web.dll. */
     "assembly": NamedNode<'http://schema.org/assembly'>;
-    /** Associated product/technology version. e.g., .NET Framework 4.5. */
+    /** Library file name, e.g., mscorlib.dll, system.web.dll. */
+    "executableLibraryName": NamedNode<'http://schema.org/executableLibraryName'>;
+    /** Associated product/technology version. E.g., .NET Framework 4.5. */
     "assemblyVersion": NamedNode<'http://schema.org/assemblyVersion'>;
     /** The item being described is intended to assess the competency or learning outcome defined by the referenced term. */
     "assesses": NamedNode<'http://schema.org/assesses'>;
@@ -3312,6 +3423,8 @@ interface Schema {
     "associatedArticle": NamedNode<'http://schema.org/associatedArticle'>;
     /** An associated [[ClaimReview]], related by specific common content, topic or claim. The expectation is that this property would be most typically used in cases where a single activity is conducting both claim reviews and media reviews, in which case [[relatedMediaReview]] would commonly be used on a [[ClaimReview]], while [[relatedClaimReview]] would be used on [[MediaReview]]. */
     "associatedClaimReview": NamedNode<'http://schema.org/associatedClaimReview'>;
+    /** An associated [[Review]]. */
+    "associatedReview": NamedNode<'http://schema.org/associatedReview'>;
     /** Disease associated to this BioChemEntity. Such disease can be a MedicalCondition or a URL. If you want to add an evidence supporting the association, please use PropertyValue. */
     "associatedDisease": NamedNode<'http://schema.org/associatedDisease'>;
     /** A media object that encodes this CreativeWork. This property is a synonym for encoding. */
@@ -3320,8 +3433,6 @@ interface Schema {
     "associatedMediaReview": NamedNode<'http://schema.org/associatedMediaReview'>;
     /** If applicable, a description of the pathophysiology associated with the anatomical system, including potential abnormal changes in the mechanical, physical, and biochemical functions of the system. */
     "associatedPathophysiology": NamedNode<'http://schema.org/associatedPathophysiology'>;
-    /** An associated [[Review]]. */
-    "associatedReview": NamedNode<'http://schema.org/associatedReview'>;
     /** A person that acts as performing member of a sports team; a player as opposed to a coach. */
     "athlete": NamedNode<'http://schema.org/athlete'>;
     /** A person or organization attending the event. */
@@ -3354,7 +3465,7 @@ interface Schema {
     "availableFrom": NamedNode<'http://schema.org/availableFrom'>;
     /** The location in which the strength is available. */
     "availableIn": NamedNode<'http://schema.org/availableIn'>;
-    /** A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]] */
+    /** A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]]. */
     "availableLanguage": NamedNode<'http://schema.org/availableLanguage'>;
     /** Device required to run the application. Used in cases where a specific make/model is required to run the application. */
     "availableOnDevice": NamedNode<'http://schema.org/availableOnDevice'>;
@@ -3372,6 +3483,8 @@ interface Schema {
     "awards": NamedNode<'http://schema.org/awards'>;
     /** The away team in a sports event. */
     "awayTeam": NamedNode<'http://schema.org/awayTeam'>;
+    /** A competitor in a sports event. */
+    "competitor": NamedNode<'http://schema.org/competitor'>;
     /** For an [[Article]], typically a [[NewsArticle]], the backstory property provides a textual summary giving a brief explanation of why and how an article was created. In a journalistic setting this could include information about reporting process, methods, interviews, data sources, etc. */
     "backstory": NamedNode<'http://schema.org/backstory'>;
     /** The type of a bank account. */
@@ -3380,6 +3493,8 @@ interface Schema {
     "baseSalary": NamedNode<'http://schema.org/baseSalary'>;
     /** A sub property of recipient. The recipient blind copied on a message. */
     "bccRecipient": NamedNode<'http://schema.org/bccRecipient'>;
+    /** A sub property of participant. The participant who is at the receiving end of the action. */
+    "recipient": NamedNode<'http://schema.org/recipient'>;
     /**
      * The type of bed or beds included in the accommodation. For the single case of just one bed of a certain type, you use bed directly with a text.
      *       If you want to indicate the quantity of a certain kind of bed, use an instance of BedDetails. For more detailed information, use the amenityFeature property.
@@ -3391,6 +3506,8 @@ interface Schema {
     "beneficiaryBank": NamedNode<'http://schema.org/beneficiaryBank'>;
     /** Description of benefits associated with the job. */
     "benefits": NamedNode<'http://schema.org/benefits'>;
+    /** Description of benefits associated with the job. */
+    "jobBenefits": NamedNode<'http://schema.org/jobBenefits'>;
     /** The URL that goes directly to the summary of benefits and coverage for the specific standard plan or plan variation. */
     "benefitsSummaryUrl": NamedNode<'http://schema.org/benefitsSummaryUrl'>;
     /** The highest value allowed in this rating system. If bestRating is omitted, 5 is assumed. */
@@ -3439,10 +3556,14 @@ interface Schema {
     "bookFormat": NamedNode<'http://schema.org/bookFormat'>;
     /** 'bookingAgent' is an out-dated term indicating a 'broker' that serves as a booking agent. */
     "bookingAgent": NamedNode<'http://schema.org/bookingAgent'>;
+    /** An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred. */
+    "broker": NamedNode<'http://schema.org/broker'>;
     /** The date and time the reservation was booked. */
     "bookingTime": NamedNode<'http://schema.org/bookingTime'>;
     /** A sub property of participant. The person that borrows the object being lent. */
     "borrower": NamedNode<'http://schema.org/borrower'>;
+    /** Other co-agents that participated in the action indirectly. E.g. John wrote a book with *Steve*. */
+    "participant": NamedNode<'http://schema.org/participant'>;
     /** A box is the area enclosed by the rectangle formed by two points. The first point is the lower corner, the second point is the upper corner. A box is expressed as two points separated by a space character. */
     "box": NamedNode<'http://schema.org/box'>;
     /** The branches that delineate from the nerve bundle. Not to be confused with [[branchOf]]. */
@@ -3452,8 +3573,10 @@ interface Schema {
      *       
      */
     "branchCode": NamedNode<'http://schema.org/branchCode'>;
-    /** The larger organization that this local business is a branch of, if any. Not to be confused with (anatomical)[[branch]]. */
+    /** The larger organization that this local business is a branch of, if any. Not to be confused with (anatomical) [[branch]]. */
     "branchOf": NamedNode<'http://schema.org/branchOf'>;
+    /** The larger organization that this organization is a [[subOrganization]] of, if any. */
+    "parentOrganization": NamedNode<'http://schema.org/parentOrganization'>;
     /** The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person. */
     "brand": NamedNode<'http://schema.org/brand'>;
     /** A set of links that can help a user understand and navigate a website hierarchy. */
@@ -3466,7 +3589,7 @@ interface Schema {
     "broadcastChannelId": NamedNode<'http://schema.org/broadcastChannelId'>;
     /** The name displayed in the channel guide. For many US affiliates, it is the network name. */
     "broadcastDisplayName": NamedNode<'http://schema.org/broadcastDisplayName'>;
-    /** The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. "87 FM". */
+    /** The frequency used for over-the-air broadcasts. Numeric values or simple ranges, e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. "87 FM". */
     "broadcastFrequency": NamedNode<'http://schema.org/broadcastFrequency'>;
     /** The frequency in MHz for a particular broadcast. */
     "broadcastFrequencyValue": NamedNode<'http://schema.org/broadcastFrequencyValue'>;
@@ -3478,12 +3601,10 @@ interface Schema {
     "broadcastSignalModulation": NamedNode<'http://schema.org/broadcastSignalModulation'>;
     /** The subchannel used for the broadcast. */
     "broadcastSubChannel": NamedNode<'http://schema.org/broadcastSubChannel'>;
-    /** The timezone in [ISO 8601 format](http://en.wikipedia.org/wiki/ISO_8601) for which the service bases its broadcasts */
+    /** The timezone in [ISO 8601 format](http://en.wikipedia.org/wiki/ISO_8601) for which the service bases its broadcasts. */
     "broadcastTimezone": NamedNode<'http://schema.org/broadcastTimezone'>;
     /** The organization owning or operating the broadcast service. */
     "broadcaster": NamedNode<'http://schema.org/broadcaster'>;
-    /** An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred. */
-    "broker": NamedNode<'http://schema.org/broker'>;
     /** Specifies browser requirements in human-readable text. For example, 'requires HTML5 support'. */
     "browserRequirements": NamedNode<'http://schema.org/browserRequirements'>;
     /** The name of the bus (e.g. Bolt Express). */
@@ -3520,16 +3641,18 @@ interface Schema {
     "cargoVolume": NamedNode<'http://schema.org/cargoVolume'>;
     /** 'carrier' is an out-dated term indicating the 'provider' for parcel delivery and flights. */
     "carrier": NamedNode<'http://schema.org/carrier'>;
+    /** The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller. */
+    "provider": NamedNode<'http://schema.org/provider'>;
     /** Specifies specific carrier(s) requirements for the application (e.g. an application may only work on a specific carrier network). */
     "carrierRequirements": NamedNode<'http://schema.org/carrierRequirements'>;
     /** A cardholder benefit that pays the cardholder a small percentage of their net expenditures. */
     "cashBack": NamedNode<'http://schema.org/cashBack'>;
     /** A data catalog which contains this dataset. */
     "catalog": NamedNode<'http://schema.org/catalog'>;
+    /** A data catalog which contains this dataset. */
+    "includedInDataCatalog": NamedNode<'http://schema.org/includedInDataCatalog'>;
     /** The catalog number for the release. */
     "catalogNumber": NamedNode<'http://schema.org/catalogNumber'>;
-    /** A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy. */
-    "category": NamedNode<'http://schema.org/category'>;
     /** The condition, complication, symptom, sign, etc. caused. */
     "causeOf": NamedNode<'http://schema.org/causeOf'>;
     /** A sub property of recipient. The recipient copied on a message. */
@@ -3544,6 +3667,8 @@ interface Schema {
     "cheatCode": NamedNode<'http://schema.org/cheatCode'>;
     /** The earliest someone may check into a lodging establishment. */
     "checkinTime": NamedNode<'http://schema.org/checkinTime'>;
+    /** A URL template (RFC 6570) for a checkout page for an offer. This approach allows merchants to specify a URL for online checkout of the offered product, by interpolating parameters such as the logged in user ID, product ID, quantity, discount code etc. Parameter naming and standardization are not specified here. */
+    "checkoutPageURLTemplate": NamedNode<'http://schema.org/checkoutPageURLTemplate'>;
     /** The latest someone may check out of a lodging establishment. */
     "checkoutTime": NamedNode<'http://schema.org/checkoutTime'>;
     /** The chemical composition describes the identity and relative ratio of the chemical elements that make up the substance. */
@@ -3556,6 +3681,8 @@ interface Schema {
     "childMinAge": NamedNode<'http://schema.org/childMinAge'>;
     /** Closest child taxa of the taxon in question. */
     "childTaxon": NamedNode<'http://schema.org/childTaxon'>;
+    /** Closest parent taxon of the taxon in question. */
+    "parentTaxon": NamedNode<'http://schema.org/parentTaxon'>;
     /** A child of the person. */
     "children": NamedNode<'http://schema.org/children'>;
     /** The number of milligrams of cholesterol. */
@@ -3577,18 +3704,22 @@ interface Schema {
     "clinicalPharmacology": NamedNode<'http://schema.org/clinicalPharmacology'>;
     /** Position of the clip within an ordered group of clips. */
     "clipNumber": NamedNode<'http://schema.org/clipNumber'>;
+    /** The position of an item in a series or sequence of items. */
+    "position": NamedNode<'http://schema.org/position'>;
     /** The closing hour of the place or service on the given day(s) of the week. */
     "closes": NamedNode<'http://schema.org/closes'>;
     /** A person that acts in a coaching role for a sports team. */
     "coach": NamedNode<'http://schema.org/coach'>;
     /** A medical code for the entity, taken from a controlled vocabulary or ontology such as ICD-9, DiseasesDB, MeSH, SNOMED-CT, RxNorm, etc. */
     "code": NamedNode<'http://schema.org/code'>;
-    /** Link to the repository where the un-compiled, human readable code and related code is located (SVN, github, CodePlex). */
+    /** Link to the repository where the un-compiled, human readable code and related code is located (SVN, GitHub, CodePlex). */
     "codeRepository": NamedNode<'http://schema.org/codeRepository'>;
     /** What type of code sample: full (compile ready) solution, code snippet, inline code, scripts, template. */
     "codeSampleType": NamedNode<'http://schema.org/codeSampleType'>;
     /** A short textual code that uniquely identifies the value. */
     "codeValue": NamedNode<'http://schema.org/codeValue'>;
+    /** A code that identifies this [[DefinedTerm]] within a [[DefinedTermSet]] */
+    "termCode": NamedNode<'http://schema.org/termCode'>;
     /** The coding system, e.g. 'ICD-10'. */
     "codingSystem": NamedNode<'http://schema.org/codingSystem'>;
     /** A colleague of the person. */
@@ -3597,6 +3728,8 @@ interface Schema {
     "colleagues": NamedNode<'http://schema.org/colleagues'>;
     /** A sub property of object. The collection target of the action. */
     "collection": NamedNode<'http://schema.org/collection'>;
+    /** A sub property of object. The collection target of the action. */
+    "targetCollection": NamedNode<'http://schema.org/targetCollection'>;
     /** The number of items in the [[Collection]]. */
     "collectionSize": NamedNode<'http://schema.org/collectionSize'>;
     /** The color of the product. */
@@ -3613,8 +3746,6 @@ interface Schema {
     "commentTime": NamedNode<'http://schema.org/commentTime'>;
     /** Knowledge, skill, ability or personal attribute that must be demonstrated by a person or other entity in order to do something such as earn an Educational Occupational Credential or understand a LearningResource. */
     "competencyRequired": NamedNode<'http://schema.org/competencyRequired'>;
-    /** A competitor in a sports event. */
-    "competitor": NamedNode<'http://schema.org/competitor'>;
     /** The person or organization who wrote a composition, or who is the composer of a work performed at some event. */
     "composer": NamedNode<'http://schema.org/composer'>;
     /** Specifying something physically contained by something else. Typically used here for the underlying anatomical structures, such as organs, that comprise the anatomical system. */
@@ -3648,13 +3779,15 @@ interface Schema {
     "containsPlace": NamedNode<'http://schema.org/containsPlace'>;
     /** A season that is part of the media series. */
     "containsSeason": NamedNode<'http://schema.org/containsSeason'>;
+    /** Indicates an item or CreativeWork that is part of this item, or CreativeWork (in some sense). */
+    "hasPart": NamedNode<'http://schema.org/hasPart'>;
     /** The location depicted or described in the content. For example, the location in a photograph or painting. */
     "contentLocation": NamedNode<'http://schema.org/contentLocation'>;
-    /** Official rating of a piece of content&#x2014;for example,'MPAA PG-13'. */
+    /** Official rating of a piece of content&#x2014;for example, 'MPAA PG-13'. */
     "contentRating": NamedNode<'http://schema.org/contentRating'>;
     /** The specific time described by a creative work, for works (e.g. articles, video objects etc.) that emphasise a particular moment within an Event. */
     "contentReferenceTime": NamedNode<'http://schema.org/contentReferenceTime'>;
-    /** File size in (mega/kilo) bytes. */
+    /** File size in (mega/kilo)bytes. */
     "contentSize": NamedNode<'http://schema.org/contentSize'>;
     /** The supported content type(s) for an EntryPoint response. */
     "contentType": NamedNode<'http://schema.org/contentType'>;
@@ -3666,6 +3799,8 @@ interface Schema {
     "contributor": NamedNode<'http://schema.org/contributor'>;
     /** The time it takes to actually cook the dish, in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601). */
     "cookTime": NamedNode<'http://schema.org/cookTime'>;
+    /** The length of time it takes to perform instructions or a direction (not including time to prepare the supplies), in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601). */
+    "performTime": NamedNode<'http://schema.org/performTime'>;
     /** The method of cooking, such as Frying, Steaming, ... */
     "cookingMethod": NamedNode<'http://schema.org/cookingMethod'>;
     /** The party holding the legal copyright to the CreativeWork. */
@@ -3680,7 +3815,7 @@ interface Schema {
     "correctionsPolicy": NamedNode<'http://schema.org/correctionsPolicy'>;
     /** The category of cost, such as wholesale, retail, reimbursement cap, etc. */
     "costCategory": NamedNode<'http://schema.org/costCategory'>;
-    /** The currency (in 3-letter of the drug cost. See: http://en.wikipedia.org/wiki/ISO_4217. */
+    /** The currency (in 3-letter) of the drug cost. See: http://en.wikipedia.org/wiki/ISO_4217. */
     "costCurrency": NamedNode<'http://schema.org/costCurrency'>;
     /** Additional details to capture the origin of the cost data. For example, 'Medicare Part B'. */
     "costOrigin": NamedNode<'http://schema.org/costOrigin'>;
@@ -3704,9 +3839,13 @@ interface Schema {
     "countryOfOrigin": NamedNode<'http://schema.org/countryOfOrigin'>;
     /** A sub property of location. The course where this action was taken. */
     "course": NamedNode<'http://schema.org/course'>;
+    /** A sub property of location. The course where this action was taken. */
+    "exerciseCourse": NamedNode<'http://schema.org/exerciseCourse'>;
+    /** The location of, for example, where an event is happening, where an organization is located, or where an action takes place. */
+    "location": NamedNode<'http://schema.org/location'>;
     /** The identifier for the [[Course]] used by the course [[provider]] (e.g. CS101 or 6.001). */
     "courseCode": NamedNode<'http://schema.org/courseCode'>;
-    /** The medium or means of delivery of the course instance or the mode of study, either as a text label (e.g. "online", "onsite" or "blended"; "synchronous" or "asynchronous"; "full-time" or "part-time") or as a URL reference to a term from a controlled vocabulary (e.g. https://ceds.ed.gov/element/001311#Asynchronous ). */
+    /** The medium or means of delivery of the course instance or the mode of study, either as a text label (e.g. "online", "onsite" or "blended"; "synchronous" or "asynchronous"; "full-time" or "part-time") or as a URL reference to a term from a controlled vocabulary (e.g. https://ceds.ed.gov/element/001311#Asynchronous). */
     "courseMode": NamedNode<'http://schema.org/courseMode'>;
     /** Requirements for taking the Course. May be completion of another [[Course]] or a textual description like "permission of instructor". Requirements may be a pre-requisite competency, referenced using [[AlignmentObject]]. */
     "coursePrerequisites": NamedNode<'http://schema.org/coursePrerequisites'>;
@@ -3728,9 +3867,9 @@ interface Schema {
     "creditedTo": NamedNode<'http://schema.org/creditedTo'>;
     /** A CSS selector, e.g. of a [[SpeakableSpecification]] or [[WebPageElement]]. In the latter case, multiple matches within a page can constitute a single conceptual "Web page element". */
     "cssSelector": NamedNode<'http://schema.org/cssSelector'>;
-    /** The currency accepted.\n\nUse standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR". */
+    /** The currency accepted.\n\nUse standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217), e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies, e.g. "BTC"; well known names for [Local Exchange Trading Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types, e.g. "Ithaca HOUR". */
     "currenciesAccepted": NamedNode<'http://schema.org/currenciesAccepted'>;
-    /** The currency in which the monetary amount is expressed.\n\nUse standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR". */
+    /** The currency in which the monetary amount is expressed.\n\nUse standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217), e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies, e.g. "BTC"; well known names for [Local Exchange Trading Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types, e.g. "Ithaca HOUR". */
     "currency": NamedNode<'http://schema.org/currency'>;
     /** The current price of a currency. */
     "currentExchangeRate": NamedNode<'http://schema.org/currentExchangeRate'>;
@@ -3770,18 +3909,26 @@ interface Schema {
     "cvdNumICUBeds": NamedNode<'http://schema.org/cvdNumICUBeds'>;
     /** numicubedsocc - ICU BED OCCUPANCY: Total number of staffed inpatient ICU beds that are occupied. */
     "cvdNumICUBedsOcc": NamedNode<'http://schema.org/cvdNumICUBedsOcc'>;
-    /** numtotbeds - ALL HOSPITAL BEDS: Total number of all Inpatient and outpatient beds, including all staffed,ICU, licensed, and overflow (surge) beds used for inpatients or outpatients. */
+    /** numtotbeds - ALL HOSPITAL BEDS: Total number of all inpatient and outpatient beds, including all staffed, ICU, licensed, and overflow (surge) beds used for inpatients or outpatients. */
     "cvdNumTotBeds": NamedNode<'http://schema.org/cvdNumTotBeds'>;
     /** numvent - MECHANICAL VENTILATORS: Total number of ventilators available. */
     "cvdNumVent": NamedNode<'http://schema.org/cvdNumVent'>;
     /** numventuse - MECHANICAL VENTILATORS IN USE: Total number of ventilators in use. */
     "cvdNumVentUse": NamedNode<'http://schema.org/cvdNumVentUse'>;
-    /** An item within in a data feed. Data feeds may have many elements. */
+    /** An item within a data feed. Data feeds may have many elements. */
     "dataFeedElement": NamedNode<'http://schema.org/dataFeedElement'>;
     /** A dataset contained in this catalog. */
     "dataset": NamedNode<'http://schema.org/dataset'>;
     /** The range of temporal applicability of a dataset, e.g. for a 2011 census dataset, the year 2011 (in ISO 8601 time interval format). */
     "datasetTimeInterval": NamedNode<'http://schema.org/datasetTimeInterval'>;
+    /**
+     * The temporalCoverage of a CreativeWork indicates the period that the content applies to, i.e. that it describes, either as a DateTime or as a textual string indicating a time period in [ISO 8601 time interval format](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals). In
+     *       the case of a Dataset it will typically indicate the relevant time period in a precise notation (e.g. for a 2011 census dataset, the year 2011 would be written "2011/2012"). Other forms of content, e.g. ScholarlyArticle, Book, TVSeries or TVEpisode, may indicate their temporalCoverage in broader terms - textually or via well-known URL.
+     *       Written works such as books may sometimes have precise temporal coverage too, e.g. a work set in 1939 - 1945 can be indicated in ISO 8601 interval format format via "1939/1945".
+     *
+     * Open-ended date ranges can be written with ".." in place of the end date. For example, "2015-11/.." indicates a range beginning in November 2015 and with no specified final date. This is tentative and might be updated in future when ISO 8601 is officially updated.
+     */
+    "temporalCoverage": NamedNode<'http://schema.org/temporalCoverage'>;
     /** The date on which the CreativeWork was created or the item was added to a DataFeed. */
     "dateCreated": NamedNode<'http://schema.org/dateCreated'>;
     /** The datetime the item was removed from the DataFeed. */
@@ -3805,7 +3952,7 @@ interface Schema {
     /**
      * A [dateline](https://en.wikipedia.org/wiki/Dateline) is a brief piece of text included in news articles that describes where and when the story was written or filed though the date is often omitted. Sometimes only a placename is provided.
      *
-     * Structured representations of dateline-related information can also be expressed more explicitly using [[locationCreated]] (which represents where a work was created e.g. where a news report was written).  For location depicted or described in the content, use [[contentLocation]].
+     * Structured representations of dateline-related information can also be expressed more explicitly using [[locationCreated]] (which represents where a work was created, e.g. where a news report was written).  For location depicted or described in the content, use [[contentLocation]].
      *
      * Dateline summaries are oriented more towards human readers than towards automated processing, and can vary substantially. Some examples: "BEIRUT, Lebanon, June 2.", "Paris, France", "December 19, 2017 11:43AM Reporting from Washington", "Beijing/Moscow", "QUEZON CITY, Philippines".
      *       
@@ -3825,6 +3972,8 @@ interface Schema {
     "deliveryLeadTime": NamedNode<'http://schema.org/deliveryLeadTime'>;
     /** A sub property of instrument. The method of delivery. */
     "deliveryMethod": NamedNode<'http://schema.org/deliveryMethod'>;
+    /** The object that helped the agent perform the action. E.g. John wrote a book with *a pen*. */
+    "instrument": NamedNode<'http://schema.org/instrument'>;
     /** New entry added as the package passes through each leg of its journey (from shipment to final delivery). */
     "deliveryStatus": NamedNode<'http://schema.org/deliveryStatus'>;
     /** The total delay between the receipt of the order and the goods reaching the final customer. */
@@ -3867,9 +4016,9 @@ interface Schema {
     "differentialDiagnosis": NamedNode<'http://schema.org/differentialDiagnosis'>;
     /** Indicates whether an [[url]] that is associated with a [[JobPosting]] enables direct application for the job, via the posting website. A job posting is considered to have directApply of [[True]] if an application process for the specified job can be directly initiated via the url(s) given (noting that e.g. multiple internet domains might nevertheless be involved at an implementation level). A value of [[False]] is appropriate if there is no clear path to applying directly online for the specified job, navigating directly from the JobPosting url(s) supplied. */
     "directApply": NamedNode<'http://schema.org/directApply'>;
-    /** A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip. */
+    /** A director of e.g. TV, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip. */
     "director": NamedNode<'http://schema.org/director'>;
-    /** A director of e.g. tv, radio, movie, video games etc. content. Directors can be associated with individual items or with a series, episode, clip. */
+    /** A director of e.g. TV, radio, movie, video games etc. content. Directors can be associated with individual items or with a series, episode, clip. */
     "directors": NamedNode<'http://schema.org/directors'>;
     /** A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation. */
     "disambiguatingDescription": NamedNode<'http://schema.org/disambiguatingDescription'>;
@@ -3877,7 +4026,7 @@ interface Schema {
     "discount": NamedNode<'http://schema.org/discount'>;
     /** Code used to redeem a discount. */
     "discountCode": NamedNode<'http://schema.org/discountCode'>;
-    /** The currency of the discount.\n\nUse standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR". */
+    /** The currency of the discount.\n\nUse standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217), e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies, e.g. "BTC"; well known names for [Local Exchange Trading Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types, e.g. "Ithaca HOUR". */
     "discountCurrency": NamedNode<'http://schema.org/discountCurrency'>;
     /** Specifies the CreativeWork associated with the UserComment. */
     "discusses": NamedNode<'http://schema.org/discusses'>;
@@ -3897,7 +4046,7 @@ interface Schema {
     "distance": NamedNode<'http://schema.org/distance'>;
     /** One of a set of signs and symptoms that can be used to distinguish this diagnosis from others in the differential diagnosis. */
     "distinguishingSign": NamedNode<'http://schema.org/distinguishingSign'>;
-    /** A downloadable form of this dataset, at a specific location, in a specific format. */
+    /** A downloadable form of this dataset, at a specific location, in a specific format. This property can be repeated if different variations are available. There is no expectation that different downloadable distributions must contain exactly equivalent information (see also [DCAT](https://www.w3.org/TR/vocab-dcat-3/#Class:Distribution) on this point). Different distributions might include or exclude different subsets of the entire dataset, for example. */
     "distribution": NamedNode<'http://schema.org/distribution'>;
     /** Statement on diversity policy by an [[Organization]] e.g. a [[NewsMediaOrganization]]. For a [[NewsMediaOrganization]], a statement describing the newsroom’s diversity policy on both staffing and sources, typically providing staffing data. */
     "diversityPolicy": NamedNode<'http://schema.org/diversityPolicy'>;
@@ -3907,8 +4056,6 @@ interface Schema {
     "documentation": NamedNode<'http://schema.org/documentation'>;
     /** Indicates when shipping to a particular [[shippingDestination]] is not available. */
     "doesNotShip": NamedNode<'http://schema.org/doesNotShip'>;
-    /** Relates a property to a class that is (one of) the type(s) the property is expected to be used on. */
-    "domainIncludes": NamedNode<'http://schema.org/domainIncludes'>;
     /** Whether borrower is a resident of the jurisdiction where the property is located. */
     "domiciledMortgage": NamedNode<'http://schema.org/domiciledMortgage'>;
     /** The time admission will commence. */
@@ -3956,7 +4103,7 @@ interface Schema {
     /**
      * An [EIDR](https://eidr.org/) (Entertainment Identifier Registry) [[identifier]] representing a specific edit / edition for a work of film or television.
      *
-     * For example, the motion picture known as "Ghostbusters" whose [[titleEIDR]] is "10.5240/7EC7-228A-510A-053E-CBB8-J", has several edits e.g. "10.5240/1F2A-E1C5-680A-14C6-E76B-I" and "10.5240/8A35-3BEE-6497-5D12-9E4F-3".
+     * For example, the motion picture known as "Ghostbusters" whose [[titleEIDR]] is "10.5240/7EC7-228A-510A-053E-CBB8-J" has several edits, e.g. "10.5240/1F2A-E1C5-680A-14C6-E76B-I" and "10.5240/8A35-3BEE-6497-5D12-9E4F-3".
      *
      * Since schema.org types like [[Movie]] and [[TVEpisode]] can be used for both works and their multiple expressions, it is possible to use [[titleEIDR]] alone (for a general description), or alongside [[editEIDR]] for a more edit-specific description.
      *
@@ -3980,13 +4127,13 @@ interface Schema {
     "educationalFramework": NamedNode<'http://schema.org/educationalFramework'>;
     /** The level in terms of progression through an educational or training context. Examples of educational levels include 'beginner', 'intermediate' or 'advanced', and formal sets of level indicators. */
     "educationalLevel": NamedNode<'http://schema.org/educationalLevel'>;
-    /** Similar to courseMode, The medium or means of delivery of the program as a whole. The value may either be a text label (e.g. "online", "onsite" or "blended"; "synchronous" or "asynchronous"; "full-time" or "part-time") or a URL reference to a term from a controlled vocabulary (e.g. https://ceds.ed.gov/element/001311#Asynchronous ). */
+    /** Similar to courseMode, the medium or means of delivery of the program as a whole. The value may either be a text label (e.g. "online", "onsite" or "blended"; "synchronous" or "asynchronous"; "full-time" or "part-time") or a URL reference to a term from a controlled vocabulary (e.g. https://ceds.ed.gov/element/001311#Asynchronous ). */
     "educationalProgramMode": NamedNode<'http://schema.org/educationalProgramMode'>;
     /** An educationalRole of an EducationalAudience. */
     "educationalRole": NamedNode<'http://schema.org/educationalRole'>;
     /** The purpose of a work in the context of education; for example, 'assignment', 'group work'. */
     "educationalUse": NamedNode<'http://schema.org/educationalUse'>;
-    /** The elevation of a location ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)). Values may be of the form 'NUMBER UNIT_OF_MEASUREMENT' (e.g., '1,000 m', '3,200 ft') while numbers alone should be assumed to be a value in meters. */
+    /** The elevation of a location ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)). Values may be of the form 'NUMBER UNIT\_OF\_MEASUREMENT' (e.g., '1,000 m', '3,200 ft') while numbers alone should be assumed to be a value in meters. */
     "elevation": NamedNode<'http://schema.org/elevation'>;
     /** The legal requirements such as citizenship, visa and other documentation required for an applicant to this job. */
     "eligibilityToWorkRequirement": NamedNode<'http://schema.org/eligibilityToWorkRequirement'>;
@@ -4023,12 +4170,14 @@ interface Schema {
     "employmentUnit": NamedNode<'http://schema.org/employmentUnit'>;
     /** Another BioChemEntity encoded by this one. */
     "encodesBioChemEntity": NamedNode<'http://schema.org/encodesBioChemEntity'>;
+    /** Another BioChemEntity encoding by this one. */
+    "isEncodedByBioChemEntity": NamedNode<'http://schema.org/isEncodedByBioChemEntity'>;
     /** The CreativeWork encoded by this media object. */
     "encodesCreativeWork": NamedNode<'http://schema.org/encodesCreativeWork'>;
     /** A media object that encodes this CreativeWork. This property is a synonym for associatedMedia. */
     "encoding": NamedNode<'http://schema.org/encoding'>;
     /**
-     * Media type typically expressed using a MIME format (see [IANA site](http://www.iana.org/assignments/media-types/media-types.xhtml) and [MDN reference](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types)) e.g. application/zip for a SoftwareApplication binary, audio/mpeg for .mp3 etc.).
+     * Media type typically expressed using a MIME format (see [IANA site](http://www.iana.org/assignments/media-types/media-types.xhtml) and [MDN reference](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types)), e.g. application/zip for a SoftwareApplication binary, audio/mpeg for .mp3 etc.
      *
      * In cases where a [[CreativeWork]] has several media type representations, [[encoding]] can be used to indicate each [[MediaObject]] alongside particular [[encodingFormat]] information.
      *
@@ -4043,7 +4192,7 @@ interface Schema {
     "endDate": NamedNode<'http://schema.org/endDate'>;
     /** The end time of the clip expressed as the number of seconds from the beginning of the work. */
     "endOffset": NamedNode<'http://schema.org/endOffset'>;
-    /** The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.\n\nNote that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions. */
+    /** The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. E.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.\n\nNote that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions. */
     "endTime": NamedNode<'http://schema.org/endTime'>;
     /** A sub property of participant. The person/organization being supported. */
     "endorsee": NamedNode<'http://schema.org/endorsee'>;
@@ -4057,7 +4206,7 @@ interface Schema {
     "engineDisplacement": NamedNode<'http://schema.org/engineDisplacement'>;
     /**
      * The power of the vehicle's engine.
-     *     Typical unit code(s): KWT for kilowatt, BHP for brake horsepower, N12 for metric horsepower (PS, with 1 PS = 735,49875 W)\n\n* Note 1: There are many different ways of measuring an engine's power. For an overview, see  [http://en.wikipedia.org/wiki/Horsepower#Engine_power_test_codes](http://en.wikipedia.org/wiki/Horsepower#Engine_power_test_codes).\n* Note 2: You can link to information about how the given value has been determined using the [[valueReference]] property.\n* Note 3: You can use [[minValue]] and [[maxValue]] to indicate ranges.
+     *     Typical unit code(s): KWT for kilowatt, BHP for brake horsepower, N12 for metric horsepower (PS, with 1 PS = 735,49875 W)\n\n* Note 1: There are many different ways of measuring an engine's power. For an overview, see  [http://en.wikipedia.org/wiki/Horsepower#Engine\_power\_test\_codes](http://en.wikipedia.org/wiki/Horsepower#Engine_power_test_codes).\n* Note 2: You can link to information about how the given value has been determined using the [[valueReference]] property.\n* Note 3: You can use [[minValue]] and [[maxValue]] to indicate ranges.
      */
     "enginePower": NamedNode<'http://schema.org/enginePower'>;
     /** The type of engine or engines powering the vehicle. */
@@ -4066,7 +4215,7 @@ interface Schema {
     "entertainmentBusiness": NamedNode<'http://schema.org/entertainmentBusiness'>;
     /** The characteristics of associated patients, such as age, gender, race etc. */
     "epidemiology": NamedNode<'http://schema.org/epidemiology'>;
-    /** An episode of a tv, radio or game media within a series or season. */
+    /** An episode of a TV, radio or game media within a series or season. */
     "episode": NamedNode<'http://schema.org/episode'>;
     /** Position of the episode within an ordered group of episodes. */
     "episodeNumber": NamedNode<'http://schema.org/episodeNumber'>;
@@ -4118,10 +4267,6 @@ interface Schema {
     "exceptDate": NamedNode<'http://schema.org/exceptDate'>;
     /** The difference between the price at which a broker or other intermediary buys and sells foreign currency. */
     "exchangeRateSpread": NamedNode<'http://schema.org/exchangeRateSpread'>;
-    /** Library file name e.g., mscorlib.dll, system.web.dll. */
-    "executableLibraryName": NamedNode<'http://schema.org/executableLibraryName'>;
-    /** A sub property of location. The course where this action was taken. */
-    "exerciseCourse": NamedNode<'http://schema.org/exerciseCourse'>;
     /** A sub property of instrument. The exercise plan used on this action. */
     "exercisePlan": NamedNode<'http://schema.org/exercisePlan'>;
     /** A sub property of instrument. The diet used in this action. */
@@ -4160,13 +4305,13 @@ interface Schema {
     "feesAndCommissionsSpecification": NamedNode<'http://schema.org/feesAndCommissionsSpecification'>;
     /** The number of grams of fiber. */
     "fiberContent": NamedNode<'http://schema.org/fiberContent'>;
-    /** Media type, typically MIME format (see [IANA site](http://www.iana.org/assignments/media-types/media-types.xhtml)) of the content e.g. application/zip of a SoftwareApplication binary. In cases where a CreativeWork has several media type representations, 'encoding' can be used to indicate each MediaObject alongside particular fileFormat information. Unregistered or niche file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia entry. */
+    /** Media type, typically MIME format (see [IANA site](http://www.iana.org/assignments/media-types/media-types.xhtml)) of the content, e.g. application/zip of a SoftwareApplication binary. In cases where a CreativeWork has several media type representations, 'encoding' can be used to indicate each MediaObject alongside particular fileFormat information. Unregistered or niche file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia entry. */
     "fileFormat": NamedNode<'http://schema.org/fileFormat'>;
     /** Size of the application / package (e.g. 18MB). In the absence of a unit (MB, KB etc.), KB will be assumed. */
     "fileSize": NamedNode<'http://schema.org/fileSize'>;
     /** A financial aid type or program which students may use to pay for tuition or fees associated with the program. */
     "financialAidEligible": NamedNode<'http://schema.org/financialAidEligible'>;
-    /** Indicates the first known occurence of a [[Claim]] in some [[CreativeWork]]. */
+    /** Indicates the first known occurrence of a [[Claim]] in some [[CreativeWork]]. */
     "firstAppearance": NamedNode<'http://schema.org/firstAppearance'>;
     /** The date and place the work was first performed. */
     "firstPerformance": NamedNode<'http://schema.org/firstPerformance'>;
@@ -4208,7 +4353,9 @@ interface Schema {
     "foundingLocation": NamedNode<'http://schema.org/foundingLocation'>;
     /** A flag to signal that the item, event, or place is accessible for free. */
     "free": NamedNode<'http://schema.org/free'>;
-    /** A monetary value above which (or equal to) the shipping rate becomes free. Intended to be used via an [[OfferShippingDetails]] with [[shippingSettingsLink]] matching this [[ShippingRateSettings]]. */
+    /** A flag to signal that the item, event, or place is accessible for free. */
+    "isAccessibleForFree": NamedNode<'http://schema.org/isAccessibleForFree'>;
+    /** A monetary value above (or at) which the shipping rate becomes free. Intended to be used via an [[OfferShippingDetails]] with [[shippingSettingsLink]] matching this [[ShippingRateSettings]]. */
     "freeShippingThreshold": NamedNode<'http://schema.org/freeShippingThreshold'>;
     /** How often the dose is taken, e.g. 'daily'. */
     "frequency": NamedNode<'http://schema.org/frequency'>;
@@ -4224,20 +4371,28 @@ interface Schema {
     "fuelType": NamedNode<'http://schema.org/fuelType'>;
     /** The degree of mobility the joint allows. */
     "functionalClass": NamedNode<'http://schema.org/functionalClass'>;
-    /** Indicates an item funded or sponsored through a [[Grant]]. */
+    /** Indicates something directly or indirectly funded or sponsored through a [[Grant]]. See also [[ownershipFundingInfo]]. */
     "fundedItem": NamedNode<'http://schema.org/fundedItem'>;
+    /** A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]]. */
+    "funding": NamedNode<'http://schema.org/funding'>;
     /** A person or organization that supports (sponsors) something through some kind of financial contribution. */
     "funder": NamedNode<'http://schema.org/funder'>;
+    /** A person or organization that supports a thing through a pledge, promise, or financial contribution. E.g. a sponsor of a Medical Study or a corporate sponsor of an event. */
+    "sponsor": NamedNode<'http://schema.org/sponsor'>;
     /** Video game which is played on this server. */
     "game": NamedNode<'http://schema.org/game'>;
+    /** The server on which  it is possible to play the game. */
+    "gameServer": NamedNode<'http://schema.org/gameServer'>;
+    /** Indicates the availability type of the game content associated with this action, such as whether it is a full version or a demo. */
+    "gameAvailabilityType": NamedNode<'http://schema.org/gameAvailabilityType'>;
+    /** The edition of a video game. */
+    "gameEdition": NamedNode<'http://schema.org/gameEdition'>;
     /** An item is an object within the game world that can be collected by a player or, occasionally, a non-player character. */
     "gameItem": NamedNode<'http://schema.org/gameItem'>;
     /** Real or fictional location of the game (or part of game). */
     "gameLocation": NamedNode<'http://schema.org/gameLocation'>;
     /** The electronic systems used to play <a href="http://en.wikipedia.org/wiki/Category:Video_game_platforms">video games</a>. */
     "gamePlatform": NamedNode<'http://schema.org/gamePlatform'>;
-    /** The server on which  it is possible to play the game. */
-    "gameServer": NamedNode<'http://schema.org/gameServer'>;
     /** Links to tips, tactics, etc. */
     "gameTip": NamedNode<'http://schema.org/gameTip'>;
     /** Gender of something, typically a [[Person]], but possibly also fictional characters, animals, etc. While http://schema.org/Male and http://schema.org/Female may be used, text strings are also acceptable for people who do not identify as a binary gender. The [[gender]] property can also be used in an extended sense to cover e.g. the gender of sports teams. As with the gender of individuals, we do not try to enumerate all possibilities. A mixed-gender [[SportsTeam]] can be indicated with a text value of "Mixed". */
@@ -4254,19 +4409,19 @@ interface Schema {
     "geoCovers": NamedNode<'http://schema.org/geoCovers'>;
     /** Represents a relationship between two geometries (or the places they represent), relating a geometry to another that crosses it: "a crosses b: they have some but not all interior points in common, and the dimension of the intersection is less than that of at least one of them". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM). */
     "geoCrosses": NamedNode<'http://schema.org/geoCrosses'>;
-    /** Represents spatial relations in which two geometries (or the places they represent) are topologically disjoint: they have no point in common. They form a set of disconnected geometries." (a symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM)) */
+    /** Represents spatial relations in which two geometries (or the places they represent) are topologically disjoint: "they have no point in common. They form a set of disconnected geometries." (A symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).) */
     "geoDisjoint": NamedNode<'http://schema.org/geoDisjoint'>;
-    /** Represents spatial relations in which two geometries (or the places they represent) are topologically equal, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM). "Two geometries are topologically equal if their interiors intersect and no part of the interior or boundary of one geometry intersects the exterior of the other" (a symmetric relationship) */
+    /** Represents spatial relations in which two geometries (or the places they represent) are topologically equal, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM). "Two geometries are topologically equal if their interiors intersect and no part of the interior or boundary of one geometry intersects the exterior of the other" (a symmetric relationship). */
     "geoEquals": NamedNode<'http://schema.org/geoEquals'>;
     /** Represents spatial relations in which two geometries (or the places they represent) have at least one point in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM). */
     "geoIntersects": NamedNode<'http://schema.org/geoIntersects'>;
-    /** Indicates the GeoCoordinates at the centre of a GeoShape e.g. GeoCircle. */
+    /** Indicates the GeoCoordinates at the centre of a GeoShape, e.g. GeoCircle. */
     "geoMidpoint": NamedNode<'http://schema.org/geoMidpoint'>;
     /** Represents a relationship between two geometries (or the places they represent), relating a geometry to another that geospatially overlaps it, i.e. they have some but not all points in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM). */
     "geoOverlaps": NamedNode<'http://schema.org/geoOverlaps'>;
     /** Indicates the approximate radius of a GeoCircle (metres unless indicated otherwise via Distance notation). */
     "geoRadius": NamedNode<'http://schema.org/geoRadius'>;
-    /** Represents spatial relations in which two geometries (or the places they represent) touch: they have at least one boundary point in common, but no interior points." (a symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM) ) */
+    /** Represents spatial relations in which two geometries (or the places they represent) touch: "they have at least one boundary point in common, but no interior points." (A symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).) */
     "geoTouches": NamedNode<'http://schema.org/geoTouches'>;
     /** Represents a relationship between two geometries (or the places they represent), relating a geometry to one that contains it, i.e. it is inside (i.e. within) its interior. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM). */
     "geoWithin": NamedNode<'http://schema.org/geoWithin'>;
@@ -4290,17 +4445,20 @@ interface Schema {
     "greaterOrEqual": NamedNode<'http://schema.org/greaterOrEqual'>;
     /** The GTIN-12 code of the product, or the product to which the offer refers. The GTIN-12 is the 12-digit GS1 Identification Key composed of a U.P.C. Company Prefix, Item Reference, and Check Digit used to identify trade items. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details. */
     "gtin12": NamedNode<'http://schema.org/gtin12'>;
+    /**
+     * A Global Trade Item Number ([GTIN](https://www.gs1.org/standards/id-keys/gtin)). GTINs identify trade items, including products and services, using numeric identification codes.
+     *
+     * The GS1 [digital link specifications](https://www.gs1.org/standards/Digital-Link/) express GTINs as URLs (URIs, IRIs, etc.). Details including regular expression examples can be found in, Section 6 of the GS1 URI Syntax specification; see also [schema.org tracking issue](https://github.com/schemaorg/schemaorg/issues/3156#issuecomment-1209522809) for schema.org-specific discussion. A correct [[gtin]] value should be a valid GTIN, which means that it should be an all-numeric string of either 8, 12, 13 or 14 digits, or a "GS1 Digital Link" URL based on such a string. The numeric component should also have a [valid GS1 check digit](https://www.gs1.org/services/check-digit-calculator) and meet the other rules for valid GTINs. See also [GS1's GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) and [Wikipedia](https://en.wikipedia.org/wiki/Global_Trade_Item_Number) for more details. Left-padding of the gtin values is not required or encouraged. The [[gtin]] property generalizes the earlier [[gtin8]], [[gtin12]], [[gtin13]], and [[gtin14]] properties.
+     *
+     * Note also that this is a definition for how to include GTINs in Schema.org data, and not a definition of GTINs in general - see the GS1 documentation for authoritative details.
+     */
+    "gtin": NamedNode<'http://schema.org/gtin'>;
     /** The GTIN-13 code of the product, or the product to which the offer refers. This is equivalent to 13-digit ISBN codes and EAN UCC-13. Former 12-digit UPC codes can be converted into a GTIN-13 code by simply adding a preceding zero. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details. */
     "gtin13": NamedNode<'http://schema.org/gtin13'>;
     /** The GTIN-14 code of the product, or the product to which the offer refers. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details. */
     "gtin14": NamedNode<'http://schema.org/gtin14'>;
     /** The GTIN-8 code of the product, or the product to which the offer refers. This code is also known as EAN/UCC-8 or 8-digit EAN. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details. */
     "gtin8": NamedNode<'http://schema.org/gtin8'>;
-    /**
-     * A Global Trade Item Number ([GTIN](https://www.gs1.org/standards/id-keys/gtin)). GTINs identify trade items, including products and services, using numeric identification codes. The [[gtin]] property generalizes the earlier [[gtin8]], [[gtin12]], [[gtin13]], and [[gtin14]] properties. The GS1 [digital link specifications](https://www.gs1.org/standards/Digital-Link/) express GTINs as URLs. A correct [[gtin]] value should be a valid GTIN, which means that it should be an all-numeric string of either 8, 12, 13 or 14 digits, or a "GS1 Digital Link" URL based on such a string. The numeric component should also have a [valid GS1 check digit](https://www.gs1.org/services/check-digit-calculator) and meet the other rules for valid GTINs. See also [GS1's GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) and [Wikipedia](https://en.wikipedia.org/wiki/Global_Trade_Item_Number) for more details. Left-padding of the gtin values is not required or encouraged.
-     *    
-     */
-    "gtin": NamedNode<'http://schema.org/gtin'>;
     /** A medical guideline related to this entity. */
     "guideline": NamedNode<'http://schema.org/guideline'>;
     /** Date on which this guideline's recommendation was made. */
@@ -4309,22 +4467,30 @@ interface Schema {
     "guidelineSubject": NamedNode<'http://schema.org/guidelineSubject'>;
     /** The typical delay between the receipt of the order and the goods either leaving the warehouse or being prepared for pickup, in case the delivery method is on site pickup. Typical properties: minValue, maxValue, unitCode (d for DAY).  This is by common convention assumed to mean business days (if a unitCode is used, coded as "d"), i.e. only counting days when the business normally operates. */
     "handlingTime": NamedNode<'http://schema.org/handlingTime'>;
+    /** Used to tag an item to be intended or suitable for consumption or use by adults only. */
+    "hasAdultConsideration": NamedNode<'http://schema.org/hasAdultConsideration'>;
     /** Indicates a BioChemEntity that (in some sense) has this BioChemEntity as a part. */
     "hasBioChemEntityPart": NamedNode<'http://schema.org/hasBioChemEntityPart'>;
-    /** A symbolic representation of a BioChemEnity. For example, a nucleotide sequence of a Gene or an amino acid sequence of a Protein. */
+    /** Indicates a BioChemEntity that is (in some sense) a part of this BioChemEntity. */
+    "isPartOfBioChemEntity": NamedNode<'http://schema.org/isPartOfBioChemEntity'>;
+    /** A symbolic representation of a BioChemEntity. For example, a nucleotide sequence of a Gene or an amino acid sequence of a Protein. */
     "hasBioPolymerSequence": NamedNode<'http://schema.org/hasBioPolymerSequence'>;
+    /** A common representation such as a protein sequence or chemical structure for this entity. For images use schema.org/image. */
+    "hasRepresentation": NamedNode<'http://schema.org/hasRepresentation'>;
     /** A broadcast channel of a broadcast service. */
     "hasBroadcastChannel": NamedNode<'http://schema.org/hasBroadcastChannel'>;
+    /** The BroadcastService offered on this channel. */
+    "providesBroadcastService": NamedNode<'http://schema.org/providesBroadcastService'>;
     /** A Category code contained in this code set. */
     "hasCategoryCode": NamedNode<'http://schema.org/hasCategoryCode'>;
+    /** A Defined Term contained in this term set. */
+    "hasDefinedTerm": NamedNode<'http://schema.org/hasDefinedTerm'>;
     /** A course or class that is one of the learning opportunities that constitute an educational / occupational program. No information is implied about whether the course is mandatory or optional; no guarantee is implied about whether the course will be available to everyone on the program. */
     "hasCourse": NamedNode<'http://schema.org/hasCourse'>;
     /** An offering of the course at a specific time and place or through specific media or mode of study or to a specific section of students. */
     "hasCourseInstance": NamedNode<'http://schema.org/hasCourseInstance'>;
     /** A credential awarded to the Person or Organization. */
     "hasCredential": NamedNode<'http://schema.org/hasCredential'>;
-    /** A Defined Term contained in this term set. */
-    "hasDefinedTerm": NamedNode<'http://schema.org/hasDefinedTerm'>;
     /** Method used for delivery or shipping. */
     "hasDeliveryMethod": NamedNode<'http://schema.org/hasDeliveryMethod'>;
     /** A permission related to the access to this document (e.g. permission to read or write an electronic document). For a public document, specify a grantee with an Audience with audienceType equal to "public". */
@@ -4357,25 +4523,23 @@ interface Schema {
     "hasOfferCatalog": NamedNode<'http://schema.org/hasOfferCatalog'>;
     /** Points-of-Sales operated by the organization or person. */
     "hasPOS": NamedNode<'http://schema.org/hasPOS'>;
-    /** Indicates an item or CreativeWork that is part of this item, or CreativeWork (in some sense). */
-    "hasPart": NamedNode<'http://schema.org/hasPart'>;
-    /** A common representation such as a protein sequence or chemical structure for this entity. For images use schema.org/image. */
-    "hasRepresentation": NamedNode<'http://schema.org/hasRepresentation'>;
     /** Indicates a [[Product]] that is a member of this [[ProductGroup]] (or [[ProductModel]]). */
     "hasVariant": NamedNode<'http://schema.org/hasVariant'>;
+    /** Indicates the kind of product that this is a variant of. In the case of [[ProductModel]], this is a pointer (from a ProductModel) to a base product from which this product is a variant. It is safe to infer that the variant inherits all product features from the base model, unless defined locally. This is not transitive. In the case of a [[ProductGroup]], the group description also serves as a template, representing a set of Products that vary on explicitly defined, specific dimensions only (so it defines both a set of variants, as well as which values distinguish amongst those variants). When used with [[ProductGroup]], this property can apply to any [[Product]] included in the group. */
+    "isVariantOf": NamedNode<'http://schema.org/isVariantOf'>;
     /** Headline of the article. */
     "headline": NamedNode<'http://schema.org/headline'>;
     /** Specifying the health condition(s) of a patient, medical study, or other target audience. */
     "healthCondition": NamedNode<'http://schema.org/healthCondition'>;
     /** Whether the coinsurance applies before or after deductible, etc. TODO: Is this a closed set? */
     "healthPlanCoinsuranceOption": NamedNode<'http://schema.org/healthPlanCoinsuranceOption'>;
-    /** Whether The rate of coinsurance expressed as a number between 0.0 and 1.0. */
+    /** The rate of coinsurance expressed as a number between 0.0 and 1.0. */
     "healthPlanCoinsuranceRate": NamedNode<'http://schema.org/healthPlanCoinsuranceRate'>;
-    /** Whether The copay amount. */
+    /** The copay amount. */
     "healthPlanCopay": NamedNode<'http://schema.org/healthPlanCopay'>;
     /** Whether the copay is before or after deductible, etc. TODO: Is this a closed set? */
     "healthPlanCopayOption": NamedNode<'http://schema.org/healthPlanCopayOption'>;
-    /** Whether The costs to the patient for services under this network or formulary. */
+    /** The costs to the patient for services under this network or formulary. */
     "healthPlanCostSharing": NamedNode<'http://schema.org/healthPlanCostSharing'>;
     /** TODO. */
     "healthPlanDrugOption": NamedNode<'http://schema.org/healthPlanDrugOption'>;
@@ -4385,7 +4549,7 @@ interface Schema {
     "healthPlanId": NamedNode<'http://schema.org/healthPlanId'>;
     /** The URL that goes directly to the plan brochure for the specific standard plan or plan variation. */
     "healthPlanMarketingUrl": NamedNode<'http://schema.org/healthPlanMarketingUrl'>;
-    /** Name or unique ID of network. (Networks are often reused across different insurance plans). */
+    /** Name or unique ID of network. (Networks are often reused across different insurance plans.) */
     "healthPlanNetworkId": NamedNode<'http://schema.org/healthPlanNetworkId'>;
     /** The tier(s) for this network. */
     "healthPlanNetworkTier": NamedNode<'http://schema.org/healthPlanNetworkTier'>;
@@ -4395,19 +4559,17 @@ interface Schema {
     "healthcareReportingData": NamedNode<'http://schema.org/healthcareReportingData'>;
     /** The height of the item. */
     "height": NamedNode<'http://schema.org/height'>;
-    /** The highest price of all offers available.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator. */
+    /** The highest price of all offers available.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator. */
     "highPrice": NamedNode<'http://schema.org/highPrice'>;
-    /** Organization offering the job position. */
+    /** Organization or Person offering the job position. */
     "hiringOrganization": NamedNode<'http://schema.org/hiringOrganization'>;
-    /** [[ArchiveOrganization]] that holds, keeps or maintains the [[ArchiveComponent]]. */
-    "holdingArchive": NamedNode<'http://schema.org/holdingArchive'>;
     /** A contact location for a person's residence. */
     "homeLocation": NamedNode<'http://schema.org/homeLocation'>;
     /** The home team in a sports event. */
     "homeTeam": NamedNode<'http://schema.org/homeTeam'>;
     /** An honorific prefix preceding a Person's name such as Dr/Mrs/Mr. */
     "honorificPrefix": NamedNode<'http://schema.org/honorificPrefix'>;
-    /** An honorific suffix following a Person's name such as M.D. /PhD/MSCSW. */
+    /** An honorific suffix following a Person's name such as M.D./PhD/MSCSW. */
     "honorificSuffix": NamedNode<'http://schema.org/honorificSuffix'>;
     /** A hospital with which the physician or office is affiliated. */
     "hospitalAffiliation": NamedNode<'http://schema.org/hospitalAffiliation'>;
@@ -4423,11 +4585,6 @@ interface Schema {
     "iataCode": NamedNode<'http://schema.org/iataCode'>;
     /** ICAO identifier for an airport. */
     "icaoCode": NamedNode<'http://schema.org/icaoCode'>;
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     */
-    "identifier": NamedNode<'http://schema.org/identifier'>;
     /** A physical examination that can identify this sign. */
     "identifyingExam": NamedNode<'http://schema.org/identifyingExam'>;
     /** A diagnostic test that can identify this sign. */
@@ -4456,7 +4613,7 @@ interface Schema {
     "inPlaylist": NamedNode<'http://schema.org/inPlaylist'>;
     /** Indicates the [[productGroupID]] for a [[ProductGroup]] that this product [[isVariantOf]]. */
     "inProductGroupWithID": NamedNode<'http://schema.org/inProductGroupWithID'>;
-    /** Are in-store returns offered? (for more advanced return methods use the [[returnMethod]] property) */
+    /** Are in-store returns offered? (For more advanced return methods use the [[returnMethod]] property.) */
     "inStoreReturnsOffered": NamedNode<'http://schema.org/inStoreReturnsOffered'>;
     /** Qualification, candidature, degree, application that Thesis supports. */
     "inSupportOf": NamedNode<'http://schema.org/inSupportOf'>;
@@ -4468,8 +4625,6 @@ interface Schema {
     "includedComposition": NamedNode<'http://schema.org/includedComposition'>;
     /** A data catalog which contains this dataset (this property was previously 'catalog', preferred name is now 'includedInDataCatalog'). */
     "includedDataCatalog": NamedNode<'http://schema.org/includedDataCatalog'>;
-    /** A data catalog which contains this dataset. */
-    "includedInDataCatalog": NamedNode<'http://schema.org/includedInDataCatalog'>;
     /** The insurance plans that cover this drug. */
     "includedInHealthInsurancePlan": NamedNode<'http://schema.org/includedInHealthInsurancePlan'>;
     /** A modifiable or non-modifiable risk factor included in the calculation, e.g. age, coexisting condition. */
@@ -4497,6 +4652,10 @@ interface Schema {
     "infectiousAgentClass": NamedNode<'http://schema.org/infectiousAgentClass'>;
     /** A single ingredient used in the recipe, e.g. sugar, flour or garlic. */
     "ingredients": NamedNode<'http://schema.org/ingredients'>;
+    /** A single ingredient used in the recipe, e.g. sugar, flour or garlic. */
+    "recipeIngredient": NamedNode<'http://schema.org/recipeIngredient'>;
+    /** A sub-property of instrument. A supply consumed when performing instructions or a direction. */
+    "supply": NamedNode<'http://schema.org/supply'>;
     /** The individual who traces over the pencil drawings in ink after pencils are complete. */
     "inker": NamedNode<'http://schema.org/inker'>;
     /** The place of attachment of a muscle, or what the muscle moves. */
@@ -4505,18 +4664,16 @@ interface Schema {
     "installUrl": NamedNode<'http://schema.org/installUrl'>;
     /** A person assigned to instruct or provide instructional assistance for the [[CourseInstance]]. */
     "instructor": NamedNode<'http://schema.org/instructor'>;
-    /** The object that helped the agent perform the action. e.g. John wrote a book with *a pen*. */
-    "instrument": NamedNode<'http://schema.org/instrument'>;
     /** Quantitative measure gauging the degree of force involved in the exercise, for example, heartbeats per minute. May include the velocity of the movement. */
     "intensity": NamedNode<'http://schema.org/intensity'>;
     /** Another drug that is known to interact with this drug in a way that impacts the effect of this drug or causes a risk to the patient. Note: disease interactions are typically captured as contraindications. */
     "interactingDrug": NamedNode<'http://schema.org/interactingDrug'>;
     /** This property is deprecated, alongside the UserInteraction types on which it depended. */
     "interactionCount": NamedNode<'http://schema.org/interactionCount'>;
-    /** The WebSite or SoftwareApplication where the interactions took place. */
-    "interactionService": NamedNode<'http://schema.org/interactionService'>;
     /** The number of interactions for the CreativeWork using the WebSite or SoftwareApplication. The most specific child type of InteractionCounter should be used. */
     "interactionStatistic": NamedNode<'http://schema.org/interactionStatistic'>;
+    /** The WebSite or SoftwareApplication where the interactions took place. */
+    "interactionService": NamedNode<'http://schema.org/interactionService'>;
     /** The Action representing the type of interaction. For up votes, +1s, etc. use [[LikeAction]]. For down votes use [[DislikeAction]]. Otherwise, use the most specific Action. */
     "interactionType": NamedNode<'http://schema.org/interactionType'>;
     /** The predominant mode of learning supported by the learning resource. Acceptable values are 'active', 'expositive', or 'mixed'. */
@@ -4527,12 +4684,8 @@ interface Schema {
     "interpretedAsClaim": NamedNode<'http://schema.org/interpretedAsClaim'>;
     /** The current approximate inventory level for the item or items. */
     "inventoryLevel": NamedNode<'http://schema.org/inventoryLevel'>;
-    /** Relates a property to a property that is its inverse. Inverse properties relate the same pairs of items to each other, but in reversed direction. For example, the 'alumni' and 'alumniOf' properties are inverseOf each other. Some properties don't have explicit inverses; in these situations RDFa and JSON-LD syntax for reverse properties can be used. */
-    "inverseOf": NamedNode<'http://schema.org/inverseOf'>;
     /** Whether the provider is accepting new patients. */
     "isAcceptingNewPatients": NamedNode<'http://schema.org/isAcceptingNewPatients'>;
-    /** A flag to signal that the item, event, or place is accessible for free. */
-    "isAccessibleForFree": NamedNode<'http://schema.org/isAccessibleForFree'>;
     /** A pointer to another product (or multiple products) for which this product is an accessory or spare part. */
     "isAccessoryOrSparePartFor": NamedNode<'http://schema.org/isAccessoryOrSparePartFor'>;
     /** True if the drug is available in a generic form (regardless of name). */
@@ -4543,11 +4696,9 @@ interface Schema {
     "isBasedOnUrl": NamedNode<'http://schema.org/isBasedOnUrl'>;
     /** A pointer to another product (or multiple products) for which this product is a consumable. */
     "isConsumableFor": NamedNode<'http://schema.org/isConsumableFor'>;
-    /** Another BioChemEntity encoding by this one. */
-    "isEncodedByBioChemEntity": NamedNode<'http://schema.org/isEncodedByBioChemEntity'>;
     /** Indicates whether this content is family friendly. */
     "isFamilyFriendly": NamedNode<'http://schema.org/isFamilyFriendly'>;
-    /** Was the offer accepted as a gift for someone other than the buyer. */
+    /** Indicates whether the offer was accepted as a gift for someone other than the buyer. */
     "isGift": NamedNode<'http://schema.org/isGift'>;
     /** Biological process this BioChemEntity is involved in; please use PropertyValue if you want to include any evidence. */
     "isInvolvedInBiologicalProcess": NamedNode<'http://schema.org/isInvolvedInBiologicalProcess'>;
@@ -4555,10 +4706,6 @@ interface Schema {
     "isLiveBroadcast": NamedNode<'http://schema.org/isLiveBroadcast'>;
     /** Subcellular location where this BioChemEntity is located; please use PropertyValue if you want to include any evidence. */
     "isLocatedInSubcellularLocation": NamedNode<'http://schema.org/isLocatedInSubcellularLocation'>;
-    /** Indicates an item or CreativeWork that this item, or CreativeWork (in some sense), is part of. */
-    "isPartOf": NamedNode<'http://schema.org/isPartOf'>;
-    /** Indicates a BioChemEntity that is (in some sense) a part of this BioChemEntity. */
-    "isPartOfBioChemEntity": NamedNode<'http://schema.org/isPartOfBioChemEntity'>;
     /** Indicates some accommodation that this floor plan describes. */
     "isPlanForApartment": NamedNode<'http://schema.org/isPlanForApartment'>;
     /** True if this item's name is a proprietary/brand name (vs. generic name). */
@@ -4571,12 +4718,12 @@ interface Schema {
     "isSimilarTo": NamedNode<'http://schema.org/isSimilarTo'>;
     /** This can be marked 'true' to indicate that some published [[DeliveryTimeSettings]] or [[ShippingRateSettings]] are intended to apply to all [[OfferShippingDetails]] published by the same merchant, when referenced by a [[shippingSettingsLink]] in those settings. It is not meaningful to use a 'true' value for this property alongside a transitTimeLabel (for [[DeliveryTimeSettings]]) or shippingLabel (for [[ShippingRateSettings]]), since this property is for use with unlabelled settings. */
     "isUnlabelledFallback": NamedNode<'http://schema.org/isUnlabelledFallback'>;
-    /** Indicates the kind of product that this is a variant of. In the case of [[ProductModel]], this is a pointer (from a ProductModel) to a base product from which this product is a variant. It is safe to infer that the variant inherits all product features from the base model, unless defined locally. This is not transitive. In the case of a [[ProductGroup]], the group description also serves as a template, representing a set of Products that vary on explicitly defined, specific dimensions only (so it defines both a set of variants, as well as which values distinguish amongst those variants). When used with [[ProductGroup]], this property can apply to any [[Product]] included in the group. */
-    "isVariantOf": NamedNode<'http://schema.org/isVariantOf'>;
     /** The ISBN of the book. */
     "isbn": NamedNode<'http://schema.org/isbn'>;
     /** The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place. */
     "isicV4": NamedNode<'http://schema.org/isicV4'>;
+    /** An organization identifier as defined in ISO 6523(-1). Note that many existing organization identifiers such as [leiCode](http://schema.org/leiCode), [duns](http://schema.org/duns) and [vatID](http://schema.org/vatID) can be expressed as an ISO 6523 identifier by setting the ICD part of the ISO 6523 identifier accordingly. */
+    "iso6523Code": NamedNode<'http://schema.org/iso6523Code'>;
     /** The International Standard Recording Code for the recording. */
     "isrcCode": NamedNode<'http://schema.org/isrcCode'>;
     /** The International Standard Serial Number (ISSN) that identifies this serial publication. You can repeat this property to identify different formats of, or the linking ISSN (ISSN-L) for, this serial publication. */
@@ -4585,11 +4732,11 @@ interface Schema {
     "issueNumber": NamedNode<'http://schema.org/issueNumber'>;
     /** The organization issuing the ticket or permit. */
     "issuedBy": NamedNode<'http://schema.org/issuedBy'>;
-    /** The service through with the permit was granted. */
+    /** The service through which the permit was granted. */
     "issuedThrough": NamedNode<'http://schema.org/issuedThrough'>;
     /** The International Standard Musical Work Code for the composition. */
     "iswcCode": NamedNode<'http://schema.org/iswcCode'>;
-    /** An entity represented by an entry in a list or data feed (e.g. an 'artist' in a list of 'artists')’. */
+    /** An entity represented by an entry in a list or data feed (e.g. an 'artist' in a list of 'artists'). */
     "item": NamedNode<'http://schema.org/item'>;
     /** A predefined value from OfferItemCondition specifying the condition of the product or service, or the products or services included in the offer. Also used for product return policies to specify the condition of products accepted for returns. */
     "itemCondition": NamedNode<'http://schema.org/itemCondition'>;
@@ -4607,6 +4754,11 @@ interface Schema {
     "itemLocation": NamedNode<'http://schema.org/itemLocation'>;
     /** An item being offered (or demanded). The transactional nature of the offer or demand is documented using [[businessFunction]], e.g. sell, lease etc. While several common expected types are listed explicitly in this definition, others can be used. Using a second type, such as Product or a subtype of Product, can clarify the nature of the offer. */
     "itemOffered": NamedNode<'http://schema.org/itemOffered'>;
+    /**
+     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     *       
+     */
+    "offers": NamedNode<'http://schema.org/offers'>;
     /** The item that is being reviewed/rated. */
     "itemReviewed": NamedNode<'http://schema.org/itemReviewed'>;
     /** Item(s) being shipped. */
@@ -4615,13 +4767,11 @@ interface Schema {
     "itinerary": NamedNode<'http://schema.org/itinerary'>;
     /** Systematic method of naming chemical compounds as recommended by the International Union of Pure and Applied Chemistry (IUPAC). */
     "iupacName": NamedNode<'http://schema.org/iupacName'>;
-    /** Description of benefits associated with the job. */
-    "jobBenefits": NamedNode<'http://schema.org/jobBenefits'>;
     /** An indicator as to whether a position is available for an immediate start. */
     "jobImmediateStart": NamedNode<'http://schema.org/jobImmediateStart'>;
     /** A (typically single) geographic location associated with the job position. */
     "jobLocation": NamedNode<'http://schema.org/jobLocation'>;
-    /** A description of the job location (e.g TELECOMMUTE for telecommute jobs). */
+    /** A description of the job location (e.g. TELECOMMUTE for telecommute jobs). */
     "jobLocationType": NamedNode<'http://schema.org/jobLocationType'>;
     /** The date on which a successful applicant for this job would be expected to start work. Choose a specific date in the future or use the jobImmediateStart property to indicate the position is to be filled as soon as possible. */
     "jobStartDate": NamedNode<'http://schema.org/jobStartDate'>;
@@ -4629,7 +4779,7 @@ interface Schema {
     "jobTitle": NamedNode<'http://schema.org/jobTitle'>;
     /** Indicates a legal jurisdiction, e.g. of some legislation, or where some government service is based. */
     "jurisdiction": NamedNode<'http://schema.org/jurisdiction'>;
-    /** Keywords or tags used to describe this content. Multiple entries in a keywords list are typically delimited by commas. */
+    /** Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property. */
     "keywords": NamedNode<'http://schema.org/keywords'>;
     /** A textual description of known damages, both repaired and unrepaired. */
     "knownVehicleDamages": NamedNode<'http://schema.org/knownVehicleDamages'>;
@@ -4667,7 +4817,7 @@ interface Schema {
     "legislationConsolidates": NamedNode<'http://schema.org/legislationConsolidates'>;
     /** The date of adoption or signature of the legislation. This is the date at which the text is officially aknowledged to be a legislation, even though it might not even be published or in force. */
     "legislationDate": NamedNode<'http://schema.org/legislationDate'>;
-    /** The point-in-time at which the provided description of the legislation is valid (e.g. : when looking at the law on the 2016-04-07 (= dateVersion), I get the consolidation of 2015-04-12 of the "National Insurance Contributions Act 2015") */
+    /** The point-in-time at which the provided description of the legislation is valid (e.g.: when looking at the law on the 2016-04-07 (= dateVersion), I get the consolidation of 2015-04-12 of the "National Insurance Contributions Act 2015") */
     "legislationDateVersion": NamedNode<'http://schema.org/legislationDateVersion'>;
     /** An identifier for the legislation. This can be either a string-based identifier, like the CELEX at EU level or the NOR in France, or a web-based, URL/URI identifier, like an ELI (European Legislation Identifier) or an URN-Lex. */
     "legislationIdentifier": NamedNode<'http://schema.org/legislationIdentifier'>;
@@ -4677,7 +4827,7 @@ interface Schema {
     "legislationLegalForce": NamedNode<'http://schema.org/legislationLegalForce'>;
     /** The legal value of this legislation file. The same legislation can be written in multiple files with different legal values. Typically a digitally signed PDF have a "stronger" legal value than the HTML file of the same act. */
     "legislationLegalValue": NamedNode<'http://schema.org/legislationLegalValue'>;
-    /** The person or organization that originally passed or made the law : typically parliament (for primary legislation) or government (for secondary legislation). This indicates the "legal author" of the law, as opposed to its physical author. */
+    /** The person or organization that originally passed or made the law: typically parliament (for primary legislation) or government (for secondary legislation). This indicates the "legal author" of the law, as opposed to its physical author. */
     "legislationPassedBy": NamedNode<'http://schema.org/legislationPassedBy'>;
     /** An individual or organization that has some kind of responsibility for the legislation. Typically the ministry who is/was in charge of elaborating the legislation, or the adressee for potential questions about the legislation once it is published. */
     "legislationResponsible": NamedNode<'http://schema.org/legislationResponsible'>;
@@ -4715,8 +4865,6 @@ interface Schema {
     "loanTerm": NamedNode<'http://schema.org/loanTerm'>;
     /** The type of a loan or credit. */
     "loanType": NamedNode<'http://schema.org/loanType'>;
-    /** The location of, for example, where an event is happening, where an organization is located, or where an action takes place. */
-    "location": NamedNode<'http://schema.org/location'>;
     /** The location where the CreativeWork was created, which may not be the same as the location depicted in the CreativeWork. */
     "locationCreated": NamedNode<'http://schema.org/locationCreated'>;
     /** A full description of the lodging unit. */
@@ -4729,14 +4877,12 @@ interface Schema {
     "longitude": NamedNode<'http://schema.org/longitude'>;
     /** A sub property of participant. The loser of the action. */
     "loser": NamedNode<'http://schema.org/loser'>;
-    /** The lowest price of all offers available.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator. */
+    /** The lowest price of all offers available.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator. */
     "lowPrice": NamedNode<'http://schema.org/lowPrice'>;
     /** The person who wrote the words. */
     "lyricist": NamedNode<'http://schema.org/lyricist'>;
     /** The words in the song. */
     "lyrics": NamedNode<'http://schema.org/lyrics'>;
-    /** Indicates if this web page element is the main subject of the page. */
-    "mainContentOfPage": NamedNode<'http://schema.org/mainContentOfPage'>;
     /** Indicates the primary entity described in some page or other CreativeWork. */
     "mainEntity": NamedNode<'http://schema.org/mainEntity'>;
     /** Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details. */
@@ -4748,6 +4894,8 @@ interface Schema {
     "maintainer": NamedNode<'http://schema.org/maintainer'>;
     /** A pointer to products or services offered by the organization or person. */
     "makesOffer": NamedNode<'http://schema.org/makesOffer'>;
+    /** A pointer to the organization or person making the offer. */
+    "offeredBy": NamedNode<'http://schema.org/offeredBy'>;
     /** The manufacturer of the product. */
     "manufacturer": NamedNode<'http://schema.org/manufacturer'>;
     /** A URL to a map of the place. */
@@ -4760,8 +4908,6 @@ interface Schema {
     "marginOfError": NamedNode<'http://schema.org/marginOfError'>;
     /** For a [[NewsMediaOrganization]], a link to the masthead page or a page listing top editorial management. */
     "masthead": NamedNode<'http://schema.org/masthead'>;
-    /** A material that something is made from, e.g. leather, wool, cotton, paper. */
-    "material": NamedNode<'http://schema.org/material'>;
     /** The quantity of the materials being described or an expression of the physical space they occupy. */
     "materialExtent": NamedNode<'http://schema.org/materialExtent'>;
     /** A mathematical expression (e.g. 'x^2-3x=0') that may be solved for a specific variable, simplified, or transformed. This can take many formats, e.g. LaTeX, Ascii-Math, or math as you would write with a keyboard. */
@@ -4782,7 +4928,7 @@ interface Schema {
     "maximumVirtualAttendeeCapacity": NamedNode<'http://schema.org/maximumVirtualAttendeeCapacity'>;
     /** Description of the meals that will be provided or available for purchase. */
     "mealService": NamedNode<'http://schema.org/mealService'>;
-    /** The measuredProperty of an [[Observation]], either a schema.org property, a property from other RDF-compatible systems e.g. W3C RDF Data Cube, or schema.org extensions such as [GS1's](https://www.gs1.org/voc/?show=properties). */
+    /** The measuredProperty of an [[Observation]], either a schema.org property, a property from other RDF-compatible systems, e.g. W3C RDF Data Cube, or schema.org extensions such as [GS1's](https://www.gs1.org/voc/?show=properties). */
     "measuredProperty": NamedNode<'http://schema.org/measuredProperty'>;
     /** The measuredValue of an [[Observation]]. */
     "measuredValue": NamedNode<'http://schema.org/measuredValue'>;
@@ -4816,13 +4962,11 @@ interface Schema {
     "meetsEmissionStandard": NamedNode<'http://schema.org/meetsEmissionStandard'>;
     /** A member of an Organization or a ProgramMembership. Organizations can be members of organizations; ProgramMembership is typically for individuals. */
     "member": NamedNode<'http://schema.org/member'>;
-    /** An Organization (or ProgramMembership) to which this Person or Organization belongs. */
-    "memberOf": NamedNode<'http://schema.org/memberOf'>;
     /** A member of this organization. */
     "members": NamedNode<'http://schema.org/members'>;
     /** A unique identifier for the membership. */
     "membershipNumber": NamedNode<'http://schema.org/membershipNumber'>;
-    /** The number of membership points earned by the member. If necessary, the unitText can be used to express the units the points are issued in. (e.g. stars, miles, etc.) */
+    /** The number of membership points earned by the member. If necessary, the unitText can be used to express the units the points are issued in. (E.g. stars, miles, etc.) */
     "membershipPointsEarned": NamedNode<'http://schema.org/membershipPointsEarned'>;
     /** Minimum memory requirements. */
     "memoryRequirements": NamedNode<'http://schema.org/memoryRequirements'>;
@@ -4834,6 +4978,8 @@ interface Schema {
     "menuAddOn": NamedNode<'http://schema.org/menuAddOn'>;
     /** 'merchant' is an out-dated term for 'seller'. */
     "merchant": NamedNode<'http://schema.org/merchant'>;
+    /** An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider. */
+    "seller": NamedNode<'http://schema.org/seller'>;
     /** Specifies either a fixed return date or the number of days (from the delivery date) that a product can be returned. Used when the [[returnPolicyCategory]] property is specified as [[MerchantReturnFiniteReturnWindow]]. */
     "merchantReturnDays": NamedNode<'http://schema.org/merchantReturnDays'>;
     /** Specifies a Web page or service by URL, for product returns. */
@@ -4850,6 +4996,13 @@ interface Schema {
     "minimumPaymentDue": NamedNode<'http://schema.org/minimumPaymentDue'>;
     /** For a [[NewsMediaOrganization]], a statement on coverage priorities, including any public agenda or stance on issues. */
     "missionCoveragePrioritiesPolicy": NamedNode<'http://schema.org/missionCoveragePrioritiesPolicy'>;
+    /**
+     * The [[mobileUrl]] property is provided for specific situations in which data consumers need to determine whether one of several provided URLs is a dedicated 'mobile site'.
+     *
+     * To discourage over-use, and reflecting intial usecases, the property is expected only on [[Product]] and [[Offer]], rather than [[Thing]]. The general trend in web technology is towards [responsive design](https://en.wikipedia.org/wiki/Responsive_web_design) in which content can be flexibly adapted to a wide range of browsing environments. Pages and sites referenced with the long-established [[url]] property should ideally also be usable on a wide variety of devices, including mobile phones. In most cases, it would be pointless and counter productive to attempt to update all [[url]] markup to use [[mobileUrl]] for more mobile-oriented pages. The property is intended for the case when items (primarily [[Product]] and [[Offer]]) have extra URLs hosted on an additional "mobile site" alongside the main one. It should not be taken as an endorsement of this publication style.
+     *     
+     */
+    "mobileUrl": NamedNode<'http://schema.org/mobileUrl'>;
     /** The model of the product. Use with the URL of a ProductModel or a textual representation of the model identifier. The URL of the ProductModel can be from an external source. It is recommended to additionally provide strong product identifiers via the gtin8/gtin13/gtin14 and mpn properties. */
     "model": NamedNode<'http://schema.org/model'>;
     /** The release date of a vehicle model (often used to differentiate versions of the same make and model). */
@@ -4860,7 +5013,7 @@ interface Schema {
     "molecularFormula": NamedNode<'http://schema.org/molecularFormula'>;
     /** This is the molecular weight of the entity being described, not of the parent. Units should be included in the form '&lt;Number&gt; &lt;unit&gt;', for example '12 amu' or as '&lt;QuantitativeValue&gt;. */
     "molecularWeight": NamedNode<'http://schema.org/molecularWeight'>;
-    /** The monoisotopic mass is the sum of the masses of the atoms in a molecule using the unbound, ground-state, rest mass of the principal (most abundant) isotope for each element instead of the isotopic average mass. Please include the units the form '&lt;Number&gt; &lt;unit&gt;', for example '770.230488 g/mol' or as '&lt;QuantitativeValue&gt;. */
+    /** The monoisotopic mass is the sum of the masses of the atoms in a molecule using the unbound, ground-state, rest mass of the principal (most abundant) isotope for each element instead of the isotopic average mass. Please include the units in the form '&lt;Number&gt; &lt;unit&gt;', for example '770.230488 g/mol' or as '&lt;QuantitativeValue&gt;. */
     "monoisotopicMolecularWeight": NamedNode<'http://schema.org/monoisotopicMolecularWeight'>;
     /** The minimum payment is the lowest amount of money that one is required to pay on a credit card statement each month. */
     "monthlyMinimumRepaymentAmount": NamedNode<'http://schema.org/monthlyMinimumRepaymentAmount'>;
@@ -4880,7 +5033,7 @@ interface Schema {
     "musicCompositionForm": NamedNode<'http://schema.org/musicCompositionForm'>;
     /** A member of a music group&#x2014;for example, John, Paul, George, or Ringo. */
     "musicGroupMember": NamedNode<'http://schema.org/musicGroupMember'>;
-    /** Format of this release (the type of recording media used, ie. compact disc, digital media, LP, etc.). */
+    /** Format of this release (the type of recording media used, i.e. compact disc, digital media, LP, etc.). */
     "musicReleaseFormat": NamedNode<'http://schema.org/musicReleaseFormat'>;
     /** The key, mode, or scale this composition uses. */
     "musicalKey": NamedNode<'http://schema.org/musicalKey'>;
@@ -4890,11 +5043,20 @@ interface Schema {
     "name": NamedNode<'http://schema.org/name'>;
     /** A position played, performed or filled by a person or organization, as part of an organization. For example, an athlete in a SportsTeam might play in the position named 'Quarterback'. */
     "namedPosition": NamedNode<'http://schema.org/namedPosition'>;
+    /** A role played, performed or filled by a person or organization. For example, the team of creators for a comic book might fill the roles named 'inker', 'penciller', and 'letterer'; or an athlete in a SportsTeam might play in the position named 'Quarterback'. */
+    "roleName": NamedNode<'http://schema.org/roleName'>;
     /** Nationality of the person. */
     "nationality": NamedNode<'http://schema.org/nationality'>;
     /** The expected progression of the condition if it is not treated and allowed to progress naturally. */
     "naturalProgression": NamedNode<'http://schema.org/naturalProgression'>;
-    /** Indicates, in the context of a [[Review]] (e.g. framed as 'pro' vs 'con' considerations), negative considerations - either as unstructured text, or a list. */
+    /**
+     * Provides negative considerations regarding something, most typically in pro/con lists for reviews (alongside [[positiveNotes]]). For symmetry 
+     *
+     * In the case of a [[Review]], the property describes the [[itemReviewed]] from the perspective of the review; in the case of a [[Product]], the product itself is being described. Since product descriptions 
+     * tend to emphasise positive claims, it may be relatively unusual to find [[negativeNotes]] used in this way. Nevertheless for the sake of symmetry, [[negativeNotes]] can be used on [[Product]].
+     *
+     * The property values can be expressed either as unstructured text (repeated as necessary), or if ordered, as a list (in which case the most negative is at the beginning of the list).
+     */
     "negativeNotes": NamedNode<'http://schema.org/negativeNotes'>;
     /** The underlying innervation associated with the muscle. */
     "nerve": NamedNode<'http://schema.org/nerve'>;
@@ -4912,7 +5074,7 @@ interface Schema {
     "nonEqual": NamedNode<'http://schema.org/nonEqual'>;
     /** The generic name of this drug or supplement. */
     "nonProprietaryName": NamedNode<'http://schema.org/nonProprietaryName'>;
-    /** nonprofit Status indicates the legal status of a non-profit organization in its primary place of business. */
+    /** nonprofitStatus indicates the legal status of a non-profit organization in its primary place of business. */
     "nonprofitStatus": NamedNode<'http://schema.org/nonprofitStatus'>;
     /** Range of acceptable values for a typical patient, when applicable. */
     "normalRange": NamedNode<'http://schema.org/normalRange'>;
@@ -4934,7 +5096,7 @@ interface Schema {
     "numberOfAvailableAccommodationUnits": NamedNode<'http://schema.org/numberOfAvailableAccommodationUnits'>;
     /** The number of axles.\n\nTypical unit code(s): C62 */
     "numberOfAxles": NamedNode<'http://schema.org/numberOfAxles'>;
-    /** The total integer number of bathrooms in a some [[Accommodation]], following real estate conventions as [documented in RESO](https://ddwiki.reso.org/display/DDW17/BathroomsTotalInteger+Field): "The simple sum of the number of bathrooms. For example for a property with two Full Bathrooms and one Half Bathroom, the Bathrooms Total Integer will be 3.". See also [[numberOfRooms]]. */
+    /** The total integer number of bathrooms in some [[Accommodation]], following real estate conventions as [documented in RESO](https://ddwiki.reso.org/display/DDW17/BathroomsTotalInteger+Field): "The simple sum of the number of bathrooms. For example for a property with two Full Bathrooms and one Half Bathroom, the Bathrooms Total Integer will be 3.". See also [[numberOfRooms]]. */
     "numberOfBathroomsTotal": NamedNode<'http://schema.org/numberOfBathroomsTotal'>;
     /** The total integer number of bedrooms in a some [[Accommodation]], [[ApartmentComplex]] or [[FloorPlan]]. */
     "numberOfBedrooms": NamedNode<'http://schema.org/numberOfBedrooms'>;
@@ -4944,7 +5106,7 @@ interface Schema {
     "numberOfCredits": NamedNode<'http://schema.org/numberOfCredits'>;
     /** The number of doors.\n\nTypical unit code(s): C62 */
     "numberOfDoors": NamedNode<'http://schema.org/numberOfDoors'>;
-    /** The number of employees in an organization e.g. business. */
+    /** The number of employees in an organization, e.g. business. */
     "numberOfEmployees": NamedNode<'http://schema.org/numberOfEmployees'>;
     /** The number of episodes in this season or series. */
     "numberOfEpisodes": NamedNode<'http://schema.org/numberOfEpisodes'>;
@@ -4975,8 +5137,6 @@ interface Schema {
     "numberedPosition": NamedNode<'http://schema.org/numberedPosition'>;
     /** Nutrition information about the recipe or menu item. */
     "nutrition": NamedNode<'http://schema.org/nutrition'>;
-    /** The object upon which the action is carried out, whose state is kept intact or changed. Also known as the semantic roles patient, affected or undergoer (which change their state) or theme (which doesn't). e.g. John read *a book*. */
-    "object": NamedNode<'http://schema.org/object'>;
     /** The observationDate of an [[Observation]]. */
     "observationDate": NamedNode<'http://schema.org/observationDate'>;
     /** The observedNode of an [[Observation]], often a [[StatisticalPopulation]]. */
@@ -4997,13 +5157,6 @@ interface Schema {
     "occupationalCredentialAwarded": NamedNode<'http://schema.org/occupationalCredentialAwarded'>;
     /** The number of offers for the product. */
     "offerCount": NamedNode<'http://schema.org/offerCount'>;
-    /** A pointer to the organization or person making the offer. */
-    "offeredBy": NamedNode<'http://schema.org/offeredBy'>;
-    /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
-     *       
-     */
-    "offers": NamedNode<'http://schema.org/offers'>;
     /** Whether prescriptions can be delivered by mail. */
     "offersPrescriptionByMail": NamedNode<'http://schema.org/offersPrescriptionByMail'>;
     /** The general opening hours for a business. Opening hours can be specified as a weekly time range, starting with days, then times per day. Multiple days can be listed with commas ',' separating each day. Day or time ranges are specified using a hyphen '-'.\n\n* Days are specified using the following two-letter combinations: ```Mo```, ```Tu```, ```We```, ```Th```, ```Fr```, ```Sa```, ```Su```.\n* Times are specified using 24:00 format. For example, 3pm is specified as ```15:00```, 10am as ```10:00```. \n* Here is an example: <code>&lt;time itemprop="openingHours" datetime=&quot;Tu,Th 16:00-20:00&quot;&gt;Tuesdays and Thursdays 4-8pm&lt;/time&gt;</code>.\n* If a business is open 7 days a week, then it can be specified as <code>&lt;time itemprop=&quot;openingHours&quot; datetime=&quot;Mo-Su&quot;&gt;Monday through Sunday, all day&lt;/time&gt;</code>. */
@@ -5012,7 +5165,7 @@ interface Schema {
     "openingHoursSpecification": NamedNode<'http://schema.org/openingHoursSpecification'>;
     /** The opening hour of the place or service on the given day(s) of the week. */
     "opens": NamedNode<'http://schema.org/opens'>;
-    /** Operating systems supported (Windows 7, OSX 10.6, Android 1.6). */
+    /** Operating systems supported (Windows 7, OS X 10.6, Android 1.6). */
     "operatingSystem": NamedNode<'http://schema.org/operatingSystem'>;
     /** A sub property of participant. The opponent on this action. */
     "opponent": NamedNode<'http://schema.org/opponent'>;
@@ -5064,12 +5217,10 @@ interface Schema {
     "parent": NamedNode<'http://schema.org/parent'>;
     /** The parent of a question, answer or item in general. */
     "parentItem": NamedNode<'http://schema.org/parentItem'>;
-    /** The larger organization that this organization is a [[subOrganization]] of, if any. */
-    "parentOrganization": NamedNode<'http://schema.org/parentOrganization'>;
+    /** A relationship between two organizations where the first includes the second, e.g., as a subsidiary. See also: the more specific 'department' property. */
+    "subOrganization": NamedNode<'http://schema.org/subOrganization'>;
     /** A broadcast service to which the broadcast service may belong to such as regional variations of a national channel. */
     "parentService": NamedNode<'http://schema.org/parentService'>;
-    /** Closest parent taxon of the taxon in question. */
-    "parentTaxon": NamedNode<'http://schema.org/parentTaxon'>;
     /** A parents of the person. */
     "parents": NamedNode<'http://schema.org/parents'>;
     /** The episode to which this clip belongs. */
@@ -5088,8 +5239,8 @@ interface Schema {
     "partOfTVSeries": NamedNode<'http://schema.org/partOfTVSeries'>;
     /** Identifies that this [[Trip]] is a subTrip of another Trip.  For example Day 1, Day 2, etc. of a multi-day trip. */
     "partOfTrip": NamedNode<'http://schema.org/partOfTrip'>;
-    /** Other co-agents that participated in the action indirectly. e.g. John wrote a book with *Steve*. */
-    "participant": NamedNode<'http://schema.org/participant'>;
+    /** Identifies a [[Trip]] that is a subTrip of this Trip.  For example Day 1, Day 2, etc. of a multi-day trip. */
+    "subTrip": NamedNode<'http://schema.org/subTrip'>;
     /** Number of people the reservation should accommodate. */
     "partySize": NamedNode<'http://schema.org/partySize'>;
     /** The priority status assigned to a passenger for security or boarding (e.g. FastTrack or Priority). */
@@ -5126,8 +5277,6 @@ interface Schema {
     "percentile75": NamedNode<'http://schema.org/percentile75'>;
     /** The 90th percentile value. */
     "percentile90": NamedNode<'http://schema.org/percentile90'>;
-    /** The length of time it takes to perform instructions or a direction (not including time to prepare the supplies), in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601). */
-    "performTime": NamedNode<'http://schema.org/performTime'>;
     /** A performer at the event&#x2014;for example, a presenter, musician, musical group or actor. */
     "performer": NamedNode<'http://schema.org/performer'>;
     /** Event that this person is a performer or participant in. */
@@ -5156,7 +5305,7 @@ interface Schema {
     "physiologicalBenefits": NamedNode<'http://schema.org/physiologicalBenefits'>;
     /** Where a taxi will pick up a passenger or a rental car can be picked up. */
     "pickupLocation": NamedNode<'http://schema.org/pickupLocation'>;
-    /** When a taxi will pickup a passenger or a rental car can be picked up. */
+    /** When a taxi will pick up a passenger or a rental car can be picked up. */
     "pickupTime": NamedNode<'http://schema.org/pickupTime'>;
     /** Indicates whether this game is multi-player, co-op or single-player.  The game can be marked as multi-player, co-op and single-player at the same time. */
     "playMode": NamedNode<'http://schema.org/playMode'>;
@@ -5168,9 +5317,13 @@ interface Schema {
     "polygon": NamedNode<'http://schema.org/polygon'>;
     /** Indicates the populationType common to all members of a [[StatisticalPopulation]]. */
     "populationType": NamedNode<'http://schema.org/populationType'>;
-    /** The position of an item in a series or sequence of items. */
-    "position": NamedNode<'http://schema.org/position'>;
-    /** Indicates, in the context of a [[Review]] (e.g. framed as 'pro' vs 'con' considerations), positive considerations - either as unstructured text, or a list. */
+    /**
+     * Provides positive considerations regarding something, for example product highlights or (alongside [[negativeNotes]]) pro/con lists for reviews.
+     *
+     * In the case of a [[Review]], the property describes the [[itemReviewed]] from the perspective of the review; in the case of a [[Product]], the product itself is being described.
+     *
+     * The property values can be expressed either as unstructured text (repeated as necessary), or if ordered, as a list (in which case the most positive is at the beginning of the list).
+     */
     "positiveNotes": NamedNode<'http://schema.org/positiveNotes'>;
     /** A possible unexpected and unfavorable evolution of a medical condition. Complications may include worsening of the signs or symptoms of the disease, extension of the condition to other organ systems, etc. */
     "possibleComplication": NamedNode<'http://schema.org/possibleComplication'>;
@@ -5208,14 +5361,14 @@ interface Schema {
     "preparation": NamedNode<'http://schema.org/preparation'>;
     /** Link to prescribing information for the drug. */
     "prescribingInfo": NamedNode<'http://schema.org/prescribingInfo'>;
-    /** Indicates the status of drug prescription eg. local catalogs classifications or whether the drug is available by prescription or over-the-counter, etc. */
+    /** Indicates the status of drug prescription, e.g. local catalogs classifications or whether the drug is available by prescription or over-the-counter, etc. */
     "prescriptionStatus": NamedNode<'http://schema.org/prescriptionStatus'>;
-    /** A link to the ListItem that preceeds the current one. */
+    /** A link to the ListItem that precedes the current one. */
     "previousItem": NamedNode<'http://schema.org/previousItem'>;
     /** Used in conjunction with eventStatus for rescheduled or cancelled events. This property contains the previously scheduled start date. For rescheduled events, the startDate property should be used for the newly scheduled start date. In the (rare) case of an event that has been postponed and rescheduled multiple times, this field may be repeated. */
     "previousStartDate": NamedNode<'http://schema.org/previousStartDate'>;
     /**
-     * The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.\n\nUsage guidelines:\n\n* Use the [[priceCurrency]] property (with standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR") instead of including [ambiguous symbols](http://en.wikipedia.org/wiki/Dollar_sign#Currencies_that_use_the_dollar_or_peso_sign) such as '$' in the value.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.\n* Note that both [RDFa](http://www.w3.org/TR/xhtml-rdfa-primer/#using-the-content-attribute) and Microdata syntax allow the use of a "content=" attribute for publishing simple machine-readable values alongside more human-friendly formatting.\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.
+     * The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.\n\nUsage guidelines:\n\n* Use the [[priceCurrency]] property (with standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217), e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies, e.g. "BTC"; well known names for [Local Exchange Trading Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types, e.g. "Ithaca HOUR") instead of including [ambiguous symbols](http://en.wikipedia.org/wiki/Dollar_sign#Currencies_that_use_the_dollar_or_peso_sign) such as '$' in the value.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.\n* Note that both [RDFa](http://www.w3.org/TR/xhtml-rdfa-primer/#using-the-content-attribute) and Microdata syntax allow the use of a "content=" attribute for publishing simple machine-readable values alongside more human-friendly formatting.\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similar Unicode symbols.
      *       
      */
     "price": NamedNode<'http://schema.org/price'>;
@@ -5223,7 +5376,7 @@ interface Schema {
     "priceComponent": NamedNode<'http://schema.org/priceComponent'>;
     /** Identifies a price component (for example, a line item on an invoice), part of the total price for an offer. */
     "priceComponentType": NamedNode<'http://schema.org/priceComponentType'>;
-    /** The currency of the price, or a price component when attached to [[PriceSpecification]] and its subtypes.\n\nUse standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR". */
+    /** The currency of the price, or a price component when attached to [[PriceSpecification]] and its subtypes.\n\nUse standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217), e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies, e.g. "BTC"; well known names for [Local Exchange Trading Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types, e.g. "Ithaca HOUR". */
     "priceCurrency": NamedNode<'http://schema.org/priceCurrency'>;
     /** The price range of the business, for example ```$$$```. */
     "priceRange": NamedNode<'http://schema.org/priceRange'>;
@@ -5253,17 +5406,19 @@ interface Schema {
     "processingTime": NamedNode<'http://schema.org/processingTime'>;
     /** Processor architecture required to run the application (e.g. IA64). */
     "processorRequirements": NamedNode<'http://schema.org/processorRequirements'>;
-    /** The person or organization who produced the work (e.g. music album, movie, tv/radio series etc.). */
+    /** The person or organization who produced the work (e.g. music album, movie, TV/radio series etc.). */
     "producer": NamedNode<'http://schema.org/producer'>;
     /** The tangible thing generated by the service, e.g. a passport, permit, etc. */
     "produces": NamedNode<'http://schema.org/produces'>;
+    /** The tangible thing generated by the service, e.g. a passport, permit, etc. */
+    "serviceOutput": NamedNode<'http://schema.org/serviceOutput'>;
     /** Indicates a textual identifier for a ProductGroup. */
     "productGroupID": NamedNode<'http://schema.org/productGroupID'>;
     /** The product identifier, such as ISBN. For example: ``` meta itemprop="productID" content="isbn:123-456-789" ```. */
     "productID": NamedNode<'http://schema.org/productID'>;
     /** The product or service this support contact point is related to (such as product support for a particular product line). This can be a specific product or product line (e.g. "iPhone") or a general category of products or services (e.g. "smartphones"). */
     "productSupported": NamedNode<'http://schema.org/productSupported'>;
-    /** The production company or studio responsible for the item e.g. series, video game, episode etc. */
+    /** The production company or studio responsible for the item, e.g. series, video game, episode etc. */
     "productionCompany": NamedNode<'http://schema.org/productionCompany'>;
     /** The date of production of the item, e.g. vehicle. */
     "productionDate": NamedNode<'http://schema.org/productionDate'>;
@@ -5275,7 +5430,7 @@ interface Schema {
     "programName": NamedNode<'http://schema.org/programName'>;
     /** Prerequisites for enrolling in the program. */
     "programPrerequisites": NamedNode<'http://schema.org/programPrerequisites'>;
-    /** The type of educational or occupational program. For example, classroom, internship, alternance, etc.. */
+    /** The type of educational or occupational program. For example, classroom, internship, alternance, etc. */
     "programType": NamedNode<'http://schema.org/programType'>;
     /** The computer programming language. */
     "programmingLanguage": NamedNode<'http://schema.org/programmingLanguage'>;
@@ -5283,7 +5438,7 @@ interface Schema {
     "programmingModel": NamedNode<'http://schema.org/programmingModel'>;
     /**
      * A commonly used identifier for the characteristic represented by the property, e.g. a manufacturer or a standard code for a property. propertyID can be
-     * (1) a prefixed string, mainly meant to be used with standards for product properties; (2) a site-specific, non-prefixed string (e.g. the primary key of the property or the vendor-specific id of the property), or (3)
+     * (1) a prefixed string, mainly meant to be used with standards for product properties; (2) a site-specific, non-prefixed string (e.g. the primary key of the property or the vendor-specific ID of the property), or (3)
      * a URL indicating the type of the property, either pointing to an external vocabulary, or a Web resource that describes the property (e.g. a glossary entry).
      * Standards bodies should promote a standard prefix for the identifiers of properties from their standards.
      */
@@ -5292,12 +5447,8 @@ interface Schema {
     "proprietaryName": NamedNode<'http://schema.org/proprietaryName'>;
     /** The number of grams of protein. */
     "proteinContent": NamedNode<'http://schema.org/proteinContent'>;
-    /** The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller. */
-    "provider": NamedNode<'http://schema.org/provider'>;
     /** Indicates the mobility of a provided service (e.g. 'static', 'dynamic'). */
     "providerMobility": NamedNode<'http://schema.org/providerMobility'>;
-    /** The BroadcastService offered on this channel. */
-    "providesBroadcastService": NamedNode<'http://schema.org/providesBroadcastService'>;
     /** The service provided by this channel. */
     "providesService": NamedNode<'http://schema.org/providesService'>;
     /** A flag to signal that the [[Place]] is open to public visitors.  If this property is omitted there is no assumed default boolean value */
@@ -5316,14 +5467,7 @@ interface Schema {
     "publisher": NamedNode<'http://schema.org/publisher'>;
     /** The publishing division which published the comic. */
     "publisherImprint": NamedNode<'http://schema.org/publisherImprint'>;
-    /**
-     * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
-     *
-     * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
-     *
-     */
-    "publishingPrinciples": NamedNode<'http://schema.org/publishingPrinciples'>;
-    /** The date the item e.g. vehicle was purchased by the current owner. */
+    /** The date the item, e.g. vehicle, was purchased by the current owner. */
     "purchaseDate": NamedNode<'http://schema.org/purchaseDate'>;
     /** Specific qualifications required for this role or Occupation. */
     "qualifications": NamedNode<'http://schema.org/qualifications'>;
@@ -5335,13 +5479,11 @@ interface Schema {
     "quest": NamedNode<'http://schema.org/quest'>;
     /** A sub property of object. A question. */
     "question": NamedNode<'http://schema.org/question'>;
-    /** Relates a property to a class that constitutes (one of) the expected type(s) for values of the property. */
-    "rangeIncludes": NamedNode<'http://schema.org/rangeIncludes'>;
     /** The count of total number of ratings. */
     "ratingCount": NamedNode<'http://schema.org/ratingCount'>;
     /** A short explanation (e.g. one to two sentences) providing background context and other information that led to the conclusion expressed in the rating. This is particularly applicable to ratings associated with "fact check" markup using [[ClaimReview]]. */
     "ratingExplanation": NamedNode<'http://schema.org/ratingExplanation'>;
-    /** The rating for the content.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator. */
+    /** The rating for the content.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator. */
     "ratingValue": NamedNode<'http://schema.org/ratingValue'>;
     /** A person who reads (performs) the audiobook. */
     "readBy": NamedNode<'http://schema.org/readBy'>;
@@ -5355,14 +5497,14 @@ interface Schema {
     "recipeCategory": NamedNode<'http://schema.org/recipeCategory'>;
     /** The cuisine of the recipe (for example, French or Ethiopian). */
     "recipeCuisine": NamedNode<'http://schema.org/recipeCuisine'>;
-    /** A single ingredient used in the recipe, e.g. sugar, flour or garlic. */
-    "recipeIngredient": NamedNode<'http://schema.org/recipeIngredient'>;
     /** A step in making the recipe, in the form of a single item (document, video, etc.) or an ordered list with HowToStep and/or HowToSection items. */
     "recipeInstructions": NamedNode<'http://schema.org/recipeInstructions'>;
+    /** A single step item (as HowToStep, text, document, video, etc.) or a HowToSection. */
+    "step": NamedNode<'http://schema.org/step'>;
     /** The quantity produced by the recipe (for example, number of people served, number of servings, etc). */
     "recipeYield": NamedNode<'http://schema.org/recipeYield'>;
-    /** A sub property of participant. The participant who is at the receiving end of the action. */
-    "recipient": NamedNode<'http://schema.org/recipient'>;
+    /** The quantity that results by performing instructions. For example, a paper airplane, 10 personalized candles. */
+    "yield": NamedNode<'http://schema.org/yield'>;
     /** An organization that acknowledges the validity, value or utility of a credential. Note: recognition may include a process of quality assurance or accreditation. */
     "recognizedBy": NamedNode<'http://schema.org/recognizedBy'>;
     /** If applicable, the organization that officially recognizes this entity as part of its endorsed system of medicine. */
@@ -5375,12 +5517,12 @@ interface Schema {
     "recordLabel": NamedNode<'http://schema.org/recordLabel'>;
     /** An audio recording of the work. */
     "recordedAs": NamedNode<'http://schema.org/recordedAs'>;
+    /** The composition this track is a recording of. */
+    "recordingOf": NamedNode<'http://schema.org/recordingOf'>;
     /** The Event where the CreativeWork was recorded. The CreativeWork may capture all or part of the event. */
     "recordedAt": NamedNode<'http://schema.org/recordedAt'>;
     /** The CreativeWork that captured all or part of this Event. */
     "recordedIn": NamedNode<'http://schema.org/recordedIn'>;
-    /** The composition this track is a recording of. */
-    "recordingOf": NamedNode<'http://schema.org/recordingOf'>;
     /** The only way you get the money back in the event of default is the security. Recourse is where you still have the opportunity to go back to the borrower for the rest of the money. */
     "recourseLoan": NamedNode<'http://schema.org/recourseLoan'>;
     /** The reference quantity for which a certain price applies, e.g. 1 EUR per 4 kWh of electricity. This property is a replacement for unitOfMeasurement for the advanced cases where the price does not relate to a standard unit. */
@@ -5411,8 +5553,6 @@ interface Schema {
     "releaseDate": NamedNode<'http://schema.org/releaseDate'>;
     /** Description of what changed in this version. */
     "releaseNotes": NamedNode<'http://schema.org/releaseNotes'>;
-    /** The album this is a release of. */
-    "releaseOf": NamedNode<'http://schema.org/releaseOf'>;
     /** The place and time the release was issued, expressed as a PublicationEvent. */
     "releasedEvent": NamedNode<'http://schema.org/releasedEvent'>;
     /** The Occupation for the JobPosting. */
@@ -5423,7 +5563,7 @@ interface Schema {
     "remainingAttendeeCapacity": NamedNode<'http://schema.org/remainingAttendeeCapacity'>;
     /** Whether the terms for payment of interest can be renegotiated during the life of the loan. */
     "renegotiableLoan": NamedNode<'http://schema.org/renegotiableLoan'>;
-    /** Defines the number of times a recurring [[Event]] will take place */
+    /** Defines the number of times a recurring [[Event]] will take place. */
     "repeatCount": NamedNode<'http://schema.org/repeatCount'>;
     /**
      * Defines the frequency at which [[Event]]s will occur according to a schedule [[Schedule]]. The intervals between
@@ -5452,11 +5592,13 @@ interface Schema {
     "requiredMinAge": NamedNode<'http://schema.org/requiredMinAge'>;
     /** The required quantity of the item(s). */
     "requiredQuantity": NamedNode<'http://schema.org/requiredQuantity'>;
-    /** Component dependency requirements for application. This includes runtime environments and shared libraries that are not included in the application distribution package, but required to run the application (Examples: DirectX, Java or .NET runtime). */
+    /** Component dependency requirements for application. This includes runtime environments and shared libraries that are not included in the application distribution package, but required to run the application (examples: DirectX, Java or .NET runtime). */
     "requirements": NamedNode<'http://schema.org/requirements'>;
+    /** Component dependency requirements for application. This includes runtime environments and shared libraries that are not included in the application distribution package, but required to run the application (examples: DirectX, Java or .NET runtime). */
+    "softwareRequirements": NamedNode<'http://schema.org/softwareRequirements'>;
     /** Indicates if use of the media require a subscription  (either paid or free). Allowed values are ```true``` or ```false``` (note that an earlier version had 'yes', 'no'). */
     "requiresSubscription": NamedNode<'http://schema.org/requiresSubscription'>;
-    /** The thing -- flight, event, restaurant,etc. being reserved. */
+    /** The thing -- flight, event, restaurant, etc. being reserved. */
     "reservationFor": NamedNode<'http://schema.org/reservationFor'>;
     /** A unique identifier for the reservation. */
     "reservationId": NamedNode<'http://schema.org/reservationId'>;
@@ -5470,13 +5612,13 @@ interface Schema {
     "restPeriods": NamedNode<'http://schema.org/restPeriods'>;
     /** Use [[MonetaryAmount]] to specify a fixed restocking fee for product returns, or use [[Number]] to specify a percentage of the product price paid by the customer. */
     "restockingFee": NamedNode<'http://schema.org/restockingFee'>;
-    /** The result produced in the action. e.g. John wrote *a book*. */
+    /** The result produced in the action. E.g. John wrote *a book*. */
     "result": NamedNode<'http://schema.org/result'>;
     /** A sub property of result. The Comment created or sent as a result of this action. */
     "resultComment": NamedNode<'http://schema.org/resultComment'>;
     /** A sub property of result. The review that resulted in the performing of the action. */
     "resultReview": NamedNode<'http://schema.org/resultReview'>;
-    /** The type of return fees for purchased products (for any return reason) */
+    /** The type of return fees for purchased products (for any return reason). */
     "returnFees": NamedNode<'http://schema.org/returnFees'>;
     /** The method (from an enumeration) by which the customer obtains a return shipping label for a product returned for any reason. */
     "returnLabelSource": NamedNode<'http://schema.org/returnLabelSource'>;
@@ -5484,7 +5626,7 @@ interface Schema {
     "returnMethod": NamedNode<'http://schema.org/returnMethod'>;
     /** Specifies an applicable return policy (from an enumeration). */
     "returnPolicyCategory": NamedNode<'http://schema.org/returnPolicyCategory'>;
-    /** The country where the product has to be sent to for returns, for example "Ireland" using the [[name]] property of [[Country]]. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1). Note that this can be different from the country where the product was originally shipped from or sent too. */
+    /** The country where the product has to be sent to for returns, for example "Ireland" using the [[name]] property of [[Country]]. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1). Note that this can be different from the country where the product was originally shipped from or sent to. */
     "returnPolicyCountry": NamedNode<'http://schema.org/returnPolicyCountry'>;
     /** Seasonal override of a return policy. */
     "returnPolicySeasonalOverride": NamedNode<'http://schema.org/returnPolicySeasonalOverride'>;
@@ -5508,28 +5650,24 @@ interface Schema {
     "riskFactor": NamedNode<'http://schema.org/riskFactor'>;
     /** Specific physiologic risks associated to the diet plan. */
     "risks": NamedNode<'http://schema.org/risks'>;
-    /** A role played, performed or filled by a person or organization. For example, the team of creators for a comic book might fill the roles named 'inker', 'penciller', and 'letterer'; or an athlete in a SportsTeam might play in the position named 'Quarterback'. */
-    "roleName": NamedNode<'http://schema.org/roleName'>;
     /** The permitted total weight of cargo and installations (e.g. a roof rack) on top of the vehicle.\n\nTypical unit code(s): KGM for kilogram, LBR for pound\n\n* Note 1: You can indicate additional information in the [[name]] of the [[QuantitativeValue]] node.\n* Note 2: You may also link to a [[QualitativeValue]] node that provides additional information using [[valueReference]]\n* Note 3: Note that you can use [[minValue]] and [[maxValue]] to indicate ranges. */
     "roofLoad": NamedNode<'http://schema.org/roofLoad'>;
     /** The response (yes, no, maybe) to the RSVP. */
     "rsvpResponse": NamedNode<'http://schema.org/rsvpResponse'>;
     /** The vasculature the lymphatic structure runs, or efferents, to. */
     "runsTo": NamedNode<'http://schema.org/runsTo'>;
-    /** Runtime platform or script interpreter dependencies (Example - Java v1, Python2.3, .Net Framework 3.0). */
+    /** Runtime platform or script interpreter dependencies (example: Java v1, Python 2.3, .NET Framework 3.0). */
     "runtime": NamedNode<'http://schema.org/runtime'>;
-    /** Runtime platform or script interpreter dependencies (Example - Java v1, Python2.3, .Net Framework 3.0). */
+    /** Runtime platform or script interpreter dependencies (example: Java v1, Python 2.3, .NET Framework 3.0). */
     "runtimePlatform": NamedNode<'http://schema.org/runtimePlatform'>;
     /** The RxCUI drug identifier from RXNORM. */
     "rxcui": NamedNode<'http://schema.org/rxcui'>;
     /** Any potential safety concern associated with the supplement. May include interactions with other drugs and foods, pregnancy, breastfeeding, known adverse reactions, and documented efficacy of the supplement. */
     "safetyConsideration": NamedNode<'http://schema.org/safetyConsideration'>;
-    /** The currency (coded using [ISO 4217](http://en.wikipedia.org/wiki/ISO_4217) ) used for the main salary information in this job posting or for this employee. */
+    /** The currency (coded using [ISO 4217](http://en.wikipedia.org/wiki/ISO_4217)) used for the main salary information in this job posting or for this employee. */
     "salaryCurrency": NamedNode<'http://schema.org/salaryCurrency'>;
     /** The expected salary upon completing the training. */
     "salaryUponCompletion": NamedNode<'http://schema.org/salaryUponCompletion'>;
-    /** URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website. */
-    "sameAs": NamedNode<'http://schema.org/sameAs'>;
     /** What type of code sample: full (compile ready) solution, code snippet, inline code, scripts, template. */
     "sampleType": NamedNode<'http://schema.org/sampleType'>;
     /** The number of grams of saturated fat. */
@@ -5584,8 +5722,6 @@ interface Schema {
     "securityScreening": NamedNode<'http://schema.org/securityScreening'>;
     /** A pointer to products or services sought by the organization or person (demand). */
     "seeks": NamedNode<'http://schema.org/seeks'>;
-    /** An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider. */
-    "seller": NamedNode<'http://schema.org/seller'>;
     /** A sub property of participant. The participant who is at the sending end of the action. */
     "sender": NamedNode<'http://schema.org/sender'>;
     /** A description of any sensory requirements and levels necessary to function on the job, including hearing and vision. Defined terms such as those in O*net may be used, but note that there is no way to specify the level of ability as well as its nature when using a defined term. */
@@ -5600,16 +5736,12 @@ interface Schema {
     "serverStatus": NamedNode<'http://schema.org/serverStatus'>;
     /** The cuisine of the restaurant. */
     "servesCuisine": NamedNode<'http://schema.org/servesCuisine'>;
-    /** The geographic area where the service is provided. */
-    "serviceArea": NamedNode<'http://schema.org/serviceArea'>;
     /** The audience eligible for this service. */
     "serviceAudience": NamedNode<'http://schema.org/serviceAudience'>;
     /** The location (e.g. civic structure, local business, etc.) where a person can go to access the service. */
     "serviceLocation": NamedNode<'http://schema.org/serviceLocation'>;
     /** The operating organization, if different from the provider.  This enables the representation of services that are provided by an organization, but operated by another organization like a subcontractor. */
     "serviceOperator": NamedNode<'http://schema.org/serviceOperator'>;
-    /** The tangible thing generated by the service, e.g. a passport, permit, etc. */
-    "serviceOutput": NamedNode<'http://schema.org/serviceOutput'>;
     /** The phone number to use to access the service. */
     "servicePhone": NamedNode<'http://schema.org/servicePhone'>;
     /** The address for accessing the service by mail. */
@@ -5626,12 +5758,14 @@ interface Schema {
     "sha256": NamedNode<'http://schema.org/sha256'>;
     /** A CreativeWork such as an image, video, or audio clip shared as part of this posting. */
     "sharedContent": NamedNode<'http://schema.org/sharedContent'>;
-    /** indicates (possibly multiple) shipping destinations. These can be defined in several ways e.g. postalCode ranges. */
+    /** indicates (possibly multiple) shipping destinations. These can be defined in several ways, e.g. postalCode ranges. */
     "shippingDestination": NamedNode<'http://schema.org/shippingDestination'>;
     /** Indicates information about the shipping policies and options associated with an [[Offer]]. */
     "shippingDetails": NamedNode<'http://schema.org/shippingDetails'>;
     /** Label to match an [[OfferShippingDetails]] with a [[ShippingRateSettings]] (within the context of a [[shippingSettingsLink]] cross-reference). */
     "shippingLabel": NamedNode<'http://schema.org/shippingLabel'>;
+    /** Indicates the origin of a shipment, i.e. where it should be coming from. */
+    "shippingOrigin": NamedNode<'http://schema.org/shippingOrigin'>;
     /** The shipping rate is the cost of shipping to the specified destination. Typically, the maxValue and currency values (of the [[MonetaryAmount]]) are most appropriate. */
     "shippingRate": NamedNode<'http://schema.org/shippingRate'>;
     /** Link to a page containing [[ShippingRateSettings]] and [[DeliveryTimeSettings]] details. */
@@ -5672,8 +5806,6 @@ interface Schema {
     "softwareAddOn": NamedNode<'http://schema.org/softwareAddOn'>;
     /** Software application help. */
     "softwareHelp": NamedNode<'http://schema.org/softwareHelp'>;
-    /** Component dependency requirements for application. This includes runtime environments and shared libraries that are not included in the application distribution package, but required to run the application (Examples: DirectX, Java or .NET runtime). */
-    "softwareRequirements": NamedNode<'http://schema.org/softwareRequirements'>;
     /** Version of the software instance. */
     "softwareVersion": NamedNode<'http://schema.org/softwareVersion'>;
     /** The Organization on whose behalf the creator was working. */
@@ -5686,19 +5818,13 @@ interface Schema {
      */
     "spatial": NamedNode<'http://schema.org/spatial'>;
     /**
-     * The spatialCoverage of a CreativeWork indicates the place(s) which are the focus of the content. It is a subproperty of
-     *       contentLocation intended primarily for more technical and detailed materials. For example with a Dataset, it indicates
-     *       areas that the dataset describes: a dataset of New York weather would have spatialCoverage which was the place: the state of New York.
-     */
-    "spatialCoverage": NamedNode<'http://schema.org/spatialCoverage'>;
-    /**
      * Indicates sections of a Web page that are particularly 'speakable' in the sense of being highlighted as being especially appropriate for text-to-speech conversion. Other sections of a page may also be usefully spoken in particular circumstances; the 'speakable' property serves to indicate the parts most likely to be generally useful for speech.
      *
      * The *speakable* property can be repeated an arbitrary number of times, with three kinds of possible 'content-locator' values:
      *
      * 1.) *id-value* URL references - uses *id-value* of an element in the page being annotated. The simplest use of *speakable* has (potentially relative) URL values, referencing identified sections of the document concerned.
      *
-     * 2.) CSS Selectors - addresses content in the annotated page, eg. via class attribute. Use the [[cssSelector]] property.
+     * 2.) CSS Selectors - addresses content in the annotated page, e.g. via class attribute. Use the [[cssSelector]] property.
      *
      * 3.)  XPaths - addresses content via XPaths (assuming an XML view of the content). Use the [[xpath]] property.
      *
@@ -5719,12 +5845,10 @@ interface Schema {
     "specialty": NamedNode<'http://schema.org/specialty'>;
     /** Form of markup used. eg. [SSML](https://www.w3.org/TR/speech-synthesis11) or [IPA](https://www.wikidata.org/wiki/Property:P898). */
     "speechToTextMarkup": NamedNode<'http://schema.org/speechToTextMarkup'>;
-    /** The speed range of the vehicle. If the vehicle is powered by an engine, the upper limit of the speed range (indicated by [[maxValue]] should be the maximum speed achievable under regular conditions.\n\nTypical unit code(s): KMH for km/h, HM for mile per hour (0.447 04 m/s), KNT for knot\n\n*Note 1: Use [[minValue]] and [[maxValue]] to indicate the range. Typically, the minimal value is zero.\n* Note 2: There are many different ways of measuring the speed range. You can link to information about how the given value has been determined using the [[valueReference]] property. */
+    /** The speed range of the vehicle. If the vehicle is powered by an engine, the upper limit of the speed range (indicated by [[maxValue]]) should be the maximum speed achievable under regular conditions.\n\nTypical unit code(s): KMH for km/h, HM for mile per hour (0.447 04 m/s), KNT for knot\n\n*Note 1: Use [[minValue]] and [[maxValue]] to indicate the range. Typically, the minimal value is zero.\n* Note 2: There are many different ways of measuring the speed range. You can link to information about how the given value has been determined using the [[valueReference]] property. */
     "speed": NamedNode<'http://schema.org/speed'>;
     /** The (e.g. fictional) character, Person or Organization to whom the quotation is attributed within the containing CreativeWork. */
     "spokenByCharacter": NamedNode<'http://schema.org/spokenByCharacter'>;
-    /** A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event. */
-    "sponsor": NamedNode<'http://schema.org/sponsor'>;
     /** A type of sport (e.g. Baseball). */
     "sport": NamedNode<'http://schema.org/sport'>;
     /** A sub property of location. The sports activity location where this action occurred. */
@@ -5745,14 +5869,12 @@ interface Schema {
     "startDate": NamedNode<'http://schema.org/startDate'>;
     /** The start time of the clip expressed as the number of seconds from the beginning of the work. */
     "startOffset": NamedNode<'http://schema.org/startOffset'>;
-    /** The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.\n\nNote that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions. */
+    /** The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. E.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.\n\nNote that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions. */
     "startTime": NamedNode<'http://schema.org/startTime'>;
     /** The status of the study (enumerated). */
     "status": NamedNode<'http://schema.org/status'>;
     /** The position of the steering wheel or similar device (mostly for cars). */
     "steeringPosition": NamedNode<'http://schema.org/steeringPosition'>;
-    /** A single step item (as HowToStep, text, document, video, etc.) or a HowToSection. */
-    "step": NamedNode<'http://schema.org/step'>;
     /** The stepValue attribute indicates the granularity that is expected (and required) of the value in a PropertyValueSpecification. */
     "stepValue": NamedNode<'http://schema.org/stepValue'>;
     /** A single step item (as HowToStep, text, document, video, etc.) or a HowToSection (originally misnamed 'steps'; 'step' is preferred). */
@@ -5777,10 +5899,10 @@ interface Schema {
     "studySubject": NamedNode<'http://schema.org/studySubject'>;
     /** An Event that is part of this event. For example, a conference event includes many presentations, each of which is a subEvent of the conference. */
     "subEvent": NamedNode<'http://schema.org/subEvent'>;
+    /** An event that this event is a part of. For example, a collection of individual music performances might each have a music festival as their superEvent. */
+    "superEvent": NamedNode<'http://schema.org/superEvent'>;
     /** Events that are a part of this event. For example, a conference event includes many presentations, each subEvents of the conference. */
     "subEvents": NamedNode<'http://schema.org/subEvents'>;
-    /** A relationship between two organizations where the first includes the second, e.g., as a subsidiary. See also: the more specific 'department' property. */
-    "subOrganization": NamedNode<'http://schema.org/subOrganization'>;
     /** The individual reservations included in the package. Typically a repeated property. */
     "subReservation": NamedNode<'http://schema.org/subReservation'>;
     /** The substage, e.g. 'a' for Stage IIIa. */
@@ -5789,10 +5911,6 @@ interface Schema {
     "subStructure": NamedNode<'http://schema.org/subStructure'>;
     /** A component test of the panel. */
     "subTest": NamedNode<'http://schema.org/subTest'>;
-    /** Identifies a [[Trip]] that is a subTrip of this Trip.  For example Day 1, Day 2, etc. of a multi-day trip. */
-    "subTrip": NamedNode<'http://schema.org/subTrip'>;
-    /** A CreativeWork or Event about this Thing. */
-    "subjectOf": NamedNode<'http://schema.org/subjectOf'>;
     /** Languages in which subtitles/captions are available, in [IETF BCP 47 standard format](http://tools.ietf.org/html/bcp47). */
     "subtitleLanguage": NamedNode<'http://schema.org/subtitleLanguage'>;
     /** A pointer from a newer variant of a product  to its previous, often discontinued predecessor. */
@@ -5801,8 +5919,6 @@ interface Schema {
     "sugarContent": NamedNode<'http://schema.org/sugarContent'>;
     /** The age or age range for the intended audience or person, for example 3-12 months for infants, 1-5 years for toddlers. */
     "suggestedAge": NamedNode<'http://schema.org/suggestedAge'>;
-    /** An answer (possibly one of several, possibly incorrect) to a Question, e.g. on a Question/Answer site. */
-    "suggestedAnswer": NamedNode<'http://schema.org/suggestedAnswer'>;
     /** The suggested gender of the intended person or audience, for example "male", "female", or "unisex". */
     "suggestedGender": NamedNode<'http://schema.org/suggestedGender'>;
     /** Maximum recommended age in years for the audience or user. */
@@ -5813,22 +5929,14 @@ interface Schema {
     "suggestedMinAge": NamedNode<'http://schema.org/suggestedMinAge'>;
     /** Indicates a dietary restriction or guideline for which this recipe or menu item is suitable, e.g. diabetic, halal etc. */
     "suitableForDiet": NamedNode<'http://schema.org/suitableForDiet'>;
-    /** An event that this event is a part of. For example, a collection of individual music performances might each have a music festival as their superEvent. */
-    "superEvent": NamedNode<'http://schema.org/superEvent'>;
-    /** Relates a term (i.e. a property, class or enumeration) to one that supersedes it. */
-    "supersededBy": NamedNode<'http://schema.org/supersededBy'>;
-    /** A sub-property of instrument. A supply consumed when performing instructions or a direction. */
-    "supply": NamedNode<'http://schema.org/supply'>;
     /** The area to which the artery supplies blood. */
     "supplyTo": NamedNode<'http://schema.org/supplyTo'>;
     /** Supporting data for a SoftwareApplication. */
     "supportingData": NamedNode<'http://schema.org/supportingData'>;
     /** A material used as a surface in some artwork, e.g. Canvas, Paper, Wood, Board, etc. */
     "surface": NamedNode<'http://schema.org/surface'>;
-    /** Indicates a target EntryPoint for an Action. */
+    /** Indicates a target EntryPoint, or url, for an Action. */
     "target": NamedNode<'http://schema.org/target'>;
-    /** A sub property of object. The collection target of the action. */
-    "targetCollection": NamedNode<'http://schema.org/targetCollection'>;
     /** The description of a node in an established educational framework. */
     "targetDescription": NamedNode<'http://schema.org/targetDescription'>;
     /** The name of a node in an established educational framework. */
@@ -5843,9 +5951,9 @@ interface Schema {
     "targetUrl": NamedNode<'http://schema.org/targetUrl'>;
     /** The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain. */
     "taxID": NamedNode<'http://schema.org/taxID'>;
-    /** The taxonomic rank of this taxon given preferably as a URI from a controlled vocabulary – (typically the ranks from TDWG TaxonRank ontology or equivalent Wikidata URIs). */
+    /** The taxonomic rank of this taxon given preferably as a URI from a controlled vocabulary – typically the ranks from TDWG TaxonRank ontology or equivalent Wikidata URIs. */
     "taxonRank": NamedNode<'http://schema.org/taxonRank'>;
-    /** The taxonomic grouping of the organism that expresses, encodes, or in someway related to the BioChemEntity. */
+    /** The taxonomic grouping of the organism that expresses, encodes, or in some way related to the BioChemEntity. */
     "taxonomicRange": NamedNode<'http://schema.org/taxonomicRange'>;
     /** The item being described is intended to help a person learn the competency or learning outcome defined by the referenced term. */
     "teaches": NamedNode<'http://schema.org/teaches'>;
@@ -5856,16 +5964,6 @@ interface Schema {
      * (e.g. [[temporalCoverage]], [[dateCreated]], [[dateModified]], [[datePublished]]) are not known to be appropriate.
      */
     "temporal": NamedNode<'http://schema.org/temporal'>;
-    /**
-     * The temporalCoverage of a CreativeWork indicates the period that the content applies to, i.e. that it describes, either as a DateTime or as a textual string indicating a time period in [ISO 8601 time interval format](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals). In
-     *       the case of a Dataset it will typically indicate the relevant time period in a precise notation (e.g. for a 2011 census dataset, the year 2011 would be written "2011/2012"). Other forms of content e.g. ScholarlyArticle, Book, TVSeries or TVEpisode may indicate their temporalCoverage in broader terms - textually or via well-known URL.
-     *       Written works such as books may sometimes have precise temporal coverage too, e.g. a work set in 1939 - 1945 can be indicated in ISO 8601 interval format format via "1939/1945".
-     *
-     * Open-ended date ranges can be written with ".." in place of the end date. For example, "2015-11/.." indicates a range beginning in November 2015 and with no specified final date. This is tentative and might be updated in future when ISO 8601 is officially updated.
-     */
-    "temporalCoverage": NamedNode<'http://schema.org/temporalCoverage'>;
-    /** A code that identifies this [[DefinedTerm]] within a [[DefinedTermSet]] */
-    "termCode": NamedNode<'http://schema.org/termCode'>;
     /** The amount of time in a term as defined by the institution. A term is a length of time where students take one or more classes. Semesters and quarters are common units for term. */
     "termDuration": NamedNode<'http://schema.org/termDuration'>;
     /** Human-readable terms of service documentation. */
@@ -5880,7 +5978,7 @@ interface Schema {
     "thumbnail": NamedNode<'http://schema.org/thumbnail'>;
     /** A thumbnail image relevant to the Thing. */
     "thumbnailUrl": NamedNode<'http://schema.org/thumbnailUrl'>;
-    /** The exchange traded instrument associated with a Corporation object. The tickerSymbol is expressed as an exchange and an instrument name separated by a space character. For the exchange component of the tickerSymbol attribute, we recommend using the controlled vocabulary of Market Identifier Codes (MIC) specified in ISO15022. */
+    /** The exchange traded instrument associated with a Corporation object. The tickerSymbol is expressed as an exchange and an instrument name separated by a space character. For the exchange component of the tickerSymbol attribute, we recommend using the controlled vocabulary of Market Identifier Codes (MIC) specified in ISO 15022. */
     "tickerSymbol": NamedNode<'http://schema.org/tickerSymbol'>;
     /** The unique identifier for the ticket. */
     "ticketNumber": NamedNode<'http://schema.org/ticketNumber'>;
@@ -5915,7 +6013,7 @@ interface Schema {
     "tocContinuation": NamedNode<'http://schema.org/tocContinuation'>;
     /** Indicates a [[HyperTocEntry]] in a [[HyperToc]]. */
     "tocEntry": NamedNode<'http://schema.org/tocEntry'>;
-    /** The permitted vertical load (TWR) of a trailer attached to the vehicle. Also referred to as Tongue Load Rating (TLR) or Vertical Load Rating (VLR)\n\nTypical unit code(s): KGM for kilogram, LBR for pound\n\n* Note 1: You can indicate additional information in the [[name]] of the [[QuantitativeValue]] node.\n* Note 2: You may also link to a [[QualitativeValue]] node that provides additional information using [[valueReference]].\n* Note 3: Note that you can use [[minValue]] and [[maxValue]] to indicate ranges. */
+    /** The permitted vertical load (TWR) of a trailer attached to the vehicle. Also referred to as Tongue Load Rating (TLR) or Vertical Load Rating (VLR).\n\nTypical unit code(s): KGM for kilogram, LBR for pound\n\n* Note 1: You can indicate additional information in the [[name]] of the [[QuantitativeValue]] node.\n* Note 2: You may also link to a [[QualitativeValue]] node that provides additional information using [[valueReference]].\n* Note 3: Note that you can use [[minValue]] and [[maxValue]] to indicate ranges. */
     "tongueWeight": NamedNode<'http://schema.org/tongueWeight'>;
     /** A sub property of instrument. An object used (but not consumed) when performing instructions or a direction. */
     "tool": NamedNode<'http://schema.org/tool'>;
@@ -5925,13 +6023,13 @@ interface Schema {
     "totalJobOpenings": NamedNode<'http://schema.org/totalJobOpenings'>;
     /** The total amount due. */
     "totalPaymentDue": NamedNode<'http://schema.org/totalPaymentDue'>;
-    /** The total price for the reservation or ticket, including applicable taxes, shipping, etc.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator. */
+    /** The total price for the reservation or ticket, including applicable taxes, shipping, etc.\n\nUsage guidelines:\n\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator. */
     "totalPrice": NamedNode<'http://schema.org/totalPrice'>;
     /** The total time required to perform instructions or a direction (including time to prepare the supplies), in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601). */
     "totalTime": NamedNode<'http://schema.org/totalTime'>;
     /** A page providing information on how to book a tour of some [[Place]], such as an [[Accommodation]] or [[ApartmentComplex]] in a real estate setting, as well as other kinds of tours as appropriate. */
     "tourBookingPage": NamedNode<'http://schema.org/tourBookingPage'>;
-    /** Attraction suitable for type(s) of tourist. eg. Children, visitors from a particular country, etc. */
+    /** Attraction suitable for type(s) of tourist. E.g. children, visitors from a particular country, etc. */
     "touristType": NamedNode<'http://schema.org/touristType'>;
     /** A music recording (track)&#x2014;usually a single song. If an ItemList is given, the list should contain items of type MusicRecording. */
     "track": NamedNode<'http://schema.org/track'>;
@@ -5941,7 +6039,7 @@ interface Schema {
     "trackingUrl": NamedNode<'http://schema.org/trackingUrl'>;
     /** A music recording (track)&#x2014;usually a single song. */
     "tracks": NamedNode<'http://schema.org/tracks'>;
-    /** The trailer of a movie or tv/radio series, season, episode, etc. */
+    /** The trailer of a movie or TV/radio series, season, episode, etc. */
     "trailer": NamedNode<'http://schema.org/trailer'>;
     /** The permitted weight of a trailer attached to the vehicle.\n\nTypical unit code(s): KGM for kilogram, LBR for pound\n* Note 1: You can indicate additional information in the [[name]] of the [[QuantitativeValue]] node.\n* Note 2: You may also link to a [[QualitativeValue]] node that provides additional information using [[valueReference]].\n* Note 3: Note that you can use [[minValue]] and [[maxValue]] to indicate ranges. */
     "trailerWeight": NamedNode<'http://schema.org/trailerWeight'>;
@@ -5959,8 +6057,10 @@ interface Schema {
     "transitTime": NamedNode<'http://schema.org/transitTime'>;
     /** Label to match an [[OfferShippingDetails]] with a [[DeliveryTimeSettings]] (within the context of a [[shippingSettingsLink]] cross-reference). */
     "transitTimeLabel": NamedNode<'http://schema.org/transitTimeLabel'>;
-    /** The work that this work has been translated from. e.g. 物种起源 is a translationOf “On the Origin of Species” */
+    /** The work that this work has been translated from. E.g. 物种起源 is a translationOf “On the Origin of Species”. */
     "translationOfWork": NamedNode<'http://schema.org/translationOfWork'>;
+    /** A work that is a translation of the content of this work. E.g. 西遊記 has an English workTranslation “Journey to the West”, a German workTranslation “Monkeys Pilgerfahrt” and a Vietnamese  translation Tây du ký bình khảo. */
+    "workTranslation": NamedNode<'http://schema.org/workTranslation'>;
     /** Organization or person who adapts a creative work to different languages, regional differences and technical requirements of a target market, or that translates during some event. */
     "translator": NamedNode<'http://schema.org/translator'>;
     /** How the disease spreads, either as a route or vector, for example 'direct contact', 'Aedes aegypti', etc. */
@@ -6002,19 +6102,13 @@ interface Schema {
     "url": NamedNode<'http://schema.org/url'>;
     /** An url template (RFC6570) that will be used to construct the target of the execution of the action. */
     "urlTemplate": NamedNode<'http://schema.org/urlTemplate'>;
-    /**
-     * The schema.org [[usageInfo]] property indicates further information about a [[CreativeWork]]. This property is applicable both to works that are freely available and to those that require payment or other transactions. It can reference additional information e.g. community expectations on preferred linking and citation conventions, as well as purchasing details. For something that can be commercially licensed, usageInfo can provide detailed, resource-specific information about licensing options.
-     *
-     * This property can be used alongside the license property which indicates license(s) applicable to some piece of content. The usageInfo property can provide information about other licensing options, e.g. acquiring commercial usage rights for an image that is also available under non-commercial creative commons licenses.
-     */
-    "usageInfo": NamedNode<'http://schema.org/usageInfo'>;
     /** A condition the test is used to diagnose. */
     "usedToDiagnose": NamedNode<'http://schema.org/usedToDiagnose'>;
     /** The number of interactions for the CreativeWork using the WebSite or SoftwareApplication. */
     "userInteractionCount": NamedNode<'http://schema.org/userInteractionCount'>;
     /** Device used to perform the test. */
     "usesDevice": NamedNode<'http://schema.org/usesDevice'>;
-    /** The standard for interpreting thePlan ID. The preferred is "HIOS". See the Centers for Medicare & Medicaid Services for more details. */
+    /** The standard for interpreting the Plan ID. The preferred is "HIOS". See the Centers for Medicare & Medicaid Services for more details. */
     "usesHealthPlanIdStandard": NamedNode<'http://schema.org/usesHealthPlanIdStandard'>;
     /** Text of an utterances (spoken words, lyrics etc.) that occurs at a certain section of a media object, represented as a [[HyperTocEntry]]. */
     "utterances": NamedNode<'http://schema.org/utterances'>;
@@ -6028,7 +6122,7 @@ interface Schema {
     "validThrough": NamedNode<'http://schema.org/validThrough'>;
     /** The date when the item is no longer valid. */
     "validUntil": NamedNode<'http://schema.org/validUntil'>;
-    /** The value of the quantitative value or property value node.\n\n* For [[QuantitativeValue]] and [[MonetaryAmount]], the recommended type for values is 'Number'.\n* For [[PropertyValue]], it can be 'Text;', 'Number', 'Boolean', or 'StructuredValue'.\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator. */
+    /** The value of the quantitative value or property value node.\n\n* For [[QuantitativeValue]] and [[MonetaryAmount]], the recommended type for values is 'Number'.\n* For [[PropertyValue]], it can be 'Text', 'Number', 'Boolean', or 'StructuredValue'.\n* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similar Unicode symbols.\n* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator. */
     "value": NamedNode<'http://schema.org/value'>;
     /** Specifies whether the applicable value-added tax (VAT) is included in the price specification or not. */
     "valueAddedTaxIncluded": NamedNode<'http://schema.org/valueAddedTaxIncluded'>;
@@ -6114,8 +6208,6 @@ interface Schema {
     "winner": NamedNode<'http://schema.org/winner'>;
     /** The number of words in the text of the Article. */
     "wordCount": NamedNode<'http://schema.org/wordCount'>;
-    /** Example/instance/realization/derivation of the concept of this creative work. eg. The paperback edition, first edition, or eBook. */
-    "workExample": NamedNode<'http://schema.org/workExample'>;
     /**
      * A work featured in some event, e.g. exhibited in an ExhibitionEvent.
      *        Specific subproperties are available for workPerformed (e.g. a play), or a workPresented (a Movie at a ScreeningEvent).
@@ -6129,8 +6221,6 @@ interface Schema {
     "workPerformed": NamedNode<'http://schema.org/workPerformed'>;
     /** The movie presented during this event. */
     "workPresented": NamedNode<'http://schema.org/workPresented'>;
-    /** A work that is a translation of the content of this work. e.g. 西遊記 has an English workTranslation “Journey to the West”,a German workTranslation “Monkeys Pilgerfahrt” and a Vietnamese  translation Tây du ký bình khảo. */
-    "workTranslation": NamedNode<'http://schema.org/workTranslation'>;
     /** Quantitative measure of the physiologic output of the exercise; also referred to as energy expenditure. */
     "workload": NamedNode<'http://schema.org/workload'>;
     /** Organizations that the person works for. */
@@ -6145,8 +6235,6 @@ interface Schema {
     "yearlyRevenue": NamedNode<'http://schema.org/yearlyRevenue'>;
     /** The age of the business. */
     "yearsInOperation": NamedNode<'http://schema.org/yearsInOperation'>;
-    /** The quantity that results by performing instructions. For example, a paper airplane, 10 personalized candles. */
-    "yield": NamedNode<'http://schema.org/yield'>;
 }
 
 const builder = namespace("http://schema.org/") as any;

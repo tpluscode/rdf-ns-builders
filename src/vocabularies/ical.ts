@@ -1,4 +1,4 @@
-import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
+import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
 interface Ical {
@@ -26,7 +26,9 @@ interface Ical {
     "Vtodo": NamedNode<'http://www.w3.org/2002/12/cal/icaltzd#Vtodo'>;
     /** This class of property provides a framework for defining non-standard properties. */
     "X-": NamedNode<'http://www.w3.org/2002/12/cal/icaltzd#X-'>;
-    /** This property defines the action to be invoked when an alarm is triggered. */
+    /**
+     * 	    value type: TEXT
+     */
     "action": NamedNode<'http://www.w3.org/2002/12/cal/icaltzd#action'>;
     /** To specify an alternate text representation for the property value. */
     "altrep": NamedNode<'http://www.w3.org/2002/12/cal/icaltzd#altrep'>;
@@ -43,23 +45,35 @@ interface Ical {
     "byweekno": NamedNode<'http://www.w3.org/2002/12/cal/icaltzd#byweekno'>;
     "byyearday": NamedNode<'http://www.w3.org/2002/12/cal/icaltzd#byyearday'>;
     "calAddress": NamedNode<'http://www.w3.org/2002/12/cal/icaltzd#calAddress'>;
-    /** This property defines the calendar scale used for the calendar information specified in the iCalendar object. */
+    /**
+     * 	    value type: TEXT
+     */
     "calscale": NamedNode<'http://www.w3.org/2002/12/cal/icaltzd#calscale'>;
-    /** This property defines the categories for a calendar component. */
+    /**
+     * 	    value type: TEXT
+     */
     "categories": NamedNode<'http://www.w3.org/2002/12/cal/icaltzd#categories'>;
-    /** This property defines the access classification for a calendar component. */
+    /**
+     * 	    value type: TEXT
+     */
     "class": NamedNode<'http://www.w3.org/2002/12/cal/icaltzd#class'>;
     /** To specify the common name to be associated with the calendar user specified by the property. */
     "cn": NamedNode<'http://www.w3.org/2002/12/cal/icaltzd#cn'>;
-    /** This property specifies non-processing information intended to provide a comment to the calendar user. */
+    /**
+     * 	    value type: TEXT
+     */
     "comment": NamedNode<'http://www.w3.org/2002/12/cal/icaltzd#comment'>;
     /** This property defines the date and time that a to-do was actually completed. */
     "completed": NamedNode<'http://www.w3.org/2002/12/cal/icaltzd#completed'>;
     "component": NamedNode<'http://www.w3.org/2002/12/cal/icaltzd#component'>;
-    /** The property is used to represent contact information or alternately a reference to contact information associated with the calendar component. */
+    /**
+     * 	    value type: TEXT
+     */
     "contact": NamedNode<'http://www.w3.org/2002/12/cal/icaltzd#contact'>;
     "count": NamedNode<'http://www.w3.org/2002/12/cal/icaltzd#count'>;
-    /** This property specifies the date and time that the calendar information was created by the calendar user agent in the calendar store. Note: This is analogous to the creation date and time for a file in the file system. */
+    /**
+     * 	    value type: DATE-TIME
+     */
     "created": NamedNode<'http://www.w3.org/2002/12/cal/icaltzd#created'>;
     /** To specify the type of calendar user specified by the property. */
     "cutype": NamedNode<'http://www.w3.org/2002/12/cal/icaltzd#cutype'>;
@@ -69,23 +83,33 @@ interface Ical {
     "delegatedFrom": NamedNode<'http://www.w3.org/2002/12/cal/icaltzd#delegatedFrom'>;
     /** To specify the calendar users to whom the calendar user specified by the property has delegated participation. */
     "delegatedTo": NamedNode<'http://www.w3.org/2002/12/cal/icaltzd#delegatedTo'>;
-    /** This property provides a more complete description of the calendar component, than that provided by the "SUMMARY" property. */
+    /**
+     * 	    value type: TEXT
+     */
     "description": NamedNode<'http://www.w3.org/2002/12/cal/icaltzd#description'>;
     /** To specify reference to a directory entry associated with the calendar user specified by the property. */
     "dir": NamedNode<'http://www.w3.org/2002/12/cal/icaltzd#dir'>;
     /** This property specifies the date and time that a calendar component ends. */
     "dtend": NamedNode<'http://www.w3.org/2002/12/cal/icaltzd#dtend'>;
-    /** The property indicates the date/time that the instance of the iCalendar object was created. */
+    /**
+     * 	    value type: DATE-TIME
+     */
     "dtstamp": NamedNode<'http://www.w3.org/2002/12/cal/icaltzd#dtstamp'>;
-    /** This property specifies when the calendar component begins. */
+    /**
+     * 	    default value type: DATE-TIME
+     */
     "dtstart": NamedNode<'http://www.w3.org/2002/12/cal/icaltzd#dtstart'>;
-    /** This property defines the date and time that a to-do is expected to be completed. */
+    /**
+     * 	    default value type: DATE-TIME
+     */
     "due": NamedNode<'http://www.w3.org/2002/12/cal/icaltzd#due'>;
     /** The property specifies a positive duration of time. */
     "duration": NamedNode<'http://www.w3.org/2002/12/cal/icaltzd#duration'>;
     /** To specify an alternate inline encoding for the property value. */
     "encoding": NamedNode<'http://www.w3.org/2002/12/cal/icaltzd#encoding'>;
-    /** This property defines the list of date/time exceptions for a recurring calendar component. */
+    /**
+     * 	    default value type: DATE-TIME
+     */
     "exdate": NamedNode<'http://www.w3.org/2002/12/cal/icaltzd#exdate'>;
     /** This property defines a rule or repeating pattern for an exception to a recurrence set. */
     "exrule": NamedNode<'http://www.w3.org/2002/12/cal/icaltzd#exrule'>;
@@ -101,45 +125,71 @@ interface Ical {
     "interval": NamedNode<'http://www.w3.org/2002/12/cal/icaltzd#interval'>;
     /** To specify the language for text values in a property or property parameter. */
     "language": NamedNode<'http://www.w3.org/2002/12/cal/icaltzd#language'>;
-    /** The property specifies the date and time that the information associated with the calendar component was last revised in the calendar store. Note: This is analogous to the modification date and time for a file in the file system. */
+    /**
+     * 	    value type: DATE-TIME
+     */
     "lastModified": NamedNode<'http://www.w3.org/2002/12/cal/icaltzd#lastModified'>;
-    /** The property defines the intended venue for the activity defined by a calendar component. */
+    /**
+     * 	    value type: TEXT
+     */
     "location": NamedNode<'http://www.w3.org/2002/12/cal/icaltzd#location'>;
     /** To specify the group or list membership of the calendar user specified by the property. */
     "member": NamedNode<'http://www.w3.org/2002/12/cal/icaltzd#member'>;
-    /** This property defines the iCalendar object method associated with the calendar object. */
+    /**
+     * 	    value type: TEXT
+     */
     "method": NamedNode<'http://www.w3.org/2002/12/cal/icaltzd#method'>;
-    /** The property defines the organizer for a calendar component. */
+    /**
+     * 	    value type: CAL-ADDRESS
+     */
     "organizer": NamedNode<'http://www.w3.org/2002/12/cal/icaltzd#organizer'>;
     /** To specify the participation status for the calendar user specified by the property. */
     "partstat": NamedNode<'http://www.w3.org/2002/12/cal/icaltzd#partstat'>;
     /** This property is used by an assignee or delegatee of a to-do to convey the percent completion of a to-do to the Organizer. */
     "percentComplete": NamedNode<'http://www.w3.org/2002/12/cal/icaltzd#percentComplete'>;
-    /** The property defines the relative priority for a calendar component. */
+    /**
+     * 	    value type: INTEGER
+     */
     "priority": NamedNode<'http://www.w3.org/2002/12/cal/icaltzd#priority'>;
-    /** This property specifies the identifier for the product that created the iCalendar object. */
+    /**
+     * 	    value type: TEXT
+     */
     "prodid": NamedNode<'http://www.w3.org/2002/12/cal/icaltzd#prodid'>;
     /** To specify the effective range of recurrence instances from the instance specified by the recurrence identifier specified by the property. */
     "range": NamedNode<'http://www.w3.org/2002/12/cal/icaltzd#range'>;
-    /** This property defines the list of date/times for a recurrence set. */
+    /**
+     * 	    default value type: DATE-TIME
+     */
     "rdate": NamedNode<'http://www.w3.org/2002/12/cal/icaltzd#rdate'>;
-    /** This property is used in conjunction with the "UID" and "SEQUENCE" property to identify a specific instance of a recurring "VEVENT", "VTODO" or "VJOURNAL" calendar component. The property value is the effective value of the "DTSTART" property of the recurrence instance. */
+    /**
+     * 	    default value type: DATE-TIME
+     */
     "recurrenceId": NamedNode<'http://www.w3.org/2002/12/cal/icaltzd#recurrenceId'>;
     /** To specify the relationship of the alarm trigger with respect to the start or end of the calendar component. */
     "related": NamedNode<'http://www.w3.org/2002/12/cal/icaltzd#related'>;
-    /** The property is used to represent a relationship or reference between one calendar component and another. */
+    /**
+     * 	    value type: TEXT
+     */
     "relatedTo": NamedNode<'http://www.w3.org/2002/12/cal/icaltzd#relatedTo'>;
     /** To specify the type of hierarchical relationship associated with the calendar component specified by the property. */
     "reltype": NamedNode<'http://www.w3.org/2002/12/cal/icaltzd#reltype'>;
-    /** This property defines the number of time the alarm should be repeated, after the initial trigger. */
+    /**
+     * 	    value type: INTEGER
+     */
     "repeat": NamedNode<'http://www.w3.org/2002/12/cal/icaltzd#repeat'>;
-    /** This property defines the status code returned for a scheduling request. */
+    /**
+     * 	    value type: TEXT
+     */
     "requestStatus": NamedNode<'http://www.w3.org/2002/12/cal/icaltzd#requestStatus'>;
-    /** This property defines the equipment or resources anticipated for an activity specified by a calendar entity.. */
+    /**
+     * 	    value type: TEXT
+     */
     "resources": NamedNode<'http://www.w3.org/2002/12/cal/icaltzd#resources'>;
     /** To specify the participation role for the calendar user specified by the property. */
     "role": NamedNode<'http://www.w3.org/2002/12/cal/icaltzd#role'>;
-    /** This property defines a rule or repeating pattern for recurring events, to-dos, or time zone definitions. */
+    /**
+     * 	    value type: RECUR
+     */
     "rrule": NamedNode<'http://www.w3.org/2002/12/cal/icaltzd#rrule'>;
     /** To specify whether there is an expectation of a favor of a reply from the calendar user specified by the property value. */
     "rsvp": NamedNode<'http://www.w3.org/2002/12/cal/icaltzd#rsvp'>;
@@ -148,30 +198,48 @@ interface Ical {
     /** This property defines the revision sequence number of the calendar component within a sequence of revisions. */
     "sequence": NamedNode<'http://www.w3.org/2002/12/cal/icaltzd#sequence'>;
     "standard": NamedNode<'http://www.w3.org/2002/12/cal/icaltzd#standard'>;
-    /** This property defines the overall status or confirmation for the calendar component. */
+    /**
+     * 	    value type: TEXT
+     */
     "status": NamedNode<'http://www.w3.org/2002/12/cal/icaltzd#status'>;
-    /** This property defines a short summary or subject for the calendar component. */
+    /**
+     * 	    value type: TEXT
+     */
     "summary": NamedNode<'http://www.w3.org/2002/12/cal/icaltzd#summary'>;
-    /** This property defines whether an event is transparent or not to busy time searches. */
+    /**
+     * 	    value type: TEXT
+     */
     "transp": NamedNode<'http://www.w3.org/2002/12/cal/icaltzd#transp'>;
     /** This property specifies when an alarm will trigger. */
     "trigger": NamedNode<'http://www.w3.org/2002/12/cal/icaltzd#trigger'>;
-    /** This property specifies the text value that uniquely identifies the "VTIMEZONE" calendar component. */
+    /**
+     * 	    value type: TEXT
+     */
     "tzid": NamedNode<'http://www.w3.org/2002/12/cal/icaltzd#tzid'>;
-    /** This property specifies the customary designation for a time zone description. */
+    /**
+     * 	    value type: TEXT
+     */
     "tzname": NamedNode<'http://www.w3.org/2002/12/cal/icaltzd#tzname'>;
     /** This property specifies the offset which is in use prior to this time zone observance. */
     "tzoffsetfrom": NamedNode<'http://www.w3.org/2002/12/cal/icaltzd#tzoffsetfrom'>;
-    /** This property specifies the offset which is in use in this time zone observance. */
+    /**
+     * 	    value type: UTC-OFFSET
+     */
     "tzoffsetto": NamedNode<'http://www.w3.org/2002/12/cal/icaltzd#tzoffsetto'>;
     /** The TZURL provides a means for a VTIMEZONE component to point to a network location that can be used to retrieve an up-to- date version of itself. */
     "tzurl": NamedNode<'http://www.w3.org/2002/12/cal/icaltzd#tzurl'>;
-    /** This property defines the persistent, globally unique identifier for the calendar component. */
+    /**
+     * 	    value type: TEXT
+     */
     "uid": NamedNode<'http://www.w3.org/2002/12/cal/icaltzd#uid'>;
     "until": NamedNode<'http://www.w3.org/2002/12/cal/icaltzd#until'>;
-    /** This property defines a Uniform Resource Locator (URL) associated with the iCalendar object. */
+    /**
+     * 	    value type: URI
+     */
     "url": NamedNode<'http://www.w3.org/2002/12/cal/icaltzd#url'>;
-    /** This property specifies the identifier corresponding to the highest version number or the minimum and maximum range of the iCalendar specification that is required in order to interpret the iCalendar object. */
+    /**
+     * 	    value type: TEXT
+     */
     "version": NamedNode<'http://www.w3.org/2002/12/cal/icaltzd#version'>;
     "wkst": NamedNode<'http://www.w3.org/2002/12/cal/icaltzd#wkst'>;
 }

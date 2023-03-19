@@ -1,9 +1,61 @@
-import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
+import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
 interface Gml {
     '': NamedNode<'http://www.opengis.net/ont/gml#'>;
-    
+    "AbstractCurveSegment": NamedNode<'http://www.opengis.net/ont/gml#AbstractCurveSegment'>;
+    "AbstractGeometricPrimitive": NamedNode<'http://www.opengis.net/ont/gml#AbstractGeometricPrimitive'>;
+    "AbstractGeometry": NamedNode<'http://www.opengis.net/ont/gml#AbstractGeometry'>;
+    "AbstractGriddedSurface": NamedNode<'http://www.opengis.net/ont/gml#AbstractGriddedSurface'>;
+    "AbstractParametricCurveSurface": NamedNode<'http://www.opengis.net/ont/gml#AbstractParametricCurveSurface'>;
+    "AbstractSurfacePatch": NamedNode<'http://www.opengis.net/ont/gml#AbstractSurfacePatch'>;
+    "Arc": NamedNode<'http://www.opengis.net/ont/gml#Arc'>;
+    "ArcString": NamedNode<'http://www.opengis.net/ont/gml#ArcString'>;
+    "ArcByBulge": NamedNode<'http://www.opengis.net/ont/gml#ArcByBulge'>;
+    "ArcStringByBulge": NamedNode<'http://www.opengis.net/ont/gml#ArcStringByBulge'>;
+    "ArcByCenterPoint": NamedNode<'http://www.opengis.net/ont/gml#ArcByCenterPoint'>;
+    "BSpline": NamedNode<'http://www.opengis.net/ont/gml#BSpline'>;
+    "SplineCurve": NamedNode<'http://www.opengis.net/ont/gml#SplineCurve'>;
+    "Bezier": NamedNode<'http://www.opengis.net/ont/gml#Bezier'>;
+    "Circle": NamedNode<'http://www.opengis.net/ont/gml#Circle'>;
+    "CircleByCenterPoint": NamedNode<'http://www.opengis.net/ont/gml#CircleByCenterPoint'>;
+    "Clothoid": NamedNode<'http://www.opengis.net/ont/gml#Clothoid'>;
+    "Composite": NamedNode<'http://www.opengis.net/ont/gml#Composite'>;
+    "GeometricComplex": NamedNode<'http://www.opengis.net/ont/gml#GeometricComplex'>;
+    "CompositeCurve": NamedNode<'http://www.opengis.net/ont/gml#CompositeCurve'>;
+    "OrientableCurve": NamedNode<'http://www.opengis.net/ont/gml#OrientableCurve'>;
+    "CompositeSolid": NamedNode<'http://www.opengis.net/ont/gml#CompositeSolid'>;
+    "Solid": NamedNode<'http://www.opengis.net/ont/gml#Solid'>;
+    "CompositeSurface": NamedNode<'http://www.opengis.net/ont/gml#CompositeSurface'>;
+    "OrientableSurface": NamedNode<'http://www.opengis.net/ont/gml#OrientableSurface'>;
+    "Cone": NamedNode<'http://www.opengis.net/ont/gml#Cone'>;
+    "CubicSpline": NamedNode<'http://www.opengis.net/ont/gml#CubicSpline'>;
+    "PolynomialSpline": NamedNode<'http://www.opengis.net/ont/gml#PolynomialSpline'>;
+    "Curve": NamedNode<'http://www.opengis.net/ont/gml#Curve'>;
+    "Cylinder": NamedNode<'http://www.opengis.net/ont/gml#Cylinder'>;
+    "Geodesic": NamedNode<'http://www.opengis.net/ont/gml#Geodesic'>;
+    "GeodesicString": NamedNode<'http://www.opengis.net/ont/gml#GeodesicString'>;
+    "LineString": NamedNode<'http://www.opengis.net/ont/gml#LineString'>;
+    "LineStringSegment": NamedNode<'http://www.opengis.net/ont/gml#LineStringSegment'>;
+    "LinearRing": NamedNode<'http://www.opengis.net/ont/gml#LinearRing'>;
+    "Ring": NamedNode<'http://www.opengis.net/ont/gml#Ring'>;
+    "MultiCurve": NamedNode<'http://www.opengis.net/ont/gml#MultiCurve'>;
+    "MultiGeometry": NamedNode<'http://www.opengis.net/ont/gml#MultiGeometry'>;
+    "MultiPoint": NamedNode<'http://www.opengis.net/ont/gml#MultiPoint'>;
+    "MultiSolid": NamedNode<'http://www.opengis.net/ont/gml#MultiSolid'>;
+    "MultiSurface": NamedNode<'http://www.opengis.net/ont/gml#MultiSurface'>;
+    "OffsetCurve": NamedNode<'http://www.opengis.net/ont/gml#OffsetCurve'>;
+    "Point": NamedNode<'http://www.opengis.net/ont/gml#Point'>;
+    "Polygon": NamedNode<'http://www.opengis.net/ont/gml#Polygon'>;
+    "Surface": NamedNode<'http://www.opengis.net/ont/gml#Surface'>;
+    "PolygonPatch": NamedNode<'http://www.opengis.net/ont/gml#PolygonPatch'>;
+    "PolyhedralSurface": NamedNode<'http://www.opengis.net/ont/gml#PolyhedralSurface'>;
+    "Rectangle": NamedNode<'http://www.opengis.net/ont/gml#Rectangle'>;
+    "Shell": NamedNode<'http://www.opengis.net/ont/gml#Shell'>;
+    "Sphere": NamedNode<'http://www.opengis.net/ont/gml#Sphere'>;
+    "Tin": NamedNode<'http://www.opengis.net/ont/gml#Tin'>;
+    "TriangulatedSurface": NamedNode<'http://www.opengis.net/ont/gml#TriangulatedSurface'>;
+    "Triangle": NamedNode<'http://www.opengis.net/ont/gml#Triangle'>;
 }
 
 const builder = namespace("http://www.opengis.net/ont/gml#") as any;

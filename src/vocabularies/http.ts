@@ -1,4 +1,4 @@
-import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
+import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
 interface Http {
@@ -7,6 +7,8 @@ interface Http {
     "Connection": NamedNode<'http://www.w3.org/2011/http#Connection'>;
     /** An entity header in an HTTP message. */
     "EntityHeader": NamedNode<'http://www.w3.org/2011/http#EntityHeader'>;
+    /** A header in an HTTP message. */
+    "MessageHeader": NamedNode<'http://www.w3.org/2011/http#MessageHeader'>;
     /** A general header in an HTTP message. */
     "GeneralHeader": NamedNode<'http://www.w3.org/2011/http#GeneralHeader'>;
     /** A part of a deconstructed header value. */
@@ -15,8 +17,6 @@ interface Http {
     "HeaderName": NamedNode<'http://www.w3.org/2011/http#HeaderName'>;
     /** An HTTP message. */
     "Message": NamedNode<'http://www.w3.org/2011/http#Message'>;
-    /** A header in an HTTP message. */
-    "MessageHeader": NamedNode<'http://www.w3.org/2011/http#MessageHeader'>;
     /** The HTTP method used for the request. */
     "Method": NamedNode<'http://www.w3.org/2011/http#Method'>;
     /** A parameter for a part of a header value. */
@@ -33,6 +33,8 @@ interface Http {
     "StatusCode": NamedNode<'http://www.w3.org/2011/http#StatusCode'>;
     /** The absolute path sort of request URI. */
     "absolutePath": NamedNode<'http://www.w3.org/2011/http#absolutePath'>;
+    /** The request URI of an HTTP request. */
+    "requestURI": NamedNode<'http://www.w3.org/2011/http#requestURI'>;
     /** The absolute request URI. */
     "absoluteURI": NamedNode<'http://www.w3.org/2011/http#absoluteURI'>;
     /** The authority sort of request URI. */
@@ -69,8 +71,6 @@ interface Http {
     "params": NamedNode<'http://www.w3.org/2011/http#params'>;
     /** The reason phrase (status text) of an HTTP response. */
     "reasonPhrase": NamedNode<'http://www.w3.org/2011/http#reasonPhrase'>;
-    /** The request URI of an HTTP request. */
-    "requestURI": NamedNode<'http://www.w3.org/2011/http#requestURI'>;
     /** The HTTP requests made via a connection. */
     "requests": NamedNode<'http://www.w3.org/2011/http#requests'>;
     /** The HTTP response sent in answer to an HTTP request. */

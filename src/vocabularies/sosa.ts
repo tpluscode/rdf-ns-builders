@@ -1,4 +1,4 @@
-import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
+import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
 interface Sosa {
@@ -31,44 +31,44 @@ interface Sosa {
     "Sensor": NamedNode<'http://www.w3.org/ns/sosa/Sensor'>;
     /** Relation between an Actuation and the property of a FeatureOfInterest it is acting upon. */
     "actsOnProperty": NamedNode<'http://www.w3.org/ns/sosa/actsOnProperty'>;
+    /** Relation between an ActuatableProperty of a FeatureOfInterest and an Actuation changing its state. */
+    "isActedOnBy": NamedNode<'http://www.w3.org/ns/sosa/isActedOnBy'>;
     /** A relation between an Observation and the entity whose quality was observed, or between an Actuation and the entity whose property was modified, or between an act of Sampling and the entity that was sampled. */
     "hasFeatureOfInterest": NamedNode<'http://www.w3.org/ns/sosa/hasFeatureOfInterest'>;
+    /** A relation between a FeatureOfInterest and an Observation about it, an Actuation acting on it, or an act of Sampling that sampled it. */
+    "isFeatureOfInterestOf": NamedNode<'http://www.w3.org/ns/sosa/isFeatureOfInterestOf'>;
     /** Relation linking an Observation or Actuation or act of Sampling and a Result or Sample. */
     "hasResult": NamedNode<'http://www.w3.org/ns/sosa/hasResult'>;
+    /** Relation linking a Result to the Observation or Actuation or act of Sampling that created or caused it. */
+    "isResultOf": NamedNode<'http://www.w3.org/ns/sosa/isResultOf'>;
     /** Relation between a FeatureOfInterest and the Sample used to represent it. */
     "hasSample": NamedNode<'http://www.w3.org/ns/sosa/hasSample'>;
+    /** Relation from a Sample to the FeatureOfInterest that it is intended to be representative of. */
+    "isSampleOf": NamedNode<'http://www.w3.org/ns/sosa/isSampleOf'>;
     /** The simple value of an Observation or Actuation or act of Sampling. */
     "hasSimpleResult": NamedNode<'http://www.w3.org/ns/sosa/hasSimpleResult'>;
     /** Relation between a Platform and a Sensor, Actuator, Sampler, or Platform, hosted or mounted on it. */
     "hosts": NamedNode<'http://www.w3.org/ns/sosa/hosts'>;
-    /** Relation between an ActuatableProperty of a FeatureOfInterest and an Actuation changing its state. */
-    "isActedOnBy": NamedNode<'http://www.w3.org/ns/sosa/isActedOnBy'>;
-    /** A relation between a FeatureOfInterest and an Observation about it, an Actuation acting on it, or an act of Sampling that sampled it. */
-    "isFeatureOfInterestOf": NamedNode<'http://www.w3.org/ns/sosa/isFeatureOfInterestOf'>;
     /** Relation between a Sensor, Actuator, Sampler, or Platform, and the Platform that it is mounted on or hosted by. */
     "isHostedBy": NamedNode<'http://www.w3.org/ns/sosa/isHostedBy'>;
     /** Relation between an ObservableProperty and the Sensor able to observe it. */
     "isObservedBy": NamedNode<'http://www.w3.org/ns/sosa/isObservedBy'>;
-    /** Relation linking a Result to the Observation or Actuation or act of Sampling that created or caused it. */
-    "isResultOf": NamedNode<'http://www.w3.org/ns/sosa/isResultOf'>;
-    /** Relation from a Sample to the FeatureOfInterest that it is intended to be representative of. */
-    "isSampleOf": NamedNode<'http://www.w3.org/ns/sosa/isSampleOf'>;
+    /** Relation between a Sensor and an ObservableProperty that it is capable of sensing. */
+    "observes": NamedNode<'http://www.w3.org/ns/sosa/observes'>;
     /** Relation between an Actuator and the Actuation it has made. */
     "madeActuation": NamedNode<'http://www.w3.org/ns/sosa/madeActuation'>;
     /** Relation linking an Actuation to the Actuator that made that Actuation. */
     "madeByActuator": NamedNode<'http://www.w3.org/ns/sosa/madeByActuator'>;
     /** Relation linking an act of Sampling to the Sampler (sampling device or entity) that made it. */
     "madeBySampler": NamedNode<'http://www.w3.org/ns/sosa/madeBySampler'>;
+    /** Relation between a Sampler (sampling device or entity) and the Sampling act it performed. */
+    "madeSampling": NamedNode<'http://www.w3.org/ns/sosa/madeSampling'>;
     /** Relation between an Observation and the Sensor which made the Observation. */
     "madeBySensor": NamedNode<'http://www.w3.org/ns/sosa/madeBySensor'>;
     /** Relation between a Sensor and an Observation made by the Sensor. */
     "madeObservation": NamedNode<'http://www.w3.org/ns/sosa/madeObservation'>;
-    /** Relation between a Sampler (sampling device or entity) and the Sampling act it performed. */
-    "madeSampling": NamedNode<'http://www.w3.org/ns/sosa/madeSampling'>;
     /** Relation linking an Observation to the property that was observed. The ObservableProperty should be a property of the FeatureOfInterest (linked by hasFeatureOfInterest) of this Observation. */
     "observedProperty": NamedNode<'http://www.w3.org/ns/sosa/observedProperty'>;
-    /** Relation between a Sensor and an ObservableProperty that it is capable of sensing. */
-    "observes": NamedNode<'http://www.w3.org/ns/sosa/observes'>;
     /** The time that the Result of an Observation, Actuation or Sampling applies to the FeatureOfInterest. Not necessarily the same as the resultTime. May be an Interval or an Instant, or some other compound TemporalEntity. */
     "phenomenonTime": NamedNode<'http://www.w3.org/ns/sosa/phenomenonTime'>;
     /** The result time is the instant of time when the Observation, Actuation or Sampling activity was completed. */

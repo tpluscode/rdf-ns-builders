@@ -1,4 +1,4 @@
-import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
+import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
 interface Test {
@@ -20,10 +20,10 @@ interface Test {
     "expectedResults": NamedNode<'http://www.w3.org/2006/03/test-description#expectedResults'>;
     /** Information Resource (e.g. a file) used as input for the test case */
     "informationResourceInput": NamedNode<'http://www.w3.org/2006/03/test-description#informationResourceInput'>;
-    /** Information Resource (e.g. a file) that contains the expected results for the test case */
-    "informationResourceResults": NamedNode<'http://www.w3.org/2006/03/test-description#informationResourceResults'>;
     /** Parameters or data that are needed for the test execution. */
     "input": NamedNode<'http://www.w3.org/2006/03/test-description#input'>;
+    /** Information Resource (e.g. a file) that contains the expected results for the test case */
+    "informationResourceResults": NamedNode<'http://www.w3.org/2006/03/test-description#informationResourceResults'>;
     /** the item had already gone through the review process, but the results of the review need to be re-assessed due to new input */
     "onhold": NamedNode<'http://www.w3.org/2006/03/test-description#onhold'>;
     /** a condition that must be met before the test is executed */

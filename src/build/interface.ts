@@ -1,10 +1,10 @@
 import { PropertySignatureStructure, StructureKind } from 'ts-morph'
-import { shrink } from '@zazuko/rdf-vocabularies'
+import { shrink } from '@zazuko/prefixes'
 import cf from 'clownface'
-import { namedNode } from '@rdf-esm/data-model'
+import RDF from '@rdfjs/data-model'
 import { ImportedVocabularies } from './'
 
-const rdfsComment = namedNode('http://www.w3.org/2000/01/rdf-schema#comment')
+const rdfsComment = RDF.namedNode('http://www.w3.org/2000/01/rdf-schema#comment')
 
 function createMember(prefixes: ImportedVocabularies['prefixes'], prefix: string, term: string, comment?: string): PropertySignatureStructure {
   const member: PropertySignatureStructure = {
@@ -38,7 +38,7 @@ export async function createMembers(prefix: string, { vocabularies, prefixes }: 
       if (prefixedName && matchesPrefix) {
         const term = matchesPrefix[1]
 
-        if (!terms.has(matchesPrefix[1])) {
+        if (!terms.has(matchesPrefix[1]) && term === encodeURIComponent(term)) {
           terms.set(term, createMember(prefixes, prefix, term, node.out(rdfsComment).values[0]))
         }
       }

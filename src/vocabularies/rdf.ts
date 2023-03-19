@@ -1,8 +1,10 @@
-import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
+import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
 interface Rdf {
     '': NamedNode<'http://www.w3.org/1999/02/22-rdf-syntax-ns#'>;
+    /** The subject is an instance of a class. */
+    "type": NamedNode<'http://www.w3.org/1999/02/22-rdf-syntax-ns#type'>;
     /** The class of containers of alternatives. */
     "Alt": NamedNode<'http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt'>;
     /** The class of unordered containers. */
@@ -43,8 +45,6 @@ interface Rdf {
     "rest": NamedNode<'http://www.w3.org/1999/02/22-rdf-syntax-ns#rest'>;
     /** The subject of the subject RDF statement. */
     "subject": NamedNode<'http://www.w3.org/1999/02/22-rdf-syntax-ns#subject'>;
-    /** The subject is an instance of a class. */
-    "type": NamedNode<'http://www.w3.org/1999/02/22-rdf-syntax-ns#type'>;
     /** Idiomatic property used for structured values. */
     "value": NamedNode<'http://www.w3.org/1999/02/22-rdf-syntax-ns#value'>;
 }

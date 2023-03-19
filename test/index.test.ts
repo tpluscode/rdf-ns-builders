@@ -1,13 +1,13 @@
 import { describe, it } from 'mocha'
 import { expect } from 'chai'
-import { expand, prefixes } from '@zazuko/rdf-vocabularies'
-import { namedNode } from '@rdf-esm/data-model'
-import { schema, foaf, dcterms } from '../src'
-import { xml } from '../src/loose'
+import prefixes, { expand } from '@zazuko/prefixes'
+import RDF from 'rdf-ext'
+import { schema, foaf, dcterms } from '../src/index.js'
+import { xml } from '../src/loose.js'
 
 describe('generated types', () => {
   it('export a getter for namespace itself', () => {
-    expect(schema['']).to.deep.eq(namedNode(prefixes.schema))
+    expect(schema['']).to.deep.eq(RDF.namedNode(prefixes.schema))
   })
 
   it('export a class', () => {

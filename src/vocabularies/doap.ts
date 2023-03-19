@@ -1,10 +1,12 @@
-import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
+import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
 interface Doap {
     '': NamedNode<'http://usefulinc.com/ns/doap#'>;
     /** Dépôt GNU Arch du code source. */
     "ArchRepository": NamedNode<'http://usefulinc.com/ns/doap#ArchRepository'>;
+    /** Dépôt du code source. */
+    "Repository": NamedNode<'http://usefulinc.com/ns/doap#Repository'>;
     /** BitKeeper Quellcode-Versionierungssystem. */
     "BKRepository": NamedNode<'http://usefulinc.com/ns/doap#BKRepository'>;
     /** Bazaar source code branch. */
@@ -21,8 +23,6 @@ interface Doap {
     "HgRepository": NamedNode<'http://usefulinc.com/ns/doap#HgRepository'>;
     /** A project. */
     "Project": NamedNode<'http://usefulinc.com/ns/doap#Project'>;
-    /** Dépôt du code source. */
-    "Repository": NamedNode<'http://usefulinc.com/ns/doap#Repository'>;
     /** Dépôt Subversion du code source. */
     "SVNRepository": NamedNode<'http://usefulinc.com/ns/doap#SVNRepository'>;
     /** A especificação de aspetos, técnicas ou outros do sistema. */

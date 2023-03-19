@@ -1,21 +1,23 @@
-import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
+import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
 interface Rr {
     '': NamedNode<'http://www.w3.org/ns/r2rml#'>;
     "BaseTableOrView": NamedNode<'http://www.w3.org/ns/r2rml#BaseTableOrView'>;
+    /** Represents a logical table. */
+    "LogicalTable": NamedNode<'http://www.w3.org/ns/r2rml#LogicalTable'>;
     /** Denotes a blank node, used with termType */
     "BlankNode": NamedNode<'http://www.w3.org/ns/r2rml#BlankNode'>;
     /** Represents a graph map. */
     "GraphMap": NamedNode<'http://www.w3.org/ns/r2rml#GraphMap'>;
+    /** A function that generates an RDF term from a logical table row. */
+    "TermMap": NamedNode<'http://www.w3.org/ns/r2rml#TermMap'>;
     /** Denotes an IRI, used with termpType. */
     "IRI": NamedNode<'http://www.w3.org/ns/r2rml#IRI'>;
     /** Represents a join condition. */
     "Join": NamedNode<'http://www.w3.org/ns/r2rml#Join'>;
     /** Denotes a Literal, used with termType. */
     "Literal": NamedNode<'http://www.w3.org/ns/r2rml#Literal'>;
-    /** Represents a logical table. */
-    "LogicalTable": NamedNode<'http://www.w3.org/ns/r2rml#LogicalTable'>;
     /** Represents an object map. */
     "ObjectMap": NamedNode<'http://www.w3.org/ns/r2rml#ObjectMap'>;
     /** Represents a predicate map. */
@@ -29,8 +31,6 @@ interface Rr {
     "SQL2008": NamedNode<'http://www.w3.org/ns/r2rml#SQL2008'>;
     /** Represents a subject map. */
     "SubjectMap": NamedNode<'http://www.w3.org/ns/r2rml#SubjectMap'>;
-    /** A function that generates an RDF term from a logical table row. */
-    "TermMap": NamedNode<'http://www.w3.org/ns/r2rml#TermMap'>;
     /** Represents a triples map. */
     "TriplesMap": NamedNode<'http://www.w3.org/ns/r2rml#TriplesMap'>;
     /** Names a column in the child table of a join. */

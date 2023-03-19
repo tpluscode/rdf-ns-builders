@@ -1,4 +1,4 @@
-import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
+import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
 interface Grddl {
@@ -20,6 +20,12 @@ interface Grddl {
      *     a transformation from a set of XML documents to RDF graphs
      */
     "Transformation": NamedNode<'http://www.w3.org/2003/g/data-view#Transformation'>;
+    /**
+     * relates a transformation to the algorithm
+     *     specified by the property that computes an RDF graph from an XML
+     *     document node
+     */
+    "transformationProperty": NamedNode<'http://www.w3.org/2003/g/data-view#transformationProperty'>;
     /**
      * a FunctionalProperty that relates
      *     XML document root nodes to
@@ -53,12 +59,6 @@ interface Grddl {
      *     to the RDF graph syntax
      */
     "transformation": NamedNode<'http://www.w3.org/2003/g/data-view#transformation'>;
-    /**
-     * relates a transformation to the algorithm
-     *     specified by the property that computes an RDF graph from an XML
-     *     document node
-     */
-    "transformationProperty": NamedNode<'http://www.w3.org/2003/g/data-view#transformationProperty'>;
 }
 
 const builder = namespace("http://www.w3.org/2003/g/data-view#") as any;

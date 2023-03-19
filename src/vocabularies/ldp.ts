@@ -1,4 +1,4 @@
-import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
+import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
 interface Ldp {
@@ -9,6 +9,8 @@ interface Ldp {
     "BasicContainer": NamedNode<'http://www.w3.org/ns/ldp#BasicContainer'>;
     /** A Linked Data Platform RDF Source (LDP-RS) that also conforms to additional patterns and conventions for managing membership. Readers should refer to the specification defining this ontology for the list of behaviors associated with it. */
     "Container": NamedNode<'http://www.w3.org/ns/ldp#Container'>;
+    /** A Linked Data Platform Resource (LDPR) whose state is represented as RDF. */
+    "RDFSource": NamedNode<'http://www.w3.org/ns/ldp#RDFSource'>;
     /** Descending order. */
     "Descending": NamedNode<'http://www.w3.org/ns/ldp#Descending'>;
     /** An LDPC that is similar to a LDP-DC but it allows an indirection with the ability to list as member a resource, such as a URI representing a real-world object, that is different from the resource that is created. */
@@ -19,6 +21,8 @@ interface Ldp {
     "MemberSubject": NamedNode<'http://www.w3.org/ns/ldp#MemberSubject'>;
     /** A Linked Data Platform Resource (LDPR) whose state is NOT represented as RDF. */
     "NonRDFSource": NamedNode<'http://www.w3.org/ns/ldp#NonRDFSource'>;
+    /** A HTTP-addressable resource whose lifecycle is managed by a LDP server. */
+    "Resource": NamedNode<'http://www.w3.org/ns/ldp#Resource'>;
     /** URI signifying that the resource is an in-sequence page resource, as defined by LDP Paging.  Typically used on Link rel='type' response headers. */
     "Page": NamedNode<'http://www.w3.org/ns/ldp#Page'>;
     /** Element in the list of sorting criteria used by the server to assign container members to pages. */
@@ -27,14 +31,10 @@ interface Ldp {
     "PreferContainment": NamedNode<'http://www.w3.org/ns/ldp#PreferContainment'>;
     /** Archaic alias for ldp:PreferMinimalContainer */
     "PreferEmptyContainer": NamedNode<'http://www.w3.org/ns/ldp#PreferEmptyContainer'>;
-    /** URI identifying a LDPC's membership triples, for example to allow clients to express interest in receiving them. */
-    "PreferMembership": NamedNode<'http://www.w3.org/ns/ldp#PreferMembership'>;
     /** URI identifying the subset of a LDPC's triples present in an empty LDPC, for example to allow clients to express interest in receiving them.  Currently this excludes containment and membership triples, but in the future other exclusions might be added.  This definition is written to automatically exclude those new classes of triples. */
     "PreferMinimalContainer": NamedNode<'http://www.w3.org/ns/ldp#PreferMinimalContainer'>;
-    /** A Linked Data Platform Resource (LDPR) whose state is represented as RDF. */
-    "RDFSource": NamedNode<'http://www.w3.org/ns/ldp#RDFSource'>;
-    /** A HTTP-addressable resource whose lifecycle is managed by a LDP server. */
-    "Resource": NamedNode<'http://www.w3.org/ns/ldp#Resource'>;
+    /** URI identifying a LDPC's membership triples, for example to allow clients to express interest in receiving them. */
+    "PreferMembership": NamedNode<'http://www.w3.org/ns/ldp#PreferMembership'>;
     /** Links a resource with constraints that the server requires requests like creation and update to conform to. */
     "constrainedBy": NamedNode<'http://www.w3.org/ns/ldp#constrainedBy'>;
     /** Links a container with resources created through the container. */

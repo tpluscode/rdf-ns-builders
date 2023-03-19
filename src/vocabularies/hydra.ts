@@ -1,20 +1,26 @@
-import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
+import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
 interface Hydra {
     '': NamedNode<'http://www.w3.org/ns/hydra/core#'>;
     /** The Hydra API documentation class */
     "ApiDocumentation": NamedNode<'http://www.w3.org/ns/hydra/core#ApiDocumentation'>;
+    /** The class of Hydra classes. */
+    "Class": NamedNode<'http://www.w3.org/ns/hydra/core#Class'>;
+    /** The class of dereferenceable resources by means a client can attempt to dereference; however, the received responses should still be verified. */
+    "Resource": NamedNode<'http://www.w3.org/ns/hydra/core#Resource'>;
     /** Provides a base abstract for base Uri source for Iri template resolution. */
     "BaseUriSource": NamedNode<'http://www.w3.org/ns/hydra/core#BaseUriSource'>;
     /** A representation that serializes just the lexical form of a variable value, but omits language and type information. */
     "BasicRepresentation": NamedNode<'http://www.w3.org/ns/hydra/core#BasicRepresentation'>;
-    /** The class of Hydra classes. */
-    "Class": NamedNode<'http://www.w3.org/ns/hydra/core#Class'>;
+    /** A representation specifies how to serialize variable values into strings. */
+    "VariableRepresentation": NamedNode<'http://www.w3.org/ns/hydra/core#VariableRepresentation'>;
     /** A collection holding references to a number of related resources. */
     "Collection": NamedNode<'http://www.w3.org/ns/hydra/core#Collection'>;
     /** A runtime error, used to report information beyond the returned status code. */
     "Error": NamedNode<'http://www.w3.org/ns/hydra/core#Error'>;
+    /** Additional information about a status code that might be returned. */
+    "Status": NamedNode<'http://www.w3.org/ns/hydra/core#Status'>;
     /** A representation that serializes a variable value including its language and type information and thus differentiating between IRIs and literals. */
     "ExplicitRepresentation": NamedNode<'http://www.w3.org/ns/hydra/core#ExplicitRepresentation'>;
     /** Specifies a possible either expected or returned header values */
@@ -31,20 +37,14 @@ interface Hydra {
     "Operation": NamedNode<'http://www.w3.org/ns/hydra/core#Operation'>;
     /** A PartialCollectionView describes a partial view of a Collection. Multiple PartialCollectionViews can be connected with the the next/previous properties to allow a client to retrieve all members of the collection. */
     "PartialCollectionView": NamedNode<'http://www.w3.org/ns/hydra/core#PartialCollectionView'>;
-    /** The class of dereferenceable resources by means a client can attempt to dereference; however, the received responses should still be verified. */
-    "Resource": NamedNode<'http://www.w3.org/ns/hydra/core#Resource'>;
     /** States that the base Uri should be established using RFC 3986 reference resolution algorithm specified in section 5. */
     "Rfc3986": NamedNode<'http://www.w3.org/ns/hydra/core#Rfc3986'>;
     /** An IRI template as defined by RFC6570. */
     "Rfc6570Template": NamedNode<'http://www.w3.org/ns/hydra/core#Rfc6570Template'>;
-    /** Additional information about a status code that might be returned. */
-    "Status": NamedNode<'http://www.w3.org/ns/hydra/core#Status'>;
     /** A property known to be supported by a Hydra class. */
     "SupportedProperty": NamedNode<'http://www.w3.org/ns/hydra/core#SupportedProperty'>;
     /** A templated link. */
     "TemplatedLink": NamedNode<'http://www.w3.org/ns/hydra/core#TemplatedLink'>;
-    /** A representation specifies how to serialize variable values into strings. */
-    "VariableRepresentation": NamedNode<'http://www.w3.org/ns/hydra/core#VariableRepresentation'>;
     /** A link to the API documentation */
     "apiDocumentation": NamedNode<'http://www.w3.org/ns/hydra/core#apiDocumentation'>;
     /** Determines whether the provided set of header values is closed or not. */
@@ -73,12 +73,12 @@ interface Hydra {
     "limit": NamedNode<'http://www.w3.org/ns/hydra/core#limit'>;
     /** This predicate is left for compatibility purposes and hydra:memberAssertion should be used instead. */
     "manages": NamedNode<'http://www.w3.org/ns/hydra/core#manages'>;
+    /** Semantics of each member provided by the collection. */
+    "memberAssertion": NamedNode<'http://www.w3.org/ns/hydra/core#memberAssertion'>;
     /** A variable-to-property mapping of the IRI template. */
     "mapping": NamedNode<'http://www.w3.org/ns/hydra/core#mapping'>;
     /** A member of the collection */
     "member": NamedNode<'http://www.w3.org/ns/hydra/core#member'>;
-    /** Semantics of each member provided by the collection. */
-    "memberAssertion": NamedNode<'http://www.w3.org/ns/hydra/core#memberAssertion'>;
     /** The HTTP method. */
     "method": NamedNode<'http://www.w3.org/ns/hydra/core#method'>;
     /** The resource following the current instance in an interlinked set of resources. */

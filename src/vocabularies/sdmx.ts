@@ -1,8 +1,10 @@
-import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
+import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
 interface Sdmx {
     '': NamedNode<'http://purl.org/linked-data/sdmx#'>;
+    /** The concept corresponding to the generic measure type dimension which indicates which measure is being denoted by the primary measure on an observation */
+    "measureTypeConcept": NamedNode<'http://purl.org/linked-data/sdmx#measureTypeConcept'>;
     "CodeList": NamedNode<'http://purl.org/linked-data/sdmx#CodeList'>;
     /** Denotes an SDMX concept, used in the particular SDMX terminological sense, which is in principle narrower than skos:Concept */
     "Concept": NamedNode<'http://purl.org/linked-data/sdmx#Concept'>;
@@ -26,8 +28,6 @@ interface Sdmx {
     "PrimaryMeasureRole": NamedNode<'http://purl.org/linked-data/sdmx#PrimaryMeasureRole'>;
     /** concept for a dimension that specifies the time of the observation of the primaryMeasure */
     "TimeRole": NamedNode<'http://purl.org/linked-data/sdmx#TimeRole'>;
-    /** The concept corresponding to the generic measure type dimension which indicates which measure is being denoted by the primary measure on an observation */
-    "measureTypeConcept": NamedNode<'http://purl.org/linked-data/sdmx#measureTypeConcept'>;
     /** Indicates an additional component used as the primary measure within the SDMX data. In the case of multi-measure data sets the RDF representation uses the specific measure rather than a subsuming overall measure. This property records the subsuming primary measure (typically sdmx-measure:obsValue) to enable round tripping of this information. */
     "primaryMeasure": NamedNode<'http://purl.org/linked-data/sdmx#primaryMeasure'>;
 }

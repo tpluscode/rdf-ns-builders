@@ -1,4 +1,4 @@
-import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
+import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
 interface Earl {
@@ -9,14 +9,14 @@ interface Earl {
     "Assertor": NamedNode<'https://www.w3.org/ns/earl#Assertor'>;
     /** the class of outcomes to denote an undetermined outcome */
     "CannotTell": NamedNode<'https://www.w3.org/ns/earl#CannotTell'>;
+    /** a discrete value that describes a resulting condition from carrying out the test */
+    "OutcomeValue": NamedNode<'https://www.w3.org/ns/earl#OutcomeValue'>;
     /** the class of outcomes to denote failing a test */
     "Fail": NamedNode<'https://www.w3.org/ns/earl#Fail'>;
     /** the class of outcomes to denote the test is not applicable */
     "NotApplicable": NamedNode<'https://www.w3.org/ns/earl#NotApplicable'>;
     /** the class of outcomes to denote the test has not been carried out */
     "NotTested": NamedNode<'https://www.w3.org/ns/earl#NotTested'>;
-    /** a discrete value that describes a resulting condition from carrying out the test */
-    "OutcomeValue": NamedNode<'https://www.w3.org/ns/earl#OutcomeValue'>;
     /** the class of outcomes to denote passing a test */
     "Pass": NamedNode<'https://www.w3.org/ns/earl#Pass'>;
     /** any piece of software such as an authoring tool, browser, or evaluation tool */

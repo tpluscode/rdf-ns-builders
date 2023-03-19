@@ -1,7 +1,7 @@
 import { SourceFile, StructureKind, VariableDeclarationKind } from 'ts-morph'
 import { identifier } from 'safe-identifier'
-import { createMembers } from './interface'
-import { toProperCase } from './strings'
+import { createMembers } from './interface.js'
+import { toProperCase } from './strings.js'
 import type { ImportedVocabularies } from '.'
 
 export async function createPrefixFile(sourceFile: SourceFile, prefix: string, namespace: string, vocabs: ImportedVocabularies) {
@@ -12,7 +12,7 @@ export async function createPrefixFile(sourceFile: SourceFile, prefix: string, n
     namedImports: [{
       name: 'NamespaceBuilder',
     }],
-    moduleSpecifier: '@rdf-esm/namespace',
+    moduleSpecifier: '@rdfjs/namespace',
   })
 
   sourceFile.addImportDeclaration({

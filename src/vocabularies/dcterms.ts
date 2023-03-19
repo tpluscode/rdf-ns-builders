@@ -1,10 +1,18 @@
-import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
+import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
 interface Dcterms {
     '': NamedNode<'http://purl.org/dc/terms/'>;
+    /** Date on which the resource was changed. */
+    "modified": NamedNode<'http://purl.org/dc/terms/modified'>;
+    /** An entity responsible for making the resource available. */
+    "publisher": NamedNode<'http://purl.org/dc/terms/publisher'>;
+    /** A name given to the resource. */
+    "title": NamedNode<'http://purl.org/dc/terms/title'>;
     /** A resource that acts or has the power to act. */
     "Agent": NamedNode<'http://purl.org/dc/terms/Agent'>;
+    /** Date of formal issuance of the resource. */
+    "issued": NamedNode<'http://purl.org/dc/terms/issued'>;
     /** A group of agents. */
     "AgentClass": NamedNode<'http://purl.org/dc/terms/AgentClass'>;
     /** A book, article, or other documentary resource. */
@@ -17,6 +25,8 @@ interface Dcterms {
     "DDC": NamedNode<'http://purl.org/dc/terms/DDC'>;
     /** A digital resource format. */
     "FileFormat": NamedNode<'http://purl.org/dc/terms/FileFormat'>;
+    /** A file format or physical medium. */
+    "MediaType": NamedNode<'http://purl.org/dc/terms/MediaType'>;
     /** A rate at which something recurs. */
     "Frequency": NamedNode<'http://purl.org/dc/terms/Frequency'>;
     /** The set of media types specified by the Internet Assigned Numbers Authority. */
@@ -29,22 +39,24 @@ interface Dcterms {
     "ISO639-3": NamedNode<'http://purl.org/dc/terms/ISO639-3'>;
     /** The extent or range of judicial, law enforcement, or other authority. */
     "Jurisdiction": NamedNode<'http://purl.org/dc/terms/Jurisdiction'>;
+    /** A location, period of time, or jurisdiction. */
+    "LocationPeriodOrJurisdiction": NamedNode<'http://purl.org/dc/terms/LocationPeriodOrJurisdiction'>;
     /** The set of conceptual resources specified by the Library of Congress Classification. */
     "LCC": NamedNode<'http://purl.org/dc/terms/LCC'>;
     /** The set of labeled concepts specified by the Library of Congress Subject Headings. */
     "LCSH": NamedNode<'http://purl.org/dc/terms/LCSH'>;
     /** A legal document giving official permission to do something with a resource. */
     "LicenseDocument": NamedNode<'http://purl.org/dc/terms/LicenseDocument'>;
+    /** A statement about the intellectual property rights (IPR) held in or over a resource, a legal document giving official permission to do something with a resource, or a statement about access rights. */
+    "RightsStatement": NamedNode<'http://purl.org/dc/terms/RightsStatement'>;
     /** A system of signs, symbols, sounds, gestures, or rules used in communication. */
     "LinguisticSystem": NamedNode<'http://purl.org/dc/terms/LinguisticSystem'>;
+    /** An account of the resource. */
+    "description": NamedNode<'http://purl.org/dc/terms/description'>;
     /** A spatial region or named place. */
     "Location": NamedNode<'http://purl.org/dc/terms/Location'>;
-    /** A location, period of time, or jurisdiction. */
-    "LocationPeriodOrJurisdiction": NamedNode<'http://purl.org/dc/terms/LocationPeriodOrJurisdiction'>;
     /** The set of labeled concepts specified by the Medical Subject Headings. */
     "MESH": NamedNode<'http://purl.org/dc/terms/MESH'>;
-    /** A file format or physical medium. */
-    "MediaType": NamedNode<'http://purl.org/dc/terms/MediaType'>;
     /** A media type or extent. */
     "MediaTypeOrExtent": NamedNode<'http://purl.org/dc/terms/MediaTypeOrExtent'>;
     /** A method by which resources are added to a collection. */
@@ -75,8 +87,6 @@ interface Dcterms {
     "RFC4646": NamedNode<'http://purl.org/dc/terms/RFC4646'>;
     /** The set of tags constructed according to RFC 5646 for the identification of languages. */
     "RFC5646": NamedNode<'http://purl.org/dc/terms/RFC5646'>;
-    /** A statement about the intellectual property rights (IPR) held in or over a resource, a legal document giving official permission to do something with a resource, or a statement about access rights. */
-    "RightsStatement": NamedNode<'http://purl.org/dc/terms/RightsStatement'>;
     /** A dimension or extent, or a time taken to play or execute. */
     "SizeOrDuration": NamedNode<'http://purl.org/dc/terms/SizeOrDuration'>;
     /** A reference point against which other things can be evaluated or compared. */
@@ -93,6 +103,8 @@ interface Dcterms {
     "abstract": NamedNode<'http://purl.org/dc/terms/abstract'>;
     /** Information about who access the resource or an indication of its security status. */
     "accessRights": NamedNode<'http://purl.org/dc/terms/accessRights'>;
+    /** Information about rights held in and over the resource. */
+    "rights": NamedNode<'http://purl.org/dc/terms/rights'>;
     /** The method by which items are added to a collection. */
     "accrualMethod": NamedNode<'http://purl.org/dc/terms/accrualMethod'>;
     /** The frequency with which items are added to a collection. */
@@ -105,10 +117,16 @@ interface Dcterms {
     "audience": NamedNode<'http://purl.org/dc/terms/audience'>;
     /** Date that the resource became or will become available. */
     "available": NamedNode<'http://purl.org/dc/terms/available'>;
+    /** A point or period of time associated with an event in the lifecycle of the resource. */
+    "date": NamedNode<'http://purl.org/dc/terms/date'>;
     /** A bibliographic reference for the resource. */
     "bibliographicCitation": NamedNode<'http://purl.org/dc/terms/bibliographicCitation'>;
+    /** An unambiguous reference to the resource within a given context. */
+    "identifier": NamedNode<'http://purl.org/dc/terms/identifier'>;
     /** An established standard to which the described resource conforms. */
     "conformsTo": NamedNode<'http://purl.org/dc/terms/conformsTo'>;
+    /** A related resource. */
+    "relation": NamedNode<'http://purl.org/dc/terms/relation'>;
     /** An entity responsible for making contributions to the resource. */
     "contributor": NamedNode<'http://purl.org/dc/terms/contributor'>;
     /** The spatial or temporal topic of the resource, spatial applicability of the resource, or jurisdiction under which the resource is relevant. */
@@ -117,16 +135,12 @@ interface Dcterms {
     "created": NamedNode<'http://purl.org/dc/terms/created'>;
     /** An entity responsible for making the resource. */
     "creator": NamedNode<'http://purl.org/dc/terms/creator'>;
-    /** A point or period of time associated with an event in the lifecycle of the resource. */
-    "date": NamedNode<'http://purl.org/dc/terms/date'>;
     /** Date of acceptance of the resource. */
     "dateAccepted": NamedNode<'http://purl.org/dc/terms/dateAccepted'>;
     /** Date of copyright of the resource. */
     "dateCopyrighted": NamedNode<'http://purl.org/dc/terms/dateCopyrighted'>;
     /** Date of submission of the resource. */
     "dateSubmitted": NamedNode<'http://purl.org/dc/terms/dateSubmitted'>;
-    /** An account of the resource. */
-    "description": NamedNode<'http://purl.org/dc/terms/description'>;
     /** A class of agents, defined in terms of progression through an educational or training context, for which the described resource is intended. */
     "educationLevel": NamedNode<'http://purl.org/dc/terms/educationLevel'>;
     /** The size or duration of the resource. */
@@ -139,8 +153,6 @@ interface Dcterms {
     "hasPart": NamedNode<'http://purl.org/dc/terms/hasPart'>;
     /** A related resource that is a version, edition, or adaptation of the described resource. */
     "hasVersion": NamedNode<'http://purl.org/dc/terms/hasVersion'>;
-    /** An unambiguous reference to the resource within a given context. */
-    "identifier": NamedNode<'http://purl.org/dc/terms/identifier'>;
     /** A process, used to engender knowledge, attitudes and skills, that the described resource is designed to support. */
     "instructionalMethod": NamedNode<'http://purl.org/dc/terms/instructionalMethod'>;
     /** A pre-existing related resource that is substantially the same as the described resource, but in another format. */
@@ -155,8 +167,6 @@ interface Dcterms {
     "isRequiredBy": NamedNode<'http://purl.org/dc/terms/isRequiredBy'>;
     /** A related resource of which the described resource is a version, edition, or adaptation. */
     "isVersionOf": NamedNode<'http://purl.org/dc/terms/isVersionOf'>;
-    /** Date of formal issuance of the resource. */
-    "issued": NamedNode<'http://purl.org/dc/terms/issued'>;
     /** A language of the resource. */
     "language": NamedNode<'http://purl.org/dc/terms/language'>;
     /** A legal document giving official permission to do something with the resource. */
@@ -165,22 +175,14 @@ interface Dcterms {
     "mediator": NamedNode<'http://purl.org/dc/terms/mediator'>;
     /** The material or physical carrier of the resource. */
     "medium": NamedNode<'http://purl.org/dc/terms/medium'>;
-    /** Date on which the resource was changed. */
-    "modified": NamedNode<'http://purl.org/dc/terms/modified'>;
     /** A statement of any changes in ownership and custody of the resource since its creation that are significant for its authenticity, integrity, and interpretation. */
     "provenance": NamedNode<'http://purl.org/dc/terms/provenance'>;
-    /** An entity responsible for making the resource available. */
-    "publisher": NamedNode<'http://purl.org/dc/terms/publisher'>;
     /** A related resource that is referenced, cited, or otherwise pointed to by the described resource. */
     "references": NamedNode<'http://purl.org/dc/terms/references'>;
-    /** A related resource. */
-    "relation": NamedNode<'http://purl.org/dc/terms/relation'>;
     /** A related resource that is supplanted, displaced, or superseded by the described resource. */
     "replaces": NamedNode<'http://purl.org/dc/terms/replaces'>;
     /** A related resource that is required by the described resource to support its function, delivery, or coherence. */
     "requires": NamedNode<'http://purl.org/dc/terms/requires'>;
-    /** Information about rights held in and over the resource. */
-    "rights": NamedNode<'http://purl.org/dc/terms/rights'>;
     /** A person or organization owning or managing rights over the resource. */
     "rightsHolder": NamedNode<'http://purl.org/dc/terms/rightsHolder'>;
     /** A related resource from which the described resource is derived. */
@@ -193,8 +195,6 @@ interface Dcterms {
     "tableOfContents": NamedNode<'http://purl.org/dc/terms/tableOfContents'>;
     /** Temporal characteristics of the resource. */
     "temporal": NamedNode<'http://purl.org/dc/terms/temporal'>;
-    /** A name given to the resource. */
-    "title": NamedNode<'http://purl.org/dc/terms/title'>;
     /** The nature or genre of the resource. */
     "type": NamedNode<'http://purl.org/dc/terms/type'>;
     /** Date (often a range) of validity of a resource. */

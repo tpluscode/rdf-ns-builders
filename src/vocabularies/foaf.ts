@@ -1,4 +1,4 @@
-import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
+import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
 interface Foaf {
@@ -7,6 +7,10 @@ interface Foaf {
     "Agent": NamedNode<'http://xmlns.com/foaf/0.1/Agent'>;
     /** A document. */
     "Document": NamedNode<'http://xmlns.com/foaf/0.1/Document'>;
+    /** An organization. */
+    "Organization": NamedNode<'http://xmlns.com/foaf/0.1/Organization'>;
+    /** A project (a collective endeavour of some kind). */
+    "Project": NamedNode<'http://xmlns.com/foaf/0.1/Project'>;
     /** A class of Agents. */
     "Group": NamedNode<'http://xmlns.com/foaf/0.1/Group'>;
     /** An image. */
@@ -21,14 +25,10 @@ interface Foaf {
     "OnlineEcommerceAccount": NamedNode<'http://xmlns.com/foaf/0.1/OnlineEcommerceAccount'>;
     /** An online gaming account. */
     "OnlineGamingAccount": NamedNode<'http://xmlns.com/foaf/0.1/OnlineGamingAccount'>;
-    /** An organization. */
-    "Organization": NamedNode<'http://xmlns.com/foaf/0.1/Organization'>;
     /** A person. */
     "Person": NamedNode<'http://xmlns.com/foaf/0.1/Person'>;
     /** A personal profile RDF document. */
     "PersonalProfileDocument": NamedNode<'http://xmlns.com/foaf/0.1/PersonalProfileDocument'>;
-    /** A project (a collective endeavour of some kind). */
-    "Project": NamedNode<'http://xmlns.com/foaf/0.1/Project'>;
     /** Indicates an account held by this agent. */
     "account": NamedNode<'http://xmlns.com/foaf/0.1/account'>;
     /** Indicates the name (identifier) associated with this online account. */
@@ -39,6 +39,8 @@ interface Foaf {
     "age": NamedNode<'http://xmlns.com/foaf/0.1/age'>;
     /** An AIM chat ID */
     "aimChatID": NamedNode<'http://xmlns.com/foaf/0.1/aimChatID'>;
+    /** A short informal nickname characterising an agent (includes login identifiers, IRC and other chat nicknames). */
+    "nick": NamedNode<'http://xmlns.com/foaf/0.1/nick'>;
     /** A location that something is based near, for some broadly human notion of near. */
     "based_near": NamedNode<'http://xmlns.com/foaf/0.1/based_near'>;
     /** The birthday of this Agent, represented in mm-dd string form, eg. '12-31'. */
@@ -73,14 +75,18 @@ interface Foaf {
     "holdsAccount": NamedNode<'http://xmlns.com/foaf/0.1/holdsAccount'>;
     /** A homepage for some thing. */
     "homepage": NamedNode<'http://xmlns.com/foaf/0.1/homepage'>;
+    /** A document that this thing is the primary topic of. */
+    "isPrimaryTopicOf": NamedNode<'http://xmlns.com/foaf/0.1/isPrimaryTopicOf'>;
+    /** A page or document about this thing. */
+    "page": NamedNode<'http://xmlns.com/foaf/0.1/page'>;
     /** An ICQ chat ID */
     "icqChatID": NamedNode<'http://xmlns.com/foaf/0.1/icqChatID'>;
     /** An image that can be used to represent some thing (ie. those depictions which are particularly representative of something, eg. one's photo on a homepage). */
     "img": NamedNode<'http://xmlns.com/foaf/0.1/img'>;
     /** A page about a topic of interest to this person. */
     "interest": NamedNode<'http://xmlns.com/foaf/0.1/interest'>;
-    /** A document that this thing is the primary topic of. */
-    "isPrimaryTopicOf": NamedNode<'http://xmlns.com/foaf/0.1/isPrimaryTopicOf'>;
+    /** The primary topic of some page or document. */
+    "primaryTopic": NamedNode<'http://xmlns.com/foaf/0.1/primaryTopic'>;
     /** A jabber ID for something. */
     "jabberID": NamedNode<'http://xmlns.com/foaf/0.1/jabberID'>;
     /** A person known by this person (indicating some level of reciprocated interaction between the parties). */
@@ -107,20 +113,16 @@ interface Foaf {
     "myersBriggs": NamedNode<'http://xmlns.com/foaf/0.1/myersBriggs'>;
     /** A name for some thing. */
     "name": NamedNode<'http://xmlns.com/foaf/0.1/name'>;
-    /** A short informal nickname characterising an agent (includes login identifiers, IRC and other chat nicknames). */
-    "nick": NamedNode<'http://xmlns.com/foaf/0.1/nick'>;
     /** An OpenID for an Agent. */
     "openid": NamedNode<'http://xmlns.com/foaf/0.1/openid'>;
-    /** A page or document about this thing. */
-    "page": NamedNode<'http://xmlns.com/foaf/0.1/page'>;
+    /** A topic of some page or document. */
+    "topic": NamedNode<'http://xmlns.com/foaf/0.1/topic'>;
     /** A project this person has previously worked on. */
     "pastProject": NamedNode<'http://xmlns.com/foaf/0.1/pastProject'>;
     /** A phone, specified using fully qualified tel: URI scheme (refs: http://www.w3.org/Addressing/schemes.html#tel). */
     "phone": NamedNode<'http://xmlns.com/foaf/0.1/phone'>;
     /** A .plan comment, in the tradition of finger and '.plan' files. */
     "plan": NamedNode<'http://xmlns.com/foaf/0.1/plan'>;
-    /** The primary topic of some page or document. */
-    "primaryTopic": NamedNode<'http://xmlns.com/foaf/0.1/primaryTopic'>;
     /** A link to the publications of this person. */
     "publications": NamedNode<'http://xmlns.com/foaf/0.1/publications'>;
     /** A homepage of a school attended by the person. */
@@ -141,8 +143,6 @@ interface Foaf {
     "tipjar": NamedNode<'http://xmlns.com/foaf/0.1/tipjar'>;
     /** Title (Mr, Mrs, Ms, Dr. etc) */
     "title": NamedNode<'http://xmlns.com/foaf/0.1/title'>;
-    /** A topic of some page or document. */
-    "topic": NamedNode<'http://xmlns.com/foaf/0.1/topic'>;
     /** A thing of interest to this person. */
     "topic_interest": NamedNode<'http://xmlns.com/foaf/0.1/topic_interest'>;
     /** A weblog of some thing (whether person, group, company etc.). */

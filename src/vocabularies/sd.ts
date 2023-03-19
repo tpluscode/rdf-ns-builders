@@ -1,14 +1,18 @@
-import namespace, { NamespaceBuilder } from "@rdf-esm/namespace";
+import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
 interface Sd {
     '': NamedNode<'http://www.w3.org/ns/sparql-service-description#'>;
     /** An instance of sd:Aggregate represents an aggregate that may be used in a SPARQL aggregate query (for instance in a HAVING clause or SELECT expression) besides the standard list of supported aggregates COUNT, SUM, MIN, MAX, AVG, GROUP_CONCAT, and SAMPLE. */
     "Aggregate": NamedNode<'http://www.w3.org/ns/sparql-service-description#Aggregate'>;
+    /** An instance of sd:Feature represents a feature of a SPARQL service. Specific types of features include functions, aggregates, languages, and entailment regimes and profiles. This document defines five instances of sd:Feature: sd:DereferencesURIs, sd:UnionDefaultGraph, sd:RequiresDataset, sd:EmptyGraphs, and sd:BasicFederatedQuery. */
+    "Feature": NamedNode<'http://www.w3.org/ns/sparql-service-description#Feature'>;
     /** sd:BasicFederatedQuery, when used as the object of the sd:feature property, indicates that the SPARQL service supports basic federated query using the SERVICE keyword as defined by SPARQL 1.1 Federation Extensions. */
     "BasicFederatedQuery": NamedNode<'http://www.w3.org/ns/sparql-service-description#BasicFederatedQuery'>;
     /** An instance of sd:Dataset represents a RDF Dataset comprised of a default graph and zero or more named graphs. */
     "Dataset": NamedNode<'http://www.w3.org/ns/sparql-service-description#Dataset'>;
+    /** An instance of sd:GraphCollection represents a collection of zero or more named graph descriptions. Each named graph description belonging to an sd:GraphCollection MUST be linked with the sd:namedGraph predicate. */
+    "GraphCollection": NamedNode<'http://www.w3.org/ns/sparql-service-description#GraphCollection'>;
     /** sd:DereferencesURIs, when used as the object of the sd:feature property, indicates that a SPARQL service will dereference URIs used in FROM/FROM NAMED and USING/USING NAMED clauses and use the resulting RDF in the dataset during query evaluation. */
     "DereferencesURIs": NamedNode<'http://www.w3.org/ns/sparql-service-description#DereferencesURIs'>;
     /** sd:EmptyGraphs, when used as the object of the sd:feature property, indicates that the underlying graph store supports empty graphs. A graph store that supports empty graphs MUST NOT remove graphs that are left empty after triples are removed from them. */
@@ -17,14 +21,10 @@ interface Sd {
     "EntailmentProfile": NamedNode<'http://www.w3.org/ns/sparql-service-description#EntailmentProfile'>;
     /** An instance of sd:EntailmentRegime represents an entailment regime used in basic graph pattern matching (as described by SPARQL 1.1 Query Language). */
     "EntailmentRegime": NamedNode<'http://www.w3.org/ns/sparql-service-description#EntailmentRegime'>;
-    /** An instance of sd:Feature represents a feature of a SPARQL service. Specific types of features include functions, aggregates, languages, and entailment regimes and profiles. This document defines five instances of sd:Feature: sd:DereferencesURIs, sd:UnionDefaultGraph, sd:RequiresDataset, sd:EmptyGraphs, and sd:BasicFederatedQuery. */
-    "Feature": NamedNode<'http://www.w3.org/ns/sparql-service-description#Feature'>;
     /** An instance of sd:Function represents a function that may be used in a SPARQL SELECT expression or a FILTER, HAVING, GROUP BY, ORDER BY, or BIND clause. */
     "Function": NamedNode<'http://www.w3.org/ns/sparql-service-description#Function'>;
     /** An instance of sd:Graph represents the description of an RDF graph. */
     "Graph": NamedNode<'http://www.w3.org/ns/sparql-service-description#Graph'>;
-    /** An instance of sd:GraphCollection represents a collection of zero or more named graph descriptions. Each named graph description belonging to an sd:GraphCollection MUST be linked with the sd:namedGraph predicate. */
-    "GraphCollection": NamedNode<'http://www.w3.org/ns/sparql-service-description#GraphCollection'>;
     /** An instance of sd:Language represents one of the SPARQL languages, including specific configurations providing particular features or extensions. This document defines three instances of sd:Language: sd:SPARQL10Query, sd:SPARQL11Query, and sd:SPARQL11Update. */
     "Language": NamedNode<'http://www.w3.org/ns/sparql-service-description#Language'>;
     /** An instance of sd:NamedGraph represents a named graph having a name (via sd:name) and an optional graph description (via sd:graph). */
@@ -47,6 +47,8 @@ interface Sd {
     "defaultDataset": NamedNode<'http://www.w3.org/ns/sparql-service-description#defaultDataset'>;
     /** Relates an instance of sd:Service with a resource representing an entailment regime used for basic graph pattern matching. This property is intended for use when a single entailment regime by default applies to all graphs in the default dataset of the service. In situations where a different entailment regime applies to a specific graph in the dataset, the sd:entailmentRegime property should be used to indicate this fact in the description of that graph. */
     "defaultEntailmentRegime": NamedNode<'http://www.w3.org/ns/sparql-service-description#defaultEntailmentRegime'>;
+    /** Relates an instance of sd:Service with a resource representing a supported feature. */
+    "feature": NamedNode<'http://www.w3.org/ns/sparql-service-description#feature'>;
     /** Relates an instance of sd:Dataset to the description of its default graph. */
     "defaultGraph": NamedNode<'http://www.w3.org/ns/sparql-service-description#defaultGraph'>;
     /** Relates an instance of sd:Service with a resource representing a supported profile of the default entailment regime (as declared by sd:defaultEntailmentRegime). */
@@ -59,8 +61,6 @@ interface Sd {
     "extensionAggregate": NamedNode<'http://www.w3.org/ns/sparql-service-description#extensionAggregate'>;
     /** Relates an instance of sd:Service to a function that may be used in a SPARQL SELECT expression or a FILTER, HAVING, GROUP BY, ORDER BY, or BIND clause. */
     "extensionFunction": NamedNode<'http://www.w3.org/ns/sparql-service-description#extensionFunction'>;
-    /** Relates an instance of sd:Service with a resource representing a supported feature. */
-    "feature": NamedNode<'http://www.w3.org/ns/sparql-service-description#feature'>;
     /** Relates a named graph to its graph description. */
     "graph": NamedNode<'http://www.w3.org/ns/sparql-service-description#graph'>;
     /** Relates an instance of sd:Service to a format that is supported for parsing RDF input; for example, via a SPARQL 1.1 Update LOAD statement, or when URIs are dereferenced in FROM/FROM NAMED/USING/USING NAMED clauses. */
