@@ -1,5 +1,11 @@
 # Changelog
 
+## 3.0.1
+
+### Patch Changes
+
+- 8fb5460: Installing from NPM would call `patch-package`
+
 ## 3.0.0
 
 ### Major Changes
