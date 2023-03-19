@@ -11,6 +11,7 @@
     "rdf-ns-builders": "bin/index.js"
   },
   "scripts": {
+    "postinstall": "patch-package",
     "generate": "node --loader ts-node/esm src/bin/index.ts generate -p @zazuko/vocabularies -o src",
     "test": "c8 --reporter=lcov mocha test/index.test.ts",
     "prepack": "npm run build",
@@ -56,7 +57,7 @@
     "@types/rdfjs__data-model": "^2",
     "@typescript-eslint/eslint-plugin": "^5.55.0",
     "@typescript-eslint/parser": "^5.55.0",
-    "@zazuko/vocabularies": "^1.0.0-rc.1",
+    "@zazuko/vocabularies": "^1.0.0-rc.2",
     "c8": "^7.11.3",
     "chai": "^4.2.0",
     "clownface": "^1.5.1",
@@ -73,6 +74,8 @@
     "lint-staged": "^13.0.3",
     "mocha": "^10.0.0",
     "npm-run-all": "^4.1.5",
+    "patch-package": "^6.5.1",
+    "postinstall-postinstall": "^2.1.0",
     "safe-identifier": "^0.4.2",
     "standard": "^17.0.0",
     "ts-morph": "^15.1.0",
