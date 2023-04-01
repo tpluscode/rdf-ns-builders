@@ -5,7 +5,7 @@ function createExport(prefix: string, exportName: string): OptionalKind<ExportDe
   return {
     namedExports: [{
       name: exportName,
-      alias: identifier(prefix),
+      alias: identifier(prefix.replace(/-\w/g, s => s[1].toUpperCase())),
     }],
     moduleSpecifier: `./vocabularies/${prefix}.js`,
   }
