@@ -28,15 +28,15 @@ import { NamedNode } from '@rdfjs/types'
 const schemaPerson: NamedNode = schema.Person
 ```
 
-### Strict builder
+### Loose builder
 
-The namespace builders exported from the main module allow arbitrary term, even if they do not exist in the vocabulary. Alternatively, strict builders can be imported which will report compiler errors if a term name is incorrect, such as to prevent typos.
+The namespace builders exported from the main module allow arbitrary term but in TypeScript, an error will be shown if they do not exist in the vocabulary. Alternatively, loonse builders can be imported which will ignore terms from outside the vocabulary.
 
 ```
-import { schema } from '@tpluscode/rdf-ns-builders/strict'
+import { schema } from '@tpluscode/rdf-ns-builders/loose'
 import { NamedNode } from '@rdfjs/types'
 
-// will show error
+// will not show error
 const schemaPerson: NamedNode = schema.Persona
 ```
 
