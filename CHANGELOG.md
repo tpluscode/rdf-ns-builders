@@ -1,5 +1,11 @@
 # Changelog
 
+## 3.0.3
+
+### Patch Changes
+
+- 5bea3fc: Added dash-sparql prefix
+
 ## 3.0.2
 
 ### Patch Changes
