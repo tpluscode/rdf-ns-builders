@@ -1,5 +1,11 @@
 # Changelog
 
+## 3.0.4
+
+### Patch Changes
+
+- c3a07b6: Removed `@zazuko/vocabularies` from peer deps
+
 ## 3.0.3
 
 ### Patch Changes
