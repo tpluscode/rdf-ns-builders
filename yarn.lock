@@ -823,559 +823,601 @@
   resolved "https://registry.yarnpkg.com/@ungap/promise-all-settled/-/promise-all-settled-1.1.2.tgz#aa58042711d6e3275dd37dc597e5d31e8c290a44"
   integrity sha512-sL/cEvJWAnClXw0wHk85/2L0G6Sj8UB0Ctc1TEMbKSsmpRosqhwj9gWgFRZSrBr2f9tiXISwNhCPmlfqUqyb9Q==
 
-"@vocabulary/acl@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@vocabulary/acl/-/acl-1.0.0-rc.1.tgz#285e44da12bf2a45105979ce3318bd0394ac2bc0"
-  integrity sha512-PKlcSdoO2k+/g2uMkfst+A4+zIOdANjm0wxgjMTt2QfbRKC0FLP28Y/YEJdWDY/XmMj4MzAMMamH35ViWQHOkA==
-
-"@vocabulary/as@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@vocabulary/as/-/as-1.0.0-rc.1.tgz#a754d310839fa7e6f665d6344e6d2c53cb8080a6"
-  integrity sha512-5pKteaN34iyiGV77gOP9FaJuqmFF610McF5d2KhJP3wNrx4YaJZekRRXQUb+GMGMj3+MoxjmjTDUo8Oi5bIH8Q==
-
-"@vocabulary/bibo@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@vocabulary/bibo/-/bibo-1.0.0-rc.1.tgz#e825ba2644123b8f81ab4a501e379e040a3ea24e"
-  integrity sha512-rgpmgpFvLcHvrgAW14LtZwx/UvfO6iNJT4m/6CdtGfe7+aggsc9jDXPWwsLmg8jvtejtPPPpaSpsNE8Z6UwljA==
-
-"@vocabulary/cc@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@vocabulary/cc/-/cc-1.0.0-rc.1.tgz#cb1bff0b46bce99190f85ca688f6f3dcd92bba8e"
-  integrity sha512-Uc/9OcMcOuMXXqtTFN67LFmwWNs8lJt7KsPQxQfJy6AqxVMUHIcV51aTkjAbEtwPgxi7nf2pJXPs0Mxp3vBihA==
-
-"@vocabulary/cnt@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@vocabulary/cnt/-/cnt-1.0.0-rc.1.tgz#52816bfe2e34488f7568766b94667a053259f72c"
-  integrity sha512-fYlRN77lwHMxJfdqGRyp+uEksVN1ekoN7EoWnXDQDFSniltLDqXXLSeeC0+zt4GIcdUcbBtwnuLDBHZaYf3C2Q==
-
-"@vocabulary/constant@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@vocabulary/constant/-/constant-1.0.0-rc.1.tgz#7c21d8a8afcbfe57daaf01b3eac7042e74f3c825"
-  integrity sha512-NOoWDoJ1MURY+XahqGkFG0aQPoqf6RqL4k9v1srug7xdzRqHtWyGPS1vA3korRaehlUXv2HPjUPDRLohLX/h1A==
-
-"@vocabulary/crm@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@vocabulary/crm/-/crm-1.0.0-rc.1.tgz#5121653281ddedb99eaa2f5b3386b4fcf887b532"
-  integrity sha512-vfek4SCBOwbiMmBbJEV3RdA0Wamz484THiGtSnV+rtYrq4GaA6ust880XaCTj6cDdPRtT7w6/wXlntckxUNKng==
-
-"@vocabulary/csvw@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@vocabulary/csvw/-/csvw-1.0.0-rc.1.tgz#058a14699bd337f300d34b2d4ef671e795089822"
-  integrity sha512-x8qF6Eg3+eDSM64Hz8UF4/cIvSBVKfW8QUyqHgkJJ16+DOgbcw4Ynzqq4RWTV4TfEDw8Us1giVA5u8xdO/VXhQ==
-
-"@vocabulary/ctag@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@vocabulary/ctag/-/ctag-1.0.0-rc.1.tgz#c09f75439458d190d572b6d4aec88fe6b62d61a1"
-  integrity sha512-anYflrf28Pnjl4/rxECosmkFPEOUZ1FkTcaUfIo3SdfDvV1dd0NJf/3HR7+Fkb7QF2K/7pN+LgPazuQiWNjlcQ==
-
-"@vocabulary/dash-sparql@^1.0.0-rc.0":
-  version "1.0.0-rc.0"
-  resolved "https://registry.yarnpkg.com/@vocabulary/dash-sparql/-/dash-sparql-1.0.0-rc.0.tgz#012fe23deb2c5f668937dca478e49ae1297a6071"
-  integrity sha512-869yll8v7X36Jpe50QhUl1cR/dRdfbGy8ZRLOxroscyqelL6jzojlpJfkMj2oLdvRScTJn+4fixS3HqNrvKwNg==
-
-"@vocabulary/dash@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@vocabulary/dash/-/dash-1.0.0-rc.1.tgz#d3157f792c977d208f67f0246236ba09cc782a98"
-  integrity sha512-3fXDlVKvAVBfSiHe0OTyfN2r5ijcThDpcXFl6cp7dGwLCM/2+ln4Ei5g4cGPddPxAvCkVnSO2V0WIjnIwZZfhA==
-
-"@vocabulary/dbo@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@vocabulary/dbo/-/dbo-1.0.0-rc.1.tgz#1111d76c1087f9e2c5dfd99d15012488dc01a03e"
-  integrity sha512-XKM2GyroFdb273kkKihh+Up6XAq0tCaysLjoa5v4hzG7EsfZoNYC/8dPMmW5U1VP1KaJsV/iI9Z959pGveTM6w==
-
-"@vocabulary/dc11@^1.0.0-rc.0":
-  version "1.0.0-rc.0"
-  resolved "https://registry.yarnpkg.com/@vocabulary/dc11/-/dc11-1.0.0-rc.0.tgz#aece6ac6d3cdc850be6c17d7e4afefec3f0d3e6d"
-  integrity sha512-RR962UYGP79ZMw3c4Zi5KV5TjnnhoktnjSvtRM9NATN5kYKORD9fAhbSZ0u/I75w96MTWSn9J1l3QppFIcZjHQ==
-
-"@vocabulary/dcam@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@vocabulary/dcam/-/dcam-1.0.0-rc.1.tgz#de2ee7aa57cbf576ecae0fbc07aed12cef0fbeb5"
-  integrity sha512-ljHQGbsqFdEzwyqoJ7RmqHkQSLa6M7xkxyl5Xv52h0eW1abK+05Fjp+2/xHn4qIlXuJkJY2GHppSrXjIqbHh9g==
-
-"@vocabulary/dcat@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@vocabulary/dcat/-/dcat-1.0.0-rc.1.tgz#b8e3d4c90296242aa7ee8c06d158da9387a6b423"
-  integrity sha512-602vfCZYBj6mkaiRPKL96Pt6+O4BXehOyq3RH46B2xDETW+MJrWEf8NNjyhYGPPZ5Wtao2NEhtyuuVujjYw8vA==
-
-"@vocabulary/dcmitype@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@vocabulary/dcmitype/-/dcmitype-1.0.0-rc.1.tgz#da55ae808905cb3f8a13059ab011f5d2e502c9ce"
-  integrity sha512-/GUacQAuy0kCuTS2ZTutjVmrudYxD2qSCdT6b8IbsFuoJZvr/ZMM0kbqJ9WliJu5rAS4fVsSZd7CNHJfnCY/iQ==
-
-"@vocabulary/dcterms@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@vocabulary/dcterms/-/dcterms-1.0.0-rc.1.tgz#a39fff068eaa13e07c246b29c9a2109440c6b76a"
-  integrity sha512-Bl5OTQBt23MZ8rO0zjBbcpS2SeHN/pkh/VLkvCJQ05Xa6tXTVmEJLHEU3ic70xADtBHfy7wrBmmbHWpWVNQBrw==
-
-"@vocabulary/discipline@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@vocabulary/discipline/-/discipline-1.0.0-rc.1.tgz#c674449c91abf791406d6ed3506b141ebd2a979f"
-  integrity sha512-wXxpXxrnrOeHnELQTyFS7ybHcznAe6mIzcNtcdcEpDF4yC5D5n5J90mZYy0DC5NSXtxtelDP0ha0O3DAqGHydQ==
-
-"@vocabulary/doap@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@vocabulary/doap/-/doap-1.0.0-rc.1.tgz#e7478ab35187e3dfb304a70add94ce430a989e21"
-  integrity sha512-8ka8crDvsKk0CiMpm1ziT8AGhRLlTbPYSD4hYcvGkKTVOCbjo2HigD7blGvO9JgbM3Pw5Eip9MoMdFbl1qiM6Q==
-
-"@vocabulary/dpv@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@vocabulary/dpv/-/dpv-1.0.0-rc.1.tgz#d6c39d26de56fa5446d9f4ae9e6eea114059cdec"
-  integrity sha512-B7seLTmeGCeIKPWMav3KSpB4a9kjOyCFzyeEeFPPWcDNleMaDpExJkJNRt9dHaQTe+aAfji7wLcZWgSnNl2uTg==
-
-"@vocabulary/dqv@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@vocabulary/dqv/-/dqv-1.0.0-rc.1.tgz#9005434912da8b019cfa84aeddadfffac3726ad9"
-  integrity sha512-RCraspcpGhvX5p0Xft2eFxsHo5nubp92kk8aLWXGW7UzFl3PePsNmOQXBdMOB0oyHDGm1Az+Q2rkmh1O2AllRQ==
-
-"@vocabulary/dtype@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@vocabulary/dtype/-/dtype-1.0.0-rc.1.tgz#5edf6bdf427eda584c602d60ccece742284566ad"
-  integrity sha512-O1NApXtprjHUEuH1Ycfy0jyA1uWsZUTFtzs69nPrnr5REkkvl2fdUqti5tPs8fgjDO17ay2W+7a8r9rI3zllmQ==
-
-"@vocabulary/duv@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@vocabulary/duv/-/duv-1.0.0-rc.1.tgz#b6e1c7a395a937640a9a6660bc364d4ea4426fdd"
-  integrity sha512-C2HmazjgMWphsezirLGowz+8lB6SqVrS3rLRhRgy4XgFpPblEfNcP3h2tVw8GcSNMNuQi3fhYDPTrQgFF4Dczg==
-
-"@vocabulary/earl@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@vocabulary/earl/-/earl-1.0.0-rc.1.tgz#60da9069afa7834d96f2c37759acc95ba71e4c5c"
-  integrity sha512-nZl7URArw+pCVRJOYU9D85rZYfhl+fgk/FG2MToZdhQqcUJcdsl0lFZBkUvHR8RqwgDBg9Oo/tc24v3SWek3sg==
-
-"@vocabulary/ebucore@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@vocabulary/ebucore/-/ebucore-1.0.0-rc.1.tgz#bace194f7b7901dbc2102a73710524630cf13ea8"
-  integrity sha512-5bX6BzYw3DcMFdL7BT7WhMCXfJe1IlHlck8OnwCrzHlgtxGOn1MhQ+YT/AEOxohFxh3GUhWzXJd9B/WvTrD0iw==
-
-"@vocabulary/exif@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@vocabulary/exif/-/exif-1.0.0-rc.1.tgz#13ba7561e01f18bd25f86f93fa8c33be865445fa"
-  integrity sha512-tMfKgV5qiTth1KYnlDg8zj4hGPtkUJVVfCEQw2A2Std+kvBEppOottcsEImbpljvzBITf0cm9grmclNodtpRLg==
-
-"@vocabulary/foaf@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@vocabulary/foaf/-/foaf-1.0.0-rc.1.tgz#70be4dc03a12455ee970149455df0103191738ee"
-  integrity sha512-3AlfhtHwL/BnYZtHsj+Df/TOsHkbajXfkVeBT/9xOTlp2huogzeIWLR/VlMlug3WDVPFafXXWdEz1FtkxRh2qw==
-
-"@vocabulary/frbr@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@vocabulary/frbr/-/frbr-1.0.0-rc.1.tgz#d7b2e96a3b4e71de4f7672b973955f588134ca24"
-  integrity sha512-hYQ6Q33EyYpoFQIzvrAN+Dw1ICyR2/+ClfsGj+obooCwd3hlIEeHlc/rRBeLIBk4dgBhg5i0m6rRx5lM2hFvKA==
-
-"@vocabulary/geo@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@vocabulary/geo/-/geo-1.0.0-rc.1.tgz#fdbc34706efcf3ee8567c28ee53b37b6734e954c"
-  integrity sha512-N+hG8gRa8eYJepDS2dkCl0xSR+w/C6XOpQyiRGhUh2eekO/OPguqu6DGKHGhIqKyHIEmpQEiCrzTP4Kms39rXQ==
-
-"@vocabulary/geof@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@vocabulary/geof/-/geof-1.0.0-rc.1.tgz#158c082cf0f03441b4e357ffabf902b600a7652b"
-  integrity sha512-YBWiZqesYYwi3H1H2NnraXeHJtyqdiprOmwitQu6SwDUnf5Mus/zddM5WAgKW7ZeE5SsLgyqdbeU7Eu8w2WDkA==
-
-"@vocabulary/geor@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@vocabulary/geor/-/geor-1.0.0-rc.1.tgz#88573879f62841a03fcaae947c4a7a59990b2e1b"
-  integrity sha512-4iRwG+9KW+00mdBBGqK5RtUePc0BGzZzRC0qvtQbkpZYiCmDS9L2IoLiGIUCorP1EFt/VNOiz6zQzzN8itZuaA==
-
-"@vocabulary/gml@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@vocabulary/gml/-/gml-1.0.0-rc.1.tgz#e95ec64f8ac4ec6074534050fc115217916f2247"
-  integrity sha512-JjzaJLD4Vlw9wUgmb5eRRo7jU2TcfT/enzhcxM8rDRPL5QXJxpUGFR0HY5zFBaXqKvaCYEET5co7Asp7/Lxz5A==
-
-"@vocabulary/gn@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@vocabulary/gn/-/gn-1.0.0-rc.1.tgz#1a1830ef17bdbdff33464db805e5c43c30e88785"
-  integrity sha512-9F73bHb0LAAPOuKnbNCPDOLGEyNV/DtgD0z62MEJZdvse5k3JtuF/VvS77IrdW/WmcYDIE+wIR5W1vwUAKjX6g==
-
-"@vocabulary/gr@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@vocabulary/gr/-/gr-1.0.0-rc.1.tgz#224ddf63ceaa8c7ca777d45b0efa4bbc734597e9"
-  integrity sha512-GzFEaLE9x84A7tglaxk+sMVdxsONxV8U7C86ijSYoRHX+3VTvIMn2V+FkfsLdZH1RCJE7+1VipOTsETjy9GZKA==
-
-"@vocabulary/grddl@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@vocabulary/grddl/-/grddl-1.0.0-rc.1.tgz#9ed4cf83b08ec2d39843052711e400d302fd9cef"
-  integrity sha512-l5HIJYmn/KNxHAWNv/DLrnafWcTOIhA9iN6G4kqxbmqNWWpGvBYbPxxZH2emrRXyl+Yz682IJCnTufWFv97g5g==
-
-"@vocabulary/gs1@^1.0.0-rc.0":
-  version "1.0.0-rc.0"
-  resolved "https://registry.yarnpkg.com/@vocabulary/gs1/-/gs1-1.0.0-rc.0.tgz#0df47f4dcaa45aae5ea8d1cda8e3b10a95143d2f"
-  integrity sha512-SSPfG+QWicb3HhByBK+5DuKFaur6/ce78WBpoq3YapQxjb3PKs2dKFvsx+vj9BtOlUTdob6Tun3mi9yhZOUUgQ==
-
-"@vocabulary/gtfs@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@vocabulary/gtfs/-/gtfs-1.0.0-rc.1.tgz#464be04d6712e972286b2479e79bebf7ab3fb592"
-  integrity sha512-mLyvpPwM8mWxPItOECt3FhJxisuCL/HbaE9F6ttFPHWouPRo48Y5Qj08VoS3zexstPBHIWrxHStw6i4JH+vLiw==
-
-"@vocabulary/http@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@vocabulary/http/-/http-1.0.0-rc.1.tgz#5dd92aa84bc2c0c1771fd35fc25cd9149471cd47"
-  integrity sha512-akZ4o770i8KbwoDAqlC1C7XsMmSRREST+IXXfhw8boprCybt4SmsUoVCwMBt4soO3s4UEHFaxL7UwngIhkfKaQ==
-
-"@vocabulary/hydra@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@vocabulary/hydra/-/hydra-1.0.0-rc.1.tgz#aa26c108e8a9d97f6ce0a350dcd6cdf58ab81d6e"
-  integrity sha512-ABaFt9WIMGGrrvwHtK75/CgOFfLd8b0HU2j468idobpaqqf7B09JRXhvBglRQPfze1LbM5DgZjcdKP2tHz+mLw==
-
-"@vocabulary/ical@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@vocabulary/ical/-/ical-1.0.0-rc.1.tgz#a998e05627bed26ef9351148705c3be069bd3b56"
-  integrity sha512-C3SEfl8il2WidUfN4qlErSc8Ex07HPRQiKo5gnuDKA3gZ1ywuXEVOaEzqjqx+uCwG3SG8nYKqtZm1uGY7GINPA==
-
-"@vocabulary/ldp@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@vocabulary/ldp/-/ldp-1.0.0-rc.1.tgz#cb7a3f366dc79bd045945bc48afa4cc7a69b870e"
-  integrity sha512-qevQ1v4ofyKEcr5cQXYTpFDVaVFTKLYWc3q3YTLlf1x72A5uCqtbhBMRmgNbpcvgAcRQ4vagNx6KsYzgNoXQNA==
-
-"@vocabulary/locn@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@vocabulary/locn/-/locn-1.0.0-rc.1.tgz#617a0ca2b55143ab80fd0952049982c5d0ba7adf"
-  integrity sha512-+wzDYXxQVomu+9RadF6ezpGI3txPXr0PptkpyswNPCyK0WLPdaYj/U0Zm2gB42RzwhKcydFuyCTZUv4+CHUtbg==
-
-"@vocabulary/lvont@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@vocabulary/lvont/-/lvont-1.0.0-rc.1.tgz#35183baa2d86c9ad9b0f37bbddec16ef7aed6b99"
-  integrity sha512-GLK9ajEmhcRritFsZZ220M1XqtW2U7Yk61UdjkHCmTKAXCK9wZUcwcOiafOzd6mUf8+5XLWpgLen2TvZ7paF8Q==
-
-"@vocabulary/ma@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@vocabulary/ma/-/ma-1.0.0-rc.1.tgz#9f85bf723630fe0b74d2928a574e441a8bc690da"
-  integrity sha512-JdH6adLzK12KcLRIOYw94ezADMfRSpwn8uvMvZG8Ed3KMJzjzA3fPgamk/zATnN8WUTavVjiBzfuQmTgZOl5DQ==
-
-"@vocabulary/mads@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@vocabulary/mads/-/mads-1.0.0-rc.1.tgz#9728a9c52dcc4577dc42bef3bd49cec760ef23b7"
-  integrity sha512-N06cJ2cMxC3uMjV9z7XVRmiTzj9PA7qzkUl++OzzAvPsbV2W68EIPSpKz2d8uF1NNYmII/yxODSE/fPWkSaKBA==
-
-"@vocabulary/oa@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@vocabulary/oa/-/oa-1.0.0-rc.1.tgz#7a400ec31399c8bea0ceefd83590eefa7fd7e53c"
-  integrity sha512-YNT0+9BcQAaUWWwxLNuZifzeKfwWhjn+UbYxWtf6L/hlH99EJoPQr+Iisof0IF++UfDhtNYKTQbKpzJCi/fHHA==
-
-"@vocabulary/og@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@vocabulary/og/-/og-1.0.0-rc.1.tgz#fb23188964691965de4d2c6d145e98d6523dd74d"
-  integrity sha512-onRk18tpaPKVBBGLxlMw210Kc4LAFmv0CfMXuECq0VCxJ2JkPjDcbpXjcQwOjAF+TsxX21ixowB4pd90tRgQqA==
-
-"@vocabulary/org@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@vocabulary/org/-/org-1.0.0-rc.1.tgz#c83e2ab159077c49dc5f1c608d70b303017e4ed6"
-  integrity sha512-HB5XM1+6WkZbPQRYaWkyWpjg+APG4rltERQYGXNrj+Ku+sXlwiA0qr24JjduQ3bYxix4cBqWYroFApof7vU5ZQ==
-
-"@vocabulary/owl@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@vocabulary/owl/-/owl-1.0.0-rc.1.tgz#53112254cb664bdcfcd09cd51a84fbd44459591a"
-  integrity sha512-KsABLpjOeb78rSuho6At4ScvFVa+xLUvyev2OObmtSfxdV8gO39FaUsaSZGEkpaNLUAGavBG+SFF5v8TNUpHNA==
-
-"@vocabulary/prefix@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@vocabulary/prefix/-/prefix-1.0.0-rc.1.tgz#d46893d0df8202ca1de6a0025c927b2e7fed3ad9"
-  integrity sha512-D6JO++rg17vdyKcFtuY1VXWRVJAVz0dkfwsAbWG21eK9zz6GAEWmtG5f7I7PbU3ZVHM1IBMMe9QKhVxmyaIl0A==
-
-"@vocabulary/prov@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@vocabulary/prov/-/prov-1.0.0-rc.1.tgz#e1f1c787f4aee4db0330c0a1aa74a7f7459f8519"
-  integrity sha512-qFsNGKC2UpLgYDUK2t9AWJFQD6OkkQ07f0GATzxcZGlUXf+XBeA6vK8W8mGIGoqA271zPfs+bzFZuhQOoVgfvw==
-
-"@vocabulary/qb@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@vocabulary/qb/-/qb-1.0.0-rc.1.tgz#63ffda6aaa664c8a266ea8d15f501b8015a22839"
-  integrity sha512-NS29IugW0qEmewbd80jQK96EO689LH9Xbk3urgX1t23UvGMQFPX18NDEraPt/dB5G4b+I8dgD83UeMZKOrDXEg==
-
-"@vocabulary/qkdv@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@vocabulary/qkdv/-/qkdv-1.0.0-rc.1.tgz#70633c80b4e01f7d4eaec49e8bc057bb52addd21"
-  integrity sha512-2S9cYvUorKD1MF4tjOnzd9sfvTE8/DwdJf57QlrZcq0TGitI08tPY4aqf+TmijamuSdt1wMA9rX/u1UyYcb9/w==
-
-"@vocabulary/quantitykind@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@vocabulary/quantitykind/-/quantitykind-1.0.0-rc.1.tgz#90d204c8c331eccbbc1330d7f8f733f4e11dd2b3"
-  integrity sha512-0xXefkjj9JQYMplaBfWy3VQ/bDc7tWiMNGlouTleGeESoFa9k4Dy+KHT+gF9rH18zjNB4MEvqPJw6kioTlxoig==
-
-"@vocabulary/qudt@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@vocabulary/qudt/-/qudt-1.0.0-rc.1.tgz#15e9953753c93c5d20def3e3d77a720c47e34442"
-  integrity sha512-XYqziHuilsHEnCTCE7kAuNY7si7JgUgKQoSNtrXQcArJRWHCoGoXzN2QKCzXB7G/OF1eW6MXP2mR8j8IfTilPQ==
-
-"@vocabulary/rdau@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@vocabulary/rdau/-/rdau-1.0.0-rc.1.tgz#28a5f02265b547a1d75bffe732704cfeffcf5060"
-  integrity sha512-olXPVeTbJdALfVUhLGCuGYpZHhyPenIS1p3iyI1oYUWgdLnhTedLNMmfOwaRQlGw8q3ldsCyFonGJV2U3/TUtw==
-
-"@vocabulary/rdf@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@vocabulary/rdf/-/rdf-1.0.0-rc.1.tgz#55cfcd43a5aec127a6d011922ad37f482cbab73b"
-  integrity sha512-UCPabOE+N+nROaE/f6kV4rn8N5nRTEJyAU4FKunEgBJzjW/Lukj3zMs1/U8wetB1ysu9a69bZcv2IfI6OtKnvQ==
-
-"@vocabulary/rdfa@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@vocabulary/rdfa/-/rdfa-1.0.0-rc.1.tgz#04cbf5f7a6509473ad90ecd93ae5f2e5a948864a"
-  integrity sha512-zMjOpfxB9cSzAGcemgOrsNJQmj11Pzq7T957kZbqK1lbFyv32V+ktnRsnSIwQmPC8qGnvY97wwtcL/ezFFrTIA==
-
-"@vocabulary/rdfs@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@vocabulary/rdfs/-/rdfs-1.0.0-rc.1.tgz#3458211dc852cdad1e766b30bbee3d1275a86ba2"
-  integrity sha512-lWY3Cf02ovN7Pgpt3ApSgGIizyDztl9zU5qnv3hT/jdSHSiU6h76mEgjhMk8IkEeXu7+Mo9ldIanh/U34anqlw==
-
-"@vocabulary/rev@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@vocabulary/rev/-/rev-1.0.0-rc.1.tgz#a4926a6f4fbcb6e0556ff98d4fc55c201ac65711"
-  integrity sha512-nsFmEb27sMWlXQlqb91d+D3LhYUzFaVzUfe+ZgQGb/GcL7eAZeOV1dCQmKdzJ7I7yJXXgLQmwrDVFd4kB7W27g==
-
-"@vocabulary/rico@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@vocabulary/rico/-/rico-1.0.0-rc.1.tgz#ce7948b684e47e169a25f34841ea883652444b43"
-  integrity sha512-oRy/Izpwydg+P3uySz3+j04SJailXr12/pGAQYu0HMWarPdiaHoKWZcYTkhEAMPypn6NHBMAZXM+7u2LSALFlA==
-
-"@vocabulary/rr@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@vocabulary/rr/-/rr-1.0.0-rc.1.tgz#75d25b43c6dcb02b908aa5b53ab91ca687c60e5c"
-  integrity sha512-v5Fhh8lwLl8NabkaGyWRWzI3R9Y9C43DO26xMPK/NTWvqydLrxqnTLH7Of3aZ5L/qMngiah2BxHljTun6N8BjA==
-
-"@vocabulary/rss@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@vocabulary/rss/-/rss-1.0.0-rc.1.tgz#70e5e6a227b8ebb9065d16aecb16caa9c05b4d62"
-  integrity sha512-4VGP+Ymk5duG6lyHMEEYwBaibbbbbr41FLCvKKtzoK5sonlOrhCkU/t249j44RyOS5TJISnxipwkKGRqm/6NNw==
-
-"@vocabulary/schema@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@vocabulary/schema/-/schema-1.0.0-rc.1.tgz#7cf3c110496af398f354b5f0b75ac574aa8042b9"
-  integrity sha512-cVCAYYSPMKRQC3Ozj9efI7mcNvI8zItTmd+lcE1ajrkPgeO99CEj1sQtajOctJuuIDYIFNQH7AJ/EQQHvYw5pw==
-
-"@vocabulary/sd@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@vocabulary/sd/-/sd-1.0.0-rc.1.tgz#96207683b96be63b123bd25e0cbca566716eb185"
-  integrity sha512-itXcfKrgjXZEtaUHRa2xtR2F9sMgIJgD6ihSx7lVF1KpX1xSfih2k8QuowHRZPSW91pHi8WaBRlqwtRx/Zx2Yw==
-
-"@vocabulary/sdmx@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@vocabulary/sdmx/-/sdmx-1.0.0-rc.1.tgz#ddd708537be01c5824670a7a3ef7bae6d20ad8e0"
-  integrity sha512-lZCID93YevoRzhQvFMbQAH+97RgPTTU/XuK3+n6yGmhpi3LwRVryYJcuPZuJQq5hFtRL6qIq8cZnPlBtqXigYg==
-
-"@vocabulary/sem@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@vocabulary/sem/-/sem-1.0.0-rc.1.tgz#a5dc6c8cb47c1e1b2ce11935e82f6b1ae12c4939"
-  integrity sha512-ly9+ncVqRZWzOPCAdf1jfv64eZhlFJ0JZOCZcWq795AkqVUtECA3LCO7vWuAsuJpqdBVJSLEhB78TLQANKRM/Q==
-
-"@vocabulary/sf@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@vocabulary/sf/-/sf-1.0.0-rc.1.tgz#28be39cd56017c731d1bde1f244623bd63753fc2"
-  integrity sha512-XhB+Lzw5GTc7ckHgS2S5GqCvMEuWDsw9KnRr+3+qeRiY4Z7tzl2EpiQz8bQmQ+r7kPJ+TohJg7Nf2p/S5mxipw==
-
-"@vocabulary/sh@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@vocabulary/sh/-/sh-1.0.0-rc.1.tgz#2022a2e92c96bf017c215c6232d3642aa04a5e04"
-  integrity sha512-BEP18qRbYgFtA6a/MPCXT0K105rrjWZZ2aBRMTOW6Ttn/Ac6MX1OyiGegRG48EsNuBJKoa5HL94V39/a377gTg==
-
-"@vocabulary/shex@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@vocabulary/shex/-/shex-1.0.0-rc.1.tgz#bd68b8d86301ba33381561c7d6b63fa9b5e7714d"
-  integrity sha512-cRvAT+W1nbRnpS0WK2FT2P9yqBbWed8R3y4iE7qAaeptiXQ/FeKIc1ugKE4x3CMCA5t78lPY2TraVWNuwqzeXw==
-
-"@vocabulary/sioc@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@vocabulary/sioc/-/sioc-1.0.0-rc.1.tgz#3def8ed47115ae6998917b1769266dabe75bad16"
-  integrity sha512-paxE3YR2NLEaEowJ5VQH+TTPuuAsiDc/iH8kLY5l/rpb0ECvu+Tu3q20dkB/jvNrxFIYMDWdKY+pmIWucb8O/w==
-
-"@vocabulary/skos@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@vocabulary/skos/-/skos-1.0.0-rc.1.tgz#1f4f62309a37d538b7818b012005636167faf509"
-  integrity sha512-WJMzAFqwJ2AB+m9wZZ4NtF8tiHeJC838Kzraxw8ENtWwwQz6O47c1T3P4pz4wm1l5AQz+r8NfljQZue3kGII/Q==
-
-"@vocabulary/skosxl@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@vocabulary/skosxl/-/skosxl-1.0.0-rc.1.tgz#b389fd3ab90bdada83745d9b3563281d0ef61e38"
-  integrity sha512-dPnavEE6BfWxYjWeQkXPRRCzCeXxZ263hl4PHC1cU6jSe+PEzfPJgNibjj6//7n5mG9Dgl6zxGN/yq8xr9sQuA==
-
-"@vocabulary/sosa@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@vocabulary/sosa/-/sosa-1.0.0-rc.1.tgz#9ce587ca620de98bfb2db6d836e35ae4b3f784b0"
-  integrity sha512-B9cEKirM/8Lhv/1NSCUW1evIF2gdDbnYQnZHMwSuq7fxKMzKgUD10raIrmHTRF5+do0CKU50BQpPcDJjQVE2rQ==
-
-"@vocabulary/sou@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@vocabulary/sou/-/sou-1.0.0-rc.1.tgz#de3d548289d0fa72a953a4dafcd367ba1ec7bb4e"
-  integrity sha512-8zT03KoNw6Nn5wKgm1TtKEIOpxzVRtNXszJkGKDbIgupNZpvwL32X50CE1Sdwb54Q5vOAIPGfc5nEv7xh+sEuw==
-
-"@vocabulary/ssn@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@vocabulary/ssn/-/ssn-1.0.0-rc.1.tgz#377f4139cede6a4e37d9698e9bdceb88aecf4ea3"
-  integrity sha512-y/ZGeyMrti/erFhi7gfvIu6KDM0TQqAtzzmlxzb+U3EjU6yEU5OETCE0kMRj6eq1aT5TjpePesIUv9B+N2Qpjg==
-
-"@vocabulary/test@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@vocabulary/test/-/test-1.0.0-rc.1.tgz#5584be0dc2e97eadca26f8d3295342c36b936c9e"
-  integrity sha512-Hq9f4MB12yISjYToA3w7bq7We3qE1h1qD4cvJ2iSj84RFN0bMNRDZn71EozH0Uu2psOZQdibWKH19aoxMk7tXw==
-
-"@vocabulary/time@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@vocabulary/time/-/time-1.0.0-rc.1.tgz#3d2b63088cd649f08e342091286c151d4ee468c0"
-  integrity sha512-RjzVJ8EeTTga5S/xV9EpPQTMDWDK/JOD/jke0dtjgfdCgOdlSAboa+lipGHvAzURvqzRst9u1JUxy7gvuO+HJA==
-
-"@vocabulary/unit@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@vocabulary/unit/-/unit-1.0.0-rc.1.tgz#2b33fb867ccde0794604161b2a554fde5c29efc9"
-  integrity sha512-Xjy2sSkUFOes/2s8xzPXUXPoSGRn1IbsVUXYl1+K3OlHWVAMP9yNgwOOyCHD1xiXfPamU4C7DQX6yzynuQFkgA==
-
-"@vocabulary/vaem@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@vocabulary/vaem/-/vaem-1.0.0-rc.1.tgz#a8b05a9079a11ddbc45e98464efd3af18d5203c0"
-  integrity sha512-1jXpw6oxN/HJq+Gp/04zQ2jHPsfZHlGZmxFQvp++PfhaYsr3fSCDQvxAnnFzkPwNLP6B7fNOM9qokoyU7C/kSw==
-
-"@vocabulary/vann@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@vocabulary/vann/-/vann-1.0.0-rc.1.tgz#71ac9b7fe874df6ec6dc722fc2f6e5598b2fa87e"
-  integrity sha512-OPCan62HcFQ+4WgRDWuCCX48orsejAN4RRxJ8c63fqZmIE3EhV2tXlSMmflp1oB6IYG9uotzHtJvnDXnTx8rGg==
-
-"@vocabulary/vcard@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@vocabulary/vcard/-/vcard-1.0.0-rc.1.tgz#a2d370459592be635a325acdda7af382685e4dd2"
-  integrity sha512-Aq2BMFpiioEYkX77xCg/ZkBxmf3ncfnVsgNQcZah8jRWNzzIV/yBWO8hpgnv1Y4o4Wf2KvC8bQBsyZ78FsQqdg==
-
-"@vocabulary/void@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@vocabulary/void/-/void-1.0.0-rc.1.tgz#af80f20a0b73fc57b3b523237adec55147769799"
-  integrity sha512-dlWmmYNRkp4Tsj2TvCAeFsLV295I89GwJaEvWyQoRtwsTx4Y95jZZX4y330BFjBfDJtAHKZJR53xO3rzJZ2wCg==
-
-"@vocabulary/vs@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@vocabulary/vs/-/vs-1.0.0-rc.1.tgz#74d6036034d647ee1a258f04780fccdfc54137b3"
-  integrity sha512-ArKLoNk/v6zPfM7WsawQx9fQ6MyPYRFhKAY7g8YhFgc0Oq4FeaZIhHhUwg5nHGbJ1qz0/2vsng0We5LC4TbGzg==
-
-"@vocabulary/wdrs@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@vocabulary/wdrs/-/wdrs-1.0.0-rc.1.tgz#25304a80973ca4574075be98332db16f2e4c2e92"
-  integrity sha512-37yCQn2C5WIhRhCsdf/ic+67lUdZjrjqXSZdYYX81iqlsCnU0OVF1NqBjj+24uTaX0VUxoYCnK8dWMvdK3DuNA==
-
-"@vocabulary/wgs@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@vocabulary/wgs/-/wgs-1.0.0-rc.1.tgz#dbaa706a77e1865fa2f8046b1f7a6706d10731c2"
-  integrity sha512-RSWafbgTTK/z8AnX7U4/aaiDk0hGa/+wRk+RoZwxdvqUwkjf8mlXgbBZoG+biC1oLXILFnEO4ww43Ihh/xoenA==
-
-"@vocabulary/xhv@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@vocabulary/xhv/-/xhv-1.0.0-rc.1.tgz#66df40af095ca9b706330707a50c36ecb2064886"
-  integrity sha512-vSMae1WBVD/JmO0pU5tR5oXfxGDBHysnQuBm3Yq7ca6zLbnkCG7SLWcdu+2hgVu+PoWUba5/FGwJXFoLMXutbg==
-
-"@vocabulary/xkos@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@vocabulary/xkos/-/xkos-1.0.0-rc.1.tgz#59b7a8ec5f6fc07f7c49e847d61606ed865e844b"
-  integrity sha512-yBgmTSD6UHJcJ2OfKBIIi5xgvLKuoykfBGCcTA+CBDaeUJIcZsRwp5KqLgUOc0k6zPxRNllek37j/lbUe563LQ==
-
-"@vocabulary/xsd@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@vocabulary/xsd/-/xsd-1.0.0-rc.1.tgz#634a07e521b60838b0995c8f8f0b86d5c755b6e5"
-  integrity sha512-m+KYKzzAOm15tH0tdMi0RHMOGIDPlqD4Q3LKqcL5CsQ3UdAMK1HMq3CsM4QabwvAyRND1TZakNlC6r7Fhh7AkA==
+"@vocabulary/acl@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@vocabulary/acl/-/acl-1.0.0.tgz#da720e1e8523112b81e942d7704586dadbaa370e"
+  integrity sha512-VD+2LDoSkpLImO0Ke3+0vyPNLVdLg7MXknZxJgadhh06xXU7wnuacfuH/PRBYS4TH10zbdbd68nRQxWXdKxj6g==
+
+"@vocabulary/as@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@vocabulary/as/-/as-1.0.0.tgz#b5876cf40483b6a28a798211fa665c321b31a51b"
+  integrity sha512-Zg9XtUxMTxyhm0NkhNgCFX3vKt0NY4B97vnH7R9fbzIoKRffGe/phbW4fFd9LVsZ19AMjL3Xy32qJCyaRovsIQ==
+
+"@vocabulary/bibo@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@vocabulary/bibo/-/bibo-1.0.0.tgz#fd0c183b542641700dae4750e9192ef646f770d8"
+  integrity sha512-WThs+4fZcz5mYjLLTZHuVMsbQlwHLAlcKhzPju8t1HHfXTLT4mMBUhv3voh+TyHQeuDM8eWeE+8mqiyq03Kcwg==
+
+"@vocabulary/cc@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@vocabulary/cc/-/cc-1.0.0.tgz#5cc6dbad3a8f892bd1d89a123a1fc5931f1ae522"
+  integrity sha512-ccE05Ec3ACfbvDnvHwnS2a7PSOXo8oKKb/USTkjrSOdJqe7H4g4G1X+6qrQl/QHwYp8NNJDeSzfgwQ1t2y14bg==
+
+"@vocabulary/cnt@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@vocabulary/cnt/-/cnt-1.0.0.tgz#3e669ddcbbaf3733368828cf51144a2b35a5aa71"
+  integrity sha512-w/73eXeleJE6bowaiFTIY+yaARgCUuUkmk09p5ZPJiex/lmJTarpNlw+6tAaU0ozzXnHhJsZDoWWknkGK9p/9w==
+
+"@vocabulary/constant@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@vocabulary/constant/-/constant-1.0.0.tgz#3da2df2e25ebfa4bf87b8d0e72bf70db518ebdac"
+  integrity sha512-My5brgF0CUFOjEkHCaSOwhYwfJutC86SsXhxugTETmt5SAnzTW4Zepm31Ou1IVwIuCVmYHr3uuOO6JZHfdao9g==
+
+"@vocabulary/crm@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@vocabulary/crm/-/crm-1.0.0.tgz#81e21fedcc2486ed80496081a4083978027f0fcb"
+  integrity sha512-8TbsZRpy4+/pSXEIErEKAysz9FghBqaDLd0eDHHCrknemaQR6Cs8RZwquoeYwahbhwulfo0YmliF33FhYRqsQw==
+
+"@vocabulary/csvw@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@vocabulary/csvw/-/csvw-1.0.0.tgz#92584622fa6f803880c37924525da3af169feb37"
+  integrity sha512-c6uINeaxdcEgzaux1VMpPxAJIf7eYgcMoECohUae1pJqQHVQiwnLAuoR6IUExa7uxt2GbPPV1s8TnirzFidxWw==
+
+"@vocabulary/ctag@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@vocabulary/ctag/-/ctag-1.0.0.tgz#09f72a8919509a3da39f798d68394016215b125a"
+  integrity sha512-BtPLgUk73NYfTHCMlzqpsdLe0RN4GheSr/xttXhL2QqYJpgUEcyEGNN7y5IiLk45XGChJnh7nJHY+MhoGxRiFg==
+
+"@vocabulary/dash-sparql@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@vocabulary/dash-sparql/-/dash-sparql-1.0.0.tgz#52c466182506c0fc785613813b373cdb7304b2d4"
+  integrity sha512-QYfYb1sAD7RhTTti6foCGp4j9huNPAalYF/4x4xp+pAzKqYx+RGzwTBZwQe7/WTIX2XluJoXD8PDULiwKlu8Xw==
+
+"@vocabulary/dash@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@vocabulary/dash/-/dash-1.0.0.tgz#e10f2d432c5ff56791603afc307caca1e5adf741"
+  integrity sha512-dbdAxSY6u7RnDaQeedi5r4ep4+5L99fQ0FDOGvAZe17yGFx0nUtvH7/3h4HL4fPs3bNjSM3iyVF5D821nUG8Kw==
+
+"@vocabulary/dbo@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@vocabulary/dbo/-/dbo-1.0.0.tgz#bcc7cc4a2c78fab15625c08086c38c592ce9d4bf"
+  integrity sha512-fup04IzC1k1aHtX5EaQh+eMhAvK7lu45bORX0uO2pH3a2ZmekHMqWbTML8D/2ozvbAtpbEMFfAgHVKSZhABAyg==
+
+"@vocabulary/dc11@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@vocabulary/dc11/-/dc11-1.0.0.tgz#5fe438baa52949f12ab84879534d3cac01ef7a27"
+  integrity sha512-S7YQzMwlxfXWrCYK/Tc6BFcbfKq56j/8I8vpyLsKrQddh2kWYoTsvy71h5+SHc2ENNJ9DA2mm4n2sKZszHmCuw==
+
+"@vocabulary/dcam@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@vocabulary/dcam/-/dcam-1.0.0.tgz#e34fdf7edf0fd720bdfaeb48fafcceef8e775396"
+  integrity sha512-POD3Ls5enh2CEQnm8LWhVRiswl0vt6JiPIVJsTIEwv8/IH9GuAo1Ofr0AsKDM/2J+SrUFFK0qMXJGL07uE4aLw==
+
+"@vocabulary/dcat@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@vocabulary/dcat/-/dcat-1.0.0.tgz#8ccc0337fa589f6ad301cf23ff27d34bc49c61d4"
+  integrity sha512-iIBadiX/G1W9m+Z+vJtclCQ8j+4AC9TtZS436Pb0Q8r+2OSx478zOHVpvV2c2JH8y+W+fav2o3NJGlzYe4BCSw==
+
+"@vocabulary/dcmitype@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@vocabulary/dcmitype/-/dcmitype-1.0.0.tgz#ffa7e63e3ebdf39800342b05c321d77718465ddd"
+  integrity sha512-5HUxQuaEq7pvszzfX1cSA/JrqsSimBDMvIitz5LNd+tOFAtAZQZJCIP8mgfX4l3WlOAjjQ9GSYjFMWbxZxhIUg==
+
+"@vocabulary/dcterms@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@vocabulary/dcterms/-/dcterms-1.0.0.tgz#d09e60766cd6b2ddd9df2bd1ef20a6556956177c"
+  integrity sha512-TvAH8prpY5m/yEFtLKHsWbTkAmmdK/b29RUFMU51alhjvpRmP9T4EHiv9OHDAoa5s7CSNqmw5pvY3Fa7R0Cp8g==
+
+"@vocabulary/dig@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@vocabulary/dig/-/dig-1.0.0.tgz#cc8fcf720e167e700a80f1e15802c357ab1ec828"
+  integrity sha512-TLfUIpDMKTbelbOAU/YNV76vmTgFvAsOPKUW6O7jYqZKT5+QwWQCVANBvNTSoZ4hCTx3NeBSwhXJCOVdtzHd5w==
+
+"@vocabulary/discipline@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@vocabulary/discipline/-/discipline-1.0.0.tgz#f494bf58374e35c64056840e0cb6302b6585b9fe"
+  integrity sha512-AF8q7CDnXsG3szV5n+thPh6dVwzd58IwMVvQr/txUlBZsxv2Sr6VLnMJx986DZcfLoWO/IAuij6VI/lHivWlzw==
+
+"@vocabulary/doap@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@vocabulary/doap/-/doap-1.0.0.tgz#afbc799c06d93cd566b3be338428cb101138d52d"
+  integrity sha512-IPU/pTx1uAhqCVlHFIYxbix+teN65Bg7nv2FMv8qqBF8ZUCinDtO82nCGwNrU3Hw0WAWi449GGJaebokhBT/Lw==
+
+"@vocabulary/dpv@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@vocabulary/dpv/-/dpv-1.0.0.tgz#5ee15a18d21099e4ec9103b2ebadb17a20be8504"
+  integrity sha512-yh1h/zHqyiJZ1fVOFxcrMJpqIsiM7AZabYViU5sP0g/dook3jeJV7v5cGkcgQUS31QrCCNF79emru5TPgBgtZg==
+
+"@vocabulary/dqv@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@vocabulary/dqv/-/dqv-1.0.0.tgz#b4cb365d80b4515422fa16d27008bb3d25e9fe67"
+  integrity sha512-YX+FqwmNWSwYJdkqRJglShcI7HB+rXDPrmRmq7EPqxpQYagJ96MnO7sLFboGdKcRoAb5i/xGTgTBvRw5ThPRNw==
+
+"@vocabulary/dtype@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@vocabulary/dtype/-/dtype-1.0.0.tgz#ef455b1c69577359999c6a55109b862f73ca41a1"
+  integrity sha512-EaOtqF2tJcec+h8mPO6Ar1ZCShG6NUu7Vc8q0Fr4O+zWP/8LM2Yl8WenrK6DMvL8jRI7sIFrHRgmRNj5tCFFfQ==
+
+"@vocabulary/duv@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@vocabulary/duv/-/duv-1.0.0.tgz#ec405e7a12df70a80a518a4a202c8ec7b2cb235b"
+  integrity sha512-yZWWX0qhoYVra+qkwSevPZt7Q9VMrlGn+4YciHIHPiXgEges5+KNhrfWyoEOEXDjXkJTfENzbE3u2DfFiiY+cA==
+
+"@vocabulary/earl@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@vocabulary/earl/-/earl-1.0.0.tgz#65efc6fd6a48c038f87a0b56cb2b88a34b6e4184"
+  integrity sha512-RkSabQh/I4uDbjX5ReYdLIw1pEQbWbclFpa19f5EQXQt8BiRR1I8FgD5wRDWOcw+SES0yGYtl1F09KkmkzhGeA==
+
+"@vocabulary/ebucore@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@vocabulary/ebucore/-/ebucore-1.0.0.tgz#e06abb039ae65fa3ab82471fbb74ecdedb8d613a"
+  integrity sha512-O7E/hsrcGsXdI9eoJAVscxlnz13Ryiao+JMY8nsG2W8x+m/wOYyU5qQxbr7P0DvOcK0V6EXWl7rlp7LDcmjUGQ==
+
+"@vocabulary/exif@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@vocabulary/exif/-/exif-1.0.0.tgz#1c13efdab208036c0daaef99251b50ae4f46cbf8"
+  integrity sha512-uK6TyU85yq9LjMWxc7SgWxKpoX46GYlBXj/hZs9DoTcKB9wV8m9XbrGK22tqbC1KqfUrFmPfvp0azoQOGZ9muA==
+
+"@vocabulary/foaf@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@vocabulary/foaf/-/foaf-1.0.0.tgz#3cb909acca2fc6742526cd3f74b320f2527169fd"
+  integrity sha512-XrkPgtO7QP0C9NlGGQtK5GAsl9tbQ2H+wjv5Y6D9FS8gGWM0wYHPkrCRuyRyQz3XYWZkvP85EMtRorayd7+O+Q==
+
+"@vocabulary/frbr@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@vocabulary/frbr/-/frbr-1.0.0.tgz#6965169e6cab3b961d06840262a11c73a16f84e0"
+  integrity sha512-MUZKtHPwekzje3EuV254UmLmLAQJEmXSq98KhofHYUr/uziI/9lDiARH8SQ7pYHxOo080HpoZLCDdOZGTREI5A==
+
+"@vocabulary/geo@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@vocabulary/geo/-/geo-1.0.0.tgz#ef1fd69442fb64ff06d1480db0f8f76e393f81a1"
+  integrity sha512-Koaf5Kcf6qMn5f4p8gKMoLu3hK8wCOuNq4Gy1zG3horFh9QDfBqh3s5IRAy9wInhy7gWoqSA6OGwx1Wt7tUHIw==
+
+"@vocabulary/geof@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@vocabulary/geof/-/geof-1.0.0.tgz#52bfda678cfe4b5370890831f73702ebd77ebbe1"
+  integrity sha512-BvmphJFyrjIeHKXTma6/dzBvmDugc8R2lU5UMh0e6Qi4Oy4jvKkgi6+ORmXSwhZS69AmfG2oh1BcIkm+a0IbRA==
+
+"@vocabulary/geor@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@vocabulary/geor/-/geor-1.0.0.tgz#27654d46634ebdf6b59863169916cac9a48a3105"
+  integrity sha512-Q1OAvX4jyYyUdvgNw4DUZpqsTIJO4sOG2DpSBYcRsk2oYhfqqLj4wHgvmvUaUay6T6tHVe+9U1teYKJBo137rw==
+
+"@vocabulary/gml@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@vocabulary/gml/-/gml-1.0.0.tgz#97d240a22fdb215db10e336f0ab8fb46d14b0951"
+  integrity sha512-oeo9k/syp3psh15YBba0POfj7s57EYWB+OMRv3WOTSrmv2ODhdhaJpOf+Ro1V73xszQUlSo0lIkpiXzkOM/RkA==
+
+"@vocabulary/gn@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@vocabulary/gn/-/gn-1.0.0.tgz#fa8300c1b0ae5b5f791dcf10e85c2d676df75ed1"
+  integrity sha512-TI1w0G3vjuakG1Jv49BLVNuFrRab5ksLW+7im8KSNwAgm20Z5qn9gKRuIkWKkl6lu7Tebm6kFvFyMLCoMdlftA==
+
+"@vocabulary/gr@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@vocabulary/gr/-/gr-1.0.0.tgz#3815383391420d3bf8006b473d8f6c77d6ce31c5"
+  integrity sha512-cBokxxNvuPJMVSruyAE9GKRVV6bED3cH91ZDA8rpQQbYCT/Zd3m4PUKSjeF0CYnV1GkuaZqJkC9ivRDgTq6k/g==
+
+"@vocabulary/grddl@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@vocabulary/grddl/-/grddl-1.0.0.tgz#7b13d2517d82ac8c8b5b7315e790e702bad2340e"
+  integrity sha512-k5ycrhAUrY1Icb+He42S+C6t0liv5+8Qs+LxJLbqnlfHoFXTlcVHsyISITaRxzTwtfMeJHJMKRckOoL/fHEd8A==
+
+"@vocabulary/gs1@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@vocabulary/gs1/-/gs1-1.0.0.tgz#6d35bf92cd10151d37ca5e398958c4e44eb203c3"
+  integrity sha512-AKtCFZPlZcXQ+sLZmNuqxJFnrzwTN2q2eOjH7DrAAUH9cAGtu9G1VJLlVBBNtrk8ORmcMueO7Ggi/IX0VUc7TA==
+
+"@vocabulary/gtfs@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@vocabulary/gtfs/-/gtfs-1.0.0.tgz#19e8c70893702f4c8a5f4a7f01fc95a5433b8764"
+  integrity sha512-Po2pnJOfQJul6xzEEL/MwH7HRK7zh6Nlfx7WiqgN23gykZvbzFPywdyzi2CDe4vPSOX92UdVZyR4zBodSAr+fA==
+
+"@vocabulary/http@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@vocabulary/http/-/http-1.0.0.tgz#ee36d523d4625cfc27aae34e92da6f1a99a8a8a8"
+  integrity sha512-W/Y3MzszWtcSPFgosn8pjYfPviNqFJCe3At7LnHcrHI2L4fCBrYnXlEnWvLa5V0WpUEunsCDjumv887PuO57KA==
+
+"@vocabulary/hydra@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@vocabulary/hydra/-/hydra-1.0.0.tgz#c3246275a73c84edaff43a4d6794d21e800eb096"
+  integrity sha512-z6BiOXcErn5RtsHkdkM9XGOuI9HNQ7oRq/U3GfDeJ68hGY+DpjOx+RGXRkihnALcp9MO16LQzv4CMMACpDiIYw==
+
+"@vocabulary/ical@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@vocabulary/ical/-/ical-1.0.0.tgz#65f4db90956f000254575660bcc82fd1966ba01f"
+  integrity sha512-vOBJQATHcWmRdvulkc0VMojNi0t3GlZutzxfAk+41Qs0oMICpAjc7OUDeqPFfjVnIuGmXj47jIUGpZ/YSWKWvA==
+
+"@vocabulary/la@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@vocabulary/la/-/la-1.0.0.tgz#5030cbc57dc1baac9908e030890624c059ae39c2"
+  integrity sha512-Fh50QfRLT8LNgGAHARq39ceSbifBSAtTR3FCGQzTsFkVMnAnGFozOKNVcvvaikxQi6dii1qjtY5HKnyWgJWKSw==
+
+"@vocabulary/ldp@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@vocabulary/ldp/-/ldp-1.0.0.tgz#0b944e8014aeb3853da091371d62adcc376d8c57"
+  integrity sha512-UqLdyZlWG5Haq15NHJZQTAevqALy5JpHyngvaDmAomEP3n0L/uMQS6V0e3XeOcqyV4sc8gwg4qDWJxGXUZY+5g==
+
+"@vocabulary/list@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@vocabulary/list/-/list-1.0.0.tgz#b2916292ebf76f2fdfce03af058a12b05d12d5d1"
+  integrity sha512-dixKoWYyPbh7XUy9LpabvbA1GZ8tEc1BKUySfU+wI4Bc0Aq17gl0UM0kBh/cmPlQCCu+GMkhVPHrxMr7QqBGIQ==
+
+"@vocabulary/locn@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@vocabulary/locn/-/locn-1.0.0.tgz#80f3ab8e9008198e3b21941d8363f223ed23fcb0"
+  integrity sha512-pmtfZ3eBpqCpZxvmpLb2XzGpR3Ssb8mIe5av+d+y7zQyIfROSabKfYdoXiGQ4LBULE+Z3qSO8CxTqfxHz4CPAw==
+
+"@vocabulary/log@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@vocabulary/log/-/log-1.0.0.tgz#67c0fe4ffc1d3eaedf7c7d4a7cdc85de15fe2489"
+  integrity sha512-jWT2PqY0ZdMgHEVSu2J7v33bWb9qC0pShxchcA/VgNUA9kNoZixrn+54Yf9IkFx0ErX7ppX0xJIgYd+N1hZsOw==
+
+"@vocabulary/lvont@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@vocabulary/lvont/-/lvont-1.0.0.tgz#b6e82e4351d653a11516c58ed7ca4913ac64a210"
+  integrity sha512-qKP/eYbZYeWotiO+hMODaFXdEbYEiNz4ZOQf/fo+bU7mNO83m9oPFTWtY2SdyWbc8PFO2OA3VsEGnZVFgmudww==
+
+"@vocabulary/ma@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@vocabulary/ma/-/ma-1.0.0.tgz#86ede1e1fba97c0d94261ca45d13c39089ceec67"
+  integrity sha512-edmY/a8duNRSZDSlhX0AS20BXcOmnJa4mvvzAYn4A/vs6BKboiHkY0Y4ZzvQlNay0mwTxnA2ZnyGv4XTLWgiJg==
+
+"@vocabulary/mads@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@vocabulary/mads/-/mads-1.0.0.tgz#e5ed92e04b422c9634359f526e79dac57ff9ff41"
+  integrity sha512-2mRx5lzsUI1H2NzYjPGBlRfyZ4xcwC5gGRBw5KWKu61212JROJnY/+LI8PbAPS6lJjzqwhm4vYqIHwv/H0bNTw==
+
+"@vocabulary/math@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@vocabulary/math/-/math-1.0.0.tgz#39438635b306c48d08c07e982fe519dd76869515"
+  integrity sha512-QbEbVKp8GQwDgKUYPvY2550WKF5tx/8KkCdSJsV4ox1631X0O1PKD6PWpzIYzlW84dZYnODmQt+BDHByqAb9Yg==
+
+"@vocabulary/oa@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@vocabulary/oa/-/oa-1.0.0.tgz#794fb1fa491c2b194526cdd549f1f1a3bc1b739c"
+  integrity sha512-qxS7cndxMyXx7q44doCXxPzBJTa3BNvm9bEN7oQg9u0qWkzGiiFWHrU56NJqPeTAdDsfRwgI73LGI/QlDZiOxQ==
+
+"@vocabulary/og@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@vocabulary/og/-/og-1.0.0.tgz#7eaa7a6f983d16e002c8e38dd70ecd60a457d970"
+  integrity sha512-07kFHk7dd8myXkBe3vBuNsPxjkXQOwhj0XRyGBVdzVtYUPkSH/KUvNad8JKdpOSHJN7ZIPC2CybymRjF9Ku4Pw==
+
+"@vocabulary/org@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@vocabulary/org/-/org-1.0.0.tgz#dbcc256095412913370a05bcacf8e9f6d82fdbf2"
+  integrity sha512-6HtOTrDZEQL8lLowQzjsoRPz3Bj9qgSJXXw9v6DhMr9olIblb0XHO5rKG6MGyVhqUGTimZitp4zXvQMQlDWFFg==
+
+"@vocabulary/owl@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@vocabulary/owl/-/owl-1.0.0.tgz#9608586e0465240aad03dc05155d9cc3aae2b6ed"
+  integrity sha512-HotJdltHWiBtDUQYBvqJkorDrrKUoAsg8Ogo08cq9hTJ2EyzVuOzsrGHiteJGXLo4KbWK7VOzGQuu/KL5OQcIQ==
+
+"@vocabulary/prefix@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@vocabulary/prefix/-/prefix-1.0.0.tgz#8a4f0850b1795b78674fe1244dbea098c6e1fe2b"
+  integrity sha512-JDuG1qQHe4PprfpRQZCf79DB8/Ez3MrmiX3tdsunUHWbisvl606yF6Qy6pRo/EJUQWcfTH0iDAR0ot6Nk3lAeA==
+
+"@vocabulary/prov@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@vocabulary/prov/-/prov-1.0.0.tgz#bf3f740b6c14a611dd04fccbe58aa210c378dccc"
+  integrity sha512-+ArMCq35zb6nwAnmzwT4ShICYwknPmyGXcMEGeP5ojWK9TvXPPtmAjAq5nRRVSlFgC7vf3bqsJASyV/PK5+uuA==
+
+"@vocabulary/qb@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@vocabulary/qb/-/qb-1.0.0.tgz#1ba04ffd1e5e82a00e564eebfd2dcee32528ba2d"
+  integrity sha512-4yl1Y2SZj2XhJcoALYvRPU5p8CETvaax8ME6hBYtg57c8Zd3QybZedGYKdB+FVBidN7TfKjNumrhaRH6bNdHOQ==
+
+"@vocabulary/qkdv@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@vocabulary/qkdv/-/qkdv-1.0.0.tgz#3a89209d6c844c9923d2f1408780cb3294ddd441"
+  integrity sha512-xBtdYFoOMHSdyJQBwvryCREAYUGiC7N3oywvPsCU7O5XCjO6gdTvREM9EHbN0IKb12Y02mhc6VX8e/YOL7GF3g==
+
+"@vocabulary/quantitykind@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@vocabulary/quantitykind/-/quantitykind-1.0.0.tgz#4eeac153d1115c9d5679e7fcd4445c98c637c858"
+  integrity sha512-Qcu5ns/UrDxsAYQ4qjPNgyty2+QmmE/JeZkMKDEDriZyzh5UIz+apCwI8qaLlAbYRs2kRAGv03Z2Omt8Xel/Pg==
+
+"@vocabulary/qudt@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@vocabulary/qudt/-/qudt-1.0.0.tgz#90184f6600c83a5035d47fc5d2ae02a82b6dd32b"
+  integrity sha512-+neYTOwi9S9lYpRdimZLL5uKzxl/nfpHeHgP7O96cKhMQcBRx2ONXIw8CPNYs6nZqfDb+LcObzOoGSgeHnwYsA==
+
+"@vocabulary/rdau@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@vocabulary/rdau/-/rdau-1.0.0.tgz#6bbbc720634692984f68922fd66cf304f48843f9"
+  integrity sha512-CpCxmyR/hz83WaUBfoliMm9eOeHMzVDBAFCbft2EEgs7asX2lG9TZFM0dglELmwpuMsXA4d5ibBstCSqjywQog==
+
+"@vocabulary/rdf@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@vocabulary/rdf/-/rdf-1.0.0.tgz#0aec0fd518ee421b4d5ba89d69da6b8e0dd85592"
+  integrity sha512-BMMxp6QBtHIa1VeTOcxYhtxPZWJCNnnqAfKXVwUOKgun+QZwGC6TVHq2G5AUw5lXTDp/i1cSxazizEhBXlbBIg==
+
+"@vocabulary/rdfa@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@vocabulary/rdfa/-/rdfa-1.0.0.tgz#13f8f78b93202ce2cdbed35472b66bd721aab74a"
+  integrity sha512-i+56Xnnn+zbd0/pWWQCsa/TCXrgCKarKQiKgGZCiZSyKEesGdM8L6LUrTQqHfsYNFVxdPEhZigrC8gOwKY6kiQ==
+
+"@vocabulary/rdfs@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@vocabulary/rdfs/-/rdfs-1.0.0.tgz#f35cfcf254bcbf2e27ed3a6f2ce633770ae7a13d"
+  integrity sha512-s+NhkFLRkqxMrIkG5UtB69yF0zAk39zBfuzdwqYxoNumgdM6iYFGeXdQp+kipvEH5l7Sx9oqAWgcBN56BKzpvw==
+
+"@vocabulary/rev@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@vocabulary/rev/-/rev-1.0.0.tgz#474b258408defdb43add6139a0071b5d2f057305"
+  integrity sha512-zmVbM1DKMzVxvkt+8pjdC9fo+zHk4c/33aig5kOeZSuuikTkiCK7wJigjg46pX6UHLqbPMDskea/boJeFvtyqA==
+
+"@vocabulary/rico@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@vocabulary/rico/-/rico-1.0.0.tgz#e801aa7c613520f1fe1886cbdafed08d24838d32"
+  integrity sha512-5MxZrvZMfDvlGZu8LArF2mlqoISLUkB/SuqjYCfA1IwJW87Wm8qB3hZud0lGoZvCe2Dvdze7ojnyW8zWykaiVg==
+
+"@vocabulary/rr@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@vocabulary/rr/-/rr-1.0.0.tgz#e5f80efd204563b0ff8de3f560284c2e1c6c02a9"
+  integrity sha512-Qy6sFeBqonjDz2PTlr7YYlcjKEiNaM7ZGn5zbqzzIHPQl21lIZ9wqSVv+AowBAYTxZA0HHI5ZpH8y1YkEOk/ww==
+
+"@vocabulary/rss@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@vocabulary/rss/-/rss-1.0.0.tgz#03423aa56f38524b02569bd235edad1972432b4e"
+  integrity sha512-eE9zdH75qPC4bXIdQ/X0x51iblvvBLHv3wJcHv62mzo7G5G6w0L/vTyjzIPBGFSSlirxzGujkIDtJeoa+g/j8g==
+
+"@vocabulary/schema@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@vocabulary/schema/-/schema-1.0.0.tgz#f21cd55668f4ae7f6d4abd3beb04627c19a610d3"
+  integrity sha512-beJeuqEh1Eqx2mQ/5XyWO199xu97t7iYm858wfFtGT1Se5SJT/dEr+jg6M/QVXgsPi0zcZuF7ITG7BYNDbxrJA==
+
+"@vocabulary/sd@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@vocabulary/sd/-/sd-1.0.0.tgz#8f13445d51ae61d2d63186521ba631aecb97476d"
+  integrity sha512-tpm8Gx1lswVdpXBXqHfK0d/mJ6X8Z7gU1fqK9bzvUllw5PjtSWKzklaRs8tu3bT1NHDfN2V36EfDvvvjeEEVwQ==
+
+"@vocabulary/sdmx@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@vocabulary/sdmx/-/sdmx-1.0.0.tgz#680543f321b51c304e34e04e04a2208e14997d0e"
+  integrity sha512-99Fsh2QRODgg5C0eVWYgXL6RQykkzD3f3Dh5Mz85gL0DkuzETVslYH61uDtfG4iTGWT+2WD6Z5J7g5xMKvoxQA==
+
+"@vocabulary/sem@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@vocabulary/sem/-/sem-1.0.0.tgz#0efb7e831b5668eaa5ee0d9307aa11d1360b127d"
+  integrity sha512-mN1wnrTW5iSlwjb2X1fBmQKY7RS3g17nEAMd/5CK5YLs42+tpl2jG+G2GmHty0qlU7Gjjni4nRNcXBlKD/53Xw==
+
+"@vocabulary/set@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@vocabulary/set/-/set-1.0.0.tgz#16a1bcc08f78707d7897c642e8c3c010e6f2f12f"
+  integrity sha512-lmS9kwOgc1bwzS1SQ+Z7k99bbuwWNMLIZv2VoYw9O9mgC4Rvtj1XbtvKIehift3z3AI0m7jy6XvVdDg/B5dqHg==
+
+"@vocabulary/sf@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@vocabulary/sf/-/sf-1.0.0.tgz#f9f76719453b4e3bad46ccc0489916142bcd8d25"
+  integrity sha512-AHaDrhbLNCB5svl74BZAwcRJsVzSxi92w9AUS1pybZfEathZYiR/1ubPRJxLY9NTc7cZgHUWHKbdPfpXL/UNNA==
+
+"@vocabulary/sh@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@vocabulary/sh/-/sh-1.0.0.tgz#f7caee3b7a9630f71aefcabec1a5b7cbfb4fb00d"
+  integrity sha512-G6RS8MaFD7/n8j8UBoRZ/CiKFKMD5gT4FeDYcQya6BRe4/41IxAZMBBTiEejBTLCPCjgf8BhXcbACZ6vJ16wdA==
+
+"@vocabulary/shex@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@vocabulary/shex/-/shex-1.0.0.tgz#1a66d1987f2d24ef446fa95f0842e92c1ef36e47"
+  integrity sha512-tHjwgV9/f6CKfh7cNkAUaAcVLqw91YhJTqeln+KuNRjMpNgxu2ETz1y0R8DhNBLd52Mjb4a0Ljbg++GLj7++Xg==
+
+"@vocabulary/sioc@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@vocabulary/sioc/-/sioc-1.0.0.tgz#ee5bba7ee91387bff892ad0e55782d889a5e921e"
+  integrity sha512-5x8c7tMhC7dFBlMt4Ci30Vsp2jf3u4/E6VcKW++h4SzaqdkgHBRD3dgmRFdmq2DrC4xSt+g1ju+YAgn8JJuxZA==
+
+"@vocabulary/skos@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@vocabulary/skos/-/skos-1.0.0.tgz#59ffd2e64898230fbdff56171e6a6b4bf22736a7"
+  integrity sha512-HZmbJXXCxUMClBxSzcVQkKZcqUkPUCwlCuBIV3gAwgsaNCTeTv0KbTDo8gCetg9d4fxVd9TNJ0SmoTr9CjYNXw==
+
+"@vocabulary/skosxl@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@vocabulary/skosxl/-/skosxl-1.0.0.tgz#ffefe9c8223ed8b7ca760820bd36b7c3833b584c"
+  integrity sha512-XZjz4NVMkpFMel4/ltV4/xXUO0qjSs6PbEzjUttA/NWRO/HsjjFGSQBtcgnauEwCdGg/CGExnU9WO6YFRUIcEQ==
+
+"@vocabulary/sosa@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@vocabulary/sosa/-/sosa-1.0.0.tgz#cbc26684893c528d871f445307795e5286f90a13"
+  integrity sha512-NgaZ67bmjjEhsIdLowNfR4NlR5OvpHHX6daKwlF7GqntTOH1MXcSMvzBBpb1yDUe+rb8NGug8qM8AozPSfPkXw==
+
+"@vocabulary/sou@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@vocabulary/sou/-/sou-1.0.0.tgz#568afbce8114971c95a87422570450609cf49412"
+  integrity sha512-D4jkKg0BVnAh0KLyYqUuCB60K8GJcf+z1tbrHAg+O07t9NHqT7eZ59qQlB6aT1bYQ5G1doj+fZaMpW3U1qNTvw==
+
+"@vocabulary/ssn@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@vocabulary/ssn/-/ssn-1.0.0.tgz#4b3ef44568473a3a4172f4992b112ec74334ac4f"
+  integrity sha512-Tpr4EvWBaWRcRQS+wOGsmWI4CPESmPO/7ICIkR5z7LyX3X+EKpftFVct/3JXRW/a8FF4rHM/OUbKDMSGP50qFQ==
+
+"@vocabulary/string@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@vocabulary/string/-/string-1.0.0.tgz#d3577e8aa0c0e080d72bc56d4583dcea7272d15e"
+  integrity sha512-TRryMh/Pk8p0zfHkZZy1zJu6Jn8G4fnRmc6IA61+l62nwQeun/Q+EQufHUal+OxlkSEPd1OqYEDJ9ZiZZEb39w==
+
+"@vocabulary/test@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@vocabulary/test/-/test-1.0.0.tgz#72b654771dc09778e89e065fa1f2b2d09b40da70"
+  integrity sha512-H3rKW0xJZOrnRn27wEOFxUIoHQg42LxvOgiVLv0gKlw+oMDq4gigyg2BqChVlkzOpWRkCIiONDgdctzOAdHNrw==
+
+"@vocabulary/time@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@vocabulary/time/-/time-1.0.0.tgz#ffbd2c50b08884af556630f557ec0e12de421833"
+  integrity sha512-Br9C5FZxL9eGm5AJoSDSmirWVuG8t7IyZyTBFTW/wpbjglDlzLd6MJnNG09uAGb/EDoFmlU1bKuuPXL32x12Rw==
+
+"@vocabulary/unit@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@vocabulary/unit/-/unit-1.0.0.tgz#260c55861fc5604893d933e7a75d3872999c24e2"
+  integrity sha512-mPq2XbBc2rb3/tPifRqoV6TPXPbL2MCG79wwbSmCC9f8bRvdjoR61yaVGtDXz+iEtpHDxnMMLIkIe1bWIfwe4g==
+
+"@vocabulary/vaem@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@vocabulary/vaem/-/vaem-1.0.0.tgz#d5015bfb415ebd34860ede017e2675d4942447ed"
+  integrity sha512-BGuD+WBzEVJmUgYq9ybVojjx7g6/PhHHbjQBo7qwcLTYcLYkEyeth6uGNZKjCHKft4DcsjWOnwtQm2IGOg3SuA==
+
+"@vocabulary/vann@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@vocabulary/vann/-/vann-1.0.0.tgz#fdb58ab1dedc25cc93d66f8628b92770565fa02f"
+  integrity sha512-2Xg/hyJWEJ4qRDI+rTFQ02VFghfN46Vrc1HVf3RA9WxIDbg4/aX6U7wr6e/+0v604/29pEkrRgSJUkfW75WDLg==
+
+"@vocabulary/vcard@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@vocabulary/vcard/-/vcard-1.0.0.tgz#feb94b9986a3268e8999839c1566cde2b9a31722"
+  integrity sha512-mw6tnu6AvUmI96wyk3ntfExNAo0wyTZ8fLoh9g7O/droUmTKpY+jTXEOEvsU3XG/IXW5kd+ZkViUb8wIKPnT4Q==
+
+"@vocabulary/void@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@vocabulary/void/-/void-1.0.0.tgz#4f822cbcfa7487db5dfb70a1f92734d9e572cf88"
+  integrity sha512-7ocIpvn4LfBqu3pr1Eyk2uJ6lyByAIKe9QqAq3JclT3fxF3RQ/TznwHgJXR86tJMqC5m+4nZpZQQrSSvzvWk2A==
+
+"@vocabulary/vs@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@vocabulary/vs/-/vs-1.0.0.tgz#6698a2a7b88e85c32c093f88f0340cb897307f6c"
+  integrity sha512-2j3OipALIFb0A63RM6yZCoak1MLebJoVbsz+fXrsUwabLE4HsWdbNguzxLLWP2AfgGRT7EXHszxMoUGD9BnADw==
+
+"@vocabulary/wdrs@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@vocabulary/wdrs/-/wdrs-1.0.0.tgz#3f730fe67932bbdb5f9609dd37cdf62103812f8f"
+  integrity sha512-7PMWy+YlrIU2olFwJJvlJXskXcKOd0w81eBz+saJKv/yGqBaoxKqxp49zFJBrAsl7wN5ROFOkWVJYSZX28Z36w==
+
+"@vocabulary/wgs@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@vocabulary/wgs/-/wgs-1.0.0.tgz#335843f2fd12c54234aa7efab8da11c05dd05885"
+  integrity sha512-es4hqP8DASHm6Z5o8O0ZrrZfsJqzEnjZ4/gml8BX+ffx5xrTedVv+Y/J19FpHLFZcJRbEmO0Je8qK3N3wUS2NQ==
+
+"@vocabulary/xhv@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@vocabulary/xhv/-/xhv-1.0.0.tgz#a52fa78a0cc3ff4b6bee48e618f783ecb8d5a2dc"
+  integrity sha512-dGGcOVYzouGMWVo5dfl204gBiyRQwbYAvYKs5fe3flgqE8AAuyh59E5ffBGjQVd8aVwrv+kPrp9D3QtAzBTRJw==
+
+"@vocabulary/xkos@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@vocabulary/xkos/-/xkos-1.0.0.tgz#aaa4f941bd2a10b060c2142b90949ee01868bff9"
+  integrity sha512-qTt5rfTnBFr7Z9HAhYM1Xa0lmbmqRCnXCj6qFl7wv2e4ZPm2+YY2DVz2f5m+R/4cWbKYWWbGxdpc9w3Ou7s0GA==
+
+"@vocabulary/xsd@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@vocabulary/xsd/-/xsd-1.0.0.tgz#41fb3f77333b1213348323937267daa667fc89e3"
+  integrity sha512-ZtvJbHRak4CGANCoyfETSC/YfSAajyeZEYrvzZnR9GKve9SIL3aoyDB6gF7U6KVZbKvik3Vvh/XdGm8SMC3prA==
 
 "@yarnpkg/lockfile@^1.1.0":
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/@yarnpkg/lockfile/-/lockfile-1.1.0.tgz#e77a97fbd345b76d83245edcd17d393b1b41fb31"
   integrity sha512-GpSwvyXOcOOlV70vbnzjj4fW5xW/FdUF6nQEt1ENy7m4ZCczi1+/buVUPAqmGfqznsORNFzUMjctTIp8a9tuCQ==
 
-"@zazuko/prefixes@^1.0.0-rc.0":
-  version "1.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@zazuko/prefixes/-/prefixes-1.0.0-rc.1.tgz#6e72a65e4a3f34491700dbf24d9e7f7bf4cf025e"
-  integrity sha512-9RRN5tyWzoBYGNP6+MRCWvjhfyXW/7BAWOCaEJcs9U27R8BHq0YSn6WYw5DByYXvv3nWSYKkc7Cq8CnXC4DpgQ==
+"@zazuko/prefixes@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@zazuko/prefixes/-/prefixes-1.0.0.tgz#38652be9eaa59e510645a3bcb9868a74f0bbda0f"
+  integrity sha512-Z3j3N6x1sXx4Jz+t6xl05q9X3nBX93PPSuagK7DpiecQ2dIjdG1MGnIqAd48AUw78onuqKRup+TXz+0yoJk0ZQ==
 
-"@zazuko/vocabularies@^1.0.0-rc.3":
-  version "1.0.0-rc.3"
-  resolved "https://registry.yarnpkg.com/@zazuko/vocabularies/-/vocabularies-1.0.0-rc.3.tgz#74b8a9a8702476aeaeb5c44705ea48190c0a64c0"
-  integrity sha512-oAmsU4Uh/4ZA3GQ/+g98TpyZmFb8yKLQpYHmJu4yZ8y0bjEkE0Lg5xs/cqe6Z88NJ7+4QMjLd4iIQFnlGpulBQ==
+"@zazuko/vocabularies@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@zazuko/vocabularies/-/vocabularies-1.0.0.tgz#76201d7932010ec0d52af3cb245a7cab0933456e"
+  integrity sha512-91iPR7IABdGdaSowNDA+sZtPmc3VEgaO3iBbjFWOAOpcgIVhw3qv4zL6Jc8BxEIXHl1g2jl1KIS/Z652WU7J6g==
   dependencies:
     "@rdfjs/parser-n3" "^2.0.1"
     "@types/rdf-ext" "^2.0.1"
     "@types/rdfjs__environment" "^0.1"
-    "@vocabulary/acl" "^1.0.0-rc.1"
-    "@vocabulary/as" "^1.0.0-rc.1"
-    "@vocabulary/bibo" "^1.0.0-rc.1"
-    "@vocabulary/cc" "^1.0.0-rc.1"
-    "@vocabulary/cnt" "^1.0.0-rc.1"
-    "@vocabulary/constant" "^1.0.0-rc.1"
-    "@vocabulary/crm" "^1.0.0-rc.1"
-    "@vocabulary/csvw" "^1.0.0-rc.1"
-    "@vocabulary/ctag" "^1.0.0-rc.1"
-    "@vocabulary/dash" "^1.0.0-rc.1"
-    "@vocabulary/dash-sparql" "^1.0.0-rc.0"
-    "@vocabulary/dbo" "^1.0.0-rc.1"
-    "@vocabulary/dc11" "^1.0.0-rc.0"
-    "@vocabulary/dcam" "^1.0.0-rc.1"
-    "@vocabulary/dcat" "^1.0.0-rc.1"
-    "@vocabulary/dcmitype" "^1.0.0-rc.1"
-    "@vocabulary/dcterms" "^1.0.0-rc.1"
-    "@vocabulary/discipline" "^1.0.0-rc.1"
-    "@vocabulary/doap" "^1.0.0-rc.1"
-    "@vocabulary/dpv" "^1.0.0-rc.1"
-    "@vocabulary/dqv" "^1.0.0-rc.1"
-    "@vocabulary/dtype" "^1.0.0-rc.1"
-    "@vocabulary/duv" "^1.0.0-rc.1"
-    "@vocabulary/earl" "^1.0.0-rc.1"
-    "@vocabulary/ebucore" "^1.0.0-rc.1"
-    "@vocabulary/exif" "^1.0.0-rc.1"
-    "@vocabulary/foaf" "^1.0.0-rc.1"
-    "@vocabulary/frbr" "^1.0.0-rc.1"
-    "@vocabulary/geo" "^1.0.0-rc.1"
-    "@vocabulary/geof" "^1.0.0-rc.1"
-    "@vocabulary/geor" "^1.0.0-rc.1"
-    "@vocabulary/gml" "^1.0.0-rc.1"
-    "@vocabulary/gn" "^1.0.0-rc.1"
-    "@vocabulary/gr" "^1.0.0-rc.1"
-    "@vocabulary/grddl" "^1.0.0-rc.1"
-    "@vocabulary/gs1" "^1.0.0-rc.0"
-    "@vocabulary/gtfs" "^1.0.0-rc.1"
-    "@vocabulary/http" "^1.0.0-rc.1"
-    "@vocabulary/hydra" "^1.0.0-rc.1"
-    "@vocabulary/ical" "^1.0.0-rc.1"
-    "@vocabulary/ldp" "^1.0.0-rc.1"
-    "@vocabulary/locn" "^1.0.0-rc.1"
-    "@vocabulary/lvont" "^1.0.0-rc.1"
-    "@vocabulary/ma" "^1.0.0-rc.1"
-    "@vocabulary/mads" "^1.0.0-rc.1"
-    "@vocabulary/oa" "^1.0.0-rc.1"
-    "@vocabulary/og" "^1.0.0-rc.1"
-    "@vocabulary/org" "^1.0.0-rc.1"
-    "@vocabulary/owl" "^1.0.0-rc.1"
-    "@vocabulary/prefix" "^1.0.0-rc.1"
-    "@vocabulary/prov" "^1.0.0-rc.1"
-    "@vocabulary/qb" "^1.0.0-rc.1"
-    "@vocabulary/qkdv" "^1.0.0-rc.1"
-    "@vocabulary/quantitykind" "^1.0.0-rc.1"
-    "@vocabulary/qudt" "^1.0.0-rc.1"
-    "@vocabulary/rdau" "^1.0.0-rc.1"
-    "@vocabulary/rdf" "^1.0.0-rc.1"
-    "@vocabulary/rdfa" "^1.0.0-rc.1"
-    "@vocabulary/rdfs" "^1.0.0-rc.1"
-    "@vocabulary/rev" "^1.0.0-rc.1"
-    "@vocabulary/rico" "^1.0.0-rc.1"
-    "@vocabulary/rr" "^1.0.0-rc.1"
-    "@vocabulary/rss" "^1.0.0-rc.1"
-    "@vocabulary/schema" "^1.0.0-rc.1"
-    "@vocabulary/sd" "^1.0.0-rc.1"
-    "@vocabulary/sdmx" "^1.0.0-rc.1"
-    "@vocabulary/sem" "^1.0.0-rc.1"
-    "@vocabulary/sf" "^1.0.0-rc.1"
-    "@vocabulary/sh" "^1.0.0-rc.1"
-    "@vocabulary/shex" "^1.0.0-rc.1"
-    "@vocabulary/sioc" "^1.0.0-rc.1"
-    "@vocabulary/skos" "^1.0.0-rc.1"
-    "@vocabulary/skosxl" "^1.0.0-rc.1"
-    "@vocabulary/sosa" "^1.0.0-rc.1"
-    "@vocabulary/sou" "^1.0.0-rc.1"
-    "@vocabulary/ssn" "^1.0.0-rc.1"
-    "@vocabulary/test" "^1.0.0-rc.1"
-    "@vocabulary/time" "^1.0.0-rc.1"
-    "@vocabulary/unit" "^1.0.0-rc.1"
-    "@vocabulary/vaem" "^1.0.0-rc.1"
-    "@vocabulary/vann" "^1.0.0-rc.1"
-    "@vocabulary/vcard" "^1.0.0-rc.1"
-    "@vocabulary/void" "^1.0.0-rc.1"
-    "@vocabulary/vs" "^1.0.0-rc.1"
-    "@vocabulary/wdrs" "^1.0.0-rc.1"
-    "@vocabulary/wgs" "^1.0.0-rc.1"
-    "@vocabulary/xhv" "^1.0.0-rc.1"
-    "@vocabulary/xkos" "^1.0.0-rc.1"
-    "@vocabulary/xsd" "^1.0.0-rc.1"
-    "@zazuko/prefixes" "^1.0.0-rc.0"
+    "@vocabulary/acl" "^1.0.0"
+    "@vocabulary/as" "^1.0.0"
+    "@vocabulary/bibo" "^1.0.0"
+    "@vocabulary/cc" "^1.0.0"
+    "@vocabulary/cnt" "^1.0.0"
+    "@vocabulary/constant" "^1.0.0"
+    "@vocabulary/crm" "^1.0.0"
+    "@vocabulary/csvw" "^1.0.0"
+    "@vocabulary/ctag" "^1.0.0"
+    "@vocabulary/dash" "^1.0.0"
+    "@vocabulary/dash-sparql" "^1.0.0"
+    "@vocabulary/dbo" "^1.0.0"
+    "@vocabulary/dc11" "^1.0.0"
+    "@vocabulary/dcam" "^1.0.0"
+    "@vocabulary/dcat" "^1.0.0"
+    "@vocabulary/dcmitype" "^1.0.0"
+    "@vocabulary/dcterms" "^1.0.0"
+    "@vocabulary/dig" "^1.0.0"
+    "@vocabulary/discipline" "^1.0.0"
+    "@vocabulary/doap" "^1.0.0"
+    "@vocabulary/dpv" "^1.0.0"
+    "@vocabulary/dqv" "^1.0.0"
+    "@vocabulary/dtype" "^1.0.0"
+    "@vocabulary/duv" "^1.0.0"
+    "@vocabulary/earl" "^1.0.0"
+    "@vocabulary/ebucore" "^1.0.0"
+    "@vocabulary/exif" "^1.0.0"
+    "@vocabulary/foaf" "^1.0.0"
+    "@vocabulary/frbr" "^1.0.0"
+    "@vocabulary/geo" "^1.0.0"
+    "@vocabulary/geof" "^1.0.0"
+    "@vocabulary/geor" "^1.0.0"
+    "@vocabulary/gml" "^1.0.0"
+    "@vocabulary/gn" "^1.0.0"
+    "@vocabulary/gr" "^1.0.0"
+    "@vocabulary/grddl" "^1.0.0"
+    "@vocabulary/gs1" "^1.0.0"
+    "@vocabulary/gtfs" "^1.0.0"
+    "@vocabulary/http" "^1.0.0"
+    "@vocabulary/hydra" "^1.0.0"
+    "@vocabulary/ical" "^1.0.0"
+    "@vocabulary/la" "^1.0.0"
+    "@vocabulary/ldp" "^1.0.0"
+    "@vocabulary/list" "^1.0.0"
+    "@vocabulary/locn" "^1.0.0"
+    "@vocabulary/log" "^1.0.0"
+    "@vocabulary/lvont" "^1.0.0"
+    "@vocabulary/ma" "^1.0.0"
+    "@vocabulary/mads" "^1.0.0"
+    "@vocabulary/math" "^1.0.0"
+    "@vocabulary/oa" "^1.0.0"
+    "@vocabulary/og" "^1.0.0"
+    "@vocabulary/org" "^1.0.0"
+    "@vocabulary/owl" "^1.0.0"
+    "@vocabulary/prefix" "^1.0.0"
+    "@vocabulary/prov" "^1.0.0"
+    "@vocabulary/qb" "^1.0.0"
+    "@vocabulary/qkdv" "^1.0.0"
+    "@vocabulary/quantitykind" "^1.0.0"
+    "@vocabulary/qudt" "^1.0.0"
+    "@vocabulary/rdau" "^1.0.0"
+    "@vocabulary/rdf" "^1.0.0"
+    "@vocabulary/rdfa" "^1.0.0"
+    "@vocabulary/rdfs" "^1.0.0"
+    "@vocabulary/rev" "^1.0.0"
+    "@vocabulary/rico" "^1.0.0"
+    "@vocabulary/rr" "^1.0.0"
+    "@vocabulary/rss" "^1.0.0"
+    "@vocabulary/schema" "^1.0.0"
+    "@vocabulary/sd" "^1.0.0"
+    "@vocabulary/sdmx" "^1.0.0"
+    "@vocabulary/sem" "^1.0.0"
+    "@vocabulary/set" "^1.0.0"
+    "@vocabulary/sf" "^1.0.0"
+    "@vocabulary/sh" "^1.0.0"
+    "@vocabulary/shex" "^1.0.0"
+    "@vocabulary/sioc" "^1.0.0"
+    "@vocabulary/skos" "^1.0.0"
+    "@vocabulary/skosxl" "^1.0.0"
+    "@vocabulary/sosa" "^1.0.0"
+    "@vocabulary/sou" "^1.0.0"
+    "@vocabulary/ssn" "^1.0.0"
+    "@vocabulary/string" "^1.0.0"
+    "@vocabulary/test" "^1.0.0"
+    "@vocabulary/time" "^1.0.0"
+    "@vocabulary/unit" "^1.0.0"
+    "@vocabulary/vaem" "^1.0.0"
+    "@vocabulary/vann" "^1.0.0"
+    "@vocabulary/vcard" "^1.0.0"
+    "@vocabulary/void" "^1.0.0"
+    "@vocabulary/vs" "^1.0.0"
+    "@vocabulary/wdrs" "^1.0.0"
+    "@vocabulary/wgs" "^1.0.0"
+    "@vocabulary/xhv" "^1.0.0"
+    "@vocabulary/xkos" "^1.0.0"
+    "@vocabulary/xsd" "^1.0.0"
+    "@zazuko/prefixes" "^1.0.0"
     commander "^10.0.0"
     rdf-ext "^2.2.0"
     readable-stream "^4.3.0"

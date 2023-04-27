@@ -36,12 +36,11 @@
     "@rdfjs/namespace": "^2",
     "@rdfjs/types": "*",
     "@types/rdfjs__namespace": "^2.0.2",
-    "@zazuko/prefixes": "^1.0.0-rc.0",
+    "@zazuko/prefixes": "^1.0.0",
     "commander": "^7.2.0",
     "fs-extra": "^10.0.0"
   },
   "peerDependencies": {
-    "@zazuko/vocabularies": "^1.0.0-rc.3",
     "clownface": "^1",
     "safe-identifier": "^0.4.2",
     "ts-morph": ">=11",
@@ -57,7 +56,7 @@
     "@types/rdfjs__data-model": "^2",
     "@typescript-eslint/eslint-plugin": "^5.55.0",
     "@typescript-eslint/parser": "^5.55.0",
-    "@zazuko/vocabularies": "^1.0.0-rc.3",
+    "@zazuko/vocabularies": "^1.0.0",
     "c8": "^7.11.3",
     "chai": "^4.2.0",
     "clownface": "^1.5.1",
