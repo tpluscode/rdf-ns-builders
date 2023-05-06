@@ -2,6 +2,7 @@
   "name": "rdf-ns-builders",
   "private": true,
   "scripts": {
+    "prepare": "husky install",
     "test": "c8 --reporter=lcov mocha **/test/index.test.ts",
     "prepack": "npm run build",
     "lint": "eslint . --ext .ts --quiet --ignore-path .gitignore --ignore-path .eslintignore",
@@ -28,7 +29,7 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^6.1.1",
     "eslint-plugin-require-extensions": "^0.1.2",
-    "husky": "^3.1.0",
+    "husky": "^8.0.3",
     "lint-staged": "^13.0.3",
     "mocha": "^10.0.0",
     "npm-run-all": "^4.1.5",
@@ -40,11 +41,6 @@
     "packages/*"
   ],
   "license": "MIT",
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged && tsc --noEmit"
-    }
-  },
   "lint-staged": {
     "*.{js,ts}": [
       "eslint --fix --quiet"
