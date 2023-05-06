@@ -1,5 +1,18 @@
 # Changelog
 
+## 4.0.0
+
+### Major Changes
+
+- 9d5b01d: Removed bogus prefix `qudtv`
+- 9d5b01d: Updated `earl` to use correct namespace (`s/https/http/`)
+- 9d5b01d: Removed the `bin` from package to remove peer deps
+
+### Minor Changes
+
+- 9d5b01d: Updated prefixes `gs1`
+- 9d5b01d: Added prefixes `cert`, `dig`, `la`, `list`, `log`, `m4i`, `math`, `oidc`, `pim`, `set`, `solid`, `stat`, string`
+
 ## 3.0.4
 
 ### Patch Changes
