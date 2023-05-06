@@ -1,7 +1,7 @@
 #!/usr/bin/env ts-node
 
 import Program from 'commander'
-import { build } from '../build/index.js'
+import { build } from './lib/index.js'
 
 Program.command('generate')
   .requiredOption('-p, --vocabsPackage <vocabsPackage>', 'Name of source package or path to local module (typescript included)')

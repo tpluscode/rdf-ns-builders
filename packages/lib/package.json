@@ -1,0 +1,50 @@
+{
+  "name": "@tpluscode/rdf-ns-builders",
+  "version": "3.0.4",
+  "description": "Generated RDF/JS namespace builders for common vocabularies",
+  "type": "module",
+  "main": "index.js",
+  "module": "index.js",
+  "browser": "index.js",
+  "types": "index.d.ts",
+  "scripts": {
+    "generate": "node --loader ts-node/esm ../cli/index.ts generate -p @zazuko/vocabularies -o ."
+  },
+  "exports": {
+    ".": "./index.js",
+    "./loose": "./loose.js"
+  },
+  "files": [
+    "*.js",
+    "vocabularies/*.js",
+    "vocabularies/*.d.ts",
+    "*.d.ts",
+    "*.d.ts.map"
+  ],
+  "dependencies": {
+    "@rdfjs/data-model": "^2",
+    "@rdfjs/namespace": "^2",
+    "@rdfjs/types": "*",
+    "@types/rdfjs__namespace": "^2.0.2",
+    "@zazuko/prefixes": "^2.0.0"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "clownface": "^1.5.1",
+    "rdf-ext": "^2.2.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tpluscode/rdf-ns-builders.git",
+    "directory": "packages/lib"
+  },
+  "author": "Tomasz Pluskiewicz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tpluscode/rdf-ns-builders/issues"
+  },
+  "homepage": "https://github.com/tpluscode/rdf-ns-builders#readme"
+}

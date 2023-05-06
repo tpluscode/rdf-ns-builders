@@ -1,0 +1,39 @@
+{
+  "name": "@tpluscode/rdf-ns-builder-generator",
+  "version": "0.0.0",
+  "type": "module",
+  "bin": {
+    "rdf-ns-builders": "index.js"
+  },
+  "files": [
+    "*.js",
+    "*.d.ts",
+    "lib/*.js",
+    "lib/*.d.ts"
+  ],
+  "dependencies": {
+    "@rdfjs/data-model": "^2.0.1",
+    "@zazuko/prefixes": "^2.0.0",
+    "commander": "^7.2.0",
+    "clownface": "^1",
+    "safe-identifier": "^0.4.2",
+    "ts-morph": "^15.1.0"
+  },
+  "devDependencies": {
+    "@zazuko/vocabularies": "^2.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tpluscode/rdf-ns-builders.git",
+    "directory": "packages/cli"
+  },
+  "author": "Tomasz Pluskiewicz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tpluscode/rdf-ns-builders/issues"
+  },
+  "homepage": "https://github.com/tpluscode/rdf-ns-builders#readme"
+}
