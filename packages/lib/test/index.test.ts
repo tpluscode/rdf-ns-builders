@@ -1,9 +1,8 @@
-import { describe, it } from 'mocha'
 import { expect } from 'chai'
 import prefixes, { expand } from '@zazuko/prefixes'
 import RDF from 'rdf-ext'
-import { schema, foaf, dcterms } from '../src/index.js'
-import { xml } from '../src/loose.js'
+import { schema, foaf, dcterms } from '../index.js'
+import { xml } from '../loose.js'
 
 describe('generated types', () => {
   it('export a getter for namespace itself', () => {

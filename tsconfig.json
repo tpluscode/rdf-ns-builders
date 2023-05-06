@@ -10,15 +10,6 @@
     "moduleResolution": "node",
     "esModuleInterop": true,
     "declaration": true,
-    "declarationMap": true,
-    "outDir": "."
-  },
-  "files": [
-    "src/index.ts",
-    "src/loose.ts",
-    "src/bin/index.ts"
-  ],
-  "include": [
-    "test", "docs"
-  ]
+    "declarationMap": true
+  }
 }

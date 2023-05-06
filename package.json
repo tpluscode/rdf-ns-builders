@@ -1,49 +1,12 @@
 {
-  "name": "@tpluscode/rdf-ns-builders",
-  "version": "3.0.4",
-  "description": "Generated RDF/JS namespace builders for common vocabularies",
-  "type": "module",
-  "main": "index.js",
-  "module": "index.js",
-  "browser": "index.js",
-  "types": "index.d.ts",
-  "bin": {
-    "rdf-ns-builders": "bin/index.js"
-  },
+  "name": "rdf-ns-builders",
+  "private": true,
   "scripts": {
-    "generate": "node --loader ts-node/esm src/bin/index.ts generate -p @zazuko/vocabularies -o src",
-    "test": "c8 --reporter=lcov mocha test/index.test.ts",
+    "test": "c8 --reporter=lcov mocha **/test/index.test.ts",
     "prepack": "npm run build",
     "lint": "eslint . --ext .ts --quiet --ignore-path .gitignore --ignore-path .eslintignore",
-    "build": "tsc",
+    "prerelease": "tsc",
     "release": "changeset publish"
-  },
-  "exports": {
-    ".": "./index.js",
-    "./loose": "./loose.js"
-  },
-  "files": [
-    "*.js",
-    "bin",
-    "build",
-    "vocabularies",
-    "*.d.ts",
-    "*.d.ts.map"
-  ],
-  "dependencies": {
-    "@rdfjs/data-model": "^2",
-    "@rdfjs/namespace": "^2",
-    "@rdfjs/types": "*",
-    "@types/rdfjs__namespace": "^2.0.2",
-    "@zazuko/prefixes": "^1.0.0",
-    "commander": "^7.2.0",
-    "fs-extra": "^10.0.0"
-  },
-  "peerDependencies": {
-    "clownface": "^1",
-    "safe-identifier": "^0.4.2",
-    "ts-morph": ">=11",
-    "ts-node": ">= 8"
   },
   "devDependencies": {
     "@changesets/cli": "^2.23.0",
@@ -55,10 +18,7 @@
     "@types/rdfjs__data-model": "^2",
     "@typescript-eslint/eslint-plugin": "^5.55.0",
     "@typescript-eslint/parser": "^5.55.0",
-    "@zazuko/vocabularies": "^1.0.0",
     "c8": "^7.11.3",
-    "chai": "^4.2.0",
-    "clownface": "^1.5.1",
     "eslint": "^8.5.0",
     "eslint-config-standard": "^17.0.0",
     "eslint-import-resolver-typescript": "^3.5.3",
@@ -72,25 +32,14 @@
     "lint-staged": "^13.0.3",
     "mocha": "^10.0.0",
     "npm-run-all": "^4.1.5",
-    "safe-identifier": "^0.4.2",
     "standard": "^17.0.0",
-    "ts-morph": "^15.1.0",
     "ts-node": "^10.9.1",
     "typescript": "^4.9.5"
   },
-  "publishConfig": {
-    "access": "public"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/tpluscode/rdf-ns-builders.git"
-  },
-  "author": "Tomasz Pluskiewicz",
+  "workspaces": [
+    "packages/*"
+  ],
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/tpluscode/rdf-ns-builders/issues"
-  },
-  "homepage": "https://github.com/tpluscode/rdf-ns-builders#readme",
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged && tsc --noEmit"

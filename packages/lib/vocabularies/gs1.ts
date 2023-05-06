@@ -615,6 +615,18 @@ interface Gs1 {
     "FreshOrSeawaterFarmedCode-UNIDENTIFIED": NamedNode<'https://gs1.org/voc/FreshOrSeawaterFarmedCode-UNIDENTIFIED'>;
     /** Contains properties related specifically to fruit and vegetable products. */
     "FruitsVegetables": NamedNode<'https://gs1.org/voc/FruitsVegetables'>;
+    /** An electronic (non-physical) address that is used for communication between computer systems. */
+    "GLN_TypeCode-DIGITAL_LOCATION": NamedNode<'https://gs1.org/voc/GLN_TypeCode-DIGITAL_LOCATION'>;
+    /** GLN Type Code indicates what type of thing is being identified by a GLN. gs1:GLN_TypeCode value selections SHALL NOT contain both gs1:GLN_TypeCode-FIXED_PHYSICAL_LOCATION and gs1:GLN_TypeCode-MOBILE_PHYSICAL_LOCATION. */
+    "GLN_TypeCode": NamedNode<'https://gs1.org/voc/GLN_TypeCode'>;
+    /** Fixed physical location - a tangible place that does not change locations and may be represented by an address, coordinates, or other means. */
+    "GLN_TypeCode-FIXED_PHYSICAL_LOCATION": NamedNode<'https://gs1.org/voc/GLN_TypeCode-FIXED_PHYSICAL_LOCATION'>;
+    /** An organisational subdivision or department. */
+    "GLN_TypeCode-FUNCTION": NamedNode<'https://gs1.org/voc/GLN_TypeCode-FUNCTION'>;
+    /** Any business, government body, department, charity, individual, or institution that has standing in the eyes of the law and has the capacity to enter into agreements or contracts. */
+    "GLN_TypeCode-LEGAL_ENTITY": NamedNode<'https://gs1.org/voc/GLN_TypeCode-LEGAL_ENTITY'>;
+    /** Mobile physical location â€“ a tangible place that is expected to change locations and may be represented by an address, coordinates, or other means. */
+    "GLN_TypeCode-MOBILE_PHYSICAL_LOCATION": NamedNode<'https://gs1.org/voc/GLN_TypeCode-MOBILE_PHYSICAL_LOCATION'>;
     /** The geographic coordinates of a place or event. */
     "GeoCoordinates": NamedNode<'https://gs1.org/voc/GeoCoordinates'>;
     /** The geographic shape of a place. A GeoShape can be described using several properties whose values are based on latitude/longitude pairs. Either whitespace or commas can be used to separate latitude and longitude; whitespace should be used when writing a list of several such points. */
@@ -670,6 +682,69 @@ interface Gs1 {
     "LevelOfContainmentCode-MAY_CONTAIN": NamedNode<'https://gs1.org/voc/LevelOfContainmentCode-MAY_CONTAIN'>;
     /** The impulse is the integral over time of the force acting between two colliding bodies. Linear momentum of a body is the product of its mass and its velocity.  SI Units: newton seconds */
     "LinearMomentum": NamedNode<'https://gs1.org/voc/LinearMomentum'>;
+    /** Government bodies, trade organisations, and other parties issue identifiers that are associated to locations. Linking these identifiers to GLN and one another supports consolidating records, mapping related, collaborative identifiers, enhances search ability and enables more efficient transitions between identifiers.  This class provides a mechanism for connecting and sharing location identifiers. */
+    "LocationID_Details": NamedNode<'https://gs1.org/voc/LocationID_Details'>;
+    /** The BIC Facility Code (BFC) began life in the 1980s as the â€œLoCodeâ€ identifier under ISO 9897. Now a â€œchild codeâ€ of the UN/Locode, the BIC Facility Code is used to identify container facilities such as depots, container yards, container freight stations, M&R vendors and other facilities in the container supply chain. The BIC Facility Code is complementary to the SMDG Ocean Terminal Code, which is also a child code of the UN/Locode. The BIC Facility Code covers container facility types other than ocean terminals. */
+    "LocationID_Type-BIC_FACILITY": NamedNode<'https://gs1.org/voc/LocationID_Type-BIC_FACILITY'>;
+    "LocationID_Type": NamedNode<'https://gs1.org/voc/LocationID_Type'>;
+    /** The Central Reference File Database (CRD) (formerly known as Central Repository Domain) is a centralised database that stores Location Codes and Company Codes required by European regulation, and makes them available to users. CRD contains the following reference files: - List of Countries (ISO 3166) - The Location Reference File which uniquely identifies physical rail points (e.g. stations, customer sidings, loading places) containing the Location Code (which includes the Country Code) - The Partner Reference File uniquely identifies all rail actors who exchange information (Company Codes); Each company actor must have a unique Company Code assigned by UIC */
+    "LocationID_Type-CRD_LOCATION_CODE": NamedNode<'https://gs1.org/voc/LocationID_Type-CRD_LOCATION_CODE'>;
+    /** An ENI number (European Number of Identification or European Vessel Identification Number) is a registration for ships capable of navigating on inland European waters. It is a unique, eight-digit identifier that is attached to a hull for its entire lifetime, independent of the vessel's current name or flag. ENI was introduced by the Inland Transport Committee of the United Nations Economic Commission for Europe in their meeting on 11â€“13 October 2006 in Geneva. It is based on the Rhine Vessel certification system previously used for ships navigating the Rhine, and is comparable to the IMO ship identification number. */
+    "LocationID_Type-ENI_NUMBER": NamedNode<'https://gs1.org/voc/LocationID_Type-ENI_NUMBER'>;
+    /** The SIRET number, issued by Insee (the National Institute of Statistics and Economic Studies) identifies each establishment that is part of a company in France. There are as many SIRET numbers as there are establishments in the company. An establishment is a geographically located operating or production unit, separated but legally dependent on a company. It is the place where the company's activity is carried out. It is composed of 14 digits: the 9 digits of the SIREN number + the 5 digits of the NIC (internal classification number specific to each establishment). */
+    "LocationID_Type-FR_SIRET": NamedNode<'https://gs1.org/voc/LocationID_Type-FR_SIRET'>;
+    /** Three-letter geocode designating many airports and metropolitan areas around the world, defined by theÂ International Air Transport AssociationÂ (IATA). The IATA three-letter codes are a subset of the UN/LOCODE codelist. */
+    "LocationID_Type-IATA_CODE": NamedNode<'https://gs1.org/voc/LocationID_Type-IATA_CODE'>;
+    /** IMO number is an important identifier given to oil/gas vessels, shipping vessels, and fishing vessels that is painted visibly across the vessel and bolted to the hull */
+    "LocationID_Type-IMO_NUMBER": NamedNode<'https://gs1.org/voc/LocationID_Type-IMO_NUMBER'>;
+    /** The International Ship and Port Facility Security Code (ISPS Code) is an International code that was conceived following the September 11th 2001 terrorists attacks in the USA.Â It's primary purpose is to identify and counter any terrorist threat to the Maritime Industry particularly against ships and ports.Â The codeÂ also serves to improve security against armed robbery, theft and piracy. The code came into force inÂ 2004Â andÂ prescribes responsibilities to: 1) Governments 2) Shipping companies 3) Shipboard personnel 4) Port/facility personnel */
+    "LocationID_Type-ISPS_CODE": NamedNode<'https://gs1.org/voc/LocationID_Type-ISPS_CODE'>;
+    /** The International Ship Reporting Standard (ISRS) location code is a 20 character alphanumeric code consisting of: - UN country code (2 characters) e.g., NL = Netherlands, - UN location code (3 characters) e.g., RTM = Rotterdam, - Fairway section code (5 characters) e.g., 00102 = Nieuwe Maas, - Object reference code (5 characters) e.g., 66666 = ID administration or terminal code, - Fairway section hectometre e.g., 00050 = hectometres from zero point of Fairway section 00102.  The ISRS Location Code is created once and shall not be changed throughout the lifetime of the object. The Standard / Commission Regulation for Electronic Ship Reporting requires the ISRS Location Code of all objects relevant for reporting of voyages, e.g. ports, terminals, passage points, etc. */
+    "LocationID_Type-ISRS_LOCATION_CODE": NamedNode<'https://gs1.org/voc/LocationID_Type-ISRS_LOCATION_CODE'>;
+    /** Identification used for internal mapping purposes. */
+    "LocationID_Type-LOCATION_FOR_INTERNAL_USE_10": NamedNode<'https://gs1.org/voc/LocationID_Type-LOCATION_FOR_INTERNAL_USE_10'>;
+    /** Identification used for internal mapping purposes. */
+    "LocationID_Type-LOCATION_FOR_INTERNAL_USE_1": NamedNode<'https://gs1.org/voc/LocationID_Type-LOCATION_FOR_INTERNAL_USE_1'>;
+    /** Identification used for internal mapping purposes. */
+    "LocationID_Type-LOCATION_FOR_INTERNAL_USE_2": NamedNode<'https://gs1.org/voc/LocationID_Type-LOCATION_FOR_INTERNAL_USE_2'>;
+    /** Identification used for internal mapping purposes. */
+    "LocationID_Type-LOCATION_FOR_INTERNAL_USE_3": NamedNode<'https://gs1.org/voc/LocationID_Type-LOCATION_FOR_INTERNAL_USE_3'>;
+    /** Identification used for internal mapping purposes. */
+    "LocationID_Type-LOCATION_FOR_INTERNAL_USE_4": NamedNode<'https://gs1.org/voc/LocationID_Type-LOCATION_FOR_INTERNAL_USE_4'>;
+    /** Identification used for internal mapping purposes. */
+    "LocationID_Type-LOCATION_FOR_INTERNAL_USE_5": NamedNode<'https://gs1.org/voc/LocationID_Type-LOCATION_FOR_INTERNAL_USE_5'>;
+    /** Identification used for internal mapping purposes. */
+    "LocationID_Type-LOCATION_FOR_INTERNAL_USE_6": NamedNode<'https://gs1.org/voc/LocationID_Type-LOCATION_FOR_INTERNAL_USE_6'>;
+    /** Identification used for internal mapping purposes. */
+    "LocationID_Type-LOCATION_FOR_INTERNAL_USE_7": NamedNode<'https://gs1.org/voc/LocationID_Type-LOCATION_FOR_INTERNAL_USE_7'>;
+    /** Identification used for internal mapping purposes. */
+    "LocationID_Type-LOCATION_FOR_INTERNAL_USE_8": NamedNode<'https://gs1.org/voc/LocationID_Type-LOCATION_FOR_INTERNAL_USE_8'>;
+    /** Identification used for internal mapping purposes. */
+    "LocationID_Type-LOCATION_FOR_INTERNAL_USE_9": NamedNode<'https://gs1.org/voc/LocationID_Type-LOCATION_FOR_INTERNAL_USE_9'>;
+    /** Maritime Mobile Service Identities (MMSIs) are nine-digit numbers used by maritime digital selective calling (DSC), automatic identification systems (AIS), and certain other equipment to uniquely identify a ship or a coast radio station. */
+    "LocationID_Type-MMSI_NUMBER": NamedNode<'https://gs1.org/voc/LocationID_Type-MMSI_NUMBER'>;
+    /** Open Apparel Registry ID. A sixteen-digit numbering system which uniquely identities global apparel facilities. The ID consists of a Country code, Origin date (the date the facility first appeared in the registry), a General ID and Check ID. OAR IDs are allocated by the Open Apparel Registry to all facilities contributed to the database for the purposes of enabling industry collaboration and improved identification of factories, as well as powering interoperability between industry databases. */
+    "LocationID_Type-OAR_ID": NamedNode<'https://gs1.org/voc/LocationID_Type-OAR_ID'>;
+    /** The Open Location Code is a geocode system for identifying an area anywhere on the Earth. It was developed at Google's ZÃ¼rich engineering office, and released late October 2014. Location codes created by the OLC system are referred to as 'plus codes'. */
+    "LocationID_Type-OPEN_LOCATION_CODE": NamedNode<'https://gs1.org/voc/LocationID_Type-OPEN_LOCATION_CODE'>;
+    /** The SMDG Terminal Code List (TCL) contains codes for container handling terminal facilities that are called by seagoing cargo vessels in maritime transport. */
+    "LocationID_Type-SMDG_CODE": NamedNode<'https://gs1.org/voc/LocationID_Type-SMDG_CODE'>;
+    /** UN/LOCODE, the United Nations Code for Trade and Transport Locations, is a geographic coding scheme developed and maintained by United Nations Economic Commission for Europe.Â  */
+    "LocationID_Type-UN_LOCODE": NamedNode<'https://gs1.org/voc/LocationID_Type-UN_LOCODE'>;
+    /** The Customer Identification File (CIF) is an industry reference file (for the USA), managed by Railinc, that contains the name, physical mailing and billing address, corporate parent information and a unique 13-character identification code for each location and sub-location of a transportation-carrier customer. Railroads use the identification code to accurately identify customers and their locations, ensuring each party in the transaction is referencing the same physical customer location. */
+    "LocationID_Type-US_CIF_CODE": NamedNode<'https://gs1.org/voc/LocationID_Type-US_CIF_CODE'>;
+    /** All containers of meat, poultry, and egg products must be labeled with a USDA mark of inspection and establishment (EST number), which is assigned to the plant where the product was produced. */
+    "LocationID_Type-US_EST_NUMBER": NamedNode<'https://gs1.org/voc/LocationID_Type-US_EST_NUMBER'>;
+    /** An FDA Establishment Identification (FEI) number isÂ a unique identifier issued by FDA to track inspections of the regulated establishment or facility. FEI numbers are also used to track GDUFA facility fee payments. */
+    "LocationID_Type-US_FEI": NamedNode<'https://gs1.org/voc/LocationID_Type-US_FEI'>;
+    /** The HIN is a unique combination of letters and/or numbers permanently affixed to the vessel. All boats must be registered with the USCG (United States Coast Guard ) in order to track accidents and history of boats. Information about a boatâ€™s records may be found by using a vessel documentation search by Hull ID Number (HIN). */
+    "LocationID_Type-US_HIN_IDENTIFICATION": NamedNode<'https://gs1.org/voc/LocationID_Type-US_HIN_IDENTIFICATION'>;
+    /** All mines are required to apply for an MSHAÂ mineÂ identification number. An MSHAÂ IDÂ is required for eachÂ mineÂ site and must be issued before any operations may begin. AÂ mine IDÂ may be requested by completing the online form or by contacting U.S. district office. */
+    "LocationID_Type-US_MINE_ID": NamedNode<'https://gs1.org/voc/LocationID_Type-US_MINE_ID'>;
+    /** The Terminal Control Locations Directory lists all approved terminals registered as part of the taxable fuel bulk delivery system. Terminals are listed by the terminal number. */
+    "LocationID_Type-US_TCN_CODE": NamedNode<'https://gs1.org/voc/LocationID_Type-US_TCN_CODE'>;
+    /** Over the lifetime of a location, it may go through periods of being active and inactive. gs1:LocationStatusHistory allows changes in status to be communicated in advance and tracked over time. */
+    "LocationStatusHistory": NamedNode<'https://gs1.org/voc/LocationStatusHistory'>;
     /** A measure of the light-emitting intensity of a light source, in a specific direction per unit area of the emitting surface. For a very narrow cone containing the direction, it is the ratio of the luminous flux emitted within that cone to the solid angle of the cone per unit area of the emitting surface.  SI Units: candela per square metre */
     "Luminance": NamedNode<'https://gs1.org/voc/Luminance'>;
     /** A measure of the perceived power of light emitted by a source or received by a surface and irrespective of direction, taking into account the sensitivity of the human eye to different wavelengths of light.  SI Units: lumen = 1 candela per steradian */
@@ -891,6 +966,119 @@ interface Gs1 {
     "OrganicClaimDetails": NamedNode<'https://gs1.org/voc/OrganicClaimDetails'>;
     /** An Organization is any legal or physical entity involved at any point in any supply chain and upon which there is a need to retrieve predefined information. An Organization is uniquely identified by a Global Location Number (GLN). */
     "Organization": NamedNode<'https://gs1.org/voc/Organization'>;
+    /** Government bodies, trade organisations, and other parties issue identifiers that are associated to legal entities and/or functions. Linking these identifiers to GLN and one another supports consolidating records, mapping related, collaborative identifiers, enhances search ability and enables more efficient transitions between identifiers.  This class provides a mechanism for connecting and sharing party identifiers. */
+    "OrganizationID_Details": NamedNode<'https://gs1.org/voc/OrganizationID_Details'>;
+    /** The Australian Business Number is a unique 11-digit identifier issued by the Australian Business Register which is operated by the Australian Taxation Office. */
+    "OrganizationID_Type-AU_ABN": NamedNode<'https://gs1.org/voc/OrganizationID_Type-AU_ABN'>;
+    "OrganizationID_Type": NamedNode<'https://gs1.org/voc/OrganizationID_Type'>;
+    /** An Australian Company Number is a unique identifier required by every company registered under Australiaâ€™s Corporations Act 2001. The ACN is a nine-digit number issued by the Australian Securities & Investments Commission to every Australian company. */
+    "OrganizationID_Type-AU_ACN": NamedNode<'https://gs1.org/voc/OrganizationID_Type-AU_ACN'>;
+    /** The Central Reference File Database (CRD), formerly known as Central Repository Domain is a centralised database that stores Location Codes and Company Codes required by European regulation, and makes them available to users. CRD contains the following reference files: - List of Countries (ISO 3166) - The Location Reference File which uniquely identifies physical rail points (e.g. stations, customer sidings, loading places) containing the Location Code (which includes the Country Code) - The Partner Reference File uniquely identifies all rail actors who exchange information (Company Codes); Each company actor must have a unique Company Code assigned by UIC */
+    "OrganizationID_Type-CRD_PARTNER_CODE": NamedNode<'https://gs1.org/voc/OrganizationID_Type-CRD_PARTNER_CODE'>;
+    /** A company registration number is a unique combination of numbers and/or letters. The company registration number (also known as the company number, registration number or simply in its abbreviated form) is used to identify a company and verify that it is an entity registered within the national registry for companies or enterprises. This value is generic and is not associated to any specific region. */
+    "OrganizationID_Type-CRN": NamedNode<'https://gs1.org/voc/OrganizationID_Type-CRN'>;
+    /** A globally unique persistent identifier that does not require a centralized registration authority because it is generated and/or registered cryptographically. The generic format of a DID is defined in the DID Core specification [DID-CORE]. A specific DID scheme is defined in a DID method specification. Manyâ€”but not allâ€”DID methods make use of distributed ledger technology (DLT) or some other form of decentralized network. */
+    "OrganizationID_Type-DID": NamedNode<'https://gs1.org/voc/OrganizationID_Type-DID'>;
+    /** Data Universal Numbering System. It is a nine-digit numbering system which uniquely identifies an individual business. The DUNS number is a nine-digit number issued by Dun & Bradstreet assigned to each business location in the D&B database having a unique, separate, and distinct operation for the purpose of identifying them. A DUNS number is also a way in which separate corporate entities, having no official relationship, can be branded as one by sharing one DUNS number among the affiliated comp */
+    "OrganizationID_Type-DUNS": NamedNode<'https://gs1.org/voc/OrganizationID_Type-DUNS'>;
+    /** The DUNS+4 refers to the DUNS number assigned by Dun and Bradstreet, plus a 4-character suffix that is assigned by the vendor to establish additional Central Contractor Registration (CCR) database records for identifying alternative electronic funds transfer (EFT) accounts for the same vendor located at the same physical address. Dun and Bradstreet has no affiliation with the 4-character suffix. */
+    "OrganizationID_Type-DUNS_PLUS_FOUR": NamedNode<'https://gs1.org/voc/OrganizationID_Type-DUNS_PLUS_FOUR'>;
+    /** Businesses and people wishing to trade with the EU must, use the EORI number as an identification number in all customs procedures when exchanging information with Customs - https://ec.europa.eu/taxation_customs/dds2/eos/eori_home.jsp?Lang=en */
+    "OrganizationID_Type-EORI": NamedNode<'https://gs1.org/voc/OrganizationID_Type-EORI'>;
+    /** A type of identifier in the format of the invariant set of ISO646:1991 used in accordance with the EU Implementing Regulation 2018/574 to identify an economic operator. */
+    "OrganizationID_Type-EO_ID": NamedNode<'https://gs1.org/voc/OrganizationID_Type-EO_ID'>;
+    /** An identifier used to identify companies for value added tax purposes in the European Union. Link: https://ec.europa.eu/taxation_customs/vies/faqvies.do#item_11 */
+    "OrganizationID_Type-EU_VAT_IDENTIFICATION_NUMBER": NamedNode<'https://gs1.org/voc/OrganizationID_Type-EU_VAT_IDENTIFICATION_NUMBER'>;
+    /** The RCS (Registre du commerce et des sociÃ©tÃ©s), otherwise known as the Greffe, is the registry for the company accounts and by-laws of all companies in France. */
+    "OrganizationID_Type-FR_RCS": NamedNode<'https://gs1.org/voc/OrganizationID_Type-FR_RCS'>;
+    /** The SIREN number, issued by Insee (the National Institute of Statistics and Economic Studies) is the unique identification number of each company. It is a number that allows each company to be identified by the administrations in France. The SIREN number also constitutes the first 9 digits of the SIRET number. */
+    "OrganizationID_Type-FR_SIREN": NamedNode<'https://gs1.org/voc/OrganizationID_Type-FR_SIREN'>;
+    /** IMO registers all vessels subject to the SOLAS convention. IMO also records the Owner, Operator, Manager and Group Beneficial Owner. For that purpose they also record the Companies acting in these roles using the IMO Company Number */
+    "OrganizationID_Type-IMO_COMPANY_NUMBER": NamedNode<'https://gs1.org/voc/OrganizationID_Type-IMO_COMPANY_NUMBER'>;
+    /** The Legal Entity Identifier (LEI) is a 20-character, alpha-numeric code based on the ISO 17442 standard developed by the International Organization for Standardization (ISO). It connects to key reference information that enables clear and unique identification of legal entities participating in financial transactions */
+    "OrganizationID_Type-LEI": NamedNode<'https://gs1.org/voc/OrganizationID_Type-LEI'>;
+    /** When registering with the Netherlands Chamber of Commerce KVK, a business is listed in the Dutch Commercial Register or Handelsregister (HR) as it is called in the Netherlands. The businesses are then given a 8-digit KVK number. This number serves to prove an organisation is a registered business. */
+    "OrganizationID_Type-NL_KVK_NUMBER": NamedNode<'https://gs1.org/voc/OrganizationID_Type-NL_KVK_NUMBER'>;
+    /** The Organization Identification Number (OIN) is a unique number assigned to organizations by Logius, the digital government service of the Netherlands Ministry of the Interior and Kingdom Relations, to identify, authenticate and/or authorise themselves in digital messaging within and with the government. */
+    "OrganizationID_Type-NL_OIN_NUMBER": NamedNode<'https://gs1.org/voc/OrganizationID_Type-NL_OIN_NUMBER'>;
+    /** An identifier used to identify companies for goods and services tax purposes in New Zealand. */
+    "OrganizationID_Type-NZ_GST_NUMBER": NamedNode<'https://gs1.org/voc/OrganizationID_Type-NZ_GST_NUMBER'>;
+    /** An identifier used to identify companies for tax purposes in New Zealand. */
+    "OrganizationID_Type-NZ_IRD_NUMBER": NamedNode<'https://gs1.org/voc/OrganizationID_Type-NZ_IRD_NUMBER'>;
+    /** Identification used for internal mapping purposes. */
+    "OrganizationID_Type-ORG_FOR_INTERNAL_USE_10": NamedNode<'https://gs1.org/voc/OrganizationID_Type-ORG_FOR_INTERNAL_USE_10'>;
+    /** Identification used for internal mapping purposes. */
+    "OrganizationID_Type-ORG_FOR_INTERNAL_USE_1": NamedNode<'https://gs1.org/voc/OrganizationID_Type-ORG_FOR_INTERNAL_USE_1'>;
+    /** Identification used for internal mapping purposes. */
+    "OrganizationID_Type-ORG_FOR_INTERNAL_USE_2": NamedNode<'https://gs1.org/voc/OrganizationID_Type-ORG_FOR_INTERNAL_USE_2'>;
+    /** Identification used for internal mapping purposes. */
+    "OrganizationID_Type-ORG_FOR_INTERNAL_USE_3": NamedNode<'https://gs1.org/voc/OrganizationID_Type-ORG_FOR_INTERNAL_USE_3'>;
+    /** Identification used for internal mapping purposes. */
+    "OrganizationID_Type-ORG_FOR_INTERNAL_USE_4": NamedNode<'https://gs1.org/voc/OrganizationID_Type-ORG_FOR_INTERNAL_USE_4'>;
+    /** Identification used for internal mapping purposes. */
+    "OrganizationID_Type-ORG_FOR_INTERNAL_USE_5": NamedNode<'https://gs1.org/voc/OrganizationID_Type-ORG_FOR_INTERNAL_USE_5'>;
+    /** Identification used for internal mapping purposes. */
+    "OrganizationID_Type-ORG_FOR_INTERNAL_USE_6": NamedNode<'https://gs1.org/voc/OrganizationID_Type-ORG_FOR_INTERNAL_USE_6'>;
+    /** Identification used for internal mapping purposes. */
+    "OrganizationID_Type-ORG_FOR_INTERNAL_USE_7": NamedNode<'https://gs1.org/voc/OrganizationID_Type-ORG_FOR_INTERNAL_USE_7'>;
+    /** Identification used for internal mapping purposes. */
+    "OrganizationID_Type-ORG_FOR_INTERNAL_USE_8": NamedNode<'https://gs1.org/voc/OrganizationID_Type-ORG_FOR_INTERNAL_USE_8'>;
+    /** Identification used for internal mapping purposes. */
+    "OrganizationID_Type-ORG_FOR_INTERNAL_USE_9": NamedNode<'https://gs1.org/voc/OrganizationID_Type-ORG_FOR_INTERNAL_USE_9'>;
+    /** Within the European Union, the phytosanitary registration number identifies an organisation responsible for introducing, or moving plants, plant products and other objects, for which a phytosanitary certificate or a plant passport is required to comply with EU regulation. A phytosanitary registration number is not the same as a phytosanitary certificate number, which identifies the certificate issued to the organisation exporting items subject to phytosanitary processes. */
+    "OrganizationID_Type-PHYTOSANITARY_REGISTRATION_NUMBER": NamedNode<'https://gs1.org/voc/OrganizationID_Type-PHYTOSANITARY_REGISTRATION_NUMBER'>;
+    /** The taxpayer identification number (TIN) is an identifying number used for tax purposes in the United States and in other countries under the Common Reporting Standard. The unique identifier is assigned to the Account Holder by the tax administration in the Account Holderâ€™s jurisdiction of tax residence. It is a unique combination of letters and/or numbers used to identify an individual or entity for the purposes of administering the tax laws of that jurisdiction.  In some countries where the TIN is not used a national identification number, national identity number, or national insurance number is used by the governments of countries as a means of tracking their citizens, permanent residents, and temporary residents for the purposes of work, taxation, government benefits, health care, and other governmentally related functions. */
+    "OrganizationID_Type-TIN": NamedNode<'https://gs1.org/voc/OrganizationID_Type-TIN'>;
+    /** A company registration number is a unique combination of numbers and, in some cases, letters. The company registration number (also known as the company number, registration number or simply abbreviated to CRN) is used to identify a company and verify that it is an entity registered with Companies House (the executive agency of the British Government reponsible for providing registered company information to the public). */
+    "OrganizationID_Type-UK_CRN": NamedNode<'https://gs1.org/voc/OrganizationID_Type-UK_CRN'>;
+    /** A Service Provider Identification Number (SPIN) isÂ a unique nine-digit number assigned to service providers by USAC when an FCCÂ Form 498 is filed. This number is also known as the service provider's 498 ID. */
+    "OrganizationID_Type-US_498_ID": NamedNode<'https://gs1.org/voc/OrganizationID_Type-US_498_ID'>;
+    /** The FCC FormÂ 499 FilerÂ Database is an identification system for all interstate telecommunications carriers, all interconnected VoIP providers, and certain other providers of interstate telecommunications.  The Universal Service Fund helps communities across the country afford telecommunications and advanced services. */
+    "OrganizationID_Type-US_499_FILER_ID": NamedNode<'https://gs1.org/voc/OrganizationID_Type-US_499_FILER_ID'>;
+    /** The BEA foreign direct investment identification number isÂ assigned to a new U.S. affiliateÂ after their initial report has been accepted by the BEA. Filed by mail or facsimile, initial reports are due within 30 days of the end of the quarter in which the U.S. entity became foreign owned. */
+    "OrganizationID_Type-US_BEA_ID": NamedNode<'https://gs1.org/voc/OrganizationID_Type-US_BEA_ID'>;
+    /** The Defense Logistics Agency (DLA) Commercial and Government Entity. A CAGE code is a five character alpha-numeric identifier assigned to entities located IN the United States and its territories */
+    "OrganizationID_Type-US_CAGE": NamedNode<'https://gs1.org/voc/OrganizationID_Type-US_CAGE'>;
+    /** AÂ companyÂ identification number, orÂ CID, is given to aÂ companyÂ when it is formed and the articles of organization or incorporation are approved by the U.S. Secretary of State. TheÂ CIDÂ is an important step when establishing a newÂ companyÂ as it acts as a way to track importantÂ companyÂ information. */
+    "OrganizationID_Type-US_CID": NamedNode<'https://gs1.org/voc/OrganizationID_Type-US_CID'>;
+    /** Every stockbroker (â€œregistered representativeâ€) licensed to sell securities in the U.S. must have a CRD number, which is administered by the Financial Industry Regulatory Authority (FINRA). */
+    "OrganizationID_Type-US_CRD": NamedNode<'https://gs1.org/voc/OrganizationID_Type-US_CRD'>;
+    /** AÂ DEA numberÂ (DEA Registration Number) is an identifier assigned to a health care provider (such as aÂ physician,Â physician assistant,Â nurse practitioner,Â optometrist,Â podiatrist,Â dentist, orÂ veterinarian) by the United StatesÂ Drug Enforcement AdministrationÂ allowing them to write prescriptions forÂ controlled substances. */
+    "OrganizationID_Type-US_DEA": NamedNode<'https://gs1.org/voc/OrganizationID_Type-US_DEA'>;
+    /** Is a six position code that uniquely identifies a Department of Defense unit, activity, or organization that has the authority to requisition, contract for, receive, have custody of, issue, or ship DoD assets, or fund/pay bills for materials and/or services. */
+    "OrganizationID_Type-US_DODAAC": NamedNode<'https://gs1.org/voc/OrganizationID_Type-US_DODAAC'>;
+    /** The U.S. Employer Identification Number, also known as the Federal Employer Identification Number or the Federal Tax Identification Number, is a unique nine-digit number assigned by the Internal Revenue Service to business entities operating in the United States for the purposes of identification. */
+    "OrganizationID_Type-US_EIN": NamedNode<'https://gs1.org/voc/OrganizationID_Type-US_EIN'>;
+    /** ThisÂ number, issued either by the U. S.Â Environmental Protection AgencyÂ (U.S.Â EPA ID Number), or by DTSC (CaliforniaÂ ID Number), identifies each handler of hazardous waste on hazardous waste manifests and other paperwork. */
+    "OrganizationID_Type-US_EPA_ID": NamedNode<'https://gs1.org/voc/OrganizationID_Type-US_EPA_ID'>;
+    /** AnÂ FRN, orÂ FCCÂ registrationÂ number, is a 10-digitÂ numberÂ that is assigned to a business or individual registering with theÂ FCC. ... TheÂ FCCÂ will use theÂ FRNÂ to determine if all of a registrant's fees have been paid. */
+    "OrganizationID_Type-US_FCC_FRN": NamedNode<'https://gs1.org/voc/OrganizationID_Type-US_FCC_FRN'>;
+    /** TheÂ FDIC CertificateÂ ID is a uniqueÂ numberÂ assigned to each depository institution by the Federal Deposit Insurance Corporation (FDIC). */
+    "OrganizationID_Type-US_FDIC": NamedNode<'https://gs1.org/voc/OrganizationID_Type-US_FDIC'>;
+    /** FHFA ID numberÂ is the number assigned to a member by FHFA and used by FHFA and the Banks to identify a particular member. */
+    "OrganizationID_Type-US_FHFA_ID": NamedNode<'https://gs1.org/voc/OrganizationID_Type-US_FHFA_ID'>;
+    /** The Federal Maritime Commission (FMC) is a USA federal agency. The FMC is responsible for regulating USA ocean transportation to and from the USA. To buy or sell sea freight services to or from the USA, a company must be licensed or registered with the FMC. */
+    "OrganizationID_Type-US_FMC_ID": NamedNode<'https://gs1.org/voc/OrganizationID_Type-US_FMC_ID'>;
+    /** GIIN is an abbreviation of Global Intermediary Identification Number. The FATCA Registration System approves foreign financial institutions (FFI), financial institution (FI) branches, direct reporting non-financial foreign entities (NFFE), sponsoring entities, sponsored entities, and sponsored subsidiary branches. */
+    "OrganizationID_Type-US_GIIN": NamedNode<'https://gs1.org/voc/OrganizationID_Type-US_GIIN'>;
+    /** Code to identify CPSC-Accepted Testing Laboratories. Section 14(a)(3)(E) of the Consumer Product Safety (CPSC) Act, as amended, requires the Commission to maintain on its website an up-to-date list of entities that have been accredited to assess conformity with children's product safety rules. */
+    "OrganizationID_Type-US_LAB_ID": NamedNode<'https://gs1.org/voc/OrganizationID_Type-US_LAB_ID'>;
+    /** The assignedÂ LICÂ identifies the registered company, not an individual product or device; it can be used across multiple product lines. */
+    "OrganizationID_Type-US_LIC": NamedNode<'https://gs1.org/voc/OrganizationID_Type-US_LIC'>;
+    /** The United States Customs use theÂ Manufacturer's Identification NumberÂ (MID) in the electronic data processing and monitoring ofÂ manufacturers. MID is anÂ identifyingÂ referenceÂ numberÂ given toÂ manufacturersÂ that import products into the United States. */
+    "OrganizationID_Type-US_MFG_ID": NamedNode<'https://gs1.org/voc/OrganizationID_Type-US_MFG_ID'>;
+    /** Domestic boat manufacturers are required by U.S. federal law to obtain a unique Manufacturer's Identification Code (MIC). The same applies to domestic importers of foreign built vessels. This code must be incorporated asÂ the first three characters of allÂ hull identification numbers assigned to boats of their production. */
+    "OrganizationID_Type-US_MIC": NamedNode<'https://gs1.org/voc/OrganizationID_Type-US_MIC'>;
+    /** TheÂ National Provider IdentifierÂ (NPI) is a Health Insurance Portability and Accountability Act (HIPAA) Administrative Simplification Standard. TheÂ NPIÂ is a uniqueÂ identification numberÂ for covered health careÂ providers. TheÂ NPIÂ is a 10-position, intelligence-free numericÂ identifierÂ (10-digitÂ number). */
+    "OrganizationID_Type-US_NPI": NamedNode<'https://gs1.org/voc/OrganizationID_Type-US_NPI'>;
+    /** RN stands for Registered Identification Number. It isÂ a number issued by the FTC to U.S. businessesÂ that manufacture, import, distribute, or sell products covered by the Textile, Wool, and Fur Acts. Businesses can use this number on product labels instead of the company name. */
+    "OrganizationID_Type-US_RN": NamedNode<'https://gs1.org/voc/OrganizationID_Type-US_RN'>;
+    /** TheÂ RSSD IDÂ is a uniqueÂ identifierÂ assigned to financial institutions by the U.S. Federal Reserve. */
+    "OrganizationID_Type-US_RSSD_ID": NamedNode<'https://gs1.org/voc/OrganizationID_Type-US_RSSD_ID'>;
+    /** The Standard Carrier Alpha Code (SCAC) isÂ a unique two-to-four-letter code used to identify transportation companies. SCAC codes can be obtained from the National Motor Freight Traffic Association (NMFTA), located in Alexandria, VA. */
+    "OrganizationID_Type-US_SCAC": NamedNode<'https://gs1.org/voc/OrganizationID_Type-US_SCAC'>;
+    /** Uniquely identify entities registered in the U.S. government  System for Award Management (SAM) */
+    "OrganizationID_Type-US_UEI": NamedNode<'https://gs1.org/voc/OrganizationID_Type-US_UEI'>;
     /** Organization accepting goods, products, services etc. */
     "OrganizationRoleType-ACCEPTING_PARTY": NamedNode<'https://gs1.org/voc/OrganizationRoleType-ACCEPTING_PARTY'>;
     "OrganizationRoleType": NamedNode<'https://gs1.org/voc/OrganizationRoleType'>;
@@ -1067,6 +1255,8 @@ interface Gs1 {
     "OrganizationRoleType-WAREHOUSE_KEEPER": NamedNode<'https://gs1.org/voc/OrganizationRoleType-WAREHOUSE_KEEPER'>;
     /** Seller of articles, often in large quantities, to be retailed by others. */
     "OrganizationRoleType-WHOLESALER": NamedNode<'https://gs1.org/voc/OrganizationRoleType-WHOLESALER'>;
+    /** Over the lifetime of an organisation, it may go through periods of being active and inactive. gs1:OrganizationStatusHistory allows changes in status to be communicated in advance and tracked over time. */
+    "OrganizationStatusHistory": NamedNode<'https://gs1.org/voc/OrganizationStatusHistory'>;
     /** Details on packaging for a product for example packaging type (bottle), materials, features, recycling, etc.. */
     "PackagingDetails": NamedNode<'https://gs1.org/voc/PackagingDetails'>;
     /** A general term applied to the support or pedestal of an object. */
@@ -1953,6 +2143,11 @@ interface Gs1 {
     "SportingActivityTypeCode-TENNIS": NamedNode<'https://gs1.org/voc/SportingActivityTypeCode-TENNIS'>;
     "SportingActivityTypeCode-UNCLASSIFIED": NamedNode<'https://gs1.org/voc/SportingActivityTypeCode-UNCLASSIFIED'>;
     "SportingActivityTypeCode-UNIDENTIFIED": NamedNode<'https://gs1.org/voc/SportingActivityTypeCode-UNIDENTIFIED'>;
+    /** Designation stating that an organisation/party or location is operating. Note that this is independent of whether or not the GLN is active. */
+    "StatusType-ACTIVE": NamedNode<'https://gs1.org/voc/StatusType-ACTIVE'>;
+    "StatusType": NamedNode<'https://gs1.org/voc/StatusType'>;
+    /** Designation stating that an organisation/party or location is not operating. Note that this is independent of whether or not the GLN is inactive. */
+    "StatusType-INACTIVE": NamedNode<'https://gs1.org/voc/StatusType-INACTIVE'>;
     /** The mass per unit area distributed over a surface.  SI Units: kilogram per square metre */
     "SurfaceDensity": NamedNode<'https://gs1.org/voc/SurfaceDensity'>;
     /** The attractive force exerted upon the surface molecules of a liquid by the molecules beneath that tends to draw the surface molecules into the bulk of the liquid and makes the liquid assume the shape having the minimum surface area.  SI Units: newton per metre */
@@ -2007,6 +2202,10 @@ interface Gs1 {
     "activityIdeas": NamedNode<'https://gs1.org/voc/activityIdeas'>;
     /** Provides a URL for related information or services. This is not expected to be used directly but provides a super property for all other link types in the GS1 ecosystem. */
     "linkType": NamedNode<'https://gs1.org/voc/linkType'>;
+    /** Location identifiers assigned and managed by government bodies, trade organisations, and other entities. */
+    "additionalLocationID": NamedNode<'https://gs1.org/voc/additionalLocationID'>;
+    /** Party/organisation identifiers assigned and managed by government bodies, trade organisations, and other entities. */
+    "additionalOrganizationID": NamedNode<'https://gs1.org/voc/additionalOrganizationID'>;
     /** The value associated with the Additional Organization Identification Type Value. */
     "additionalOrganizationIdentificationTypeValue": NamedNode<'https://gs1.org/voc/additionalOrganizationIdentificationTypeValue'>;
     /** Relates to a set of additional product classification details */
@@ -2035,9 +2234,9 @@ interface Gs1 {
     "addressRegion": NamedNode<'https://gs1.org/voc/addressRegion'>;
     /** A suburb within a town or city. */
     "addressSuburb": NamedNode<'https://gs1.org/voc/addressSuburb'>;
-    /** Links to afterhours contact information for an organization. */
+    /** Links to after-hours contact information. For general contact details, gs1:contactPoint SHALL be used. */
     "afterHoursContact": NamedNode<'https://gs1.org/voc/afterHoursContact'>;
-    /** Links to information about a business location for an organization. */
+    /** Contact information. To specify a contact specifically designated for after-hours support, see gs1:afterHoursContact */
     "contactPoint": NamedNode<'https://gs1.org/voc/contactPoint'>;
     /** A legally defined geographical region where the grapes for a wine were grown also known as an appellation. It is recommended to populate this property with an ISO 3166-2 code to indicate country and subdivision. */
     "alcoholicBeverageSubregion": NamedNode<'https://gs1.org/voc/alcoholicBeverageSubregion'>;
@@ -2093,6 +2292,8 @@ interface Gs1 {
     "awardPrizeName": NamedNode<'https://gs1.org/voc/awardPrizeName'>;
     /** The year in which a prize or award was given. */
     "awardPrizeYear": NamedNode<'https://gs1.org/voc/awardPrizeYear'>;
+    /** A fixed physical location where a mobile location most commonly resides. If gs1:glnType is present, gs1:baseLocationGLN SHALL only be used when gs1:glnType is gs1:GLN_TypeCode-MOBILE_PHYSICAL_LOCATION */
+    "baseLocation": NamedNode<'https://gs1.org/voc/baseLocation'>;
     /** Best before date on the label or package signifies the end of the period under which the product will retain specific quality attributes or claims even though the product may continue to retain positive quality attributes after this date. Best before date is primarily used for consumer information and may be a regulatory requirement. */
     "bestBeforeDate": NamedNode<'https://gs1.org/voc/bestBeforeDate'>;
     /** The year in which the majority of ingredients are harvested and/or the alcoholic beverage is produced. Determination as to whether the vintage year is the harvest date or production date is according to requirements in the Target Market. */
@@ -2197,9 +2398,13 @@ interface Gs1 {
     "contactTitle": NamedNode<'https://gs1.org/voc/contactTitle'>;
     /** The function or role of a contact for example Customer Support. */
     "contactType": NamedNode<'https://gs1.org/voc/contactType'>;
+    /** Designates the larger physical location a sub-location is located within. To specify sub-locations of a physical location, see gs1:containsPlace. */
+    "containedInPlace": NamedNode<'https://gs1.org/voc/containedInPlace'>;
+    /** Designates a sub-location (e.g., floor, room, shelf) within the physical location being identified. There may be multiple sub-locations associated to a single, physical location. To specify the larger physical location the sub-location is located within, see gs1:containedInPlace */
+    "containsPlace": NamedNode<'https://gs1.org/voc/containsPlace'>;
     /** An indication of the ease of preparation for semi-prepared products. The convenience level indicates the level of preparation in percentage required to prepare and helps the consumer to assess how long it will take to prepare the meal. */
     "convenienceLevelPercent": NamedNode<'https://gs1.org/voc/convenienceLevelPercent'>;
-    /** Open standard spatial reference systems or coordinate reference systems that provide coordinate-based local, regional or global system used to locate geographical entities.  Values should be URIs already defined by the IOPG Geomatics Committee (https://epsg.org/), such as https://epsg.io/4326 (WGS84); https://epsg.io/4267 (NAD27); https://epsg.io/4230 (ED50); https://epsg.io/4618 (SAD69); https://epsg.io/4269 (NAD83) */
+    /** Open standard spatial reference systems or coordinate reference systems that provide coordinate-based local, regional or global system used to locate geographical entities.  Values should be URIs already defined by the IOPG Geomatics Committee (https://epsg.org/), such as https://epsg.io/4326 (WGS84); https://epsg.io/4267 (NAD27); https://epsg.io/4230 (ED50); https://epsg.io/4618 (SAD69); https://epsg.io/4269 (NAD83).  For elevation values, gs1:elevation SHALL be used. */
     "coordinateReferenceSystem": NamedNode<'https://gs1.org/voc/coordinateReferenceSystem'>;
     /** Copper per specified nutrient basis quantity. */
     "copperPerNutrientBasis": NamedNode<'https://gs1.org/voc/copperPerNutrientBasis'>;
@@ -2243,6 +2448,8 @@ interface Gs1 {
     "dietTypeSubcode": NamedNode<'https://gs1.org/voc/dietTypeSubcode'>;
     /** The location reference associated to a digital place. If gs1:glnType is present, SHALL only be associated if the value of gs1:glnType is gs1:GLN_TypeCode-DIGITAL_LOCATION. */
     "digitalAddress": NamedNode<'https://gs1.org/voc/digitalAddress'>;
+    /** The name of a digital place. To specify the name of a physical location, see gs1:physicalLocationName. */
+    "digitalLocationName": NamedNode<'https://gs1.org/voc/digitalLocationName'>;
     /** If specified and set to true, the discount is available for each time the minimum qualifying criteria are met.  This can be used to express '$10 off each $50 spend', which is distinct from a 20% discount because it is quantized in units of spending. */
     "discountRepeatsPerMultipleMinimum": NamedNode<'https://gs1.org/voc/discountRepeatsPerMultipleMinimum'>;
     /** A code that specifies the type of payment discount applicable to an offer, for example BOGO. */
@@ -2337,6 +2544,8 @@ interface Gs1 {
     "geneticallyModifiedDeclaration": NamedNode<'https://gs1.org/voc/geneticallyModifiedDeclaration'>;
     /** Links to information about geocoordinates or geoshapes for a place. */
     "geo": NamedNode<'https://gs1.org/voc/geo'>;
+    /** Indicates what type of thing is being identified by a GLN. */
+    "glnType": NamedNode<'https://gs1.org/voc/glnType'>;
     /** A Global Location Number (GLN) is the GS1 Identification Key used to identify physical locations or parties. The key comprises a GS1 Company Prefix, Location Reference and Check Digit. For more information see https://www.gs1.org/gln. */
     "globalLocationNumber": NamedNode<'https://gs1.org/voc/globalLocationNumber'>;
     /** 8-digit code (GPC Brick Value) specifying a product category according to the GS1 Global Product Classification (GPC) standard. For more information see https://www.gs1.org/gpc */
@@ -2483,12 +2692,28 @@ interface Gs1 {
     "lesseeOf": NamedNode<'https://gs1.org/voc/lesseeOf'>;
     /** Links to the place(s) for which this organisation is the lessor (i.e., this organisation leases those places to others). */
     "lessorFor": NamedNode<'https://gs1.org/voc/lessorFor'>;
-    /** A line is a point-to-point path consisting of two or more points. A line is expressed as a series of two or more point objects separated by space. */
+    /** A line is a point-to-point path consisting of two or more point objects separated by a space. A single line segment (i.e., straight line) is expressed as two points.  A multi-line path (i.e., open polygon) is expressed as a series of three or more points. For a closed shape, gs1:polygon SHALL be used. */
     "line": NamedNode<'https://gs1.org/voc/line'>;
     /** The place(s) associated with an organization. */
     "location": NamedNode<'https://gs1.org/voc/location'>;
+    /** 13-digit GLN that is being used to identify a physical or digital location. If gs1:glnType is present, gs1:locationGLN SHALL only be used when gs1:GLN_TypeCode includes FIXED_PHYSICAL_LOCATION, MOBILE_PHYSICAL_LOCATION, or DIGITAL_LOCATION */
+    "locationGLN": NamedNode<'https://gs1.org/voc/locationGLN'>;
+    /** Provides details on if and when a location is active or inactive. */
+    "locationHistory": NamedNode<'https://gs1.org/voc/locationHistory'>;
+    /** Identifier value associated to a location. This value SHALL follow rules set forth by the administrating organisation designated in gs1:LocationID_Type. */
+    "locationID": NamedNode<'https://gs1.org/voc/locationID'>;
+    /** Secondary qualifier to supplement gs1:LocationID_Type meaning. May be used with proprietary ID code values to define identifier administrator. */
+    "locationID_Qualifier": NamedNode<'https://gs1.org/voc/locationID_Qualifier'>;
+    /** Organisation that administers the gs1:locationID or the name of the ID itself.  Value from gs1:LocationID_Type code list. */
+    "locationID_Type": NamedNode<'https://gs1.org/voc/locationID_Type'>;
+    /** A URI that links to information about the gs1:locationID. */
+    "locationID_URI": NamedNode<'https://gs1.org/voc/locationID_URI'>;
     /** A link to a map, directions, or other location-related information.  For B2B location  information, see gs1:logisticsInfo.  For details specific to hours of operation, see gs1:openingHoursInfo */
     "locationInfo": NamedNode<'https://gs1.org/voc/locationInfo'>;
+    /** A location classification based on the purpose, type of site and/or what occurs there. Repeatable value from gs1:LocationRoleType code list. */
+    "locationRole": NamedNode<'https://gs1.org/voc/locationRole'>;
+    /** Designation of active/inactive status of a location. */
+    "locationStatus": NamedNode<'https://gs1.org/voc/locationStatus'>;
     /** A link to B2B logistics information related to a physical location. */
     "logisticsInfo": NamedNode<'https://gs1.org/voc/logisticsInfo'>;
     /** The arc or portion of the earth's equator intersected between the meridian of a given place and the prime meridian and expressed in degrees */
@@ -2603,10 +2828,22 @@ interface Gs1 {
     "organicClaimAgency": NamedNode<'https://gs1.org/voc/organicClaimAgency'>;
     /** The percent of actual organic materials per weight of the product. This is usually claimed on the product. */
     "organicPercentClaim": NamedNode<'https://gs1.org/voc/organicPercentClaim'>;
+    /** Provides details on if and when an organisation/party is active or inactive. */
+    "organizationHistory": NamedNode<'https://gs1.org/voc/organizationHistory'>;
+    /** Identifier value associated to an organisation/party. This value SHALL follow rules set forth by the administrating organisation designated in gs1:OrganizationID_Type. */
+    "organizationID": NamedNode<'https://gs1.org/voc/organizationID'>;
+    /** Secondary qualifier to supplement gs1:organizationID_Type meaning. May be used with proprietary ID code values to define identifier administrator. */
+    "organizationID_Qualifier": NamedNode<'https://gs1.org/voc/organizationID_Qualifier'>;
+    /** Organisation that administers the gs1:organizationID or the name of the ID itself.  Value from gs1:OrganizationID_Type code list. */
+    "organizationID_Type": NamedNode<'https://gs1.org/voc/organizationID_Type'>;
+    /** A URI that links to information about the gs1:organizationID. */
+    "organizationID_URI": NamedNode<'https://gs1.org/voc/organizationID_URI'>;
     /** The name of the organization expressed in text. */
     "organizationName": NamedNode<'https://gs1.org/voc/organizationName'>;
-    /** Code indicating an organization role. Allowed code values are specified in OrganizationalRole code list. */
+    /** The role and/or purpose of a party (i.e. legal entity or function).  Multiple values from gs1:OrganizationRoleType code list may be associated to a single organisation/party. */
     "organizationRole": NamedNode<'https://gs1.org/voc/organizationRole'>;
+    /** Designation of active/inactive status of an organisation/party. */
+    "organizationStatus": NamedNode<'https://gs1.org/voc/organizationStatus'>;
     /** The depth of the product out of its packaging, as measured according to the GS1 Package Measurement Rules. See https://www.gs1.org/package-measurement-rules-implementation-guide for more details. */
     "outOfPackageDepth": NamedNode<'https://gs1.org/voc/outOfPackageDepth'>;
     /** The measurement of the diameter of the product out of its package at its largest point. For example, 165 MMT. */
@@ -2615,7 +2852,7 @@ interface Gs1 {
     "outOfPackageHeight": NamedNode<'https://gs1.org/voc/outOfPackageHeight'>;
     /** The width of the product out of the package, as measured according to the GS1 Package Measurement Rules. See https://www.gs1.org/package-measurement-rules-implementation-guide for more details. */
     "outOfPackageWidth": NamedNode<'https://gs1.org/voc/outOfPackageWidth'>;
-    /** Links to the organisation(s) that own this place, in full or in part. This includes joint ventures. For leased locations, see gs1:lessorFor and gs1:leasedFrom. */
+    /** Links to the organisation(s) that own this place, in full or in part. This includes joint ventures. For leased locations, see gs1:lessorFor and gs1:isLeasedFrom. */
     "ownedBy": NamedNode<'https://gs1.org/voc/ownedBy'>;
     /** Links to the place(s) or organisation(s) that this organisation owns. */
     "owns": NamedNode<'https://gs1.org/voc/owns'>;
@@ -2651,6 +2888,10 @@ interface Gs1 {
     "packagingType": NamedNode<'https://gs1.org/voc/packagingType'>;
     /** Pantothenic Acid per specified nutrient basis quantity. */
     "pantothenicAcidPerNutrientBasis": NamedNode<'https://gs1.org/voc/pantothenicAcidPerNutrientBasis'>;
+    /** Designates the legal entity or function directly above the organisation/party being identified in a hierarchy. This is not defaulted to the highest-level entity in the hierarchy. Only one parent organisation SHALL be associated to a single GLN. To specify other affiliated organisations, see gs1:affiliatedTo, gs1:managedBy, gs1:franchiseeOf, gs1:ownedBy. To specify an organisation/party lower in the hierarchy, see gs1:subOrganization. */
+    "parentOrganization": NamedNode<'https://gs1.org/voc/parentOrganization'>;
+    /** 13-digit GLN that is being used to identify a legal entity or function. If gs1:glnType is present, gs1:partyGLN SHALL only be used when gs1:GLN_TypeCode includes LEGAL_ENTITY and/or FUNCTION */
+    "partyGLN": NamedNode<'https://gs1.org/voc/partyGLN'>;
     /** A link to a place where payments details are provided and/or payments can be made by the user. */
     "paymentLink": NamedNode<'https://gs1.org/voc/paymentLink'>;
     /** The type of payment term expressed as a code, for example Discount. */
@@ -2659,6 +2900,8 @@ interface Gs1 {
     "percentageOfAlcoholByVolume": NamedNode<'https://gs1.org/voc/percentageOfAlcoholByVolume'>;
     /** Phosphorus per specified nutrient basis quantity. */
     "phosphorusPerNutrientBasis": NamedNode<'https://gs1.org/voc/phosphorusPerNutrientBasis'>;
+    /** The name of a physical place. To specify the name of a digital location, see gs1:digitalLocationName. */
+    "physicalLocationName": NamedNode<'https://gs1.org/voc/physicalLocationName'>;
     /** A link to information specifically about the identified item, typically operated by the brand owner or a retailer of the product and aimed at consumers. It may include links to further information, product description, specifications etc. */
     "pip": NamedNode<'https://gs1.org/voc/pip'>;
     /** A polygon is the area enclosed by a point-to-point path for which the starting and ending points are the same. A polygon is expressed as a series of four or more space delimited points where the first and final points are identical. */
@@ -2773,8 +3016,16 @@ interface Gs1 {
     "relatedOrganization": NamedNode<'https://gs1.org/voc/relatedOrganization'>;
     /** A link to any video, or document that has an embedded video, that describes or relates to the identified item, organisation, or location in some way. */
     "relatedVideo": NamedNode<'https://gs1.org/voc/relatedVideo'>;
+    /** Links to the successor organisation that is used in place of a previous organisation */
+    "replacedByOrganization": NamedNode<'https://gs1.org/voc/replacedByOrganization'>;
+    /** Links to the successor location that is used in place of a previous location */
+    "replacedByPlace": NamedNode<'https://gs1.org/voc/replacedByPlace'>;
     /** The product which permanently replaces the current product. This product is sent in the record for the original item that is being replaced. */
     "replacedByProduct": NamedNode<'https://gs1.org/voc/replacedByProduct'>;
+    /** Links to the previous organisation that this organisation replaces */
+    "replacedOrganization": NamedNode<'https://gs1.org/voc/replacedOrganization'>;
+    /** Links to the previous location that this location replaces */
+    "replacedPlace": NamedNode<'https://gs1.org/voc/replacedPlace'>;
     /** Indicates the product identification of an item that is being permanently replaced by this product. */
     "replacedProduct": NamedNode<'https://gs1.org/voc/replacedProduct'>;
     /** Text further specifying the area of responsibility of the trade contact. */
@@ -2857,18 +3108,22 @@ interface Gs1 {
     "starchPerNutrientBasis": NamedNode<'https://gs1.org/voc/starchPerNutrientBasis'>;
     /** A link to information about statistics regarding an organisation, location, or other entity. */
     "statisticInfo": NamedNode<'https://gs1.org/voc/statisticInfo'>;
-    /** The street address expressed as free form text. The street address is printed on paper as the first lines below the name. For example, the name of the street and the number in the street or the name of a building. */
+    /** Date and time (including optional timezone) associated to status designations. Timestamps may be future dated to provide advance notice of status changes. For further information about the required lexical representation of date, time, and timezone please see https://www.w3.org/TR/xmlschema-2/#dateTime */
+    "statusTimestamp": NamedNode<'https://gs1.org/voc/statusTimestamp'>;
+    /** The street address expressed as free form text. The street address is printed on paper as the first lines below the name. For example, the name of the street and the number in the street or the name of a building. A total of four street address lines are available. gs1:streetAddress SHOULD be used before populating lines two through four. For a PO Box gs1:postOfficeBoxNumber SHOULD be used instead. */
     "streetAddress": NamedNode<'https://gs1.org/voc/streetAddress'>;
-    /** The street address, expressed as free form text. The street address is printed on paper as the first lines below the name. For example, the name of the street and the number in the street or the name of a building. A total of four street address lines are available. gs1:streetAddress SHOULD be used before populating lines two through four. */
+    /** The second line of the street address, expressed as free form text. The street address is printed on paper as the first lines below the name. For example, the name of the street and the number in the street or the name of a building. A total of four street address lines are available. gs1:streetAddress SHOULD be used before populating lines two through four. These SHALL NOT be used as alternatives to the dedicated address properties gs1:addressSuburb, gs1:addressLocality and gs1:addressRegion. */
     "streetAddressLine2": NamedNode<'https://gs1.org/voc/streetAddressLine2'>;
-    /** The street address, expressed as free form text. The street address is printed on paper as the first lines below the name. For example, the name of the street and the number in the street or the name of a building. A total of four street address lines are available. gs1:streetAddress and gs1:streetaddressLine2 SHOULD be used before populating lines three and four. */
+    /** The third line of the street address, expressed as free form text. The street address is printed on paper as the first lines below the name. For example, the name of the street and the number in the street or the name of a building. A total of four street address lines are available. gs1:streetAddress and gs1:streetaddressLine2 SHOULD be used before populating lines three and four. These SHALL NOT be used as alternatives to the dedicated address properties gs1:addressSuburb, gs1:addressLocality and gs1:addressRegion. */
     "streetAddressLine3": NamedNode<'https://gs1.org/voc/streetAddressLine3'>;
-    /** The street address, expressed as free form text. The street address is printed on paper as the first lines below the name. For example, the name of the street and the number in the street or the name of a building. gs1:streetAddress, gs1:streetaddressLine2 and gs1:streetaddressLine3 SHOULD be used before populating gs1:streetaddressLine4. */
+    /** The fourth line of the street address, expressed as free form text. The street address is printed on paper as the first lines below the name. For example, the name of the street and the number in the street or the name of a building. gs1:streetAddress, gs1:streetaddressLine2 and gs1:streetaddressLine3 SHOULD be used before populating line four. These SHALL NOT be used as alternatives to the dedicated address properties gs1:addressSuburb, gs1:addressLocality and gs1:addressRegion. */
     "streetAddressLine4": NamedNode<'https://gs1.org/voc/streetAddressLine4'>;
     /** An attribute that classifies products that share many of the same characteristics (attribute values) that does NOT vary by GTIN, and are presented by the supplier as a single merchandise selection for the buyer. */
     "styleDescription": NamedNode<'https://gs1.org/voc/styleDescription'>;
     /** Second level of brand. Can be a trademark. It is the primary differentiating factor that a brand owner wants to communicate to the consumer or buyer. E.g. Yummy-Cola Classic. In this example Yummy-Cola is the brand and Classic is the sub-brand. */
     "subBrandName": NamedNode<'https://gs1.org/voc/subBrandName'>;
+    /** Designates a legal entity or function directly below the organisation/party being identified in a hierarchy. There may be multiple sub-organisations associated to a single GLN. To specify other affiliated organisations, see gs1:manages, gs1:franchisorOf, gs1:owns. To specify a parent organisation, see gs1:parentOrganization. */
+    "subOrganization": NamedNode<'https://gs1.org/voc/subOrganization'>;
     /** Sugars per specified nutrient basis quantity. */
     "sugarsPerNutrientBasis": NamedNode<'https://gs1.org/voc/sugarsPerNutrientBasis'>;
     /** Represents the number of days between a product's sell by date and its use by date. */
@@ -2953,6 +3208,7 @@ interface Gs1 {
     "yield": NamedNode<'https://gs1.org/voc/yield'>;
     /** Zinc per specified nutrient basis quantity. */
     "zincPerNutrientBasis": NamedNode<'https://gs1.org/voc/zincPerNutrientBasis'>;
+    "LocationRoleType": NamedNode<'https://gs1.org/voc/LocationRoleType'>;
 }
 
 const builder = namespace("https://gs1.org/voc/") as any;
