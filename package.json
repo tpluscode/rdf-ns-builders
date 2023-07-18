@@ -3,7 +3,7 @@
   "private": true,
   "scripts": {
     "prepare": "husky install",
-    "test": "c8 --reporter=lcov mocha **/test/index.test.ts",
+    "test": "c8 --reporter=lcov mocha **/test/*.test.ts",
     "prepack": "npm run build",
     "lint": "eslint . --ext .ts --quiet --ignore-path .gitignore --ignore-path .eslintignore",
     "prerelease": "tsc",

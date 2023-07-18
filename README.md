@@ -28,9 +28,23 @@ import { NamedNode } from '@rdfjs/types'
 const schemaPerson: NamedNode = schema.Person
 ```
 
+### Usage with RDF/JS Environment
+
+You can also add all vocabularies to an environment. Note that this will load everything immediately, even if unused
+
+```js
+import { NamedNode } from '@rdfjs/types'
+import Environment from '@rdfjs/environment/Environment.js'
+import NsBuildersFactory from '@tpluscode/rdf-ns-builders'
+
+const rdf = new Environment([NsBuildersFactory])
+
+const schemaPerson: NamedNode = rdf.ns.schema.Person
+```
+
 ### Loose builder
 
-The namespace builders exported from the main module allow arbitrary term but in TypeScript, an error will be shown if they do not exist in the vocabulary. Alternatively, loonse builders can be imported which will ignore terms from outside the vocabulary.
+The namespace builders exported from the main module allow arbitrary term but in TypeScript, an error will be shown if they do not exist in the vocabulary. Alternatively, loose builders can be imported which will ignore terms from outside the vocabulary.
 
 ```
 import { schema } from '@tpluscode/rdf-ns-builders/loose'

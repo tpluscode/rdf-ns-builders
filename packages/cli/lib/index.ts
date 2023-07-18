@@ -25,7 +25,7 @@ export async function build({ outDir, vocabsPackage }: Build): Promise<void> {
 
   await Promise.all(promises)
 
-  const defaultModule = project.createSourceFile(resolve(outDir, 'index.ts'), undefined, { overwrite: true })
+  const defaultModule = project.createSourceFile(resolve(outDir, 'strict.ts'), undefined, { overwrite: true })
   createDefaultModule(defaultModule, rdfVocabularies.prefixes)
 
   const looseModule = project.createSourceFile(resolve(outDir, 'loose.ts'), undefined, { overwrite: true })

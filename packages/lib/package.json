@@ -15,6 +15,7 @@
     "./loose": "./loose.js"
   },
   "files": [
+    "CHANGELOG.md",
     "*.js",
     "vocabularies/*.js",
     "vocabularies/*.d.ts",
@@ -29,6 +30,7 @@
     "@zazuko/prefixes": "^2.0.0"
   },
   "devDependencies": {
+    "@rdfjs/environment": "^0.1.2",
     "chai": "^4.2.0",
     "clownface": "^1.5.1",
     "rdf-ext": "^2.2.0"
