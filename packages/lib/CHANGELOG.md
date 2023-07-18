@@ -1,5 +1,11 @@
 # Changelog
 
+## 4.1.0
+
+### Minor Changes
+
+- 72556d8: Added factory module for use with `@rdfjs/environment`
+
 ## 4.0.0
 
 ### Major Changes
