@@ -1,7 +1,7 @@
 import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
-interface Set {
+export interface Set {
     '': NamedNode<'http://www.w3.org/2000/10/swap/set#'>;
     /**
      * The subject is a list of sets,

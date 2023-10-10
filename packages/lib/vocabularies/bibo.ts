@@ -1,7 +1,7 @@
 import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
-interface Bibo {
+export interface Bibo {
     '': NamedNode<'http://purl.org/ontology/bibo/'>;
     "doi": NamedNode<'http://purl.org/ontology/bibo/doi'>;
     "eissn": NamedNode<'http://purl.org/ontology/bibo/eissn'>;

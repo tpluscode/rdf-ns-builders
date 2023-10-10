@@ -1,7 +1,7 @@
 import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
-interface Ssn {
+export interface Ssn {
     '': NamedNode<'http://www.w3.org/ns/ssn/'>;
     /** A quality of an entity. An aspect of an entity that is intrinsic to and cannot exist without the entity. */
     "Property": NamedNode<'http://www.w3.org/ns/ssn/Property'>;

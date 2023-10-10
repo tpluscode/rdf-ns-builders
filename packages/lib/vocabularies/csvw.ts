@@ -1,7 +1,7 @@
 import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
-interface Csvw {
+export interface Csvw {
     '': NamedNode<'http://www.w3.org/ns/csvw#'>;
     /** A Cell represents a cell at the intersection of a Row and a Column within a Table. */
     "Cell": NamedNode<'http://www.w3.org/ns/csvw#Cell'>;

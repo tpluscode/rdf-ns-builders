@@ -1,7 +1,7 @@
 import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
-interface Skosxl {
+export interface Skosxl {
     '': NamedNode<'http://www.w3.org/2008/05/skos-xl#'>;
     "Label": NamedNode<'http://www.w3.org/2008/05/skos-xl#Label'>;
     /** If C skosxl:altLabel L and L skosxl:literalForm V, then X skos:altLabel V. */

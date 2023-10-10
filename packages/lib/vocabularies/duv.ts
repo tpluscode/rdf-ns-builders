@@ -1,7 +1,7 @@
 import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
-interface Duv {
+export interface Duv {
     '': NamedNode<'http://www.w3.org/ns/duv#'>;
     /** Predefined criteria used to express a user opinion about a dataset or distribution using a discrete range of values. */
     "RatingFeedback": NamedNode<'http://www.w3.org/ns/duv#RatingFeedback'>;

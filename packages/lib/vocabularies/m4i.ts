@@ -1,7 +1,7 @@
 import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
-interface M4i {
+export interface M4i {
     '': NamedNode<'http://w3id.org/nfdi4ing/metadata4ing#'>;
     "ProcessingStep": NamedNode<'http://w3id.org/nfdi4ing/metadata4ing#ProcessingStep'>;
     "ContactPerson": NamedNode<'http://w3id.org/nfdi4ing/metadata4ing#ContactPerson'>;

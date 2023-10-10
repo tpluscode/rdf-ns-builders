@@ -1,7 +1,7 @@
 import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
-interface La {
+export interface La {
     '': NamedNode<'https://linked.art/ns/terms/'>;
     /** The addition of some entity to a Set */
     "Addition": NamedNode<'https://linked.art/ns/terms/Addition'>;

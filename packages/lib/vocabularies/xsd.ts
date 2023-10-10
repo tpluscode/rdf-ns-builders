@@ -1,7 +1,7 @@
 import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
-interface Xsd {
+export interface Xsd {
     '': NamedNode<'http://www.w3.org/2001/XMLSchema#'>;
     /**
      *     `ENTITIES` represents the `ENTITIES` attribute type from [XML]. The _value

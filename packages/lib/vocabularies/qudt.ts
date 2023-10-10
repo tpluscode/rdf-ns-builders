@@ -1,7 +1,7 @@
 import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
-interface Qudt {
+export interface Qudt {
     '': NamedNode<'http://qudt.org/schema/qudt/'>;
     "AbstractDatatype": NamedNode<'http://qudt.org/schema/qudt/AbstractDatatype'>;
     "StructuredDatatype": NamedNode<'http://qudt.org/schema/qudt/StructuredDatatype'>;

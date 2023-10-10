@@ -1,7 +1,7 @@
 import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
-interface Rss {
+export interface Rss {
     '': NamedNode<'http://purl.org/rss/1.0/'>;
     /** An RSS information channel. */
     "channel": NamedNode<'http://purl.org/rss/1.0/channel'>;

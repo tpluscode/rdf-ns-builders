@@ -1,7 +1,7 @@
 import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
-interface Vann {
+export interface Vann {
     '': NamedNode<'http://purl.org/vocab/vann/'>;
     /** The preferred namespace prefix to use when using terms from this vocabulary in an XML document. */
     "preferredNamespacePrefix": NamedNode<'http://purl.org/vocab/vann/preferredNamespacePrefix'>;

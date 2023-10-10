@@ -1,7 +1,7 @@
 import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
-interface Locn {
+export interface Locn {
     '': NamedNode<'http://www.w3.org/ns/locn#'>;
     /** An "address representation" as conceptually defined by the INSPIRE Address Representation data type. The locn:addressId property may be used to link this locn:Address to other representations. */
     "Address": NamedNode<'http://www.w3.org/ns/locn#Address'>;

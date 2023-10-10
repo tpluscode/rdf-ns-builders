@@ -1,7 +1,7 @@
 import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
-interface Http {
+export interface Http {
     '': NamedNode<'http://www.w3.org/2011/http#'>;
     /** A connection used for HTTP transfer. */
     "Connection": NamedNode<'http://www.w3.org/2011/http#Connection'>;

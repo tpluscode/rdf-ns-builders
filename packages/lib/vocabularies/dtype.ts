@@ -1,7 +1,7 @@
 import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
-interface Dtype {
+export interface Dtype {
     '': NamedNode<'http://www.linkedmodel.org/schema/dtype#'>;
     "CodeList": NamedNode<'http://www.linkedmodel.org/schema/dtype#CodeList'>;
     "Enumeration": NamedNode<'http://www.linkedmodel.org/schema/dtype#Enumeration'>;

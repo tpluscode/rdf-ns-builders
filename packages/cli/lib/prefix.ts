@@ -24,6 +24,7 @@ export async function createPrefixFile(sourceFile: SourceFile, prefix: string, n
 
   const prefixInterface = sourceFile.addInterface({
     name: interfaceName,
+    isExported: true,
   })
 
   prefixInterface.addMember({

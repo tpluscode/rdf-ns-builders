@@ -1,7 +1,7 @@
 import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
-interface Wdrs {
+export interface Wdrs {
     '': NamedNode<'http://www.w3.org/2007/05/powder-s#'>;
     /** A POWDER document. */
     "Document": NamedNode<'http://www.w3.org/2007/05/powder-s#Document'>;

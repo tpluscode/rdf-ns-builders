@@ -1,7 +1,7 @@
 import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
-interface Dcat {
+export interface Dcat {
     '': NamedNode<'http://www.w3.org/ns/dcat#'>;
     /** A curated collection of metadata about resources (e.g., datasets and data services in the context of a data catalog). */
     "Catalog": NamedNode<'http://www.w3.org/ns/dcat#Catalog'>;

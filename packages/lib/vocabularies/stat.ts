@@ -1,7 +1,7 @@
 import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
-interface Stat {
+export interface Stat {
     '': NamedNode<'http://www.w3.org/ns/posix/stat#'>;
     /** time of last access */
     "atime": NamedNode<'http://www.w3.org/ns/posix/stat#atime'>;

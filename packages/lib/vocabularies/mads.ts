@@ -1,7 +1,7 @@
 import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
-interface Mads {
+export interface Mads {
     '': NamedNode<'http://www.loc.gov/mads/rdf/v1#'>;
     "Address": NamedNode<'http://www.loc.gov/mads/rdf/v1#Address'>;
     /** A resource that describes an individual's affiliation with an organization or group, such as the nature of the affiliation and the active dates. */

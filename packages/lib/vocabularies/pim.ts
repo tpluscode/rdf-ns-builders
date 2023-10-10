@@ -1,7 +1,7 @@
 import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
-interface Pim {
+export interface Pim {
     '': NamedNode<'http://www.w3.org/ns/pim/space#'>;
     "ConfigurationFile": NamedNode<'http://www.w3.org/ns/pim/space#ConfigurationFile'>;
     /**

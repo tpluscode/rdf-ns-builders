@@ -1,7 +1,7 @@
 import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
-interface V {
+export interface V {
     '': NamedNode<'http://rdf.data-vocabulary.org/#'>;
     
 }

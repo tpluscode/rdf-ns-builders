@@ -1,7 +1,7 @@
 import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
-interface Dash {
+export interface Dash {
     '': NamedNode<'http://datashapes.org/dash#'>;
     /** The class of possible values for dash:apiStatus. */
     "APIStatus": NamedNode<'http://datashapes.org/dash#APIStatus'>;

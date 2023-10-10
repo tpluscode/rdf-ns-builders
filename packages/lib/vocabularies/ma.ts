@@ -1,7 +1,7 @@
 import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
-interface Ma {
+export interface Ma {
     '': NamedNode<'http://www.w3.org/ns/ma-ont#'>;
     /** A person or organisation contributing to the media resource. */
     "Agent": NamedNode<'http://www.w3.org/ns/ma-ont#Agent'>;

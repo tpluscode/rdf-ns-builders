@@ -1,7 +1,7 @@
 import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
-interface Constant {
+export interface Constant {
     '': NamedNode<'http://qudt.org/vocab/constant/'>;
     "AlphaParticleElectronMassRatio": NamedNode<'http://qudt.org/vocab/constant/AlphaParticleElectronMassRatio'>;
     "Value_AlphaParticleElectronMassRatio": NamedNode<'http://qudt.org/vocab/constant/Value_AlphaParticleElectronMassRatio'>;

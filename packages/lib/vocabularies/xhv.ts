@@ -1,7 +1,7 @@
 import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
-interface Xhv {
+export interface Xhv {
     '': NamedNode<'http://www.w3.org/1999/xhtml/vocab#'>;
     /**
      * A message

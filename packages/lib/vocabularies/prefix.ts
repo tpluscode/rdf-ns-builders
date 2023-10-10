@@ -1,7 +1,7 @@
 import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
-interface Prefix {
+export interface Prefix {
     '': NamedNode<'http://qudt.org/vocab/prefix/'>;
     "Atto": NamedNode<'http://qudt.org/vocab/prefix/Atto'>;
     "Centi": NamedNode<'http://qudt.org/vocab/prefix/Centi'>;

@@ -1,7 +1,7 @@
 import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
-interface Shex {
+export interface Shex {
     '': NamedNode<'http://www.w3.org/ns/shex#'>;
     /** Annotations provide a format-independent way to provide additional information about elements in a schema. */
     "Annotation": NamedNode<'http://www.w3.org/ns/shex#Annotation'>;

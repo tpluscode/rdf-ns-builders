@@ -1,7 +1,7 @@
 import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
-interface Rr {
+export interface Rr {
     '': NamedNode<'http://www.w3.org/ns/r2rml#'>;
     "BaseTableOrView": NamedNode<'http://www.w3.org/ns/r2rml#BaseTableOrView'>;
     /** Represents a logical table. */

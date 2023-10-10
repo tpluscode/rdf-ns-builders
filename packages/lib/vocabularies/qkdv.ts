@@ -1,7 +1,7 @@
 import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
-interface Qkdv {
+export interface Qkdv {
     '': NamedNode<'http://qudt.org/vocab/dimensionvector/'>;
     "A-1E0L-3I0M0H0T0D0": NamedNode<'http://qudt.org/vocab/dimensionvector/A-1E0L-3I0M0H0T0D0'>;
     "A-1E0L0I0M0H0T0D0": NamedNode<'http://qudt.org/vocab/dimensionvector/A-1E0L0I0M0H0T0D0'>;

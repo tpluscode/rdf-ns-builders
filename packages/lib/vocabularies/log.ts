@@ -1,7 +1,7 @@
 import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
-interface Log {
+export interface Log {
     '': NamedNode<'http://www.w3.org/2000/10/swap/log#'>;
     /**
      * Any statement mentioning anything in this class

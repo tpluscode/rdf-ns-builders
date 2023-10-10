@@ -1,7 +1,7 @@
 import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
-interface Dcam {
+export interface Dcam {
     '': NamedNode<'http://purl.org/dc/dcam/'>;
     /** An enumerated set of resources. */
     "VocabularyEncodingScheme": NamedNode<'http://purl.org/dc/dcam/VocabularyEncodingScheme'>;

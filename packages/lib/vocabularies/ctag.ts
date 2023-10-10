@@ -1,7 +1,7 @@
 import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
-interface Ctag {
+export interface Ctag {
     '': NamedNode<'http://commontag.org/ns#'>;
     /** A Tag asserted by the author of a content resource. */
     "AuthorTag": NamedNode<'http://commontag.org/ns#AuthorTag'>;

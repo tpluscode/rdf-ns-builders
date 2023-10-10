@@ -1,7 +1,7 @@
 import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
-interface Void {
+export interface Void {
     '': NamedNode<'http://rdfs.org/ns/void#'>;
     /** A set of RDF triples that are published, maintained or aggregated by a single provider. */
     "Dataset": NamedNode<'http://rdfs.org/ns/void#Dataset'>;

@@ -1,7 +1,7 @@
 import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
-interface Dig {
+export interface Dig {
     '': NamedNode<'http://www.ics.forth.gr/isl/CRMdig/'>;
     /**
      * This class comprises events by which a digital device runs a software program or a series of  computing 

@@ -1,7 +1,7 @@
 import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
-interface Rdf {
+export interface Rdf {
     '': NamedNode<'http://www.w3.org/1999/02/22-rdf-syntax-ns#'>;
     /** The subject is an instance of a class. */
     "type": NamedNode<'http://www.w3.org/1999/02/22-rdf-syntax-ns#type'>;

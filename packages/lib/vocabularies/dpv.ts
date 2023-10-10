@@ -1,7 +1,7 @@
 import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
-interface Dpv {
+export interface Dpv {
     '': NamedNode<'http://www.w3.org/ns/dpv#'>;
     "AcademicResearch": NamedNode<'http://www.w3.org/ns/dpv#AcademicResearch'>;
     "ResearchAndDevelopment": NamedNode<'http://www.w3.org/ns/dpv#ResearchAndDevelopment'>;

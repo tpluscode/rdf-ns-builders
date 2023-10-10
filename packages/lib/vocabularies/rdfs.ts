@@ -1,7 +1,7 @@
 import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
-interface Rdfs {
+export interface Rdfs {
     '': NamedNode<'http://www.w3.org/2000/01/rdf-schema#'>;
     /** Further information about the subject resource. */
     "seeAlso": NamedNode<'http://www.w3.org/2000/01/rdf-schema#seeAlso'>;

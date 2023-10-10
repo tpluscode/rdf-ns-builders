@@ -1,7 +1,7 @@
 import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
-interface Cnt {
+export interface Cnt {
     '': NamedNode<'http://www.w3.org/2011/content#'>;
     /** The content. */
     "Content": NamedNode<'http://www.w3.org/2011/content#Content'>;

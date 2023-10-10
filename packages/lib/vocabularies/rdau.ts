@@ -1,7 +1,7 @@
 import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
-interface Rdau {
+export interface Rdau {
     '': NamedNode<'http://rdaregistry.info/Elements/u/'>;
     "P60001": NamedNode<'http://rdaregistry.info/Elements/u/P60001'>;
     "P60672": NamedNode<'http://rdaregistry.info/Elements/u/P60672'>;

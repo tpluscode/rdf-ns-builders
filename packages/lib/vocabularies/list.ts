@@ -1,7 +1,7 @@
 import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
-interface List {
+export interface List {
     '': NamedNode<'http://www.w3.org/2000/10/swap/list#'>;
     /**
      * Iff the subject is a list of lists and the concatenation of all those lists 

@@ -1,7 +1,7 @@
 import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
-interface Math {
+export interface Math {
     '': NamedNode<'http://www.w3.org/2000/10/swap/math#'>;
     /** A math:Function is unique in terms of math:EqualTo. */
     "Function": NamedNode<'http://www.w3.org/2000/10/swap/math#Function'>;

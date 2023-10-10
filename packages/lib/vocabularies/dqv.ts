@@ -1,7 +1,7 @@
 import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
-interface Dqv {
+export interface Dqv {
     '': NamedNode<'http://www.w3.org/ns/dqv#'>;
     /** Represents a group of quality dimensions in which a common type of information is used as quality indicator. */
     "Category": NamedNode<'http://www.w3.org/ns/dqv#Category'>;

@@ -1,7 +1,7 @@
 import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
-interface Grddl {
+export interface Grddl {
     '': NamedNode<'http://www.w3.org/2003/g/data-view#'>;
     /** A resource which has the property that all of its essential characteristics can be conveyed in a message */
     "InformationResource": NamedNode<'http://www.w3.org/2003/g/data-view#InformationResource'>;

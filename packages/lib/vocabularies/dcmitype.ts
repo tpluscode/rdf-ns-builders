@@ -1,7 +1,7 @@
 import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
-interface Dcmitype {
+export interface Dcmitype {
     '': NamedNode<'http://purl.org/dc/dcmitype/'>;
     /** An aggregation of resources. */
     "Collection": NamedNode<'http://purl.org/dc/dcmitype/Collection'>;

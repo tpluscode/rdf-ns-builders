@@ -1,7 +1,7 @@
 import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
-interface Geo {
+export interface Geo {
     '': NamedNode<'http://www.opengis.net/ont/geosparql#'>;
     "Feature": NamedNode<'http://www.opengis.net/ont/geosparql#Feature'>;
     "SpatialObject": NamedNode<'http://www.opengis.net/ont/geosparql#SpatialObject'>;

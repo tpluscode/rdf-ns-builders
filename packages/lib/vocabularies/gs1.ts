@@ -1,7 +1,7 @@
 import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
-interface Gs1 {
+export interface Gs1 {
     '': NamedNode<'https://gs1.org/voc/'>;
     /** A Data Type that corresponds to GS1 Application Identifiers defined in the GS1 General Specifications */
     "AI": NamedNode<'https://gs1.org/voc/AI'>;

@@ -1,7 +1,7 @@
 import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
-interface Og {
+export interface Og {
     '': NamedNode<'http://ogp.me/ns#'>;
     /** A relevant audio URL for your object. */
     "audio": NamedNode<'http://ogp.me/ns#audio'>;

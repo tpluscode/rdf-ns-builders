@@ -1,7 +1,7 @@
 import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
-interface Dash_sparql {
+export interface Dash_sparql {
     '': NamedNode<'http://datashapes.org/sparql#'>;
     "PrefixDeclaration": NamedNode<'http://datashapes.org/sparql#PrefixDeclaration'>;
     /** Returns the absolute value of arg. An error is raised if arg is not a numeric value. */

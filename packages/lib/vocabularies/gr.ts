@@ -1,7 +1,7 @@
 import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
-interface Gr {
+export interface Gr {
     '': NamedNode<'http://purl.org/goodrelations/v1#'>;
     /** DEPRECATED - This class is superseded by gr:Individual. Replace all occurrences of gr:ActualProductOrServiceInstance by gr:Individual, if possible. */
     "ActualProductOrServiceInstance": NamedNode<'http://purl.org/goodrelations/v1#ActualProductOrServiceInstance'>;

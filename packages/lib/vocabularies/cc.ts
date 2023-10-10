@@ -1,7 +1,7 @@
 import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
-interface Cc {
+export interface Cc {
     '': NamedNode<'http://creativecommons.org/ns#'>;
     /**
      * credit be given to

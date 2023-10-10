@@ -1,7 +1,7 @@
 import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
-interface Exif {
+export interface Exif {
     '': NamedNode<'http://www.w3.org/2003/12/exif/ns#'>;
     /** An Image File Directory */
     "IFD": NamedNode<'http://www.w3.org/2003/12/exif/ns#IFD'>;

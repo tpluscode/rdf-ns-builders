@@ -1,7 +1,7 @@
 import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
-interface Rdfa {
+export interface Rdfa {
     '': NamedNode<'http://www.w3.org/ns/rdfa#'>;
     "DocumentError": NamedNode<'http://www.w3.org/ns/rdfa#DocumentError'>;
     "Error": NamedNode<'http://www.w3.org/ns/rdfa#Error'>;

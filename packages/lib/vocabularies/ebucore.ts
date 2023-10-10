@@ -1,7 +1,7 @@
 import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
-interface Ebucore {
+export interface Ebucore {
     '': NamedNode<'http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#'>;
     /**
      * The Class "Asset" is an

@@ -1,7 +1,7 @@
 import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
-interface Sou {
+export interface Sou {
     '': NamedNode<'http://qudt.org/vocab/sou/'>;
     "ASU": NamedNode<'http://qudt.org/vocab/sou/ASU'>;
     "CGS-EMU": NamedNode<'http://qudt.org/vocab/sou/CGS-EMU'>;

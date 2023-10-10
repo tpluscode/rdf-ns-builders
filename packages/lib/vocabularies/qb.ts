@@ -1,7 +1,7 @@
 import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
-interface Qb {
+export interface Qb {
     '': NamedNode<'http://purl.org/linked-data/cube#'>;
     /** Abstract superclass for everything that can have attributes and dimensions */
     "Attachable": NamedNode<'http://purl.org/linked-data/cube#Attachable'>;

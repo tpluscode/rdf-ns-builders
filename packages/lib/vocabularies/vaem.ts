@@ -1,7 +1,7 @@
 import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
-interface Vaem {
+export interface Vaem {
     '': NamedNode<'http://www.linkedmodel.org/schema/vaem#'>;
     "hasGraphMetadata": NamedNode<'http://www.linkedmodel.org/schema/vaem#hasGraphMetadata'>;
     "GMD_VAEM": NamedNode<'http://www.linkedmodel.org/schema/vaem#GMD_VAEM'>;

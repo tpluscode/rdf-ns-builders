@@ -1,7 +1,7 @@
 import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
-interface As {
+export interface As {
     '': NamedNode<'https://www.w3.org/ns/activitystreams#'>;
     /** A rdf:List variant for Objects and Links */
     "OrderedItems": NamedNode<'https://www.w3.org/ns/activitystreams#OrderedItems'>;

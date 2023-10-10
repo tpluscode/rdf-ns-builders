@@ -1,7 +1,7 @@
 import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
-interface Quantitykind {
+export interface Quantitykind {
     '': NamedNode<'http://qudt.org/vocab/quantitykind/'>;
     "AbsoluteActivity": NamedNode<'http://qudt.org/vocab/quantitykind/AbsoluteActivity'>;
     "InverseVolume": NamedNode<'http://qudt.org/vocab/quantitykind/InverseVolume'>;

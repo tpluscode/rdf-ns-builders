@@ -1,7 +1,7 @@
 import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
-interface Dcterms {
+export interface Dcterms {
     '': NamedNode<'http://purl.org/dc/terms/'>;
     /** Date on which the resource was changed. */
     "modified": NamedNode<'http://purl.org/dc/terms/modified'>;

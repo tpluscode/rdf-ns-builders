@@ -1,7 +1,7 @@
 import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
-interface Sh {
+export interface Sh {
     '': NamedNode<'http://www.w3.org/ns/shacl#'>;
     /** Links a resource with its namespace prefix declarations. */
     "declare": NamedNode<'http://www.w3.org/ns/shacl#declare'>;

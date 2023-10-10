@@ -1,7 +1,7 @@
 import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
-interface Rev {
+export interface Rev {
     '': NamedNode<'http://purl.org/stuff/rev#'>;
     /** A comment on a review */
     "Comment": NamedNode<'http://purl.org/stuff/rev#Comment'>;

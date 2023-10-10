@@ -1,7 +1,7 @@
 import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
-interface Test {
+export interface Test {
     '': NamedNode<'http://www.w3.org/2006/03/test-description#'>;
     /** A particular stage in a review process */
     "ReviewStatus": NamedNode<'http://www.w3.org/2006/03/test-description#ReviewStatus'>;

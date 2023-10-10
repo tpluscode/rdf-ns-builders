@@ -1,7 +1,7 @@
 import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
-interface Unit {
+export interface Unit {
     '': NamedNode<'http://qudt.org/vocab/unit/'>;
     "A-HR": NamedNode<'http://qudt.org/vocab/unit/A-HR'>;
     "A-M2-PER-J-SEC": NamedNode<'http://qudt.org/vocab/unit/A-M2-PER-J-SEC'>;

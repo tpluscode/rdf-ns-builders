@@ -1,7 +1,7 @@
 import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
-interface Xkos {
+export interface Xkos {
     '': NamedNode<'http://rdf-vocabulary.ddialliance.org/xkos#'>;
     "ClassificationLevel": NamedNode<'http://rdf-vocabulary.ddialliance.org/xkos#ClassificationLevel'>;
     "ConceptAssociation": NamedNode<'http://rdf-vocabulary.ddialliance.org/xkos#ConceptAssociation'>;

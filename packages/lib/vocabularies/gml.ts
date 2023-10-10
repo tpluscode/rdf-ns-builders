@@ -1,7 +1,7 @@
 import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
-interface Gml {
+export interface Gml {
     '': NamedNode<'http://www.opengis.net/ont/gml#'>;
     "AbstractCurveSegment": NamedNode<'http://www.opengis.net/ont/gml#AbstractCurveSegment'>;
     "AbstractGeometricPrimitive": NamedNode<'http://www.opengis.net/ont/gml#AbstractGeometricPrimitive'>;

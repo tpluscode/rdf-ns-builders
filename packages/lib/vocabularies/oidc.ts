@@ -1,7 +1,7 @@
 import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
-interface Oidc {
+export interface Oidc {
     '': NamedNode<'http://www.w3.org/ns/solid/oidc#'>;
     /** TODO */
     "application_type": NamedNode<'http://www.w3.org/ns/solid/oidc#application_type'>;

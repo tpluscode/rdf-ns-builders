@@ -1,7 +1,7 @@
 import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
-interface Hydra {
+export interface Hydra {
     '': NamedNode<'http://www.w3.org/ns/hydra/core#'>;
     /** The Hydra API documentation class */
     "ApiDocumentation": NamedNode<'http://www.w3.org/ns/hydra/core#ApiDocumentation'>;

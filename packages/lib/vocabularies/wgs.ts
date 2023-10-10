@@ -1,7 +1,7 @@
 import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
-interface Wgs {
+export interface Wgs {
     '': NamedNode<'http://www.w3.org/2003/01/geo/wgs84_pos#'>;
     /**
      *  

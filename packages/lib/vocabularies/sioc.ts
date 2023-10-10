@@ -1,7 +1,7 @@
 import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
-interface Sioc {
+export interface Sioc {
     '': NamedNode<'http://rdfs.org/sioc/ns#'>;
     /** Community is a high-level concept that defines an online community and what it consists of. */
     "Community": NamedNode<'http://rdfs.org/sioc/ns#Community'>;

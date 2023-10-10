@@ -1,7 +1,7 @@
 import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
-interface Discipline {
+export interface Discipline {
     '': NamedNode<'http://qudt.org/vocab/discipline/'>;
     "Acoustics": NamedNode<'http://qudt.org/vocab/discipline/Acoustics'>;
     "ClassicalMechanics": NamedNode<'http://qudt.org/vocab/discipline/ClassicalMechanics'>;

@@ -1,7 +1,7 @@
 import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
-interface Gn {
+export interface Gn {
     '': NamedNode<'http://www.geonames.org/ontology#'>;
     "Marc-Wick": NamedNode<'http://www.geonames.org/ontology#Marc-Wick'>;
     "A.ADM1": NamedNode<'http://www.geonames.org/ontology#A.ADM1'>;

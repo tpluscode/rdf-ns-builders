@@ -1,7 +1,7 @@
 import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
-interface Earl {
+export interface Earl {
     '': NamedNode<'http://www.w3.org/ns/earl#'>;
     /** a statement that embodies the results of a test */
     "Assertion": NamedNode<'http://www.w3.org/ns/earl#Assertion'>;

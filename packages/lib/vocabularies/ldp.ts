@@ -1,7 +1,7 @@
 import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
-interface Ldp {
+export interface Ldp {
     '': NamedNode<'http://www.w3.org/ns/ldp#'>;
     /** Ascending order. */
     "Ascending": NamedNode<'http://www.w3.org/ns/ldp#Ascending'>;

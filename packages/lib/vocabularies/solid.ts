@@ -1,7 +1,7 @@
 import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
-interface Solid {
+export interface Solid {
     '': NamedNode<'http://www.w3.org/ns/solid/terms#'>;
     /** A Solid account. */
     "Account": NamedNode<'http://www.w3.org/ns/solid/terms#Account'>;

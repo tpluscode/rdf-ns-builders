@@ -1,7 +1,7 @@
 import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
-interface Rico {
+export interface Rico {
     '': NamedNode<'https://www.ica.org/standards/RiC/ontology#'>;
     /**
      * Connects at least one Record Resource or Instantiation to at

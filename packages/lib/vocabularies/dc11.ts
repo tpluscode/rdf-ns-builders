@@ -1,7 +1,7 @@
 import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
-interface Dc11 {
+export interface Dc11 {
     '': NamedNode<'http://purl.org/dc/elements/1.1/'>;
     /** An entity responsible for making contributions to the resource. */
     "contributor": NamedNode<'http://purl.org/dc/elements/1.1/contributor'>;

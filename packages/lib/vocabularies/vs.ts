@@ -1,7 +1,7 @@
 import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
-interface Vs {
+export interface Vs {
     '': NamedNode<'http://www.w3.org/2003/06/sw-vocab-status/ns#'>;
     /** more information about the status etc of a term, typically human oriented */
     "moreinfo": NamedNode<'http://www.w3.org/2003/06/sw-vocab-status/ns#moreinfo'>;

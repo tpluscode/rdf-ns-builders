@@ -1,7 +1,7 @@
 import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
-interface Doap {
+export interface Doap {
     '': NamedNode<'http://usefulinc.com/ns/doap#'>;
     /** Dépôt GNU Arch du code source. */
     "ArchRepository": NamedNode<'http://usefulinc.com/ns/doap#ArchRepository'>;

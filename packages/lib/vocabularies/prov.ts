@@ -1,7 +1,7 @@
 import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
-interface Prov {
+export interface Prov {
     '': NamedNode<'http://www.w3.org/ns/prov#'>;
     /** The more specific subproperties of prov:wasDerivedFrom (i.e., prov:wasQuotedFrom, prov:wasRevisionOf, prov:hadPrimarySource) should be used when applicable. */
     "wasDerivedFrom": NamedNode<'http://www.w3.org/ns/prov#wasDerivedFrom'>;

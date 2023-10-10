@@ -1,7 +1,7 @@
 import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
-interface Oa {
+export interface Oa {
     '': NamedNode<'http://www.w3.org/ns/oa#'>;
     /** The class for Web Annotations. */
     "Annotation": NamedNode<'http://www.w3.org/ns/oa#Annotation'>;

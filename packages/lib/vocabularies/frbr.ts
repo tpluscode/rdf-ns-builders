@@ -1,7 +1,7 @@
 import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
-interface Frbr {
+export interface Frbr {
     '': NamedNode<'http://purl.org/vocab/frbr/core#'>;
     /**
      * An abstract notion or idea.

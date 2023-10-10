@@ -1,7 +1,7 @@
 import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
-interface Dbo {
+export interface Dbo {
     '': NamedNode<'http://dbpedia.org/ontology/'>;
     "Academic": NamedNode<'http://dbpedia.org/ontology/Academic'>;
     "AcademicConference": NamedNode<'http://dbpedia.org/ontology/AcademicConference'>;

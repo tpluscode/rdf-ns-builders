@@ -1,7 +1,7 @@
 import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
-interface Sosa {
+export interface Sosa {
     '': NamedNode<'http://www.w3.org/ns/sosa/'>;
     /** An actuatable quality (property, characteristic) of a FeatureOfInterest. */
     "ActuatableProperty": NamedNode<'http://www.w3.org/ns/sosa/ActuatableProperty'>;

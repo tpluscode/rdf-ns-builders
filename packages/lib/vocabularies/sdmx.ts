@@ -1,7 +1,7 @@
 import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
-interface Sdmx {
+export interface Sdmx {
     '': NamedNode<'http://purl.org/linked-data/sdmx#'>;
     /** The concept corresponding to the generic measure type dimension which indicates which measure is being denoted by the primary measure on an observation */
     "measureTypeConcept": NamedNode<'http://purl.org/linked-data/sdmx#measureTypeConcept'>;

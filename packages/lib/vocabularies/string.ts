@@ -1,7 +1,7 @@
 import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
-interface String {
+export interface String {
     '': NamedNode<'http://www.w3.org/2000/10/swap/string#'>;
     "String": NamedNode<'http://www.w3.org/2000/10/swap/string#String'>;
     /** (obsolete - (was backwards!) - use: string:concatenation) */

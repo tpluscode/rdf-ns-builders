@@ -1,7 +1,7 @@
 import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
-interface Lvont {
+export interface Lvont {
     '': NamedNode<'http://lexvo.org/ontology#'>;
     /** A CJK character radical. */
     "CJKRadical": NamedNode<'http://lexvo.org/ontology#CJKRadical'>;

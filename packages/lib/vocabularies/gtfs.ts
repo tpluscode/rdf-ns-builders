@@ -1,7 +1,7 @@
 import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
-interface Gtfs {
+export interface Gtfs {
     '': NamedNode<'http://vocab.gtfs.org/terms#'>;
     /** An agency operates a certain schedule based transport mode */
     "Agency": NamedNode<'http://vocab.gtfs.org/terms#Agency'>;

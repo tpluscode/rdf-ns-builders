@@ -1,7 +1,7 @@
 import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
-interface Vcard {
+export interface Vcard {
     '': NamedNode<'http://www.w3.org/2006/vcard/ns#'>;
     "Acquaintance": NamedNode<'http://www.w3.org/2006/vcard/ns#Acquaintance'>;
     /** Used for relation type codes. The URI of the relation type code must be used as the value for the Relation Type. */

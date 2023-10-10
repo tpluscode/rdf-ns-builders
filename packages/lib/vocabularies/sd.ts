@@ -1,7 +1,7 @@
 import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
-interface Sd {
+export interface Sd {
     '': NamedNode<'http://www.w3.org/ns/sparql-service-description#'>;
     /** An instance of sd:Aggregate represents an aggregate that may be used in a SPARQL aggregate query (for instance in a HAVING clause or SELECT expression) besides the standard list of supported aggregates COUNT, SUM, MIN, MAX, AVG, GROUP_CONCAT, and SAMPLE. */
     "Aggregate": NamedNode<'http://www.w3.org/ns/sparql-service-description#Aggregate'>;

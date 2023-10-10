@@ -1,7 +1,7 @@
 import namespace, { NamespaceBuilder } from "@rdfjs/namespace";
 import { NamedNode } from "@rdfjs/types";
 
-interface Geor {
+export interface Geor {
     '': NamedNode<'http://www.opengis.net/def/rule/geosparql/'>;
     "ehContains": NamedNode<'http://www.opengis.net/def/rule/geosparql/ehContains'>;
     "ehCoveredBy": NamedNode<'http://www.opengis.net/def/rule/geosparql/ehCoveredBy'>;
