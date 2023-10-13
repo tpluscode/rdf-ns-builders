@@ -44,5 +44,7 @@ export async function createMembers(prefix: string, { vocabularies, prefixes }: 
       }
     })
 
-  return [...terms.values()].sort()
+  return [...terms.values()].sort((a, b) => {
+    return a.name.localeCompare(b.name)
+  })
 }
