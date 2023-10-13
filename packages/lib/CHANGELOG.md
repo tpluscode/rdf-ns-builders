@@ -1,5 +1,13 @@
 # Changelog
 
+## 4.2.0
+
+### Minor Changes
+
+- a7a64b0: Add shsh (no terms)
+- a7a64b0: Update m4i terms
+- a7a64b0: Adds SHACL-AF terms
+
 ## 4.1.1
 
 ### Patch Changes
