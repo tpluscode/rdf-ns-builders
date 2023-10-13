@@ -1,5 +1,15 @@
 # @tpluscode/rdf-ns-builder-generator
 
+## 1.2.0
+
+### Minor Changes
+
+- 5e7b210: Use `@zazuko/env` instead of `rdf-ext`
+
+### Patch Changes
+
+- ce3bcc7: Fix unstable term sorting
+
 ## 1.1.1
 
 ### Patch Changes
