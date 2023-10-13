@@ -10,26 +10,6 @@ export interface Log {
      * general fact on the web.
      */
     "Chaff": NamedNode<'http://www.w3.org/2000/10/swap/log#Chaff'>;
-    "Formula": NamedNode<'http://www.w3.org/2000/10/swap/log#Formula'>;
-    "List": NamedNode<'http://www.w3.org/2000/10/swap/log#List'>;
-    /**
-     * A document which, which parsed as Notation3
-     * as defined in general by http://www.w3.org/DesignIssues/Notation3.html
-     * and this schema, conveys the intent of the author by the semantics defined
-     * on those specifications, and the semantics defined by the specifications
-     * of any other identifiers used in the document.
-     *
-     */
-    "N3Document": NamedNode<'http://www.w3.org/2000/10/swap/log#N3Document'>;
-    "Other": NamedNode<'http://www.w3.org/2000/10/swap/log#Other'>;
-    "String": NamedNode<'http://www.w3.org/2000/10/swap/log#String'>;
-    /**
-     * Something which is true: believe it as you would believe this.
-     *     
-     * 	Understood natively by cwm in that it will execute rules in a formula
-     * 	declared a Truth within a formula it is already taking rules from.
-     */
-    "Truth": NamedNode<'http://www.w3.org/2000/10/swap/log#Truth'>;
     /**
      * All possible conclusions which can be drawn from a formula.
      *
@@ -99,6 +79,7 @@ export interface Log {
      *
      */
     "equalTo": NamedNode<'http://www.w3.org/2000/10/swap/log#equalTo'>;
+    "Formula": NamedNode<'http://www.w3.org/2000/10/swap/log#Formula'>;
     /**
      * Logical implication. 
      * This is the relation between the antecedent (subject) and
@@ -131,6 +112,16 @@ export interface Log {
      * You can use this to peer inside nested formulae.)
      */
     "includes": NamedNode<'http://www.w3.org/2000/10/swap/log#includes'>;
+    "List": NamedNode<'http://www.w3.org/2000/10/swap/log#List'>;
+    /**
+     * A document which, which parsed as Notation3
+     * as defined in general by http://www.w3.org/DesignIssues/Notation3.html
+     * and this schema, conveys the intent of the author by the semantics defined
+     * on those specifications, and the semantics defined by the specifications
+     * of any other identifiers used in the document.
+     *
+     */
+    "N3Document": NamedNode<'http://www.w3.org/2000/10/swap/log#N3Document'>;
     /** The subject formula, expressed as N3, gives this string. */
     "n3String": NamedNode<'http://www.w3.org/2000/10/swap/log#n3String'>;
     /**
@@ -150,6 +141,7 @@ export interface Log {
      *     Related: See includes
      */
     "notIncludes": NamedNode<'http://www.w3.org/2000/10/swap/log#notIncludes'>;
+    "Other": NamedNode<'http://www.w3.org/2000/10/swap/log#Other'>;
     /**
      * The subject is a key and the object is a string,
      * where the strings are to be output in the order of the keys.
@@ -210,6 +202,14 @@ export interface Log {
      *
      */
     "semanticsOrError": NamedNode<'http://www.w3.org/2000/10/swap/log#semanticsOrError'>;
+    "String": NamedNode<'http://www.w3.org/2000/10/swap/log#String'>;
+    /**
+     * Something which is true: believe it as you would believe this.
+     *     
+     * 	Understood natively by cwm in that it will execute rules in a formula
+     * 	declared a Truth within a formula it is already taking rules from.
+     */
+    "Truth": NamedNode<'http://www.w3.org/2000/10/swap/log#Truth'>;
     /**
      * This allows one to look at the actual string of the URI which identifies this.
      *

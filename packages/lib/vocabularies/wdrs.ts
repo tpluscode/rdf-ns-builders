@@ -3,10 +3,6 @@ import { NamedNode } from "@rdfjs/types";
 
 export interface Wdrs {
     '': NamedNode<'http://www.w3.org/2007/05/powder-s#'>;
-    /** A POWDER document. */
-    "Document": NamedNode<'http://www.w3.org/2007/05/powder-s#Document'>;
-    /** A software agent able to process POWDER documents. */
-    "Processor": NamedNode<'http://www.w3.org/2007/05/powder-s#Processor'>;
     /** A pointer to a document that describes how Description Resources created by a FOAF Agent or a DC Terms Agent may be authenticated */
     "authenticate": NamedNode<'http://www.w3.org/2007/05/powder-s#authenticate'>;
     /** A property that takes a Boolean value to declare whether the author of the data certifies the described resource. */
@@ -17,6 +13,8 @@ export interface Wdrs {
     "data_error": NamedNode<'http://www.w3.org/2007/05/powder-s#data_error'>;
     /** An RDF property to exactly match the describedby relationship type introduced in http://www.w3.org/TR/powder-dr/#assoc-linking and formally defined in appendix D of the same document, i.e. the relationship A 'describedby' B asserts that resource B provides a description of resource A. There are no constraints on the format or representation of either A or B, neither are there any further constraints on either resource. */
     "describedby": NamedNode<'http://www.w3.org/2007/05/powder-s#describedby'>;
+    /** A POWDER document. */
+    "Document": NamedNode<'http://www.w3.org/2007/05/powder-s#Document'>;
     /** A property denoting the code of any error encountered by the POWDER processor. */
     "error_code": NamedNode<'http://www.w3.org/2007/05/powder-s#error_code'>;
     /** This property is meant to be used in OWL2 instead of wdrs:matchesregex. It denotes the string data range corresponding to a set of IRIs. */
@@ -33,6 +31,8 @@ export interface Wdrs {
     "notmatchesregex": NamedNode<'http://www.w3.org/2007/05/powder-s#notmatchesregex'>;
     /** A property denoting a description of the specific software error. */
     "proc_error": NamedNode<'http://www.w3.org/2007/05/powder-s#proc_error'>;
+    /** A software agent able to process POWDER documents. */
+    "Processor": NamedNode<'http://www.w3.org/2007/05/powder-s#Processor'>;
     /** Links to a Base64-encoded binary SHA-1 hash of the described resource. May be used by POWDER Processors when assessing trustworthiness of a DR. */
     "sha1sum": NamedNode<'http://www.w3.org/2007/05/powder-s#sha1sum'>;
     /** A property that links a POWDER document to some other data source that supports the descriptions provided. */

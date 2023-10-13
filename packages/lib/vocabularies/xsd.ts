@@ -4,125 +4,6 @@ import { NamedNode } from "@rdfjs/types";
 export interface Xsd {
     '': NamedNode<'http://www.w3.org/2001/XMLSchema#'>;
     /**
-     *     `ENTITIES` represents the `ENTITIES` attribute type from [XML]. The _value
-     *     space_ of `ENTITIES` is the set of finite, non-zero-length sequences of
-     *     `ENTITY` values that have been declared as unparsed entities in a document
-     *     type definition. The _lexical space_ of `ENTITIES` is the set of
-     *     space-separated lists of tokens, of which each token is in the _lexical
-     *     space_ of `ENTITY`. The _item type_ of `ENTITIES` is `ENTITY`. `ENTITIES` is
-     *     derived from `anySimpleType` in two steps: an anonymous list type is
-     *     defined, whose _item type_ is `ENTITY`; this is the _base type_ of `ENTITIES`,
-     *     which restricts its value space to lists with at least one item.
-     *   
-     */
-    "ENTITIES": NamedNode<'http://www.w3.org/2001/XMLSchema#ENTITIES'>;
-    /**
-     *     The definition of `anySimpleType` is a special _restriction_ of `anyType`. The
-     *     _lexical space_ of a`nySimpleType` is the set of all sequences of Unicode
-     *     characters, and its _value space_ includes all _atomic values_ and all
-     *     finite-length lists of zero or more _atomic values_.
-     *   
-     */
-    "anySimpleType": NamedNode<'http://www.w3.org/2001/XMLSchema#anySimpleType'>;
-    /**
-     *      `ENTITY` represents the `ENTITY` attribute type from [XML]. The _value space_
-     *      of `ENTITY` is the set of all strings that match the `NCName` production in
-     *      [Namespaces in XML] and have been declared as an unparsed entity in a
-     *      document type definition. The _lexical space_ of ENTITY is the set of all
-     *      strings that match the NCName production in [Namespaces in XML]. The
-     *      _base type_ of ENTITY is NCName.
-     *   
-     */
-    "ENTITY": NamedNode<'http://www.w3.org/2001/XMLSchema#ENTITY'>;
-    /**
-     *      `NCName` represents XML "non-colonized" Names. The _value space_ of `NCName`
-     *      is the set of all strings which match the `NCName` production of
-     *      [Namespaces in XML]. The _lexical space_ of `NCName` is the set of all
-     *      strings which match the `NCName` production of [Namespaces in XML]. The
-     *      _base type_ of `NCName` is `Name`.
-     *   
-     */
-    "NCName": NamedNode<'http://www.w3.org/2001/XMLSchema#NCName'>;
-    /**
-     *      `ID` represents the `ID` attribute type from [XML]. The _value space_ of `ID` is
-     *      the set of all strings that match the `NCName` production in [Namespaces
-     *      in XML]. The _lexical space_ of `ID` is the set of all strings that match
-     *      the `NCName` production in [Namespaces in XML]. The _base type_ of `ID` is
-     *      `NCName`.
-     *   
-     */
-    "ID": NamedNode<'http://www.w3.org/2001/XMLSchema#ID'>;
-    /**
-     *     `IDREF` represents the `IDREF` attribute type from [XML]. The _value space_ of
-     *     `IDREF` is the set of all strings that match the `NCName` production in
-     *     [Namespaces in XML]. The _lexical space_ of `IDREF` is the set of strings
-     *     that match the `NCName` production in [Namespaces in XML]. The _base type_
-     *     of `IDREF` is `NCName`.
-     *   
-     */
-    "IDREF": NamedNode<'http://www.w3.org/2001/XMLSchema#IDREF'>;
-    /**
-     *     `IDREFS` represents the `IDREFS` attribute type from [XML]. The _value space_
-     *     of `IDREFS` is the set of finite, non-zero-length sequences of `IDREF`s. The
-     *     _lexical space_ of `IDREFS` is the set of space-separated lists of tokens, of
-     *     which each token is in the _lexical space_ of `IDREF`. The _item type_ of
-     *     `IDREFS` is `IDREF`. `IDREFS` is derived from `anySimpleType` in two steps: an
-     *     anonymous list type is defined, whose _item type_ is `IDREF`; this is the
-     *     _base type_ of `IDREFS`, which restricts its value space to lists with at
-     *     least one item.
-     *   
-     */
-    "IDREFS": NamedNode<'http://www.w3.org/2001/XMLSchema#IDREFS'>;
-    /**
-     *     `Name` represents XML Names. The _value space_ of `Name` is the set of all
-     *     strings which match the `Name` production of [XML]. The _lexical space_ of
-     *     `Name` is the set of all strings which match the `Name` production of [XML].
-     *     The _base type_ of `Name` is `token`.
-     *   
-     */
-    "Name": NamedNode<'http://www.w3.org/2001/XMLSchema#Name'>;
-    /**
-     *      `NMTOKEN` represents the `NMTOKEN` attribute type from [XML]. The _value
-     *      space_ of `NMTOKEN` is the set of tokens that match the `Nmtoken` production
-     *      in [XML]. The _lexical space_ of `NMTOKEN` is the set of strings that
-     *      match the Nmtoken production in [XML]. The _base type_ of `NMTOKEN` is
-     *      `token`.
-     *   
-     */
-    "NMTOKEN": NamedNode<'http://www.w3.org/2001/XMLSchema#NMTOKEN'>;
-    /**
-     *      `token` represents tokenized strings. The _value space_ of `token` is the set
-     *      of strings that do not contain the carriage return (`#xD`), line feed (`#xA`)
-     *      nor tab (`#x9`) characters, that have no leading or trailing spaces (`#x20`)
-     *      and that have no internal sequences of two or more spaces. The _lexical
-     *      space_ of `token` is the set of strings that do not contain the carriage
-     *      return (`#xD`), line feed (`#xA`) nor tab (`#x9`) characters, that have no
-     *      leading or trailing spaces (`#x20`) and that have no internal sequences of
-     *      two or more spaces. The _base type_ of `token` is `normalizedString`.
-     *   
-     */
-    "token": NamedNode<'http://www.w3.org/2001/XMLSchema#token'>;
-    /**
-     *     `NMTOKENS` represents the `NMTOKENS` attribute type from [XML]. The _value
-     *     space_ of `NMTOKENS` is the set of finite, non-zero-length sequences of
-     *     `NMTOKEN`s. The _lexical space_ of `NMTOKENS` is the set of space-separated
-     *     lists of tokens, of which each token is in the _lexical space_ of `NMTOKEN`.
-     *     The _item type_ of `NMTOKENS` is `NMTOKEN`. `NMTOKENS` is derived from
-     *     `anySimpleType` in two steps: an anonymous list type is defined, whose
-     *     _item type_ is `NMTOKEN`; this is the _base type_ of `NMTOKENS`, which
-     *     restricts its value space to lists with at least one item.
-     *   
-     */
-    "NMTOKENS": NamedNode<'http://www.w3.org/2001/XMLSchema#NMTOKENS'>;
-    /**
-     *     `NOTATION` represents the `NOTATION` attribute type from [XML]. The _value
-     *     space_ of `NOTATION` is the set of `QNames` of notations declared in the
-     *     current schema. The _lexical space_ of `NOTATION` is the set of all names of
-     *     notations declared in the current schema (in the form of `QNames`).
-     *   
-     */
-    "NOTATION": NamedNode<'http://www.w3.org/2001/XMLSchema#NOTATION'>;
-    /**
      *     `anyAtomicType` is a special _restriction_ of `anySimpleType`. The _value_ and
      *     _lexical spaces_ of `anyAtomicType` are the unions of the _value_ and
      *     _lexical spaces_ of all the _primitive_ datatypes, and `anyAtomicType` is
@@ -131,13 +12,13 @@ export interface Xsd {
      */
     "anyAtomicType": NamedNode<'http://www.w3.org/2001/XMLSchema#anyAtomicType'>;
     /**
-     *     `QName` represents XML qualified names. The _value space_ of `QName` is the set
-     *     of tuples `{namespace name, local part}`, where namespace name is an `anyURI`
-     *     and local part is an `NCName`. The _lexical space_ of `QName` is the set of
-     *     strings that match the `QName` production of [Namespaces in XML].
+     *     The definition of `anySimpleType` is a special _restriction_ of `anyType`. The
+     *     _lexical space_ of a`nySimpleType` is the set of all sequences of Unicode
+     *     characters, and its _value space_ includes all _atomic values_ and all
+     *     finite-length lists of zero or more _atomic values_.
      *   
      */
-    "QName": NamedNode<'http://www.w3.org/2001/XMLSchema#QName'>;
+    "anySimpleType": NamedNode<'http://www.w3.org/2001/XMLSchema#anySimpleType'>;
     /**
      *     The root of the [XML Schema 1.1] datatype heirarchy.
      *   
@@ -171,12 +52,6 @@ export interface Xsd {
      *   
      */
     "byte": NamedNode<'http://www.w3.org/2001/XMLSchema#byte'>;
-    /**
-     *     `short` is _derived_ from `int` by setting the value of `maxInclusive` to be
-     *     `32767` and `minInclusive` to be `-32768`. The _base type_ of `short` is `int`.
-     *   
-     */
-    "short": NamedNode<'http://www.w3.org/2001/XMLSchema#short'>;
     /**
      *     `date` represents top-open intervals of exactly one day in length on the
      *     timelines of `dateTime`, beginning on the beginning moment of each day, up to
@@ -212,20 +87,6 @@ export interface Xsd {
      */
     "dayTimeDuration": NamedNode<'http://www.w3.org/2001/XMLSchema#dayTimeDuration'>;
     /**
-     *     `duration` is a datatype that represents durations of time. The concept of
-     *     duration being captured is drawn from those of [ISO 8601], specifically
-     *     durations without fixed endpoints. For example, "15 days" (whose most
-     *     common lexical representation in duration is `"'P15D'"`) is a duration value;
-     *     "15 days beginning 12 July 1995" and "15 days ending 12 July 1995" are not
-     *     duration values. duration can provide addition and subtraction operations
-     *     between duration values and between duration/dateTime value pairs, and can
-     *     be the result of subtracting dateTime values. However, only addition to
-     *     `dateTime` is required for XML Schema processing and is defined in the
-     *     function `dateTimePlusDuration`.
-     *   
-     */
-    "duration": NamedNode<'http://www.w3.org/2001/XMLSchema#duration'>;
-    /**
      *     `decimal` represents a subset of the real numbers, which can be represented
      *     by decimal numerals. The _value space_ of decimal is the set of numbers
      *     that can be obtained by dividing an integer by a non-negative power of ten,
@@ -244,6 +105,43 @@ export interface Xsd {
      *   
      */
     "double": NamedNode<'http://www.w3.org/2001/XMLSchema#double'>;
+    /**
+     *     `duration` is a datatype that represents durations of time. The concept of
+     *     duration being captured is drawn from those of [ISO 8601], specifically
+     *     durations without fixed endpoints. For example, "15 days" (whose most
+     *     common lexical representation in duration is `"'P15D'"`) is a duration value;
+     *     "15 days beginning 12 July 1995" and "15 days ending 12 July 1995" are not
+     *     duration values. duration can provide addition and subtraction operations
+     *     between duration values and between duration/dateTime value pairs, and can
+     *     be the result of subtracting dateTime values. However, only addition to
+     *     `dateTime` is required for XML Schema processing and is defined in the
+     *     function `dateTimePlusDuration`.
+     *   
+     */
+    "duration": NamedNode<'http://www.w3.org/2001/XMLSchema#duration'>;
+    /**
+     *     `ENTITIES` represents the `ENTITIES` attribute type from [XML]. The _value
+     *     space_ of `ENTITIES` is the set of finite, non-zero-length sequences of
+     *     `ENTITY` values that have been declared as unparsed entities in a document
+     *     type definition. The _lexical space_ of `ENTITIES` is the set of
+     *     space-separated lists of tokens, of which each token is in the _lexical
+     *     space_ of `ENTITY`. The _item type_ of `ENTITIES` is `ENTITY`. `ENTITIES` is
+     *     derived from `anySimpleType` in two steps: an anonymous list type is
+     *     defined, whose _item type_ is `ENTITY`; this is the _base type_ of `ENTITIES`,
+     *     which restricts its value space to lists with at least one item.
+     *   
+     */
+    "ENTITIES": NamedNode<'http://www.w3.org/2001/XMLSchema#ENTITIES'>;
+    /**
+     *      `ENTITY` represents the `ENTITY` attribute type from [XML]. The _value space_
+     *      of `ENTITY` is the set of all strings that match the `NCName` production in
+     *      [Namespaces in XML] and have been declared as an unparsed entity in a
+     *      document type definition. The _lexical space_ of ENTITY is the set of all
+     *      strings that match the NCName production in [Namespaces in XML]. The
+     *      _base type_ of ENTITY is NCName.
+     *   
+     */
+    "ENTITY": NamedNode<'http://www.w3.org/2001/XMLSchema#ENTITY'>;
     /**
      *     The `float` datatype is patterned after the IEEE single-precision 32-bit
      *     floating point datatype [IEEE 754-2008]. Its value space is a subset of the
@@ -294,19 +192,42 @@ export interface Xsd {
      */
     "hexBinary": NamedNode<'http://www.w3.org/2001/XMLSchema#hexBinary'>;
     /**
+     *      `ID` represents the `ID` attribute type from [XML]. The _value space_ of `ID` is
+     *      the set of all strings that match the `NCName` production in [Namespaces
+     *      in XML]. The _lexical space_ of `ID` is the set of all strings that match
+     *      the `NCName` production in [Namespaces in XML]. The _base type_ of `ID` is
+     *      `NCName`.
+     *   
+     */
+    "ID": NamedNode<'http://www.w3.org/2001/XMLSchema#ID'>;
+    /**
+     *     `IDREF` represents the `IDREF` attribute type from [XML]. The _value space_ of
+     *     `IDREF` is the set of all strings that match the `NCName` production in
+     *     [Namespaces in XML]. The _lexical space_ of `IDREF` is the set of strings
+     *     that match the `NCName` production in [Namespaces in XML]. The _base type_
+     *     of `IDREF` is `NCName`.
+     *   
+     */
+    "IDREF": NamedNode<'http://www.w3.org/2001/XMLSchema#IDREF'>;
+    /**
+     *     `IDREFS` represents the `IDREFS` attribute type from [XML]. The _value space_
+     *     of `IDREFS` is the set of finite, non-zero-length sequences of `IDREF`s. The
+     *     _lexical space_ of `IDREFS` is the set of space-separated lists of tokens, of
+     *     which each token is in the _lexical space_ of `IDREF`. The _item type_ of
+     *     `IDREFS` is `IDREF`. `IDREFS` is derived from `anySimpleType` in two steps: an
+     *     anonymous list type is defined, whose _item type_ is `IDREF`; this is the
+     *     _base type_ of `IDREFS`, which restricts its value space to lists with at
+     *     least one item.
+     *   
+     */
+    "IDREFS": NamedNode<'http://www.w3.org/2001/XMLSchema#IDREFS'>;
+    /**
      *       `int` is _derived_ from `long` by setting the value of `maxInclusive` to be
      *       `2147483647` and `minInclusive` to be `-2147483648`. The _base type_ of `int`
      *       is `long`.
      *   
      */
     "int": NamedNode<'http://www.w3.org/2001/XMLSchema#int'>;
-    /**
-     *      `long` is _derived_ from `integer` by setting the value of `maxInclusive` to
-     *      be `9223372036854775807` and `minInclusive` to be `-9223372036854775808`. The
-     *      _base type_ of `long` is `integer`.
-     *   
-     */
-    "long": NamedNode<'http://www.w3.org/2001/XMLSchema#long'>;
     /**
      *      `integer` is _derived_ from `decimal` by fixing the value of `fractionDigits`
      *      to be `0` and disallowing the trailing decimal point. This results in the
@@ -325,6 +246,30 @@ export interface Xsd {
      */
     "language": NamedNode<'http://www.w3.org/2001/XMLSchema#language'>;
     /**
+     *      `long` is _derived_ from `integer` by setting the value of `maxInclusive` to
+     *      be `9223372036854775807` and `minInclusive` to be `-9223372036854775808`. The
+     *      _base type_ of `long` is `integer`.
+     *   
+     */
+    "long": NamedNode<'http://www.w3.org/2001/XMLSchema#long'>;
+    /**
+     *     `Name` represents XML Names. The _value space_ of `Name` is the set of all
+     *     strings which match the `Name` production of [XML]. The _lexical space_ of
+     *     `Name` is the set of all strings which match the `Name` production of [XML].
+     *     The _base type_ of `Name` is `token`.
+     *   
+     */
+    "Name": NamedNode<'http://www.w3.org/2001/XMLSchema#Name'>;
+    /**
+     *      `NCName` represents XML "non-colonized" Names. The _value space_ of `NCName`
+     *      is the set of all strings which match the `NCName` production of
+     *      [Namespaces in XML]. The _lexical space_ of `NCName` is the set of all
+     *      strings which match the `NCName` production of [Namespaces in XML]. The
+     *      _base type_ of `NCName` is `Name`.
+     *   
+     */
+    "NCName": NamedNode<'http://www.w3.org/2001/XMLSchema#NCName'>;
+    /**
      *      `negativeInteger` is _derived_ from `nonPositiveInteger` by setting the value
      *      of `maxInclusive` to be `-1`. This results in the standard mathematical
      *      concept of the negative integers. The _value space_ of `negativeInteger` is
@@ -334,14 +279,26 @@ export interface Xsd {
      */
     "negativeInteger": NamedNode<'http://www.w3.org/2001/XMLSchema#negativeInteger'>;
     /**
-     *     `nonPositiveInteger` is _derived_ from `integer` by setting the value of
-     *     `maxInclusive` to be `0`. This results in the standard mathematical concept
-     *     of the non-positive integers. The _value space_ of `nonPositiveInteger` is
-     *     the infinite set `{...,-2,-1,0}`. The _base type_ of `nonPositiveInteger` is
-     *     `integer`.
+     *      `NMTOKEN` represents the `NMTOKEN` attribute type from [XML]. The _value
+     *      space_ of `NMTOKEN` is the set of tokens that match the `Nmtoken` production
+     *      in [XML]. The _lexical space_ of `NMTOKEN` is the set of strings that
+     *      match the Nmtoken production in [XML]. The _base type_ of `NMTOKEN` is
+     *      `token`.
      *   
      */
-    "nonPositiveInteger": NamedNode<'http://www.w3.org/2001/XMLSchema#nonPositiveInteger'>;
+    "NMTOKEN": NamedNode<'http://www.w3.org/2001/XMLSchema#NMTOKEN'>;
+    /**
+     *     `NMTOKENS` represents the `NMTOKENS` attribute type from [XML]. The _value
+     *     space_ of `NMTOKENS` is the set of finite, non-zero-length sequences of
+     *     `NMTOKEN`s. The _lexical space_ of `NMTOKENS` is the set of space-separated
+     *     lists of tokens, of which each token is in the _lexical space_ of `NMTOKEN`.
+     *     The _item type_ of `NMTOKENS` is `NMTOKEN`. `NMTOKENS` is derived from
+     *     `anySimpleType` in two steps: an anonymous list type is defined, whose
+     *     _item type_ is `NMTOKEN`; this is the _base type_ of `NMTOKENS`, which
+     *     restricts its value space to lists with at least one item.
+     *   
+     */
+    "NMTOKENS": NamedNode<'http://www.w3.org/2001/XMLSchema#NMTOKENS'>;
     /**
      *      `nonNegativeInteger` is _derived_ from `integer` by setting the value of
      *      `minInclusive` to be `0`. This results in the standard mathematical concept
@@ -351,6 +308,15 @@ export interface Xsd {
      *   
      */
     "nonNegativeInteger": NamedNode<'http://www.w3.org/2001/XMLSchema#nonNegativeInteger'>;
+    /**
+     *     `nonPositiveInteger` is _derived_ from `integer` by setting the value of
+     *     `maxInclusive` to be `0`. This results in the standard mathematical concept
+     *     of the non-positive integers. The _value space_ of `nonPositiveInteger` is
+     *     the infinite set `{...,-2,-1,0}`. The _base type_ of `nonPositiveInteger` is
+     *     `integer`.
+     *   
+     */
+    "nonPositiveInteger": NamedNode<'http://www.w3.org/2001/XMLSchema#nonPositiveInteger'>;
     /**
      *     `normalizedString` represents white space normalized strings. The _value
      *     space_ of `normalizedString` is the set of strings that do not contain the
@@ -362,10 +328,13 @@ export interface Xsd {
      */
     "normalizedString": NamedNode<'http://www.w3.org/2001/XMLSchema#normalizedString'>;
     /**
-     *     The `string` datatype represents character strings in XML.
+     *     `NOTATION` represents the `NOTATION` attribute type from [XML]. The _value
+     *     space_ of `NOTATION` is the set of `QNames` of notations declared in the
+     *     current schema. The _lexical space_ of `NOTATION` is the set of all names of
+     *     notations declared in the current schema (in the form of `QNames`).
      *   
      */
-    "string": NamedNode<'http://www.w3.org/2001/XMLSchema#string'>;
+    "NOTATION": NamedNode<'http://www.w3.org/2001/XMLSchema#NOTATION'>;
     /**
      *      `positiveInteger` is _derived_ from `nonNegativeInteger` by setting the value
      *      of `minInclusive` to be `1`. This results in the standard mathematical
@@ -376,11 +345,42 @@ export interface Xsd {
      */
     "positiveInteger": NamedNode<'http://www.w3.org/2001/XMLSchema#positiveInteger'>;
     /**
+     *     `QName` represents XML qualified names. The _value space_ of `QName` is the set
+     *     of tuples `{namespace name, local part}`, where namespace name is an `anyURI`
+     *     and local part is an `NCName`. The _lexical space_ of `QName` is the set of
+     *     strings that match the `QName` production of [Namespaces in XML].
+     *   
+     */
+    "QName": NamedNode<'http://www.w3.org/2001/XMLSchema#QName'>;
+    /**
+     *     `short` is _derived_ from `int` by setting the value of `maxInclusive` to be
+     *     `32767` and `minInclusive` to be `-32768`. The _base type_ of `short` is `int`.
+     *   
+     */
+    "short": NamedNode<'http://www.w3.org/2001/XMLSchema#short'>;
+    /**
+     *     The `string` datatype represents character strings in XML.
+     *   
+     */
+    "string": NamedNode<'http://www.w3.org/2001/XMLSchema#string'>;
+    /**
      *     `time` represents instants of time that recur at the same point in each
      *     calendar day, or that occur in some arbitrary calendar day.
      *   
      */
     "time": NamedNode<'http://www.w3.org/2001/XMLSchema#time'>;
+    /**
+     *      `token` represents tokenized strings. The _value space_ of `token` is the set
+     *      of strings that do not contain the carriage return (`#xD`), line feed (`#xA`)
+     *      nor tab (`#x9`) characters, that have no leading or trailing spaces (`#x20`)
+     *      and that have no internal sequences of two or more spaces. The _lexical
+     *      space_ of `token` is the set of strings that do not contain the carriage
+     *      return (`#xD`), line feed (`#xA`) nor tab (`#x9`) characters, that have no
+     *      leading or trailing spaces (`#x20`) and that have no internal sequences of
+     *      two or more spaces. The _base type_ of `token` is `normalizedString`.
+     *   
+     */
+    "token": NamedNode<'http://www.w3.org/2001/XMLSchema#token'>;
     /**
      *       `unsignedByte` is _derived_ from `unsignedShort` by setting the value of
      *       `maxInclusive` to be `255`. The _base type_ of `unsignedByte` is
@@ -388,13 +388,6 @@ export interface Xsd {
      *     
      */
     "unsignedByte": NamedNode<'http://www.w3.org/2001/XMLSchema#unsignedByte'>;
-    /**
-     *        `unsignedShort` is _derived_ from `unsignedInt` by setting the value of
-     *        `maxInclusive` to be `65535`. The _base type_ of `unsignedShort` is
-     *        `unsignedInt`.
-     *     
-     */
-    "unsignedShort": NamedNode<'http://www.w3.org/2001/XMLSchema#unsignedShort'>;
     /**
      *     `unsignedInt` is _derived_ from `unsignedLong` by setting the value of
      *     `maxInclusive` to be `4294967295`. The _base type_ of `unsignedInt` is
@@ -409,6 +402,13 @@ export interface Xsd {
      *   
      */
     "unsignedLong": NamedNode<'http://www.w3.org/2001/XMLSchema#unsignedLong'>;
+    /**
+     *        `unsignedShort` is _derived_ from `unsignedInt` by setting the value of
+     *        `maxInclusive` to be `65535`. The _base type_ of `unsignedShort` is
+     *        `unsignedInt`.
+     *     
+     */
+    "unsignedShort": NamedNode<'http://www.w3.org/2001/XMLSchema#unsignedShort'>;
     /**
      *      `yearMonthDuration` is a datatype _derived_ from `duration` by restricting its
      *      _lexical representations_ to instances of `yearMonthDurationLexicalRep`. The

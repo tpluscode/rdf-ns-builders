@@ -3,8 +3,6 @@ import { NamedNode } from "@rdfjs/types";
 
 export interface Sdmx {
     '': NamedNode<'http://purl.org/linked-data/sdmx#'>;
-    /** The concept corresponding to the generic measure type dimension which indicates which measure is being denoted by the primary measure on an observation */
-    "measureTypeConcept": NamedNode<'http://purl.org/linked-data/sdmx#measureTypeConcept'>;
     "CodeList": NamedNode<'http://purl.org/linked-data/sdmx#CodeList'>;
     /** Denotes an SDMX concept, used in the particular SDMX terminological sense, which is in principle narrower than skos:Concept */
     "Concept": NamedNode<'http://purl.org/linked-data/sdmx#Concept'>;
@@ -20,16 +18,18 @@ export interface Sdmx {
     "FrequencyRole": NamedNode<'http://purl.org/linked-data/sdmx#FrequencyRole'>;
     /** concept for a dimension or attribute that plays the role of an identifier which is taken from a known scheme of identifiers. */
     "IdentityRole": NamedNode<'http://purl.org/linked-data/sdmx#IdentityRole'>;
+    /** The concept corresponding to the generic measure type dimension which indicates which measure is being denoted by the primary measure on an observation */
+    "measureTypeConcept": NamedNode<'http://purl.org/linked-data/sdmx#measureTypeConcept'>;
     /** concept for a dimension that plays the role of identifying a type of measure */
     "MeasureTypeRole": NamedNode<'http://purl.org/linked-data/sdmx#MeasureTypeRole'>;
     /** concept for a dimension or attribute that plays the role of a date/time identifier in the KeyFamily which is not related to the time of the observation */
     "NonObsTimeRole": NamedNode<'http://purl.org/linked-data/sdmx#NonObsTimeRole'>;
+    /** Indicates an additional component used as the primary measure within the SDMX data. In the case of multi-measure data sets the RDF representation uses the specific measure rather than a subsuming overall measure. This property records the subsuming primary measure (typically sdmx-measure:obsValue) to enable round tripping of this information. */
+    "primaryMeasure": NamedNode<'http://purl.org/linked-data/sdmx#primaryMeasure'>;
     /** concept for a measure that plays the role of the observation in a time series */
     "PrimaryMeasureRole": NamedNode<'http://purl.org/linked-data/sdmx#PrimaryMeasureRole'>;
     /** concept for a dimension that specifies the time of the observation of the primaryMeasure */
     "TimeRole": NamedNode<'http://purl.org/linked-data/sdmx#TimeRole'>;
-    /** Indicates an additional component used as the primary measure within the SDMX data. In the case of multi-measure data sets the RDF representation uses the specific measure rather than a subsuming overall measure. This property records the subsuming primary measure (typically sdmx-measure:obsValue) to enable round tripping of this information. */
-    "primaryMeasure": NamedNode<'http://purl.org/linked-data/sdmx#primaryMeasure'>;
 }
 
 const builder = namespace("http://purl.org/linked-data/sdmx#") as any;

@@ -3,58 +3,10 @@ import { NamedNode } from "@rdfjs/types";
 
 export interface Shex {
     '': NamedNode<'http://www.w3.org/ns/shex#'>;
-    /** Annotations provide a format-independent way to provide additional information about elements in a schema. */
-    "Annotation": NamedNode<'http://www.w3.org/ns/shex#Annotation'>;
-    /** A TripleExpression composed of one or more sub-expressions, all of which must match. */
-    "EachOf": NamedNode<'http://www.w3.org/ns/shex#EachOf'>;
-    /** The abstract class of Triple Expressions. */
-    "TripleExpression": NamedNode<'http://www.w3.org/ns/shex#TripleExpression'>;
-    /** An IRI prefix used for matching IRIs. */
-    "IriStem": NamedNode<'http://www.w3.org/ns/shex#IriStem'>;
-    /** Abstract class for Stems */
-    "Stem": NamedNode<'http://www.w3.org/ns/shex#Stem'>;
-    /** An IRI prefix (or wildcard) along with a set of excluded values, used for node matching. */
-    "IriStemRange": NamedNode<'http://www.w3.org/ns/shex#IriStemRange'>;
-    /** Abstract Class for Stem Ranges */
-    "StemRange": NamedNode<'http://www.w3.org/ns/shex#StemRange'>;
-    /** An Language tag used for matching Literal Languages. */
-    "Language": NamedNode<'http://www.w3.org/ns/shex#Language'>;
-    /** An Language prefix used for matching Literal Languages. */
-    "LanguageStem": NamedNode<'http://www.w3.org/ns/shex#LanguageStem'>;
-    /** An Language prefix (or wildcard) along with a set of excluded values, used for node matching. */
-    "LanguageStemRange": NamedNode<'http://www.w3.org/ns/shex#LanguageStemRange'>;
-    /** An Literal prefix used for matching Literals. */
-    "LiteralStem": NamedNode<'http://www.w3.org/ns/shex#LiteralStem'>;
-    /** An Literal prefix (or wildcard) along with a set of excluded values, used for node matching. */
-    "LiteralStemRange": NamedNode<'http://www.w3.org/ns/shex#LiteralStemRange'>;
-    /** A constraint on the type or value of an RDF Node. */
-    "NodeConstraint": NamedNode<'http://www.w3.org/ns/shex#NodeConstraint'>;
-    /** The abstract class of Shape Expressions. */
-    "ShapeExpression": NamedNode<'http://www.w3.org/ns/shex#ShapeExpression'>;
-    /** The set of kinds of RDF Nodes. */
-    "NodeKind": NamedNode<'http://www.w3.org/ns/shex#NodeKind'>;
-    /** A TripleExpression composed of one or more sub-expressions, one of which must match. */
-    "OneOf": NamedNode<'http://www.w3.org/ns/shex#OneOf'>;
-    /** A Schema contains the set of shapes, used for matching a focus node. */
-    "Schema": NamedNode<'http://www.w3.org/ns/shex#Schema'>;
-    /** A list of Semantic Actions that serve as an extension point for Shape Expressions. They appear in lists in Schema's startActs and Shape, OneOf, EachOf and TripleConstraint's semActs. */
-    "SemAct": NamedNode<'http://www.w3.org/ns/shex#SemAct'>;
-    /** A shapes schema is captured in a Schema object where shapes is a mapping from shape label to shape expression. */
-    "Shape": NamedNode<'http://www.w3.org/ns/shex#Shape'>;
-    /** A ShapeExpression composed of one or more sub-expressions, all of which must match. */
-    "ShapeAnd": NamedNode<'http://www.w3.org/ns/shex#ShapeAnd'>;
-    /** A reference to a shape defined in some external Schema. */
-    "ShapeExternal": NamedNode<'http://www.w3.org/ns/shex#ShapeExternal'>;
-    /** A ShapeNot is satisfied when it’s included ShapeExpression is not satisfied. */
-    "ShapeNot": NamedNode<'http://www.w3.org/ns/shex#ShapeNot'>;
-    /** A ShapeExpression composed of one or more sub-expressions, one of which must match. */
-    "ShapeOr": NamedNode<'http://www.w3.org/ns/shex#ShapeOr'>;
-    /** A constraint on a triple having a specific predicate and optionally a shape expression used for matching values. */
-    "TripleConstraint": NamedNode<'http://www.w3.org/ns/shex#TripleConstraint'>;
-    /** Indicates that a stem is a Wildcard, rather than a URI prefix. */
-    "Wildcard": NamedNode<'http://www.w3.org/ns/shex#Wildcard'>;
     /** Annotations on a TripleExpression. */
     "annotation": NamedNode<'http://www.w3.org/ns/shex#annotation'>;
+    /** Annotations provide a format-independent way to provide additional information about elements in a schema. */
+    "Annotation": NamedNode<'http://www.w3.org/ns/shex#Annotation'>;
     /** Requires node to be a Blank Node */
     "bnode": NamedNode<'http://www.w3.org/ns/shex#bnode'>;
     /** Indicates that a Shape is closed, meaning that it may contain no property values other than those used within TripleConstraints. */
@@ -63,6 +15,8 @@ export interface Shex {
     "code": NamedNode<'http://www.w3.org/ns/shex#code'>;
     /** A datatype constraint. */
     "datatype": NamedNode<'http://www.w3.org/ns/shex#datatype'>;
+    /** A TripleExpression composed of one or more sub-expressions, all of which must match. */
+    "EachOf": NamedNode<'http://www.w3.org/ns/shex#EachOf'>;
     /** Values that are excluded from value matching. */
     "exclusion": NamedNode<'http://www.w3.org/ns/shex#exclusion'>;
     /** Expression associated with the TripleExpression. */
@@ -77,20 +31,30 @@ export interface Shex {
     "flags": NamedNode<'http://www.w3.org/ns/shex#flags'>;
     /** for "fractiondigits" constraints, v is less than or equals the number of digits to the right of the decimal place in the XML Schema canonical form[xmlschema-2] of the value of n, ignoring trailing zeros. */
     "fractiondigits": NamedNode<'http://www.w3.org/ns/shex#fractiondigits'>;
-    /** Abstract property of numeric facets on a NodeConstraint. */
-    "numericFacet": NamedNode<'http://www.w3.org/ns/shex#numericFacet'>;
     /** Constrains the subject of a triple, rather than the object. */
     "inverse": NamedNode<'http://www.w3.org/ns/shex#inverse'>;
     /** Requires node to be an IRI */
     "iri": NamedNode<'http://www.w3.org/ns/shex#iri'>;
+    /** An IRI prefix used for matching IRIs. */
+    "IriStem": NamedNode<'http://www.w3.org/ns/shex#IriStem'>;
+    /** An IRI prefix (or wildcard) along with a set of excluded values, used for node matching. */
+    "IriStemRange": NamedNode<'http://www.w3.org/ns/shex#IriStemRange'>;
+    /** An Language tag used for matching Literal Languages. */
+    "Language": NamedNode<'http://www.w3.org/ns/shex#Language'>;
+    /** An Language prefix used for matching Literal Languages. */
+    "LanguageStem": NamedNode<'http://www.w3.org/ns/shex#LanguageStem'>;
+    /** An Language prefix (or wildcard) along with a set of excluded values, used for node matching. */
+    "LanguageStemRange": NamedNode<'http://www.w3.org/ns/shex#LanguageStemRange'>;
     /** The value used to match the language tag of a language-tagged string. */
     "languageTag": NamedNode<'http://www.w3.org/ns/shex#languageTag'>;
     /** The exact length of the value of the cell. */
     "length": NamedNode<'http://www.w3.org/ns/shex#length'>;
-    /** An abstract property of string facets on a NodeConstraint. */
-    "stringFacet": NamedNode<'http://www.w3.org/ns/shex#stringFacet'>;
     /** Requires node to be an rdf:Literal */
     "literal": NamedNode<'http://www.w3.org/ns/shex#literal'>;
+    /** An Literal prefix used for matching Literals. */
+    "LiteralStem": NamedNode<'http://www.w3.org/ns/shex#LiteralStem'>;
+    /** An Literal prefix (or wildcard) along with a set of excluded values, used for node matching. */
+    "LiteralStemRange": NamedNode<'http://www.w3.org/ns/shex#LiteralStemRange'>;
     /** Maximum number of times this TripleExpression may match; -1 for “*” */
     "max": NamedNode<'http://www.w3.org/ns/shex#max'>;
     /** An atomic property that contains a single number that is the maximum valid value (exclusive). */
@@ -109,24 +73,46 @@ export interface Shex {
     "minlength": NamedNode<'http://www.w3.org/ns/shex#minlength'>;
     /** Identifier of SemAct extension. */
     "name": NamedNode<'http://www.w3.org/ns/shex#name'>;
+    /** A constraint on the type or value of an RDF Node. */
+    "NodeConstraint": NamedNode<'http://www.w3.org/ns/shex#NodeConstraint'>;
     /** Restiction on the kind of node matched; restricted to the defined instances of NodeKind. One of shex:iri, shex:bnode, shex:literal, or shex:nonliteral. */
     "nodeKind": NamedNode<'http://www.w3.org/ns/shex#nodeKind'>;
+    /** The set of kinds of RDF Nodes. */
+    "NodeKind": NamedNode<'http://www.w3.org/ns/shex#NodeKind'>;
     /** Requires node to be a Blank Node or IRI */
     "nonliteral": NamedNode<'http://www.w3.org/ns/shex#nonliteral'>;
-    /** An abstract property of string and numeric facets on a NodeConstraint. */
-    "xsFacet": NamedNode<'http://www.w3.org/ns/shex#xsFacet'>;
+    /** Abstract property of numeric facets on a NodeConstraint. */
+    "numericFacet": NamedNode<'http://www.w3.org/ns/shex#numericFacet'>;
     /** The object of an Annotation. */
     "object": NamedNode<'http://www.w3.org/ns/shex#object'>;
+    /** A TripleExpression composed of one or more sub-expressions, one of which must match. */
+    "OneOf": NamedNode<'http://www.w3.org/ns/shex#OneOf'>;
     /** A regular expression used for matching a value. */
     "pattern": NamedNode<'http://www.w3.org/ns/shex#pattern'>;
     /** The predicate of a TripleConstraint or Annotation. */
     "predicate": NamedNode<'http://www.w3.org/ns/shex#predicate'>;
+    /** A Schema contains the set of shapes, used for matching a focus node. */
+    "Schema": NamedNode<'http://www.w3.org/ns/shex#Schema'>;
+    /** A list of Semantic Actions that serve as an extension point for Shape Expressions. They appear in lists in Schema's startActs and Shape, OneOf, EachOf and TripleConstraint's semActs. */
+    "SemAct": NamedNode<'http://www.w3.org/ns/shex#SemAct'>;
     /** Semantic Actions on this TripleExpression. */
     "semActs": NamedNode<'http://www.w3.org/ns/shex#semActs'>;
+    /** A shapes schema is captured in a Schema object where shapes is a mapping from shape label to shape expression. */
+    "Shape": NamedNode<'http://www.w3.org/ns/shex#Shape'>;
+    /** A ShapeExpression composed of one or more sub-expressions, all of which must match. */
+    "ShapeAnd": NamedNode<'http://www.w3.org/ns/shex#ShapeAnd'>;
     /** Shape Expression referenced by this shape. */
     "shapeExpr": NamedNode<'http://www.w3.org/ns/shex#shapeExpr'>;
+    /** The abstract class of Shape Expressions. */
+    "ShapeExpression": NamedNode<'http://www.w3.org/ns/shex#ShapeExpression'>;
     /** A list of 2 or more Shape Expressions referenced by this shape. */
     "shapeExprs": NamedNode<'http://www.w3.org/ns/shex#shapeExprs'>;
+    /** A reference to a shape defined in some external Schema. */
+    "ShapeExternal": NamedNode<'http://www.w3.org/ns/shex#ShapeExternal'>;
+    /** A ShapeNot is satisfied when it’s included ShapeExpression is not satisfied. */
+    "ShapeNot": NamedNode<'http://www.w3.org/ns/shex#ShapeNot'>;
+    /** A ShapeExpression composed of one or more sub-expressions, one of which must match. */
+    "ShapeOr": NamedNode<'http://www.w3.org/ns/shex#ShapeOr'>;
     /** Shapes in this Schema. */
     "shapes": NamedNode<'http://www.w3.org/ns/shex#shapes'>;
     /** A ShapeExpression matched against the focus node prior to any other mapped expressions. */
@@ -135,12 +121,26 @@ export interface Shex {
     "startActs": NamedNode<'http://www.w3.org/ns/shex#startActs'>;
     /** A stem value used for matching or excluding values. */
     "stem": NamedNode<'http://www.w3.org/ns/shex#stem'>;
+    /** Abstract class for Stems */
+    "Stem": NamedNode<'http://www.w3.org/ns/shex#Stem'>;
+    /** Abstract Class for Stem Ranges */
+    "StemRange": NamedNode<'http://www.w3.org/ns/shex#StemRange'>;
+    /** An abstract property of string facets on a NodeConstraint. */
+    "stringFacet": NamedNode<'http://www.w3.org/ns/shex#stringFacet'>;
     /** for "totaldigits" constraints, v equals the number of digits in the XML Schema canonical form[xmlschema-2] of the value of n */
     "totaldigits": NamedNode<'http://www.w3.org/ns/shex#totaldigits'>;
+    /** A constraint on a triple having a specific predicate and optionally a shape expression used for matching values. */
+    "TripleConstraint": NamedNode<'http://www.w3.org/ns/shex#TripleConstraint'>;
+    /** The abstract class of Triple Expressions. */
+    "TripleExpression": NamedNode<'http://www.w3.org/ns/shex#TripleExpression'>;
     /** A ShapeExpression used for matching the object (or subject if inverted) of a TripleConstraint. */
     "valueExpr": NamedNode<'http://www.w3.org/ns/shex#valueExpr'>;
     /** A value restriction on a NodeConstraint. */
     "values": NamedNode<'http://www.w3.org/ns/shex#values'>;
+    /** Indicates that a stem is a Wildcard, rather than a URI prefix. */
+    "Wildcard": NamedNode<'http://www.w3.org/ns/shex#Wildcard'>;
+    /** An abstract property of string and numeric facets on a NodeConstraint. */
+    "xsFacet": NamedNode<'http://www.w3.org/ns/shex#xsFacet'>;
 }
 
 const builder = namespace("http://www.w3.org/ns/shex#") as any;

@@ -3,7 +3,6 @@ import { NamedNode } from "@rdfjs/types";
 
 export interface String {
     '': NamedNode<'http://www.w3.org/2000/10/swap/string#'>;
-    "String": NamedNode<'http://www.w3.org/2000/10/swap/string#String'>;
     /** (obsolete - (was backwards!) - use: string:concatenation) */
     "concat": NamedNode<'http://www.w3.org/2000/10/swap/string#concat'>;
     /**
@@ -90,6 +89,7 @@ export interface String {
     "scrape": NamedNode<'http://www.w3.org/2000/10/swap/string#scrape'>;
     /** True iff the subject string starts with the object string. */
     "startsWith": NamedNode<'http://www.w3.org/2000/10/swap/string#startsWith'>;
+    "String": NamedNode<'http://www.w3.org/2000/10/swap/string#String'>;
 }
 
 const builder = namespace("http://www.w3.org/2000/10/swap/string#") as any;

@@ -3,20 +3,10 @@ import { NamedNode } from "@rdfjs/types";
 
 export interface Rdfs {
     '': NamedNode<'http://www.w3.org/2000/01/rdf-schema#'>;
-    /** Further information about the subject resource. */
-    "seeAlso": NamedNode<'http://www.w3.org/2000/01/rdf-schema#seeAlso'>;
     /** The class of classes. */
     "Class": NamedNode<'http://www.w3.org/2000/01/rdf-schema#Class'>;
     /** A description of the subject resource. */
     "comment": NamedNode<'http://www.w3.org/2000/01/rdf-schema#comment'>;
-    /** The defininition of the subject resource. */
-    "isDefinedBy": NamedNode<'http://www.w3.org/2000/01/rdf-schema#isDefinedBy'>;
-    /** A human-readable name for the subject. */
-    "label": NamedNode<'http://www.w3.org/2000/01/rdf-schema#label'>;
-    /** The subject is a subclass of a class. */
-    "subClassOf": NamedNode<'http://www.w3.org/2000/01/rdf-schema#subClassOf'>;
-    /** The class resource, everything. */
-    "Resource": NamedNode<'http://www.w3.org/2000/01/rdf-schema#Resource'>;
     /** The class of RDF containers. */
     "Container": NamedNode<'http://www.w3.org/2000/01/rdf-schema#Container'>;
     /**
@@ -26,16 +16,26 @@ export interface Rdfs {
     "ContainerMembershipProperty": NamedNode<'http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty'>;
     /** The class of RDF datatypes. */
     "Datatype": NamedNode<'http://www.w3.org/2000/01/rdf-schema#Datatype'>;
-    /** The class of literal values, eg. textual strings and integers. */
-    "Literal": NamedNode<'http://www.w3.org/2000/01/rdf-schema#Literal'>;
     /** A domain of the subject property. */
     "domain": NamedNode<'http://www.w3.org/2000/01/rdf-schema#domain'>;
-    /** A range of the subject property. */
-    "range": NamedNode<'http://www.w3.org/2000/01/rdf-schema#range'>;
-    /** The subject is a subproperty of a property. */
-    "subPropertyOf": NamedNode<'http://www.w3.org/2000/01/rdf-schema#subPropertyOf'>;
+    /** The defininition of the subject resource. */
+    "isDefinedBy": NamedNode<'http://www.w3.org/2000/01/rdf-schema#isDefinedBy'>;
+    /** A human-readable name for the subject. */
+    "label": NamedNode<'http://www.w3.org/2000/01/rdf-schema#label'>;
+    /** The class of literal values, eg. textual strings and integers. */
+    "Literal": NamedNode<'http://www.w3.org/2000/01/rdf-schema#Literal'>;
     /** A member of the subject resource. */
     "member": NamedNode<'http://www.w3.org/2000/01/rdf-schema#member'>;
+    /** A range of the subject property. */
+    "range": NamedNode<'http://www.w3.org/2000/01/rdf-schema#range'>;
+    /** The class resource, everything. */
+    "Resource": NamedNode<'http://www.w3.org/2000/01/rdf-schema#Resource'>;
+    /** Further information about the subject resource. */
+    "seeAlso": NamedNode<'http://www.w3.org/2000/01/rdf-schema#seeAlso'>;
+    /** The subject is a subclass of a class. */
+    "subClassOf": NamedNode<'http://www.w3.org/2000/01/rdf-schema#subClassOf'>;
+    /** The subject is a subproperty of a property. */
+    "subPropertyOf": NamedNode<'http://www.w3.org/2000/01/rdf-schema#subPropertyOf'>;
 }
 
 const builder = namespace("http://www.w3.org/2000/01/rdf-schema#") as any;

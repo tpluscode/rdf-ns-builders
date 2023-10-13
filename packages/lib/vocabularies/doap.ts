@@ -3,36 +3,16 @@ import { NamedNode } from "@rdfjs/types";
 
 export interface Doap {
     '': NamedNode<'http://usefulinc.com/ns/doap#'>;
-    /** Dépôt GNU Arch du code source. */
-    "ArchRepository": NamedNode<'http://usefulinc.com/ns/doap#ArchRepository'>;
-    /** Dépôt du code source. */
-    "Repository": NamedNode<'http://usefulinc.com/ns/doap#Repository'>;
-    /** BitKeeper Quellcode-Versionierungssystem. */
-    "BKRepository": NamedNode<'http://usefulinc.com/ns/doap#BKRepository'>;
-    /** Bazaar source code branch. */
-    "BazaarBranch": NamedNode<'http://usefulinc.com/ns/doap#BazaarBranch'>;
-    /** CVS Quellcode-Versionierungssystem. */
-    "CVSRepository": NamedNode<'http://usefulinc.com/ns/doap#CVSRepository'>;
-    /** Dépôt darcs du code source. */
-    "DarcsRepository": NamedNode<'http://usefulinc.com/ns/doap#DarcsRepository'>;
-    /** Código fonte da ramificação Git. */
-    "GitBranch": NamedNode<'http://usefulinc.com/ns/doap#GitBranch'>;
-    /** Dépôt Git du code source. */
-    "GitRepository": NamedNode<'http://usefulinc.com/ns/doap#GitRepository'>;
-    /** Mercurial source code repository. */
-    "HgRepository": NamedNode<'http://usefulinc.com/ns/doap#HgRepository'>;
-    /** A project. */
-    "Project": NamedNode<'http://usefulinc.com/ns/doap#Project'>;
-    /** Dépôt Subversion du code source. */
-    "SVNRepository": NamedNode<'http://usefulinc.com/ns/doap#SVNRepository'>;
-    /** A especificação de aspetos, técnicas ou outros do sistema. */
-    "Specification": NamedNode<'http://usefulinc.com/ns/doap#Specification'>;
-    /** Détails sur une version d'une release d'un projet. */
-    "Version": NamedNode<'http://usefulinc.com/ns/doap#Version'>;
     /** Dépôt pour accès anonyme. */
     "anon-root": NamedNode<'http://usefulinc.com/ns/doap#anon-root'>;
+    /** Dépôt GNU Arch du code source. */
+    "ArchRepository": NamedNode<'http://usefulinc.com/ns/doap#ArchRepository'>;
     /** Description of target user base */
     "audience": NamedNode<'http://usefulinc.com/ns/doap#audience'>;
+    /** Bazaar source code branch. */
+    "BazaarBranch": NamedNode<'http://usefulinc.com/ns/doap#BazaarBranch'>;
+    /** BitKeeper Quellcode-Versionierungssystem. */
+    "BKRepository": NamedNode<'http://usefulinc.com/ns/doap#BKRepository'>;
     /** URI de um blog relacionado com um projeto */
     "blog": NamedNode<'http://usefulinc.com/ns/doap#blog'>;
     /** Interface web au dépôt. */
@@ -43,6 +23,10 @@ export interface Doap {
     "category": NamedNode<'http://usefulinc.com/ns/doap#category'>;
     /** Data em que algo foi criado, no formato AAAA-MM-DD. e.g. 2004-04-05 */
     "created": NamedNode<'http://usefulinc.com/ns/doap#created'>;
+    /** CVS Quellcode-Versionierungssystem. */
+    "CVSRepository": NamedNode<'http://usefulinc.com/ns/doap#CVSRepository'>;
+    /** Dépôt darcs du code source. */
+    "DarcsRepository": NamedNode<'http://usefulinc.com/ns/doap#DarcsRepository'>;
     /** Beschreibung eines Projekts als einfacher Text mit der Länge von 2 bis 4 Sätzen. */
     "description": NamedNode<'http://usefulinc.com/ns/doap#description'>;
     /** A forum or community for developers of this project. */
@@ -57,8 +41,14 @@ export interface Doap {
     "download-page": NamedNode<'http://usefulinc.com/ns/doap#download-page'>;
     /** URI adresa stažení asociované s revizí. */
     "file-release": NamedNode<'http://usefulinc.com/ns/doap#file-release'>;
+    /** Código fonte da ramificação Git. */
+    "GitBranch": NamedNode<'http://usefulinc.com/ns/doap#GitBranch'>;
+    /** Dépôt Git du code source. */
+    "GitRepository": NamedNode<'http://usefulinc.com/ns/doap#GitRepository'>;
     /** Ajudante ou colaborador do projeto. */
     "helper": NamedNode<'http://usefulinc.com/ns/doap#helper'>;
+    /** Mercurial source code repository. */
+    "HgRepository": NamedNode<'http://usefulinc.com/ns/doap#HgRepository'>;
     /**
      * El URL de la página de un proyecto,
      * 		asociada con exactamente un proyecto.
@@ -94,10 +84,14 @@ export interface Doap {
      * 		ou avec lequel il est prévu de l'utiliser.
      */
     "programming-language": NamedNode<'http://usefulinc.com/ns/doap#programming-language'>;
+    /** A project. */
+    "Project": NamedNode<'http://usefulinc.com/ns/doap#Project'>;
     /** A project release. */
     "release": NamedNode<'http://usefulinc.com/ns/doap#release'>;
     /** Dépôt du code source. */
     "repository": NamedNode<'http://usefulinc.com/ns/doap#repository'>;
+    /** Dépôt du code source. */
+    "Repository": NamedNode<'http://usefulinc.com/ns/doap#Repository'>;
     /** The project that uses a repository. */
     "repositoryOf": NamedNode<'http://usefulinc.com/ns/doap#repositoryOf'>;
     /** Identifiant de révision d'une release du programme. */
@@ -108,14 +102,20 @@ export interface Doap {
     "service-endpoint": NamedNode<'http://usefulinc.com/ns/doap#service-endpoint'>;
     /** Descripción corta (8 o 9 palabras) en texto plano de un proyecto. */
     "shortdesc": NamedNode<'http://usefulinc.com/ns/doap#shortdesc'>;
+    /** A especificação de aspetos, técnicas ou outros do sistema. */
+    "Specification": NamedNode<'http://usefulinc.com/ns/doap#Specification'>;
     /** A forum or community that supports this project. */
     "support-forum": NamedNode<'http://usefulinc.com/ns/doap#support-forum'>;
+    /** Dépôt Subversion du code source. */
+    "SVNRepository": NamedNode<'http://usefulinc.com/ns/doap#SVNRepository'>;
     /** A tester or other quality control contributor. */
     "tester": NamedNode<'http://usefulinc.com/ns/doap#tester'>;
     /** Collaborateur à la traduction du projet. */
     "translator": NamedNode<'http://usefulinc.com/ns/doap#translator'>;
     /** Vendor organization: commercial, free or otherwise */
     "vendor": NamedNode<'http://usefulinc.com/ns/doap#vendor'>;
+    /** Détails sur une version d'une release d'un projet. */
+    "Version": NamedNode<'http://usefulinc.com/ns/doap#Version'>;
     /** L'URL du Wiki pour la discussion collaborative sur le projet. */
     "wiki": NamedNode<'http://usefulinc.com/ns/doap#wiki'>;
 }

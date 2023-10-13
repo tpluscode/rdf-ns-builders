@@ -14,30 +14,7 @@ export interface Cert {
      *     
      */
     "Certificate": NamedNode<'http://www.w3.org/ns/auth/cert#Certificate'>;
-    /** the class of keys */
-    "Key": NamedNode<'http://www.w3.org/ns/auth/cert#Key'>;
-    /** the class of PGP Certificates */
-    "PGPCertificate": NamedNode<'http://www.w3.org/ns/auth/cert#PGPCertificate'>;
-    /** Private Key */
-    "PrivateKey": NamedNode<'http://www.w3.org/ns/auth/cert#PrivateKey'>;
-    /** Public Key */
-    "PublicKey": NamedNode<'http://www.w3.org/ns/auth/cert#PublicKey'>;
-    /**
-     *     The union of the public and private components of an RSAKey.
-     *     Usually those pieces are not kept together
-     *     
-     */
-    "RSAKey": NamedNode<'http://www.w3.org/ns/auth/cert#RSAKey'>;
-    /**
-     *     The RSA public key.  Padded message m are encrypted by applying the function
-     *       modulus(power(m,exponent),modulus)
-     *     
-     */
-    "RSAPublicKey": NamedNode<'http://www.w3.org/ns/auth/cert#RSAPublicKey'>;
-    /** the class of signtatures */
-    "Signature": NamedNode<'http://www.w3.org/ns/auth/cert#Signature'>;
-    /** the class of X509 Certificates */
-    "X509Certificate": NamedNode<'http://www.w3.org/ns/auth/cert#X509Certificate'>;
+    "DSAKey": NamedNode<'http://www.w3.org/ns/auth/cert#DSAKey'>;
     /**
      *        The exponent used to encrypt the message. Number chosen between
      *        1 and the totient(p*q). Often named 'e' .
@@ -95,6 +72,8 @@ export interface Cert {
     "identity": NamedNode<'http://www.w3.org/ns/auth/cert#identity'>;
     /** relates an agent to a key - most often the public key. */
     "key": NamedNode<'http://www.w3.org/ns/auth/cert#key'>;
+    /** the class of keys */
+    "Key": NamedNode<'http://www.w3.org/ns/auth/cert#Key'>;
     /**
      *     
      *    <p>The modulus of an RSA public and private key. 
@@ -110,6 +89,8 @@ export interface Cert {
      *    
      */
     "modulus": NamedNode<'http://www.w3.org/ns/auth/cert#modulus'>;
+    /** the class of PGP Certificates */
+    "PGPCertificate": NamedNode<'http://www.w3.org/ns/auth/cert#PGPCertificate'>;
     /**
      *        The exponent used to decrypt the message
      *        calculated as 
@@ -118,8 +99,27 @@ export interface Cert {
      *     
      */
     "privateExponent": NamedNode<'http://www.w3.org/ns/auth/cert#privateExponent'>;
-    "DSAKey": NamedNode<'http://www.w3.org/ns/auth/cert#DSAKey'>;
+    /** Private Key */
+    "PrivateKey": NamedNode<'http://www.w3.org/ns/auth/cert#PrivateKey'>;
+    /** Public Key */
+    "PublicKey": NamedNode<'http://www.w3.org/ns/auth/cert#PublicKey'>;
+    /**
+     *     The union of the public and private components of an RSAKey.
+     *     Usually those pieces are not kept together
+     *     
+     */
+    "RSAKey": NamedNode<'http://www.w3.org/ns/auth/cert#RSAKey'>;
     "RSAPrivateKey": NamedNode<'http://www.w3.org/ns/auth/cert#RSAPrivateKey'>;
+    /**
+     *     The RSA public key.  Padded message m are encrypted by applying the function
+     *       modulus(power(m,exponent),modulus)
+     *     
+     */
+    "RSAPublicKey": NamedNode<'http://www.w3.org/ns/auth/cert#RSAPublicKey'>;
+    /** the class of signtatures */
+    "Signature": NamedNode<'http://www.w3.org/ns/auth/cert#Signature'>;
+    /** the class of X509 Certificates */
+    "X509Certificate": NamedNode<'http://www.w3.org/ns/auth/cert#X509Certificate'>;
 }
 
 const builder = namespace("http://www.w3.org/ns/auth/cert#") as any;

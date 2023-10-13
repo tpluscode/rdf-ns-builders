@@ -3,12 +3,10 @@ import { NamedNode } from "@rdfjs/types";
 
 export interface Locn {
     '': NamedNode<'http://www.w3.org/ns/locn#'>;
-    /** An "address representation" as conceptually defined by the INSPIRE Address Representation data type. The locn:addressId property may be used to link this locn:Address to other representations. */
-    "Address": NamedNode<'http://www.w3.org/ns/locn#Address'>;
-    /** The locn:Geometry class provides the means to identify a location as a point, line, polygon, etc. expressed using coordinates in some coordinate reference system. */
-    "Geometry": NamedNode<'http://www.w3.org/ns/locn#Geometry'>;
     /** The locn:address property relationship associates any resource with the locn:Address class */
     "address": NamedNode<'http://www.w3.org/ns/locn#address'>;
+    /** An "address representation" as conceptually defined by the INSPIRE Address Representation data type. The locn:addressId property may be used to link this locn:Address to other representations. */
+    "Address": NamedNode<'http://www.w3.org/ns/locn#Address'>;
     /** The name or names of a geographic area or locality that groups a number of addressable objects for addressing purposes, without being an administrative unit. This would typically be part of a city, a neighbourhood or village. The domain of locn:addressArea is locn:Address. */
     "addressArea": NamedNode<'http://www.w3.org/ns/locn#addressArea'>;
     /** The concept of adding a globally unique identifier for each instance of an address is a crucial part of the INSPIRE data spec. The domain of locn:addressId is locn:Address. */
@@ -30,6 +28,8 @@ export interface Locn {
     "geographicName": NamedNode<'http://www.w3.org/ns/locn#geographicName'>;
     /** Associates any resource with the corresponding geometry. */
     "geometry": NamedNode<'http://www.w3.org/ns/locn#geometry'>;
+    /** The locn:Geometry class provides the means to identify a location as a point, line, polygon, etc. expressed using coordinates in some coordinate reference system. */
+    "Geometry": NamedNode<'http://www.w3.org/ns/locn#Geometry'>;
     /** The location property links any resource to the Location Class. Asserting the location relationship implies only that the domain has some connection to a Location in time or space. It does not imply that the resource is necessarily at that location at the time when the assertion is made. */
     "location": NamedNode<'http://www.w3.org/ns/locn#location'>;
     /**

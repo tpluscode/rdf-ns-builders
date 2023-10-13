@@ -37,15 +37,15 @@ export interface Sf {
      */
     "Line": NamedNode<'http://www.opengis.net/ont/sf#Line'>;
     /**
-     * A LineString is a Curve with linear interpolation between Points. Each consecutive pair of Points defines a Line segment.
-     *     
-     */
-    "LineString": NamedNode<'http://www.opengis.net/ont/sf#LineString'>;
-    /**
      * A LinearRing is a LineString that is both closed and simple.
      *     
      */
     "LinearRing": NamedNode<'http://www.opengis.net/ont/sf#LinearRing'>;
+    /**
+     * A LineString is a Curve with linear interpolation between Points. Each consecutive pair of Points defines a Line segment.
+     *     
+     */
+    "LineString": NamedNode<'http://www.opengis.net/ont/sf#LineString'>;
     /**
      * A MultiCurve is a 1-dimensional GeometryCollection whose elements are Curves.
      * A MultiCurve defines a set of methods for its subclasses and is included for reasons of extensibility.
@@ -108,6 +108,13 @@ export interface Sf {
      */
     "Polygon": NamedNode<'http://www.opengis.net/ont/sf#Polygon'>;
     /**
+     * A PolyhedralSurface is a contiguous collection of polygons, which share common boundary segments. For each pair of polygons that touch, the common boundary shall be expressible as a finite collection of LineStrings. Each such LineString shall be part of the boundary of at most 2 Polygon patches. 
+     * For any two polygons that share a common boundary, the top of the polygon shall be consistent. This means that when two LinearRings from these two Polygons traverse the common boundary segment, they do so in opposite directions. Since the Polyhedral surface is contiguous, all polygons will be thus consistently oriented. This means that a non-oriented surface (such as Mbius band) shall not have single surface representations. They may be represented by a MultiSurface.
+     * If each such LineString is the boundary of exactly 2 Polygon patches, then the PolyhedralSurface is a simple, closed polyhedron and is topologically isomorphic to the surface of a sphere. By the Jordan Surface Theorem (Jordans Theorem for 2-spheres), such polyhedrons enclose a solid topologically isomorphic to the interior of a sphere; the ball. In this case, the top of the surface will either point inward or outward of the enclosed finite solid. If outward, the surface is the exterior boundary of the enclosed surface. If inward, the surface is the interior of the infinite complement of the enclosed solid. A Ball with some number of voids (holes) inside can thus be presented as one exterior boundary shell, and some number in interior boundary shells.
+     *     
+     */
+    "PolyhedralSurface": NamedNode<'http://www.opengis.net/ont/sf#PolyhedralSurface'>;
+    /**
      * A Surface is a 2-dimensional geometric object.
      * A simple Surface may consists of a single patch that is associated with one exterior boundary and 0 or more interior boundaries. A single such Surface patch in 3-dimensional space is isometric to planar Surfaces, by a simple affine rotation matrix that rotates the patch onto the plane z = 0. If the patch is not vertical, the projection onto the same plane is an isomorphism, and can be represented as a linear transformation, i.e. an affine.
      * Polyhedral Surfaces are formed by stitching together such simple Surfaces patches along their common boundaries. Such polyhedral Surfaces in a 3-dimensional space may not be planar as a whole, depending on the orientation of their planar normals. If all the patches are in alignment (their normals are parallel), then the whole stitched polyhedral surface is co-planar and can be represented as a single patch if it is connected.
@@ -116,13 +123,6 @@ export interface Sf {
      *     
      */
     "Surface": NamedNode<'http://www.opengis.net/ont/sf#Surface'>;
-    /**
-     * A PolyhedralSurface is a contiguous collection of polygons, which share common boundary segments. For each pair of polygons that touch, the common boundary shall be expressible as a finite collection of LineStrings. Each such LineString shall be part of the boundary of at most 2 Polygon patches. 
-     * For any two polygons that share a common boundary, the top of the polygon shall be consistent. This means that when two LinearRings from these two Polygons traverse the common boundary segment, they do so in opposite directions. Since the Polyhedral surface is contiguous, all polygons will be thus consistently oriented. This means that a non-oriented surface (such as Mbius band) shall not have single surface representations. They may be represented by a MultiSurface.
-     * If each such LineString is the boundary of exactly 2 Polygon patches, then the PolyhedralSurface is a simple, closed polyhedron and is topologically isomorphic to the surface of a sphere. By the Jordan Surface Theorem (Jordans Theorem for 2-spheres), such polyhedrons enclose a solid topologically isomorphic to the interior of a sphere; the ball. In this case, the top of the surface will either point inward or outward of the enclosed finite solid. If outward, the surface is the exterior boundary of the enclosed surface. If inward, the surface is the interior of the infinite complement of the enclosed solid. A Ball with some number of voids (holes) inside can thus be presented as one exterior boundary shell, and some number in interior boundary shells.
-     *     
-     */
-    "PolyhedralSurface": NamedNode<'http://www.opengis.net/ont/sf#PolyhedralSurface'>;
     /**
      * A TIN (triangulated irregular network) is a PolyhedralSurface consisting only of Triangle patches.
      *     

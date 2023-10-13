@@ -3,15 +3,16 @@ import { NamedNode } from "@rdfjs/types";
 
 export interface Dash_sparql {
     '': NamedNode<'http://datashapes.org/sparql#'>;
-    "PrefixDeclaration": NamedNode<'http://datashapes.org/sparql#PrefixDeclaration'>;
     /** Returns the absolute value of arg. An error is raised if arg is not a numeric value. */
     "abs": NamedNode<'http://datashapes.org/sparql#abs'>;
-    /** The SPARQL symbol, such as "/" for sparql:divide. */
-    "symbol": NamedNode<'http://datashapes.org/sparql#symbol'>;
     /** Returns the arithmetic sum of its operands. */
     "add": NamedNode<'http://datashapes.org/sparql#add'>;
     /** Return the logical AND between two (boolean) operands. */
     "and": NamedNode<'http://datashapes.org/sparql#and'>;
+    "arg1": NamedNode<'http://datashapes.org/sparql#arg1'>;
+    "arg2": NamedNode<'http://datashapes.org/sparql#arg2'>;
+    "arg3": NamedNode<'http://datashapes.org/sparql#arg3'>;
+    "arg4": NamedNode<'http://datashapes.org/sparql#arg4'>;
     /** Constructs a blank node that is distinct from all blank nodes in the dataset being queried and distinct from all blank nodes created by calls to this constructor for other query solutions. If the no argument form is used, every call results in a distinct blank node. If the form with a simple literal is used, every call results in distinct blank nodes for different simple literals, and the same blank node for calls with the same simple literal within expressions for one solution mapping. This functionality is compatible with the treatment of blank nodes in SPARQL CONSTRUCT templates. */
     "bnode": NamedNode<'http://datashapes.org/sparql#bnode'>;
     /** Returns true if ?arg1 is bound to a value. Returns false otherwise. Variables with the value NaN or INF are considered bound. */
@@ -20,7 +21,6 @@ export interface Dash_sparql {
     "ceil": NamedNode<'http://datashapes.org/sparql#ceil'>;
     /** Takes any number of arguments, and returns the first bound argument, starting at the left. */
     "coalesce": NamedNode<'http://datashapes.org/sparql#coalesce'>;
-    "unlimitedParameters": NamedNode<'http://datashapes.org/sparql#unlimitedParameters'>;
     /** The CONCAT built-in function. Creates a single string by concatenating all arguments from left to right. Note that if any one of the arguments is unbound (null) then the whole result string will be unbound. */
     "concat": NamedNode<'http://datashapes.org/sparql#concat'>;
     /** Returns an xsd:boolean indicating whether or not the value of ?arg1 contains (at the beginning, at the end, or anywhere within) at least one sequence of collation units that provides a minimal match to the collation units in the value of ?arg2, according to the collation that is used. */
@@ -86,6 +86,7 @@ export interface Dash_sparql {
     "now": NamedNode<'http://datashapes.org/sparql#now'>;
     /** Returns the logical OR between two (boolean) operands. */
     "or": NamedNode<'http://datashapes.org/sparql#or'>;
+    "PrefixDeclaration": NamedNode<'http://datashapes.org/sparql#PrefixDeclaration'>;
     /** Returns a number between 0 (inclusive) and 1.0e0 (exclusive). Different numbers can be produced every time this function is invoked. Numbers should be produced with approximately equal probability. */
     "rand": NamedNode<'http://datashapes.org/sparql#rand'>;
     /** Returns true if a string (?arg1) matches the regular expression supplied as a pattern (?arg2) as influenced by the value of flags (?arg3), otherwise returns false. */
@@ -128,6 +129,8 @@ export interface Dash_sparql {
     "substr": NamedNode<'http://datashapes.org/sparql#substr'>;
     /** Returns the arithmetic difference of its operands. */
     "subtract": NamedNode<'http://datashapes.org/sparql#subtract'>;
+    /** The SPARQL symbol, such as "/" for sparql:divide. */
+    "symbol": NamedNode<'http://datashapes.org/sparql#symbol'>;
     /** Returns the timezone part of ?arg1 as an xsd:dayTimeDuration. Raises an error if there is no timezone. */
     "timezone": NamedNode<'http://datashapes.org/sparql#timezone'>;
     /** Returns the timezone part of ?arg1 as a simple literal. Returns the empty string if there is no timezone. */
@@ -138,16 +141,13 @@ export interface Dash_sparql {
     "unaryminus": NamedNode<'http://datashapes.org/sparql#unaryminus'>;
     /** Returns the operand ?arg1 with the sign unchanged. */
     "unaryplus": NamedNode<'http://datashapes.org/sparql#unaryplus'>;
+    "unlimitedParameters": NamedNode<'http://datashapes.org/sparql#unlimitedParameters'>;
     /** Equivalent to IRI. */
     "uri": NamedNode<'http://datashapes.org/sparql#uri'>;
     /** Returns a fresh IRI from the UUID URN scheme. Each call of UUID() returns a different UUID. It must not be the "nil" UUID (all zeroes). The variant and version of the UUID is implementation dependent. */
     "uuid": NamedNode<'http://datashapes.org/sparql#uuid'>;
     /** Extracts the year from a date/time literal. */
     "year": NamedNode<'http://datashapes.org/sparql#year'>;
-    "arg1": NamedNode<'http://datashapes.org/sparql#arg1'>;
-    "arg2": NamedNode<'http://datashapes.org/sparql#arg2'>;
-    "arg3": NamedNode<'http://datashapes.org/sparql#arg3'>;
-    "arg4": NamedNode<'http://datashapes.org/sparql#arg4'>;
 }
 
 const builder = namespace("http://datashapes.org/sparql#") as any;

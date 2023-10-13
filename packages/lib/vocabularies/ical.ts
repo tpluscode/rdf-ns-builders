@@ -3,29 +3,6 @@ import { NamedNode } from "@rdfjs/types";
 
 export interface Ical {
     '': NamedNode<'http://www.w3.org/2002/12/cal/icaltzd#'>;
-    "DomainOf_rrule": NamedNode<'http://www.w3.org/2002/12/cal/icaltzd#DomainOf_rrule'>;
-    "List_of_Float": NamedNode<'http://www.w3.org/2002/12/cal/icaltzd#List_of_Float'>;
-    /** Provide a grouping of component properties that define an alarm. */
-    "Valarm": NamedNode<'http://www.w3.org/2002/12/cal/icaltzd#Valarm'>;
-    "Value_CAL-ADDRESS": NamedNode<'http://www.w3.org/2002/12/cal/icaltzd#Value_CAL-ADDRESS'>;
-    "Value_DATE-TIME": NamedNode<'http://www.w3.org/2002/12/cal/icaltzd#Value_DATE-TIME'>;
-    "Value_DATE": NamedNode<'http://www.w3.org/2002/12/cal/icaltzd#Value_DATE'>;
-    "Value_DURATION": NamedNode<'http://www.w3.org/2002/12/cal/icaltzd#Value_DURATION'>;
-    "Value_PERIOD": NamedNode<'http://www.w3.org/2002/12/cal/icaltzd#Value_PERIOD'>;
-    "Value_RECUR": NamedNode<'http://www.w3.org/2002/12/cal/icaltzd#Value_RECUR'>;
-    "Vcalendar": NamedNode<'http://www.w3.org/2002/12/cal/icaltzd#Vcalendar'>;
-    /** Provide a grouping of component properties that describe an event. */
-    "Vevent": NamedNode<'http://www.w3.org/2002/12/cal/icaltzd#Vevent'>;
-    /** Provide a grouping of component properties that describe either a request for free/busy time, describe a response to a request for free/busy time or describe a published set of busy time. */
-    "Vfreebusy": NamedNode<'http://www.w3.org/2002/12/cal/icaltzd#Vfreebusy'>;
-    /** Provide a grouping of component properties that describe a journal entry. */
-    "Vjournal": NamedNode<'http://www.w3.org/2002/12/cal/icaltzd#Vjournal'>;
-    /** Provide a grouping of component properties that defines a time zone. */
-    "Vtimezone": NamedNode<'http://www.w3.org/2002/12/cal/icaltzd#Vtimezone'>;
-    /** Provide a grouping of calendar properties that describe a to-do. */
-    "Vtodo": NamedNode<'http://www.w3.org/2002/12/cal/icaltzd#Vtodo'>;
-    /** This class of property provides a framework for defining non-standard properties. */
-    "X-": NamedNode<'http://www.w3.org/2002/12/cal/icaltzd#X-'>;
     /**
      * 	    value type: TEXT
      */
@@ -89,6 +66,7 @@ export interface Ical {
     "description": NamedNode<'http://www.w3.org/2002/12/cal/icaltzd#description'>;
     /** To specify reference to a directory entry associated with the calendar user specified by the property. */
     "dir": NamedNode<'http://www.w3.org/2002/12/cal/icaltzd#dir'>;
+    "DomainOf_rrule": NamedNode<'http://www.w3.org/2002/12/cal/icaltzd#DomainOf_rrule'>;
     /** This property specifies the date and time that a calendar component ends. */
     "dtend": NamedNode<'http://www.w3.org/2002/12/cal/icaltzd#dtend'>;
     /**
@@ -129,6 +107,7 @@ export interface Ical {
      * 	    value type: DATE-TIME
      */
     "lastModified": NamedNode<'http://www.w3.org/2002/12/cal/icaltzd#lastModified'>;
+    "List_of_Float": NamedNode<'http://www.w3.org/2002/12/cal/icaltzd#List_of_Float'>;
     /**
      * 	    value type: TEXT
      */
@@ -237,11 +216,32 @@ export interface Ical {
      * 	    value type: URI
      */
     "url": NamedNode<'http://www.w3.org/2002/12/cal/icaltzd#url'>;
+    /** Provide a grouping of component properties that define an alarm. */
+    "Valarm": NamedNode<'http://www.w3.org/2002/12/cal/icaltzd#Valarm'>;
+    "Value_CAL-ADDRESS": NamedNode<'http://www.w3.org/2002/12/cal/icaltzd#Value_CAL-ADDRESS'>;
+    "Value_DATE-TIME": NamedNode<'http://www.w3.org/2002/12/cal/icaltzd#Value_DATE-TIME'>;
+    "Value_DATE": NamedNode<'http://www.w3.org/2002/12/cal/icaltzd#Value_DATE'>;
+    "Value_DURATION": NamedNode<'http://www.w3.org/2002/12/cal/icaltzd#Value_DURATION'>;
+    "Value_PERIOD": NamedNode<'http://www.w3.org/2002/12/cal/icaltzd#Value_PERIOD'>;
+    "Value_RECUR": NamedNode<'http://www.w3.org/2002/12/cal/icaltzd#Value_RECUR'>;
+    "Vcalendar": NamedNode<'http://www.w3.org/2002/12/cal/icaltzd#Vcalendar'>;
     /**
      * 	    value type: TEXT
      */
     "version": NamedNode<'http://www.w3.org/2002/12/cal/icaltzd#version'>;
+    /** Provide a grouping of component properties that describe an event. */
+    "Vevent": NamedNode<'http://www.w3.org/2002/12/cal/icaltzd#Vevent'>;
+    /** Provide a grouping of component properties that describe either a request for free/busy time, describe a response to a request for free/busy time or describe a published set of busy time. */
+    "Vfreebusy": NamedNode<'http://www.w3.org/2002/12/cal/icaltzd#Vfreebusy'>;
+    /** Provide a grouping of component properties that describe a journal entry. */
+    "Vjournal": NamedNode<'http://www.w3.org/2002/12/cal/icaltzd#Vjournal'>;
+    /** Provide a grouping of component properties that defines a time zone. */
+    "Vtimezone": NamedNode<'http://www.w3.org/2002/12/cal/icaltzd#Vtimezone'>;
+    /** Provide a grouping of calendar properties that describe a to-do. */
+    "Vtodo": NamedNode<'http://www.w3.org/2002/12/cal/icaltzd#Vtodo'>;
     "wkst": NamedNode<'http://www.w3.org/2002/12/cal/icaltzd#wkst'>;
+    /** This class of property provides a framework for defining non-standard properties. */
+    "X-": NamedNode<'http://www.w3.org/2002/12/cal/icaltzd#X-'>;
 }
 
 const builder = namespace("http://www.w3.org/2002/12/cal/icaltzd#") as any;
