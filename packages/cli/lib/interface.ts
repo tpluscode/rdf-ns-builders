@@ -1,7 +1,6 @@
 import { PropertySignatureStructure, StructureKind } from 'ts-morph'
 import { shrink } from '@zazuko/prefixes'
-import cf from 'clownface'
-import RDF from '@rdfjs/data-model'
+import RDF from '@zazuko/env'
 import { ImportedVocabularies } from './index.js'
 
 const rdfsComment = RDF.namedNode('http://www.w3.org/2000/01/rdf-schema#comment')
@@ -28,7 +27,7 @@ export async function createMembers(prefix: string, { vocabularies, prefixes }: 
     return []
   }
 
-  const graph = cf({ dataset })
+  const graph = RDF.clownface({ dataset })
 
   ;[...graph.in().toArray(), ...graph.out().toArray()]
     .forEach((node) => {

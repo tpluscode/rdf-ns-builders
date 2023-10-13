@@ -31,10 +31,9 @@
   },
   "devDependencies": {
     "@rdfjs/environment": "^0.1.2",
+    "@zazuko/env": "^1.7.0",
     "@zazuko/vocabularies": "^2.0.3",
-    "chai": "^4.2.0",
-    "clownface": "^1.5.1",
-    "rdf-ext": "^2.2.0"
+    "chai": "^4.2.0"
   },
   "publishConfig": {
     "access": "public"

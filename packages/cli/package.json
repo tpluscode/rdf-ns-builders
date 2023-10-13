@@ -12,10 +12,9 @@
     "lib/*.d.ts"
   ],
   "dependencies": {
-    "@rdfjs/data-model": "^2.0.1",
+    "@zazuko/env": "^1.7.0",
     "@zazuko/prefixes": "^2.0.0",
     "commander": "^7.2.0",
-    "clownface": "^1",
     "safe-identifier": "^0.4.2",
     "ts-morph": "^15.1.0"
   },
