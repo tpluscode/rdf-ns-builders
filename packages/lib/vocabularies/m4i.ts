@@ -10,6 +10,7 @@ export interface M4i {
     "Distributor": NamedNode<'http://w3id.org/nfdi4ing/metadata4ing#Distributor'>;
     "Editor": NamedNode<'http://w3id.org/nfdi4ing/metadata4ing#Editor'>;
     "endOfProject": NamedNode<'http://w3id.org/nfdi4ing/metadata4ing#endOfProject'>;
+    /** redundant information: applicable unit can be deduced from quantity kind. If one wants to enforce the use of a specific unit, use a SHACL constraint. */
     "hasAdmissibleUnit": NamedNode<'http://w3id.org/nfdi4ing/metadata4ing#hasAdmissibleUnit'>;
     "hasAdmissibleValue": NamedNode<'http://w3id.org/nfdi4ing/metadata4ing#hasAdmissibleValue'>;
     "hasAssignedValue": NamedNode<'http://w3id.org/nfdi4ing/metadata4ing#hasAssignedValue'>;
@@ -23,13 +24,18 @@ export interface M4i {
     "hasEmployedTool": NamedNode<'http://w3id.org/nfdi4ing/metadata4ing#hasEmployedTool'>;
     "hasExpandedUnc": NamedNode<'http://w3id.org/nfdi4ing/metadata4ing#hasExpandedUnc'>;
     "hasKindOfQuantity": NamedNode<'http://w3id.org/nfdi4ing/metadata4ing#hasKindOfQuantity'>;
+    "hasMaximumValue": NamedNode<'http://w3id.org/nfdi4ing/metadata4ing#hasMaximumValue'>;
+    "hasMinimumValue": NamedNode<'http://w3id.org/nfdi4ing/metadata4ing#hasMinimumValue'>;
     "hasNumericalValue": NamedNode<'http://w3id.org/nfdi4ing/metadata4ing#hasNumericalValue'>;
     "hasParameter": NamedNode<'http://w3id.org/nfdi4ing/metadata4ing#hasParameter'>;
     "hasRorId": NamedNode<'http://w3id.org/nfdi4ing/metadata4ing#hasRorId'>;
     "hasRuntimeAssignment": NamedNode<'http://w3id.org/nfdi4ing/metadata4ing#hasRuntimeAssignment'>;
+    "hasStepSize": NamedNode<'http://w3id.org/nfdi4ing/metadata4ing#hasStepSize'>;
+    "hasStringValue": NamedNode<'http://w3id.org/nfdi4ing/metadata4ing#hasStringValue'>;
     "hasSymbol": NamedNode<'http://w3id.org/nfdi4ing/metadata4ing#hasSymbol'>;
     "hasUncertaintyDeclaration": NamedNode<'http://w3id.org/nfdi4ing/metadata4ing#hasUncertaintyDeclaration'>;
     "hasUnit": NamedNode<'http://w3id.org/nfdi4ing/metadata4ing#hasUnit'>;
+    "hasValue": NamedNode<'http://w3id.org/nfdi4ing/metadata4ing#hasValue'>;
     "hasVariable": NamedNode<'http://w3id.org/nfdi4ing/metadata4ing#hasVariable'>;
     "hasVariableDescription": NamedNode<'http://w3id.org/nfdi4ing/metadata4ing#hasVariableDescription'>;
     "HostingInstitution": NamedNode<'http://w3id.org/nfdi4ing/metadata4ing#HostingInstitution'>;
@@ -40,9 +46,9 @@ export interface M4i {
     "investigates": NamedNode<'http://w3id.org/nfdi4ing/metadata4ing#investigates'>;
     "investigatesProperty": NamedNode<'http://w3id.org/nfdi4ing/metadata4ing#investigatesProperty'>;
     "isEmployedToolIn": NamedNode<'http://w3id.org/nfdi4ing/metadata4ing#isEmployedToolIn'>;
-    "KindOfQuantity": NamedNode<'http://w3id.org/nfdi4ing/metadata4ing#KindOfQuantity'>;
     "Method": NamedNode<'http://w3id.org/nfdi4ing/metadata4ing#Method'>;
     "NumericalAssignment": NamedNode<'http://w3id.org/nfdi4ing/metadata4ing#NumericalAssignment'>;
+    "NumericalVariable": NamedNode<'http://w3id.org/nfdi4ing/metadata4ing#NumericalVariable'>;
     "orcidId": NamedNode<'http://w3id.org/nfdi4ing/metadata4ing#orcidId'>;
     "Other": NamedNode<'http://w3id.org/nfdi4ing/metadata4ing#Other'>;
     "ProcessingStep": NamedNode<'http://w3id.org/nfdi4ing/metadata4ing#ProcessingStep'>;
@@ -62,6 +68,7 @@ export interface M4i {
     "Sponsor": NamedNode<'http://w3id.org/nfdi4ing/metadata4ing#Sponsor'>;
     "startOfProject": NamedNode<'http://w3id.org/nfdi4ing/metadata4ing#startOfProject'>;
     "Supervisor": NamedNode<'http://w3id.org/nfdi4ing/metadata4ing#Supervisor'>;
+    "TextVariable": NamedNode<'http://w3id.org/nfdi4ing/metadata4ing#TextVariable'>;
     "Tool": NamedNode<'http://w3id.org/nfdi4ing/metadata4ing#Tool'>;
     "UncertaintyDeclaration": NamedNode<'http://w3id.org/nfdi4ing/metadata4ing#UncertaintyDeclaration'>;
     "UsageInstruction": NamedNode<'http://w3id.org/nfdi4ing/metadata4ing#UsageInstruction'>;

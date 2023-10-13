@@ -45,6 +45,9 @@ export interface Sh {
     "ConstraintComponent": NamedNode<'http://www.w3.org/ns/shacl#ConstraintComponent'>;
     /** The SPARQL CONSTRUCT query to execute. */
     "construct": NamedNode<'http://www.w3.org/ns/shacl#construct'>;
+    "count": NamedNode<'http://www.w3.org/ns/shacl#count'>;
+    /** A count expression is a blank node with exactly one value for the property sh:count which is a well-formed node expression. */
+    "CountExpression": NamedNode<'http://www.w3.org/ns/shacl#CountExpression'>;
     /** Specifies an RDF datatype that all value nodes must have. */
     "datatype": NamedNode<'http://www.w3.org/ns/shacl#datatype'>;
     "DatatypeConstraintComponent-datatype": NamedNode<'http://www.w3.org/ns/shacl#DatatypeConstraintComponent-datatype'>;
@@ -56,6 +59,7 @@ export interface Sh {
     "declare": NamedNode<'http://www.w3.org/ns/shacl#declare'>;
     /** A default value for a property, for example for user interface tools to pre-populate input fields. */
     "defaultValue": NamedNode<'http://www.w3.org/ns/shacl#defaultValue'>;
+    "desc": NamedNode<'http://www.w3.org/ns/shacl#desc'>;
     /** Human-readable descriptions for the property in the context of the surrounding shape. */
     "description": NamedNode<'http://www.w3.org/ns/shacl#description'>;
     /** Links a result with other results that provide more details, for example to describe violations against nested shapes. */
@@ -65,6 +69,10 @@ export interface Sh {
     "DisjointConstraintComponent-disjoint": NamedNode<'http://www.w3.org/ns/shacl#DisjointConstraintComponent-disjoint'>;
     /** A constraint component that can be used to verify that the set of value nodes is disjoint with the the set of nodes that have the focus node as subject and the value of a given property as predicate. */
     "DisjointConstraintComponent": NamedNode<'http://www.w3.org/ns/shacl#DisjointConstraintComponent'>;
+    "distinct": NamedNode<'http://www.w3.org/ns/shacl#distinct'>;
+    /** A distinct expression is a blank node with exactly one value for the property sh:distinct which is a well-formed node expression. */
+    "DistinctExpression": NamedNode<'http://www.w3.org/ns/shacl#DistinctExpression'>;
+    "else": NamedNode<'http://www.w3.org/ns/shacl#else'>;
     /** An entailment regime that indicates what kind of inferencing is required by a shapes graph. */
     "entailment": NamedNode<'http://www.w3.org/ns/shacl#entailment'>;
     /** Specifies a property that must have the same values as the value nodes. */
@@ -72,6 +80,9 @@ export interface Sh {
     "EqualsConstraintComponent-equals": NamedNode<'http://www.w3.org/ns/shacl#EqualsConstraintComponent-equals'>;
     /** A constraint component that can be used to verify that the set of value nodes is equal to the set of nodes that have the focus node as subject and the value of a given property as predicate. */
     "EqualsConstraintComponent": NamedNode<'http://www.w3.org/ns/shacl#EqualsConstraintComponent'>;
+    "exists": NamedNode<'http://www.w3.org/ns/shacl#exists'>;
+    /** An exists expression is a blank node with exactly one value for sh:exists (which is a well-formed shape). */
+    "ExistsExpression": NamedNode<'http://www.w3.org/ns/shacl#ExistsExpression'>;
     /** The node expression that must return true for the value nodes. */
     "expression": NamedNode<'http://www.w3.org/ns/shacl#expression'>;
     "ExpressionConstraintComponent-expression": NamedNode<'http://www.w3.org/ns/shacl#ExpressionConstraintComponent-expression'>;
@@ -79,19 +90,30 @@ export interface Sh {
     "ExpressionConstraintComponent": NamedNode<'http://www.w3.org/ns/shacl#ExpressionConstraintComponent'>;
     /** The shape that all input nodes of the expression need to conform to. */
     "filterShape": NamedNode<'http://www.w3.org/ns/shacl#filterShape'>;
+    /** A filter shape expression is a blank node with exactly one value for sh:filterShape (which is a well-formed shape) and at most one value for sh:nodes (which is a well-formed node expression). */
+    "FilterShapeExpression": NamedNode<'http://www.w3.org/ns/shacl#FilterShapeExpression'>;
     /** An optional flag to be used with regular expression pattern matching. */
     "flags": NamedNode<'http://www.w3.org/ns/shacl#flags'>;
     /** The focus node that was validated when the result was produced. */
     "focusNode": NamedNode<'http://www.w3.org/ns/shacl#focusNode'>;
+    "FocusNodeOrConstantTermExpression": NamedNode<'http://www.w3.org/ns/shacl#FocusNodeOrConstantTermExpression'>;
     /** The class of SHACL functions. */
     "Function": NamedNode<'http://www.w3.org/ns/shacl#Function'>;
+    /** A function expression is a blank node that does not fulfill any of the syntax rules of the other node expression types and which is the subject of exactly one triple T where the object is a well-formed SHACL list, and each member of that list is a well-formed node expression. */
+    "FunctionExpression": NamedNode<'http://www.w3.org/ns/shacl#FunctionExpression'>;
     /** Can be used to link to a property group to indicate that a property shape belongs to a group of related property shapes. */
     "group": NamedNode<'http://www.w3.org/ns/shacl#group'>;
+    "groupConcat": NamedNode<'http://www.w3.org/ns/shacl#groupConcat'>;
+    /** A group concat expression is a blank node with exactly one value for the property sh:groupConcat which is a well-formed node expression. A group concat expression can have a single value for the property sh:separator which is literal with datatype xsd:string. */
+    "GroupConcatExpression": NamedNode<'http://www.w3.org/ns/shacl#GroupConcatExpression'>;
     /** Specifies a value that must be among the value nodes. */
     "hasValue": NamedNode<'http://www.w3.org/ns/shacl#hasValue'>;
     "HasValueConstraintComponent-hasValue": NamedNode<'http://www.w3.org/ns/shacl#HasValueConstraintComponent-hasValue'>;
     /** A constraint component that can be used to verify that one of the value nodes is a given RDF node. */
     "HasValueConstraintComponent": NamedNode<'http://www.w3.org/ns/shacl#HasValueConstraintComponent'>;
+    "if": NamedNode<'http://www.w3.org/ns/shacl#if'>;
+    /** An if expression is a blank node with exactly one value for sh:if (which is a well-formed node expression), at most one value for sh:then (which is a well-formed node expression) and at most one value for sh:else (which is a well-formed node expression). */
+    "IfExpression": NamedNode<'http://www.w3.org/ns/shacl#IfExpression'>;
     /** An optional RDF list of properties that are also permitted in addition to those explicitly enumerated via sh:property/sh:path. */
     "ignoredProperties": NamedNode<'http://www.w3.org/ns/shacl#ignoredProperties'>;
     /** Specifies a list of allowed values so that each value node must be among the members of the given list. */
@@ -103,6 +125,8 @@ export interface Sh {
     "Info": NamedNode<'http://www.w3.org/ns/shacl#Info'>;
     /** A list of node expressions that shall be intersected. */
     "intersection": NamedNode<'http://www.w3.org/ns/shacl#intersection'>;
+    /** An intersection expression is a blank node with exactly one value for the property sh:intersection which is a well-formed SHACL list with at least two members (which are well-formed node expressions). */
+    "IntersectionExpression": NamedNode<'http://www.w3.org/ns/shacl#IntersectionExpression'>;
     /** The (single) value of this property represents an inverse path (object to subject). */
     "inversePath": NamedNode<'http://www.w3.org/ns/shacl#inversePath'>;
     /** The node kind of all IRIs. */
@@ -153,8 +177,12 @@ export interface Sh {
     "LessThanOrEqualsConstraintComponent-lessThanOrEquals": NamedNode<'http://www.w3.org/ns/shacl#LessThanOrEqualsConstraintComponent-lessThanOrEquals'>;
     /** A constraint component that can be used to verify that every value node is smaller than all the nodes that have the focus node as subject and the value of a given property as predicate. */
     "LessThanOrEqualsConstraintComponent": NamedNode<'http://www.w3.org/ns/shacl#LessThanOrEqualsConstraintComponent'>;
+    "limit": NamedNode<'http://www.w3.org/ns/shacl#limit'>;
+    /** A limit expression is a blank node with exactly one value for the property sh:limit which is a literal with datatype xsd:integer and with exactly one value for the property sh:nodes which is a well-formed node expression. */
+    "LimitExpression": NamedNode<'http://www.w3.org/ns/shacl#LimitExpression'>;
     /** The node kind of all literals. */
     "Literal": NamedNode<'http://www.w3.org/ns/shacl#Literal'>;
+    "max": NamedNode<'http://www.w3.org/ns/shacl#max'>;
     /** Specifies the maximum number of values in the set of value nodes. */
     "maxCount": NamedNode<'http://www.w3.org/ns/shacl#maxCount'>;
     "MaxCountConstraintComponent-maxCount": NamedNode<'http://www.w3.org/ns/shacl#MaxCountConstraintComponent-maxCount'>;
@@ -165,6 +193,8 @@ export interface Sh {
     "MaxExclusiveConstraintComponent-maxExclusive": NamedNode<'http://www.w3.org/ns/shacl#MaxExclusiveConstraintComponent-maxExclusive'>;
     /** A constraint component that can be used to restrict the range of value nodes with a maximum exclusive value. */
     "MaxExclusiveConstraintComponent": NamedNode<'http://www.w3.org/ns/shacl#MaxExclusiveConstraintComponent'>;
+    /** A max expression is a blank node with exactly one value for the property sh:max which is a well-formed node expression. */
+    "MaxExpression": NamedNode<'http://www.w3.org/ns/shacl#MaxExpression'>;
     /** Specifies the maximum inclusive value of each value node. */
     "maxInclusive": NamedNode<'http://www.w3.org/ns/shacl#maxInclusive'>;
     "MaxInclusiveConstraintComponent-maxInclusive": NamedNode<'http://www.w3.org/ns/shacl#MaxInclusiveConstraintComponent-maxInclusive'>;
@@ -177,6 +207,7 @@ export interface Sh {
     "MaxLengthConstraintComponent": NamedNode<'http://www.w3.org/ns/shacl#MaxLengthConstraintComponent'>;
     /** A human-readable message (possibly with placeholders for variables) explaining the cause of the result. */
     "message": NamedNode<'http://www.w3.org/ns/shacl#message'>;
+    "min": NamedNode<'http://www.w3.org/ns/shacl#min'>;
     /** Specifies the minimum number of values in the set of value nodes. */
     "minCount": NamedNode<'http://www.w3.org/ns/shacl#minCount'>;
     "MinCountConstraintComponent-minCount": NamedNode<'http://www.w3.org/ns/shacl#MinCountConstraintComponent-minCount'>;
@@ -187,6 +218,8 @@ export interface Sh {
     "MinExclusiveConstraintComponent-minExclusive": NamedNode<'http://www.w3.org/ns/shacl#MinExclusiveConstraintComponent-minExclusive'>;
     /** A constraint component that can be used to restrict the range of value nodes with a minimum exclusive value. */
     "MinExclusiveConstraintComponent": NamedNode<'http://www.w3.org/ns/shacl#MinExclusiveConstraintComponent'>;
+    /** A min expression is a blank node with exactly one value for the property sh:min which is a well-formed node expression. */
+    "MinExpression": NamedNode<'http://www.w3.org/ns/shacl#MinExpression'>;
     /** Specifies the minimum inclusive value of each value node. */
     "minInclusive": NamedNode<'http://www.w3.org/ns/shacl#minInclusive'>;
     "MinInclusiveConstraintComponent-minInclusive": NamedNode<'http://www.w3.org/ns/shacl#MinInclusiveConstraintComponent-minInclusive'>;
@@ -197,6 +230,9 @@ export interface Sh {
     "MinLengthConstraintComponent-minLength": NamedNode<'http://www.w3.org/ns/shacl#MinLengthConstraintComponent-minLength'>;
     /** A constraint component that can be used to restrict the minimum string length of value nodes. */
     "MinLengthConstraintComponent": NamedNode<'http://www.w3.org/ns/shacl#MinLengthConstraintComponent'>;
+    "minus": NamedNode<'http://www.w3.org/ns/shacl#minus'>;
+    /** A minus expression is a blank node with exactly one value for the property sh:minus which is a well-formed node expression and exactly one value for the property sh:nodes which is a well-formed node expression. */
+    "MinusExpression": NamedNode<'http://www.w3.org/ns/shacl#MinusExpression'>;
     /** Human-readable labels for the property in the context of the surrounding shape. */
     "name": NamedNode<'http://www.w3.org/ns/shacl#name'>;
     /** The namespace associated with a prefix in a prefix declaration. */
@@ -206,6 +242,7 @@ export interface Sh {
     "NodeConstraintComponent-node": NamedNode<'http://www.w3.org/ns/shacl#NodeConstraintComponent-node'>;
     /** A constraint component that can be used to verify that all value nodes conform to the given node shape. */
     "NodeConstraintComponent": NamedNode<'http://www.w3.org/ns/shacl#NodeConstraintComponent'>;
+    "NodeExpression": NamedNode<'http://www.w3.org/ns/shacl#NodeExpression'>;
     /** Specifies the node kind (e.g. IRI or literal) each value node. */
     "nodeKind": NamedNode<'http://www.w3.org/ns/shacl#nodeKind'>;
     /** The class of all node kinds, including sh:BlankNode, sh:IRI, sh:Literal or the combinations of these: sh:BlankNodeOrIRI, sh:BlankNodeOrLiteral, sh:IRIOrLiteral. */
@@ -226,6 +263,9 @@ export interface Sh {
     "NotConstraintComponent": NamedNode<'http://www.w3.org/ns/shacl#NotConstraintComponent'>;
     /** An expression producing the nodes that shall be inferred as objects. */
     "object": NamedNode<'http://www.w3.org/ns/shacl#object'>;
+    "offset": NamedNode<'http://www.w3.org/ns/shacl#offset'>;
+    /** An offset expression is a blank node with exactly one value for the property sh:offset which is a literal with datatype xsd:integer and with exactly one value for the property sh:nodes which is a well-formed node expression. */
+    "OffsetExpression": NamedNode<'http://www.w3.org/ns/shacl#OffsetExpression'>;
     /** The (single) value of this property represents a path that is matched one or more times. */
     "oneOrMorePath": NamedNode<'http://www.w3.org/ns/shacl#oneOrMorePath'>;
     /** Indicates whether a parameter is optional. */
@@ -237,6 +277,9 @@ export interface Sh {
     "OrConstraintComponent": NamedNode<'http://www.w3.org/ns/shacl#OrConstraintComponent'>;
     /** Specifies the relative order of this compared to its siblings. For example use 0 for the first, 1 for the second. */
     "order": NamedNode<'http://www.w3.org/ns/shacl#order'>;
+    "orderBy": NamedNode<'http://www.w3.org/ns/shacl#orderBy'>;
+    /** An orderBy expression is a blank node with exactly one value for the property sh:orderBy which is a well-formed node expression and with exactly one value for the property sh:nodes which is a well-formed node expression. An orderBy expression can have one value for the property sh:desc which is either true or false. */
+    "OrderByExpression": NamedNode<'http://www.w3.org/ns/shacl#OrderByExpression'>;
     /** The parameters of a function or constraint component. */
     "parameter": NamedNode<'http://www.w3.org/ns/shacl#parameter'>;
     /** The class of parameter declarations, consisting of a path predicate and (possibly) information about allowed value type, cardinality and other characteristics. */
@@ -245,6 +288,8 @@ export interface Sh {
     "Parameterizable": NamedNode<'http://www.w3.org/ns/shacl#Parameterizable'>;
     /** Specifies the property path of a property shape. */
     "path": NamedNode<'http://www.w3.org/ns/shacl#path'>;
+    /** A path expression is a blank node with exactly one value of the property sh:path (which are well-formed property paths) and at most one value for sh:nodes (which is a well-formed node expression). */
+    "PathExpression": NamedNode<'http://www.w3.org/ns/shacl#PathExpression'>;
     /** Specifies a regular expression pattern that the string representations of the value nodes must match. */
     "pattern": NamedNode<'http://www.w3.org/ns/shacl#pattern'>;
     "PatternConstraintComponent-flags": NamedNode<'http://www.w3.org/ns/shacl#PatternConstraintComponent-flags'>;
@@ -308,6 +353,7 @@ export interface Sh {
     "Rule": NamedNode<'http://www.w3.org/ns/shacl#Rule'>;
     /** The SPARQL SELECT query to execute. */
     "select": NamedNode<'http://www.w3.org/ns/shacl#select'>;
+    "separator": NamedNode<'http://www.w3.org/ns/shacl#separator'>;
     /** Defines the severity that validation results produced by a shape must have. Defaults to sh:Violation. */
     "severity": NamedNode<'http://www.w3.org/ns/shacl#severity'>;
     /** The class of validation result severity levels, including violation and warning levels. */
@@ -328,6 +374,8 @@ export interface Sh {
     "sparql": NamedNode<'http://www.w3.org/ns/shacl#sparql'>;
     /** The class of SPARQL executables that are based on an ASK query. */
     "SPARQLAskExecutable": NamedNode<'http://www.w3.org/ns/shacl#SPARQLAskExecutable'>;
+    /** A SPARQL ASK expression is a blank node with exactly one value for the property sh:ask which is string literal. The blank node may have values for the property sh:prefixes and these values are IRIs or blank nodes. Using the values of sh:prefixes as defined by 5.2.1 Prefix Declarations for SPARQL Queries, the value of sh:ask must be valid SPARQL 1.1 ASK query. The blank node may also have exactly one value for the property sh:nodes which is a well-formed node expression. */
+    "SPARQLAskExpression": NamedNode<'http://www.w3.org/ns/shacl#SPARQLAskExpression'>;
     /** The class of validators based on SPARQL ASK queries. The queries are evaluated for each value node and are supposed to return true if the given node conforms. */
     "SPARQLAskValidator": NamedNode<'http://www.w3.org/ns/shacl#SPARQLAskValidator'>;
     /** The class of constraints based on SPARQL SELECT queries. */
@@ -345,6 +393,8 @@ export interface Sh {
     "SPARQLRule": NamedNode<'http://www.w3.org/ns/shacl#SPARQLRule'>;
     /** The class of SPARQL executables based on a SELECT query. */
     "SPARQLSelectExecutable": NamedNode<'http://www.w3.org/ns/shacl#SPARQLSelectExecutable'>;
+    /** A SPARQL SELECT expression is a blank node with exactly one value for the property sh:select which is string literal. The blank node may have values for the property sh:prefixes and these values are IRIs or blank nodes. Using the values of sh:prefixes as defined by 5.2.1 Prefix Declarations for SPARQL Queries, the value of sh:select must be valid SPARQL 1.1 SELECT query with exactly one result variable. The blank node may also have exactly one value for the property sh:nodes which is a well-formed node expression. */
+    "SPARQLSelectExpression": NamedNode<'http://www.w3.org/ns/shacl#SPARQLSelectExpression'>;
     /** The class of validators based on SPARQL SELECT queries. The queries are evaluated for each focus node and are supposed to produce bindings for all focus nodes that do not conform. */
     "SPARQLSelectValidator": NamedNode<'http://www.w3.org/ns/shacl#SPARQLSelectValidator'>;
     /** The class of targets that are based on SPARQL queries. */
@@ -357,6 +407,9 @@ export interface Sh {
     "subject": NamedNode<'http://www.w3.org/ns/shacl#subject'>;
     /** Suggested shapes graphs for this ontology. The values of this property may be used in the absence of specific sh:shapesGraph statements. */
     "suggestedShapesGraph": NamedNode<'http://www.w3.org/ns/shacl#suggestedShapesGraph'>;
+    "sum": NamedNode<'http://www.w3.org/ns/shacl#sum'>;
+    /** A sum expression is a blank node with exactly one value for the property sh:sum which is a well-formed node expression. */
+    "SumExpression": NamedNode<'http://www.w3.org/ns/shacl#SumExpression'>;
     /** Links a shape to a target specified by an extension language, for example instances of sh:SPARQLTarget. */
     "target": NamedNode<'http://www.w3.org/ns/shacl#target'>;
     /** The base class of targets such as those based on SPARQL queries. */
@@ -371,11 +424,14 @@ export interface Sh {
     "targetSubjectsOf": NamedNode<'http://www.w3.org/ns/shacl#targetSubjectsOf'>;
     /** The (meta) class for parameterizable targets.	Instances of this are instantiated as values of the sh:target property. */
     "TargetType": NamedNode<'http://www.w3.org/ns/shacl#TargetType'>;
+    "then": NamedNode<'http://www.w3.org/ns/shacl#then'>;
     /** A node expression that represents the current focus node. */
     "this": NamedNode<'http://www.w3.org/ns/shacl#this'>;
     "TripleRule": NamedNode<'http://www.w3.org/ns/shacl#TripleRule'>;
     /** A list of node expressions that shall be used together. */
     "union": NamedNode<'http://www.w3.org/ns/shacl#union'>;
+    /** A union expression is a blank node with exactly one value for the property sh:union which is a well-formed SHACL list with at least two members (which are well-formed node expressions). */
+    "UnionExpression": NamedNode<'http://www.w3.org/ns/shacl#UnionExpression'>;
     /** Specifies whether all node values must have a unique (or no) language tag. */
     "uniqueLang": NamedNode<'http://www.w3.org/ns/shacl#uniqueLang'>;
     "UniqueLangConstraintComponent-uniqueLang": NamedNode<'http://www.w3.org/ns/shacl#UniqueLangConstraintComponent-uniqueLang'>;
@@ -393,6 +449,7 @@ export interface Sh {
     "Validator": NamedNode<'http://www.w3.org/ns/shacl#Validator'>;
     /** An RDF node that has caused the result. */
     "value": NamedNode<'http://www.w3.org/ns/shacl#value'>;
+    "values": NamedNode<'http://www.w3.org/ns/shacl#values'>;
     /** The severity for a violation validation result. */
     "Violation": NamedNode<'http://www.w3.org/ns/shacl#Violation'>;
     /** The severity for a warning validation result. */
