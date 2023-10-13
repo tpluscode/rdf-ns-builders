@@ -27,13 +27,13 @@
     "@rdfjs/namespace": "^2",
     "@rdfjs/types": "*",
     "@types/rdfjs__namespace": "^2.0.2",
-    "@zazuko/prefixes": "^2.0.0"
+    "@zazuko/prefixes": "^2.0.1"
   },
   "devDependencies": {
     "@rdfjs/environment": "^0.1.2",
-    "chai": "^4.2.0",
-    "clownface": "^1.5.1",
-    "rdf-ext": "^2.2.0"
+    "@zazuko/env": "^1.7.0",
+    "@zazuko/vocabularies": "^2.0.3",
+    "chai": "^4.2.0"
   },
   "publishConfig": {
     "access": "public"

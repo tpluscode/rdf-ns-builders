@@ -1,6 +1,6 @@
 import Environment from '@rdfjs/environment/Environment.js'
 import { expect } from 'chai'
-import $rdf from 'rdf-ext'
+import $rdf from '@zazuko/env'
 import NsBuildersFactory from '../index.js'
 
 describe('Factory', () => {

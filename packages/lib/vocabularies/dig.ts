@@ -4,21 +4,22 @@ import { NamedNode } from "@rdfjs/types";
 export interface Dig {
     '': NamedNode<'http://www.ics.forth.gr/isl/CRMdig/'>;
     /**
+     * This class comprises identifiable immaterial items that can be represented as sets of bit sequences, 
+     * 	such as data sets, e-texts, images, audio or video items, software, etc., and are documented as single units. 
+     * 	Any aggregation of instances of D1 Digital Object into a whole treated as single unit is also regarded as an instance of D1 Digital Object. 
+     * 	This means that for instance, the content of a DVD, an XML file on it, and an element of this file, are regarded as distinct instances of 
+     * 	D1 Digital Object, mutually related by the P106 is composed of (forms part of) property.
+     * A D1 Digital Object does not depend on a specific physical carrier, and it can exist on one or more carriers simultaneously.
+     *
+     */
+    "D1_Digital_Object": NamedNode<'http://www.ics.forth.gr/isl/CRMdig/D1_Digital_Object'>;
+    /**
      * This class comprises events by which a digital device runs a software program or a series of  computing 
      * 	operations on a digital object  as a single task, which is completely determined by its digital input, 
      * 	the software and the generic properties of the device. 
      * 	
      */
     "D10_Software_Execution": NamedNode<'http://www.ics.forth.gr/isl/CRMdig/D10_Software_Execution'>;
-    /**
-     * This class comprises events that happen on physical digital devices following a human activity that intentionally caused its 
-     * 	immediate or delayed initiation and results in the creation of a new instance of D1 Digital Object on behalf of the human actor. 
-     * 	The input of a D7 Digital Machine Event may be parameter settings and/or data to be processed. 
-     * 	Some D7 Digital Machine Events may form part of a wider E65 Creation event. 
-     * 	In this case, all machine output of the partial events is regarded as creation of the overall activity.
-     * 	
-     */
-    "D7_Digital_Machine_Event": NamedNode<'http://www.ics.forth.gr/isl/CRMdig/D7_Digital_Machine_Event'>;
     /**
      * This class comprises actions measuring physical properties using a digital device, 
      * 	that are determined by a systematic procedure and creates an instance of D9 Data Object, 
@@ -50,15 +51,14 @@ export interface Dig {
      */
     "D14_Software": NamedNode<'http://www.ics.forth.gr/isl/CRMdig/D14_Software'>;
     /**
-     * This class comprises identifiable immaterial items that can be represented as sets of bit sequences, 
-     * 	such as data sets, e-texts, images, audio or video items, software, etc., and are documented as single units. 
-     * 	Any aggregation of instances of D1 Digital Object into a whole treated as single unit is also regarded as an instance of D1 Digital Object. 
-     * 	This means that for instance, the content of a DVD, an XML file on it, and an element of this file, are regarded as distinct instances of 
-     * 	D1 Digital Object, mutually related by the P106 is composed of (forms part of) property.
-     * A D1 Digital Object does not depend on a specific physical carrier, and it can exist on one or more carriers simultaneously.
+     * This class comprises events that result in the creation of instances of D9 Data Object that 
+     * 	represent the appearance and/or form of an instance of E18 Physical Thing such as paper documents, statues, buildings, paintings, etc. 
+     * 	A particular case is the analogue-to-digital conversion of audiovisual material.
+     * 	This class represents the transition from a material thing to an immaterial representation of it. 
+     * 	The characteristic subsequent processing steps on digital objects are regarded as instances of D3 Formal Derivation.
      *
      */
-    "D1_Digital_Object": NamedNode<'http://www.ics.forth.gr/isl/CRMdig/D1_Digital_Object'>;
+    "D2_Digitization_Process": NamedNode<'http://www.ics.forth.gr/isl/CRMdig/D2_Digitization_Process'>;
     /**
      * This class comprises the proper noun name that identifies a person that acts
      * as an entity.
@@ -73,14 +73,14 @@ export interface Dig {
      */
     "D29_Annotation_Object": NamedNode<'http://www.ics.forth.gr/isl/CRMdig/D29_Annotation_Object'>;
     /**
-     * This class comprises events that result in the creation of instances of D9 Data Object that 
-     * 	represent the appearance and/or form of an instance of E18 Physical Thing such as paper documents, statues, buildings, paintings, etc. 
-     * 	A particular case is the analogue-to-digital conversion of audiovisual material.
-     * 	This class represents the transition from a material thing to an immaterial representation of it. 
-     * 	The characteristic subsequent processing steps on digital objects are regarded as instances of D3 Formal Derivation.
-     *
+     * This class comprises events that result in the creation of a D1 Digital Object from another one following a deterministic algorithm, 
+     * 	such that the resulting instance of digital object shares representative properties with the original object. 
+     * 	In other words, this class describes the transition from an immaterial object referred to by property L21 used as derivation source (was derivation source for) 
+     * 	to another immaterial object referred to by property L22 created derivative (was derivative created by) preserving the 
+     * 	representation of some things but in a different form. Characteristic examples are colour corrections, contrast changes and resizing of images.
+     * 	
      */
-    "D2_Digitization_Process": NamedNode<'http://www.ics.forth.gr/isl/CRMdig/D2_Digitization_Process'>;
+    "D3_Formal_Derivation": NamedNode<'http://www.ics.forth.gr/isl/CRMdig/D3_Formal_Derivation'>;
     /**
      * This class comprises events that describe the creation of associations (Annotation Objects) between objects 
      * 	or areas of objects of the Repository, with other objects or regions or persons, places, events. It is the event that creates the Annotation Object.
@@ -93,14 +93,14 @@ export interface Dig {
      */
     "D35_Area": NamedNode<'http://www.ics.forth.gr/isl/CRMdig/D35_Area'>;
     /**
-     * This class comprises events that result in the creation of a D1 Digital Object from another one following a deterministic algorithm, 
-     * 	such that the resulting instance of digital object shares representative properties with the original object. 
-     * 	In other words, this class describes the transition from an immaterial object referred to by property L21 used as derivation source (was derivation source for) 
-     * 	to another immaterial object referred to by property L22 created derivative (was derivative created by) preserving the 
-     * 	representation of some things but in a different form. Characteristic examples are colour corrections, contrast changes and resizing of images.
+     * This class comprises events that happen on physical digital devices following a human activity that intentionally caused its 
+     * 	immediate or delayed initiation and results in the creation of a new instance of D1 Digital Object on behalf of the human actor. 
+     * 	The input of a D7 Digital Machine Event may be parameter settings and/or data to be processed. 
+     * 	Some D7 Digital Machine Events may form part of a wider E65 Creation event. 
+     * 	In this case, all machine output of the partial events is regarded as creation of the overall activity.
      * 	
      */
-    "D3_Formal_Derivation": NamedNode<'http://www.ics.forth.gr/isl/CRMdig/D3_Formal_Derivation'>;
+    "D7_Digital_Machine_Event": NamedNode<'http://www.ics.forth.gr/isl/CRMdig/D7_Digital_Machine_Event'>;
     /**
      * This class comprises identifiable material items such as computers, scanners, cameras, etc. that 
      * 	have the capability to process or produce instances of  D1 Digital Object.
@@ -113,6 +113,12 @@ export interface Dig {
      * 	
      */
     "D9_Data_Object": NamedNode<'http://www.ics.forth.gr/isl/CRMdig/D9_Data_Object'>;
+    /**
+     * This property associates an instance of D2 Digitization Process with an instance of E18 Physical Thing which is a material thing.  
+     * This property is a specialisation of P39 measured (was measured by).
+     *
+     */
+    "L1_digitized": NamedNode<'http://www.ics.forth.gr/isl/CRMdig/L1_digitized'>;
     /**
      * This property associates an instance of D7 Digital Machine Event with an instance of D1 Digital Object
      *  which is the input used to specify the machine action.  
@@ -177,13 +183,14 @@ export interface Dig {
      */
     "L19_stores": NamedNode<'http://www.ics.forth.gr/isl/CRMdig/L19_stores'>;
     "L19i_is_stored_on": NamedNode<'http://www.ics.forth.gr/isl/CRMdig/L19i_is_stored_on'>;
-    /**
-     * This property associates an instance of D2 Digitization Process with an instance of E18 Physical Thing which is a material thing.  
-     * This property is a specialisation of P39 measured (was measured by).
-     *
-     */
-    "L1_digitized": NamedNode<'http://www.ics.forth.gr/isl/CRMdig/L1_digitized'>;
     "L1i_was_digitized_by": NamedNode<'http://www.ics.forth.gr/isl/CRMdig/L1i_was_digitized_by'>;
+    /**
+     * This property associates an instance of D10 Software Execution with an instance of D1 Digital Object
+     *  which is used as a source, a software essential for the performance.  
+     * This property is a specialisation of L10F had input (was input of).
+     * 	
+     */
+    "L2_used_as_source": NamedNode<'http://www.ics.forth.gr/isl/CRMdig/L2_used_as_source'>;
     /**
      * This property identifies a Data Object that came into existence as a result of a D11 Digital Measurement Event.
      * This property is a specialisation of P40 observed dimension and L11 had output.
@@ -192,15 +199,7 @@ export interface Dig {
     "L20i_was_created_by": NamedNode<'http://www.ics.forth.gr/isl/CRMdig/L20i_was_created_by'>;
     /** This property associates an instance of a D3 Formal Derivation with the instance of D1 Digital Object that is used as a derivation source. */
     "L21_used_as_derivation_source": NamedNode<'http://www.ics.forth.gr/isl/CRMdig/L21_used_as_derivation_source'>;
-    /**
-     * This property associates an instance of D10 Software Execution with an instance of D1 Digital Object
-     *  which is used as a source, a software essential for the performance.  
-     * This property is a specialisation of L10F had input (was input of).
-     * 	
-     */
-    "L2_used_as_source": NamedNode<'http://www.ics.forth.gr/isl/CRMdig/L2_used_as_source'>;
     "L21i_was_derivation_source_for": NamedNode<'http://www.ics.forth.gr/isl/CRMdig/L21i_was_derivation_source_for'>;
-    "L2i_was_source_for": NamedNode<'http://www.ics.forth.gr/isl/CRMdig/L2i_was_source_for'>;
     /**
      * This property associates an instance of D3 Formal Derivation with the Digital Object it used to create a version of.
      * This property is a specialisation of L11 had output.
@@ -222,6 +221,7 @@ export interface Dig {
      */
     "L29_has_responsible_organization": NamedNode<'http://www.ics.forth.gr/isl/CRMdig/L29_has_responsible_organization'>;
     "L29i_is_responsible_organization_for": NamedNode<'http://www.ics.forth.gr/isl/CRMdig/L29i_is_responsible_organization_for'>;
+    "L2i_was_source_for": NamedNode<'http://www.ics.forth.gr/isl/CRMdig/L2i_was_source_for'>;
     /**
      * This property describes the activity that is being operated by a person.
      * This property is a specialisation of P14 carried out by.
@@ -259,6 +259,12 @@ export interface Dig {
     "L35_has_commissioner": NamedNode<'http://www.ics.forth.gr/isl/CRMdig/L35_has_commissioner'>;
     "L35i_is_commissioner_for": NamedNode<'http://www.ics.forth.gr/isl/CRMdig/L35i_is_commissioner_for'>;
     /**
+     * This property associates an instance of E1 Entity with an instance of resource used as a preferred lexical label.  
+     * This property is a specialisation of rdf schema label.
+     *
+     */
+    "L4_has_preferred_label": NamedNode<'http://www.ics.forth.gr/isl/CRMdig/L4_has_preferred_label'>;
+    /**
      * This property describes the associations between objects or areas of objects of the RI, 
      * with other objects or regions or persons, places, events..
      */
@@ -278,12 +284,6 @@ export interface Dig {
      */
     "L49_is_primary_area_of": NamedNode<'http://www.ics.forth.gr/isl/CRMdig/L49_is_primary_area_of'>;
     "L49i_has_primary_area": NamedNode<'http://www.ics.forth.gr/isl/CRMdig/L49i_has_primary_area'>;
-    /**
-     * This property associates an instance of E1 Entity with an instance of resource used as a preferred lexical label.  
-     * This property is a specialisation of rdf schema label.
-     *
-     */
-    "L4_has_preferred_label": NamedNode<'http://www.ics.forth.gr/isl/CRMdig/L4_has_preferred_label'>;
     /**
      * This property describes the association between an area and the digital object to which it is propagated.
      * This property is a specialisation of P106 is composed of.

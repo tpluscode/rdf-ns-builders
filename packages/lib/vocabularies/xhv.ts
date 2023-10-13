@@ -20,7 +20,6 @@ export interface Xhv {
      *       versions for a resource.
      */
     "alternate": NamedNode<'http://www.w3.org/1999/xhtml/vocab#alternate'>;
-    "relrev-properties": NamedNode<'http://www.w3.org/1999/xhtml/vocab#relrev-properties'>;
     /**
      * appendix refers to a resource serving
      *       as an appendix in a collection. 
@@ -42,7 +41,6 @@ export interface Xhv {
      *       internal title of a page. 
      */
     "banner": NamedNode<'http://www.w3.org/1999/xhtml/vocab#banner'>;
-    "role-properties": NamedNode<'http://www.w3.org/1999/xhtml/vocab#role-properties'>;
     /**
      * bookmark refers to a bookmark - a link
      *       to a key entry point within an extended document. 
@@ -326,6 +324,8 @@ export interface Xhv {
      *       should be included in a summary of page features.
      */
     "region": NamedNode<'http://www.w3.org/1999/xhtml/vocab#region'>;
+    "relrev-properties": NamedNode<'http://www.w3.org/1999/xhtml/vocab#relrev-properties'>;
+    "role-properties": NamedNode<'http://www.w3.org/1999/xhtml/vocab#role-properties'>;
     /**
      * role indicates the purpose of the
      *       resource. See the XHTML Role

@@ -1,6 +1,6 @@
 import { expect } from 'chai'
 import prefixes, { expand } from '@zazuko/prefixes'
-import RDF from 'rdf-ext'
+import RDF from '@zazuko/env'
 import { schema, foaf, dcterms } from '../index.js'
 import { xml } from '../loose.js'
 

@@ -6,45 +6,6 @@ export interface Acl {
     /** Any kind of access to a resource. Don't use this, use R W and RW */
     "Access": NamedNode<'http://www.w3.org/ns/auth/acl#Access'>;
     /**
-     * Append accesses are specific write access which only add information, and do not remove information.
-     *     For text files, for example, append access allows bytes to be added onto the end of the file.
-     *     For RDF graphs, Append access allows adds triples to the graph but does not remove any.
-     *     Append access is useful for dropbox functionality.
-     *     Dropbox can be used for link notification, which the information added is a notification
-     *     that a some link has been made elsewhere relevant to the given resource.
-     *     
-     */
-    "Append": NamedNode<'http://www.w3.org/ns/auth/acl#Append'>;
-    "Write": NamedNode<'http://www.w3.org/ns/auth/acl#Write'>;
-    /**
-     * A class of agents who have been authenticated.
-     * In other words, anyone can access this resource, but not anonymously.
-     * The social expectation is that the authentication process will provide an
-     * identify and a name, or pseudonym.
-     * (A new ID should not be minted for every access: the intent is that the user
-     * is able to continue to use the ID for continues interactions with peers,
-     * and for example to develop a reputation)
-     *
-     */
-    "AuthenticatedAgent": NamedNode<'http://www.w3.org/ns/auth/acl#AuthenticatedAgent'>;
-    /**
-     * An element of access control,
-     *     allowing agent to agents access of some kind to resources or classes of resources
-     */
-    "Authorization": NamedNode<'http://www.w3.org/ns/auth/acl#Authorization'>;
-    /** Allows read/write access to the ACL for the resource(s) */
-    "Control": NamedNode<'http://www.w3.org/ns/auth/acl#Control'>;
-    /**
-     * An Origin is basically a web site
-     *         (Note WITHOUT the trailing slash after the domain name and port in its URI)
-     *         and is the basis for controlling access to data by web apps
-     *         in the Same Origin Model of web security.
-     *         All scripts from the same origin are given the same right.
-     */
-    "Origin": NamedNode<'http://www.w3.org/ns/auth/acl#Origin'>;
-    /** The class of read operations */
-    "Read": NamedNode<'http://www.w3.org/ns/auth/acl#Read'>;
-    /**
      * The Access Control file for this information resource.
      *         This may of course be a virtual resource implemented by the access control system.
      *         Note that HTTP header `Link: <foo.acl>; rel="acl"` can also be used for this.
@@ -64,6 +25,34 @@ export interface Acl {
      *           as defined by the document received when the Group is dereferenced.
      */
     "agentGroup": NamedNode<'http://www.w3.org/ns/auth/acl#agentGroup'>;
+    /**
+     * Append accesses are specific write access which only add information, and do not remove information.
+     *     For text files, for example, append access allows bytes to be added onto the end of the file.
+     *     For RDF graphs, Append access allows adds triples to the graph but does not remove any.
+     *     Append access is useful for dropbox functionality.
+     *     Dropbox can be used for link notification, which the information added is a notification
+     *     that a some link has been made elsewhere relevant to the given resource.
+     *     
+     */
+    "Append": NamedNode<'http://www.w3.org/ns/auth/acl#Append'>;
+    /**
+     * A class of agents who have been authenticated.
+     * In other words, anyone can access this resource, but not anonymously.
+     * The social expectation is that the authentication process will provide an
+     * identify and a name, or pseudonym.
+     * (A new ID should not be minted for every access: the intent is that the user
+     * is able to continue to use the ID for continues interactions with peers,
+     * and for example to develop a reputation)
+     *
+     */
+    "AuthenticatedAgent": NamedNode<'http://www.w3.org/ns/auth/acl#AuthenticatedAgent'>;
+    /**
+     * An element of access control,
+     *     allowing agent to agents access of some kind to resources or classes of resources
+     */
+    "Authorization": NamedNode<'http://www.w3.org/ns/auth/acl#Authorization'>;
+    /** Allows read/write access to the ACL for the resource(s) */
+    "Control": NamedNode<'http://www.w3.org/ns/auth/acl#Control'>;
     /**
      * If a resource has no ACL file (it is 404),
      *         then access to the resource is given by the ACL of the immediately
@@ -97,12 +86,23 @@ export interface Acl {
      */
     "origin": NamedNode<'http://www.w3.org/ns/auth/acl#origin'>;
     /**
+     * An Origin is basically a web site
+     *         (Note WITHOUT the trailing slash after the domain name and port in its URI)
+     *         and is the basis for controlling access to data by web apps
+     *         in the Same Origin Model of web security.
+     *         All scripts from the same origin are given the same right.
+     */
+    "Origin": NamedNode<'http://www.w3.org/ns/auth/acl#Origin'>;
+    /**
      * The person or other agent which owns this.
      *     For example, the owner of a file in a filesystem.
      *     There is a sense of "right to control".   Typically defaults to the agent who created
      *     something, but can be changed.
      */
     "owner": NamedNode<'http://www.w3.org/ns/auth/acl#owner'>;
+    /** The class of read operations */
+    "Read": NamedNode<'http://www.w3.org/ns/auth/acl#Read'>;
+    "Write": NamedNode<'http://www.w3.org/ns/auth/acl#Write'>;
 }
 
 const builder = namespace("http://www.w3.org/ns/auth/acl#") as any;

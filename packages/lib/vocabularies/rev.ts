@@ -5,12 +5,10 @@ export interface Rev {
     '': NamedNode<'http://purl.org/stuff/rev#'>;
     /** A comment on a review */
     "Comment": NamedNode<'http://purl.org/stuff/rev#Comment'>;
-    /** Feedback on the review. Expresses whether the review was useful or not */
-    "Feedback": NamedNode<'http://purl.org/stuff/rev#Feedback'>;
-    /** A review of an work */
-    "Review": NamedNode<'http://purl.org/stuff/rev#Review'>;
     /** The commenter on the review */
     "commenter": NamedNode<'http://purl.org/stuff/rev#commenter'>;
+    /** Feedback on the review. Expresses whether the review was useful or not */
+    "Feedback": NamedNode<'http://purl.org/stuff/rev#Feedback'>;
     /** Used to associate a review with a comment on the review */
     "hasComment": NamedNode<'http://purl.org/stuff/rev#hasComment'>;
     /** Associates a review with a feedback on the review */
@@ -25,6 +23,8 @@ export interface Rev {
     "positiveVotes": NamedNode<'http://purl.org/stuff/rev#positiveVotes'>;
     /** A numeric value */
     "rating": NamedNode<'http://purl.org/stuff/rev#rating'>;
+    /** A review of an work */
+    "Review": NamedNode<'http://purl.org/stuff/rev#Review'>;
     /** The person that has written the review */
     "reviewer": NamedNode<'http://purl.org/stuff/rev#reviewer'>;
     /** The text of the review */

@@ -3,23 +3,18 @@ import { NamedNode } from "@rdfjs/types";
 
 export interface Void {
     '': NamedNode<'http://rdfs.org/ns/void#'>;
+    /** The rdfs:Class that is the rdf:type of all entities in a class-based partition. */
+    "class": NamedNode<'http://rdfs.org/ns/void#class'>;
+    /** The total number of distinct classes in a void:Dataset. In other words, the number of distinct resources occuring as objects of rdf:type triples in the dataset. */
+    "classes": NamedNode<'http://rdfs.org/ns/void#classes'>;
+    /** A subset of a void:Dataset that contains only the entities of a certain rdfs:Class. */
+    "classPartition": NamedNode<'http://rdfs.org/ns/void#classPartition'>;
+    /** An RDF dump, partial or complete, of a void:Dataset. */
+    "dataDump": NamedNode<'http://rdfs.org/ns/void#dataDump'>;
     /** A set of RDF triples that are published, maintained or aggregated by a single provider. */
     "Dataset": NamedNode<'http://rdfs.org/ns/void#Dataset'>;
     /** A web resource whose foaf:primaryTopic or foaf:topics include void:Datasets. */
     "DatasetDescription": NamedNode<'http://rdfs.org/ns/void#DatasetDescription'>;
-    /** A collection of RDF links between two void:Datasets. */
-    "Linkset": NamedNode<'http://rdfs.org/ns/void#Linkset'>;
-    /** A technical feature of a void:Dataset, such as a supported RDF serialization format. */
-    "TechnicalFeature": NamedNode<'http://rdfs.org/ns/void#TechnicalFeature'>;
-    /** The rdfs:Class that is the rdf:type of all entities in a class-based partition. */
-    "class": NamedNode<'http://rdfs.org/ns/void#class'>;
-    /** A subset of a void:Dataset that contains only the entities of a certain rdfs:Class. */
-    "classPartition": NamedNode<'http://rdfs.org/ns/void#classPartition'>;
-    "subset": NamedNode<'http://rdfs.org/ns/void#subset'>;
-    /** The total number of distinct classes in a void:Dataset. In other words, the number of distinct resources occuring as objects of rdf:type triples in the dataset. */
-    "classes": NamedNode<'http://rdfs.org/ns/void#classes'>;
-    /** An RDF dump, partial or complete, of a void:Dataset. */
-    "dataDump": NamedNode<'http://rdfs.org/ns/void#dataDump'>;
     /** The total number of distinct objects in a void:Dataset. In other words, the number of distinct resources that occur in the object position of triples in the dataset. Literals are included in this count. */
     "distinctObjects": NamedNode<'http://rdfs.org/ns/void#distinctObjects'>;
     /** The total number of distinct subjects in a void:Dataset. In other words, the number of distinct resources that occur in the subject position of triples in the dataset. */
@@ -33,10 +28,10 @@ export interface Void {
     /** Points to the void:Dataset that a document is a part of. */
     "inDataset": NamedNode<'http://rdfs.org/ns/void#inDataset'>;
     "linkPredicate": NamedNode<'http://rdfs.org/ns/void#linkPredicate'>;
+    /** A collection of RDF links between two void:Datasets. */
+    "Linkset": NamedNode<'http://rdfs.org/ns/void#Linkset'>;
     /** The dataset describing the objects of the triples contained in the Linkset. */
     "objectsTarget": NamedNode<'http://rdfs.org/ns/void#objectsTarget'>;
-    /** One of the two datasets linked by the Linkset. */
-    "target": NamedNode<'http://rdfs.org/ns/void#target'>;
     /** An OpenSearch description document for a free-text search service over a void:Dataset. */
     "openSearchDescription": NamedNode<'http://rdfs.org/ns/void#openSearchDescription'>;
     /** The total number of distinct properties in a void:Dataset. In other words, the number of distinct resources that occur in the predicate position of triples in the dataset. */
@@ -50,6 +45,11 @@ export interface Void {
     "sparqlEndpoint": NamedNode<'http://rdfs.org/ns/void#sparqlEndpoint'>;
     /** The dataset describing the subjects of triples contained in the Linkset. */
     "subjectsTarget": NamedNode<'http://rdfs.org/ns/void#subjectsTarget'>;
+    "subset": NamedNode<'http://rdfs.org/ns/void#subset'>;
+    /** One of the two datasets linked by the Linkset. */
+    "target": NamedNode<'http://rdfs.org/ns/void#target'>;
+    /** A technical feature of a void:Dataset, such as a supported RDF serialization format. */
+    "TechnicalFeature": NamedNode<'http://rdfs.org/ns/void#TechnicalFeature'>;
     /** The total number of triples contained in a void:Dataset. */
     "triples": NamedNode<'http://rdfs.org/ns/void#triples'>;
     /** Defines a simple URI look-up protocol for accessing a dataset. */

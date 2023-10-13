@@ -3,6 +3,12 @@ import { NamedNode } from "@rdfjs/types";
 
 export interface Cnt {
     '': NamedNode<'http://www.w3.org/2011/content#'>;
+    /** The Base64 encoded byte sequence of the content. */
+    "bytes": NamedNode<'http://www.w3.org/2011/content#bytes'>;
+    /** The character encoding used to create a character sequence from a byte sequence or vice versa. */
+    "characterEncoding": NamedNode<'http://www.w3.org/2011/content#characterEncoding'>;
+    /** The character sequence of the text content. */
+    "chars": NamedNode<'http://www.w3.org/2011/content#chars'>;
     /** The content. */
     "Content": NamedNode<'http://www.w3.org/2011/content#Content'>;
     /** The base64 encoded content (can be used for binary content). */
@@ -11,16 +17,10 @@ export interface Cnt {
     "ContentAsText": NamedNode<'http://www.w3.org/2011/content#ContentAsText'>;
     /** The XML content (can only be used for XML-wellformed content). */
     "ContentAsXML": NamedNode<'http://www.w3.org/2011/content#ContentAsXML'>;
-    /** The document type declaration. */
-    "DoctypeDecl": NamedNode<'http://www.w3.org/2011/content#DoctypeDecl'>;
-    /** The Base64 encoded byte sequence of the content. */
-    "bytes": NamedNode<'http://www.w3.org/2011/content#bytes'>;
-    /** The character encoding used to create a character sequence from a byte sequence or vice versa. */
-    "characterEncoding": NamedNode<'http://www.w3.org/2011/content#characterEncoding'>;
-    /** The character sequence of the text content. */
-    "chars": NamedNode<'http://www.w3.org/2011/content#chars'>;
     /** The character encoding declared in the XML declaration. */
     "declaredEncoding": NamedNode<'http://www.w3.org/2011/content#declaredEncoding'>;
+    /** The document type declaration. */
+    "DoctypeDecl": NamedNode<'http://www.w3.org/2011/content#DoctypeDecl'>;
     /** The document type name. */
     "doctypeName": NamedNode<'http://www.w3.org/2011/content#doctypeName'>;
     /** The document type declaration. */
