@@ -74,3 +74,41 @@ This will create a directory `source`, containing typescript modules for all voc
 
 [rdfv]: https://github.com/zazuko/rdf-vocabularies
 [ns]: http://npm.im/@rdfjs/namespace
+
+## Adding your own vocabularies
+
+To extend the interface of `env.ns` you need to add you own factory which will add additional
+namespace builders to the environment. TypeScript users will also need to extend the `CustomPrefixes`
+interface.
+
+```ts
+// ./ns.ts
+import { NamespaceBuilder } from '@rdfjs/namespace'
+
+type ExampleTerms = 'foo' | 'bar
+
+declare module '@tpluscode/rdf-ns-builders' {
+  interface CustomNamespaces {
+    ex: NamespaceBuilder<ExampleTerms>
+  }
+}
+
+export class ExampleNsFactory {
+  init(this: Environment<NsBuildersFactory | NamespaceFactory>) {
+    this.ns = {
+      ...this.ns,
+      ex: this.namespace<ExampleTerms>('https://example.com/'),
+    }
+  }
+}
+```
+
+Then, use it to create an extended environment.
+
+```ts
+// ./env.ts
+import { create } from '@zazuko/env'
+import { ExampleNsFactory } from './ns.js'
+
+export default create(TalosNsFactory)
+```
