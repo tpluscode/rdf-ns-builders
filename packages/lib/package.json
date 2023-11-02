@@ -1,6 +1,6 @@
 {
   "name": "@tpluscode/rdf-ns-builders",
-  "version": "4.2.0",
+  "version": "4.3.0",
   "description": "Generated RDF/JS namespace builders for common vocabularies",
   "type": "module",
   "main": "index.js",

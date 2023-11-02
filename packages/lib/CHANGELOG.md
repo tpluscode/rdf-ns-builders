@@ -1,5 +1,11 @@
 # Changelog
 
+## 4.3.0
+
+### Minor Changes
+
+- ff6f87c: Add a way to extend namespace factory
+
 ## 4.2.0
 
 ### Minor Changes
