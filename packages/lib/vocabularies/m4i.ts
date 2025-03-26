@@ -62,6 +62,7 @@ export interface M4i {
     "RegistrationAgency": NamedNode<'http://w3id.org/nfdi4ing/metadata4ing#RegistrationAgency'>;
     "RegistrationAuthority": NamedNode<'http://w3id.org/nfdi4ing/metadata4ing#RegistrationAuthority'>;
     "RelatedPerson": NamedNode<'http://w3id.org/nfdi4ing/metadata4ing#RelatedPerson'>;
+    "representsVariable": NamedNode<'http://w3id.org/nfdi4ing/metadata4ing#representsVariable'>;
     "Researcher": NamedNode<'http://w3id.org/nfdi4ing/metadata4ing#Researcher'>;
     "ResearchGroup": NamedNode<'http://w3id.org/nfdi4ing/metadata4ing#ResearchGroup'>;
     "RightsHolder": NamedNode<'http://w3id.org/nfdi4ing/metadata4ing#RightsHolder'>;
@@ -72,6 +73,7 @@ export interface M4i {
     "Tool": NamedNode<'http://w3id.org/nfdi4ing/metadata4ing#Tool'>;
     "UncertaintyDeclaration": NamedNode<'http://w3id.org/nfdi4ing/metadata4ing#UncertaintyDeclaration'>;
     "UsageInstruction": NamedNode<'http://w3id.org/nfdi4ing/metadata4ing#UsageInstruction'>;
+    "Variable": NamedNode<'http://w3id.org/nfdi4ing/metadata4ing#Variable'>;
     "WorkPackageLeader": NamedNode<'http://w3id.org/nfdi4ing/metadata4ing#WorkPackageLeader'>;
 }
 
