@@ -16,7 +16,7 @@
     "@zazuko/prefixes": "^2.4.0",
     "commander": "^13.1.0",
     "safe-identifier": "^0.4.2",
-    "ts-morph": "^15.1.0"
+    "ts-morph": "^25.0.1"
   },
   "devDependencies": {
     "@zazuko/vocabularies": "^4"
