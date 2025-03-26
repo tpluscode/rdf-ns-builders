@@ -1,13 +1,13 @@
 {
   "compilerOptions": {
-    "module": "ES2020",
-    "target": "ES2020",
+    "module": "NodeNext",
+    "target": "ES2022",
     "strictNullChecks": true,
     "strict": true,
     "noImplicitAny": true,
     "noImplicitReturns": true,
     "noImplicitThis": true,
-    "moduleResolution": "node",
+    "moduleResolution": "node16",
     "esModuleInterop": true,
     "declaration": true,
     "declarationMap": true
