@@ -7,59 +7,44 @@ export interface Rico {
      * Information on the anticipated accession(s) to the Record
      *             Set.
      */
-    "accrual": NamedNode<'https://www.ica.org/standards/RiC/ontology#accrual'>;
-    /** Information on the status of an Accrual */
-    "accrualStatus": NamedNode<'https://www.ica.org/standards/RiC/ontology#accrualStatus'>;
+    "accruals": NamedNode<'https://www.ica.org/standards/RiC/ontology#accruals'>;
+    /** Information on the status of possible accruals */
+    "accrualsStatus": NamedNode<'https://www.ica.org/standards/RiC/ontology#accrualsStatus'>;
+    /**
+     * Connects an AccumulationRelation to itself. It is a property
+     *             that can stand for an instance of the class when necessary, e.g. when you explore a
+     *             knowledge graph.
+     */
+    "accumulationRelation_role": NamedNode<'https://www.ica.org/standards/RiC/ontology#accumulationRelation_role'>;
     /**
      * Connects at least one Record Resource or Instantiation to at
-     *             least one Agent, when the Agent accumulates it, be it intentionally (collecting it) or
-     *             not (receiving it in the course of its activities).
+     *             least one Agent, when the Record Resource or Instantiation is or was accumulated by the
+     *             Agent, be it intentionally (collecting it) or not (receiving it in the course of its
+     *             activities). The Record Resource(s) or Instantiation(s) is the source of the Relation,
+     *             and the Agent(s) is the target.
      */
     "AccumulationRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#AccumulationRelation'>;
-    /**
-     * Connects an Accumulation Relation to one of the accumulated
-     *             Record Resources or Instantiations
-     */
-    "accumulationRelationHasSource": NamedNode<'https://www.ica.org/standards/RiC/ontology#accumulationRelationHasSource'>;
-    /**
-     * Connects an Accumulation Relation to one of the accumulating
-     *             Agents
-     */
-    "accumulationRelationHasTarget": NamedNode<'https://www.ica.org/standards/RiC/ontology#accumulationRelationHasTarget'>;
     /** The doing of something for some human purpose. */
     "Activity": NamedNode<'https://www.ica.org/standards/RiC/ontology#Activity'>;
     /**
+     * Connects an ActivityDocumentationRelation to itself. It is a
+     *             property that can stand for an instance of the class when necessary, e.g. when you
+     *             explore a knowledge graph.
+     */
+    "activityDocumentationRelation_role": NamedNode<'https://www.ica.org/standards/RiC/ontology#activityDocumentationRelation_role'>;
+    /**
      * Connects at least one Record Resource or Instantiation to at
-     *             least one Activity, when the Record Resource or Instantiation results from the
-     *             activity.
+     *             least one Activity, when the Record Resource or Instantiation results from the Activity.
+     *             The Record Resource(s) or Instantiation(s) is the source of the Relation, and the
+     *             Activity(-ies) is the target.
      */
     "ActivityDocumentationRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#ActivityDocumentationRelation'>;
-    /**
-     * Connects an Activity Documentation Relation to one of the
-     *             resulting Record Resources or Instantiations
-     */
-    "activityDocumentationRelationHasSource": NamedNode<'https://www.ica.org/standards/RiC/ontology#activityDocumentationRelationHasSource'>;
-    /**
-     * Connects an Activity Documentation Relation to one of the
-     *             documented Activities
-     */
-    "activityDocumentationRelationHasTarget": NamedNode<'https://www.ica.org/standards/RiC/ontology#activityDocumentationRelationHasTarget'>;
     /**
      * Connects an Activity to an Agent Temporal Relation (when the
      *             Activity is transferred from an Agent to another one) or a Mandate Relation (the Mandate
      *             assigns the Activity to the Agent or defines it).
      */
     "activityIsContextOfRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#activityIsContextOfRelation'>;
-    /**
-     * Connects an Activity that is performed to a Performance
-     *             Relation
-     */
-    "activityIsSourceOfPerformanceRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#activityIsSourceOfPerformanceRelation'>;
-    /**
-     * Connects an Activity to an Activity Documentation
-     *             Relation
-     */
-    "activityIsTargetOfActivityDocumentationRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#activityIsTargetOfActivityDocumentationRelation'>;
     /** Categorization of an Activity. */
     "ActivityType": NamedNode<'https://www.ica.org/standards/RiC/ontology#ActivityType'>;
     /**
@@ -73,157 +58,66 @@ export interface Rico {
      */
     "Agent": NamedNode<'https://www.ica.org/standards/RiC/ontology#Agent'>;
     /**
+     * Connects an AgentControlRelation to itself. It is a property
+     *             that can stand for an instance of the class when necessary, e.g. when you explore a
+     *             knowledge graph.
+     */
+    "agentControlRelation_role": NamedNode<'https://www.ica.org/standards/RiC/ontology#agentControlRelation_role'>;
+    /**
      * Connects at least one Agent, to at least another Agent, when the
-     *             first one(s) control(s) in a way the activities of the second one(s).
+     *             first one(s) control(s) or controlled in a way the activities of the second one(s). The
+     *             Relation is oriented from the controlling agent to the controlled one: the controlling
+     *             Agent(s) is the source of the Relation, and the controlled Agent(s) is the
+     *             target.
      */
     "AgentControlRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#AgentControlRelation'>;
     /**
-     * Connects an Agent Control Relation to one of the controlling
-     *             Agents
+     * Inverse of 'is or was location of agent' object
+     *             property.
      */
-    "agentControlRelationHasSource": NamedNode<'https://www.ica.org/standards/RiC/ontology#agentControlRelationHasSource'>;
+    "agentHasOrHadLocation": NamedNode<'https://www.ica.org/standards/RiC/ontology#agentHasOrHadLocation'>;
     /**
-     * Connects an Agent Control Relation to one of the controlled
-     *             Agents
+     * Connects an AgentHierarchicalRelation to itself. It is a
+     *             property that can stand for an instance of the class when necessary, e.g. when you
+     *             explore a knowledge graph.
      */
-    "agentControlRelationHasTarget": NamedNode<'https://www.ica.org/standards/RiC/ontology#agentControlRelationHasTarget'>;
-    /** Connects an Agent to a Work Relation */
-    "agentHasWorkRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#agentHasWorkRelation'>;
+    "agentHierarchicalRelation_role": NamedNode<'https://www.ica.org/standards/RiC/ontology#agentHierarchicalRelation_role'>;
     /**
      * Connects at least one Agent to at least another Agent, when the
-     *             first one is hierarchically superior to the second one.
+     *             first one is or was hierarchically superior to the second one. The Relation is oriented
+     *             towards the 'bottom' of the hierarchical tree: the superior Agent(s) is the source of
+     *             the Relation, and the inferior Agent(s) is the target.
      */
     "AgentHierarchicalRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#AgentHierarchicalRelation'>;
-    /**
-     * Connects an Agent Hierarchical Relation to one of the
-     *             hierarchically superior Agents
-     */
-    "agentHierarchicalRelationHasSource": NamedNode<'https://www.ica.org/standards/RiC/ontology#agentHierarchicalRelationHasSource'>;
-    /**
-     * Connects an Agent Hierarchical Relation to one of the
-     *             hierarchically inferior Agents
-     */
-    "agentHierarchicalRelationHasTarget": NamedNode<'https://www.ica.org/standards/RiC/ontology#agentHierarchicalRelationHasTarget'>;
-    /** Connects an Agent to an Agent Relation */
-    "agentIsConnectedToAgentRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#agentIsConnectedToAgentRelation'>;
-    /**
-     * Connects a controlling Agent to an Agent Control
-     *             Relation
-     */
-    "agentIsSourceOfAgentControlRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#agentIsSourceOfAgentControlRelation'>;
-    /**
-     * Connects a hierarchically superior Agent to an Agent
-     *             Hierarchical Relation
-     */
-    "agentIsSourceOfAgentHierarchicalRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#agentIsSourceOfAgentHierarchicalRelation'>;
-    /**
-     * Connects a predecessor Agent to an Agent Temporal
-     *             Relation
-     */
-    "agentIsSourceOfAgentTemporalRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#agentIsSourceOfAgentTemporalRelation'>;
-    /**
-     * Connects an Agent thas has the authority, to an Authority
-     *             Relation
-     */
-    "agentIsSourceOfAuthorityRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#agentIsSourceOfAuthorityRelation'>;
-    /**
-     * Connects an Agent having the intellectual property rights, to an
-     *             Intellectual Property Rights Relation
-     */
-    "agentIsSourceOfIntellectualPropertyRightsRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#agentIsSourceOfIntellectualPropertyRightsRelation'>;
-    /** Connects a manager Agent to a Management Relation */
-    "agentIsSourceOfManagementRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#agentIsSourceOfManagementRelation'>;
-    /** Connects an owner Agent to an Ownership Relation */
-    "agentIsSourceOfOwnershipRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#agentIsSourceOfOwnershipRelation'>;
-    /**
-     * Connects an Agent that holds a Record Resource or Instantiation,
-     *             to a Record Resource Holding Relation
-     */
-    "agentIsSourceOfRecordResourceHoldingRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#agentIsSourceOfRecordResourceHoldingRelation'>;
-    /**
-     * Connects one of the accumulating Agents to an Accumulation
-     *             Relation
-     */
-    "agentIsTargetOfAccumulationRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#agentIsTargetOfAccumulationRelation'>;
-    /**
-     * Connects one of the controlled Agents to an Agent Control
-     *             Relation
-     */
-    "agentIsTargetOfAgentControlRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#agentIsTargetOfAgentControlRelation'>;
-    /**
-     * Connects one of the hierarchically inferior Agents to an Agent
-     *             Hierarchical Relation
-     */
-    "agentIsTargetOfAgentHierarchicalRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#agentIsTargetOfAgentHierarchicalRelation'>;
-    /**
-     * Connects one of the Agents that created or accumulated the
-     *             Record resource or Instantiation, to an Agent Origination Relation
-     */
-    "agentIsTargetOfAgentOriginationRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#agentIsTargetOfAgentOriginationRelation'>;
-    /**
-     * Connects a successor Agent to an Agent Temporal
-     *             Relation
-     */
-    "agentIsTargetOfAgentTemporalRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#agentIsTargetOfAgentTemporalRelation'>;
-    /**
-     * Connects a Person, Group or Position to an Authorship
-     *             Relation.
-     */
-    "agentIsTargetOfAuthorshipRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#agentIsTargetOfAuthorshipRelation'>;
-    /** Connects a creator Agent to a Creation Relation */
-    "agentIsTargetOfCreationRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#agentIsTargetOfCreationRelation'>;
-    /** Connects a mandated Agent to a Mandate Relation */
-    "agentIsTargetOfMandateRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#agentIsTargetOfMandateRelation'>;
-    /** Connects an Agent to a Performance Relation */
-    "agentIsTargetOfPerformanceRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#agentIsTargetOfPerformanceRelation'>;
     /**
      * A label, title or term designating an Agent in order to make it
      *             distinguishable from other similar entities.
      */
     "AgentName": NamedNode<'https://www.ica.org/standards/RiC/ontology#AgentName'>;
     /**
-     * Connects an Agent or Activity that is the provenance of a Record
-     *             resource or Instantiation, to a Provenance Relation
+     * Connects an AgentTemporalRelation to itself. It is a property
+     *             that can stand for an instance of the class when necessary, e.g. when you explore a
+     *             knowledge graph.
      */
-    "agentOrActivityIsTargetOfProvenanceRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#agentOrActivityIsTargetOfProvenanceRelation'>;
+    "agentTemporalRelation_role": NamedNode<'https://www.ica.org/standards/RiC/ontology#agentTemporalRelation_role'>;
     /**
-     * Connects at least one Record Resource or an Instantiation to at
-     *             least one Agent that creates or accumulates the Record Resource, receives it, or sends
-     *             it.
-     */
-    "AgentOriginationRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#AgentOriginationRelation'>;
-    /**
-     * Connects an Agent Origination Relation to one of the resulting
-     *             Record Resource or Instantiation
-     */
-    "agentOriginationRelationHasSource": NamedNode<'https://www.ica.org/standards/RiC/ontology#agentOriginationRelationHasSource'>;
-    /**
-     * Connects an Agent Origination Relation to one of the creating or
-     *             accumulating Agents
-     */
-    "agentOriginationRelationHasTarget": NamedNode<'https://www.ica.org/standards/RiC/ontology#agentOriginationRelationHasTarget'>;
-    /**
-     * Connects an Agent Relation to one of the involved
-     *             Agents
-     */
-    "agentRelationConnects": NamedNode<'https://www.ica.org/standards/RiC/ontology#agentRelationConnects'>;
-    /**
-     * Connects at least one Agent, to at least another Agent, that
+     * Connects at least one Agent to at least another Agent that
      *             succeeds it chronologically for, for instance, fullfilling some functions or performing
-     *             some activities.
+     *             some activities. The Relation is oriented chronologically, from the predecessor to the
+     *             successor: the predecessor Agent(s) is the source of the Relation, and the successor
+     *             Agent(s) is the target.
      */
     "AgentTemporalRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#AgentTemporalRelation'>;
     /**
-     * Connects an Agent Temporal Relation to one of the predecessor
-     *             Agents
+     * Connects an AgentToAgentRelation to itself. It is a property
+     *             that can stand for an instance of the class when necessary, e.g. when you explore a
+     *             knowledge graph.
      */
-    "agentTemporalRelationHasSource": NamedNode<'https://www.ica.org/standards/RiC/ontology#agentTemporalRelationHasSource'>;
+    "agentToAgentRelation_role": NamedNode<'https://www.ica.org/standards/RiC/ontology#agentToAgentRelation_role'>;
     /**
-     * Connects an Agent Temporal Relation to one of the successor
-     *             Agents
+     * Connects at least two Agents. This Relation is a generic, not
+     *             oriented one.
      */
-    "agentTemporalRelationHasTarget": NamedNode<'https://www.ica.org/standards/RiC/ontology#agentTemporalRelationHasTarget'>;
-    /** Connects at least two Agents. */
     "AgentToAgentRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#AgentToAgentRelation'>;
     /** Reference system used for altitude */
     "altimetricSystem": NamedNode<'https://www.ica.org/standards/RiC/ontology#altimetricSystem'>;
@@ -238,25 +132,17 @@ export interface Rico {
      */
     "Appellation": NamedNode<'https://www.ica.org/standards/RiC/ontology#Appellation'>;
     /**
-     * Connects an Appellation to an Appellation
-     *             Relation
+     * Connects an AppellationRelation to itself. It is a property that
+     *             can stand for an instance of the class when necessary, e.g. when you explore a knowledge
+     *             graph.
      */
-    "appellationIsSourceOfAppellationRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#appellationIsSourceOfAppellationRelation'>;
+    "appellationRelation_role": NamedNode<'https://www.ica.org/standards/RiC/ontology#appellationRelation_role'>;
     /**
-     * The relation between an Appellation and at least one Thing that
-     *             the Appellation designates.
+     * Connects an Appellation and at least one Thing that the
+     *             Appellation designates or designated. The Appellation is the source of the Relation and
+     *             the Thing(s) is the target.
      */
     "AppellationRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#AppellationRelation'>;
-    /**
-     * Connects an Appellation Relation to the concerned
-     *             Appellation
-     */
-    "appellationRelationHasSource": NamedNode<'https://www.ica.org/standards/RiC/ontology#appellationRelationHasSource'>;
-    /**
-     * Connects an Appellation Relation to one of the designated
-     *             Things
-     */
-    "appellationRelationHasTarget": NamedNode<'https://www.ica.org/standards/RiC/ontology#appellationRelationHasTarget'>;
     /**
      * Connects an Agent Temporal Relation or Mandate Relation, to an
      *             Activity that is, either transferred from an Agent to another one, or assigned by a
@@ -264,26 +150,23 @@ export interface Rico {
      */
     "asConcernsActivity": NamedNode<'https://www.ica.org/standards/RiC/ontology#asConcernsActivity'>;
     /**
-     * Description of evidences that the Record Resource or
-     *             Instantiation is what it purports to be, was created or sent by the said Agent, at the
-     *             said time and has not been tampered or corrupted.
+     * Description of the evidence that a Record Resource or
+     *             Instantiation is what it purports to be, was created or sent by the said Agent at the
+     *             said time, and has not been tampered with, corrupted, or forged. 
      */
     "authenticityNote": NamedNode<'https://www.ica.org/standards/RiC/ontology#authenticityNote'>;
     /**
-     * Connects at least one Agent, and at least one Thing over which
-     *             the Agent has some authority.
+     * Connects an AuthorityRelation to itself. It is a property that
+     *             can stand for an instance of the class when necessary, e.g. when you explore a knowledge
+     *             graph.
+     */
+    "authorityRelation_role": NamedNode<'https://www.ica.org/standards/RiC/ontology#authorityRelation_role'>;
+    /**
+     * Connects at least one Agent and at least one Thing over which
+     *             the Agent has or had some authority. The Agent(s) is the source of the relation, and the
+     *             Thing(s) is the target.
      */
     "AuthorityRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#AuthorityRelation'>;
-    /**
-     * Connects an Authority Relation to an Agent that has the
-     *             authority
-     */
-    "authorityRelationHasSource": NamedNode<'https://www.ica.org/standards/RiC/ontology#authorityRelationHasSource'>;
-    /**
-     * Connects an Authority Relation to a Thing over which the
-     *             Authority is performed
-     */
-    "authorityRelationHasTarget": NamedNode<'https://www.ica.org/standards/RiC/ontology#authorityRelationHasTarget'>;
     /** Inverse of 'authorizes' object property */
     "authorizedBy": NamedNode<'https://www.ica.org/standards/RiC/ontology#authorizedBy'>;
     /**
@@ -302,64 +185,56 @@ export interface Rico {
      */
     "authorizingMandate": NamedNode<'https://www.ica.org/standards/RiC/ontology#authorizingMandate'>;
     /**
+     * Connects an AuthorshipRelation to itself. It is a property that
+     *             can stand for an instance of the class when necessary, e.g. when you explore a knowledge
+     *             graph.
+     */
+    "authorshipRelation_role": NamedNode<'https://www.ica.org/standards/RiC/ontology#authorshipRelation_role'>;
+    /**
      * Connects at least one Record to at least one Person, Group or
-     *             Position that is responsible for conceiving and formulating the information contained in
-     *             the Record.
+     *             Position that is or was responsible for conceiving and formulating the information
+     *             contained in the Record. The Record is the source of the Relation and the Person(s),
+     *             Group(s) or Position(s) is the target. 
      */
     "AuthorshipRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#AuthorshipRelation'>;
-    /**
-     * Connects an Authorship Relation to one of the Records involved
-     *             in the relation.
-     */
-    "authorshipRelationHasSource": NamedNode<'https://www.ica.org/standards/RiC/ontology#authorshipRelationHasSource'>;
-    /**
-     * Connects an Authorship Relation to one of the author Person,
-     *             Group or Position.
-     */
-    "authorshipRelationHasTarget": NamedNode<'https://www.ica.org/standards/RiC/ontology#authorshipRelationHasTarget'>;
     /** Date at which something began. */
     "beginningDate": NamedNode<'https://www.ica.org/standards/RiC/ontology#beginningDate'>;
     /** Date at which a Person was born. */
     "birthDate": NamedNode<'https://www.ica.org/standards/RiC/ontology#birthDate'>;
     /**
-     * Used system of reckoning time in which the beginning, length,
-     *             and divisions of a year are defined, sometimes along with multiyear
-     *             cycles.
-     */
-    "calendar": NamedNode<'https://www.ica.org/standards/RiC/ontology#calendar'>;
-    /**
      * Number of physical units and/or physical dimensions of the
-     *             carrier of a record resource instantiation. Various carriers, depending on specific
-     *             needs, may have more than one relevant dimension. In some cases, indicating the number
-     *             of physical units may be sufficient, while in other case, relevant dimensions should be
-     *             used in order to characterize the carrier.
+     *             carrier of an Instantiation. In order to manage an Instantiation of a record resource it
+     *             is necessary to note the extent of the carrier as well as that of the Instantiation
+     *             itself. Whether it is necessary to note dimensions, the number of relevant units, or
+     *             both, depends on the nature of the carrier and particular business needs.
      */
     "carrierExtent": NamedNode<'https://www.ica.org/standards/RiC/ontology#carrierExtent'>;
-    /** The extent of a Record Resource carrier */
+    /**
+     * Number of physical units and/or physical dimensions of the
+     *             carrier of an Instantiation.
+     */
     "CarrierExtent": NamedNode<'https://www.ica.org/standards/RiC/ontology#CarrierExtent'>;
     /**
-     * Categorization of physical material in or on which information
-     *             is represented.
+     * Categorization of physical material on which information is
+     *             represented.
      */
     "CarrierType": NamedNode<'https://www.ica.org/standards/RiC/ontology#CarrierType'>;
     /**
-     * Qualifies the level of certitude of the accuracy of a Date, an
-     *             Event or a Relation.
+     * Connects a ChildRelation to itself. It is a property that can
+     *             stand for an instance of the class when necessary, e.g. when you explore a knowledge
+     *             graph.
      */
-    "certainty": NamedNode<'https://www.ica.org/standards/RiC/ontology#certainty'>;
+    "childRelation_role": NamedNode<'https://www.ica.org/standards/RiC/ontology#childRelation_role'>;
     /**
-     * Connects at lest one Person, to at least another Person, when
-     *             the first has child the second one.
+     * Connects at least one Person to at least another Person, when
+     *             the first has(ave) child(s) the second one(s). The Relation is oriented from the parent
+     *             to the child: the parent is the source of the relation, and the child(ren) is the
+     *             target.
      */
     "ChildRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#ChildRelation'>;
-    /** Connects a Child Relation to a parent Person */
-    "childRelationHasSource": NamedNode<'https://www.ica.org/standards/RiC/ontology#childRelationHasSource'>;
-    /** Connects a Child Relation to a child Person */
-    "childRelationHasTarget": NamedNode<'https://www.ica.org/standards/RiC/ontology#childRelationHasTarget'>;
     /**
      * A term, number or alphanumeric string that is usually taken from
-     *             an external classification vocabulary or scheme that qualifies the Record
-     *             Resource.
+     *             an external classification vocabulary or scheme that qualifies a Record Resource. 
      */
     "classification": NamedNode<'https://www.ica.org/standards/RiC/ontology#classification'>;
     /**
@@ -374,33 +249,38 @@ export interface Rico {
     "Concept": NamedNode<'https://www.ica.org/standards/RiC/ontology#Concept'>;
     /**
      * Terms and circumstances affecting the availability of a Record
-     *             Resource for consultation. Such conditions may originate in laws, regulations and
-     *             policies, including those pertaining to privacy and security concerns or restrictions;
-     *             they may concern a specific Instantiation of a Record Resource, for example, conditions
-     *             that require preservation treatment; or they may specify the software or hardware
-     *             necessary to access the Instantiation.
+     *             Resource or an Instantiation for consultation.
      */
     "conditionsOfAccess": NamedNode<'https://www.ica.org/standards/RiC/ontology#conditionsOfAccess'>;
     /**
      * Terms and circumstances affecting the use of a Record Resource
-     *             after access has been provided. Includes conditions governing reproduction of the Record
-     *             Resource under applicable copyright (intellectual property) and/or property legislation,
-     *             and of the Instantiation, due to conservation status.
+     *             or an Instantiation after access has been provided. Includes conditions governing
+     *             reproduction of the Record Resource under applicable copyright (intellectual property)
+     *             and/or property legislation or due to conservation status.
      */
     "conditionsOfUse": NamedNode<'https://www.ica.org/standards/RiC/ontology#conditionsOfUse'>;
+    /**
+     * Connects a Place to a Place that it contained in the
+     *             past.
+     */
+    "contained": NamedNode<'https://www.ica.org/standards/RiC/ontology#contained'>;
     /**
      * Connects a Place to a region that is or was within
      *             it.
      */
     "containsOrContained": NamedNode<'https://www.ica.org/standards/RiC/ontology#containsOrContained'>;
     /**
-     * The fundamental form of communication in which a Record is
-     *             expressed and the human sense through which it is intended to be
-     *             perceived.
+     * Connects a Place to a Place that it contains, directly or indirectly. This is
+     *             a transitive relation.
+     */
+    "containsTransitive": NamedNode<'https://www.ica.org/standards/RiC/ontology#containsTransitive'>;
+    /**
+     * The fundamental form of communication in which a Record or
+     *             Record Part is expressed.
      */
     "ContentType": NamedNode<'https://www.ica.org/standards/RiC/ontology#ContentType'>;
     /**
-     * Longitudinal and latitudinal information of a
+     * Longitudinal and latitudinal information about a
      *             Place.
      */
     "Coordinates": NamedNode<'https://www.ica.org/standards/RiC/ontology#Coordinates'>;
@@ -412,34 +292,32 @@ export interface Rico {
     /** Categorization of a Corporate Body. */
     "CorporateBodyType": NamedNode<'https://www.ica.org/standards/RiC/ontology#CorporateBodyType'>;
     /**
-     * Connects at least two Persons, when they correspond to each
-     *             other.
+     * Connects a CorrespondenceRelation to itself. It is a property
+     *             that can stand for an instance of the class when necessary, e.g. when you explore a
+     *             knowledge graph.
+     */
+    "correspondenceRelation_role": NamedNode<'https://www.ica.org/standards/RiC/ontology#correspondenceRelation_role'>;
+    /**
+     * Connects at least two Persons, when they correspond or
+     *             corresponded to each other. This Relation is not oriented.
      */
     "CorrespondenceRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#CorrespondenceRelation'>;
-    /**
-     * Connects a Correspondence Relation to one of the Persons
-     *             involved
-     */
-    "correspondenceRelationConnects": NamedNode<'https://www.ica.org/standards/RiC/ontology#correspondenceRelationConnects'>;
     /** Date at which an entity was created. */
     "creationDate": NamedNode<'https://www.ica.org/standards/RiC/ontology#creationDate'>;
+    /**
+     * Connects a CreationRelation to itself. It is a property that can
+     *             stand for an instance of the class when necessary, e.g. when you explore a knowledge
+     *             graph.
+     */
+    "creationRelation_role": NamedNode<'https://www.ica.org/standards/RiC/ontology#creationRelation_role'>;
     /**
      * Connects at least one Record Resource or Instantiation to at
      *             least one Agent, when the Agent is either responsible for all or some of the content of
      *             the Record Resource, or is a contributor to the genesis or production of the
-     *             Instantiation.
+     *             Instantiation. The Record Resource or Instantiation is the source of the Relation, and
+     *             the Agent(s) is the target. 
      */
     "CreationRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#CreationRelation'>;
-    /**
-     * Connects a Creation Relation to one of the created Record
-     *             Resources or Instantiations
-     */
-    "creationRelationHasSource": NamedNode<'https://www.ica.org/standards/RiC/ontology#creationRelationHasSource'>;
-    /**
-     * Connects a Creation Relation to one of the creator
-     *             Agents
-     */
-    "creationRelationHasTarget": NamedNode<'https://www.ica.org/standards/RiC/ontology#creationRelationHasTarget'>;
     /**
      * Connects a Creation Relation to the Role Type that the creator
      *             Agent(s) has in the creation process
@@ -456,77 +334,74 @@ export interface Rico {
      */
     "Date": NamedNode<'https://www.ica.org/standards/RiC/ontology#Date'>;
     /**
-     * Indicates the precision of a date. It specifies if, and to what
-     *             extent, the value is an estimation.
+     * A human readable qualification of a Date to indicate the level
+     *             of precision or certainty.
      */
     "dateQualifier": NamedNode<'https://www.ica.org/standards/RiC/ontology#dateQualifier'>;
-    /**
-     * Chronological information associated with an entity that
-     *             contributes to its identification and contextualization, that implies or explicitly
-     *             states a start date and end date.
-     */
-    "DateRange": NamedNode<'https://www.ica.org/standards/RiC/ontology#DateRange'>;
-    /** Non-contiguous single dates or date ranges. */
-    "DateSet": NamedNode<'https://www.ica.org/standards/RiC/ontology#DateSet'>;
-    /**
-     * Identifier of the standard of the Normalized
-     *             date.
-     */
-    "dateStandard": NamedNode<'https://www.ica.org/standards/RiC/ontology#dateStandard'>;
+    /** Categorization of a Date. */
+    "DateType": NamedNode<'https://www.ica.org/standards/RiC/ontology#DateType'>;
     /** Date at which a Person died. */
     "deathDate": NamedNode<'https://www.ica.org/standards/RiC/ontology#deathDate'>;
-    /** Date at which an entity was deleted. */
-    "deletionDate": NamedNode<'https://www.ica.org/standards/RiC/ontology#deletionDate'>;
     /**
-     * Categorization of a person according to characteristics such as
-     *             age, gender, education, place of origin, ethnic/cultural identification, religion,
-     *             etc.
+     * Categorization of a Person or Group based on shared
+     *             characteristics.
      */
     "DemographicGroup": NamedNode<'https://www.ica.org/standards/RiC/ontology#DemographicGroup'>;
     /**
+     * Connects a DerivationRelation to itself. It is a property that
+     *             can stand for an instance of the class when necessary, e.g. when you explore a knowledge
+     *             graph.
+     */
+    "derivationRelation_role": NamedNode<'https://www.ica.org/standards/RiC/ontology#derivationRelation_role'>;
+    /**
      * Connects an Instantiation to at least one Instantiation that is
-     *             derived from it.
+     *             derived from it, whether it exists or has been lost or destroyed. The Relation is
+     *             oriented chronologically, from the first Instantiation in time to the derived
+     *             Instantiation: the first Instantiation is the source of the Relation, and the derived
+     *             Instantiation(s) is the target.
      */
     "DerivationRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#DerivationRelation'>;
     /**
-     * Connects a Derivation Relation to the Instantiation from which
-     *             one or more Instantiations is derived.
+     * Connects a DescendanceRelation to itself. It is a property that
+     *             can stand for an instance of the class when necessary, e.g. when you explore a knowledge
+     *             graph.
      */
-    "derivationRelationHasSource": NamedNode<'https://www.ica.org/standards/RiC/ontology#derivationRelationHasSource'>;
-    /**
-     * Connects a Derivation Relation to one of the derived
-     *             Instantiations
-     */
-    "derivationRelationHasTarget": NamedNode<'https://www.ica.org/standards/RiC/ontology#derivationRelationHasTarget'>;
+    "descendanceRelation_role": NamedNode<'https://www.ica.org/standards/RiC/ontology#descendanceRelation_role'>;
     /**
      * Connects at least one Person to at least another Person, when
-     *             the first has/have descendant the second one(s).
+     *             the first has/have descendant the second one(s). The Relation is oriented from the
+     *             ascendant to the descendant: the ascendant Person(s) is the source of the Relation, and
+     *             the descendant Person(s) is the target.
      */
     "DescendanceRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#DescendanceRelation'>;
     /**
-     * Connects a Descendance Relation to one of the ancestor
-     *             Persons
-     */
-    "descendanceRelationHasSource": NamedNode<'https://www.ica.org/standards/RiC/ontology#descendanceRelationHasSource'>;
-    /**
-     * Connects a Descendance Relation to one of the descendant
-     *             Persons
-     */
-    "descendanceRelationHasTarget": NamedNode<'https://www.ica.org/standards/RiC/ontology#descendanceRelationHasTarget'>;
-    /**
-     * Connects a Record Resource to a Thing that it
-     *             describes.
+     * Connects a Record Resource to a Thing that it describes or
+     *             described.
      */
     "describesOrDescribed": NamedNode<'https://www.ica.org/standards/RiC/ontology#describesOrDescribed'>;
+    /** Date at which an entity was deleted. */
+    "destructionDate": NamedNode<'https://www.ica.org/standards/RiC/ontology#destructionDate'>;
+    /** Connects a Place to another Place that it directly contains. */
+    "directlyContains": NamedNode<'https://www.ica.org/standards/RiC/ontology#directlyContains'>;
     /**
-     * Descriptive information about an entity that is not otherwise
-     *             addressed.
+     * Connects a Thing to a Thing that it follows directly in some non
+     *             chronological sequence.
      */
-    "descriptiveNote": NamedNode<'https://www.ica.org/standards/RiC/ontology#descriptiveNote'>;
+    "directlyFollowsInSequence": NamedNode<'https://www.ica.org/standards/RiC/ontology#directlyFollowsInSequence'>;
     /**
-     * Categorization of the document with respect to its extrinsic and
-     *             intrinsic elements that together communicate its content, administrative and documentary
-     *             context, and authority
+     * Connects a Record Set to a Record or Record Set which it
+     *             includes directly.
+     */
+    "directlyIncludes": NamedNode<'https://www.ica.org/standards/RiC/ontology#directlyIncludes'>;
+    /**
+     * Connects a Thing to a Thing that it precedes directly in some
+     *             non chronological sequence.
+     */
+    "directlyPrecedesInSequence": NamedNode<'https://www.ica.org/standards/RiC/ontology#directlyPrecedesInSequence'>;
+    /**
+     * Categorization of a Record or Record Part with respect to its
+     *             extrinsic and intrinsic elements that together communicate its content, administrative
+     *             and documentary context, and authority.
      */
     "DocumentaryFormType": NamedNode<'https://www.ica.org/standards/RiC/ontology#DocumentaryFormType'>;
     /** Inverse of 'documents' object property. */
@@ -538,27 +413,41 @@ export interface Rico {
     "documents": NamedNode<'https://www.ica.org/standards/RiC/ontology#documents'>;
     /** Date at which something ended. */
     "endDate": NamedNode<'https://www.ica.org/standards/RiC/ontology#endDate'>;
-    /** Something that happens in time and space. */
+    /**
+     * Something that happens or occurs in time and
+     *             space.
+     */
     "Event": NamedNode<'https://www.ica.org/standards/RiC/ontology#Event'>;
-    /** Connects an Event to an Event Relation */
-    "eventIsSourceOfEventRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#eventIsSourceOfEventRelation'>;
+    /**
+     * Connects an EventRelation to itself. It is a property that can
+     *             stand for an instance of the class when necessary, e.g. when you explore a knowledge
+     *             graph.
+     */
+    "eventRelation_role": NamedNode<'https://www.ica.org/standards/RiC/ontology#eventRelation_role'>;
     /**
      * Connects at least one Event to at least one Thing, when the
-     *             first is associated with the existence and lifecycle of the second one.
+     *             first is associated with the existence and lifecycle of the second one. The Event(s) is
+     *             the source of the Relation, and the Thing(s) is the target.
      */
     "EventRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#EventRelation'>;
-    /** Connects an Event Relation to an Event */
-    "eventRelationHasSource": NamedNode<'https://www.ica.org/standards/RiC/ontology#eventRelationHasSource'>;
-    /** Connects an Event Relation to an associated Thing */
-    "eventRelationHasTarget": NamedNode<'https://www.ica.org/standards/RiC/ontology#eventRelationHasTarget'>;
     /** Categorization of an Event. */
     "EventType": NamedNode<'https://www.ica.org/standards/RiC/ontology#EventType'>;
     /**
+     * Connects a Record Resource to a Relation, when the first is used
+     *             for proving the existence of the second one, or for describing it.
+     */
+    "evidences": NamedNode<'https://www.ica.org/standards/RiC/ontology#evidences'>;
+    /**
      * Connects a Position to a Group in which that Position exists or
-     *             existed, or that is defined by that Group�s organizational structure.
+     *             existed, or that is defined by that Group's organizational structure.
      */
     "existsOrExistedIn": NamedNode<'https://www.ica.org/standards/RiC/ontology#existsOrExistedIn'>;
-    /** Natural language expression of a Date. */
+    /**
+     * Natural language expression of a date. This property is a
+     *             specialization of the name property. In order that the precise meaning of the date can
+     *             be understood, information such as the calendar used or other specific context should be
+     *             included.
+     */
     "expressedDate": NamedNode<'https://www.ica.org/standards/RiC/ontology#expressedDate'>;
     /**
      * Inverse of 'is or was expressed by' object
@@ -570,7 +459,10 @@ export interface Rico {
      *             as a quantity.
      */
     "Extent": NamedNode<'https://www.ica.org/standards/RiC/ontology#Extent'>;
-    /** Categorization of the extent that is being measured */
+    /**
+     * Categorization of the extent that is being
+     *             measured.
+     */
     "ExtentType": NamedNode<'https://www.ica.org/standards/RiC/ontology#ExtentType'>;
     /**
      * Two or more persons related by birth, or through marriage,
@@ -579,80 +471,107 @@ export interface Rico {
      */
     "Family": NamedNode<'https://www.ica.org/standards/RiC/ontology#Family'>;
     /**
+     * Connects a FamilyRelation to itself. It is a property that can
+     *             stand for an instance of the class when necessary, e.g. when you explore a knowledge
+     *             graph.
+     */
+    "familyRelation_role": NamedNode<'https://www.ica.org/standards/RiC/ontology#familyRelation_role'>;
+    /**
      * Connects at least two Persons, when they have some family link,
-     *             i.e. belong to the same family.
+     *             i.e. belong to the same family. This Relation is a generic, not oriented
+     *             one.
      */
     "FamilyRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#FamilyRelation'>;
-    /** Connects a Family Relation to a Person. */
-    "familyRelationConnects": NamedNode<'https://www.ica.org/standards/RiC/ontology#familyRelationConnects'>;
     /** Categorization of a Family. */
     "FamilyType": NamedNode<'https://www.ica.org/standards/RiC/ontology#FamilyType'>;
-    /** Inverse of 'precedes in time' object property. */
+    /**
+     * Connects a Thing to a Thing that it followed in some non
+     *             chronological sequence in the past.
+     */
+    "followedInSequence": NamedNode<'https://www.ica.org/standards/RiC/ontology#followedInSequence'>;
+    /**
+     * Connects a Thing to a Thing that it directly or indirectly
+     *             follows in some non chronological sequence.
+     */
+    "followsInSequenceTransitive": NamedNode<'https://www.ica.org/standards/RiC/ontology#followsInSequenceTransitive'>;
+    /**
+     * Inverse of 'precedes in time' object property. This is a
+     *             transitive relation.
+     */
     "followsInTime": NamedNode<'https://www.ica.org/standards/RiC/ontology#followsInTime'>;
     /** Inverse of 'precedesOrPreceded' object property. */
     "followsOrFollowed": NamedNode<'https://www.ica.org/standards/RiC/ontology#followsOrFollowed'>;
     /**
+     * Connects a FunctionalEquivalenceRelation to itself. It is a
+     *             property that can stand for an instance of the class when necessary, e.g. when you
+     *             explore a knowledge graph.
+     */
+    "functionalEquivalenceRelation_role": NamedNode<'https://www.ica.org/standards/RiC/ontology#functionalEquivalenceRelation_role'>;
+    /**
      * Connects at least two Instantiations which may be considered as
-     *             equivalent.
+     *             equivalent. This Relation is not oriented.
      */
     "FunctionalEquivalenceRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#FunctionalEquivalenceRelation'>;
     /**
-     * Connects a Functional Equivalence Relation to one of the
-     *             functionally equivalent Instantiations.
+     * General information about an entity. General description may be
+     *             used to describe any entity. There are different appropriate uses for general
+     *             description. First, while it is recommended that more specific properties be used in
+     *             describing an entity, it may be desirable, for economic or other reasons, to describe
+     *             two or more specific properties together. Second, general description may be used to
+     *             describe one or more characteristics that are not otherwise accommodated in RiC-O.
+     *             Third, it may be used to provide a succinct summary or abstract description in addition
+     *             to more detailed specific description.
      */
-    "functionalEquivalenceRelationConnects": NamedNode<'https://www.ica.org/standards/RiC/ontology#functionalEquivalenceRelationConnects'>;
+    "generalDescription": NamedNode<'https://www.ica.org/standards/RiC/ontology#generalDescription'>;
     /**
      * Reference system used for geographical
      *             coordinates.
      */
     "geodesicSystem": NamedNode<'https://www.ica.org/standards/RiC/ontology#geodesicSystem'>;
-    /**
-     * Longitudinal and latitudinal information of a
-     *             Place.
-     */
+    /** Longitudinal and latitudinal information about a Place. */
     "geographicalCoordinates": NamedNode<'https://www.ica.org/standards/RiC/ontology#geographicalCoordinates'>;
     /** Two or more Agents that act together as an Agent. */
     "Group": NamedNode<'https://www.ica.org/standards/RiC/ontology#Group'>;
     /**
-     * Connects the Group that has at least a subdivision, to a Group
-     *             Subdivision Relation
+     * Connects a GroupSubdivisionRelation to itself. It is a property
+     *             that can stand for an instance of the class when necessary, e.g. when you explore a
+     *             knowledge graph.
      */
-    "groupIsSourceOfGroupSubdivisionRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#groupIsSourceOfGroupSubdivisionRelation'>;
-    /**
-     * Connects the Group (that has one to many members) to a
-     *             Membership Relation
-     */
-    "groupIsSourceOfMembershipRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#groupIsSourceOfMembershipRelation'>;
-    /**
-     * Connects a Group that is a subdivision, to a Group Subdivision
-     *             Relation
-     */
-    "groupIsTargetOfGroupSubdivisionRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#groupIsTargetOfGroupSubdivisionRelation'>;
-    /**
-     * Connects a Group (which has a leader) to a Leadership
-     *             Relation
-     */
-    "groupIsTargetOfLeadershipRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#groupIsTargetOfLeadershipRelation'>;
-    /**
-     * Connects the Group (in which a Position exists) to a Position To
-     *             Group Relation
-     */
-    "groupIsTargetOfPositionToGroupRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#groupIsTargetOfPositionToGroupRelation'>;
+    "groupSubdivisionRelation_role": NamedNode<'https://www.ica.org/standards/RiC/ontology#groupSubdivisionRelation_role'>;
     /**
      * Connects a Group and at least another Group, when the first one
-     *             as the second one(s) among its subdivisions.
+     *             has or had the second one(s) among its subdivisions. The Relation is oriented from the
+     *             Group to its subdivision(s): the parent Group is the source and the subdivision Group(s)
+     *             is the target.
      */
     "GroupSubdivisionRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#GroupSubdivisionRelation'>;
     /**
-     * Connects a Group Subdivision Relation to the Group that has
-     *             subdivisions
+     * Connects an Instantiation to another Instantiation that was its
+     *             component in the past.
      */
-    "groupSubdivisionRelationHasSource": NamedNode<'https://www.ica.org/standards/RiC/ontology#groupSubdivisionRelationHasSource'>;
+    "hadComponent": NamedNode<'https://www.ica.org/standards/RiC/ontology#hadComponent'>;
     /**
-     * Connects a Group Subdivision Relation to one of the Groups that
-     *             is a subdivision
+     * Connects a Record or Record Part to another Record or Record
+     *             Part that was its constituent in the past.
      */
-    "groupSubdivisionRelationHasTarget": NamedNode<'https://www.ica.org/standards/RiC/ontology#groupSubdivisionRelationHasTarget'>;
+    "hadConstituent": NamedNode<'https://www.ica.org/standards/RiC/ontology#hadConstituent'>;
+    /**
+     * Connects a Thing to a Thing that was a constitutive or component
+     *             part of that Thing in the past.
+     */
+    "hadPart": NamedNode<'https://www.ica.org/standards/RiC/ontology#hadPart'>;
+    /** Connects a Group to one of its past subdivisions. */
+    "hadSubdivision": NamedNode<'https://www.ica.org/standards/RiC/ontology#hadSubdivision'>;
+    /**
+     * Connects a past Event to one of a series of past Events that
+     *             constituted that original, broader, past Event.
+     */
+    "hadSubevent": NamedNode<'https://www.ica.org/standards/RiC/ontology#hadSubevent'>;
+    /**
+     * Connects an Agent to an Agent that was hierarchically inferior
+     *             in the past.
+     */
+    "hadSubordinate": NamedNode<'https://www.ica.org/standards/RiC/ontology#hadSubordinate'>;
     /**
      * Connects a Record Resource or an Instantiation to the Agent that
      *             accumulates it, be it intentionally (collecting) or not (receiving in the course of its
@@ -669,7 +588,10 @@ export interface Rico {
      *             it is addressed to.
      */
     "hasAddressee": NamedNode<'https://www.ica.org/standards/RiC/ontology#hasAddressee'>;
-    /** Inverse of 'has descendant' object property. */
+    /**
+     * Inverse of 'has descendant' object property. This is a
+     *             transitive relation.
+     */
     "hasAncestor": NamedNode<'https://www.ica.org/standards/RiC/ontology#hasAncestor'>;
     /**
      * Connects a Record to the Group, Person or Position that is
@@ -681,6 +603,8 @@ export interface Rico {
     "hasBeginningDate": NamedNode<'https://www.ica.org/standards/RiC/ontology#hasBeginningDate'>;
     /** Inverse of 'is birth date of' object property */
     "hasBirthDate": NamedNode<'https://www.ica.org/standards/RiC/ontology#hasBirthDate'>;
+    /** Inverse of 'is birth place of' object property */
+    "hasBirthPlace": NamedNode<'https://www.ica.org/standards/RiC/ontology#hasBirthPlace'>;
     /**
      * Connects an Instantiation to a Carrier Type which categorizes
      *             its carrier.
@@ -690,9 +614,21 @@ export interface Rico {
     "hasChild": NamedNode<'https://www.ica.org/standards/RiC/ontology#hasChild'>;
     /**
      * Connects a Record Resource or an Instantiation to the Agent that
-     *             collects it intentionally (is a collector).
+     *             collects it intentionally, i.e., the Agent is a collector.
      */
     "hasCollector": NamedNode<'https://www.ica.org/standards/RiC/ontology#hasCollector'>;
+    /**
+     * Connects an Instantiation to another Instantiation that is,
+     *             directly or indirectly, a component of that Instantiation. This is a transitive
+     *             relation.
+     */
+    "hasComponentTransitive": NamedNode<'https://www.ica.org/standards/RiC/ontology#hasComponentTransitive'>;
+    /**
+     * Connects a Record or Record Part to another Record or Record
+     *             Part that is its constituent, directly or indirectly. This is a transitive
+     *             relation.
+     */
+    "hasConstituentTransitive": NamedNode<'https://www.ica.org/standards/RiC/ontology#hasConstituentTransitive'>;
     /**
      * Connects a Record or a Record Part to a Content Type which
      *             categorizes its content.
@@ -703,21 +639,60 @@ export interface Rico {
      *             Resource.
      */
     "hasCopy": NamedNode<'https://www.ica.org/standards/RiC/ontology#hasCopy'>;
+    /** Inverse of 'is creation date of' object property */
+    "hasCreationDate": NamedNode<'https://www.ica.org/standards/RiC/ontology#hasCreationDate'>;
     /**
      * Connects a Record Resource or an Instantiation to an Agent that
      *             is either responsible for all or some of the content of the Record Resource or is a
      *             contributor to the genesis or production of an Instantiation.
      */
     "hasCreator": NamedNode<'https://www.ica.org/standards/RiC/ontology#hasCreator'>;
+    /** Connects a Date to its Date Type. */
+    "hasDateType": NamedNode<'https://www.ica.org/standards/RiC/ontology#hasDateType'>;
     /** Inverse of 'is death date of' object property */
     "hasDeathDate": NamedNode<'https://www.ica.org/standards/RiC/ontology#hasDeathDate'>;
+    /** Inverse of 'is death place of' object property */
+    "hasDeathPlace": NamedNode<'https://www.ica.org/standards/RiC/ontology#hasDeathPlace'>;
     /**
-     * Connects an Instantiation to an Instantiation that is derived
-     *             from it.
+     * Connects a Person to one of their descendants. This is a
+     *             transitive relation.
      */
-    "hasDerivedInstantiation": NamedNode<'https://www.ica.org/standards/RiC/ontology#hasDerivedInstantiation'>;
-    /** Connects a Person to one of their descendants. */
     "hasDescendant": NamedNode<'https://www.ica.org/standards/RiC/ontology#hasDescendant'>;
+    /**
+     * Inverse of 'is destruction date of' object
+     *             property.
+     */
+    "hasDestructionDate": NamedNode<'https://www.ica.org/standards/RiC/ontology#hasDestructionDate'>;
+    /**
+     * Connects an Instantiation to another Instantiation that is its
+     *             direct component.
+     */
+    "hasDirectComponent": NamedNode<'https://www.ica.org/standards/RiC/ontology#hasDirectComponent'>;
+    /**
+     * Connects a Record to another Record or Record Part that is its
+     *             direct constituent.
+     */
+    "hasDirectConstituent": NamedNode<'https://www.ica.org/standards/RiC/ontology#hasDirectConstituent'>;
+    /**
+     * Connects a Thing to a Thing that is a direct constitutive or
+     *             component part of that Thing.
+     */
+    "hasDirectPart": NamedNode<'https://www.ica.org/standards/RiC/ontology#hasDirectPart'>;
+    /**
+     * Connects a Group to one of its direct
+     *             subdivisions.
+     */
+    "hasDirectSubdivision": NamedNode<'https://www.ica.org/standards/RiC/ontology#hasDirectSubdivision'>;
+    /**
+     * Connects an ongoing Event to one of a series of Events that
+     *             directly constitute that broader, ongoing Event.
+     */
+    "hasDirectSubevent": NamedNode<'https://www.ica.org/standards/RiC/ontology#hasDirectSubevent'>;
+    /**
+     * Connects an Agent to an Agent that is its direct
+     *             subordinate.
+     */
+    "hasDirectSubordinate": NamedNode<'https://www.ica.org/standards/RiC/ontology#hasDirectSubordinate'>;
     /**
      * Connects a Record or Record Part to its Documentary Form
      *             Type.
@@ -732,11 +707,14 @@ export interface Rico {
      *             it.
      */
     "hasEventType": NamedNode<'https://www.ica.org/standards/RiC/ontology#hasEventType'>;
-    /** Connects a Record Resource or Instantiation to an Extent */
+    /**
+     * Connects a Record Resource or Instantiation to an
+     *             Extent
+     */
     "hasExtent": NamedNode<'https://www.ica.org/standards/RiC/ontology#hasExtent'>;
     /**
-     * Connects an Extent to an Extent Type that categorizes what is being
-     *             measured.
+     * Connects an Extent to an Extent Type that categorizes what is
+     *             being measured.
      */
     "hasExtentType": NamedNode<'https://www.ica.org/standards/RiC/ontology#hasExtentType'>;
     /**
@@ -761,15 +739,21 @@ export interface Rico {
      */
     "hasIdentifierType": NamedNode<'https://www.ica.org/standards/RiC/ontology#hasIdentifierType'>;
     /**
-     * Connects a Record Resource to one of its
-     *             Instantiations.
-     */
-    "hasInstantiation": NamedNode<'https://www.ica.org/standards/RiC/ontology#hasInstantiation'>;
-    /**
      * Inverse of 'is modification date of' object
      *             property.
      */
     "hasModificationDate": NamedNode<'https://www.ica.org/standards/RiC/ontology#hasModificationDate'>;
+    /**
+     * Connects a Record Resource or an Instantiation to an Agent that
+     *             creates or accumulates it, receives it, or sends it, or to an Activity that generates
+     *             it.
+     */
+    "hasOrganicOrFunctionalProvenance": NamedNode<'https://www.ica.org/standards/RiC/ontology#hasOrganicOrFunctionalProvenance'>;
+    /**
+     * Connects a Record Resource or an Instantiation to an Agent that
+     *             creates or accumulates the Record Resource, receives it, or sends it.
+     */
+    "hasOrganicProvenance": NamedNode<'https://www.ica.org/standards/RiC/ontology#hasOrganicProvenance'>;
     /**
      * Connects an Agent and (one of) its present or past Agent
      *             Name.
@@ -786,6 +770,11 @@ export interface Rico {
      *             the Records or Record Parts that are or were included in the Record Set.
      */
     "hasOrHadAllMembersWithContentType": NamedNode<'https://www.ica.org/standards/RiC/ontology#hasOrHadAllMembersWithContentType'>;
+    /**
+     * Inverse of 'is or was creation date of all members of' object
+     *             property
+     */
+    "hasOrHadAllMembersWithCreationDate": NamedNode<'https://www.ica.org/standards/RiC/ontology#hasOrHadAllMembersWithCreationDate'>;
     /**
      * Connects a Record Set and a Documentary Form Type that
      *             categorizes all the Records or Record Parts that are or were included in the Record
@@ -808,13 +797,18 @@ export interface Rico {
      */
     "hasOrHadAllMembersWithRecordState": NamedNode<'https://www.ica.org/standards/RiC/ontology#hasOrHadAllMembersWithRecordState'>;
     /**
+     * Connects a record resource to one of its analogue
+     *             instantiations, whether it exists or has been lost or destroyed.
+     */
+    "hasOrHadAnalogueInstantiation": NamedNode<'https://www.ica.org/standards/RiC/ontology#hasOrHadAnalogueInstantiation'>;
+    /**
      * Connects a Thing to an Appellation that is or was used for
      *             designating it.
      */
     "hasOrHadAppellation": NamedNode<'https://www.ica.org/standards/RiC/ontology#hasOrHadAppellation'>;
     /**
-     * Connects an Agent to a Thing the Agent has or had authority
-     *             over.
+     * Connects an Agent to a Thing over which the Agent has or had
+     *             some kind of authority.
      */
     "hasOrHadAuthorityOver": NamedNode<'https://www.ica.org/standards/RiC/ontology#hasOrHadAuthorityOver'>;
     /**
@@ -828,8 +822,8 @@ export interface Rico {
      */
     "hasOrHadComponent": NamedNode<'https://www.ica.org/standards/RiC/ontology#hasOrHadComponent'>;
     /**
-     * Connects a Record to a Record Part that is or was a component of
-     *             that Record.
+     * Connects a Record or Record Part to a Record or Record part that
+     *             is or was a constituent of that Record or Record Part.
      */
     "hasOrHadConstituent": NamedNode<'https://www.ica.org/standards/RiC/ontology#hasOrHadConstituent'>;
     /**
@@ -857,6 +851,21 @@ export interface Rico {
      *             belongs or belonged.
      */
     "hasOrHadDemographicGroup": NamedNode<'https://www.ica.org/standards/RiC/ontology#hasOrHadDemographicGroup'>;
+    /**
+     * Connects an instantiation to an instantiation that is derived
+     *             from it, whether it exists or has been lost or destroyed.
+     */
+    "hasOrHadDerivedInstantiation": NamedNode<'https://www.ica.org/standards/RiC/ontology#hasOrHadDerivedInstantiation'>;
+    /**
+     * Connects a record resource to one of its digital instantiations,
+     *             whether it exists or has been lost or destroyed.
+     */
+    "hasOrHadDigitalInstantiation": NamedNode<'https://www.ica.org/standards/RiC/ontology#hasOrHadDigitalInstantiation'>;
+    /**
+     * Inverse of 'is or was employer of' object
+     *             property.
+     */
+    "hasOrHadEmployer": NamedNode<'https://www.ica.org/standards/RiC/ontology#hasOrHadEmployer'>;
     /** Inverse of 'is or was holder of' object property. */
     "hasOrHadHolder": NamedNode<'https://www.ica.org/standards/RiC/ontology#hasOrHadHolder'>;
     /**
@@ -864,6 +873,11 @@ export interface Rico {
      *             Identifiers.
      */
     "hasOrHadIdentifier": NamedNode<'https://www.ica.org/standards/RiC/ontology#hasOrHadIdentifier'>;
+    /**
+     * Connects a Record Resource to an Instantiation, which either may
+     *             exist or may have been lost or destroyed.
+     */
+    "hasOrHadInstantiation": NamedNode<'https://www.ica.org/standards/RiC/ontology#hasOrHadInstantiation'>;
     /**
      * Inverse of 'is or was holder of intellectual property rights of'
      *             object property.
@@ -875,8 +889,8 @@ export interface Rico {
      */
     "hasOrHadJurisdiction": NamedNode<'https://www.ica.org/standards/RiC/ontology#hasOrHadJurisdiction'>;
     /**
-     * Connects an Agent or Record Resource to a Language that it uses
-     *             or used.
+     * Connects an Agent, Record or Record Part to a Language that uses
+     *             or used it.
      */
     "hasOrHadLanguage": NamedNode<'https://www.ica.org/standards/RiC/ontology#hasOrHadLanguage'>;
     /** Inverse of 'is or was leader of' object property. */
@@ -902,10 +916,20 @@ export interface Rico {
      */
     "hasOrHadManager": NamedNode<'https://www.ica.org/standards/RiC/ontology#hasOrHadManager'>;
     /**
+     * Connects a Mandate to a Mandate Type that categorized or
+     *             categorizes it.
+     */
+    "hasOrHadMandateType": NamedNode<'https://www.ica.org/standards/RiC/ontology#hasOrHadMandateType'>;
+    /**
      * Connects a Group to a Person that is or was a member of that
      *             Group.
      */
     "hasOrHadMember": NamedNode<'https://www.ica.org/standards/RiC/ontology#hasOrHadMember'>;
+    /**
+     * Inverse of 'is or was creation date of most members of' object
+     *             property
+     */
+    "hasOrHadMostMembersWithCreationDate": NamedNode<'https://www.ica.org/standards/RiC/ontology#hasOrHadMostMembersWithCreationDate'>;
     /**
      * Connects a Thing to one of its past or present
      *             Names.
@@ -966,11 +990,16 @@ export interface Rico {
      */
     "hasOrHadSomeMembersWithContentType": NamedNode<'https://www.ica.org/standards/RiC/ontology#hasOrHadSomeMembersWithContentType'>;
     /**
+     * Inverse of 'is or was creation date of some members of' object
+     *             property
+     */
+    "hasOrHadSomeMembersWithCreationDate": NamedNode<'https://www.ica.org/standards/RiC/ontology#hasOrHadSomeMembersWithCreationDate'>;
+    /**
      * Connects a Record Set and a Documentary Form Type that
      *             categorizes some of the Records or Record Parts that are or were included in the Record
      *             Set.
      */
-    "hasOrHadSomeMemberswithDocumentaryFormType": NamedNode<'https://www.ica.org/standards/RiC/ontology#hasOrHadSomeMemberswithDocumentaryFormType'>;
+    "hasOrHadSomeMembersWithDocumentaryFormType": NamedNode<'https://www.ica.org/standards/RiC/ontology#hasOrHadSomeMembersWithDocumentaryFormType'>;
     /**
      * Connects a Record Set and a Language used by some of the Records
      *             or Record Parts that are or were included in the Record Set.
@@ -989,7 +1018,7 @@ export interface Rico {
      */
     "hasOrHadSomeMembersWithRecordState": NamedNode<'https://www.ica.org/standards/RiC/ontology#hasOrHadSomeMembersWithRecordState'>;
     /**
-     * Connects two Persons that are or were married. This relation is
+     * Connects two Persons who are or were married. This relation is
      *             symmetric.
      */
     "hasOrHadSpouse": NamedNode<'https://www.ica.org/standards/RiC/ontology#hasOrHadSpouse'>;
@@ -1017,7 +1046,7 @@ export interface Rico {
     "hasOrHadSubordinate": NamedNode<'https://www.ica.org/standards/RiC/ontology#hasOrHadSubordinate'>;
     /**
      * Connects a Person to another Person who is or was their
-     *             student.
+     *             teacher.
      */
     "hasOrHadTeacher": NamedNode<'https://www.ica.org/standards/RiC/ontology#hasOrHadTeacher'>;
     /**
@@ -1033,15 +1062,21 @@ export interface Rico {
     /** Inverse of 'is original of' object property. */
     "hasOriginal": NamedNode<'https://www.ica.org/standards/RiC/ontology#hasOriginal'>;
     /**
+     * Connects a Thing to a Thing that is, directly or indirectly, a
+     *             constitutive or component part of that Thing. This is a transitive
+     *             relation.
+     */
+    "hasPartTransitive": NamedNode<'https://www.ica.org/standards/RiC/ontology#hasPartTransitive'>;
+    /**
      * Connects an Instantiation to a Production Technique Type that
      *             categorizes its production technique.
      */
     "hasProductionTechniqueType": NamedNode<'https://www.ica.org/standards/RiC/ontology#hasProductionTechniqueType'>;
     /**
-     * Connects a Record Resource or an Instantiation to an Agent that
-     *             creates or accumulates the Record Resource, receives it, or sends it.
+     * Inverse of 'is publication date of' object
+     *             property
      */
-    "hasProvenance": NamedNode<'https://www.ica.org/standards/RiC/ontology#hasProvenance'>;
+    "hasPublicationDate": NamedNode<'https://www.ica.org/standards/RiC/ontology#hasPublicationDate'>;
     /**
      * Connects a Record resource to an Agent who published
      *             it.
@@ -1049,7 +1084,7 @@ export interface Rico {
     "hasPublisher": NamedNode<'https://www.ica.org/standards/RiC/ontology#hasPublisher'>;
     /**
      * Connects a Record Resource or an Instantiation to the Agent that
-     *             receives it in the course of its activities.
+     *             receives it in the course of the Agent's activities.
      */
     "hasReceiver": NamedNode<'https://www.ica.org/standards/RiC/ontology#hasReceiver'>;
     /**
@@ -1078,16 +1113,26 @@ export interface Rico {
      */
     "hasSender": NamedNode<'https://www.ica.org/standards/RiC/ontology#hasSender'>;
     /**
-     * Connects two Persons that are siblings. This relation is
+     * Connects two Persons who are siblings. This relation is
      *             symmetric.
      */
     "hasSibling": NamedNode<'https://www.ica.org/standards/RiC/ontology#hasSibling'>;
     /**
-     * Connects a Record Resource or Relation to a Record Resource or
-     *             Agent that is used as a source of information for identifying or describing
-     *             it.
+     * Connects a Group to another Group that is one of its direct or
+     *             indirect subdivisions. This is a transitive relation.
      */
-    "hasSource": NamedNode<'https://www.ica.org/standards/RiC/ontology#hasSource'>;
+    "hasSubdivisionTransitive": NamedNode<'https://www.ica.org/standards/RiC/ontology#hasSubdivisionTransitive'>;
+    /**
+     * Connects an ongoing Event to one of a series of Events that
+     *             directly or indirectly constitute that broader, ongoing Event. This is a transitive
+     *             relation.
+     */
+    "hasSubeventTransitive": NamedNode<'https://www.ica.org/standards/RiC/ontology#hasSubeventTransitive'>;
+    /**
+     * Connects an Agent to an Agent that is directly or indirectly
+     *             hierarchically inferior. This is a transitive relation.
+     */
+    "hasSubordinateTransitive": NamedNode<'https://www.ica.org/standards/RiC/ontology#hasSubordinateTransitive'>;
     /**
      * Connects an Agent to another Agent that succeeds it
      *             chronologically.
@@ -1095,19 +1140,22 @@ export interface Rico {
     "hasSuccessor": NamedNode<'https://www.ica.org/standards/RiC/ontology#hasSuccessor'>;
     /** Connects an Extent to a Unit Of Measurement */
     "hasUnitOfMeasurement": NamedNode<'https://www.ica.org/standards/RiC/ontology#hasUnitOfMeasurement'>;
+    /** Inverse of 'is within' object property */
+    "hasWithin": NamedNode<'https://www.ica.org/standards/RiC/ontology#hasWithin'>;
     /** Vertical dimension of an entity. */
     "height": NamedNode<'https://www.ica.org/standards/RiC/ontology#height'>;
     /**
-     * Summary of the development of an entity, since its origin until
-     *             present time.
+     * Summary of the development of an entity throughout its
+     *             existence.
      */
     "history": NamedNode<'https://www.ica.org/standards/RiC/ontology#history'>;
     /**
      * A word, number, letter, symbol, or any combination of these used
      *             to uniquely identify or reference an individual instance of an entity within a specific
-     *             information domain. Includes Global Persistent Identifiers (globally unique and
-     *             persistently resolvable identifier for the entity) and/or Local
-     *             Identifiers.
+     *             information domain. Can include Global Persistent Identifiers (globally unique and
+     *             persistently resolvable identifier for the entity) and/or Local Identifiers. Both the
+     *             domain within which the identifier is unique, and the rules used in forming the
+     *             identifier value should be provided with the identifier value.
      */
     "identifier": NamedNode<'https://www.ica.org/standards/RiC/ontology#identifier'>;
     /**
@@ -1119,10 +1167,20 @@ export interface Rico {
     /** Categorization of an Identifier. */
     "IdentifierType": NamedNode<'https://www.ica.org/standards/RiC/ontology#IdentifierType'>;
     /**
+     * Connects a Record Set to a Record or Record Set which it
+     *             included in the past.
+     */
+    "included": NamedNode<'https://www.ica.org/standards/RiC/ontology#included'>;
+    /**
      * Connects a Record Set to a Record or Record Set it aggregates,
      *             or aggregated in the past.
      */
     "includesOrIncluded": NamedNode<'https://www.ica.org/standards/RiC/ontology#includesOrIncluded'>;
+    /**
+     * Connects a Record Set to a Record or Record Set which it
+     *             includes directly or indirectly. This is a transitive relation.
+     */
+    "includesTransitive": NamedNode<'https://www.ica.org/standards/RiC/ontology#includesTransitive'>;
     /**
      * The inscription of information made by an Agent on a physical
      *             carrier in any persistent, recoverable form as a means of communicating information
@@ -1130,79 +1188,54 @@ export interface Rico {
      */
     "Instantiation": NamedNode<'https://www.ica.org/standards/RiC/ontology#Instantiation'>;
     /**
-     * Countable characteristics of the Instantiation expressed as a
+     * Countable characteristics of an Instantiation expressed as a
      *             quantity.
      */
     "instantiationExtent": NamedNode<'https://www.ica.org/standards/RiC/ontology#instantiationExtent'>;
-    /** The extent of an Instantiation. */
+    /**
+     * Countable characteristics of an Instantiation expressed as a
+     *             quantity.
+     */
     "InstantiationExtent": NamedNode<'https://www.ica.org/standards/RiC/ontology#InstantiationExtent'>;
-    /**
-     * Connects an Instantiation to a Functional Equivalence
-     *             Relation
-     */
-    "instantiationIsConnectedToFunctionalEquivalenceRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#instantiationIsConnectedToFunctionalEquivalenceRelation'>;
-    /**
-     * Connects an Instantiation to an Instantiation to Instantiation
-     *             Relation.
-     */
-    "instantiationIsConnectedToInstantiationRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#instantiationIsConnectedToInstantiationRelation'>;
-    /**
-     * Connects an Instantiation (from which at least one Instantiation
-     *             is derived) to a Derivation Relation.
-     */
-    "instantiationIsSourceOfDerivationRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#instantiationIsSourceOfDerivationRelation'>;
-    /**
-     * Connects an Instantiation (from which at least one Instantiation
-     *             is migrated) to a Migration Relation.
-     */
-    "instantiationIsSourceOfMigrationRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#instantiationIsSourceOfMigrationRelation'>;
-    /**
-     * Connects a derived Instantiation to a Derivation
-     *             Relation.
-     */
-    "instantiationIsTargetOfDerivationRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#instantiationIsTargetOfDerivationRelation'>;
-    /**
-     * Connects an Instantiation which results from a migration, to a
-     *             Migration Relation.
-     */
-    "instantiationIsTargetOfMigrationRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#instantiationIsTargetOfMigrationRelation'>;
-    /**
-     * Connects an Instantiation of a Record Resource to the Record
-     *             Resource to Instantiation Relation.
-     */
-    "instantiationIsTargetOfRecordResourceToInstantiationRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#instantiationIsTargetOfRecordResourceToInstantiationRelation'>;
     /**
      * Information about the physical arrangement and composition of an
      *             Instantiation.
      */
     "instantiationStructure": NamedNode<'https://www.ica.org/standards/RiC/ontology#instantiationStructure'>;
-    /** Connects at least two instantiations */
+    /**
+     * Connects an InstantiationToInstantiationRelation to itself. It
+     *             is a property that can stand for an instance of the class when necessary, e.g. when you
+     *             explore a knowledge graph.
+     */
+    "instantiationToInstantiationRelation_role": NamedNode<'https://www.ica.org/standards/RiC/ontology#instantiationToInstantiationRelation_role'>;
+    /**
+     * Connects at least two instantiations. This Relation is a
+     *             generic, not oriented one.
+     */
     "InstantiationToInstantiationRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#InstantiationToInstantiationRelation'>;
     /**
-     * Connects an Instantiation to Instantiation Relation to one of
-     *             the related Instantiations.
+     * Information about the known intellectual completeness of a
+     *             Record Resource.
      */
-    "instantiationToInstantiationRelationConnects": NamedNode<'https://www.ica.org/standards/RiC/ontology#instantiationToInstantiationRelationConnects'>;
+    "integrityNote": NamedNode<'https://www.ica.org/standards/RiC/ontology#integrityNote'>;
     /**
-     * Information about the completeness of a Record Resource or
-     *             Instantiation.
+     * Connects an IntellectualPropertyRightsRelation to itself. It is
+     *             a property that can stand for an instance of the class when necessary, e.g. when you
+     *             explore a knowledge graph.
      */
-    "integrity": NamedNode<'https://www.ica.org/standards/RiC/ontology#integrity'>;
+    "intellectualPropertyRightsRelation_role": NamedNode<'https://www.ica.org/standards/RiC/ontology#intellectualPropertyRightsRelation_role'>;
     /**
      * Connects at least one Agent and one Record Resource or
-     *             Instantiation on which the Agent has some intellectual property rights.
+     *             Instantiation on which the Agent has or had some intellectual property rights. The
+     *             Agent(s) is the source of the Relation and the Record Resource(s) or Instantiation(s) is
+     *             the target.
      */
     "IntellectualPropertyRightsRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#IntellectualPropertyRightsRelation'>;
     /**
-     * Connects an IntellectualPropertyRightsRelation to one of the
-     *             Group, Person or Position that holds the rights.
+     * Connects two Dates that overlap. This relation is
+     *             symmetric.
      */
-    "intellectualPropertyRightsRelationHasSource": NamedNode<'https://www.ica.org/standards/RiC/ontology#intellectualPropertyRightsRelationHasSource'>;
-    /**
-     * Connects an IintellectualPropertyRightsRelation to one of the
-     *             Record Resource or Instantiation on which the rights are held.
-     */
-    "intellectualPropertyRightsRelationHasTarget": NamedNode<'https://www.ica.org/standards/RiC/ontology#intellectualPropertyRightsRelationHasTarget'>;
+    "intersects": NamedNode<'https://www.ica.org/standards/RiC/ontology#intersects'>;
     /** Inverse of 'has accumulator' object property. */
     "isAccumulatorOf": NamedNode<'https://www.ica.org/standards/RiC/ontology#isAccumulatorOf'>;
     /**
@@ -1217,6 +1250,11 @@ export interface Rico {
      *             symmetric.
      */
     "isAgentAssociatedWithAgent": NamedNode<'https://www.ica.org/standards/RiC/ontology#isAgentAssociatedWithAgent'>;
+    /**
+     * Inverse of 'is place associated with agent' object
+     *             property.
+     */
+    "isAgentAssociatedWithPlace": NamedNode<'https://www.ica.org/standards/RiC/ontology#isAgentAssociatedWithPlace'>;
     /**
      * Inverse of 'is date associated with' object
      *             property.
@@ -1255,6 +1293,11 @@ export interface Rico {
      */
     "isBirthDateOf": NamedNode<'https://www.ica.org/standards/RiC/ontology#isBirthDateOf'>;
     /**
+     * Connects a Place to a Person who was born in that
+     *             Place.
+     */
+    "isBirthPlaceOf": NamedNode<'https://www.ica.org/standards/RiC/ontology#isBirthPlaceOf'>;
+    /**
      * Connects a Carrier Type to an Instantiation whose carrier it
      *             categorizes.
      */
@@ -1264,29 +1307,106 @@ export interface Rico {
     /** Inverse of 'has collector' object property. */
     "isCollectorOf": NamedNode<'https://www.ica.org/standards/RiC/ontology#isCollectorOf'>;
     /**
+     * Connects an Instantiation to another Instantiation of which it
+     *             is, directly or indirectly, a component. This is a transitive relation.
+     */
+    "isComponentOfTransitive": NamedNode<'https://www.ica.org/standards/RiC/ontology#isComponentOfTransitive'>;
+    /**
+     * Connects a Record or Record Part to another Record or Record
+     *             Part of which it is a constituent, directly or indirectly. This is a transitive
+     *             relation.
+     */
+    "isConstituentOfTransitive": NamedNode<'https://www.ica.org/standards/RiC/ontology#isConstituentOfTransitive'>;
+    /**
+     * Connects a Place to a Place that is, directly or indirectly,
+     *             contained by it. This is a transitive relation.
+     */
+    "isContainedByTransitive": NamedNode<'https://www.ica.org/standards/RiC/ontology#isContainedByTransitive'>;
+    /**
      * Connects a Content Type to a Record or Record Part whose content
      *             it categorizes.
      */
     "isContentTypeOf": NamedNode<'https://www.ica.org/standards/RiC/ontology#isContentTypeOf'>;
     /** Inverse of 'has copy' object property. */
     "isCopyOf": NamedNode<'https://www.ica.org/standards/RiC/ontology#isCopyOf'>;
+    /**
+     * Connects a Date to a Record Resource or Instantiation that was
+     *             created at this Date.
+     */
+    "isCreationDateOf": NamedNode<'https://www.ica.org/standards/RiC/ontology#isCreationDateOf'>;
     /** Inverse of 'has creator' object property. */
     "isCreatorOf": NamedNode<'https://www.ica.org/standards/RiC/ontology#isCreatorOf'>;
     /**
-     * Connects a Date to a Thing that the Date is associated with the
-     *             existence and lifecycle of.
+     * Connects a Date to a Thing with whose existence and lifecycle
+     *             the Date is associated.
      */
     "isDateAssociatedWith": NamedNode<'https://www.ica.org/standards/RiC/ontology#isDateAssociatedWith'>;
+    /**
+     * Connects a Date to an Event that occurred at this Date. An event
+     *             or activity can be recurrent, which implies that one single event can be related to
+     *             several dates.
+     */
+    "isDateOfOccurrenceOf": NamedNode<'https://www.ica.org/standards/RiC/ontology#isDateOfOccurrenceOf'>;
+    /**
+     * Connects a Date Type to a Date that it
+     *             categorizes.
+     */
+    "isDateTypeOf": NamedNode<'https://www.ica.org/standards/RiC/ontology#isDateTypeOf'>;
     /**
      * Connects a Date to a Person who died on that
      *             Date.
      */
     "isDeathDateOf": NamedNode<'https://www.ica.org/standards/RiC/ontology#isDeathDateOf'>;
     /**
-     * Inverse of 'has derived instantiation' object
-     *             property.
+     * Connects a Place to a Person who died in that
+     *             Place.
      */
-    "isDerivedFromInstantiation": NamedNode<'https://www.ica.org/standards/RiC/ontology#isDerivedFromInstantiation'>;
+    "isDeathPlaceOf": NamedNode<'https://www.ica.org/standards/RiC/ontology#isDeathPlaceOf'>;
+    /**
+     * Connects a Date to a Thing that was destructed at that
+     *             Date.
+     */
+    "isDestructionDateOf": NamedNode<'https://www.ica.org/standards/RiC/ontology#isDestructionDateOf'>;
+    /**
+     * Connects an Instantiation to another Instantiation of which it
+     *             is a direct component.
+     */
+    "isDirectComponentOf": NamedNode<'https://www.ica.org/standards/RiC/ontology#isDirectComponentOf'>;
+    /**
+     * Connects a Record or Record Part to another Record or Record
+     *             Part of which it is a direct constituent.
+     */
+    "isDirectConstituentOf": NamedNode<'https://www.ica.org/standards/RiC/ontology#isDirectConstituentOf'>;
+    /**
+     * Connects a Place to a Place that directly contains
+     *             it.
+     */
+    "isDirectlyContainedBy": NamedNode<'https://www.ica.org/standards/RiC/ontology#isDirectlyContainedBy'>;
+    /**
+     * Connects a Record to a Record or Record Set in which it is
+     *             directly included.
+     */
+    "isDirectlyIncludedIn": NamedNode<'https://www.ica.org/standards/RiC/ontology#isDirectlyIncludedIn'>;
+    /**
+     * Connects a Thing to a Thing of which it is direct constitutive
+     *             or component part.
+     */
+    "isDirectPartOf": NamedNode<'https://www.ica.org/standards/RiC/ontology#isDirectPartOf'>;
+    /**
+     * Connects a Group to the Group it is a direct subdivision
+     *             of.
+     */
+    "isDirectSubdivisionOf": NamedNode<'https://www.ica.org/standards/RiC/ontology#isDirectSubdivisionOf'>;
+    /**
+     * Connects an ongoing Event to the Event it is a direct part
+     *             of.
+     */
+    "isDirectSubeventOf": NamedNode<'https://www.ica.org/standards/RiC/ontology#isDirectSubeventOf'>;
+    /**
+     * Connects an Agent to an Agent that is directly hierarchically
+     *             superior.
+     */
+    "isDirectSubordinateTo": NamedNode<'https://www.ica.org/standards/RiC/ontology#isDirectSubordinateTo'>;
     /**
      * Connects a Documentary Form Type to a Record or Record Part that
      *             it categorizes.
@@ -1313,11 +1433,16 @@ export interface Rico {
      */
     "isEventAssociatedWith": NamedNode<'https://www.ica.org/standards/RiC/ontology#isEventAssociatedWith'>;
     /**
-     * Connects an Event Type to an Event that is
+     * Connects an Event Type to an Event that it
      *             categorizes.
      */
     "isEventTypeOf": NamedNode<'https://www.ica.org/standards/RiC/ontology#isEventTypeOf'>;
-    /** Connects an Extent to a Record Resource or Instantiation */
+    /**
+     * Connects a Relation to a Record Resource that is used for
+     *             proving is existence or describing it.
+     */
+    "isEvidencedBy": NamedNode<'https://www.ica.org/standards/RiC/ontology#isEvidencedBy'>;
+    /** Connects an Extent to a Thing */
     "isExtentOf": NamedNode<'https://www.ica.org/standards/RiC/ontology#isExtentOf'>;
     /**
      * Connects an Extent Type to an Extent that it
@@ -1325,7 +1450,7 @@ export interface Rico {
      */
     "isExtentTypeOf": NamedNode<'https://www.ica.org/standards/RiC/ontology#isExtentTypeOf'>;
     /**
-     * Connects a Family Type to a Family that is
+     * Connects a Family Type to a Family that it
      *             categorizes.
      */
     "isFamilyTypeOf": NamedNode<'https://www.ica.org/standards/RiC/ontology#isFamilyTypeOf'>;
@@ -1345,12 +1470,15 @@ export interface Rico {
      */
     "isIdentifierTypeOf": NamedNode<'https://www.ica.org/standards/RiC/ontology#isIdentifierTypeOf'>;
     /**
-     * Connects two Instantiations. This object property is
+     * Connects a Record to a Record or Record Set in which it is
+     *             directly or indirectly included. This is a transitive relation.
+     */
+    "isIncludedInTransitive": NamedNode<'https://www.ica.org/standards/RiC/ontology#isIncludedInTransitive'>;
+    /**
+     * Connects two Instantiations. This relation is
      *             symmetric.
      */
     "isInstantiationAssociatedWithInstantiation": NamedNode<'https://www.ica.org/standards/RiC/ontology#isInstantiationAssociatedWithInstantiation'>;
-    /** Inverse of 'has instantiation' object property. */
-    "isInstantiationOf": NamedNode<'https://www.ica.org/standards/RiC/ontology#isInstantiationOf'>;
     /**
      * Connects a Date and a Thing that was last modified at this
      *             Date.
@@ -1362,13 +1490,23 @@ export interface Rico {
      */
     "isModificationDateOf": NamedNode<'https://www.ica.org/standards/RiC/ontology#isModificationDateOf'>;
     /**
+     * Inverse of 'has organic or functional provenance' object
+     *             property.
+     */
+    "isOrganicOrFunctionalProvenanceOf": NamedNode<'https://www.ica.org/standards/RiC/ontology#isOrganicOrFunctionalProvenanceOf'>;
+    /**
+     * Inverse of 'has organic provenance' object
+     *             property.
+     */
+    "isOrganicProvenanceOf": NamedNode<'https://www.ica.org/standards/RiC/ontology#isOrganicProvenanceOf'>;
+    /**
      * Connects the original version of a Record to a copy or a later
      *             version.
      */
     "isOriginalOf": NamedNode<'https://www.ica.org/standards/RiC/ontology#isOriginalOf'>;
     /**
      * Connects two Places that are or were geographically adjacent.
-     *             This is a symmetric object property.
+     *             This relation is symmetric.
      */
     "isOrWasAdjacentTo": NamedNode<'https://www.ica.org/standards/RiC/ontology#isOrWasAdjacentTo'>;
     /** Inverse of 'affects or affected' object property. */
@@ -1378,6 +1516,11 @@ export interface Rico {
      *             designated.
      */
     "isOrWasAgentNameOf": NamedNode<'https://www.ica.org/standards/RiC/ontology#isOrWasAgentNameOf'>;
+    /**
+     * Inverse of 'has or had analogue instantiation' object
+     *             property.
+     */
+    "isOrWasAnalogueInstantiationOf": NamedNode<'https://www.ica.org/standards/RiC/ontology#isOrWasAnalogueInstantiationOf'>;
     /**
      * Connects an Appellation to a Thing that it designates or
      *             designated.
@@ -1424,8 +1567,8 @@ export interface Rico {
      */
     "isOrWasContentTypeOfSomeMembersOf": NamedNode<'https://www.ica.org/standards/RiC/ontology#isOrWasContentTypeOfSomeMembersOf'>;
     /**
-     * Connects an Agent to another Agent it controls or controlled via
-     *             Activities, i.e. controls by function.
+     * Connects an Agent to another Agent it controls or
+     *             controlled.
      */
     "isOrWasControllerOf": NamedNode<'https://www.ica.org/standards/RiC/ontology#isOrWasControllerOf'>;
     /**
@@ -1439,15 +1582,40 @@ export interface Rico {
      */
     "isOrWasCorporateBodyTypeOf": NamedNode<'https://www.ica.org/standards/RiC/ontology#isOrWasCorporateBodyTypeOf'>;
     /**
+     * Connects a Date to a Record Set all of whose present or past
+     *             members were created at this Date.
+     */
+    "isOrWasCreationDateOfAllMembersOf": NamedNode<'https://www.ica.org/standards/RiC/ontology#isOrWasCreationDateOfAllMembersOf'>;
+    /**
+     * Connects a Date to a Record Set most of whose present or past
+     *             members were created at this Date.
+     */
+    "isOrWasCreationDateOfMostMembersOf": NamedNode<'https://www.ica.org/standards/RiC/ontology#isOrWasCreationDateOfMostMembersOf'>;
+    /**
+     * Connects a Date to a Record Set some of whose present or past
+     *             members were created at this Date.
+     */
+    "isOrWasCreationDateOfSomeMembersOf": NamedNode<'https://www.ica.org/standards/RiC/ontology#isOrWasCreationDateOfSomeMembersOf'>;
+    /**
      * Connects a Demographic Group to a Person or Group which belongs
      *             or belonged to it.
      */
     "isOrWasDemographicGroupOf": NamedNode<'https://www.ica.org/standards/RiC/ontology#isOrWasDemographicGroupOf'>;
     /**
+     * Inverse of 'has or had derived instantiation' object
+     *             property.
+     */
+    "isOrWasDerivedFromInstantiation": NamedNode<'https://www.ica.org/standards/RiC/ontology#isOrWasDerivedFromInstantiation'>;
+    /**
      * Inverse of 'describes or described' object
      *             property.
      */
     "isOrWasDescribedBy": NamedNode<'https://www.ica.org/standards/RiC/ontology#isOrWasDescribedBy'>;
+    /**
+     * Inverse of 'has or had digital instantiation' object
+     *             property.
+     */
+    "isOrWasDigitalInstantiationOf": NamedNode<'https://www.ica.org/standards/RiC/ontology#isOrWasDigitalInstantiationOf'>;
     /**
      * Connects a Documentary Form Type and a Record Set whose all past
      *             or present Record or Record Part members have that Documentary Form Type.
@@ -1459,6 +1627,11 @@ export interface Rico {
      *             Type.
      */
     "isOrWasDocumentaryFormTypeOfSomeMembersOf": NamedNode<'https://www.ica.org/standards/RiC/ontology#isOrWasDocumentaryFormTypeOfSomeMembersOf'>;
+    /**
+     * Connects a Corporate Body or a Person to a Person who is or was
+     *             their employee.
+     */
+    "isOrWasEmployerOf": NamedNode<'https://www.ica.org/standards/RiC/ontology#isOrWasEmployerOf'>;
     /**
      * Connects a Rule to an Agent that enforces or enforced the
      *             Rule.
@@ -1489,6 +1662,11 @@ export interface Rico {
      *             property.
      */
     "isOrWasIncludedIn": NamedNode<'https://www.ica.org/standards/RiC/ontology#isOrWasIncludedIn'>;
+    /**
+     * Inverse of 'has or had instantiation' object
+     *             property.
+     */
+    "isOrWasInstantiationOf": NamedNode<'https://www.ica.org/standards/RiC/ontology#isOrWasInstantiationOf'>;
     /**
      * Connects a Place to an Agent that has or had jurisdiction over
      *             the Place.
@@ -1535,6 +1713,11 @@ export interface Rico {
      */
     "isOrWasLocationOf": NamedNode<'https://www.ica.org/standards/RiC/ontology#isOrWasLocationOf'>;
     /**
+     * Connects a Place to an Agent that is or was located in this
+     *             Place.
+     */
+    "isOrWasLocationOfAgent": NamedNode<'https://www.ica.org/standards/RiC/ontology#isOrWasLocationOfAgent'>;
+    /**
      * Inverse of 'has or had main subject' object
      *             property.
      */
@@ -1544,6 +1727,11 @@ export interface Rico {
      *             Agent managed or manages.
      */
     "isOrWasManagerOf": NamedNode<'https://www.ica.org/standards/RiC/ontology#isOrWasManagerOf'>;
+    /**
+     * Connects a Mandate Type to a Mandate that it categorized or
+     *             categorizes.
+     */
+    "isOrWasMandateTypeOf": NamedNode<'https://www.ica.org/standards/RiC/ontology#isOrWasMandateTypeOf'>;
     /** Inverse of 'has or had member' object property. */
     "isOrWasMemberOf": NamedNode<'https://www.ica.org/standards/RiC/ontology#isOrWasMemberOf'>;
     /**
@@ -1614,7 +1802,7 @@ export interface Rico {
      */
     "isOrWasResponsibleForEnforcing": NamedNode<'https://www.ica.org/standards/RiC/ontology#isOrWasResponsibleForEnforcing'>;
     /**
-     * connects a Rule Type to a Rule that it categorized or
+     * Connects a Rule Type to a Rule that it categorized or
      *             categorizes.
      */
     "isOrWasRuleTypeOf": NamedNode<'https://www.ica.org/standards/RiC/ontology#isOrWasRuleTypeOf'>;
@@ -1643,17 +1831,30 @@ export interface Rico {
      */
     "isOrWasUnderAuthorityOf": NamedNode<'https://www.ica.org/standards/RiC/ontology#isOrWasUnderAuthorityOf'>;
     /**
-     * Connects a Place to a Thing that Place is associated with the
-     *             existence and lifecycle of.
+     * Connects a Thing to a Thing of which it is a a constitutive or
+     *             component part, directly or indirectly. This is a transitive relation.
+     */
+    "isPartOfTransitive": NamedNode<'https://www.ica.org/standards/RiC/ontology#isPartOfTransitive'>;
+    /**
+     * Connects a Place to a Thing with whose existence and lifecycle
+     *             the Place is associated.
      */
     "isPlaceAssociatedWith": NamedNode<'https://www.ica.org/standards/RiC/ontology#isPlaceAssociatedWith'>;
+    /**
+     * Connects a Place to an Agent which is related to that
+     *             Place.
+     */
+    "isPlaceAssociatedWithAgent": NamedNode<'https://www.ica.org/standards/RiC/ontology#isPlaceAssociatedWithAgent'>;
     /**
      * Connects a Production Technique Type to an Instantiation whose
      *             production technique is categorized by it.
      */
     "isProductionTechniqueTypeOf": NamedNode<'https://www.ica.org/standards/RiC/ontology#isProductionTechniqueTypeOf'>;
-    /** inverse of 'has provenance' object property. */
-    "isProvenanceOf": NamedNode<'https://www.ica.org/standards/RiC/ontology#isProvenanceOf'>;
+    /**
+     * Connects a Date to a Record Resource that was made public at
+     *             this Date.
+     */
+    "isPublicationDateOf": NamedNode<'https://www.ica.org/standards/RiC/ontology#isPublicationDateOf'>;
     /**
      * Connects an Agent to a Record Resource that it
      *             published.
@@ -1662,7 +1863,7 @@ export interface Rico {
     /** Inverse of 'received by' object property. */
     "isReceiverOf": NamedNode<'https://www.ica.org/standards/RiC/ontology#isReceiverOf'>;
     /**
-     * Connects two Record Resources. This object property is
+     * Connects two Record Resources. This relation is
      *             symmetric.
      */
     "isRecordResourceAssociatedWithRecordResource": NamedNode<'https://www.ica.org/standards/RiC/ontology#isRecordResourceAssociatedWithRecordResource'>;
@@ -1677,8 +1878,8 @@ export interface Rico {
      */
     "isRecordStateOf": NamedNode<'https://www.ica.org/standards/RiC/ontology#isRecordStateOf'>;
     /**
-     * The most generic object property. Connects an Thing to any other
-     *             Thing This is a symmetric object property.
+     * The most generic relation, is related to, connects any Thing to
+     *             any other Thing. This relation is symmetric.
      */
     "isRelatedTo": NamedNode<'https://www.ica.org/standards/RiC/ontology#isRelatedTo'>;
     /** Inverse of 'has reply' object property. */
@@ -1691,18 +1892,27 @@ export interface Rico {
     /** Inverse of 'issued by' object property. */
     "isResponsibleForIssuing": NamedNode<'https://www.ica.org/standards/RiC/ontology#isResponsibleForIssuing'>;
     /**
-     * Connects a Rule to a Thing that is associated with the existence
-     *             and lifecycle of the Rule.
+     * Connects a Rule to a Thing that is associated with the
+     *             Rule.
      */
     "isRuleAssociatedWith": NamedNode<'https://www.ica.org/standards/RiC/ontology#isRuleAssociatedWith'>;
     /** Inverse of 'has sender' object property. */
     "isSenderOf": NamedNode<'https://www.ica.org/standards/RiC/ontology#isSenderOf'>;
     /**
-     * Connects a Record Resource or an Agent to a Record Resource or
-     *             Relation, when the first is used as a source of information for identifying or
-     *             describing the second one.
+     * Connects a Group to the Group it is a direct or indirect
+     *             subdivision of. This is a transitive relation.
      */
-    "isSourceOf": NamedNode<'https://www.ica.org/standards/RiC/ontology#isSourceOf'>;
+    "isSubdivisionOfTransitive": NamedNode<'https://www.ica.org/standards/RiC/ontology#isSubdivisionOfTransitive'>;
+    /**
+     * Connects an ongoing Event to an Event of which it is a direct or
+     *             indirect part. This is a transitive relation.
+     */
+    "isSubeventOfTransitive": NamedNode<'https://www.ica.org/standards/RiC/ontology#isSubeventOfTransitive'>;
+    /**
+     * Connects an Agent to an Agent that is directly or indirectly
+     *             hierarchically superior. This is a transitive relation.
+     */
+    "isSubordinateToTransitive": NamedNode<'https://www.ica.org/standards/RiC/ontology#isSubordinateToTransitive'>;
     /** Inverse of 'has successor' object property. */
     "isSuccessorOf": NamedNode<'https://www.ica.org/standards/RiC/ontology#isSuccessorOf'>;
     /**
@@ -1715,38 +1925,44 @@ export interface Rico {
      *             which the Appellation was used.
      */
     "isToUseDateOf": NamedNode<'https://www.ica.org/standards/RiC/ontology#isToUseDateOf'>;
-    /** Inverse of 'has unit of measurement' object property */
+    /**
+     * Inverse of 'has unit of measurement' object
+     *             property
+     */
     "isUnitOfMeasurementOf": NamedNode<'https://www.ica.org/standards/RiC/ontology#isUnitOfMeasurementOf'>;
     /**
+     * Connects a Date to a Date in which it is
+     *             contained.
+     */
+    "isWithin": NamedNode<'https://www.ica.org/standards/RiC/ontology#isWithin'>;
+    /**
+     * Connects a KnowingOfRelation to itself. It is a property that
+     *             can stand for an instance of the class when necessary, e.g. when you explore a knowledge
+     *             graph.
+     */
+    "knowingOfRelation_role": NamedNode<'https://www.ica.org/standards/RiC/ontology#knowingOfRelation_role'>;
+    /**
      * Connects at least one Person to at least another one, when the
-     *             first one has some knowledge of the second one through time or space.
+     *             first one has some knowledge of the second one through time or space. The first Person
+     *             is the source of the Relation, and the second one is the target.
      */
     "KnowingOfRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#KnowingOfRelation'>;
     /**
-     * Connects a Knowing Of Relation to a 'knowing of' Person (a
-     *             Person who has some knowledge of another one.)
+     * Connects a KnowingRelation to itself. It is a property that can
+     *             stand for an instance of the class when necessary, e.g. when you explore a knowledge
+     *             graph.
      */
-    "knowingOfRelationHasSource": NamedNode<'https://www.ica.org/standards/RiC/ontology#knowingOfRelationHasSource'>;
+    "knowingRelation_role": NamedNode<'https://www.ica.org/standards/RiC/ontology#knowingRelation_role'>;
     /**
-     * Connects a Knowing Of Relation to a 'known by' Person (a Person
-     *             on which another one has some has some knowledge.)
-     */
-    "knowingOfRelationHasTarget": NamedNode<'https://www.ica.org/standards/RiC/ontology#knowingOfRelationHasTarget'>;
-    /**
-     * Connects at least two Persons that directly know each other
-     *             during their existence. This relation is symmetric.
+     * Connects at least two Persons who directly know each other
+     *             during their existence. This Relation is not oriented.
      */
     "KnowingRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#KnowingRelation'>;
-    /**
-     * Connects Knowing Relation to any known Person
-     *             involved.
-     */
-    "knowingRelationConnects": NamedNode<'https://www.ica.org/standards/RiC/ontology#knowingRelationConnects'>;
     /** Inverse of 'knows of' object property. */
     "knownBy": NamedNode<'https://www.ica.org/standards/RiC/ontology#knownBy'>;
     /**
      * Connects two Persons that directly know each other during their
-     *             existence. This object property is symmetric.
+     *             existence. This relation is symmetric.
      */
     "knows": NamedNode<'https://www.ica.org/standards/RiC/ontology#knows'>;
     /**
@@ -1755,8 +1971,8 @@ export interface Rico {
      */
     "knowsOf": NamedNode<'https://www.ica.org/standards/RiC/ontology#knowsOf'>;
     /**
-     * A spoken or written human language represented in the Record or
-     *             Record Part, or used by the Agent.
+     * A spoken or written human language represented in a Record
+     *             Resource or used by an Agent.
      */
     "Language": NamedNode<'https://www.ica.org/standards/RiC/ontology#Language'>;
     /** Date at which an entity was last updated. */
@@ -1767,17 +1983,18 @@ export interface Rico {
      */
     "latitude": NamedNode<'https://www.ica.org/standards/RiC/ontology#latitude'>;
     /**
+     * Connects a LeadershipRelation to itself. It is a property that
+     *             can stand for an instance of the class when necessary, e.g. when you explore a knowledge
+     *             graph.
+     */
+    "leadershipRelation_role": NamedNode<'https://www.ica.org/standards/RiC/ontology#leadershipRelation_role'>;
+    /**
      * Connects at least one Person and at least one Group, when the
-     *             first one leads the second one.
+     *             first one(s) lead(s) or led the second one(s). The Relation is oriented from the leading
+     *             Person to the Group: the leading Person(s) is the source of the Relation, and the
+     *             Group(s) is the target.
      */
     "LeadershipRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#LeadershipRelation'>;
-    /**
-     * Connects a Leadership Relation to a Person who is involved as a
-     *             leader.
-     */
-    "leadershipRelationHasSource": NamedNode<'https://www.ica.org/standards/RiC/ontology#leadershipRelationHasSource'>;
-    /** Connects a Leadership Relation to a lead Group. */
-    "leadershipRelationHasTarget": NamedNode<'https://www.ica.org/standards/RiC/ontology#leadershipRelationHasTarget'>;
     /**
      * Connects a Leadership Relation to the Position occupied by the
      *             leading Person.
@@ -1785,10 +2002,12 @@ export interface Rico {
     "leadershipWithPosition": NamedNode<'https://www.ica.org/standards/RiC/ontology#leadershipWithPosition'>;
     /** A status defined by law. */
     "LegalStatus": NamedNode<'https://www.ica.org/standards/RiC/ontology#LegalStatus'>;
+    /** Length of an entity. */
+    "length": NamedNode<'https://www.ica.org/standards/RiC/ontology#length'>;
     /**
-     * A delimitation of the physical territory of a place. This
-     *             datatype property is used to describe basic human-readable text such as an address, a
-     *             cadastral reference, or less precise information found in a record.
+     * A delimitation of the physical territory of a Place. Used to
+     *             describe basic human-readable text such as an address, a cadastral reference, or less
+     *             precise information found in a Record.
      */
     "location": NamedNode<'https://www.ica.org/standards/RiC/ontology#location'>;
     /**
@@ -1797,40 +2016,38 @@ export interface Rico {
      */
     "longitude": NamedNode<'https://www.ica.org/standards/RiC/ontology#longitude'>;
     /**
-     * Connects at least one Agent, and at least one Record Resource or
-     *             Instantiation that the Agent manages.
+     * Connects a ManagementRelation to itself. It is a property that
+     *             can stand for an instance of the class when necessary, e.g. when you explore a knowledge
+     *             graph.
+     */
+    "managementRelation_role": NamedNode<'https://www.ica.org/standards/RiC/ontology#managementRelation_role'>;
+    /**
+     * Connects at least one Agent and at least one Record Resource or
+     *             Instantiation that the Agent manages or managed. The Agent(s) is the source of the
+     *             Relation, and the Record Resource(s) or Instantiation(s) is the target.
      */
     "ManagementRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#ManagementRelation'>;
     /**
-     * Connects a Management Relation to an Agent who is involved as a
-     *             manager.
-     */
-    "managementRelationHasSource": NamedNode<'https://www.ica.org/standards/RiC/ontology#managementRelationHasSource'>;
-    /**
-     * Connects a Management Relation to a Record Resource or
-     *             Instantiation that is involved as a managed thing.
-     */
-    "managementRelationHasTarget": NamedNode<'https://www.ica.org/standards/RiC/ontology#managementRelationHasTarget'>;
-    /**
-     * Delegation of authority by an Agent to another Agent to perform
-     *             an Activity.
+     * Delegation of responsibility or authority by an Agent to another
+     *             Agent to perform an Activity.
      */
     "Mandate": NamedNode<'https://www.ica.org/standards/RiC/ontology#Mandate'>;
-    /** Connects a Mandate to a Mandate Relation. */
-    "mandateIsSourceOfMandateRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#mandateIsSourceOfMandateRelation'>;
     /**
-     * Connects at least one Mandate, and at least one Agent, when the
-     *             first gives the second one the authority or competencies to act. May also involve one to
-     *             many Activities that the Mandate(s) assign(s) to the Agent(s).
+     * Connects a MandateRelation to itself. It is a property that can
+     *             stand for an instance of the class when necessary, e.g. when you explore a knowledge
+     *             graph.
+     */
+    "mandateRelation_role": NamedNode<'https://www.ica.org/standards/RiC/ontology#mandateRelation_role'>;
+    /**
+     * Connects at least one Mandate and at least one Agent, when the
+     *             first gives or gave the second one the authority or competencies to act. May also
+     *             involve one to many Activities that the Mandate(s) assign(s) or assigned to the
+     *             Agent(s). The Mandate(s) is the source of the Relation and the Agent(s) is the
+     *             target.
      */
     "MandateRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#MandateRelation'>;
-    /** Connects a Mandate Relation to a Mandate. */
-    "mandateRelationHasSource": NamedNode<'https://www.ica.org/standards/RiC/ontology#mandateRelationHasSource'>;
-    /**
-     * Connects a Mandate Relation to an Agent who is given the
-     *             authority or competencies to act.
-     */
-    "mandateRelationHasTarget": NamedNode<'https://www.ica.org/standards/RiC/ontology#mandateRelationHasTarget'>;
+    /** Categorization of a Mandate. */
+    "MandateType": NamedNode<'https://www.ica.org/standards/RiC/ontology#MandateType'>;
     /**
      * The extent, quantity, amount, or degree of an entity, as
      *             determined by measurement or calculation.
@@ -1842,20 +2059,18 @@ export interface Rico {
      */
     "Mechanism": NamedNode<'https://www.ica.org/standards/RiC/ontology#Mechanism'>;
     /**
+     * Connects a MembershipRelation to itself. It is a property that
+     *             can stand for an instance of the class when necessary, e.g. when you explore a knowledge
+     *             graph.
+     */
+    "membershipRelation_role": NamedNode<'https://www.ica.org/standards/RiC/ontology#membershipRelation_role'>;
+    /**
      * Connects a Group and at least one Person, when the first one has
-     *             the second one(s) among its members.
+     *             or had the second one(s) among its members. The Relation is oriented from the Group to
+     *             its members: the Group(s) is the source of the Relation, and the Person(s) is the
+     *             target.
      */
     "MembershipRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#MembershipRelation'>;
-    /**
-     * Connects a Membership Relation to the Group that has
-     *             member(s).
-     */
-    "membershipRelationHasSource": NamedNode<'https://www.ica.org/standards/RiC/ontology#membershipRelationHasSource'>;
-    /**
-     * Connects a Membership Relation to a Person who is involved as a
-     *             member.
-     */
-    "membershipRelationHasTarget": NamedNode<'https://www.ica.org/standards/RiC/ontology#membershipRelationHasTarget'>;
     /**
      * Connects a Membership Relation to the Position occupied by the
      *             member Person(s).
@@ -1865,41 +2080,38 @@ export interface Rico {
     "migratedFrom": NamedNode<'https://www.ica.org/standards/RiC/ontology#migratedFrom'>;
     /**
      * Connects an Instantiation to a version it has been migrated
-     *             to.
+     *             into.
      */
     "migratedInto": NamedNode<'https://www.ica.org/standards/RiC/ontology#migratedInto'>;
     /**
-     * Connects an Instantiation and at least another Instantiation,
-     *             when the first is migrated into the second one(s).
+     * Connects a MigrationRelation to itself. It is a property that
+     *             can stand for an instance of the class when necessary, e.g. when you explore a knowledge
+     *             graph.
+     */
+    "migrationRelation_role": NamedNode<'https://www.ica.org/standards/RiC/ontology#migrationRelation_role'>;
+    /**
+     * Connects an Instantiation and at least another Instantiation it
+     *             has been migrated into. The Relation is oriented chronologically, from the first
+     *             Instantiation in time (the migrated one) to the one which results from its migration:
+     *             the first Instantiation in time is the source of the Relation, and the resulting
+     *             Instantiation is the target.
      */
     "MigrationRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#MigrationRelation'>;
-    /**
-     * Connects a Migration Relation to the migrated
-     *             Instantiation.
-     */
-    "migrationRelationHasSource": NamedNode<'https://www.ica.org/standards/RiC/ontology#migrationRelationHasSource'>;
-    /**
-     * Connects a Migration Relation to a resulting
-     *             Instantiation.
-     */
-    "migrationRelationHasTarget": NamedNode<'https://www.ica.org/standards/RiC/ontology#migrationRelationHasTarget'>;
     /** Date of the modification of an entity. */
     "modificationDate": NamedNode<'https://www.ica.org/standards/RiC/ontology#modificationDate'>;
     /**
-     * A label, title or term designating the entity in order to make
-     *             it distinguishable from other similar entities. For Record Resource or Instantiation,
-     *             the Name is generally assigned by an Agent as most do not have a Name given when
-     *             created.
+     * A label, title or term designating an entity in order to make it
+     *             distinguishable from other similar entities.
      */
     "name": NamedNode<'https://www.ica.org/standards/RiC/ontology#name'>;
     /**
-     * A label, title or term designating the entity in order to make
-     *             it distinguishable from other similar entities.
+     * A label, title or term designating an entity in order to make it
+     *             distinguishable from other similar entities.
      */
     "Name": NamedNode<'https://www.ica.org/standards/RiC/ontology#Name'>;
     /**
-     * Date representation based on a standard, preferably
-     *             machine-readable.
+     * Machine readable representation of the date based on a public
+     *             technical standard.
      */
     "normalizedDateValue": NamedNode<'https://www.ica.org/standards/RiC/ontology#normalizedDateValue'>;
     /**
@@ -1909,7 +2121,7 @@ export interface Rico {
     "normalizedValue": NamedNode<'https://www.ica.org/standards/RiC/ontology#normalizedValue'>;
     /**
      * Categorization of a profession, trade, or craft pursued by a
-     *             person in fulfilment of an Activity.
+     *             Person in fulfilment of an Activity.
      */
     "OccupationType": NamedNode<'https://www.ica.org/standards/RiC/ontology#OccupationType'>;
     /**
@@ -1918,118 +2130,81 @@ export interface Rico {
      */
     "occupiesOrOccupied": NamedNode<'https://www.ica.org/standards/RiC/ontology#occupiesOrOccupied'>;
     /**
+     * Inverse of 'is date of occurrence of' object
+     *             property
+     */
+    "occurredAtDate": NamedNode<'https://www.ica.org/standards/RiC/ontology#occurredAtDate'>;
+    /**
+     * Connects an OrganicOrFunctionalProvenanceRelation to itself. It
+     *             is a property that can stand for an instance of the class when necessary, e.g. when you
+     *             explore a knowledge graph.
+     */
+    "organicOrFunctionalProvenanceRelation_role": NamedNode<'https://www.ica.org/standards/RiC/ontology#organicOrFunctionalProvenanceRelation_role'>;
+    /**
+     * Connects at least one Record Resource or Instantiation to at
+     *             least one Agent or Activity, when the Agent or Activity is the provenance of the Record
+     *             Resource or Instantiation (i.e. when the Agent created, accumulated or maintained the
+     *             Record Resource or Instantiation, or when the Activity resulted into them). The Record
+     *             Resource(s) or Instantiation(s) is the source of the Relation, and the Agent(s) or
+     *             Activity(-ies) is the target.
+     */
+    "OrganicOrFunctionalProvenanceRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#OrganicOrFunctionalProvenanceRelation'>;
+    /**
+     * Connects an OrganicProvenanceRelation to itself. It is a
+     *             property that can stand for an instance of the class when necessary, e.g. when you
+     *             explore a knowledge graph.
+     */
+    "organicProvenanceRelation_role": NamedNode<'https://www.ica.org/standards/RiC/ontology#organicProvenanceRelation_role'>;
+    /**
+     * Connects at least one Record Resource or an Instantiation to at
+     *             least one Agent that creates or accumulates the Record Resource, receives it, or sends
+     *             it. The Record Resource(s) or Instantiation(s) is the source of the Relation, and the
+     *             Agent(s) is the target.
+     */
+    "OrganicProvenanceRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#OrganicProvenanceRelation'>;
+    /**
      * Connects two Places that geographically overlap or overlapped.
-     *             This object property is symmetric.
+     *             This relation is symmetric.
      */
     "overlapsOrOverlapped": NamedNode<'https://www.ica.org/standards/RiC/ontology#overlapsOrOverlapped'>;
     /**
-     * Connects at least one Group, Person or Position, and at least a
-     *             Thing that these Agent(s) own(s).
+     * Connects an OwnershipRelation to itself. It is a property that
+     *             can stand for an instance of the class when necessary, e.g. when you explore a knowledge
+     *             graph.
+     */
+    "ownershipRelation_role": NamedNode<'https://www.ica.org/standards/RiC/ontology#ownershipRelation_role'>;
+    /**
+     * Connects at least one Group, Person or Position and at least a
+     *             Thing that these Agent(s) own(s) or owned. The Group(s), Person(s) or Position(s) is the
+     *             source of the Relation, and the Agent(s) is the target.
      */
     "OwnershipRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#OwnershipRelation'>;
     /**
-     * Connects an Ownership Relation to a Person, Group or Position
-     *             that is involved as an owner.
+     * Connects a PerformanceRelation to itself. It is a property that
+     *             can stand for an instance of the class when necessary, e.g. when you explore a knowledge
+     *             graph.
      */
-    "ownershipRelationHasSource": NamedNode<'https://www.ica.org/standards/RiC/ontology#ownershipRelationHasSource'>;
+    "performanceRelation_role": NamedNode<'https://www.ica.org/standards/RiC/ontology#performanceRelation_role'>;
     /**
-     * Connects an Ownership Relation to a Thing that is
-     *             owned.
-     */
-    "ownershipRelationHasTarget": NamedNode<'https://www.ica.org/standards/RiC/ontology#ownershipRelationHasTarget'>;
-    /**
-     * Connects at least one Activity to at least one Agent, when the
-     *             first is performed by the second one(s).
+     * Connects at least one Activity to at least one Agent that
+     *             performs or performed the activity. The Activity(-ies) is the source of the Relation and
+     *             the Agent(s) is the target.
      */
     "PerformanceRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#PerformanceRelation'>;
-    /**
-     * Connects a Performance Relation to a performed
-     *             Activity.
-     */
-    "performanceRelationHasSource": NamedNode<'https://www.ica.org/standards/RiC/ontology#performanceRelationHasSource'>;
-    /**
-     * Connects a Performance Relation to a performing
-     *             Agent.
-     */
-    "performanceRelationHasTarget": NamedNode<'https://www.ica.org/standards/RiC/ontology#performanceRelationHasTarget'>;
     /**
      * Inverse of 'is or was performed by' object
      *             property.
      */
     "performsOrPerformed": NamedNode<'https://www.ica.org/standards/RiC/ontology#performsOrPerformed'>;
-    /** A human being with a social identity or persona. */
+    /** An individual human being. */
     "Person": NamedNode<'https://www.ica.org/standards/RiC/ontology#Person'>;
-    /** Connects a Person to a Correspondence Relation. */
-    "personHasCorrespondenceRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#personHasCorrespondenceRelation'>;
-    /** Connects a Person to a Family Relation. */
-    "personHasFamilyRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#personHasFamilyRelation'>;
-    /** Connects a Person to a Knowing Relation. */
-    "personHasKnowingRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#personHasKnowingRelation'>;
-    /** Connects a Person to a Sibling Relation. */
-    "personHasSiblingRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#personHasSiblingRelation'>;
-    /** Connects a Person to a Spouse Relation. */
-    "personHasSpouseRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#personHasSpouseRelation'>;
     /**
-     * Connects a Person (as a parent) to a Child
-     *             Relation.
+     * Information about the physical features, completeness, or
+     *             conservation status of an Instantiation. Includes information about the physical nature
+     *             and condition such as conservation status or the deterioration of an Instantiation (for
+     *             example its carrier) affecting the ability to recover information. 
      */
-    "personIsSourceOfChildRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#personIsSourceOfChildRelation'>;
-    /**
-     * Connects a Person (as an ancestor) to a Descendance
-     *             Relation.
-     */
-    "personIsSourceOfDescendanceRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#personIsSourceOfDescendanceRelation'>;
-    /**
-     * Connects a Person (who has some knowledge of another one) to a
-     *             Knowing Of Relation.
-     */
-    "personIsSourceOfKnowingOfRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#personIsSourceOfKnowingOfRelation'>;
-    /**
-     * Connects a Person (as a leader) to a Leadership
-     *             Relation.
-     */
-    "personIsSourceOfLeadershipRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#personIsSourceOfLeadershipRelation'>;
-    /**
-     * Connects a Person (who occupies a Position) to a Position
-     *             Holding Relation.
-     */
-    "personIsSourceOfPositionHoldingRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#personIsSourceOfPositionHoldingRelation'>;
-    /**
-     * Connects a Person (as a teacher) to a Teaching
-     *             Relation.
-     */
-    "personIsSourceOfTeachingRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#personIsSourceOfTeachingRelation'>;
-    /**
-     * Connects a Person (as a child) to a Child
-     *             Relation.
-     */
-    "personIsTargetOfChildRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#personIsTargetOfChildRelation'>;
-    /**
-     * Connects a Person (as a descendant) to a Descendance
-     *             Relation.
-     */
-    "personIsTargetOfDescendanceRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#personIsTargetOfDescendanceRelation'>;
-    /**
-     * Connects a Person (of which another Person has some knowledge)
-     *             to a Knowing Of Relation.
-     */
-    "personIsTargetOfKnowingOfRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#personIsTargetOfKnowingOfRelation'>;
-    /**
-     * Connects a Person (as a member of a Group) to a Membership
-     *             Relation.
-     */
-    "personIsTargetOfMembershipRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#personIsTargetOfMembershipRelation'>;
-    /**
-     * Connects a Person (as a student) to a Teaching
-     *             Relation.
-     */
-    "personIsTargetOfTeachingRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#personIsTargetOfTeachingRelation'>;
-    /**
-     * Information about the physical features of the Instantiation.
-     *             Includes information about the physical nature and condition such as conservation
-     *             status.
-     */
-    "physicalCharacteristics": NamedNode<'https://www.ica.org/standards/RiC/ontology#physicalCharacteristics'>;
+    "physicalCharacteristicsNote": NamedNode<'https://www.ica.org/standards/RiC/ontology#physicalCharacteristicsNote'>;
     /**
      * A delimitation of the physical territory of a
      *             Place.
@@ -2043,46 +2218,38 @@ export interface Rico {
     /** Bounded, named geographic area or region. */
     "Place": NamedNode<'https://www.ica.org/standards/RiC/ontology#Place'>;
     /**
-     * Connects a Place (as associated to a Thing) to a Place
-     *             Relation.
-     */
-    "placeIsSourceOfPlaceRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#placeIsSourceOfPlaceRelation'>;
-    /**
      * A label, title or term designating a Place in order to make it
      *             distinguishable from other similar entities.
      */
     "PlaceName": NamedNode<'https://www.ica.org/standards/RiC/ontology#PlaceName'>;
     /**
-     * Connects a Place and at least one Thing, when the first is
-     *             associated with the existence and lifecycle of the second one.
+     * Connects a PlaceRelation to itself. It is a property that can
+     *             stand for an instance of the class when necessary, e.g. when you explore a knowledge
+     *             graph.
+     */
+    "placeRelation_role": NamedNode<'https://www.ica.org/standards/RiC/ontology#placeRelation_role'>;
+    /**
+     * Connects a Place and at least one Thing when the first is
+     *             associated with the existence and lifecycle of the second one. The Place is the source
+     *             of the Relation and the Thing(s) is the target.
      */
     "PlaceRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#PlaceRelation'>;
-    /** Connects a Place Relation to the Place concerned. */
-    "placeRelationHasSource": NamedNode<'https://www.ica.org/standards/RiC/ontology#placeRelationHasSource'>;
-    /**
-     * Connects a Place Relation to a Thing that is associated to the
-     *             Place.
-     */
-    "placeRelationHasTarget": NamedNode<'https://www.ica.org/standards/RiC/ontology#placeRelationHasTarget'>;
     /** Categorization of a Place. */
     "PlaceType": NamedNode<'https://www.ica.org/standards/RiC/ontology#PlaceType'>;
     /** The functional role of a Person within a Group. */
     "Position": NamedNode<'https://www.ica.org/standards/RiC/ontology#Position'>;
     /**
-     * Connects at least one Person, and at least one Position that the
-     *             Person occupies.
+     * Connects a PositionHoldingRelation to itself. It is a property
+     *             that can stand for an instance of the class when necessary, e.g. when you explore a
+     *             knowledge graph.
+     */
+    "positionHoldingRelation_role": NamedNode<'https://www.ica.org/standards/RiC/ontology#positionHoldingRelation_role'>;
+    /**
+     * Connects at least one Person and at least one Position that the
+     *             Person(s) occupies or occupied. The Person is the source of the Relation and the
+     *             Position is the target.
      */
     "PositionHoldingRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#PositionHoldingRelation'>;
-    /**
-     * Connects a Position Holding Relation to a Person (who occupies a
-     *             Position).
-     */
-    "positionHoldingRelationHasSource": NamedNode<'https://www.ica.org/standards/RiC/ontology#positionHoldingRelationHasSource'>;
-    /**
-     * Connects a Position Holding Relation to a Position (that is
-     *             occupied).
-     */
-    "positionHoldingRelationHasTarget": NamedNode<'https://www.ica.org/standards/RiC/ontology#positionHoldingRelationHasTarget'>;
     /**
      * Connects a Position to a Leadership Relation (the leading Person
      *             occupies that Position).
@@ -2094,33 +2261,32 @@ export interface Rico {
      */
     "positionIsContextOfMembershipRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#positionIsContextOfMembershipRelation'>;
     /**
-     * Connects a Position (that exists within a Group) to a Position
-     *             to Group Relation.
+     * Connects a PositionToGroupRelation to itself. It is a property
+     *             that can stand for an instance of the class when necessary, e.g. when you explore a
+     *             knowledge graph.
      */
-    "positionIsSourceOfPositionToGroupRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#positionIsSourceOfPositionToGroupRelation'>;
+    "positionToGroupRelation_role": NamedNode<'https://www.ica.org/standards/RiC/ontology#positionToGroupRelation_role'>;
     /**
-     * Connects a Position (that is occupied by a Person) to a Position
-     *             Holding Relation.
-     */
-    "positionIsTargetOfPositionHoldingRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#positionIsTargetOfPositionHoldingRelation'>;
-    /**
-     * Connects at least one Position, and a Group, when the first
-     *             one(s) exist(s) in/is defined within the second one.
+     * Connects at least one Position and a Group in which the
+     *             position(s) exist(s) or existed, or that is (are) defined by that group's organizational
+     *             structure. The Position(s) is the source of the Relation and the Group is the
+     *             target.
      */
     "PositionToGroupRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#PositionToGroupRelation'>;
     /**
-     * Connects a Position to Group Relation to a Position (that exists
-     *             in a Group).
+     * Connects a Thing to a Thing that followed it in some non
+     *             chronological sequence in the past.
      */
-    "positionToGroupRelationHasSource": NamedNode<'https://www.ica.org/standards/RiC/ontology#positionToGroupRelationHasSource'>;
+    "precededInSequence": NamedNode<'https://www.ica.org/standards/RiC/ontology#precededInSequence'>;
     /**
-     * Connects a Position to Group Relation to a Group (in which a
-     *             Position exists).
+     * Connects a Thing to a Thing that follows it directly or
+     *             indirectly in some non chronological sequence. This is a transitive
+     *             relation.
      */
-    "positionToGroupRelationHasTarget": NamedNode<'https://www.ica.org/standards/RiC/ontology#positionToGroupRelationHasTarget'>;
+    "precedesInSequenceTransitive": NamedNode<'https://www.ica.org/standards/RiC/ontology#precedesInSequenceTransitive'>;
     /**
      * Connects a Thing to a Thing that follows it in chronological
-     *             order.
+     *             order. This is a transitive relation.
      */
     "precedesInTime": NamedNode<'https://www.ica.org/standards/RiC/ontology#precedesInTime'>;
     /**
@@ -2129,31 +2295,15 @@ export interface Rico {
      */
     "precedesOrPreceded": NamedNode<'https://www.ica.org/standards/RiC/ontology#precedesOrPreceded'>;
     /**
-     * Method used in the representation of information on the
+     * The method used in the representation of information on an
      *             Instantiation.
      */
     "productionTechnique": NamedNode<'https://www.ica.org/standards/RiC/ontology#productionTechnique'>;
     /**
-     * Categorization of the method used in the representation of
-     *             information on the Instantiation.
+     * The method used in the representation of information on an
+     *             instantiation.
      */
     "ProductionTechniqueType": NamedNode<'https://www.ica.org/standards/RiC/ontology#ProductionTechniqueType'>;
-    /**
-     * Specifies the provenance or origin of at least one Record
-     *             Resource or Instantiation, for example the relation between a Record Resource and the
-     *             Agent which created it or the Activity from which it resulted.
-     */
-    "ProvenanceRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#ProvenanceRelation'>;
-    /**
-     * Connects a Provenance Relation to a Record Resource or
-     *             Instantiation.
-     */
-    "provenanceRelationHasSource": NamedNode<'https://www.ica.org/standards/RiC/ontology#provenanceRelationHasSource'>;
-    /**
-     * Connects a Provenance Relation to an Agent or
-     *             Activity.
-     */
-    "provenanceRelationHasTarget": NamedNode<'https://www.ica.org/standards/RiC/ontology#provenanceRelationHasTarget'>;
     /**
      * A Proxy represents (stands for) a Record Resource as it exists
      *             in a specific Record Set.
@@ -2172,135 +2322,70 @@ export interface Rico {
     /** Date of the publication of a Record Resource. */
     "publicationDate": NamedNode<'https://www.ica.org/standards/RiC/ontology#publicationDate'>;
     /**
-     * Conditions of an Instantiation that impact the legibility or
-     *             completeness of Record Resource, and thus the viability of its use. Conditions may be
-     *             associated with deficiencies in the processes of Record (re)creation or capture, or the
-     *             deterioration of the Instantiation (e.g. its carrier) causing loss of information of the
-     *             record over time
+     * Characteristics of an Instantiation that affect the ability to
+     *             recover the intellectual content. Such characteristics may be related to the methods
+     *             used in creating the Instantiation or introduced subsequent to the creation through
+     *             accident.
      */
-    "qualityOfRepresentation": NamedNode<'https://www.ica.org/standards/RiC/ontology#qualityOfRepresentation'>;
+    "qualityOfRepresentationNote": NamedNode<'https://www.ica.org/standards/RiC/ontology#qualityOfRepresentationNote'>;
     /** Machine-readable quantity. */
     "quantity": NamedNode<'https://www.ica.org/standards/RiC/ontology#quantity'>;
     /**
-     * Information inscribed at least once by any method on any
-     *             physical carrier in any persistent, recoverable form by an Agent in the course of life
-     *             or work Activity.
+     * Discrete information content formed and inscribed, at least
+     *             once, by any method on any carrier in any persistent, recoverable form by an Agent in
+     *             the course of life or work activity.
      */
     "Record": NamedNode<'https://www.ica.org/standards/RiC/ontology#Record'>;
-    /** Connects a Record and an Authorship Relation. */
-    "recordIsSourceOfAuthorshipRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#recordIsSourceOfAuthorshipRelation'>;
     /**
-     * Part of a Record with discrete information content that
-     *             contributes to the Record's physical or intellectual completeness.
+     * Component of a Record with independent information content that
+     *             contributes to the intellectual completeness of the Record.
      */
     "RecordPart": NamedNode<'https://www.ica.org/standards/RiC/ontology#RecordPart'>;
     /**
-     * A Record, Record Set, or Record Part produced or acquired and
-     *             retained by an Agent in the course of Activity.
+     * Information produced or acquired and retained by an Agent in the
+     *             course of life or work activity.
      */
     "RecordResource": NamedNode<'https://www.ica.org/standards/RiC/ontology#RecordResource'>;
     /**
-     * The quantity of information content as human experienced
-     *             represented in the Record Resource. The method and precision of expressing the quantity
-     *             of information represented in a Record Resource will vary by the kind of Record Resource
-     *             being described as well as by processing economy constraints. For record sets, quantity
+     * The quantity of information content, as human experienced,
+     *             contained in a Record Resource. The method and precision of expressing the quantity of
+     *             information represented in a Record Resource will vary according to the kind of Record
+     *             Resource being described, processing economy constraints, etc. For record sets, quantity
      *             may be expressed as number of records, or, for analogue records in particular, by the
-     *             physical storage dimensions of the Record members. For individual records or record
-     *             parts, quantity may be expressed in more precise terms. Use if you don't use
-     *             RecordResourceExtent class and its properties for handling such
-     *             information.
+     *             physical storage dimensions of the members of the Record Set. For individual records or
+     *             record parts, quantity may be expressed in more precise terms. 
      */
     "recordResourceExtent": NamedNode<'https://www.ica.org/standards/RiC/ontology#recordResourceExtent'>;
-    /** The extent of the content of a Record Resource. */
+    /**
+     * The quantity of information content, as human experienced,
+     *             contained in a Record Resource.
+     */
     "RecordResourceExtent": NamedNode<'https://www.ica.org/standards/RiC/ontology#RecordResourceExtent'>;
     /**
-     * Connects two to more Record Resources when there is a genetic
-     *             relation between them. Genetic in this sense is as defined by diplomatics, i.e. the
-     *             process by which a Record Resource is developed.
+     * Connects a RecordResourceGeneticRelation to itself. It is a
+     *             property that can stand for an instance of the class when necessary, e.g. when you
+     *             explore a knowledge graph.
+     */
+    "recordResourceGeneticRelation_role": NamedNode<'https://www.ica.org/standards/RiC/ontology#recordResourceGeneticRelation_role'>;
+    /**
+     * Connects two or more record resources when there is a genetic
+     *             link between them. Genetic in this sense is as defined by diplomatics, i.e., the process
+     *             by which a record resource is developed. This Relation is a generic, not oriented
+     *             one.
      */
     "RecordResourceGeneticRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#RecordResourceGeneticRelation'>;
     /**
-     * Connects a Record Resource Genetic Relation to one of the
-     *             associated Record Resources.
+     * Connects a RecordResourceHoldingRelation to itself. It is a
+     *             property that can stand for an instance of the class when necessary, e.g. when you
+     *             explore a knowledge graph.
      */
-    "recordResourceGeneticRelationConnects": NamedNode<'https://www.ica.org/standards/RiC/ontology#recordResourceGeneticRelationConnects'>;
+    "recordResourceHoldingRelation_role": NamedNode<'https://www.ica.org/standards/RiC/ontology#recordResourceHoldingRelation_role'>;
     /**
-     * Connects at least one Agent, and one or more Record Resource or
-     *             Instantiation that the Agent holds.
+     * Connects at least one Agent and one or more Record Resource or
+     *             Instantiation that the Agent(s) hold(s) or held. The Agent(s) is the source of the
+     *             Relation and the Record Resource(s) or Instantiation is the target.
      */
     "RecordResourceHoldingRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#RecordResourceHoldingRelation'>;
-    /**
-     * Connects a Record Resource Holding Relation to an Agent (as the
-     *             holder of a Record Resource or Instantiation).
-     */
-    "recordResourceHoldingRelationHasSource": NamedNode<'https://www.ica.org/standards/RiC/ontology#recordResourceHoldingRelationHasSource'>;
-    /**
-     * Connects a Record Resource Holding Relation to a Record Resource
-     *             or Instantiation (that is held by an Agent).
-     */
-    "recordResourceHoldingRelationHasTarget": NamedNode<'https://www.ica.org/standards/RiC/ontology#recordResourceHoldingRelationHasTarget'>;
-    /**
-     * Connects a Record Resource to a Record Resource Genetic
-     *             Relation.
-     */
-    "recordResourceIsConnectedToRecordResourceGeneticRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#recordResourceIsConnectedToRecordResourceGeneticRelation'>;
-    /**
-     * Connects a Record Resource to a Record Resource
-     *             Relation.
-     */
-    "recordResourceIsConnectedToRecordResourceRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#recordResourceIsConnectedToRecordResourceRelation'>;
-    /**
-     * Connects a Record Resource (that was instantiated) to a Record
-     *             Resource To Instantiation Relation
-     */
-    "recordResourceIsSourceOfRecordResourceToInstantiationRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#recordResourceIsSourceOfRecordResourceToInstantiationRelation'>;
-    /**
-     * Connects a Record Resource or Instantiation (that is
-     *             accumulated) to an Accumulation Relation.
-     */
-    "recordResourceOrInstantiationIsSourceOfAccumulationRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#recordResourceOrInstantiationIsSourceOfAccumulationRelation'>;
-    /**
-     * Connects a Record Resource or Instantiation (that documents an
-     *             Activity) to an Activity Documentation Relation.
-     */
-    "recordResourceOrInstantiationIsSourceOfActivityDocumentationRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#recordResourceOrInstantiationIsSourceOfActivityDocumentationRelation'>;
-    /**
-     * Connects a Record Resource or Instantiation (that is created,
-     *             sent or accumulated) to an Agent Origination Relation.
-     */
-    "recordResourceOrInstantiationIsSourceOfAgentOriginationRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#recordResourceOrInstantiationIsSourceOfAgentOriginationRelation'>;
-    /**
-     * Connects a Record Resource or Instantiation (that is created) to
-     *             a Creation Relation.
-     */
-    "recordResourceOrInstantiationIsSourceOfCreationRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#recordResourceOrInstantiationIsSourceOfCreationRelation'>;
-    /**
-     * Connects a Record Resource or Instantiation (that is created or
-     *             accumulated by an Agent, or documents an Activity) to a Provenance
-     *             Relation.
-     */
-    "recordResourceOrInstantiationIsSourceOfProvenanceRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#recordResourceOrInstantiationIsSourceOfProvenanceRelation'>;
-    /**
-     * Connects a Record Resource or Instantiation (on which some
-     *             intellectual property rights are held) to an Intellectual Property Rights
-     *             Relation.
-     */
-    "recordResourceOrInstantiationIsTargetOfIntellectualPropertyRightsRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#recordResourceOrInstantiationIsTargetOfIntellectualPropertyRightsRelation'>;
-    /**
-     * Connects a Record Resource or Instantiation (that is managed by
-     *             an Agent) to a Management Relation.
-     */
-    "recordResourceOrInstantiationIsTargetOfManagementRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#recordResourceOrInstantiationIsTargetOfManagementRelation'>;
-    /**
-     * Connects a Record Resource or Instantiation (that is held by an
-     *             Agent) to a Record Resource Holding Relation.
-     */
-    "recordResourceOrInstantiationIsTargetOfRecordResourceHoldingRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#recordResourceOrInstantiationIsTargetOfRecordResourceHoldingRelation'>;
-    /**
-     * Connects a Record Resource relation to one of the related Record
-     *             Resources.
-     */
-    "recordResourceRelationConnects": NamedNode<'https://www.ica.org/standards/RiC/ontology#recordResourceRelationConnects'>;
     /**
      * Information about the intellectual arrangement and composition
      *             of a Record Resource. For Record and Record Part, it encompasses information about the
@@ -2311,32 +2396,39 @@ export interface Rico {
      */
     "recordResourceStructure": NamedNode<'https://www.ica.org/standards/RiC/ontology#recordResourceStructure'>;
     /**
+     * Connects a RecordResourceToInstantiationRelation to itself. It
+     *             is a property that can stand for an instance of the class when necessary, e.g. when you
+     *             explore a knowledge graph.
+     */
+    "recordResourceToInstantiationRelation_role": NamedNode<'https://www.ica.org/standards/RiC/ontology#recordResourceToInstantiationRelation_role'>;
+    /**
      * Connects a Record Resource to one or more Instantiations that
-     *             instantiate it.
+     *             instantiate it, and which either may exist or may have been lost or destroyed. The
+     *             Record Resource is the source of the Relation and the Instantiation(s) is the
+     *             target.
      */
     "RecordResourceToInstantiationRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#RecordResourceToInstantiationRelation'>;
     /**
-     * Connects a Record Resource To Instantiation Relation to the
-     *             Record Resource (that was instantiated). 
+     * Connects a RecordResourceToRecordResourceRelation to itself. It
+     *             is a property that can stand for an instance of the class when necessary, e.g. when you
+     *             explore a knowledge graph.
      */
-    "recordResourceToInstantiationRelationHasSource": NamedNode<'https://www.ica.org/standards/RiC/ontology#recordResourceToInstantiationRelationHasSource'>;
+    "recordResourceToRecordResourceRelation_role": NamedNode<'https://www.ica.org/standards/RiC/ontology#recordResourceToRecordResourceRelation_role'>;
     /**
-     * Connects a Record Resource To Instantiation Relation to an
-     *             Instantiation of the involved Record Resource. 
+     * Connects at least two Record Resources. This Relation is a
+     *             generic, not oriented one.
      */
-    "recordResourceToInstantiationRelationHasTarget": NamedNode<'https://www.ica.org/standards/RiC/ontology#recordResourceToInstantiationRelationHasTarget'>;
-    /** Connects at least two Record Resources. */
     "RecordResourceToRecordResourceRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#RecordResourceToRecordResourceRelation'>;
     /**
-     * One or more records that are associated by categorization and/or
-     *             physical aggregation by the creator or other Agent.
+     * One or more records that are grouped together by an Agent based
+     *             on the records sharing one or more attributes or relations.
      */
     "RecordSet": NamedNode<'https://www.ica.org/standards/RiC/ontology#RecordSet'>;
     /** A broad categorization of the type of Record Set. */
     "RecordSetType": NamedNode<'https://www.ica.org/standards/RiC/ontology#RecordSetType'>;
     /**
-     * Categorization of the production or reproduction status of a
-     *             Record or Record Part.
+     * Description of the production or reproduction status of a Record
+     *             or Record Part.
      */
     "RecordState": NamedNode<'https://www.ica.org/standards/RiC/ontology#RecordState'>;
     /**
@@ -2350,16 +2442,28 @@ export interface Rico {
      */
     "regulatesOrRegulated": NamedNode<'https://www.ica.org/standards/RiC/ontology#regulatesOrRegulated'>;
     /**
+     * Connects a Relation to itself. It is a property that can stand
+     *             for an instance of the class when necessary, e.g. when you explore a knowledge
+     *             graph.
+     */
+    "relation_role": NamedNode<'https://www.ica.org/standards/RiC/ontology#relation_role'>;
+    /**
      * The top level relation class. It connects at least two Things.
-     *             An instance of a Relation may have some datatype and object properties : a descriptive
-     *             note (datatype property) like any Thing ; certainty (for 'certain', 'quite probable',
-     *             'uncertain','unknown'); a date (use either the date datatype property or the Date class
-     *             and isAssociatedWithDate object property ; a state (relationState) ; a location (use
-     *             Place class and isAssociatedWithPlace object property) ; a source of information that
-     *             can be used as an evidence for it (use either source datatype property or hasSource
-     *             object property).
+     *             An instance of a Relation may have some datatype and object properties: a general
+     *             description (datatype property) like any Thing; a certainty (for 'certain', 'quite
+     *             probable', 'uncertain','unknown'); a date (use either the date datatype property or the
+     *             Date class and isAssociatedWithDate object property); a state (relationState); a
+     *             location (use the Place class and isAssociatedWithPlace object property); a source of
+     *             information that can be used as an evidence for it (use either source datatype property
+     *             or hasSource object property). This Relation is the most generic one; it is not
+     *             oriented.
      */
     "Relation": NamedNode<'https://www.ica.org/standards/RiC/ontology#Relation'>;
+    /**
+     * Qualifies the level of certitude of the accuracy of a
+     *             Relation.
+     */
+    "relationCertainty": NamedNode<'https://www.ica.org/standards/RiC/ontology#relationCertainty'>;
     /**
      * Connects an n-ary Relation to any of the Things
      *             involved.
@@ -2381,15 +2485,24 @@ export interface Rico {
      */
     "relationHasTarget": NamedNode<'https://www.ica.org/standards/RiC/ontology#relationHasTarget'>;
     /**
+     * A source of information used for identifying and describing a
+     *             Relation.
+     */
+    "relationSource": NamedNode<'https://www.ica.org/standards/RiC/ontology#relationSource'>;
+    /**
      * Used to qualify the state of a Relation (e. g. present, past,
      *             ongoing, unknown).
      */
     "relationState": NamedNode<'https://www.ica.org/standards/RiC/ontology#relationState'>;
     /**
-     * Categorization of the method of recording the content type of a
-     *             Record Resource.
+     * Method of recording the content type of an
+     *             Instantiation
      */
     "RepresentationType": NamedNode<'https://www.ica.org/standards/RiC/ontology#RepresentationType'>;
+    /** Inverse of 'was merged into' object property. */
+    "resultedFromTheMergerOf": NamedNode<'https://www.ica.org/standards/RiC/ontology#resultedFromTheMergerOf'>;
+    /** Inverse of 'was split into' object property. */
+    "resultedFromTheSplitOf": NamedNode<'https://www.ica.org/standards/RiC/ontology#resultedFromTheSplitOf'>;
     /**
      * Inverse of 'results or resulted in' object
      *             property.
@@ -2412,92 +2525,82 @@ export interface Rico {
      */
     "roleIsContextOfCreationRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#roleIsContextOfCreationRelation'>;
     /**
-     * The role an agent plays in some context (usually in some
-     *             creation relation). Not to be confused with a position (position of an agent in some
-     *             group). For example, a person who is the head of some corporate body may play the role
+     * The role an Agent plays in some context (usually in some
+     *             creation relation). Not to be confused with a Position (position of an agent in some
+     *             group). For example, a Person who is the head of some Corporate Body may play the role
      *             of annotator (of a record) in a creation relation.
      */
     "RoleType": NamedNode<'https://www.ica.org/standards/RiC/ontology#RoleType'>;
-    /** Conditions that govern the existence or authority of an Agent or the performance of an Activity, or that contribute to the distinct characteristics of things created or managed by an Agent. */
+    /**
+     * Conditions that govern the existence, responsibility, or
+     *             authority of an Agent; or the performance of an Activity by an Agent; or that contribute
+     *             to the distinct characteristics of things created or managed by an Agent.
+     */
     "Rule": NamedNode<'https://www.ica.org/standards/RiC/ontology#Rule'>;
     /**
      * The rule or conditions that govern the existence or lifecycle of
      *             a Thing.
      */
     "ruleFollowed": NamedNode<'https://www.ica.org/standards/RiC/ontology#ruleFollowed'>;
-    /** Connects a Rule to a Rule Relation. */
-    "ruleIsSourceOfRuleRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#ruleIsSourceOfRuleRelation'>;
     /**
-     * Connects at least one Rule to at least one Thing, when it is
-     *             associated with existence and lifecycle of the Thing.
+     * Connects a RuleRelation to itself. It is a property that can
+     *             stand for an instance of the class when necessary, e.g. when you explore a knowledge
+     *             graph.
+     */
+    "ruleRelation_role": NamedNode<'https://www.ica.org/standards/RiC/ontology#ruleRelation_role'>;
+    /**
+     * Connects at least one Rule to at least one Thing when it is
+     *             associated with existence and lifecycle of the Thing. The Rule(s) is the source of the
+     *             Relation, and the Thing(s) is the target.
      */
     "RuleRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#RuleRelation'>;
-    /** Connects a Rule Relation to a Rule. */
-    "ruleRelationHasSource": NamedNode<'https://www.ica.org/standards/RiC/ontology#ruleRelationHasSource'>;
-    /**
-     * Connects a Rule Relation to a Thing (that is associated to a
-     *             Rule).
-     */
-    "ruleRelationHasTarget": NamedNode<'https://www.ica.org/standards/RiC/ontology#ruleRelationHasTarget'>;
     /** Categorization of a Rule. */
     "RuleType": NamedNode<'https://www.ica.org/standards/RiC/ontology#RuleType'>;
     /**
      * Summary of the scope (such as time periods, geography) and
-     *             content (such as subject matter, administrative processes) of the Record Resource. It
-     *             should highlight the information conveyed in the Record Resource, why it was created,
-     *             received, and/or maintained, and the Agents connected to it. Scope and Content provides
-     *             a more complete summary of the informational content of the Record Resource. It may
-     *             include description of relations with agents, activities, dates and places, or with
-     *             other record resources. It is not to be confused with the History attribute which
-     *             focuses on the origination and subsequence changes to a Record Resource.
+     *             content (such as subject matter, administrative processes) of a Record Resource.
+     *             Provides a more complete summary of the informational content of the Record Resource
+     *             highlighting the information conveyed in the Record Resource, why it was created,
+     *             received, and/or maintained, and the agents connected to it. It may include description
+     *             of relations with agents, activities, dates and places, or with other record
+     *             resources.
      */
     "scopeAndContent": NamedNode<'https://www.ica.org/standards/RiC/ontology#scopeAndContent'>;
     /**
-     * Connects at least one Thing to at least one Thing that follows
-     *             it in some sequence.
+     * Connects a SequentialRelation to itself. It is a property that
+     *             can stand for an instance of the class when necessary, e.g. when you explore a knowledge
+     *             graph.
+     */
+    "sequentialRelation_role": NamedNode<'https://www.ica.org/standards/RiC/ontology#sequentialRelation_role'>;
+    /**
+     * Connects at least one Thing to at least one other Thing that
+     *             follows or followed it in some sequence. The Relation is oriented from the first
+     *             Thing(s) in the sequence to the following one(s): the first Thing(s) is the source, and
+     *             the following Thing(s) is the target.
      */
     "SequentialRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#SequentialRelation'>;
     /**
-     * Connects a Sequential Relation to a Thing that precedes other
-     *             Thing(s) in the sequence.
+     * Connects a SiblingRelation to itself. It is a property that can
+     *             stand for an instance of the class when necessary, e.g. when you explore a knowledge
+     *             graph.
      */
-    "sequentialRelationHasSource": NamedNode<'https://www.ica.org/standards/RiC/ontology#sequentialRelationHasSource'>;
+    "siblingRelation_role": NamedNode<'https://www.ica.org/standards/RiC/ontology#siblingRelation_role'>;
     /**
-     * Connects a Sequential Relation to a Thing that follows other
-     *             Thing(s) in the sequence.
-     */
-    "sequentialRelationHasTarget": NamedNode<'https://www.ica.org/standards/RiC/ontology#sequentialRelationHasTarget'>;
-    /**
-     * Connects at least two Persons, when they are
-     *             siblings.
+     * Connects at least two Persons, when they are siblings. This
+     *             Relation is not oriented.
      */
     "SiblingRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#SiblingRelation'>;
     /**
-     * Connects a Sibling Relation to one of the siblings
-     *             involved.
+     * Connects a SpouseRelation to itself. It is a property that can
+     *             stand for an instance of the class when necessary, e.g. when you explore a knowledge
+     *             graph.
      */
-    "siblingRelationConnects": NamedNode<'https://www.ica.org/standards/RiC/ontology#siblingRelationConnects'>;
+    "spouseRelation_role": NamedNode<'https://www.ica.org/standards/RiC/ontology#spouseRelation_role'>;
     /**
-     * Chronological information associated with an entity that
-     *             contributes to its identification and contextualization, related to a single point in
-     *             time.
-     */
-    "SingleDate": NamedNode<'https://www.ica.org/standards/RiC/ontology#SingleDate'>;
-    /**
-     * Information about a source used to identify or describe an
-     *             entity.
-     */
-    "source": NamedNode<'https://www.ica.org/standards/RiC/ontology#source'>;
-    /**
-     * Connects at least two Persons, when they are
-     *             spouses.
+     * Connects at least two Persons, when they are spouses. This
+     *             Relation is not oriented.
      */
     "SpouseRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#SpouseRelation'>;
-    /**
-     * Connects a Sibling Relation to one of the spouses
-     *             involved.
-     */
-    "spouseRelationConnects": NamedNode<'https://www.ica.org/standards/RiC/ontology#spouseRelationConnects'>;
     /**
      * Information about the intellectual arrangement and composition
      *             of a Record Resource or the physical arrangement and composition of an Instantiation.
@@ -2510,40 +2613,36 @@ export interface Rico {
      */
     "structure": NamedNode<'https://www.ica.org/standards/RiC/ontology#structure'>;
     /**
-     * Connects at least one Person to at least another Person, who is
-     *             their student.
+     * Connects a TeachingRelation to itself. It is a property that can
+     *             stand for an instance of the class when necessary, e.g. when you explore a knowledge
+     *             graph.
+     */
+    "teachingRelation_role": NamedNode<'https://www.ica.org/standards/RiC/ontology#teachingRelation_role'>;
+    /**
+     * Connects at least one Person to at least another Person who is
+     *             or was their student. The Relation is oriented from the teacher(s) to the student(s):
+     *             the teacher Person(s) is the source of the Relation, and the student Person(s) is the
+     *             target.
      */
     "TeachingRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#TeachingRelation'>;
-    /**
-     * Connects a Teaching Relation to a Person (who is a
-     *             teacher).
-     */
-    "teachingRelationHasSource": NamedNode<'https://www.ica.org/standards/RiC/ontology#teachingRelationHasSource'>;
-    /**
-     * Connects a Teaching Relation to a Person (who is a
-     *             student).
-     */
-    "teachingRelationHasTarget": NamedNode<'https://www.ica.org/standards/RiC/ontology#teachingRelationHasTarget'>;
     /**
      * Describes any relevant physical or software feature of any
      *             device involved in the creation or management of a Record Resource.
      */
     "technicalCharacteristics": NamedNode<'https://www.ica.org/standards/RiC/ontology#technicalCharacteristics'>;
     /**
-     * Connects at least one Thing to at least one Thing that follows
-     *             it in chronological order.
+     * Connects a TemporalRelation to itself. It is a property that can
+     *             stand for an instance of the class when necessary, e.g. when you explore a knowledge
+     *             graph.
+     */
+    "temporalRelation_role": NamedNode<'https://www.ica.org/standards/RiC/ontology#temporalRelation_role'>;
+    /**
+     * Connects at least one Thing to at least one other Thing that
+     *             follows it in chronological order. The Relation is oriented chronologically: the
+     *             preceding Thing(s) is the source of the Relation, the following Thing(s) is the
+     *             target.
      */
     "TemporalRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#TemporalRelation'>;
-    /**
-     * Connects a Temporal Relation to a Thing that precedes other
-     *             Thing(s) in time.
-     */
-    "temporalRelationHasSource": NamedNode<'https://www.ica.org/standards/RiC/ontology#temporalRelationHasSource'>;
-    /**
-     * Connects a Temporal Relation to a Thing that follows other
-     *             Thing(s) in time.
-     */
-    "temporalRelationHasTarget": NamedNode<'https://www.ica.org/standards/RiC/ontology#temporalRelationHasTarget'>;
     /** A textual expression of an Appellation or Date. */
     "textualValue": NamedNode<'https://www.ica.org/standards/RiC/ontology#textualValue'>;
     /**
@@ -2564,72 +2663,10 @@ export interface Rico {
      */
     "thingIsSourceOfRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#thingIsSourceOfRelation'>;
     /**
-     * Connects a Thing to a Sequential Relation, when this Thing
-     *             precedes other Thing(s) in the sequence.
-     */
-    "thingIsSourceOfSequentialRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#thingIsSourceOfSequentialRelation'>;
-    /**
-     * Connects a Thing to a Temporal Relation, when this Thing
-     *             precedes other Thing(s) in time.
-     */
-    "thingIsSourceOfTemporalRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#thingIsSourceOfTemporalRelation'>;
-    /**
-     * Connects a Thing to a Whole Part Relation, when this Thing has
-     *             Part other Thing(s).
-     */
-    "thingIsSourceOfWholePartRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#thingIsSourceOfWholePartRelation'>;
-    /**
-     * Connects a Thing (that is designated by an Appellation) to an
-     *             Appellation Relation.
-     */
-    "thingIsTargetOfAppellationRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#thingIsTargetOfAppellationRelation'>;
-    /**
-     * Connects a Thing (that is under authority of an Agent) to an
-     *             Authority Relation.
-     */
-    "thingIsTargetOfAuthorityRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#thingIsTargetOfAuthorityRelation'>;
-    /**
-     * Connects a Thing (that is associated with an Event) to an Event
+     * Connects a Thing (that is the target of a Relation) to a n-ary
      *             Relation.
      */
-    "thingIsTargetOfEventRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#thingIsTargetOfEventRelation'>;
-    /**
-     * Connects a Thing (that is owned by a Group, a Person or a
-     *             Position) to an Ownership Relation.
-     */
-    "thingIsTargetOfOwnershipRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#thingIsTargetOfOwnershipRelation'>;
-    /**
-     * Connects a Thing (that is associated with a Place) to a Place
-     *             Relation.
-     */
-    "thingIsTargetOfPlaceRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#thingIsTargetOfPlaceRelation'>;
-    /** Connects a Thing to a n-ary Relation. */
     "thingIsTargetOfRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#thingIsTargetOfRelation'>;
-    /**
-     * Connects a Thing (that is associated with a Rule) to a Rule
-     *             Relation.
-     */
-    "thingIsTargetOfRuleRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#thingIsTargetOfRuleRelation'>;
-    /**
-     * Connects a Thing (that follows other Thing(s) in a sequence) to
-     *             a Sequential Relation.
-     */
-    "thingIsTargetOfSequentialRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#thingIsTargetOfSequentialRelation'>;
-    /**
-     * Connects a Thing (that follows other Thing(s) in time) to a
-     *             Temporal Relation.
-     */
-    "thingIsTargetOfTemporalRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#thingIsTargetOfTemporalRelation'>;
-    /**
-     * Connects a Thing (that is categorized by a Type) to a Type
-     *             Relation.
-     */
-    "thingIsTargetOfTypeRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#thingIsTargetOfTypeRelation'>;
-    /**
-     * Connects a Thing to a Whole Part Relation, when this Thing is
-     *             Part of another Thing.
-     */
-    "thingIsTargetOfWholePartRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#thingIsTargetOfWholePartRelation'>;
     /**
      * An identifying name of a Record Resource, Instantiation or
      *             Rule.
@@ -2647,35 +2684,32 @@ export interface Rico {
      *             characterizes an entity.
      */
     "Type": NamedNode<'https://www.ica.org/standards/RiC/ontology#Type'>;
-    /** Connects a Type (a category) to a Type Relation. */
-    "typeIsSourceOfTypeRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#typeIsSourceOfTypeRelation'>;
+    /**
+     * Connects a TypeRelation to itself. It is a property that can
+     *             stand for an instance of the class when necessary, e.g. when you explore a knowledge
+     *             graph.
+     */
+    "typeRelation_role": NamedNode<'https://www.ica.org/standards/RiC/ontology#typeRelation_role'>;
     /**
      * Connects a category (a Type) and at least one Thing that belongs
-     *             to this category.
+     *             to this category. The Type(s) is the source of the Relation, and the Thing(s) is the
+     *             target.
      */
     "TypeRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#TypeRelation'>;
     /**
-     * Connects a Type Relation to the Type (that categorizes the
-     *             involved Thing(s)).
-     */
-    "typeRelationHasSource": NamedNode<'https://www.ica.org/standards/RiC/ontology#typeRelationHasSource'>;
-    /**
-     * Connects a Type Relation to a Thing (that is categorized by the
-     *             involved Type).
-     */
-    "typeRelationHasTarget": NamedNode<'https://www.ica.org/standards/RiC/ontology#typeRelationHasTarget'>;
-    /**
-     * A definite magnitude of a quantity, defined and adopted by convention or by
-     *             law, that is used as a standard for measurement of the same kind of quantity. Can be
-     *             spacial units (cm, m), weight (g, kg), time (s, h), storage (MB, TB) or more informal
-     *             units used in the archival context like number of boxes, pages or words.
+     * A definite magnitude of a quantity, defined and adopted by
+     *             convention or by law, that is used as a standard for measurement of the same kind of
+     *             quantity. Can be spacial units (cm, m), weight (g, kg), time (s, h), storage (MB, TB) or
+     *             more informal units used in the archival context like number of boxes, pages or
+     *             words.
      */
     "unitOfMeasurement": NamedNode<'https://www.ica.org/standards/RiC/ontology#unitOfMeasurement'>;
     /**
-     * A definite magnitude of a quantity, defined and adopted by convention or by
-     *             law, that is used as a standard for measurement of the same kind of quantity. Can be
-     *             spacial units (cm, m), weigt (g, kg), time (s, h), storage (MB, TB) or more informal
-     *             units used in the archival context like number of boxes, pages or words.
+     * A definite magnitude of a quantity, defined and adopted by
+     *             convention or by law, that is used as a standard for measurement of the same kind of
+     *             quantity. Can be spacial units (cm, m), weight (g, kg), time (s, h), storage (MB, TB) or
+     *             more informal units used in the archival context like number of boxes, pages or
+     *             words.
      */
     "UnitOfMeasurement": NamedNode<'https://www.ica.org/standards/RiC/ontology#UnitOfMeasurement'>;
     /** Date at which an Appellation was first used. */
@@ -2683,10 +2717,62 @@ export interface Rico {
     /** Date until an Appellation was used. */
     "usedToDate": NamedNode<'https://www.ica.org/standards/RiC/ontology#usedToDate'>;
     /**
+     * Connects an Instantiation to another Instantiation of which it
+     *             was a component in the past.
+     */
+    "wasComponentOf": NamedNode<'https://www.ica.org/standards/RiC/ontology#wasComponentOf'>;
+    /**
+     * Connects a Record or Record Part to another Record or Record
+     *             Part of which it was a constituent in the past.
+     */
+    "wasConstituentOf": NamedNode<'https://www.ica.org/standards/RiC/ontology#wasConstituentOf'>;
+    /**
+     * Connects a Place to a Place within which it was
+     *             contained.
+     */
+    "wasContainedBy": NamedNode<'https://www.ica.org/standards/RiC/ontology#wasContainedBy'>;
+    /**
+     * Connects a Record to a Record or Record Set in which it was
+     *             included in the past.
+     */
+    "wasIncludedIn": NamedNode<'https://www.ica.org/standards/RiC/ontology#wasIncludedIn'>;
+    /**
      * Connects a Thing to the Date when it was last
      *             modified.
      */
     "wasLastUpdatedAtDate": NamedNode<'https://www.ica.org/standards/RiC/ontology#wasLastUpdatedAtDate'>;
+    /**
+     * Connects a Corporate Body to another Corporate Body that is the
+     *             result of a merger of the previous one with one to many other corporate
+     *             bodies.
+     */
+    "wasMergedInto": NamedNode<'https://www.ica.org/standards/RiC/ontology#wasMergedInto'>;
+    /**
+     * Connects a Thing to a Thing of which it was a constitutive or
+     *             component part in the past.
+     */
+    "wasPartOf": NamedNode<'https://www.ica.org/standards/RiC/ontology#wasPartOf'>;
+    /**
+     * Connects a Corporate Body to one of the Corporate Bodies that
+     *             results from the split of the previous one into two to many corporate
+     *             bodies.
+     */
+    "wasSplitInto": NamedNode<'https://www.ica.org/standards/RiC/ontology#wasSplitInto'>;
+    /**
+     * Connects a subdivision to the Group it was a part of in the
+     *             past.
+     */
+    "wasSubdivisionOf": NamedNode<'https://www.ica.org/standards/RiC/ontology#wasSubdivisionOf'>;
+    /**
+     * Connects a past Event to the broader Event of which it was a
+     *             part.
+     */
+    "wasSubeventOf": NamedNode<'https://www.ica.org/standards/RiC/ontology#wasSubeventOf'>;
+    /**
+     * Connects an Agent to an Agent that was hierarchically superior
+     *             in the past.
+     */
+    "wasSubordinateTo": NamedNode<'https://www.ica.org/standards/RiC/ontology#wasSubordinateTo'>;
     /**
      * Connects an Appellation to the Date from which it was
      *             used.
@@ -2698,29 +2784,32 @@ export interface Rico {
      */
     "wasUsedToDate": NamedNode<'https://www.ica.org/standards/RiC/ontology#wasUsedToDate'>;
     /**
-     * Connects a Thing to at least one constitutive or component part
-     *             of that Thing.
+     * Connects a WholePartRelation to itself. It is a property that
+     *             can stand for an instance of the class when necessary, e.g. when you explore a knowledge
+     *             graph.
+     */
+    "wholePartRelation_role": NamedNode<'https://www.ica.org/standards/RiC/ontology#wholePartRelation_role'>;
+    /**
+     * Connects a Thing to at least one other Thing that is or was a
+     *             portion or division of the whole Thing. The Relation is oriented from the Thing to its
+     *             part(s): the Thing is the source of the Relation, and the part Thing(s) is the
+     *             target.
      */
     "WholePartRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#WholePartRelation'>;
-    /**
-     * Connects a Whole Part Relation to the Thing that has some
-     *             parts.
-     */
-    "wholePartRelationHasSource": NamedNode<'https://www.ica.org/standards/RiC/ontology#wholePartRelationHasSource'>;
-    /**
-     * Connects a Whole Part Relation to a Thing that is a
-     *             part.
-     */
-    "wholePartRelationHasTarget": NamedNode<'https://www.ica.org/standards/RiC/ontology#wholePartRelationHasTarget'>;
     /** Horizontal dimension of an entity. */
     "width": NamedNode<'https://www.ica.org/standards/RiC/ontology#width'>;
     /**
-     * Connects at least two Agents that have some type of work
-     *             relation in the course of their activities.
+     * Connects a WorkRelation to itself. It is a property that can
+     *             stand for an instance of the class when necessary, e.g. when you explore a knowledge
+     *             graph.
+     */
+    "workRelation_role": NamedNode<'https://www.ica.org/standards/RiC/ontology#workRelation_role'>;
+    /**
+     * Connects at least two Agents that have or had some type of work
+     *             relation in the course of their activities. This Relation is not
+     *             oriented.
      */
     "WorkRelation": NamedNode<'https://www.ica.org/standards/RiC/ontology#WorkRelation'>;
-    /** Connects a Work Relation to an Agent. */
-    "workRelationConnects": NamedNode<'https://www.ica.org/standards/RiC/ontology#workRelationConnects'>;
 }
 
 const builder = namespace("https://www.ica.org/standards/RiC/ontology#") as any;

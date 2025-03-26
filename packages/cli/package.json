@@ -3,7 +3,7 @@
   "version": "1.2.0",
   "type": "module",
   "bin": {
-    "rdf-ns-builders": "index.js"
+    "rdf-ns-builders": "./bin/bin.sh"
   },
   "files": [
     "*.js",
@@ -12,14 +12,14 @@
     "lib/*.d.ts"
   ],
   "dependencies": {
-    "@zazuko/env": "^1.7.0",
-    "@zazuko/prefixes": "^2.0.0",
-    "commander": "^7.2.0",
+    "@zazuko/env": "^2.5.2",
+    "@zazuko/prefixes": "^2.4.0",
+    "commander": "^13.1.0",
     "safe-identifier": "^0.4.2",
     "ts-morph": "^15.1.0"
   },
   "devDependencies": {
-    "@zazuko/vocabularies": "^2.0.0"
+    "@zazuko/vocabularies": "^4"
   },
   "publishConfig": {
     "access": "public"
