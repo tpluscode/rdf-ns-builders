@@ -1,5 +1,17 @@
 # Changelog
 
+## 5.0.0
+
+### Major Changes
+
+- 0946d41: Updated RiCO
+- 0946d41: Updated QUDT vocabularies to v3
+
+### Minor Changes
+
+- 0946d41: Added builders for `cur:`, `dprod:` and `vso:`
+- 0946d41: Updated `@rdfjs/types` to v2
+
 ## 4.3.0
 
 ### Minor Changes
