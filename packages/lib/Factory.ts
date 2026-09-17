@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unsafe-declaration-merging */
-import * as StrictBuilders from './index.js'
+import * as StrictBuilders from './strict.js'
 import type { CustomNamespaces } from './index.js'
 
 export interface NsBuildersFactory {
