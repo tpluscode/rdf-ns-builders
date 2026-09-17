@@ -1,4 +1,5 @@
-import { SourceFile, StructureKind, VariableDeclarationKind } from 'ts-morph'
+import type { SourceFile} from 'ts-morph';
+import { StructureKind, VariableDeclarationKind } from 'ts-morph'
 import { identifier } from 'safe-identifier'
 import { createMembers } from './interface.js'
 import { toProperCase } from './strings.js'
