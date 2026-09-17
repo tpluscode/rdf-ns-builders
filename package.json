@@ -14,7 +14,7 @@
     "@changesets/cli": "^3.0.3",
     "@eslint/config-helpers": "^0.7.0",
     "@eslint/js": "^10",
-    "@tpluscode/eslint-config": "^3",
+    "@tpluscode/eslint-config": "^3.0.1",
     "@types/chai": "^5.2.3",
     "@types/mocha": "^10.0.10",
     "@typescript-eslint/eslint-plugin": "^8.70.0",
