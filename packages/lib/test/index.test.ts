@@ -1,4 +1,5 @@
 import { expect } from 'chai'
+import { it, describe } from 'mocha'
 import prefixes, { expand } from '@zazuko/prefixes'
 import RDF from '@zazuko/env'
 import { schema, foaf, dcterms } from '../index.js'

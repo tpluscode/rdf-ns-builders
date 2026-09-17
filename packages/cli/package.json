@@ -12,14 +12,14 @@
     "lib/*.d.ts"
   ],
   "dependencies": {
-    "@zazuko/env": "^2.5.2",
-    "@zazuko/prefixes": "^2.4.0",
-    "commander": "^13.1.0",
+    "@zazuko/env": "^3.0.1",
+    "@zazuko/prefixes": "^2.6.1",
+    "commander": "^15.0.0",
     "safe-identifier": "^0.4.2",
     "ts-morph": "^25.0.1"
   },
   "devDependencies": {
-    "@zazuko/vocabularies": "^4"
+    "@zazuko/vocabularies": "^4.1.1"
   },
   "publishConfig": {
     "access": "public"

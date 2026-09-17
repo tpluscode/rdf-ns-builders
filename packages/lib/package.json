@@ -31,17 +31,17 @@
     "*.d.ts.map"
   ],
   "dependencies": {
-    "@rdfjs/data-model": "^2.1.0",
+    "@rdfjs/data-model": "^2.1.2",
     "@rdfjs/namespace": "^2.0.1",
-    "@rdfjs/types": "^2",
+    "@rdfjs/types": "^2.0.1",
     "@types/rdfjs__namespace": "^2.0.10",
-    "@zazuko/prefixes": "^2.3.0"
+    "@zazuko/prefixes": "^2.6.1"
   },
   "devDependencies": {
     "@rdfjs/environment": "^1.0.0",
-    "@zazuko/env": "^2.5.3",
-    "@zazuko/vocabularies": "^4",
-    "chai": "^5.2.0"
+    "@zazuko/env": "^3.0.1",
+    "@zazuko/vocabularies": "^4.1.1",
+    "chai": "^6.2.2"
   },
   "publishConfig": {
     "access": "public"
