@@ -11,8 +11,16 @@
     "generate": "../cli/bin/bin.sh generate -p @zazuko/vocabularies -o ."
   },
   "exports": {
-    ".": "./index.js",
-    "./loose": "./loose.js"
+    ".": {
+      "types": "./index.d.ts",
+      "import": "./index.js",
+      "default": "./index.js"
+    },
+    "./loose": {
+      "types": "./loose.d.ts",
+      "import": "./loose.js",
+      "default": "./loose.js"
+    }
   },
   "files": [
     "CHANGELOG.md",

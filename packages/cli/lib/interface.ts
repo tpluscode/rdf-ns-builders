@@ -1,7 +1,8 @@
-import { PropertySignatureStructure, StructureKind } from 'ts-morph'
+import type { PropertySignatureStructure} from 'ts-morph';
+import { StructureKind } from 'ts-morph'
 import { shrink } from '@zazuko/prefixes'
 import RDF from '@zazuko/env'
-import { ImportedVocabularies } from './index.js'
+import type { ImportedVocabularies } from './index.js'
 
 const rdfsComment = RDF.namedNode('http://www.w3.org/2000/01/rdf-schema#comment')
 
