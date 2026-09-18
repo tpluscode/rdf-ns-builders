@@ -1,4 +1,4 @@
-import type { PropertySignatureStructure} from 'ts-morph';
+import type { PropertySignatureStructure } from 'ts-morph'
 import { StructureKind } from 'ts-morph'
 import { shrink } from '@zazuko/prefixes'
 import RDF from '@zazuko/env'
