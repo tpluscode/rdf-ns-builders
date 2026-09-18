@@ -1,5 +1,21 @@
 # Changelog
 
+## 6.0.0
+
+### Major Changes
+
+- 51d08f4: Updated `gs1`: removed 11 terms; added 648 terms; updated documentation
+- 51d08f4: Updated `rico`: removed 6 terms; added 102 terms; updated documentation
+- 51d08f4: Updated `schema`: removed 6 terms; added 172 terms; updated documentation
+- 51d08f4: Updated `dbo`: removed 207 terms
+- 51d08f4: Updated `sou`: removed 9 terms; added 1 term
+- 51d08f4: Updated `sh`: removed 202 terms; updated documentation
+- 51d08f4: Updated `constant`: removed 6 terms; added 11 terms
+- 51d08f4: Updated `qkdv`: removed 18 terms; added 69 terms
+- 51d08f4: Updated `m4i`: removed 1 term; added 11 terms; updated documentation
+- 51d08f4: Updated `dtype`: removed 1 term; added 4 terms; updated documentation
+- 51d08f4: Updated `la`: removed 11 terms; added 7 terms; updated documentation
+
 ## 5.1.0
 
 ### Minor Changes
