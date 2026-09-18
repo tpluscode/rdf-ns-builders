@@ -14,7 +14,6 @@ export interface Dbo {
     "abstentions": NamedNode<'http://dbpedia.org/ontology/abstentions'>;
     /** Reserved for DBpedia. */
     "abstract": NamedNode<'http://dbpedia.org/ontology/abstract'>;
-    "Academic": NamedNode<'http://dbpedia.org/ontology/Academic'>;
     "academicAdvisor": NamedNode<'http://dbpedia.org/ontology/academicAdvisor'>;
     "AcademicConference": NamedNode<'http://dbpedia.org/ontology/AcademicConference'>;
     /** An academic discipline, or field of study, is a branch of knowledge that is taught and researched at the college or university level. Disciplines are defined (in part), and recognized by the academic journals in which research is published, and the learned societies and academic departments or faculties to which their practitioners belong. */
@@ -30,7 +29,6 @@ export interface Dbo {
     "achievement": NamedNode<'http://dbpedia.org/ontology/achievement'>;
     "acquirementDate": NamedNode<'http://dbpedia.org/ontology/acquirementDate'>;
     "actingHeadteacher": NamedNode<'http://dbpedia.org/ontology/actingHeadteacher'>;
-    "activeCases": NamedNode<'http://dbpedia.org/ontology/activeCases'>;
     /** Also called "floruit". Use this if the active years are in one field that can't be split. Else use activeYearsStartYear and activeYearsEndYear */
     "activeYears": NamedNode<'http://dbpedia.org/ontology/activeYears'>;
     "activeYearsEndDate": NamedNode<'http://dbpedia.org/ontology/activeYearsEndDate'>;
@@ -114,7 +112,6 @@ export interface Dbo {
     "album": NamedNode<'http://dbpedia.org/ontology/album'>;
     "Album": NamedNode<'http://dbpedia.org/ontology/Album'>;
     "albumRuntime": NamedNode<'http://dbpedia.org/ontology/albumRuntime'>;
-    "Algorithm": NamedNode<'http://dbpedia.org/ontology/Algorithm'>;
     "alias": NamedNode<'http://dbpedia.org/ontology/alias'>;
     "allcinemaId": NamedNode<'http://dbpedia.org/ontology/allcinemaId'>;
     /** The country or other power the person served. Multiple countries may be indicated together with the corresponding dates. This field should not be used to indicate a particular service branch, which is better indicated by the branch field. */
@@ -141,7 +138,6 @@ export interface Dbo {
     "alpsSupergroup": NamedNode<'http://dbpedia.org/ontology/alpsSupergroup'>;
     /** Alternative naming of anything not being a Person (for which case foaf:nick should be used). */
     "alternativeName": NamedNode<'http://dbpedia.org/ontology/alternativeName'>;
-    "alternativeText": NamedNode<'http://dbpedia.org/ontology/alternativeText'>;
     /** The alternative title attributed to a work */
     "alternativeTitle": NamedNode<'http://dbpedia.org/ontology/alternativeTitle'>;
     "altitude": NamedNode<'http://dbpedia.org/ontology/altitude'>;
@@ -166,7 +162,6 @@ export interface Dbo {
     "AmericanFootballLeague": NamedNode<'http://dbpedia.org/ontology/AmericanFootballLeague'>;
     "AmericanFootballPlayer": NamedNode<'http://dbpedia.org/ontology/AmericanFootballPlayer'>;
     "AmericanFootballTeam": NamedNode<'http://dbpedia.org/ontology/AmericanFootballTeam'>;
-    "AmericanLeader": NamedNode<'http://dbpedia.org/ontology/AmericanLeader'>;
     "amgid": NamedNode<'http://dbpedia.org/ontology/amgid'>;
     "Amphibian": NamedNode<'http://dbpedia.org/ontology/Amphibian'>;
     "amsterdamCode": NamedNode<'http://dbpedia.org/ontology/amsterdamCode'>;
@@ -186,16 +181,13 @@ export interface Dbo {
     "annualTemperature": NamedNode<'http://dbpedia.org/ontology/annualTemperature'>;
     /** Official song (anthem) of a PopulatedPlace, SportsTeam, School or other */
     "anthem": NamedNode<'http://dbpedia.org/ontology/anthem'>;
-    "aoCloassification": NamedNode<'http://dbpedia.org/ontology/aoCloassification'>;
     "apcPresident": NamedNode<'http://dbpedia.org/ontology/apcPresident'>;
     "apoapsis": NamedNode<'http://dbpedia.org/ontology/apoapsis'>;
     "apofocus": NamedNode<'http://dbpedia.org/ontology/apofocus'>;
     "apparentMagnitude": NamedNode<'http://dbpedia.org/ontology/apparentMagnitude'>;
-    "appearance": NamedNode<'http://dbpedia.org/ontology/appearance'>;
     "appearancesInLeague": NamedNode<'http://dbpedia.org/ontology/appearancesInLeague'>;
     "appearancesInNationalTeam": NamedNode<'http://dbpedia.org/ontology/appearancesInNationalTeam'>;
     "appointer": NamedNode<'http://dbpedia.org/ontology/appointer'>;
-    "apprehended": NamedNode<'http://dbpedia.org/ontology/apprehended'>;
     "approach": NamedNode<'http://dbpedia.org/ontology/approach'>;
     /** Date of approval by lower parliament (House of Commons, Chambre des Députés, Bundestag, Tweede Kamer etc.). */
     "approvedByLowerParliament": NamedNode<'http://dbpedia.org/ontology/approvedByLowerParliament'>;
@@ -206,7 +198,6 @@ export interface Dbo {
     "apskritis": NamedNode<'http://dbpedia.org/ontology/apskritis'>;
     "Arachnid": NamedNode<'http://dbpedia.org/ontology/Arachnid'>;
     "Archaea": NamedNode<'http://dbpedia.org/ontology/Archaea'>;
-    "Archbishop": NamedNode<'http://dbpedia.org/ontology/Archbishop'>;
     "Archeologist": NamedNode<'http://dbpedia.org/ontology/Archeologist'>;
     "ArcherPlayer": NamedNode<'http://dbpedia.org/ontology/ArcherPlayer'>;
     "archipelago": NamedNode<'http://dbpedia.org/ontology/archipelago'>;
@@ -261,7 +252,6 @@ export interface Dbo {
     "artist": NamedNode<'http://dbpedia.org/ontology/artist'>;
     "Artist": NamedNode<'http://dbpedia.org/ontology/Artist'>;
     "ArtistDiscography": NamedNode<'http://dbpedia.org/ontology/ArtistDiscography'>;
-    "artistFunction": NamedNode<'http://dbpedia.org/ontology/artistFunction'>;
     "artisticFunction": NamedNode<'http://dbpedia.org/ontology/artisticFunction'>;
     /** Gattung nennt man in den Kunstwissenschaften die auf das künstlerische Ausdrucksmedium bezogenen Formen der Kunst. */
     "ArtisticGenre": NamedNode<'http://dbpedia.org/ontology/ArtisticGenre'>;
@@ -288,12 +278,9 @@ export interface Dbo {
     "associateStar": NamedNode<'http://dbpedia.org/ontology/associateStar'>;
     "associationOfLocalGovernment": NamedNode<'http://dbpedia.org/ontology/associationOfLocalGovernment'>;
     "Asteroid": NamedNode<'http://dbpedia.org/ontology/Asteroid'>;
-    "astrazenca": NamedNode<'http://dbpedia.org/ontology/astrazenca'>;
-    "astrazencaCumul": NamedNode<'http://dbpedia.org/ontology/astrazencaCumul'>;
     "astrologicalSign": NamedNode<'http://dbpedia.org/ontology/astrologicalSign'>;
     "Astronaut": NamedNode<'http://dbpedia.org/ontology/Astronaut'>;
     "asWikiText": NamedNode<'http://dbpedia.org/ontology/asWikiText'>;
-    "atcCode": NamedNode<'http://dbpedia.org/ontology/atcCode'>;
     "atcPrefix": NamedNode<'http://dbpedia.org/ontology/atcPrefix'>;
     "atcSuffix": NamedNode<'http://dbpedia.org/ontology/atcSuffix'>;
     "atcSupplemental": NamedNode<'http://dbpedia.org/ontology/atcSupplemental'>;
@@ -313,7 +300,6 @@ export interface Dbo {
     "Attack": NamedNode<'http://dbpedia.org/ontology/Attack'>;
     /** Public attorney */
     "attorneyGeneral": NamedNode<'http://dbpedia.org/ontology/attorneyGeneral'>;
-    "aunt": NamedNode<'http://dbpedia.org/ontology/aunt'>;
     /** A group of sports teams that compete against each other in australian football. */
     "AustralianFootballLeague": NamedNode<'http://dbpedia.org/ontology/AustralianFootballLeague'>;
     "AustralianFootballTeam": NamedNode<'http://dbpedia.org/ontology/AustralianFootballTeam'>;
@@ -380,13 +366,10 @@ export interface Dbo {
     /** Ένας αθλητής (άνδρας ή γυναίκα) που ασχολείται με το άθλημα της καλαθοσφαίρισης. */
     "BasketballPlayer": NamedNode<'http://dbpedia.org/ontology/BasketballPlayer'>;
     "BasketballTeam": NamedNode<'http://dbpedia.org/ontology/BasketballTeam'>;
-    "battery": NamedNode<'http://dbpedia.org/ontology/battery'>;
-    "Battery": NamedNode<'http://dbpedia.org/ontology/Battery'>;
     "battingSide": NamedNode<'http://dbpedia.org/ontology/battingSide'>;
     "battle": NamedNode<'http://dbpedia.org/ontology/battle'>;
     "battleHonours": NamedNode<'http://dbpedia.org/ontology/battleHonours'>;
     "Bay": NamedNode<'http://dbpedia.org/ontology/Bay'>;
-    "bbr": NamedNode<'http://dbpedia.org/ontology/bbr'>;
     /** Ribera del mar o de un río grande, formada de arenales en superficie casi plana. */
     "Beach": NamedNode<'http://dbpedia.org/ontology/Beach'>;
     /** Ένα άτομο (άνδρας ή γυναίκα) που ασχολείται με το άθλημα του μπίτς βόλλεϋ. */
@@ -482,7 +465,6 @@ export interface Dbo {
     "bourgmestre": NamedNode<'http://dbpedia.org/ontology/bourgmestre'>;
     /** a group of sports teams or players that compete against each other in Bowling */
     "BowlingLeague": NamedNode<'http://dbpedia.org/ontology/BowlingLeague'>;
-    "bowlingSide": NamedNode<'http://dbpedia.org/ontology/bowlingSide'>;
     "bowlRecord": NamedNode<'http://dbpedia.org/ontology/bowlRecord'>;
     "Boxer": NamedNode<'http://dbpedia.org/ontology/Boxer'>;
     "boxerCategory": NamedNode<'http://dbpedia.org/ontology/boxerCategory'>;
@@ -509,7 +491,6 @@ export interface Dbo {
     "Bridge": NamedNode<'http://dbpedia.org/ontology/Bridge'>;
     /** Type of vehicles the bridge carries. */
     "bridgeCarries": NamedNode<'http://dbpedia.org/ontology/bridgeCarries'>;
-    "brinCode": NamedNode<'http://dbpedia.org/ontology/brinCode'>;
     "britishComedyAwards": NamedNode<'http://dbpedia.org/ontology/britishComedyAwards'>;
     "britishOpen": NamedNode<'http://dbpedia.org/ontology/britishOpen'>;
     "BritishRoyalty": NamedNode<'http://dbpedia.org/ontology/BritishRoyalty'>;
@@ -528,9 +509,7 @@ export interface Dbo {
     "bronzeMedalist": NamedNode<'http://dbpedia.org/ontology/bronzeMedalist'>;
     "bronzeMedalMixed": NamedNode<'http://dbpedia.org/ontology/bronzeMedalMixed'>;
     "bronzeMedalSingle": NamedNode<'http://dbpedia.org/ontology/bronzeMedalSingle'>;
-    "brother": NamedNode<'http://dbpedia.org/ontology/brother'>;
     "BrownDwarf": NamedNode<'http://dbpedia.org/ontology/BrownDwarf'>;
-    "Browser": NamedNode<'http://dbpedia.org/ontology/Browser'>;
     "bSide": NamedNode<'http://dbpedia.org/ontology/bSide'>;
     "budget": NamedNode<'http://dbpedia.org/ontology/budget'>;
     "budgetYear": NamedNode<'http://dbpedia.org/ontology/budgetYear'>;
@@ -695,12 +674,9 @@ export interface Dbo {
     "chef": NamedNode<'http://dbpedia.org/ontology/chef'>;
     /** a person who cooks professionally for other people */
     "Chef": NamedNode<'http://dbpedia.org/ontology/Chef'>;
-    "chEMBL": NamedNode<'http://dbpedia.org/ontology/chEMBL'>;
     "ChemicalCompound": NamedNode<'http://dbpedia.org/ontology/ChemicalCompound'>;
     "ChemicalElement": NamedNode<'http://dbpedia.org/ontology/ChemicalElement'>;
-    "chemicalFormula": NamedNode<'http://dbpedia.org/ontology/chemicalFormula'>;
     "ChemicalSubstance": NamedNode<'http://dbpedia.org/ontology/ChemicalSubstance'>;
-    "chemSpiderId": NamedNode<'http://dbpedia.org/ontology/chemSpiderId'>;
     "ChessPlayer": NamedNode<'http://dbpedia.org/ontology/ChessPlayer'>;
     "chiefEditor": NamedNode<'http://dbpedia.org/ontology/chiefEditor'>;
     "chiefPlace": NamedNode<'http://dbpedia.org/ontology/chiefPlace'>;
@@ -717,9 +693,7 @@ export interface Dbo {
     "chromosome": NamedNode<'http://dbpedia.org/ontology/chromosome'>;
     /** This is used for church buildings, not any other meaning of church. */
     "Church": NamedNode<'http://dbpedia.org/ontology/Church'>;
-    "Cinema": NamedNode<'http://dbpedia.org/ontology/Cinema'>;
     "cinematography": NamedNode<'http://dbpedia.org/ontology/cinematography'>;
-    "Cipher": NamedNode<'http://dbpedia.org/ontology/Cipher'>;
     "circle": NamedNode<'http://dbpedia.org/ontology/circle'>;
     "circuitLength": NamedNode<'http://dbpedia.org/ontology/circuitLength'>;
     "circuitName": NamedNode<'http://dbpedia.org/ontology/circuitName'>;
@@ -738,7 +712,6 @@ export interface Dbo {
     "cityRank": NamedNode<'http://dbpedia.org/ontology/cityRank'>;
     "citySince": NamedNode<'http://dbpedia.org/ontology/citySince'>;
     "cityType": NamedNode<'http://dbpedia.org/ontology/cityType'>;
-    "clade": NamedNode<'http://dbpedia.org/ontology/clade'>;
     "class": NamedNode<'http://dbpedia.org/ontology/class'>;
     "classes": NamedNode<'http://dbpedia.org/ontology/classes'>;
     /** Ο Λούντβιχ βαν Μπετόβεν,Γερμανός συνθέτης και πιανίστας,ήταν ένας σπουδαίος καλλιτέχνης της κλασικής μουσικής. */
@@ -834,7 +807,6 @@ export interface Dbo {
     "colourName": NamedNode<'http://dbpedia.org/ontology/colourName'>;
     "ColourName": NamedNode<'http://dbpedia.org/ontology/ColourName'>;
     "combatant": NamedNode<'http://dbpedia.org/ontology/combatant'>;
-    "CombinationDrug": NamedNode<'http://dbpedia.org/ontology/CombinationDrug'>;
     "Comedian": NamedNode<'http://dbpedia.org/ontology/Comedian'>;
     "ComedyGroup": NamedNode<'http://dbpedia.org/ontology/ComedyGroup'>;
     "comic": NamedNode<'http://dbpedia.org/ontology/comic'>;
@@ -874,7 +846,6 @@ export interface Dbo {
     "complexion": NamedNode<'http://dbpedia.org/ontology/complexion'>;
     /** Complexity of preparing a Food (recipe) */
     "complexity": NamedNode<'http://dbpedia.org/ontology/complexity'>;
-    "complications": NamedNode<'http://dbpedia.org/ontology/complications'>;
     "component": NamedNode<'http://dbpedia.org/ontology/component'>;
     "composer": NamedNode<'http://dbpedia.org/ontology/composer'>;
     "compressionRatio": NamedNode<'http://dbpedia.org/ontology/compressionRatio'>;
@@ -888,7 +859,6 @@ export interface Dbo {
      */
     "ConcentrationCamp": NamedNode<'http://dbpedia.org/ontology/ConcentrationCamp'>;
     "configuration": NamedNode<'http://dbpedia.org/ontology/configuration'>;
-    "confirmedCases": NamedNode<'http://dbpedia.org/ontology/confirmedCases'>;
     "conflict": NamedNode<'http://dbpedia.org/ontology/conflict'>;
     "congressionalDistrict": NamedNode<'http://dbpedia.org/ontology/congressionalDistrict'>;
     "Congressman": NamedNode<'http://dbpedia.org/ontology/Congressman'>;
@@ -904,7 +874,6 @@ export interface Dbo {
     "constellation": NamedNode<'http://dbpedia.org/ontology/constellation'>;
     /** Una costellazione è ognuna delle 88 parti in cui la sfera celeste è convenzionalmente suddivisa allo scopo di mappare le stelle. */
     "Constellation": NamedNode<'http://dbpedia.org/ontology/Constellation'>;
-    "constituencyDistrict": NamedNode<'http://dbpedia.org/ontology/constituencyDistrict'>;
     "construction": NamedNode<'http://dbpedia.org/ontology/construction'>;
     /** Construction material (eg. concrete, steel, iron, stone, brick, wood). */
     "constructionMaterial": NamedNode<'http://dbpedia.org/ontology/constructionMaterial'>;
@@ -927,7 +896,6 @@ export interface Dbo {
     "Convention": NamedNode<'http://dbpedia.org/ontology/Convention'>;
     "ConveyorSystem": NamedNode<'http://dbpedia.org/ontology/ConveyorSystem'>;
     "convictionDate": NamedNode<'http://dbpedia.org/ontology/convictionDate'>;
-    "convictionPenalty": NamedNode<'http://dbpedia.org/ontology/convictionPenalty'>;
     "coolingSystem": NamedNode<'http://dbpedia.org/ontology/coolingSystem'>;
     "copilote": NamedNode<'http://dbpedia.org/ontology/copilote'>;
     "coProducer": NamedNode<'http://dbpedia.org/ontology/coProducer'>;
@@ -943,7 +911,6 @@ export interface Dbo {
     /** The country where the thing is located. */
     "country": NamedNode<'http://dbpedia.org/ontology/country'>;
     "Country": NamedNode<'http://dbpedia.org/ontology/Country'>;
-    "countryCode": NamedNode<'http://dbpedia.org/ontology/countryCode'>;
     "countryOrigin": NamedNode<'http://dbpedia.org/ontology/countryOrigin'>;
     /** Der Platz des Gebäudes in der Liste der höchsten Gebäude des Landes */
     "countryRank": NamedNode<'http://dbpedia.org/ontology/countryRank'>;
@@ -957,11 +924,9 @@ export interface Dbo {
     "county": NamedNode<'http://dbpedia.org/ontology/county'>;
     "countySeat": NamedNode<'http://dbpedia.org/ontology/countySeat'>;
     "course": NamedNode<'http://dbpedia.org/ontology/course'>;
-    "courseArea": NamedNode<'http://dbpedia.org/ontology/courseArea'>;
     "cousurper": NamedNode<'http://dbpedia.org/ontology/cousurper'>;
     /** Cover artist */
     "coverArtist": NamedNode<'http://dbpedia.org/ontology/coverArtist'>;
-    "Covid19": NamedNode<'http://dbpedia.org/ontology/Covid19'>;
     /** CPU of an InformationAppliance or VideoGame (which unfortunately is currently under Software) */
     "cpu": NamedNode<'http://dbpedia.org/ontology/cpu'>;
     "Crater": NamedNode<'http://dbpedia.org/ontology/Crater'>;
@@ -987,7 +952,6 @@ export interface Dbo {
     "CricketLeague": NamedNode<'http://dbpedia.org/ontology/CricketLeague'>;
     "CricketTeam": NamedNode<'http://dbpedia.org/ontology/CricketTeam'>;
     "Criminal": NamedNode<'http://dbpedia.org/ontology/Criminal'>;
-    "criminalCharge": NamedNode<'http://dbpedia.org/ontology/criminalCharge'>;
     "criteria": NamedNode<'http://dbpedia.org/ontology/criteria'>;
     "CrossCountrySkier": NamedNode<'http://dbpedia.org/ontology/CrossCountrySkier'>;
     "crosses": NamedNode<'http://dbpedia.org/ontology/crosses'>;
@@ -1036,8 +1000,6 @@ export interface Dbo {
     "cyclistGenre": NamedNode<'http://dbpedia.org/ontology/cyclistGenre'>;
     "cylinderBore": NamedNode<'http://dbpedia.org/ontology/cylinderBore'>;
     "cylinderCount": NamedNode<'http://dbpedia.org/ontology/cylinderCount'>;
-    "dailyVaccinationsPerMillion": NamedNode<'http://dbpedia.org/ontology/dailyVaccinationsPerMillion'>;
-    "dailyVaccinationsRaw": NamedNode<'http://dbpedia.org/ontology/dailyVaccinationsRaw'>;
     "daira": NamedNode<'http://dbpedia.org/ontology/daira'>;
     "dam": NamedNode<'http://dbpedia.org/ontology/dam'>;
     /** A dam is part of a landscape infrastructure, like waterworks (canals) or roads, much more than a building, though, of course, it has been built, too. */
@@ -1063,13 +1025,11 @@ export interface Dbo {
     /** Designates the unveiling date */
     "dateUnveiled": NamedNode<'http://dbpedia.org/ontology/dateUnveiled'>;
     "dateUse": NamedNode<'http://dbpedia.org/ontology/dateUse'>;
-    "daughter": NamedNode<'http://dbpedia.org/ontology/daughter'>;
     "davisCup": NamedNode<'http://dbpedia.org/ontology/davisCup'>;
     "day": NamedNode<'http://dbpedia.org/ontology/day'>;
     "daylightSavingTimeZone": NamedNode<'http://dbpedia.org/ontology/daylightSavingTimeZone'>;
     /** ID in Digitale Bibliotheek voor de Nederlandse Letteren (dbnl) */
     "dbnlCodeDutch": NamedNode<'http://dbpedia.org/ontology/dbnlCodeDutch'>;
-    "DBpedian": NamedNode<'http://dbpedia.org/ontology/DBpedian'>;
     /** The Dewey Decimal Classification is a proprietary system of library classification developed by Melvil Dewey in 1876. */
     "dcc": NamedNode<'http://dbpedia.org/ontology/dcc'>;
     "deadInFightDate": NamedNode<'http://dbpedia.org/ontology/deadInFightDate'>;
@@ -1086,7 +1046,6 @@ export interface Dbo {
     "deathDate": NamedNode<'http://dbpedia.org/ontology/deathDate'>;
     /** The place where the person died. */
     "deathPlace": NamedNode<'http://dbpedia.org/ontology/deathPlace'>;
-    "deaths": NamedNode<'http://dbpedia.org/ontology/deaths'>;
     "deathYear": NamedNode<'http://dbpedia.org/ontology/deathYear'>;
     "debut": NamedNode<'http://dbpedia.org/ontology/debut'>;
     "debutTeam": NamedNode<'http://dbpedia.org/ontology/debutTeam'>;
@@ -1104,7 +1063,6 @@ export interface Dbo {
     "defeat": NamedNode<'http://dbpedia.org/ontology/defeat'>;
     "defeatAsMgr": NamedNode<'http://dbpedia.org/ontology/defeatAsMgr'>;
     "definition": NamedNode<'http://dbpedia.org/ontology/definition'>;
-    "defunct": NamedNode<'http://dbpedia.org/ontology/defunct'>;
     "Deity": NamedNode<'http://dbpedia.org/ontology/Deity'>;
     "delegateMayor": NamedNode<'http://dbpedia.org/ontology/delegateMayor'>;
     "delegation": NamedNode<'http://dbpedia.org/ontology/delegation'>;
@@ -1153,7 +1111,6 @@ export interface Dbo {
     "dfE": NamedNode<'http://dbpedia.org/ontology/dfE'>;
     "diameter": NamedNode<'http://dbpedia.org/ontology/diameter'>;
     "different": NamedNode<'http://dbpedia.org/ontology/different'>;
-    "differentialDiagnosis": NamedNode<'http://dbpedia.org/ontology/differentialDiagnosis'>;
     /** Η ψηφιακή φωτογραφική μηχανή είναι συσκευή η οποία καταγράφει εικόνες με ηλεκτρονικό τρόπο, σε αντίθεση με την συμβατική φωτογραφική μηχανή, η οποία καταγράφει εικόνες με χημικές και μηχανικές διαδικασίες. */
     "DigitalCamera": NamedNode<'http://dbpedia.org/ontology/DigitalCamera'>;
     /** Ένα ψηφιακό κανάλι επιτρέπει την μετάδοση δεδομένων σε ψηφιακή μορφή. */
@@ -1180,10 +1137,8 @@ export interface Dbo {
     "discovered": NamedNode<'http://dbpedia.org/ontology/discovered'>;
     "discoverer": NamedNode<'http://dbpedia.org/ontology/discoverer'>;
     "discovery": NamedNode<'http://dbpedia.org/ontology/discovery'>;
-    "disease": NamedNode<'http://dbpedia.org/ontology/disease'>;
     "Disease": NamedNode<'http://dbpedia.org/ontology/Disease'>;
     "diseasesDb": NamedNode<'http://dbpedia.org/ontology/diseasesDb'>;
-    "diseasesDB": NamedNode<'http://dbpedia.org/ontology/diseasesDB'>;
     "DisneyCharacter": NamedNode<'http://dbpedia.org/ontology/DisneyCharacter'>;
     "displacement": NamedNode<'http://dbpedia.org/ontology/displacement'>;
     "dissolutionDate": NamedNode<'http://dbpedia.org/ontology/dissolutionDate'>;
@@ -1227,12 +1182,8 @@ export interface Dbo {
     "DocumentType": NamedNode<'http://dbpedia.org/ontology/DocumentType'>;
     "Dog": NamedNode<'http://dbpedia.org/ontology/Dog'>;
     "domain": NamedNode<'http://dbpedia.org/ontology/domain'>;
-    "dorlandsId": NamedNode<'http://dbpedia.org/ontology/dorlandsId'>;
     "dorlandsPrefix": NamedNode<'http://dbpedia.org/ontology/dorlandsPrefix'>;
     "dorlandsSuffix": NamedNode<'http://dbpedia.org/ontology/dorlandsSuffix'>;
-    "dose": NamedNode<'http://dbpedia.org/ontology/dose'>;
-    "dosesFirst": NamedNode<'http://dbpedia.org/ontology/dosesFirst'>;
-    "dosesSecond": NamedNode<'http://dbpedia.org/ontology/dosesSecond'>;
     "draft": NamedNode<'http://dbpedia.org/ontology/draft'>;
     "draftLeague": NamedNode<'http://dbpedia.org/ontology/draftLeague'>;
     "draftPick": NamedNode<'http://dbpedia.org/ontology/draftPick'>;
@@ -1246,10 +1197,8 @@ export interface Dbo {
     "Drama": NamedNode<'http://dbpedia.org/ontology/Drama'>;
     /** The recommended dress code for an establishment or event. */
     "dressCode": NamedNode<'http://dbpedia.org/ontology/dressCode'>;
-    "drug": NamedNode<'http://dbpedia.org/ontology/drug'>;
     "Drug": NamedNode<'http://dbpedia.org/ontology/Drug'>;
     "drugbank": NamedNode<'http://dbpedia.org/ontology/drugbank'>;
-    "drugs.com": NamedNode<'http://dbpedia.org/ontology/drugs.com'>;
     "dryCargo": NamedNode<'http://dbpedia.org/ontology/dryCargo'>;
     "DTMRacer": NamedNode<'http://dbpedia.org/ontology/DTMRacer'>;
     /** the person who dubs another person e.g. an actor or a fictional character in movies */
@@ -1321,7 +1270,6 @@ export interface Dbo {
     "employersCelebration": NamedNode<'http://dbpedia.org/ontology/employersCelebration'>;
     /** An employers' organisation is an organisation of entrepreneurs who work together to coordinate their actions in the field of labour relations */
     "EmployersOrganisation": NamedNode<'http://dbpedia.org/ontology/EmployersOrganisation'>;
-    "end": NamedNode<'http://dbpedia.org/ontology/end'>;
     "endangeredSince": NamedNode<'http://dbpedia.org/ontology/endangeredSince'>;
     "endCareer": NamedNode<'http://dbpedia.org/ontology/endCareer'>;
     /** The end date of the event. */
@@ -1428,7 +1376,6 @@ export interface Dbo {
     "fastestLap": NamedNode<'http://dbpedia.org/ontology/fastestLap'>;
     /** Amount of fat per servingSize of a Food */
     "fat": NamedNode<'http://dbpedia.org/ontology/fat'>;
-    "fatalityRate": NamedNode<'http://dbpedia.org/ontology/fatalityRate'>;
     "fate": NamedNode<'http://dbpedia.org/ontology/fate'>;
     "father": NamedNode<'http://dbpedia.org/ontology/father'>;
     "fauna": NamedNode<'http://dbpedia.org/ontology/fauna'>;
@@ -1441,7 +1388,6 @@ export interface Dbo {
     "feat": NamedNode<'http://dbpedia.org/ontology/feat'>;
     "feature": NamedNode<'http://dbpedia.org/ontology/feature'>;
     "features": NamedNode<'http://dbpedia.org/ontology/features'>;
-    "featuring": NamedNode<'http://dbpedia.org/ontology/featuring'>;
     "fedCup": NamedNode<'http://dbpedia.org/ontology/fedCup'>;
     "federalState": NamedNode<'http://dbpedia.org/ontology/federalState'>;
     "federation": NamedNode<'http://dbpedia.org/ontology/federation'>;
@@ -1464,7 +1410,6 @@ export interface Dbo {
     "filename": NamedNode<'http://dbpedia.org/ontology/filename'>;
     /** size of a file or software */
     "fileSize": NamedNode<'http://dbpedia.org/ontology/fileSize'>;
-    "FileSystem": NamedNode<'http://dbpedia.org/ontology/FileSystem'>;
     "fileURL": NamedNode<'http://dbpedia.org/ontology/fileURL'>;
     "fillingStation": NamedNode<'http://dbpedia.org/ontology/fillingStation'>;
     "FillingStation": NamedNode<'http://dbpedia.org/ontology/FillingStation'>;
@@ -1542,7 +1487,6 @@ export interface Dbo {
     "FloweringPlant": NamedNode<'http://dbpedia.org/ontology/FloweringPlant'>;
     "flyingHours": NamedNode<'http://dbpedia.org/ontology/flyingHours'>;
     "foalDate": NamedNode<'http://dbpedia.org/ontology/foalDate'>;
-    "focus": NamedNode<'http://dbpedia.org/ontology/focus'>;
     "followedBy": NamedNode<'http://dbpedia.org/ontology/followedBy'>;
     "followingEvent": NamedNode<'http://dbpedia.org/ontology/followingEvent'>;
     "follows": NamedNode<'http://dbpedia.org/ontology/follows'>;
@@ -1647,7 +1591,6 @@ export interface Dbo {
     "GatedCommunity": NamedNode<'http://dbpedia.org/ontology/GatedCommunity'>;
     /** Awards of the Catalan Academy of Cinema */
     "gaudiAward": NamedNode<'http://dbpedia.org/ontology/gaudiAward'>;
-    "gdpPerCapita": NamedNode<'http://dbpedia.org/ontology/gdpPerCapita'>;
     "geminiAward": NamedNode<'http://dbpedia.org/ontology/geminiAward'>;
     "gender": NamedNode<'http://dbpedia.org/ontology/gender'>;
     "Gene": NamedNode<'http://dbpedia.org/ontology/Gene'>;
@@ -1731,8 +1674,6 @@ export interface Dbo {
     "governorGeneral": NamedNode<'http://dbpedia.org/ontology/governorGeneral'>;
     "goyaAward": NamedNode<'http://dbpedia.org/ontology/goyaAward'>;
     "grades": NamedNode<'http://dbpedia.org/ontology/grades'>;
-    "gradName": NamedNode<'http://dbpedia.org/ontology/gradName'>;
-    "gradNum": NamedNode<'http://dbpedia.org/ontology/gradNum'>;
     "grammyAward": NamedNode<'http://dbpedia.org/ontology/grammyAward'>;
     "GrandPrix": NamedNode<'http://dbpedia.org/ontology/GrandPrix'>;
     "grandsire": NamedNode<'http://dbpedia.org/ontology/grandsire'>;
@@ -1820,8 +1761,6 @@ export interface Dbo {
     "heritageRegister": NamedNode<'http://dbpedia.org/ontology/heritageRegister'>;
     "hgncid": NamedNode<'http://dbpedia.org/ontology/hgncid'>;
     "HighDiver": NamedNode<'http://dbpedia.org/ontology/HighDiver'>;
-    "highest": NamedNode<'http://dbpedia.org/ontology/highest'>;
-    "highestAltitude": NamedNode<'http://dbpedia.org/ontology/highestAltitude'>;
     "highestBreak": NamedNode<'http://dbpedia.org/ontology/highestBreak'>;
     "highestBuildingInYear": NamedNode<'http://dbpedia.org/ontology/highestBuildingInYear'>;
     "highestMountain": NamedNode<'http://dbpedia.org/ontology/highestMountain'>;
@@ -1843,7 +1782,6 @@ export interface Dbo {
     "HistoricalCountry": NamedNode<'http://dbpedia.org/ontology/HistoricalCountry'>;
     /** a place which used to be a district. */
     "HistoricalDistrict": NamedNode<'http://dbpedia.org/ontology/HistoricalDistrict'>;
-    "HistoricalEvent": NamedNode<'http://dbpedia.org/ontology/HistoricalEvent'>;
     "historicalMap": NamedNode<'http://dbpedia.org/ontology/historicalMap'>;
     "historicalName": NamedNode<'http://dbpedia.org/ontology/historicalName'>;
     /** A historical Period should be linked to a Place by way of the property dct:spatial (already defined) */
@@ -1926,7 +1864,6 @@ export interface Dbo {
     /** ID d'un film sur Allocine */
     "idAllocine": NamedNode<'http://dbpedia.org/ontology/idAllocine'>;
     "identificationSymbol": NamedNode<'http://dbpedia.org/ontology/identificationSymbol'>;
-    "Identifier": NamedNode<'http://dbpedia.org/ontology/Identifier'>;
     "ideology": NamedNode<'http://dbpedia.org/ontology/ideology'>;
     /** for example: Progressivism_in_the_United_States, Classical_liberalism */
     "Ideology": NamedNode<'http://dbpedia.org/ontology/Ideology'>;
@@ -1946,7 +1883,6 @@ export interface Dbo {
     "impactFactor": NamedNode<'http://dbpedia.org/ontology/impactFactor'>;
     /** Census year of the imapct factor. */
     "impactFactorAsOf": NamedNode<'http://dbpedia.org/ontology/impactFactorAsOf'>;
-    "importantStation": NamedNode<'http://dbpedia.org/ontology/importantStation'>;
     "imposedDanseCompetition": NamedNode<'http://dbpedia.org/ontology/imposedDanseCompetition'>;
     "imposedDanseScore": NamedNode<'http://dbpedia.org/ontology/imposedDanseScore'>;
     "inCemetery": NamedNode<'http://dbpedia.org/ontology/inCemetery'>;
@@ -1970,7 +1906,6 @@ export interface Dbo {
     "InformationAppliance": NamedNode<'http://dbpedia.org/ontology/InformationAppliance'>;
     "informationName": NamedNode<'http://dbpedia.org/ontology/informationName'>;
     "Infrastructure": NamedNode<'http://dbpedia.org/ontology/Infrastructure'>;
-    "Infrastucture": NamedNode<'http://dbpedia.org/ontology/Infrastucture'>;
     /** Main ingredient used to prepare a specific Food or Beverage. For strings use ingredientName, for objects use ingredient. */
     "ingredient": NamedNode<'http://dbpedia.org/ontology/ingredient'>;
     /** Main ingredient used to prepare a specific Food or Beverage. For strings use ingredientName, for objects use ingredient. */
@@ -2041,11 +1976,9 @@ export interface Dbo {
     "ist": NamedNode<'http://dbpedia.org/ontology/ist'>;
     /** Indexing code used for Italian municipalities */
     "istat": NamedNode<'http://dbpedia.org/ontology/istat'>;
-    "italicTitle": NamedNode<'http://dbpedia.org/ontology/italicTitle'>;
     "ithfDate": NamedNode<'http://dbpedia.org/ontology/ithfDate'>;
     "iucnCategory": NamedNode<'http://dbpedia.org/ontology/iucnCategory'>;
     "iupacName": NamedNode<'http://dbpedia.org/ontology/iupacName'>;
-    "JewishLeader": NamedNode<'http://dbpedia.org/ontology/JewishLeader'>;
     "jockey": NamedNode<'http://dbpedia.org/ontology/jockey'>;
     "Jockey": NamedNode<'http://dbpedia.org/ontology/Jockey'>;
     "jointCommunity": NamedNode<'http://dbpedia.org/ontology/jointCommunity'>;
@@ -2063,7 +1996,6 @@ export interface Dbo {
     /** Die Zuständigkeit oder Kompetenz legt im öffentlichen Recht fest, welche Behörde bzw. welches Gericht im Einzelfall rechtlich zu hoheitlichem Handeln ermächtigt und verpflichtet ist. */
     "jurisdiction": NamedNode<'http://dbpedia.org/ontology/jurisdiction'>;
     "jutsu": NamedNode<'http://dbpedia.org/ontology/jutsu'>;
-    "kegg": NamedNode<'http://dbpedia.org/ontology/kegg'>;
     "keyPerson": NamedNode<'http://dbpedia.org/ontology/keyPerson'>;
     "khlDraft": NamedNode<'http://dbpedia.org/ontology/khlDraft'>;
     "khlDraftTeam": NamedNode<'http://dbpedia.org/ontology/khlDraftTeam'>;
@@ -2133,7 +2065,6 @@ export interface Dbo {
     "latestReleaseDate": NamedNode<'http://dbpedia.org/ontology/latestReleaseDate'>;
     "latestReleaseVersion": NamedNode<'http://dbpedia.org/ontology/latestReleaseVersion'>;
     "latinName": NamedNode<'http://dbpedia.org/ontology/latinName'>;
-    "LatterDaySaint": NamedNode<'http://dbpedia.org/ontology/LatterDaySaint'>;
     "launch": NamedNode<'http://dbpedia.org/ontology/launch'>;
     "launchDate": NamedNode<'http://dbpedia.org/ontology/launchDate'>;
     "launches": NamedNode<'http://dbpedia.org/ontology/launches'>;
@@ -2180,7 +2111,6 @@ export interface Dbo {
     "legalForm": NamedNode<'http://dbpedia.org/ontology/legalForm'>;
     /** The term of the on-going session (e.g.: "40th Canadian Parliament"). */
     "legislativePeriodName": NamedNode<'http://dbpedia.org/ontology/legislativePeriodName'>;
-    "legislature": NamedNode<'http://dbpedia.org/ontology/legislature'>;
     "Legislature": NamedNode<'http://dbpedia.org/ontology/Legislature'>;
     "length": NamedNode<'http://dbpedia.org/ontology/length'>;
     "lengthQuote": NamedNode<'http://dbpedia.org/ontology/lengthQuote'>;
@@ -2266,7 +2196,6 @@ export interface Dbo {
     /** Payload mass in a typical Low Earth orbit */
     "lowerEarthOrbitPayload": NamedNode<'http://dbpedia.org/ontology/lowerEarthOrbitPayload'>;
     "lowest": NamedNode<'http://dbpedia.org/ontology/lowest'>;
-    "lowestAltitude": NamedNode<'http://dbpedia.org/ontology/lowestAltitude'>;
     "lowestMountain": NamedNode<'http://dbpedia.org/ontology/lowestMountain'>;
     "lowestPlace": NamedNode<'http://dbpedia.org/ontology/lowestPlace'>;
     "lowestPoint": NamedNode<'http://dbpedia.org/ontology/lowestPoint'>;
@@ -2292,8 +2221,6 @@ export interface Dbo {
     "maidenFlight": NamedNode<'http://dbpedia.org/ontology/maidenFlight'>;
     "maidenFlightRocket": NamedNode<'http://dbpedia.org/ontology/maidenFlightRocket'>;
     "maidenVoyage": NamedNode<'http://dbpedia.org/ontology/maidenVoyage'>;
-    "mainArticleForCategory": NamedNode<'http://dbpedia.org/ontology/mainArticleForCategory'>;
-    "mainArtist": NamedNode<'http://dbpedia.org/ontology/mainArtist'>;
     "mainBuilding": NamedNode<'http://dbpedia.org/ontology/mainBuilding'>;
     "mainCharacter": NamedNode<'http://dbpedia.org/ontology/mainCharacter'>;
     "mainDomain": NamedNode<'http://dbpedia.org/ontology/mainDomain'>;
@@ -2313,7 +2240,6 @@ export interface Dbo {
     /** the person who is responsible for the actors makeup */
     "makeupArtist": NamedNode<'http://dbpedia.org/ontology/makeupArtist'>;
     "Mammal": NamedNode<'http://dbpedia.org/ontology/Mammal'>;
-    "Man": NamedNode<'http://dbpedia.org/ontology/Man'>;
     "management": NamedNode<'http://dbpedia.org/ontology/management'>;
     "managementCountry": NamedNode<'http://dbpedia.org/ontology/managementCountry'>;
     "managementElevation": NamedNode<'http://dbpedia.org/ontology/managementElevation'>;
@@ -2336,8 +2262,6 @@ export interface Dbo {
     "Manhua": NamedNode<'http://dbpedia.org/ontology/Manhua'>;
     /** Korean term for comics and print cartoons */
     "Manhwa": NamedNode<'http://dbpedia.org/ontology/Manhwa'>;
-    "Manor": NamedNode<'http://dbpedia.org/ontology/Manor'>;
-    "manufactory": NamedNode<'http://dbpedia.org/ontology/manufactory'>;
     "manufacturer": NamedNode<'http://dbpedia.org/ontology/manufacturer'>;
     /** A map of the place. */
     "map": NamedNode<'http://dbpedia.org/ontology/map'>;
@@ -2398,11 +2322,6 @@ export interface Dbo {
     "mediaItem": NamedNode<'http://dbpedia.org/ontology/mediaItem'>;
     /** Print / On-line (then binding types etc. if relevant) */
     "mediaType": NamedNode<'http://dbpedia.org/ontology/mediaType'>;
-    "medicalCause": NamedNode<'http://dbpedia.org/ontology/medicalCause'>;
-    "medicalDiagnosis": NamedNode<'http://dbpedia.org/ontology/medicalDiagnosis'>;
-    "medicalSpecialty": NamedNode<'http://dbpedia.org/ontology/medicalSpecialty'>;
-    "MedicalSpecialty": NamedNode<'http://dbpedia.org/ontology/MedicalSpecialty'>;
-    "medication": NamedNode<'http://dbpedia.org/ontology/medication'>;
     "Medician": NamedNode<'http://dbpedia.org/ontology/Medician'>;
     /** The science and art of healing the human body and identifying the causes of disease */
     "Medicine": NamedNode<'http://dbpedia.org/ontology/Medicine'>;
@@ -2426,7 +2345,6 @@ export interface Dbo {
     "mentor": NamedNode<'http://dbpedia.org/ontology/mentor'>;
     "mergedIntoParty": NamedNode<'http://dbpedia.org/ontology/mergedIntoParty'>;
     "mergedSettlement": NamedNode<'http://dbpedia.org/ontology/mergedSettlement'>;
-    "mergedWith": NamedNode<'http://dbpedia.org/ontology/mergedWith'>;
     "mergerDate": NamedNode<'http://dbpedia.org/ontology/mergerDate'>;
     "meshId": NamedNode<'http://dbpedia.org/ontology/meshId'>;
     "meshName": NamedNode<'http://dbpedia.org/ontology/meshName'>;
@@ -2451,8 +2369,6 @@ export interface Dbo {
     "MilitaryPerson": NamedNode<'http://dbpedia.org/ontology/MilitaryPerson'>;
     /** The highest rank achieved by a person. */
     "militaryRank": NamedNode<'http://dbpedia.org/ontology/militaryRank'>;
-    "militaryService": NamedNode<'http://dbpedia.org/ontology/militaryService'>;
-    "MilitaryService": NamedNode<'http://dbpedia.org/ontology/MilitaryService'>;
     /** A military structure such as a Castle, Fortress, Wall, etc. */
     "MilitaryStructure": NamedNode<'http://dbpedia.org/ontology/MilitaryStructure'>;
     /** For persons who are not notable as commanding officers, the unit (company, battalion, regiment, etc.) in which they served. */
@@ -2484,8 +2400,6 @@ export interface Dbo {
     "minimumElevation": NamedNode<'http://dbpedia.org/ontology/minimumElevation'>;
     "minimumInclination": NamedNode<'http://dbpedia.org/ontology/minimumInclination'>;
     "minimumTemperature": NamedNode<'http://dbpedia.org/ontology/minimumTemperature'>;
-    "minister": NamedNode<'http://dbpedia.org/ontology/minister'>;
-    "Minister": NamedNode<'http://dbpedia.org/ontology/Minister'>;
     "minority": NamedNode<'http://dbpedia.org/ontology/minority'>;
     /** number of office holder */
     "minorityFloorLeader": NamedNode<'http://dbpedia.org/ontology/minorityFloorLeader'>;
@@ -2508,9 +2422,6 @@ export interface Dbo {
     "modelLineVehicle": NamedNode<'http://dbpedia.org/ontology/modelLineVehicle'>;
     "modelStartDate": NamedNode<'http://dbpedia.org/ontology/modelStartDate'>;
     "modelStartYear": NamedNode<'http://dbpedia.org/ontology/modelStartYear'>;
-    "moderna": NamedNode<'http://dbpedia.org/ontology/moderna'>;
-    "modernaCumul": NamedNode<'http://dbpedia.org/ontology/modernaCumul'>;
-    "molarMass": NamedNode<'http://dbpedia.org/ontology/molarMass'>;
     "molecularWeight": NamedNode<'http://dbpedia.org/ontology/molecularWeight'>;
     /** Τα μαλάκια αποτελούν μια τεράστια συνομοταξία ζώων, την πολυπληθέστερη μετά τα αρθρόποδα, με πάνω από 100.000 είδη. */
     "Mollusca": NamedNode<'http://dbpedia.org/ontology/Mollusca'>;
@@ -2519,7 +2430,6 @@ export interface Dbo {
     /** Een klooster (van het Latijnse claustrum, afgesloten ruimte) is een gebouw of een samenstel van gebouwen dat dient tot huisvesting van een groep of gemeenschap van mannen of vrouwen, vaak monniken of monialen genoemd, die zich uit de wereld heeft teruggetrokken om een godsdienstig leven te leiden. */
     "Monastery": NamedNode<'http://dbpedia.org/ontology/Monastery'>;
     "Monastry": NamedNode<'http://dbpedia.org/ontology/Monastry'>;
-    "MonoclonalAntibody": NamedNode<'http://dbpedia.org/ontology/MonoclonalAntibody'>;
     "month": NamedNode<'http://dbpedia.org/ontology/month'>;
     /** A type of structure (a statue or an art object) created to commemorate a person or important event, not necessarily of a catastrophic nature. */
     "Monument": NamedNode<'http://dbpedia.org/ontology/Monument'>;
@@ -2528,10 +2438,8 @@ export interface Dbo {
     "Mosque": NamedNode<'http://dbpedia.org/ontology/Mosque'>;
     "Moss": NamedNode<'http://dbpedia.org/ontology/Moss'>;
     "mostDownPoint": NamedNode<'http://dbpedia.org/ontology/mostDownPoint'>;
-    "mostSuccessfulPlayer": NamedNode<'http://dbpedia.org/ontology/mostSuccessfulPlayer'>;
     "mostWins": NamedNode<'http://dbpedia.org/ontology/mostWins'>;
     "mother": NamedNode<'http://dbpedia.org/ontology/mother'>;
-    "motive": NamedNode<'http://dbpedia.org/ontology/motive'>;
     "MotocycleRacer": NamedNode<'http://dbpedia.org/ontology/MotocycleRacer'>;
     "Motorcycle": NamedNode<'http://dbpedia.org/ontology/Motorcycle'>;
     /** a group of sports teams or bikerider that compete against each other in Motorcycle Racing */
@@ -2589,7 +2497,6 @@ export interface Dbo {
     "musicalKey": NamedNode<'http://dbpedia.org/ontology/musicalKey'>;
     "MusicalWork": NamedNode<'http://dbpedia.org/ontology/MusicalWork'>;
     "musicBand": NamedNode<'http://dbpedia.org/ontology/musicBand'>;
-    "musicBrainzArtistId": NamedNode<'http://dbpedia.org/ontology/musicBrainzArtistId'>;
     "musicBy": NamedNode<'http://dbpedia.org/ontology/musicBy'>;
     "musicComposer": NamedNode<'http://dbpedia.org/ontology/musicComposer'>;
     /** a person who creates music. */
@@ -2664,11 +2571,9 @@ export interface Dbo {
     "ncaaTeam": NamedNode<'http://dbpedia.org/ontology/ncaaTeam'>;
     "NCAATeamSeason": NamedNode<'http://dbpedia.org/ontology/NCAATeamSeason'>;
     "ncbhof": NamedNode<'http://dbpedia.org/ontology/ncbhof'>;
-    "nciId": NamedNode<'http://dbpedia.org/ontology/nciId'>;
     /** National Diet Library of Japan identificator. http://id.ndl.go.jp/auth/ndlna/$1 */
     "ndlId": NamedNode<'http://dbpedia.org/ontology/ndlId'>;
     "nearestCity": NamedNode<'http://dbpedia.org/ontology/nearestCity'>;
-    "Nebula": NamedNode<'http://dbpedia.org/ontology/Nebula'>;
     "neighboringMunicipality": NamedNode<'http://dbpedia.org/ontology/neighboringMunicipality'>;
     "neighbourConstellations": NamedNode<'http://dbpedia.org/ontology/neighbourConstellations'>;
     "neighbourhood": NamedNode<'http://dbpedia.org/ontology/neighbourhood'>;
@@ -2685,7 +2590,6 @@ export interface Dbo {
     "nextEntity": NamedNode<'http://dbpedia.org/ontology/nextEntity'>;
     "nextEvent": NamedNode<'http://dbpedia.org/ontology/nextEvent'>;
     "nextMission": NamedNode<'http://dbpedia.org/ontology/nextMission'>;
-    "nextTrackNumber": NamedNode<'http://dbpedia.org/ontology/nextTrackNumber'>;
     "nflCode": NamedNode<'http://dbpedia.org/ontology/nflCode'>;
     "nflSeason": NamedNode<'http://dbpedia.org/ontology/nflSeason'>;
     "nflTeam": NamedNode<'http://dbpedia.org/ontology/nflTeam'>;
@@ -2707,7 +2611,6 @@ export interface Dbo {
     /** The subject of a non-fiction book (e.g.: History, Biography, Cookbook, Climate change, ...). */
     "nonFictionSubject": NamedNode<'http://dbpedia.org/ontology/nonFictionSubject'>;
     "nonProfessionalCareer": NamedNode<'http://dbpedia.org/ontology/nonProfessionalCareer'>;
-    "nord": NamedNode<'http://dbpedia.org/ontology/nord'>;
     "NordicCombined": NamedNode<'http://dbpedia.org/ontology/NordicCombined'>;
     /** indicates another place situated north-east. */
     "northEastPlace": NamedNode<'http://dbpedia.org/ontology/northEastPlace'>;
@@ -2751,8 +2654,6 @@ export interface Dbo {
     "numberOfCantons": NamedNode<'http://dbpedia.org/ontology/numberOfCantons'>;
     "numberOfCapitalDeputies": NamedNode<'http://dbpedia.org/ontology/numberOfCapitalDeputies'>;
     "numberOfCity": NamedNode<'http://dbpedia.org/ontology/numberOfCity'>;
-    "numberOfClasses": NamedNode<'http://dbpedia.org/ontology/numberOfClasses'>;
-    "numberOfClassesWithResource": NamedNode<'http://dbpedia.org/ontology/numberOfClassesWithResource'>;
     "numberOfClassrooms": NamedNode<'http://dbpedia.org/ontology/numberOfClassrooms'>;
     "numberOfClubs": NamedNode<'http://dbpedia.org/ontology/numberOfClubs'>;
     /** Aanduiding van omvang van de collectie van deze bibliotheek */
@@ -2763,11 +2664,9 @@ export interface Dbo {
     "numberOfCrew": NamedNode<'http://dbpedia.org/ontology/numberOfCrew'>;
     "numberOfDeaths": NamedNode<'http://dbpedia.org/ontology/numberOfDeaths'>;
     "numberOfDependency": NamedNode<'http://dbpedia.org/ontology/numberOfDependency'>;
-    "numberOfDisambiguates": NamedNode<'http://dbpedia.org/ontology/numberOfDisambiguates'>;
     "numberOfDistrict": NamedNode<'http://dbpedia.org/ontology/numberOfDistrict'>;
     "numberOfDistricts": NamedNode<'http://dbpedia.org/ontology/numberOfDistricts'>;
     "numberOfDoctoralStudents": NamedNode<'http://dbpedia.org/ontology/numberOfDoctoralStudents'>;
-    "numberOfDoors": NamedNode<'http://dbpedia.org/ontology/numberOfDoors'>;
     "numberOfEmployees": NamedNode<'http://dbpedia.org/ontology/numberOfEmployees'>;
     "numberOfEntrances": NamedNode<'http://dbpedia.org/ontology/numberOfEntrances'>;
     "numberOfEpisodes": NamedNode<'http://dbpedia.org/ontology/numberOfEpisodes'>;
@@ -2780,7 +2679,6 @@ export interface Dbo {
     "numberOfHoles": NamedNode<'http://dbpedia.org/ontology/numberOfHoles'>;
     /** Aantal huizen in afgegrensd gebied */
     "numberOfHouses": NamedNode<'http://dbpedia.org/ontology/numberOfHouses'>;
-    "numberOfIndegree": NamedNode<'http://dbpedia.org/ontology/numberOfIndegree'>;
     "numberOfIntercommunality": NamedNode<'http://dbpedia.org/ontology/numberOfIntercommunality'>;
     "numberOfIsland": NamedNode<'http://dbpedia.org/ontology/numberOfIsland'>;
     "numberOfIslands": NamedNode<'http://dbpedia.org/ontology/numberOfIslands'>;
@@ -2789,7 +2687,6 @@ export interface Dbo {
     "numberOfLaunches": NamedNode<'http://dbpedia.org/ontology/numberOfLaunches'>;
     /** Number of lawyers or attorneys in the company. */
     "numberOfLawyers": NamedNode<'http://dbpedia.org/ontology/numberOfLawyers'>;
-    "numberOfLifts": NamedNode<'http://dbpedia.org/ontology/numberOfLifts'>;
     /** Number of lines in the transit system. */
     "numberOfLines": NamedNode<'http://dbpedia.org/ontology/numberOfLines'>;
     /** the number of live albums released by the musical artist */
@@ -2800,16 +2697,12 @@ export interface Dbo {
     "numberOfMembersAsOf": NamedNode<'http://dbpedia.org/ontology/numberOfMembersAsOf'>;
     "numberOfMinistries": NamedNode<'http://dbpedia.org/ontology/numberOfMinistries'>;
     "numberOfMunicipalities": NamedNode<'http://dbpedia.org/ontology/numberOfMunicipalities'>;
-    "numberOfMusicalArtistEntities": NamedNode<'http://dbpedia.org/ontology/numberOfMusicalArtistEntities'>;
-    "numberOfMusicalArtistInstrument": NamedNode<'http://dbpedia.org/ontology/numberOfMusicalArtistInstrument'>;
-    "numberOfMusicalArtistStyle": NamedNode<'http://dbpedia.org/ontology/numberOfMusicalArtistStyle'>;
     "numberOfNeighbourhood": NamedNode<'http://dbpedia.org/ontology/numberOfNeighbourhood'>;
     "numberOfNewlyIntroducedSports": NamedNode<'http://dbpedia.org/ontology/numberOfNewlyIntroducedSports'>;
     /** Number of the company's offices. */
     "numberOfOffices": NamedNode<'http://dbpedia.org/ontology/numberOfOffices'>;
     "numberOfOfficials": NamedNode<'http://dbpedia.org/ontology/numberOfOfficials'>;
     "numberOfOrbits": NamedNode<'http://dbpedia.org/ontology/numberOfOrbits'>;
-    "numberOfOutdegree": NamedNode<'http://dbpedia.org/ontology/numberOfOutdegree'>;
     "numberOfPads": NamedNode<'http://dbpedia.org/ontology/numberOfPads'>;
     /** The books number of pages. */
     "numberOfPages": NamedNode<'http://dbpedia.org/ontology/numberOfPages'>;
@@ -2818,14 +2711,9 @@ export interface Dbo {
     "numberOfParticipatingFemaleAthletes": NamedNode<'http://dbpedia.org/ontology/numberOfParticipatingFemaleAthletes'>;
     "numberOfParticipatingMaleAthletes": NamedNode<'http://dbpedia.org/ontology/numberOfParticipatingMaleAthletes'>;
     "numberOfParticipatingNations": NamedNode<'http://dbpedia.org/ontology/numberOfParticipatingNations'>;
-    "numberOfPassengers": NamedNode<'http://dbpedia.org/ontology/numberOfPassengers'>;
     "numberOfPeopleAttending": NamedNode<'http://dbpedia.org/ontology/numberOfPeopleAttending'>;
     /** nombre de personnes ayant une license pour pratiquer cette activité */
     "numberOfPeopleLicensed": NamedNode<'http://dbpedia.org/ontology/numberOfPeopleLicensed'>;
-    "numberOfPersonBornInPlace": NamedNode<'http://dbpedia.org/ontology/numberOfPersonBornInPlace'>;
-    "numberOfPersonEntities": NamedNode<'http://dbpedia.org/ontology/numberOfPersonEntities'>;
-    "numberOfPersonFromUniversity": NamedNode<'http://dbpedia.org/ontology/numberOfPersonFromUniversity'>;
-    "numberOfPersonInOccupation": NamedNode<'http://dbpedia.org/ontology/numberOfPersonInOccupation'>;
     /** Number of piers standing in a river or other water in normal conditions. */
     "numberOfPiersInWater": NamedNode<'http://dbpedia.org/ontology/numberOfPiersInWater'>;
     "numberOfPixels": NamedNode<'http://dbpedia.org/ontology/numberOfPixels'>;
@@ -2833,17 +2721,9 @@ export interface Dbo {
     "numberOfPlatformLevels": NamedNode<'http://dbpedia.org/ontology/numberOfPlatformLevels'>;
     "numberOfPlayers": NamedNode<'http://dbpedia.org/ontology/numberOfPlayers'>;
     "numberOfPostgraduateStudents": NamedNode<'http://dbpedia.org/ontology/numberOfPostgraduateStudents'>;
-    "numberOfPredicates": NamedNode<'http://dbpedia.org/ontology/numberOfPredicates'>;
     /** number of people who earns his living from a specified activity. */
     "numberOfProfessionals": NamedNode<'http://dbpedia.org/ontology/numberOfProfessionals'>;
-    "numberOfProperties": NamedNode<'http://dbpedia.org/ontology/numberOfProperties'>;
-    "numberOfPropertiesUsed": NamedNode<'http://dbpedia.org/ontology/numberOfPropertiesUsed'>;
     "numberOfReactors": NamedNode<'http://dbpedia.org/ontology/numberOfReactors'>;
-    "numberOfRedirectedResource": NamedNode<'http://dbpedia.org/ontology/numberOfRedirectedResource'>;
-    "numberOfResource": NamedNode<'http://dbpedia.org/ontology/numberOfResource'>;
-    "numberOfResourceOfClass": NamedNode<'http://dbpedia.org/ontology/numberOfResourceOfClass'>;
-    "numberOfResourceOfType": NamedNode<'http://dbpedia.org/ontology/numberOfResourceOfType'>;
-    "numberOfResourceWithType": NamedNode<'http://dbpedia.org/ontology/numberOfResourceWithType'>;
     "numberOfRestaurants": NamedNode<'http://dbpedia.org/ontology/numberOfRestaurants'>;
     "numberOfRockets": NamedNode<'http://dbpedia.org/ontology/numberOfRockets'>;
     "numberOfRooms": NamedNode<'http://dbpedia.org/ontology/numberOfRooms'>;
@@ -2853,11 +2733,7 @@ export interface Dbo {
     /** aantal zetels in Tweede-Kamer-achtig parlement */
     "numberOfSeatsInParliament": NamedNode<'http://dbpedia.org/ontology/numberOfSeatsInParliament'>;
     "numberOfSettlement": NamedNode<'http://dbpedia.org/ontology/numberOfSettlement'>;
-    "numberOfSettlementsInCountry": NamedNode<'http://dbpedia.org/ontology/numberOfSettlementsInCountry'>;
     "numberOfSilverMedalsWon": NamedNode<'http://dbpedia.org/ontology/numberOfSilverMedalsWon'>;
-    "numberOfSoccerPlayerInCountryRepre": NamedNode<'http://dbpedia.org/ontology/numberOfSoccerPlayerInCountryRepre'>;
-    "numberOfSoccerPlayersBornInPlace": NamedNode<'http://dbpedia.org/ontology/numberOfSoccerPlayersBornInPlace'>;
-    "numberOfSoccerPlayersInTeam": NamedNode<'http://dbpedia.org/ontology/numberOfSoccerPlayersInTeam'>;
     /** Number of spans or arches. */
     "numberOfSpans": NamedNode<'http://dbpedia.org/ontology/numberOfSpans'>;
     "numberOfSpeakers": NamedNode<'http://dbpedia.org/ontology/numberOfSpeakers'>;
@@ -2868,7 +2744,6 @@ export interface Dbo {
     "numberOfStateDeputies": NamedNode<'http://dbpedia.org/ontology/numberOfStateDeputies'>;
     /** Number of stations or stops. */
     "numberOfStations": NamedNode<'http://dbpedia.org/ontology/numberOfStations'>;
-    "numberOfStores": NamedNode<'http://dbpedia.org/ontology/numberOfStores'>;
     "numberOfStudents": NamedNode<'http://dbpedia.org/ontology/numberOfStudents'>;
     /** the number of studio albums released by the musical artist */
     "numberOfStudioAlbums": NamedNode<'http://dbpedia.org/ontology/numberOfStudioAlbums'>;
@@ -2876,12 +2751,8 @@ export interface Dbo {
     "numberOfTeams": NamedNode<'http://dbpedia.org/ontology/numberOfTeams'>;
     /** Number of tracks of a railway or railway station. */
     "numberOfTracks": NamedNode<'http://dbpedia.org/ontology/numberOfTracks'>;
-    "numberOfTrails": NamedNode<'http://dbpedia.org/ontology/numberOfTrails'>;
-    "numberOfTriples": NamedNode<'http://dbpedia.org/ontology/numberOfTriples'>;
     "numberOfTurns": NamedNode<'http://dbpedia.org/ontology/numberOfTurns'>;
     "numberOfUndergraduateStudents": NamedNode<'http://dbpedia.org/ontology/numberOfUndergraduateStudents'>;
-    "numberOfUniqeResources": NamedNode<'http://dbpedia.org/ontology/numberOfUniqeResources'>;
-    "numberOfUseOfProperty": NamedNode<'http://dbpedia.org/ontology/numberOfUseOfProperty'>;
     /** Number of vehicles used in the transit system. */
     "numberOfVehicles": NamedNode<'http://dbpedia.org/ontology/numberOfVehicles'>;
     "numberOfVillages": NamedNode<'http://dbpedia.org/ontology/numberOfVillages'>;
@@ -2903,7 +2774,6 @@ export interface Dbo {
     "Ocean": NamedNode<'http://dbpedia.org/ontology/Ocean'>;
     /** Online Computer Library Center number */
     "oclc": NamedNode<'http://dbpedia.org/ontology/oclc'>;
-    "odor": NamedNode<'http://dbpedia.org/ontology/odor'>;
     "offeredClasses": NamedNode<'http://dbpedia.org/ontology/offeredClasses'>;
     "office": NamedNode<'http://dbpedia.org/ontology/office'>;
     "OfficeHolder": NamedNode<'http://dbpedia.org/ontology/OfficeHolder'>;
@@ -2995,13 +2865,11 @@ export interface Dbo {
     "originalMaximumBoatLength": NamedNode<'http://dbpedia.org/ontology/originalMaximumBoatLength'>;
     /** The original name of the entity, e.g. film, settlement, etc. */
     "originalName": NamedNode<'http://dbpedia.org/ontology/originalName'>;
-    "originalNotLatinTitle": NamedNode<'http://dbpedia.org/ontology/originalNotLatinTitle'>;
     "originalStartPoint": NamedNode<'http://dbpedia.org/ontology/originalStartPoint'>;
     /** The original title of the work, most of the time in the original language as well */
     "originalTitle": NamedNode<'http://dbpedia.org/ontology/originalTitle'>;
     "origo": NamedNode<'http://dbpedia.org/ontology/origo'>;
     "orogeny": NamedNode<'http://dbpedia.org/ontology/orogeny'>;
-    "orpha": NamedNode<'http://dbpedia.org/ontology/orpha'>;
     "Orphan": NamedNode<'http://dbpedia.org/ontology/Orphan'>;
     "orthologousGene": NamedNode<'http://dbpedia.org/ontology/orthologousGene'>;
     "other": NamedNode<'http://dbpedia.org/ontology/other'>;
@@ -3021,11 +2889,8 @@ export interface Dbo {
     "otherServingLines": NamedNode<'http://dbpedia.org/ontology/otherServingLines'>;
     "otherSportsExperience": NamedNode<'http://dbpedia.org/ontology/otherSportsExperience'>;
     "otherWins": NamedNode<'http://dbpedia.org/ontology/otherWins'>;
-    "otherWorks": NamedNode<'http://dbpedia.org/ontology/otherWorks'>;
-    "Outbreak": NamedNode<'http://dbpedia.org/ontology/Outbreak'>;
     "outflow": NamedNode<'http://dbpedia.org/ontology/outflow'>;
     "output": NamedNode<'http://dbpedia.org/ontology/output'>;
-    "outputHistory": NamedNode<'http://dbpedia.org/ontology/outputHistory'>;
     "outskirts": NamedNode<'http://dbpedia.org/ontology/outskirts'>;
     "overallRecord": NamedNode<'http://dbpedia.org/ontology/overallRecord'>;
     "OverseasDepartment": NamedNode<'http://dbpedia.org/ontology/OverseasDepartment'>;
@@ -3042,12 +2907,8 @@ export interface Dbo {
     "Painter": NamedNode<'http://dbpedia.org/ontology/Painter'>;
     /** Describes a painting to assign picture entries in wikipedia to artists. */
     "Painting": NamedNode<'http://dbpedia.org/ontology/Painting'>;
-    "pandemic": NamedNode<'http://dbpedia.org/ontology/pandemic'>;
-    "Pandemic": NamedNode<'http://dbpedia.org/ontology/Pandemic'>;
-    "pandemicDeaths": NamedNode<'http://dbpedia.org/ontology/pandemicDeaths'>;
     "parent": NamedNode<'http://dbpedia.org/ontology/parent'>;
     "parentCompany": NamedNode<'http://dbpedia.org/ontology/parentCompany'>;
-    "parentheses": NamedNode<'http://dbpedia.org/ontology/parentheses'>;
     "parentMountainPeak": NamedNode<'http://dbpedia.org/ontology/parentMountainPeak'>;
     "parentOrganisation": NamedNode<'http://dbpedia.org/ontology/parentOrganisation'>;
     "parish": NamedNode<'http://dbpedia.org/ontology/parish'>;
@@ -3069,7 +2930,6 @@ export interface Dbo {
     "participant": NamedNode<'http://dbpedia.org/ontology/participant'>;
     "participatingIn": NamedNode<'http://dbpedia.org/ontology/participatingIn'>;
     "particularSign": NamedNode<'http://dbpedia.org/ontology/particularSign'>;
-    "partitionCoefficient": NamedNode<'http://dbpedia.org/ontology/partitionCoefficient'>;
     "partner": NamedNode<'http://dbpedia.org/ontology/partner'>;
     "party": NamedNode<'http://dbpedia.org/ontology/party'>;
     "partyNumber": NamedNode<'http://dbpedia.org/ontology/partyNumber'>;
@@ -3092,13 +2952,9 @@ export interface Dbo {
     "penaltiesTeamB": NamedNode<'http://dbpedia.org/ontology/penaltiesTeamB'>;
     "penaltyScore": NamedNode<'http://dbpedia.org/ontology/penaltyScore'>;
     "PenaltyShootOut": NamedNode<'http://dbpedia.org/ontology/PenaltyShootOut'>;
-    "pendamicDeaths": NamedNode<'http://dbpedia.org/ontology/pendamicDeaths'>;
     "penisLength": NamedNode<'http://dbpedia.org/ontology/penisLength'>;
-    "peopleFullyVaccinated": NamedNode<'http://dbpedia.org/ontology/peopleFullyVaccinated'>;
     /** Name for the people inhabiting a place, eg Ankara->Ankariotes, Bulgaria->Bulgarians */
     "peopleName": NamedNode<'http://dbpedia.org/ontology/peopleName'>;
-    "peopleVaccinated": NamedNode<'http://dbpedia.org/ontology/peopleVaccinated'>;
-    "peopleVaccinatedPerHundred": NamedNode<'http://dbpedia.org/ontology/peopleVaccinatedPerHundred'>;
     "perCapitaIncome": NamedNode<'http://dbpedia.org/ontology/perCapitaIncome'>;
     "perCapitaIncomeAsOf": NamedNode<'http://dbpedia.org/ontology/perCapitaIncomeAsOf'>;
     "perCapitaIncomeRank": NamedNode<'http://dbpedia.org/ontology/perCapitaIncomeRank'>;
@@ -3119,7 +2975,6 @@ export interface Dbo {
     /** Periodical literature (also called a periodical publication or simply a periodical) is a published work that appears in a new edition on a regular schedule. The most familiar examples are the newspaper, often published daily, or weekly; or the magazine, typically published weekly, monthly or as a quarterly. Other examples would be a newsletter, a literary journal or learned journal, or a yearbook. */
     "PeriodicalLiterature": NamedNode<'http://dbpedia.org/ontology/PeriodicalLiterature'>;
     "PeriodOfArtisticStyle": NamedNode<'http://dbpedia.org/ontology/PeriodOfArtisticStyle'>;
-    "perpetrator": NamedNode<'http://dbpedia.org/ontology/perpetrator'>;
     "person": NamedNode<'http://dbpedia.org/ontology/person'>;
     "Person": NamedNode<'http://dbpedia.org/ontology/Person'>;
     /** an event that occurs in someone's personal life */
@@ -3127,12 +2982,7 @@ export interface Dbo {
     "personFunction": NamedNode<'http://dbpedia.org/ontology/personFunction'>;
     "PersonFunction": NamedNode<'http://dbpedia.org/ontology/PersonFunction'>;
     "personName": NamedNode<'http://dbpedia.org/ontology/personName'>;
-    "personsFirstDosesCumul": NamedNode<'http://dbpedia.org/ontology/personsFirstDosesCumul'>;
-    "personsFullDosesCumul": NamedNode<'http://dbpedia.org/ontology/personsFullDosesCumul'>;
-    "pfizer": NamedNode<'http://dbpedia.org/ontology/pfizer'>;
-    "pfizerCumul": NamedNode<'http://dbpedia.org/ontology/pfizerCumul'>;
     "pgaWins": NamedNode<'http://dbpedia.org/ontology/pgaWins'>;
-    "Pharaoh": NamedNode<'http://dbpedia.org/ontology/Pharaoh'>;
     "Philosopher": NamedNode<'http://dbpedia.org/ontology/Philosopher'>;
     /** Philosophical concepts, e.g. Existentialism, Cogito Ergo Sum */
     "PhilosophicalConcept": NamedNode<'http://dbpedia.org/ontology/PhilosophicalConcept'>;
@@ -3151,7 +3001,6 @@ export interface Dbo {
     /** Wikimedia CommonsCategory for pictures of this resource */
     "picturesCommonsCategory": NamedNode<'http://dbpedia.org/ontology/picturesCommonsCategory'>;
     "piercing": NamedNode<'http://dbpedia.org/ontology/piercing'>;
-    "Pilot": NamedNode<'http://dbpedia.org/ontology/Pilot'>;
     "pisciculturalPopulation": NamedNode<'http://dbpedia.org/ontology/pisciculturalPopulation'>;
     "pistonStroke": NamedNode<'http://dbpedia.org/ontology/pistonStroke'>;
     "place": NamedNode<'http://dbpedia.org/ontology/place'>;
@@ -3190,7 +3039,6 @@ export interface Dbo {
     "poles": NamedNode<'http://dbpedia.org/ontology/poles'>;
     /** The police detachment serving a UK place, eg Wakefield -> "West Yorkshire Police" */
     "policeName": NamedNode<'http://dbpedia.org/ontology/policeName'>;
-    "PoliceOfficer": NamedNode<'http://dbpedia.org/ontology/PoliceOfficer'>;
     "polishFilmAward": NamedNode<'http://dbpedia.org/ontology/polishFilmAward'>;
     /** Political concepts, e.g. Capitalism, Democracy */
     "PoliticalConcept": NamedNode<'http://dbpedia.org/ontology/PoliticalConcept'>;
@@ -3206,7 +3054,6 @@ export interface Dbo {
     "politicalPartyOfLeader": NamedNode<'http://dbpedia.org/ontology/politicalPartyOfLeader'>;
     "politicalSeats": NamedNode<'http://dbpedia.org/ontology/politicalSeats'>;
     "politicGovernmentDepartment": NamedNode<'http://dbpedia.org/ontology/politicGovernmentDepartment'>;
-    "politician": NamedNode<'http://dbpedia.org/ontology/politician'>;
     "Politician": NamedNode<'http://dbpedia.org/ontology/Politician'>;
     "PoliticianSpouse": NamedNode<'http://dbpedia.org/ontology/PoliticianSpouse'>;
     /** A group of sports teams that compete against each other in Polo. */
@@ -3275,7 +3122,6 @@ export interface Dbo {
     "presidentGeneralCouncilMandate": NamedNode<'http://dbpedia.org/ontology/presidentGeneralCouncilMandate'>;
     "presidentRegionalCouncil": NamedNode<'http://dbpedia.org/ontology/presidentRegionalCouncil'>;
     "presidentRegionalCouncilMandate": NamedNode<'http://dbpedia.org/ontology/presidentRegionalCouncilMandate'>;
-    "Pretender": NamedNode<'http://dbpedia.org/ontology/Pretender'>;
     "previousDemographics": NamedNode<'http://dbpedia.org/ontology/previousDemographics'>;
     "previousEditor": NamedNode<'http://dbpedia.org/ontology/previousEditor'>;
     "previousEntity": NamedNode<'http://dbpedia.org/ontology/previousEntity'>;
@@ -3285,9 +3131,7 @@ export interface Dbo {
     "previousName": NamedNode<'http://dbpedia.org/ontology/previousName'>;
     "previousPopulation": NamedNode<'http://dbpedia.org/ontology/previousPopulation'>;
     "previousPopulationTotal": NamedNode<'http://dbpedia.org/ontology/previousPopulationTotal'>;
-    "previousTrackNumber": NamedNode<'http://dbpedia.org/ontology/previousTrackNumber'>;
     "previousWork": NamedNode<'http://dbpedia.org/ontology/previousWork'>;
-    "previousWorkDate": NamedNode<'http://dbpedia.org/ontology/previousWorkDate'>;
     /** The price of something, eg a journal. For "total money earned by an Athlete" use gross */
     "price": NamedNode<'http://dbpedia.org/ontology/price'>;
     "Priest": NamedNode<'http://dbpedia.org/ontology/Priest'>;
@@ -3367,7 +3211,6 @@ export interface Dbo {
     "protein": NamedNode<'http://dbpedia.org/ontology/protein'>;
     "Protein": NamedNode<'http://dbpedia.org/ontology/Protein'>;
     "protestantPercentage": NamedNode<'http://dbpedia.org/ontology/protestantPercentage'>;
-    "Protocol": NamedNode<'http://dbpedia.org/ontology/Protocol'>;
     "ProtohistoricalPeriod": NamedNode<'http://dbpedia.org/ontology/ProtohistoricalPeriod'>;
     "provCode": NamedNode<'http://dbpedia.org/ontology/provCode'>;
     "provides": NamedNode<'http://dbpedia.org/ontology/provides'>;
@@ -3458,7 +3301,6 @@ export interface Dbo {
     "rating": NamedNode<'http://dbpedia.org/ontology/rating'>;
     "ratio": NamedNode<'http://dbpedia.org/ontology/ratio'>;
     "Ratio": NamedNode<'http://dbpedia.org/ontology/Ratio'>;
-    "Rebbe": NamedNode<'http://dbpedia.org/ontology/Rebbe'>;
     "Rebellion": NamedNode<'http://dbpedia.org/ontology/Rebellion'>;
     "rebuildDate": NamedNode<'http://dbpedia.org/ontology/rebuildDate'>;
     "rebuilder": NamedNode<'http://dbpedia.org/ontology/rebuilder'>;
@@ -3471,7 +3313,6 @@ export interface Dbo {
     "recordLabel": NamedNode<'http://dbpedia.org/ontology/recordLabel'>;
     "RecordLabel": NamedNode<'http://dbpedia.org/ontology/RecordLabel'>;
     "RecordOffice": NamedNode<'http://dbpedia.org/ontology/RecordOffice'>;
-    "recoveryCases": NamedNode<'http://dbpedia.org/ontology/recoveryCases'>;
     "rector": NamedNode<'http://dbpedia.org/ontology/rector'>;
     "redline": NamedNode<'http://dbpedia.org/ontology/redline'>;
     /** red list code for treatened species NL (different from IUCN) */
@@ -3508,11 +3349,9 @@ export interface Dbo {
     "regionServed": NamedNode<'http://dbpedia.org/ontology/regionServed'>;
     "regionType": NamedNode<'http://dbpedia.org/ontology/regionType'>;
     "registration": NamedNode<'http://dbpedia.org/ontology/registration'>;
-    "registry": NamedNode<'http://dbpedia.org/ontology/registry'>;
     /** Identification of the registry a document is in */
     "registryNumber": NamedNode<'http://dbpedia.org/ontology/registryNumber'>;
     "reign": NamedNode<'http://dbpedia.org/ontology/reign'>;
-    "Reign": NamedNode<'http://dbpedia.org/ontology/Reign'>;
     "reigningPope": NamedNode<'http://dbpedia.org/ontology/reigningPope'>;
     "reignName": NamedNode<'http://dbpedia.org/ontology/reignName'>;
     "related": NamedNode<'http://dbpedia.org/ontology/related'>;
@@ -3566,7 +3405,6 @@ export interface Dbo {
     "restingPlace": NamedNode<'http://dbpedia.org/ontology/restingPlace'>;
     "restingPlacePosition": NamedNode<'http://dbpedia.org/ontology/restingPlacePosition'>;
     "restoreDate": NamedNode<'http://dbpedia.org/ontology/restoreDate'>;
-    "restriction": NamedNode<'http://dbpedia.org/ontology/restriction'>;
     "result": NamedNode<'http://dbpedia.org/ontology/result'>;
     /** A Resume describes a persons work experience and skill set. */
     "Resume": NamedNode<'http://dbpedia.org/ontology/Resume'>;
@@ -3575,7 +3413,6 @@ export interface Dbo {
     "retiredRocket": NamedNode<'http://dbpedia.org/ontology/retiredRocket'>;
     "retirementDate": NamedNode<'http://dbpedia.org/ontology/retirementDate'>;
     "revenue": NamedNode<'http://dbpedia.org/ontology/revenue'>;
-    "revenueYear": NamedNode<'http://dbpedia.org/ontology/revenueYear'>;
     "review": NamedNode<'http://dbpedia.org/ontology/review'>;
     "rgbCoordinateBlue": NamedNode<'http://dbpedia.org/ontology/rgbCoordinateBlue'>;
     "rgbCoordinateGreen": NamedNode<'http://dbpedia.org/ontology/rgbCoordinateGreen'>;
@@ -3586,7 +3423,6 @@ export interface Dbo {
     "rightChild": NamedNode<'http://dbpedia.org/ontology/rightChild'>;
     "rightTributary": NamedNode<'http://dbpedia.org/ontology/rightTributary'>;
     "rival": NamedNode<'http://dbpedia.org/ontology/rival'>;
-    "rivalSchool": NamedNode<'http://dbpedia.org/ontology/rivalSchool'>;
     "river": NamedNode<'http://dbpedia.org/ontology/river'>;
     /** a large natural stream */
     "River": NamedNode<'http://dbpedia.org/ontology/River'>;
@@ -3603,7 +3439,6 @@ export interface Dbo {
     /** A road junction is a location where vehicular traffic going in different directions can proceed in a controlled manner designed to minimize accidents. In some cases, vehicles can change between different routes or directions of travel (http://en.wikipedia.org/wiki/Junction_%28road%29). */
     "RoadJunction": NamedNode<'http://dbpedia.org/ontology/RoadJunction'>;
     "RoadTunnel": NamedNode<'http://dbpedia.org/ontology/RoadTunnel'>;
-    "Robot": NamedNode<'http://dbpedia.org/ontology/Robot'>;
     "rocket": NamedNode<'http://dbpedia.org/ontology/rocket'>;
     "Rocket": NamedNode<'http://dbpedia.org/ontology/Rocket'>;
     "RocketEngine": NamedNode<'http://dbpedia.org/ontology/RocketEngine'>;
@@ -3670,7 +3505,6 @@ export interface Dbo {
     "runwaySurface": NamedNode<'http://dbpedia.org/ontology/runwaySurface'>;
     "runwayWidth": NamedNode<'http://dbpedia.org/ontology/runwayWidth'>;
     "ruralMunicipality": NamedNode<'http://dbpedia.org/ontology/ruralMunicipality'>;
-    "Sailor": NamedNode<'http://dbpedia.org/ontology/Sailor'>;
     "saint": NamedNode<'http://dbpedia.org/ontology/saint'>;
     "Saint": NamedNode<'http://dbpedia.org/ontology/Saint'>;
     "salary": NamedNode<'http://dbpedia.org/ontology/salary'>;
@@ -3679,7 +3513,6 @@ export interface Dbo {
     "Sales": NamedNode<'http://dbpedia.org/ontology/Sales'>;
     "SambaSchool": NamedNode<'http://dbpedia.org/ontology/SambaSchool'>;
     "sameName": NamedNode<'http://dbpedia.org/ontology/sameName'>;
-    "satcat": NamedNode<'http://dbpedia.org/ontology/satcat'>;
     "satellite": NamedNode<'http://dbpedia.org/ontology/satellite'>;
     /** An astronomic object orbiting around a planet or star. Definition partly derived from http://www.ontotext.com/proton/protonext# (and thus WordNet 1.7). */
     "Satellite": NamedNode<'http://dbpedia.org/ontology/Satellite'>;
@@ -3687,7 +3520,6 @@ export interface Dbo {
     /** most recent average SAT scores */
     "satScore": NamedNode<'http://dbpedia.org/ontology/satScore'>;
     "scale": NamedNode<'http://dbpedia.org/ontology/scale'>;
-    "scaleFactor": NamedNode<'http://dbpedia.org/ontology/scaleFactor'>;
     "scene": NamedNode<'http://dbpedia.org/ontology/scene'>;
     /** school a person goes or went to */
     "school": NamedNode<'http://dbpedia.org/ontology/school'>;
@@ -3765,7 +3597,6 @@ export interface Dbo {
     "Settlement": NamedNode<'http://dbpedia.org/ontology/Settlement'>;
     "settlementAttached": NamedNode<'http://dbpedia.org/ontology/settlementAttached'>;
     "setupTime": NamedNode<'http://dbpedia.org/ontology/setupTime'>;
-    "severeCases": NamedNode<'http://dbpedia.org/ontology/severeCases'>;
     "sex": NamedNode<'http://dbpedia.org/ontology/sex'>;
     "sexualOrientation": NamedNode<'http://dbpedia.org/ontology/sexualOrientation'>;
     "shape": NamedNode<'http://dbpedia.org/ontology/shape'>;
@@ -3815,12 +3646,8 @@ export interface Dbo {
     "Singer": NamedNode<'http://dbpedia.org/ontology/Singer'>;
     /** In music, a single or record single is a type of release, typically a recording of fewer tracks than an LP or a CD. */
     "Single": NamedNode<'http://dbpedia.org/ontology/Single'>;
-    "singleList": NamedNode<'http://dbpedia.org/ontology/singleList'>;
-    "SingleList": NamedNode<'http://dbpedia.org/ontology/SingleList'>;
-    "singleOf": NamedNode<'http://dbpedia.org/ontology/singleOf'>;
     "sire": NamedNode<'http://dbpedia.org/ontology/sire'>;
     "siren": NamedNode<'http://dbpedia.org/ontology/siren'>;
-    "sister": NamedNode<'http://dbpedia.org/ontology/sister'>;
     "sisterCollege": NamedNode<'http://dbpedia.org/ontology/sisterCollege'>;
     "sisterNewspaper": NamedNode<'http://dbpedia.org/ontology/sisterNewspaper'>;
     "sisterStation": NamedNode<'http://dbpedia.org/ontology/sisterStation'>;
@@ -3844,7 +3671,6 @@ export interface Dbo {
     /** Το θέρετρο σκι χρησιμοποιείται για να περιγράψει έναν τόπο διακοπών με τις απαραίτητες εγκαταστάσεις διαμονής και εξάσκησης του χειμερινού αθλήματος της χιονοδρομίας */
     "SkiResort": NamedNode<'http://dbpedia.org/ontology/SkiResort'>;
     "skiTow": NamedNode<'http://dbpedia.org/ontology/skiTow'>;
-    "Skos": NamedNode<'http://dbpedia.org/ontology/Skos'>;
     "Skyscraper": NamedNode<'http://dbpedia.org/ontology/Skyscraper'>;
     "slogan": NamedNode<'http://dbpedia.org/ontology/slogan'>;
     /** The Simplified Molecular-Input Line-Entry System or SMILES is a specification in form of a line notation for describing the structure of chemical molecules using short ASCII strings. */
@@ -3888,11 +3714,9 @@ export interface Dbo {
     /** de advocaat-generaal */
     "solicitorGeneral": NamedNode<'http://dbpedia.org/ontology/solicitorGeneral'>;
     "solubility": NamedNode<'http://dbpedia.org/ontology/solubility'>;
-    "solvent": NamedNode<'http://dbpedia.org/ontology/solvent'>;
     "solventWithBadSolubility": NamedNode<'http://dbpedia.org/ontology/solventWithBadSolubility'>;
     "solventWithGoodSolubility": NamedNode<'http://dbpedia.org/ontology/solventWithGoodSolubility'>;
     "solventWithMediocreSolubility": NamedNode<'http://dbpedia.org/ontology/solventWithMediocreSolubility'>;
-    "son": NamedNode<'http://dbpedia.org/ontology/son'>;
     "Song": NamedNode<'http://dbpedia.org/ontology/Song'>;
     /** a person who writes songs. */
     "SongWriter": NamedNode<'http://dbpedia.org/ontology/SongWriter'>;
@@ -3913,14 +3737,12 @@ export interface Dbo {
     "sourceDistrict": NamedNode<'http://dbpedia.org/ontology/sourceDistrict'>;
     "sourceElevation": NamedNode<'http://dbpedia.org/ontology/sourceElevation'>;
     "sourceMountain": NamedNode<'http://dbpedia.org/ontology/sourceMountain'>;
-    "sourceName": NamedNode<'http://dbpedia.org/ontology/sourceName'>;
     "sourcePlace": NamedNode<'http://dbpedia.org/ontology/sourcePlace'>;
     "sourcePosition": NamedNode<'http://dbpedia.org/ontology/sourcePosition'>;
     "sourceRegion": NamedNode<'http://dbpedia.org/ontology/sourceRegion'>;
     "sourceState": NamedNode<'http://dbpedia.org/ontology/sourceState'>;
     /** Source of something (eg an image) as text. Use dct:source if the source is described using a resource */
     "sourceText": NamedNode<'http://dbpedia.org/ontology/sourceText'>;
-    "sourceWebsite": NamedNode<'http://dbpedia.org/ontology/sourceWebsite'>;
     /** indicates another place situated south-east. */
     "southEastPlace": NamedNode<'http://dbpedia.org/ontology/southEastPlace'>;
     /** indicates another place situated south. */
@@ -3944,7 +3766,6 @@ export interface Dbo {
     "specialEffects": NamedNode<'http://dbpedia.org/ontology/specialEffects'>;
     "specialist": NamedNode<'http://dbpedia.org/ontology/specialist'>;
     "speciality": NamedNode<'http://dbpedia.org/ontology/speciality'>;
-    "specialization": NamedNode<'http://dbpedia.org/ontology/specialization'>;
     "specialTrial": NamedNode<'http://dbpedia.org/ontology/specialTrial'>;
     "species": NamedNode<'http://dbpedia.org/ontology/species'>;
     "Species": NamedNode<'http://dbpedia.org/ontology/Species'>;
@@ -3987,10 +3808,8 @@ export interface Dbo {
     /** the person they are married to */
     "spouse": NamedNode<'http://dbpedia.org/ontology/spouse'>;
     "spouseName": NamedNode<'http://dbpedia.org/ontology/spouseName'>;
-    "Spreadsheet": NamedNode<'http://dbpedia.org/ontology/Spreadsheet'>;
     "spurOf": NamedNode<'http://dbpedia.org/ontology/spurOf'>;
     "spurType": NamedNode<'http://dbpedia.org/ontology/spurType'>;
-    "Spy": NamedNode<'http://dbpedia.org/ontology/Spy'>;
     /** The number that an athlete wears in a team sport. */
     "squadNumber": NamedNode<'http://dbpedia.org/ontology/squadNumber'>;
     "Square": NamedNode<'http://dbpedia.org/ontology/Square'>;
@@ -4001,7 +3820,6 @@ export interface Dbo {
     /** a common specification */
     "Standard": NamedNode<'http://dbpedia.org/ontology/Standard'>;
     "Star": NamedNode<'http://dbpedia.org/ontology/Star'>;
-    "StarCluster": NamedNode<'http://dbpedia.org/ontology/StarCluster'>;
     "starRating": NamedNode<'http://dbpedia.org/ontology/starRating'>;
     "starring": NamedNode<'http://dbpedia.org/ontology/starring'>;
     "start": NamedNode<'http://dbpedia.org/ontology/start'>;
@@ -4084,7 +3902,6 @@ export interface Dbo {
     "subregion": NamedNode<'http://dbpedia.org/ontology/subregion'>;
     "subsequentInfrastructure": NamedNode<'http://dbpedia.org/ontology/subsequentInfrastructure'>;
     "subsequentWork": NamedNode<'http://dbpedia.org/ontology/subsequentWork'>;
-    "subsequentWorkDate": NamedNode<'http://dbpedia.org/ontology/subsequentWorkDate'>;
     "subsidiary": NamedNode<'http://dbpedia.org/ontology/subsidiary'>;
     "subsystem": NamedNode<'http://dbpedia.org/ontology/subsystem'>;
     "subsystemLink": NamedNode<'http://dbpedia.org/ontology/subsystemLink'>;
@@ -4121,7 +3938,6 @@ export interface Dbo {
     "surfaceType": NamedNode<'http://dbpedia.org/ontology/surfaceType'>;
     "Surfer": NamedNode<'http://dbpedia.org/ontology/Surfer'>;
     "Surname": NamedNode<'http://dbpedia.org/ontology/Surname'>;
-    "suspectedCases": NamedNode<'http://dbpedia.org/ontology/suspectedCases'>;
     "Swarm": NamedNode<'http://dbpedia.org/ontology/Swarm'>;
     /** a trained athlete who participates in swimming meets */
     "Swimmer": NamedNode<'http://dbpedia.org/ontology/Swimmer'>;
@@ -4129,7 +3945,6 @@ export interface Dbo {
     "SwitzerlandSettlement": NamedNode<'http://dbpedia.org/ontology/SwitzerlandSettlement'>;
     /** HUGO Gene Symbol */
     "symbol": NamedNode<'http://dbpedia.org/ontology/symbol'>;
-    "symptom": NamedNode<'http://dbpedia.org/ontology/symptom'>;
     /** A synagogue, sometimes spelt synagog, is a Jewish or Samaritan house of prayer. */
     "Synagogue": NamedNode<'http://dbpedia.org/ontology/Synagogue'>;
     "synonym": NamedNode<'http://dbpedia.org/ontology/synonym'>;
@@ -4141,7 +3956,6 @@ export interface Dbo {
     /** Athlete who plays table tennis */
     "TableTennisPlayer": NamedNode<'http://dbpedia.org/ontology/TableTennisPlayer'>;
     "tag": NamedNode<'http://dbpedia.org/ontology/tag'>;
-    "Tank": NamedNode<'http://dbpedia.org/ontology/Tank'>;
     /** head of government of Ireland */
     "taoiseach": NamedNode<'http://dbpedia.org/ontology/taoiseach'>;
     "targetAirport": NamedNode<'http://dbpedia.org/ontology/targetAirport'>;
@@ -4177,7 +3991,6 @@ export interface Dbo {
     /** A television station has usually one line up. For instance the television station WABC-TV (or ABC 7, Channel 7). Not to be confused with the broadcasting network ABC, which has many television stations. */
     "TelevisionStation": NamedNode<'http://dbpedia.org/ontology/TelevisionStation'>;
     "temperature": NamedNode<'http://dbpedia.org/ontology/temperature'>;
-    "templateName": NamedNode<'http://dbpedia.org/ontology/templateName'>;
     "temple": NamedNode<'http://dbpedia.org/ontology/temple'>;
     "Temple": NamedNode<'http://dbpedia.org/ontology/Temple'>;
     "templeYear": NamedNode<'http://dbpedia.org/ontology/templeYear'>;
@@ -4189,7 +4002,6 @@ export interface Dbo {
     /** There are five types of court surface used in professional play. Each surface is different in the speed and height of the bounce of the ball. */
     "tennisSurfaceType": NamedNode<'http://dbpedia.org/ontology/tennisSurfaceType'>;
     "TennisTournament": NamedNode<'http://dbpedia.org/ontology/TennisTournament'>;
-    "Tenure": NamedNode<'http://dbpedia.org/ontology/Tenure'>;
     "termOfOffice": NamedNode<'http://dbpedia.org/ontology/termOfOffice'>;
     "TermOfOffice": NamedNode<'http://dbpedia.org/ontology/TermOfOffice'>;
     "termPeriod": NamedNode<'http://dbpedia.org/ontology/termPeriod'>;
@@ -4236,22 +4048,18 @@ export interface Dbo {
     "topic": NamedNode<'http://dbpedia.org/ontology/topic'>;
     "TopicalConcept": NamedNode<'http://dbpedia.org/ontology/TopicalConcept'>;
     "topLevelDomain": NamedNode<'http://dbpedia.org/ontology/topLevelDomain'>;
-    "TopLevelDomain": NamedNode<'http://dbpedia.org/ontology/TopLevelDomain'>;
     "topSpeed": NamedNode<'http://dbpedia.org/ontology/topSpeed'>;
     "torchBearer": NamedNode<'http://dbpedia.org/ontology/torchBearer'>;
     "torqueOutput": NamedNode<'http://dbpedia.org/ontology/torqueOutput'>;
     "totalCargo": NamedNode<'http://dbpedia.org/ontology/totalCargo'>;
     /** the total number of discs contained in the album */
     "totalDiscs": NamedNode<'http://dbpedia.org/ontology/totalDiscs'>;
-    "totalIliCases": NamedNode<'http://dbpedia.org/ontology/totalIliCases'>;
     "totalLaunches": NamedNode<'http://dbpedia.org/ontology/totalLaunches'>;
     "totalMass": NamedNode<'http://dbpedia.org/ontology/totalMass'>;
     "totalPopulation": NamedNode<'http://dbpedia.org/ontology/totalPopulation'>;
     /** the total number of tracks contained in the album */
     "totalTracks": NamedNode<'http://dbpedia.org/ontology/totalTracks'>;
     "totalTravellers": NamedNode<'http://dbpedia.org/ontology/totalTravellers'>;
-    "totalVaccinations": NamedNode<'http://dbpedia.org/ontology/totalVaccinations'>;
-    "totalVaccinationsPerHundred": NamedNode<'http://dbpedia.org/ontology/totalVaccinationsPerHundred'>;
     "touristicSite": NamedNode<'http://dbpedia.org/ontology/touristicSite'>;
     "Tournament": NamedNode<'http://dbpedia.org/ontology/Tournament'>;
     "tournamentOfChampions": NamedNode<'http://dbpedia.org/ontology/tournamentOfChampions'>;
@@ -4271,7 +4079,6 @@ export interface Dbo {
     "tradeMark": NamedNode<'http://dbpedia.org/ontology/tradeMark'>;
     /** A trade union or labor union is an organization of workers who have banded together to achieve common goals such as better working conditions. */
     "TradeUnion": NamedNode<'http://dbpedia.org/ontology/TradeUnion'>;
-    "tradingName": NamedNode<'http://dbpedia.org/ontology/tradingName'>;
     "Train": NamedNode<'http://dbpedia.org/ontology/Train'>;
     "TrainCarriage": NamedNode<'http://dbpedia.org/ontology/TrainCarriage'>;
     "trainer": NamedNode<'http://dbpedia.org/ontology/trainer'>;
@@ -4286,7 +4093,6 @@ export interface Dbo {
     "transmission": NamedNode<'http://dbpedia.org/ontology/transmission'>;
     /** A mill driven by the tractive power of horses, donkeys or even people */
     "Treadmill": NamedNode<'http://dbpedia.org/ontology/Treadmill'>;
-    "treatment": NamedNode<'http://dbpedia.org/ontology/treatment'>;
     "Treaty": NamedNode<'http://dbpedia.org/ontology/Treaty'>;
     "tree": NamedNode<'http://dbpedia.org/ontology/tree'>;
     "tribus": NamedNode<'http://dbpedia.org/ontology/tribus'>;
@@ -4318,7 +4124,6 @@ export interface Dbo {
      */
     "ulanId": NamedNode<'http://dbpedia.org/ontology/ulanId'>;
     "umbrellaTitle": NamedNode<'http://dbpedia.org/ontology/umbrellaTitle'>;
-    "uncle": NamedNode<'http://dbpedia.org/ontology/uncle'>;
     /** An underground journal is, although over time there have always been publications forbidden by law, a phenomenon typical of countries occupied by the Germans during the Second World War. The writing in the underground press aims at stiffening a spirit of resistance against Nazi occupation. The distribution of underground journals had to be very secretive and was, therefore, very much dependant on illegal distribution circuits and the hazards of persecution by the occupant. */
     "UndergroundJournal": NamedNode<'http://dbpedia.org/ontology/UndergroundJournal'>;
     "undraftedYear": NamedNode<'http://dbpedia.org/ontology/undraftedYear'>;
@@ -4339,7 +4144,6 @@ export interface Dbo {
     "unknownOutcomes": NamedNode<'http://dbpedia.org/ontology/unknownOutcomes'>;
     /** UN/LOCODE је код Уједињених нација за трговинске и транспортне локације. Као што су луке, железнички и путни терминали, аеродроми, поште и гранични прелази. */
     "unloCode": NamedNode<'http://dbpedia.org/ontology/unloCode'>;
-    "unNumber": NamedNode<'http://dbpedia.org/ontology/unNumber'>;
     /** The last update date of a resource */
     "updated": NamedNode<'http://dbpedia.org/ontology/updated'>;
     "upperAge": NamedNode<'http://dbpedia.org/ontology/upperAge'>;
@@ -4360,15 +4164,10 @@ export interface Dbo {
     "usurper": NamedNode<'http://dbpedia.org/ontology/usurper'>;
     "utcOffset": NamedNode<'http://dbpedia.org/ontology/utcOffset'>;
     "v_hb": NamedNode<'http://dbpedia.org/ontology/v_hb'>;
-    "vaccination": NamedNode<'http://dbpedia.org/ontology/vaccination'>;
-    "VaccinationStatistics": NamedNode<'http://dbpedia.org/ontology/VaccinationStatistics'>;
-    "vaccine": NamedNode<'http://dbpedia.org/ontology/vaccine'>;
-    "Vaccine": NamedNode<'http://dbpedia.org/ontology/Vaccine'>;
     /** a depression with predominant extent in one direction */
     "Valley": NamedNode<'http://dbpedia.org/ontology/Valley'>;
     "value": NamedNode<'http://dbpedia.org/ontology/value'>;
     "valvetrain": NamedNode<'http://dbpedia.org/ontology/valvetrain'>;
-    "vaporPressure": NamedNode<'http://dbpedia.org/ontology/vaporPressure'>;
     /** variant or variation of something, for example the variant of a car */
     "variantOf": NamedNode<'http://dbpedia.org/ontology/variantOf'>;
     "varietals": NamedNode<'http://dbpedia.org/ontology/varietals'>;
@@ -4376,7 +4175,6 @@ export interface Dbo {
     "vehicle": NamedNode<'http://dbpedia.org/ontology/vehicle'>;
     /** Region related vehicle code on the vehicle plates. */
     "vehicleCode": NamedNode<'http://dbpedia.org/ontology/vehicleCode'>;
-    "vehiclesInFleet": NamedNode<'http://dbpedia.org/ontology/vehiclesInFleet'>;
     "vehiclesPerDay": NamedNode<'http://dbpedia.org/ontology/vehiclesPerDay'>;
     "vein": NamedNode<'http://dbpedia.org/ontology/vein'>;
     "Vein": NamedNode<'http://dbpedia.org/ontology/Vein'>;
@@ -4477,7 +4275,6 @@ export interface Dbo {
     "widthQuote": NamedNode<'http://dbpedia.org/ontology/widthQuote'>;
     /** is used to denote splitting of a Wikidata IRI to one or more IRIs */
     "wikidataSplitIri": NamedNode<'http://dbpedia.org/ontology/wikidataSplitIri'>;
-    "WikimediaTemplate": NamedNode<'http://dbpedia.org/ontology/WikimediaTemplate'>;
     /** Needs to be removed, left at the moment to not break DBpedia Live */
     "wikiPageCharacterSize": NamedNode<'http://dbpedia.org/ontology/wikiPageCharacterSize'>;
     /** Reserved for DBpedia. */
@@ -4508,7 +4305,6 @@ export interface Dbo {
     "wikiPageRevisionID": NamedNode<'http://dbpedia.org/ontology/wikiPageRevisionID'>;
     /** Reserved for DBpedia. */
     "wikiPageRevisionLink": NamedNode<'http://dbpedia.org/ontology/wikiPageRevisionLink'>;
-    "wikiPageUsesTemplate": NamedNode<'http://dbpedia.org/ontology/wikiPageUsesTemplate'>;
     /** Reserved for DBpedia. */
     "wikiPageWikiLink": NamedNode<'http://dbpedia.org/ontology/wikiPageWikiLink'>;
     /** Reserved for DBpedia. */
@@ -4553,13 +4349,11 @@ export interface Dbo {
     "winterAppearances": NamedNode<'http://dbpedia.org/ontology/winterAppearances'>;
     "WinterSportPlayer": NamedNode<'http://dbpedia.org/ontology/WinterSportPlayer'>;
     "winterTemperature": NamedNode<'http://dbpedia.org/ontology/winterTemperature'>;
-    "Woman": NamedNode<'http://dbpedia.org/ontology/Woman'>;
     "WomensTennisAssociationTournament": NamedNode<'http://dbpedia.org/ontology/WomensTennisAssociationTournament'>;
     "wordBefore": NamedNode<'http://dbpedia.org/ontology/wordBefore'>;
     "work": NamedNode<'http://dbpedia.org/ontology/work'>;
     "Work": NamedNode<'http://dbpedia.org/ontology/Work'>;
     "workArea": NamedNode<'http://dbpedia.org/ontology/workArea'>;
-    "WorkSequence": NamedNode<'http://dbpedia.org/ontology/WorkSequence'>;
     "world": NamedNode<'http://dbpedia.org/ontology/world'>;
     /** can be one or several years */
     "worldChampionTitleYear": NamedNode<'http://dbpedia.org/ontology/worldChampionTitleYear'>;
@@ -4599,7 +4393,6 @@ export interface Dbo {
     "youthClub": NamedNode<'http://dbpedia.org/ontology/youthClub'>;
     "youthWing": NamedNode<'http://dbpedia.org/ontology/youthWing'>;
     "youthYears": NamedNode<'http://dbpedia.org/ontology/youthYears'>;
-    "Youtuber": NamedNode<'http://dbpedia.org/ontology/Youtuber'>;
     /** Identifier for serial titles. More precise than issn */
     "zdb": NamedNode<'http://dbpedia.org/ontology/zdb'>;
     "zipCode": NamedNode<'http://dbpedia.org/ontology/zipCode'>;
