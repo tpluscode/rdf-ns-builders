@@ -1,5 +1,14 @@
 # @tpluscode/rdf-ns-builder-generator
 
+## 1.2.1
+
+### Patch Changes
+
+- 968d5bf: Updated `@zazuko/prefixes` to v2.6.1
+- 968d5bf: Updated `@zazuko/env` to v3
+- 209ad8c: Updated ts-morph
+- 968d5bf: Updated `commander` to v15
+
 ## 1.2.0
 
 ### Minor Changes
