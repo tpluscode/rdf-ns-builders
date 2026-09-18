@@ -41,12 +41,16 @@ export interface Solid {
     "Patch": NamedNode<'http://www.w3.org/ns/solid/terms#Patch'>;
     /** The document to which this patch applies. */
     "patches": NamedNode<'http://www.w3.org/ns/solid/terms#patches'>;
+    /** Points to an unlisted label index resource. */
+    "privateLabelIndex": NamedNode<'http://www.w3.org/ns/solid/terms#privateLabelIndex'>;
     /** Points to an unlisted type index resource. */
     "privateTypeIndex": NamedNode<'http://www.w3.org/ns/solid/terms#privateTypeIndex'>;
     /** Points to a listed type index resource. */
     "publicTypeIndex": NamedNode<'http://www.w3.org/ns/solid/terms#publicTypeIndex'>;
     /** Indicates if a message has been read or not. This property should have a boolean datatype. */
     "read": NamedNode<'http://www.w3.org/ns/solid/terms#read'>;
+    /** Refers to the resource that provides a description of the storage containing this resource. */
+    "storageDescription": NamedNode<'http://www.w3.org/ns/solid/terms#storageDescription'>;
     /** The quota of non-volatile memory that is available for the account (in bytes) */
     "storageQuota": NamedNode<'http://www.w3.org/ns/solid/terms#storageQuota'>;
     /** The amount of non-volatile memory that the account have used (in bytes) */
