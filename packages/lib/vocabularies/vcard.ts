@@ -8,6 +8,8 @@ export interface Vcard {
     "additional-name": NamedNode<'http://www.w3.org/2006/vcard/ns#additional-name'>;
     /** To specify the components of the delivery address for the  object */
     "Address": NamedNode<'http://www.w3.org/2006/vcard/ns#Address'>;
+    /** This term is not part of vCard as defined by the IETF */
+    "AddressBook": NamedNode<'http://www.w3.org/2006/vcard/ns#AddressBook'>;
     /** This object property has been mapped */
     "adr": NamedNode<'http://www.w3.org/2006/vcard/ns#adr'>;
     /** This object property has been deprecated */
@@ -60,6 +62,8 @@ export interface Vcard {
     "given-name": NamedNode<'http://www.w3.org/2006/vcard/ns#given-name'>;
     /** Object representing a group of persons or entities.  A group object will usually contain hasMember properties to specify the members of the group. */
     "Group": NamedNode<'http://www.w3.org/2006/vcard/ns#Group'>;
+    /** This term is not part of vCard as defined by the IETF */
+    "groupIndex": NamedNode<'http://www.w3.org/2006/vcard/ns#groupIndex'>;
     /** Used to support property parameters for the additional name data property */
     "hasAdditionalName": NamedNode<'http://www.w3.org/2006/vcard/ns#hasAdditionalName'>;
     /** To specify the components of the delivery address for the object */
@@ -144,6 +148,10 @@ export interface Vcard {
     "honorific-prefix": NamedNode<'http://www.w3.org/2006/vcard/ns#honorific-prefix'>;
     /** The honorific suffix of the name associated with the object */
     "honorific-suffix": NamedNode<'http://www.w3.org/2006/vcard/ns#honorific-suffix'>;
+    /** This term is not part of vCard as defined by the IETF */
+    "inAddressBook": NamedNode<'http://www.w3.org/2006/vcard/ns#inAddressBook'>;
+    /** This term is not part of vCard as defined by the IETF */
+    "includesGroup": NamedNode<'http://www.w3.org/2006/vcard/ns#includesGroup'>;
     /** An object representing a single person or entity */
     "Individual": NamedNode<'http://www.w3.org/2006/vcard/ns#Individual'>;
     /** This class is deprecated */
@@ -187,6 +195,8 @@ export interface Vcard {
     "n": NamedNode<'http://www.w3.org/2006/vcard/ns#n'>;
     /** To specify the components of the name of the object */
     "Name": NamedNode<'http://www.w3.org/2006/vcard/ns#Name'>;
+    /** This term is not part of vCard as defined by the IETF */
+    "nameEmailIndex": NamedNode<'http://www.w3.org/2006/vcard/ns#nameEmailIndex'>;
     "Neighbor": NamedNode<'http://www.w3.org/2006/vcard/ns#Neighbor'>;
     /** The nick name associated with the object */
     "nickname": NamedNode<'http://www.w3.org/2006/vcard/ns#nickname'>;
@@ -264,6 +274,8 @@ export interface Vcard {
     "VCard": NamedNode<'http://www.w3.org/2006/vcard/ns#VCard'>;
     "Video": NamedNode<'http://www.w3.org/2006/vcard/ns#Video'>;
     "Voice": NamedNode<'http://www.w3.org/2006/vcard/ns#Voice'>;
+    /** This term is not part of vCard as defined by the IETF */
+    "WebID": NamedNode<'http://www.w3.org/2006/vcard/ns#WebID'>;
     /** This implies that the property is related to an individual's work place */
     "Work": NamedNode<'http://www.w3.org/2006/vcard/ns#Work'>;
     /** This class is deprecated */

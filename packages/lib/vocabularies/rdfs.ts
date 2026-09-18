@@ -9,16 +9,13 @@ export interface Rdfs {
     "comment": NamedNode<'http://www.w3.org/2000/01/rdf-schema#comment'>;
     /** The class of RDF containers. */
     "Container": NamedNode<'http://www.w3.org/2000/01/rdf-schema#Container'>;
-    /**
-     * The class of container membership properties, rdf:_1, rdf:_2, ...,
-     *                     all of which are sub-properties of 'member'.
-     */
+    /** The class of container membership properties, rdf:_1, rdf:_2, ..., all of which are sub-properties of 'member'. */
     "ContainerMembershipProperty": NamedNode<'http://www.w3.org/2000/01/rdf-schema#ContainerMembershipProperty'>;
     /** The class of RDF datatypes. */
     "Datatype": NamedNode<'http://www.w3.org/2000/01/rdf-schema#Datatype'>;
     /** A domain of the subject property. */
     "domain": NamedNode<'http://www.w3.org/2000/01/rdf-schema#domain'>;
-    /** The defininition of the subject resource. */
+    /** The definition of the subject resource. */
     "isDefinedBy": NamedNode<'http://www.w3.org/2000/01/rdf-schema#isDefinedBy'>;
     /** A human-readable name for the subject. */
     "label": NamedNode<'http://www.w3.org/2000/01/rdf-schema#label'>;

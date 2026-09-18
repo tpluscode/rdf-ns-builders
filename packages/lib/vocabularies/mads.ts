@@ -210,6 +210,8 @@ export interface Mads {
     "MADSScheme": NamedNode<'http://www.loc.gov/mads/rdf/v1#MADSScheme'>;
     "MADSType": NamedNode<'http://www.loc.gov/mads/rdf/v1#MADSType'>;
     "MainTitleElement": NamedNode<'http://www.loc.gov/mads/rdf/v1#MainTitleElement'>;
+    /** Describes a resource whose label represents a material or technical means of expression. For music, these are the instruments and voices used. */
+    "Medium": NamedNode<'http://www.loc.gov/mads/rdf/v1#Medium'>;
     /** Describes a resource whose label represents a name, especially when a more precise Name type (madsrdf:ConferenceName, masdrdf:FamilyName, etc.) cannot be identified. */
     "Name": NamedNode<'http://www.loc.gov/mads/rdf/v1#Name'>;
     "NameElement": NamedNode<'http://www.loc.gov/mads/rdf/v1#NameElement'>;

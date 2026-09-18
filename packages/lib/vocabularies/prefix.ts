@@ -24,6 +24,10 @@ export interface Prefix {
     "Pebi": NamedNode<'http://qudt.org/vocab/prefix/Pebi'>;
     "Peta": NamedNode<'http://qudt.org/vocab/prefix/Peta'>;
     "Pico": NamedNode<'http://qudt.org/vocab/prefix/Pico'>;
+    "Quecto": NamedNode<'http://qudt.org/vocab/prefix/Quecto'>;
+    "Quetta": NamedNode<'http://qudt.org/vocab/prefix/Quetta'>;
+    "Ronna": NamedNode<'http://qudt.org/vocab/prefix/Ronna'>;
+    "Ronto": NamedNode<'http://qudt.org/vocab/prefix/Ronto'>;
     "Tebi": NamedNode<'http://qudt.org/vocab/prefix/Tebi'>;
     "Tera": NamedNode<'http://qudt.org/vocab/prefix/Tera'>;
     "Yobi": NamedNode<'http://qudt.org/vocab/prefix/Yobi'>;
