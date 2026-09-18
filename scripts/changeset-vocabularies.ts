@@ -178,21 +178,6 @@ export function compareVocabularies(
   }
 }
 
-export function determineReleaseType(diffs: VocabularyDiff[]): 'major' | 'minor' | 'patch' | null {
-  const activeDiffs = diffs.filter(d => d.changeType !== 'none')
-  if (activeDiffs.length === 0) {
-    return null
-  }
-
-  if (activeDiffs.some(d => d.changeType === 'major')) {
-    return 'major'
-  }
-  if (activeDiffs.some(d => d.changeType === 'minor')) {
-    return 'minor'
-  }
-  return 'patch'
-}
-
 export function formatVocabSummary(diff: VocabularyDiff): string {
   const parts: string[] = []
   if (diff.removed.length > 0) {
@@ -247,11 +232,17 @@ export interface InspectOptions {
 export function inspectGitChanges(options: InspectOptions = {}): VocabularyDiff[] {
   const cwd = options.cwd || process.cwd()
 
-  const diffOutput = execFileSync(
-    'git',
-    ['diff', 'HEAD', '--name-status', '--', 'packages/lib/vocabularies/*.ts'],
-    { cwd, encoding: 'utf8' },
-  )
+  let diffOutput: string
+  try {
+    diffOutput = execFileSync(
+      'git',
+      ['diff', 'HEAD', '--name-status', '--', 'packages/lib/vocabularies/*.ts'],
+      { cwd, encoding: 'utf8' },
+    )
+  }
+  catch {
+    diffOutput = ''
+  }
 
   const changedFiles = new Map<string, 'A' | 'M' | 'D' | 'R'>()
 
@@ -264,11 +255,17 @@ export function inspectGitChanges(options: InspectOptions = {}): VocabularyDiff[
     }
   }
 
-  const untrackedOutput = execFileSync(
-    'git',
-    ['ls-files', '--others', '--exclude-standard', 'packages/lib/vocabularies/*.ts'],
-    { cwd, encoding: 'utf8' },
-  )
+  let untrackedOutput: string
+  try {
+    untrackedOutput = execFileSync(
+      'git',
+      ['ls-files', '--others', '--exclude-standard', 'packages/lib/vocabularies/*.ts'],
+      { cwd, encoding: 'utf8' },
+    )
+  }
+  catch {
+    untrackedOutput = ''
+  }
   for (const line of untrackedOutput.trim().split('\n').filter(Boolean)) {
     if (line.endsWith('.ts')) {
       changedFiles.set(line.trim(), 'A')
@@ -466,6 +463,8 @@ export function createCli(): Command {
   return program
 }
 
+/* c8 ignore start */
 if (process.argv[1] && url.fileURLToPath(import.meta.url) === path.resolve(process.argv[1])) {
   await createCli().parseAsync(process.argv)
 }
+/* c8 ignore stop */
