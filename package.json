@@ -45,5 +45,8 @@
   },
   "engines": {
     "node": ">=24"
+  },
+  "allowScripts": {
+    "eslint-plugin-rdf@3.1.0": true
   }
 }
