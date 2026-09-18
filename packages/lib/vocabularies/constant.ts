@@ -176,7 +176,7 @@ export interface Constant {
     "KilogramKelvinRelationship": NamedNode<'http://qudt.org/vocab/constant/KilogramKelvinRelationship'>;
     "LatticeParameterOfSilicon": NamedNode<'http://qudt.org/vocab/constant/LatticeParameterOfSilicon'>;
     "LatticeSpacingOfSilicon": NamedNode<'http://qudt.org/vocab/constant/LatticeSpacingOfSilicon'>;
-    "LoschmidtConstant273.15K101.325KPa": NamedNode<'http://qudt.org/vocab/constant/LoschmidtConstant273.15K101.325KPa'>;
+    "LoschmidtConstant273dot15K101dot325KPa": NamedNode<'http://qudt.org/vocab/constant/LoschmidtConstant273dot15K101dot325KPa'>;
     "MagneticConstant": NamedNode<'http://qudt.org/vocab/constant/MagneticConstant'>;
     "MagneticFluxQuantum": NamedNode<'http://qudt.org/vocab/constant/MagneticFluxQuantum'>;
     "MolarGasConstant": NamedNode<'http://qudt.org/vocab/constant/MolarGasConstant'>;
@@ -184,8 +184,10 @@ export interface Constant {
     "MolarMassOfCarbon12": NamedNode<'http://qudt.org/vocab/constant/MolarMassOfCarbon12'>;
     "MolarPlanckConstant": NamedNode<'http://qudt.org/vocab/constant/MolarPlanckConstant'>;
     "MolarPlanckConstantTimesC": NamedNode<'http://qudt.org/vocab/constant/MolarPlanckConstantTimesC'>;
-    "MolarVolumeOfIdealGas273.15K100KPa": NamedNode<'http://qudt.org/vocab/constant/MolarVolumeOfIdealGas273.15K100KPa'>;
-    "MolarVolumeOfIdealGas273.15K101.325KPa": NamedNode<'http://qudt.org/vocab/constant/MolarVolumeOfIdealGas273.15K101.325KPa'>;
+    "MolarVolumeOfIdealGas273dot15K100KiloPA": NamedNode<'http://qudt.org/vocab/constant/MolarVolumeOfIdealGas273dot15K100KiloPA'>;
+    "MolarVolumeOfIdealGas273dot15K100KPa": NamedNode<'http://qudt.org/vocab/constant/MolarVolumeOfIdealGas273dot15K100KPa'>;
+    "MolarVolumeOfIdealGas273dot15K101dot325KiloPA": NamedNode<'http://qudt.org/vocab/constant/MolarVolumeOfIdealGas273dot15K101dot325KiloPA'>;
+    "MolarVolumeOfIdealGas273dot15K101dot325KPa": NamedNode<'http://qudt.org/vocab/constant/MolarVolumeOfIdealGas273dot15K101dot325KPa'>;
     "MolarVolumeOfSilicon": NamedNode<'http://qudt.org/vocab/constant/MolarVolumeOfSilicon'>;
     "MoXUnit": NamedNode<'http://qudt.org/vocab/constant/MoXUnit'>;
     "MuonComptonWavelength": NamedNode<'http://qudt.org/vocab/constant/MuonComptonWavelength'>;
@@ -242,6 +244,7 @@ export interface Constant {
     "NuclearMagnetonInKPerT": NamedNode<'http://qudt.org/vocab/constant/NuclearMagnetonInKPerT'>;
     "NuclearMagnetonInMHzPerT": NamedNode<'http://qudt.org/vocab/constant/NuclearMagnetonInMHzPerT'>;
     "PermittivityOfVacuum": NamedNode<'http://qudt.org/vocab/constant/PermittivityOfVacuum'>;
+    "Pi": NamedNode<'http://qudt.org/vocab/constant/Pi'>;
     "PlanckConstant": NamedNode<'http://qudt.org/vocab/constant/PlanckConstant'>;
     "PlanckConstantInEVS": NamedNode<'http://qudt.org/vocab/constant/PlanckConstantInEVS'>;
     "PlanckConstantOver2Pi": NamedNode<'http://qudt.org/vocab/constant/PlanckConstantOver2Pi'>;
@@ -281,7 +284,7 @@ export interface Constant {
     "RydbergConstantTimesHcInEV": NamedNode<'http://qudt.org/vocab/constant/RydbergConstantTimesHcInEV'>;
     "RydbergConstantTimesHcInJ": NamedNode<'http://qudt.org/vocab/constant/RydbergConstantTimesHcInJ'>;
     "SackurTetrodeConstant1K100KPa": NamedNode<'http://qudt.org/vocab/constant/SackurTetrodeConstant1K100KPa'>;
-    "SackurTetrodeConstant1K101.325KPa": NamedNode<'http://qudt.org/vocab/constant/SackurTetrodeConstant1K101.325KPa'>;
+    "SackurTetrodeConstant1K101dot325KPa": NamedNode<'http://qudt.org/vocab/constant/SackurTetrodeConstant1K101dot325KPa'>;
     "SecondRadiationConstant": NamedNode<'http://qudt.org/vocab/constant/SecondRadiationConstant'>;
     "ShieldedHelionGyromagneticRatio": NamedNode<'http://qudt.org/vocab/constant/ShieldedHelionGyromagneticRatio'>;
     "ShieldedHelionGyromagneticRatioOver2Pi": NamedNode<'http://qudt.org/vocab/constant/ShieldedHelionGyromagneticRatioOver2Pi'>;
@@ -509,6 +512,8 @@ export interface Constant {
     "Value_MolarPlanckConstant": NamedNode<'http://qudt.org/vocab/constant/Value_MolarPlanckConstant'>;
     "Value_MolarPlanckConstantTimesC": NamedNode<'http://qudt.org/vocab/constant/Value_MolarPlanckConstantTimesC'>;
     "Value_MolarVolumeOfIdealGas": NamedNode<'http://qudt.org/vocab/constant/Value_MolarVolumeOfIdealGas'>;
+    "Value_MolarVolumeOfIdealGas273dot15K100KiloPA": NamedNode<'http://qudt.org/vocab/constant/Value_MolarVolumeOfIdealGas273dot15K100KiloPA'>;
+    "Value_MolarVolumeOfIdealGas273dot15K101dot325KiloPA": NamedNode<'http://qudt.org/vocab/constant/Value_MolarVolumeOfIdealGas273dot15K101dot325KiloPA'>;
     "Value_MolarVolumeOfSilicon": NamedNode<'http://qudt.org/vocab/constant/Value_MolarVolumeOfSilicon'>;
     "Value_MoXUnit": NamedNode<'http://qudt.org/vocab/constant/Value_MoXUnit'>;
     "Value_MuonComptonWavelength": NamedNode<'http://qudt.org/vocab/constant/Value_MuonComptonWavelength'>;
@@ -566,6 +571,7 @@ export interface Constant {
     "Value_NuclearMagnetonInKPerT": NamedNode<'http://qudt.org/vocab/constant/Value_NuclearMagnetonInKPerT'>;
     "Value_NuclearMagnetonInMHzPerT": NamedNode<'http://qudt.org/vocab/constant/Value_NuclearMagnetonInMHzPerT'>;
     "Value_PermittivityOfVacuum": NamedNode<'http://qudt.org/vocab/constant/Value_PermittivityOfVacuum'>;
+    "Value_Pi": NamedNode<'http://qudt.org/vocab/constant/Value_Pi'>;
     "Value_PlanckConstant": NamedNode<'http://qudt.org/vocab/constant/Value_PlanckConstant'>;
     "Value_PlanckConstantInEVS": NamedNode<'http://qudt.org/vocab/constant/Value_PlanckConstantInEVS'>;
     "Value_PlanckConstantOver2Pi": NamedNode<'http://qudt.org/vocab/constant/Value_PlanckConstantOver2Pi'>;
@@ -604,7 +610,7 @@ export interface Constant {
     "Value_RydbergConstantTimesHcInEV": NamedNode<'http://qudt.org/vocab/constant/Value_RydbergConstantTimesHcInEV'>;
     "Value_RydbergConstantTimesHcInJ": NamedNode<'http://qudt.org/vocab/constant/Value_RydbergConstantTimesHcInJ'>;
     "Value_SackurTetrodeConstant1K100KPa": NamedNode<'http://qudt.org/vocab/constant/Value_SackurTetrodeConstant1K100KPa'>;
-    "Value_SackurTetrodeConstant1K101.325K": NamedNode<'http://qudt.org/vocab/constant/Value_SackurTetrodeConstant1K101.325K'>;
+    "Value_SackurTetrodeConstant1K101dot325KPa": NamedNode<'http://qudt.org/vocab/constant/Value_SackurTetrodeConstant1K101dot325KPa'>;
     "Value_SecondRadiationConstant": NamedNode<'http://qudt.org/vocab/constant/Value_SecondRadiationConstant'>;
     "Value_ShieldedHelionGyromagneticRatio": NamedNode<'http://qudt.org/vocab/constant/Value_ShieldedHelionGyromagneticRatio'>;
     "Value_ShieldedHelionGyromagneticRatioOver2Pi": NamedNode<'http://qudt.org/vocab/constant/Value_ShieldedHelionGyromagneticRatioOver2Pi'>;
@@ -655,7 +661,6 @@ export interface Constant {
     "Value_WeakMixingAngle": NamedNode<'http://qudt.org/vocab/constant/Value_WeakMixingAngle'>;
     "Value_WienFrequencyDisplacementLawConstant": NamedNode<'http://qudt.org/vocab/constant/Value_WienFrequencyDisplacementLawConstant'>;
     "Value_WienWavelengthDisplacementLawConstant": NamedNode<'http://qudt.org/vocab/constant/Value_WienWavelengthDisplacementLawConstant'>;
-    "ValueForElectronVolt": NamedNode<'http://qudt.org/vocab/constant/ValueForElectronVolt'>;
     "VonKlitzingConstant": NamedNode<'http://qudt.org/vocab/constant/VonKlitzingConstant'>;
     "WeakMixingAngle": NamedNode<'http://qudt.org/vocab/constant/WeakMixingAngle'>;
     "WienFrequencyDisplacementLawConstant": NamedNode<'http://qudt.org/vocab/constant/WienFrequencyDisplacementLawConstant'>;

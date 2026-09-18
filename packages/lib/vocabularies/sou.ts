@@ -11,15 +11,7 @@ export interface Sou {
     "IMPERIAL": NamedNode<'http://qudt.org/vocab/sou/IMPERIAL'>;
     "PLANCK": NamedNode<'http://qudt.org/vocab/sou/PLANCK'>;
     "SI": NamedNode<'http://qudt.org/vocab/sou/SI'>;
-    "SOU_ASU": NamedNode<'http://qudt.org/vocab/sou/SOU_ASU'>;
-    "SOU_CGS-EMU": NamedNode<'http://qudt.org/vocab/sou/SOU_CGS-EMU'>;
-    "SOU_CGS-ESU": NamedNode<'http://qudt.org/vocab/sou/SOU_CGS-ESU'>;
-    "SOU_CGS-GAUSS": NamedNode<'http://qudt.org/vocab/sou/SOU_CGS-GAUSS'>;
-    "SOU_CGS": NamedNode<'http://qudt.org/vocab/sou/SOU_CGS'>;
-    "SOU_IMPERIAL": NamedNode<'http://qudt.org/vocab/sou/SOU_IMPERIAL'>;
-    "SOU_PLANCK": NamedNode<'http://qudt.org/vocab/sou/SOU_PLANCK'>;
-    "SOU_SI": NamedNode<'http://qudt.org/vocab/sou/SOU_SI'>;
-    "SOU_USCS": NamedNode<'http://qudt.org/vocab/sou/SOU_USCS'>;
+    "UNSTATED": NamedNode<'http://qudt.org/vocab/sou/UNSTATED'>;
     "USCS": NamedNode<'http://qudt.org/vocab/sou/USCS'>;
 }
 
