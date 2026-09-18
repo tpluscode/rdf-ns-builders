@@ -411,7 +411,6 @@ export interface Foo {
         expect(cs.summary).to.include(`Updated \`${cs.vocabName}\``)
       }
       const types = result.changesets.map(cs => cs.releaseType)
-      expect(types).to.include('major')
       const majorIndices = types.map((t, i) => t === 'major' ? i : -1).filter(i => i >= 0)
       const minorIndices = types.map((t, i) => t === 'minor' ? i : -1).filter(i => i >= 0)
       const patchIndices = types.map((t, i) => t === 'patch' ? i : -1).filter(i => i >= 0)

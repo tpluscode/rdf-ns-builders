@@ -1,5 +1,6 @@
 import fs from 'node:fs'
 import path from 'node:path'
+import url from 'node:url'
 import { execFileSync } from 'node:child_process'
 import { Command } from 'commander'
 import * as ts from 'typescript'
@@ -465,4 +466,6 @@ export function createCli(): Command {
   return program
 }
 
-await createCli().parseAsync(process.argv)
+if (process.argv[1] && url.fileURLToPath(import.meta.url) === path.resolve(process.argv[1])) {
+  await createCli().parseAsync(process.argv)
+}
