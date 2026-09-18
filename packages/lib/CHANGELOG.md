@@ -1,5 +1,24 @@
 # Changelog
 
+## 5.1.0
+
+### Minor Changes
+
+- ffddb7a: Updated `mads`: added 1 term
+- ffddb7a: Updated `vcard`: added 6 terms
+- ffddb7a: Updated `prefix`: added 4 terms
+- ffddb7a: Updated `dcat`: added 16 terms; updated documentation
+- ffddb7a: Updated `solid`: added 2 terms
+
+### Patch Changes
+
+- 968d5bf: Updated `@zazuko/prefixes` to v2.6.1
+- ffddb7a: Updated `crm`: updated documentation
+- ffddb7a: Updated `cc`: updated documentation
+- ff588f2: Removes a module cycle in `Factory.js`
+- ffddb7a: Updated `rdfs`: updated documentation
+- a5f2322: Added missing builders for b59, code, cube, meta, pipeline, and relation vocabularies
+
 ## 5.0.0
 
 ### Major Changes
