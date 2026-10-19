@@ -35,12 +35,12 @@
     "@rdfjs/namespace": "^2.0.1",
     "@rdfjs/types": "^2.0.1",
     "@types/rdfjs__namespace": "^2.0.10",
-    "@zazuko/prefixes": "^2.6.1"
+    "@zazuko/prefixes": "^2.6.4"
   },
   "devDependencies": {
     "@rdfjs/environment": "^1.0.0",
-    "@zazuko/env": "^3.0.1",
-    "@zazuko/vocabularies": "^4.1.1",
+    "@zazuko/env": "^3.0.2",
+    "@zazuko/vocabularies": "^4.1.2",
     "chai": "^6.2.2"
   },
   "publishConfig": {
