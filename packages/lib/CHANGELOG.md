@@ -1,5 +1,11 @@
 # Changelog
 
+## 6.0.1
+
+### Patch Changes
+
+- c4231f2: Added `gist`
+
 ## 6.0.0
 
 ### Major Changes
