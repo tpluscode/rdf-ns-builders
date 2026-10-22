@@ -49,7 +49,7 @@ export interface Sd {
     "GraphCollection": NamedNode<'http://www.w3.org/ns/sparql-service-description#GraphCollection'>;
     /** Relates an instance of sd:Service to a format that is supported for parsing RDF input; for example, via a SPARQL 1.1 Update LOAD statement, or when URIs are dereferenced in FROM/FROM NAMED/USING/USING NAMED clauses. */
     "inputFormat": NamedNode<'http://www.w3.org/ns/sparql-service-description#inputFormat'>;
-    /** An instance of sd:Language represents one of the SPARQL languages, including specific configurations providing particular features or extensions. This document defines three instances of sd:Language: sd:SPARQL10Query, sd:SPARQL11Query, and sd:SPARQL11Update. */
+    /** An instance of sd:Language represents one of the SPARQL languages, including specific configurations providing particular features or extensions. This document defines five instances of sd:Language: sd:SPARQLQuery, sd:SPARQLUpdate, sd:SPARQL10Query, sd:SPARQL11Query, and sd:SPARQL11Update. */
     "Language": NamedNode<'http://www.w3.org/ns/sparql-service-description#Language'>;
     /** Relates an instance of sd:Service to a resource representing an implemented extension to the SPARQL Query or Update language. */
     "languageExtension": NamedNode<'http://www.w3.org/ns/sparql-service-description#languageExtension'>;
@@ -73,10 +73,16 @@ export interface Sd {
     "SPARQL11Query": NamedNode<'http://www.w3.org/ns/sparql-service-description#SPARQL11Query'>;
     /** sd:SPARQLUpdate is an sd:Language representing the SPARQL 1.1 Update language. */
     "SPARQL11Update": NamedNode<'http://www.w3.org/ns/sparql-service-description#SPARQL11Update'>;
+    /** sd:SPARQLQuery is an sd:Language representing the SPARQL Query language. */
+    "SPARQLQuery": NamedNode<'http://www.w3.org/ns/sparql-service-description#SPARQLQuery'>;
+    /** sd:SPARQLUpdate is an sd:Language representing the SPARQL Update language. */
+    "SPARQLUpdate": NamedNode<'http://www.w3.org/ns/sparql-service-description#SPARQLUpdate'>;
     /** Relates a named graph description with a resource representing a supported profile of the entailment regime (as declared by sd:entailmentRegime) used for basic graph pattern matching over that graph. */
     "supportedEntailmentProfile": NamedNode<'http://www.w3.org/ns/sparql-service-description#supportedEntailmentProfile'>;
     /** Relates an instance of sd:Service to a SPARQL language (e.g. Query and Update) that it implements. */
     "supportedLanguage": NamedNode<'http://www.w3.org/ns/sparql-service-description#supportedLanguage'>;
+    /** Relates an instance of sd:Service to a SPARQL language version that it supports. */
+    "supportedVersion": NamedNode<'http://www.w3.org/ns/sparql-service-description#supportedVersion'>;
     /** sd:UnionDefaultGraph, when used as the object of the sd:feature property, indicates that the default graph of the dataset used during query and update evaluation (when an explicit dataset is not specified) is comprised of the union of all the named graphs in that dataset. */
     "UnionDefaultGraph": NamedNode<'http://www.w3.org/ns/sparql-service-description#UnionDefaultGraph'>;
 }

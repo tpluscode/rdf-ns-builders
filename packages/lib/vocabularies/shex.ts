@@ -3,6 +3,10 @@ import { NamedNode } from "@rdfjs/types";
 
 export interface Shex {
     '': NamedNode<'http://www.w3.org/ns/shex#'>;
+    /** In a triple pattern used as a node selector, a wildcard indicating that the position (subject or object) may hold any value. */
+    "_": NamedNode<'http://www.w3.org/ns/shex#_'>;
+    /** Declares a ShapeDecl abstract, meaning that every reference to it must also identify at least one non-abstract shape. */
+    "abstract": NamedNode<'http://www.w3.org/ns/shex#abstract'>;
     /** Annotations on a TripleExpression. */
     "annotation": NamedNode<'http://www.w3.org/ns/shex#annotation'>;
     /** Annotations provide a format-independent way to provide additional information about elements in a schema. */
@@ -29,8 +33,12 @@ export interface Shex {
     "extra": NamedNode<'http://www.w3.org/ns/shex#extra'>;
     /** Regular expression flags */
     "flags": NamedNode<'http://www.w3.org/ns/shex#flags'>;
+    /** In a triple pattern used as a node selector, indicates the position (subject or object) of the nodes to be selected. A triple pattern has exactly one focus selector. */
+    "FOCUS": NamedNode<'http://www.w3.org/ns/shex#FOCUS'>;
     /** for "fractiondigits" constraints, v is less than or equals the number of digits to the right of the decimal place in the XML Schema canonical form[xmlschema-2] of the value of n, ignoring trailing zeros. */
     "fractiondigits": NamedNode<'http://www.w3.org/ns/shex#fractiondigits'>;
+    /** Schemas imported by this Schema; their shape and triple expression labels are also in scope here. */
+    "imports": NamedNode<'http://www.w3.org/ns/shex#imports'>;
     /** Constrains the subject of a triple, rather than the object. */
     "inverse": NamedNode<'http://www.w3.org/ns/shex#inverse'>;
     /** Requires node to be an IRI */
@@ -73,6 +81,8 @@ export interface Shex {
     "minlength": NamedNode<'http://www.w3.org/ns/shex#minlength'>;
     /** Identifier of SemAct extension. */
     "name": NamedNode<'http://www.w3.org/ns/shex#name'>;
+    /** An RDF node, or a triple pattern which is used to select RDF nodes to be validated. */
+    "node": NamedNode<'http://www.w3.org/ns/shex#node'>;
     /** A constraint on the type or value of an RDF Node. */
     "NodeConstraint": NamedNode<'http://www.w3.org/ns/shex#NodeConstraint'>;
     /** Restiction on the kind of node matched; restricted to the defined instances of NodeKind. One of shex:iri, shex:bnode, shex:literal, or shex:nonliteral. */
@@ -91,17 +101,23 @@ export interface Shex {
     "pattern": NamedNode<'http://www.w3.org/ns/shex#pattern'>;
     /** The predicate of a TripleConstraint or Annotation. */
     "predicate": NamedNode<'http://www.w3.org/ns/shex#predicate'>;
+    /** A map of node selectors to shape labels, used to select the nodes to be validated against particular shapes. Node selectors are RDF nodes or triple patterns. */
+    "QueryMap": NamedNode<'http://www.w3.org/ns/shex#QueryMap'>;
     /** A Schema contains the set of shapes, used for matching a focus node. */
     "Schema": NamedNode<'http://www.w3.org/ns/shex#Schema'>;
     /** A list of Semantic Actions that serve as an extension point for Shape Expressions. They appear in lists in Schema's startActs and Shape, OneOf, EachOf and TripleConstraint's semActs. */
     "SemAct": NamedNode<'http://www.w3.org/ns/shex#SemAct'>;
     /** Semantic Actions on this TripleExpression. */
     "semActs": NamedNode<'http://www.w3.org/ns/shex#semActs'>;
+    /** A ShEx shape expression label identifying the shape expression against which the selected nodes are validated, or the string "START" for the schema's start shape expression. */
+    "shape": NamedNode<'http://www.w3.org/ns/shex#shape'>;
     /** A shapes schema is captured in a Schema object where shapes is a mapping from shape label to shape expression. */
     "Shape": NamedNode<'http://www.w3.org/ns/shex#Shape'>;
     /** A ShapeExpression composed of one or more sub-expressions, all of which must match. */
     "ShapeAnd": NamedNode<'http://www.w3.org/ns/shex#ShapeAnd'>;
-    /** Shape Expression referenced by this shape. */
+    /** Associates a shape expression with a label, and optionally declares it abstract. The shapes in a Schema are ShapeDecls. */
+    "ShapeDecl": NamedNode<'http://www.w3.org/ns/shex#ShapeDecl'>;
+    /** Shape Expression referenced by this shape or shape declaration. */
     "shapeExpr": NamedNode<'http://www.w3.org/ns/shex#shapeExpr'>;
     /** The abstract class of Shape Expressions. */
     "ShapeExpression": NamedNode<'http://www.w3.org/ns/shex#ShapeExpression'>;
@@ -109,16 +125,20 @@ export interface Shex {
     "shapeExprs": NamedNode<'http://www.w3.org/ns/shex#shapeExprs'>;
     /** A reference to a shape defined in some external Schema. */
     "ShapeExternal": NamedNode<'http://www.w3.org/ns/shex#ShapeExternal'>;
+    /** A QueryMap in which each node selector is an RDF node; associates RDF nodes with shapes, optionally recording the validation status of each association. */
+    "ShapeMap": NamedNode<'http://www.w3.org/ns/shex#ShapeMap'>;
     /** A ShapeNot is satisfied when it’s included ShapeExpression is not satisfied. */
     "ShapeNot": NamedNode<'http://www.w3.org/ns/shex#ShapeNot'>;
     /** A ShapeExpression composed of one or more sub-expressions, one of which must match. */
     "ShapeOr": NamedNode<'http://www.w3.org/ns/shex#ShapeOr'>;
-    /** Shapes in this Schema. */
+    /** Shape declarations in this Schema. */
     "shapes": NamedNode<'http://www.w3.org/ns/shex#shapes'>;
     /** A ShapeExpression matched against the focus node prior to any other mapped expressions. */
     "start": NamedNode<'http://www.w3.org/ns/shex#start'>;
     /** Semantic Actions run on the Schema. */
     "startActs": NamedNode<'http://www.w3.org/ns/shex#startActs'>;
+    /** The validation status of a node/shape association: "conformant" or "nonconformant". Defaults to "conformant". */
+    "status": NamedNode<'http://www.w3.org/ns/shex#status'>;
     /** A stem value used for matching or excluding values. */
     "stem": NamedNode<'http://www.w3.org/ns/shex#stem'>;
     /** Abstract class for Stems */
