@@ -1,5 +1,12 @@
 # Changelog
 
+## 7.0.0
+
+### Major Changes
+
+- 9b9cb08: Updated `shsh`: removed 1 term; added 6 terms; updated documentation
+- 9b9cb08: Updated `dpv`: removed 208 terms; modified term types/namespace; added 767 terms; updated documentation
+
 ## 6.1.0
 
 ### Minor Changes
