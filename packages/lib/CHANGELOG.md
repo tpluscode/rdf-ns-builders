@@ -1,5 +1,13 @@
 # Changelog
 
+## 6.1.0
+
+### Minor Changes
+
+- 880501b: Updated `sd`: added 3 terms; updated documentation
+- 880501b: Updated `shex`: added 10 terms; updated documentation
+- 880501b: Updated `sh`: added 258 terms; updated documentation
+
 ## 6.0.1
 
 ### Patch Changes
